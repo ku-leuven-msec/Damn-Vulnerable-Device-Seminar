@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+
+<h1>Super secret dashboard</h1>
+<table border = 1>
+    <thead>
+        <td>user_id</td>
+        <td>name</td>
+        <td>last_name</td>
+        <td>email</td>
+        <td>phone_number</td>
+    </thead>
+    {% for row in rows %}
+        <tr>
+            <td>{{row["user_id"]}}</td>
+            <td>{{row["name"]}}</td>
+            <td>{{row["last_name"]}}</td>
+            <td>{{row["email"]}}</td>
+            <td>{{row["phone_number"]}}</td>
+        </tr>
+        {% endfor %}
+</table>
+
+<div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="/logout">Logout</a></li>
+          </ul>
+        </nav>
+
+      </div>
+</div>
+</body>
+</html>

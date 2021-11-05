@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- Basic Page Needs
+   -->
+  <meta charset="utf-8">
+  {% if title %}
+   <title>{{ title }}</title>
+  {% endif %}<!-- Mobile Specific Metas
+   -->
+  <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no"><!-- FONT
+  -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"><link rel="stylesheet" href="../static/css/normalize.css">
+  <link rel="stylesheet" href="../static/skeleton.css"><link rel="icon" type="image/png" href="../static/logo.png"></head>
+<body><!-- Primary Page Layout
+   -->
+<div style="margin-top:5%; margin-left:5%">
+ <div style="width:100%;">
+  <div style="width: 80%; height: 100px; float: left;">
+     {% with messages = get_flashed_messages(with_categories=True)%}
+ {% if messages %}
+  {% for category, message in messages %}
+   <div class="alert alert-{{ category }}">
+    <h5>{{ message }}</h5>
+   </div>
+
+  {% endfor %}
+ {% endif %}
+     {% endwith %}
+     {% block info %}
+     {% endblock %}
+  </div>
+ </div>
+</div><!-- End Document
+   -->
+</body>
+</html>
