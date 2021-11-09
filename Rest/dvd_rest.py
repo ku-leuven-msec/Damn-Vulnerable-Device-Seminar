@@ -2,77 +2,38 @@
 # encoding: utf-8
 import json
 import ssl
+import json
+import base64
+import io
 from flask import Flask, request, jsonify
 
 credential_path = "/etc/credentials"
 
 app = Flask(__name__)
 
+def load_data():
+    with open('./data.json', 'r') as f:
+        return json.load(f)
+def load_image(name):
+    with open('./assets/{0}'.format(name), 'rb') as f:
+        out = io.BytesIO()
+        base64.encode(f, out)
+        return out.getvalue().decode('utf-8')
+
+
 @app.route('/', methods=['GET'])
 def query_records():
-    name = request.args.get('name')
-    print(name)
-    with open('/tmp/data.txt', 'r') as f:
-        data = f.read()
-        records = json.loads(data)
-        for record in records:
-            if record['name'] == name:
-                return jsonify(record)
-        return jsonify({'error': 'data not found'})
-
-@app.route('/', methods=['PUT'])
-def create_record():
-    record = json.loads(request.data)
-    with open('/tmp/data.txt', 'r') as f:
-        data = f.read()
-    if not data:
-        records = [record]
-    else:
-        records = json.loads(data)
-        records.append(record)
-    with open('/tmp/data.txt', 'w') as f:
-        f.write(json.dumps(records, indent=2))
-    return jsonify(record)
-
-@app.route('/', methods=['POST'])
-def update_record():
-    record = json.loads(request.data)
-    new_records = []
-    with open('/tmp/data.txt', 'r') as f:
-        data = f.read()
-        records = json.loads(data)
-    for r in records:
-        if r['name'] == record['name']:
-            r['email'] = record['email']
-        new_records.append(r)
-    with open('/tmp/data.txt', 'w') as f:
-        f.write(json.dumps(new_records, indent=2))
-    return jsonify(record)
-    
-@app.route('/', methods=['DELETE'])
-def delete_record():
-    record = json.loads(request.data)
-    new_records = []
-    with open('/tmp/data.txt', 'r') as f:
-        data = f.read()
-        records = json.loads(data)
-        for r in records:
-            if r['name'] == record['name']:
-                continue
-            new_records.append(r)
-    with open('/tmp/data.txt', 'w') as f:
-        f.write(json.dumps(new_records, indent=2))
-    return jsonify(record)
-
-
+    data = load_data()
+    for record in data['records']:
+        record["image"] = load_image(record["image"])
+    return jsonify(data)
 
 #setup SSL configuration
 context = ssl.SSLContext(ssl.PROTOCOL_TLS)
 context.load_verify_locations(cafile="{path}/root.cer".format(path = credential_path),capath=None,cadata=None)
 context.load_cert_chain('{path}/server.cer'.format(path = credential_path), '{path}/server.key'.format(path = credential_path))
-app.run(ssl_context=context,host="0.0.0.0",  port=443, threaded=True)
 
-#require client certicates
+##require client certicates
 context.verify_mode = ssl.CERT_REQUIRED
 
-app.run(ssl_context=context,host="0.0.0.0",  port=443)
+app.run(ssl_context=context,host="0.0.0.0",  port=443, threaded=True)
