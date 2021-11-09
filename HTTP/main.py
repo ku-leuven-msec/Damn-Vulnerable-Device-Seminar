@@ -3,6 +3,7 @@ from flask import render_template, url_for, flash, request, redirect, Response
 import sqlite3
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from forms import LoginForm
+import ssl
 
 app = Flask(__name__)
 
@@ -11,6 +12,8 @@ app.debug = True
 login_manager = LoginManager(app)
 
 login_manager.login_view = "login"
+
+credential_path = "/etc/credentials"
 
 
 class User(UserMixin):
@@ -103,4 +106,9 @@ if __name__ == "__main__":
         SECRET_KEY="powerful secretkey",
         WTF_CSRF_SECRET_KEY="a csrf secret key"
     ))
-    app.run(host='0.0.0.0', port=8080, threaded=True)
+
+    context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    #setup SSL configuration
+    context.load_verify_locations(cafile="{path}/root.cer".format(path = credential_path),capath=None,cadata=None)
+    context.load_cert_chain('{path}/server.cer'.format(path = credential_path), '{path}/server.key'.format(path = credential_path))
+    app.run(ssl_context=context,host="0.0.0.0",  port=443, threaded=True)

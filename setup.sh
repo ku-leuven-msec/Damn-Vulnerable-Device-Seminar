@@ -52,6 +52,7 @@ chmod 700 /home/client/.ssh
 
 touch /home/client/.ssh/authorized_keys
 chown client /home/client/.ssh/authorized_keys
+#TODO: copy root.cer to path in TrustedUserCAKeys found in sshd_config
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAT/4ZBqVsrdgwnHcbGWdRQTXjT6pjF0lBIZHiGr5953WSSYUjLYtGnIlNutfsnZyP0SR9qKSgjuQsqZ3/VjrFMvTXQECT3hE3snXG/jJ1+ZPVJf1pzz00JnVeZrASM7hAnR+ak+SfPWKRWcvUwPVbafxB7gIzcGrqZA9MSBkTnAndMbQ7dtpcyWc5bo9HhB3f+W5WBF/n0sID9ZFTKBbME3AugD6g9/YZhLaXSlB3auiKAT6H7u4NrVMCDO2n6WE1IHZ5xwo2yJhjFx5mqRfqVA8VyjP90GBJx3JQrRKHjz64963sOw2ldzewMopp4QQSw6OxCZbVmvE8xETIM3aUPZjXQE1uMTzdt3hT8eemqMrJxIA88cj/hsmNRXIevV/fvZmmWY/tQISSlnz0iZjrXeIbzbNCSGwvknXlqsZ3d62y7zy2APX/WNDQJNX4BpgVAROi8h8z1xOslLmPp7ZDiRkkphgQkqPzLUG1mHfWwVckHfyw+BHd1xB6yBcrQV8= client@raspberrypi3-64" >> /home/client/.ssh/authorized_keys
 chmod 600 /home/client/.ssh/authorized_keys
 
