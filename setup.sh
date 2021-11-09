@@ -42,8 +42,8 @@ pip install gevent.server --trusted-host pypi.python.org --trusted-host files.py
 
 # Getting the files
 cd /home/client
-wget https://github.com/victorGoeman/velcroTools/archive/refs/tags/v3.zip
-unzip v3.zip
+wget https://github.com/victorGoeman/velcroTools/archive/refs/tags/v4.zip
+unzip v4.zip
 
 # Creating the ssh keys
 mkdir /home/client/.ssh
@@ -52,8 +52,17 @@ chmod 700 /home/client/.ssh
 
 touch /home/client/.ssh/authorized_keys
 chown client /home/client/.ssh/authorized_keys
-#TODO: copy root.cer to path in TrustedUserCAKeys found in sshd_config
+
+#TODO: copied root.cer to path in TrustedUserCAKeys found in sshd_config
+mkdir /etc/credentials
+# this line hasn't been tested yet
+mv /home/client/velcroTools-4/credentials/* /etc/credentials
+
+# Adding TrustedUserCAKeys to sshd_config
+echo "TrustedUserCAKeys /etc/credentials/root.cer" >> /etc/ssh/sshd_config
+
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAT/4ZBqVsrdgwnHcbGWdRQTXjT6pjF0lBIZHiGr5953WSSYUjLYtGnIlNutfsnZyP0SR9qKSgjuQsqZ3/VjrFMvTXQECT3hE3snXG/jJ1+ZPVJf1pzz00JnVeZrASM7hAnR+ak+SfPWKRWcvUwPVbafxB7gIzcGrqZA9MSBkTnAndMbQ7dtpcyWc5bo9HhB3f+W5WBF/n0sID9ZFTKBbME3AugD6g9/YZhLaXSlB3auiKAT6H7u4NrVMCDO2n6WE1IHZ5xwo2yJhjFx5mqRfqVA8VyjP90GBJx3JQrRKHjz64963sOw2ldzewMopp4QQSw6OxCZbVmvE8xETIM3aUPZjXQE1uMTzdt3hT8eemqMrJxIA88cj/hsmNRXIevV/fvZmmWY/tQISSlnz0iZjrXeIbzbNCSGwvknXlqsZ3d62y7zy2APX/WNDQJNX4BpgVAROi8h8z1xOslLmPp7ZDiRkkphgQkqPzLUG1mHfWwVckHfyw+BHd1xB6yBcrQV8= client@raspberrypi3-64" >> /home/client/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8Sf/vfRY+SGp6fS5ENgGPh3gAAL6EtGxoeku2g90JSP3hQh/GaszQotwYF3Kw7A4VtivSkUx63YKgvJXD73sxV+wHF9XTnY2OYo+ow7TqyNP9kG/Ld/nnZ7Pj5yuXXKzCUlhvBimUYEev3iePZ67Aqq6gMEypiDooiRi3F72OVk9ZxJsZU8Caa7lBYwg7YPsfsa+KjaOnENy/Sz6fkKat3RfAZ75bqOjsSIrRNoIdUoF2JleZOJ4QfAbZQcuijYHC3BaYlrrmd4WwI0t14N126//E5QRnnSyUdfFS4gAlqgQKN6oSCAEcYzs1eO72xs9CdW/Rj6s8cdB1UwtPckWV" >> /home/client/authorized_keys
 chmod 600 /home/client/.ssh/authorized_keys
 
 # Creating a file for running the different services
