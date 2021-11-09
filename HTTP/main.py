@@ -58,17 +58,16 @@ def login():
         curs = conn.cursor()
         data = form.email.data
         passw = form.password.data
-        print(" \"SELECT * FROM login where email = '%s' and password = '%s'\" " % (data, passw))
+        #print(" \"SELECT * FROM login where email = '%s' and password = '%s'\" " % (data, passw))
         curs.execute("SELECT * FROM login where email = '%s' and password = '%s'" % (data, passw))
         data = curs.fetchone()
-        print(data)
+        #print(data)
         if data is not None:
             #user = list(curs.fetchone())
             Us = load_user(data[0])
             # if form.email.data == Us.email and form.password.data == Us.password:
             login_user(Us, remember=form.remember.data)
             Umail = list({form.email.data})[0].split('@')[0]
-            flash('Logged in successfully ' + Umail)
             return redirect(url_for('profile'))
          #   else:
          #       flash('Login Unsuccessfull.')
@@ -84,7 +83,7 @@ def redirection():
 @app.route("/profile", methods=['GET'])
 @login_required
 def profile():
-    print("login successful")
+    #print("login successful")
     con = sqlite3.connect("priv.db")
     con.row_factory = sqlite3.Row
 
