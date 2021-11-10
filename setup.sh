@@ -42,8 +42,8 @@ pip install gevent.server --trusted-host pypi.python.org --trusted-host files.py
 
 # Getting the files
 cd /home/client
-wget https://github.com/victorGoeman/velcroTools/archive/refs/tags/v5.zip
-unzip v5.zip
+wget https://github.com/victorGoeman/velcroTools/archive/refs/tags/v6.zip
+unzip v6.zip
 
 # Creating the ssh keys
 mkdir /home/client/.ssh
@@ -55,7 +55,7 @@ chown client /home/client/.ssh/authorized_keys
 
 #copy root.cer to path in TrustedUserCAKeys found in sshd_config
 mkdir /etc/credentials
-mv /home/client/velcroTools-5/credentials/root.cer /etc/credentials
+mv /home/client/velcroTools-6/credentials/root.cer /etc/credentials
 
 # Adding TrustedUserCAKeys to sshd_config
 echo "TrustedUserCAKeys /etc/credentials/root.cer" >> /etc/ssh/sshd_config
@@ -70,10 +70,10 @@ hostname $HOSTNAME
 
 if [[ $index -lt 10 ]]
   then
-    mv /home/client/velcroTools-5/credentials/server_192_168_42_5$index.* /etc/credentials
+    mv /home/client/velcroTools-6/credentials/server_192_168_42_5$index.* /etc/credentials
   elif [[ $index -eq 10 ]]
   then
-    mv /home/client/velcroTools-5/credentials/server_192_168_42_60.* /etc/credentials
+    mv /home/client/velcroTools-6/credentials/server_192_168_42_60.* /etc/credentials
 fi
 
 
@@ -87,10 +87,10 @@ touch /home/client/runHTTP.sh
 touch /home/client/runTelnet.sh
 touch /home/client/runRest.sh
 
-echo "ps | grep CoapServer.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-5/CoAP/CoapServer.py "  > /home/client/runCoAP.sh
-echo "ps | grep dvd_telnet.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-5/Telnet/dvd_telnet.py" > /home/client/runTelnet.sh
-echo "ps | grep HTTP/main.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-5/HTTP/main.py >/dev/null" > /home/client/runHTTP.sh
-echo "ps | grep dvd_rest.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-5/Rest/dvd_rest.py" > /home/client/runRest.sh
+echo "ps | grep CoapServer.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-6/CoAP/CoapServer.py "  > /home/client/runCoAP.sh
+echo "ps | grep dvd_telnet.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-6/Telnet/dvd_telnet.py" > /home/client/runTelnet.sh
+echo "ps | grep HTTP/main.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-6/HTTP/main.py >/dev/null" > /home/client/runHTTP.sh
+echo "ps | grep dvd_rest.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-6/Rest/dvd_rest.py" > /home/client/runRest.sh
 
 echo '*/5 * * * * client /home/client/runCoAP.sh' >> /etc/crontab
 echo '*/5 * * * * root /home/client/runTelnet.sh' >> /etc/crontab
