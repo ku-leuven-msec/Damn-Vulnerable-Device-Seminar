@@ -42,8 +42,8 @@ pip install gevent.server --trusted-host pypi.python.org --trusted-host files.py
 
 # Getting the files
 cd /home/client
-wget https://github.com/victorGoeman/velcroTools/archive/refs/tags/v4.zip
-unzip v4.zip
+wget https://github.com/victorGoeman/velcroTools/archive/refs/tags/v5.zip
+unzip v5.zip
 
 # Creating the ssh keys
 mkdir /home/client/.ssh
@@ -53,31 +53,59 @@ chmod 700 /home/client/.ssh
 touch /home/client/.ssh/authorized_keys
 chown client /home/client/.ssh/authorized_keys
 
-#TODO: copied root.cer to path in TrustedUserCAKeys found in sshd_config
+#copy root.cer to path in TrustedUserCAKeys found in sshd_config
 mkdir /etc/credentials
-# this line hasn't been tested yet
-mv /home/client/velcroTools-4/credentials/* /etc/credentials
+mv /home/client/velcroTools-5/credentials/root.cer /etc/credentials
 
 # Adding TrustedUserCAKeys to sshd_config
 echo "TrustedUserCAKeys /etc/credentials/root.cer" >> /etc/ssh/sshd_config
+
+echo "PROMPT: Please give the index of the device (1-10)"
+read index
+HOSTNAME = "DVD$index"
+echo "$HOSTNAME" > /etc/hostname
+echo "127.0.0.1 $HOSTNAME" >> /etc/hosts
+hostname $HOSTNAME
+/etc/init.d/hostname.sh restart
+
+if [index -lt 10]
+  then
+    mv "/home/client/velcroTools-5/credentials/server_192_168_42_5$index.*" /etc/credentials
+  elif [index -eq 10]
+  then
+    mv /home/client/velcroTools-5/credentials/server_192_168_42_60.* /etc/credentials
+
+
 
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAT/4ZBqVsrdgwnHcbGWdRQTXjT6pjF0lBIZHiGr5953WSSYUjLYtGnIlNutfsnZyP0SR9qKSgjuQsqZ3/VjrFMvTXQECT3hE3snXG/jJ1+ZPVJf1pzz00JnVeZrASM7hAnR+ak+SfPWKRWcvUwPVbafxB7gIzcGrqZA9MSBkTnAndMbQ7dtpcyWc5bo9HhB3f+W5WBF/n0sID9ZFTKBbME3AugD6g9/YZhLaXSlB3auiKAT6H7u4NrVMCDO2n6WE1IHZ5xwo2yJhjFx5mqRfqVA8VyjP90GBJx3JQrRKHjz64963sOw2ldzewMopp4QQSw6OxCZbVmvE8xETIM3aUPZjXQE1uMTzdt3hT8eemqMrJxIA88cj/hsmNRXIevV/fvZmmWY/tQISSlnz0iZjrXeIbzbNCSGwvknXlqsZ3d62y7zy2APX/WNDQJNX4BpgVAROi8h8z1xOslLmPp7ZDiRkkphgQkqPzLUG1mHfWwVckHfyw+BHd1xB6yBcrQV8= client@raspberrypi3-64" >> /home/client/.ssh/authorized_keys
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8Sf/vfRY+SGp6fS5ENgGPh3gAAL6EtGxoeku2g90JSP3hQh/GaszQotwYF3Kw7A4VtivSkUx63YKgvJXD73sxV+wHF9XTnY2OYo+ow7TqyNP9kG/Ld/nnZ7Pj5yuXXKzCUlhvBimUYEev3iePZ67Aqq6gMEypiDooiRi3F72OVk9ZxJsZU8Caa7lBYwg7YPsfsa+KjaOnENy/Sz6fkKat3RfAZ75bqOjsSIrRNoIdUoF2JleZOJ4QfAbZQcuijYHC3BaYlrrmd4WwI0t14N126//E5QRnnSyUdfFS4gAlqgQKN6oSCAEcYzs1eO72xs9CdW/Rj6s8cdB1UwtPckWV" >> /home/client/authorized_keys
 chmod 600 /home/client/.ssh/authorized_keys
 
-# Creating a file for running the different services
-touch /home/client/run.sh
-echo 'python3 /home/client/velcroTools-3/CoAP/CoapServer.py & python3 /home/client/velcroTools-3/Telnet/dvd_telnet.py & python3 /home/client/velcroTools-3/HTTP/main.py >/dev/null' > /home/client/run.sh
-echo 'python3 /home/client/velcroTools-3/Telnet/dvd_telnet.py' > /home/root/runRoot.sh 
-chmod +x /home/client/run.sh
+# Creating files for running the different services
+touch /home/client/runCoAP.sh
+touch /home/client/runHTTP.sh
+touch /home/client/runCoAP.sh
+touch /home/client/runTelnet.sh
+touch /home/client/runRest.sh
 
-echo "TODO: You still need to manually start the runRoot.sh file as root"
-echo "TODO: You still need to manually start the run.sh file as client"
+echo "pidof python3 /home/client/velcroTools-5/CoAP/CoapServer.py && echo 'running' || python3 /home/client/velcroTools-5/CoAP/CoapServer.py" > /home/client/runCoAP.sh
+echo "pidof python3 /home/client/velcroTools-5/Telnet/dvd_telnet.py && echo 'running' || python3 /home/client/velcroTools-5/Telnet/dvd_telnet.py" > /home/client/runTelnet.sh
+echo "pidof python3 /home/client/velcroTools-5/HTTP/main.py && echo 'running' || python3 /home/client/velcroTools-5/HTTP/main.py >/dev/null" > /home/client/runHTTP.sh
+echo "pidof python3 /home/client/velcroTools-5/Rest/dvd_rest.py && echo 'running' || python3 /home/client/velcroTools-5/Rest/dvd_rest.py" > /home/client/runRest.sh
 
+echo '*/5 * * * * client /home/client/runCoAP.sh' >> /etc/crontab
+echo '*/5 * * * * root /home/client/runTelnet.sh' >> /etc/crontab
+echo '*/5 * * * * root /home/client/runHTTP.sh' >> /etc/crontab
+echo '*/5 * * * * root /home/client/runRest.sh' >> /etc/crontab
+
+chmod +x /home/client/run*.sh
 
 # Set root password
 echo "TODO: add root password if not done yet"
 
-echo 'done'
-echo 'now we should also remove this file'
- 
+#Removing
+rm /home/client/v5.zip
+rm -rf /home/client/credentials
+rm -rf /home/client/certificate_generation
+rm /home/client/setup.sh
+
