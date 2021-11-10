@@ -30,7 +30,7 @@ def query_records():
 
 #setup SSL configuration
 context = ssl.SSLContext(ssl.PROTOCOL_TLS)
-context.load_verify_locations(cafile="{path}/root.cer".format(path = credential_path),capath=None,cadata=None)
+context.load_verify_locations(cafile="{path}/clients.pem".format(path = credential_path),capath=None,cadata=None)
 context.load_cert_chain('{path}/server.cer'.format(path = credential_path), '{path}/server.key'.format(path = credential_path))
 
 ##require client certicates
