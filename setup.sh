@@ -70,10 +70,12 @@ hostname $HOSTNAME
 
 if [[ $index -lt 10 ]]
   then
-    mv /home/client/velcroTools-6/credentials/server_192_168_42_5$index.* /etc/credentials
+    mv /home/client/velcroTools-6/credentials/server_192_168_42_5$index.cer /etc/credentials/server.cer
+    mv /home/client/velcroTools-6/credentials/server_192_168_42_5$index.key /etc/credentials/server.key
   elif [[ $index -eq 10 ]]
   then
-    mv /home/client/velcroTools-6/credentials/server_192_168_42_60.* /etc/credentials
+    mv /home/client/velcroTools-6/credentials/server_192_168_42_60.cer /etc/credentials/server.cer
+    mv /home/client/velcroTools-6/credentials/server_192_168_42_60.key /etc/credentials/server.key
 fi
 
 
@@ -87,24 +89,26 @@ touch /home/client/runHTTP.sh
 touch /home/client/runTelnet.sh
 touch /home/client/runRest.sh
 
-echo "ps | grep CoapServer.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-6/CoAP/CoapServer.py "  > /home/client/runCoAP.sh
+echo "netstat -tuln | grep 5683 && echo 'Running..' || python3 /home/client/velcroTools-6/CoAP/CoapServer.py "  > /home/client/runCoAP.sh
 echo "ps | grep dvd_telnet.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-6/Telnet/dvd_telnet.py" > /home/client/runTelnet.sh
 echo "ps | grep HTTP/main.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-6/HTTP/main.py >/dev/null" > /home/client/runHTTP.sh
 echo "ps | grep dvd_rest.py | grep -v grep && echo 'Running..' || python3 /home/client/velcroTools-6/Rest/dvd_rest.py" > /home/client/runRest.sh
+
 
 echo '*/5 * * * * client /home/client/runCoAP.sh' >> /etc/crontab
 echo '*/5 * * * * root /home/client/runTelnet.sh' >> /etc/crontab
 echo '*/5 * * * * root /home/client/runHTTP.sh' >> /etc/crontab
 echo '*/5 * * * * root /home/client/runRest.sh' >> /etc/crontab
 
-chmod +x /home/client/run*.sh
+chmod 751 /home/client/run*.sh
 
 # Set root password
 echo "TODO: add root password if not done yet"
 
 #Removing
-rm /home/client/v5.zip
-rm -rf /home/client/credentials
-rm -rf /home/client/certificate_generation
+rm /home/client/v6.zip
+rm -rf /home/client/velcroTools-6/credentials
+rm -rf /home/client/velcroTools-6/certificate_generation
+rm /home/client/velcroTools-6/setup.sh
 rm /home/client/setup.sh
 
