@@ -1,20 +1,28 @@
 #!/bin/sh
-#config
-REL=get_latest_release "victorGoeman/velcroTools"
 
-TMP_PATH="/home/client/tmp"
-TOOL_PATH="$TMP_PATH/velcroTools-$REL"
-
-SERVICE_PATH="/opt/dvd/"
 
 #general functions:
-
 get_latest_release() {
-  cd TMP_PATH
+  cd $TMP_PATH
   wget -O - -o /dev/null "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
   grep '"tag_name":' |                                            # Get tag line
   sed -E 's/.*"(v[^"]+)".*/\1/'                                    # Pluck JSON value
 }
+get_current_ip() {
+  local ip=`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`
+  if [ -z "$ip" ]; then
+    ip=`ifconfig eth0 2>/dev/null|awk '/inet / {print $2}'|sed 's/addr://'`
+  fi
+  echo $ip
+}
+current_ip=$(get_current_ip)
+
+#config
+TMP_PATH="/tmp/dvd"
+mkdir -p $TMP_PATH
+REL=$(get_latest_release "victorGoeman/velcroTools")
+TOOL_PATH="$TMP_PATH/velcroTools-$REL"
+SERVICE_PATH="/opt/dvd/"
 
 # ADDING USERS
 add_users() {
@@ -106,7 +114,6 @@ setup_ssh() {
   chown client /home/client/.ssh/authorized_keys
   
   # write keys to client authorized keys
-  echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAT/4ZBqVsrdgwnHcbGWdRQTXjT6pjF0lBIZHiGr5953WSSYUjLYtGnIlNutfsnZyP0SR9qKSgjuQsqZ3/VjrFMvTXQECT3hE3snXG/jJ1+ZPVJf1pzz00JnVeZrASM7hAnR+ak+SfPWKRWcvUwPVbafxB7gIzcGrqZA9MSBkTnAndMbQ7dtpcyWc5bo9HhB3f+W5WBF/n0sID9ZFTKBbME3AugD6g9/YZhLaXSlB3auiKAT6H7u4NrVMCDO2n6WE1IHZ5xwo2yJhjFx5mqRfqVA8VyjP90GBJx3JQrRKHjz64963sOw2ldzewMopp4QQSw6OxCZbVmvE8xETIM3aUPZjXQE1uMTzdt3hT8eemqMrJxIA88cj/hsmNRXIevV/fvZmmWY/tQISSlnz0iZjrXeIbzbNCSGwvknXlqsZ3d62y7zy2APX/WNDQJNX4BpgVAROi8h8z1xOslLmPp7ZDiRkkphgQkqPzLUG1mHfWwVckHfyw+BHd1xB6yBcrQV8= client@raspberrypi3-64" >> /home/client/.ssh/authorized_keys
   echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8Sf/vfRY+SGp6fS5ENgGPh3gAAL6EtGxoeku2g90JSP3hQh/GaszQotwYF3Kw7A4VtivSkUx63YKgvJXD73sxV+wHF9XTnY2OYo+ow7TqyNP9kG/Ld/nnZ7Pj5yuXXKzCUlhvBimUYEev3iePZ67Aqq6gMEypiDooiRi3F72OVk9ZxJsZU8Caa7lBYwg7YPsfsa+KjaOnENy/Sz6fkKat3RfAZ75bqOjsSIrRNoIdUoF2JleZOJ4QfAbZQcuijYHC3BaYlrrmd4WwI0t14N126//E5QRnnSyUdfFS4gAlqgQKN6oSCAEcYzs1eO72xs9CdW/Rj6s8cdB1UwtPckWV" >> /home/client/.ssh/authorized_keys
   chmod 600 /home/client/.ssh/authorized_keys
 }
@@ -115,27 +122,16 @@ setup_certificates() {
   #copy root.cer to path in TrustedUserCAKeys found in sshd_config
   mkdir /etc/credentials
   mv $TOOL_PATH/credentials/root.cer /etc/credentials
+  mv $TOOL_PATH/credentials/clients.pem /etc/credentials
 
   # Adding TrustedUserCAKeys to sshd_config
   echo "TrustedUserCAKeys /etc/credentials/root.cer" >> /etc/ssh/sshd_config
-
-  echo "PROMPT: Please give the index of the device (1-10)"
-  read index
-  HOSTNAME="DVD$index"
-  echo "$HOSTNAME" > /etc/hostname
-  echo "127.0.0.1 $HOSTNAME" >> /etc/hosts
-  hostname $HOSTNAME
-  /etc/init.d/hostname.sh restart
-
-  if [[ $index -lt 10 ]]
-    then
-      mv $TOOL_PATH/credentials/server_192_168_42_5$index.cer /etc/credentials/server.cer
-      mv $TOOL_PATH/credentials/server_192_168_42_5$index.key /etc/credentials/server.key
-    elif [[ $index -eq 10 ]]
-    then
-      mv $TOOL_PATH/credentials/server_192_168_42_60.cer /etc/credentials/server.cer
-      mv $TOOL_PATH/credentials/server_192_168_42_60.key /etc/credentials/server.key
-  fi
+ 
+  #Create Server Certificates
+  chmod +x "$TOOL_PATH/certificate_generation/setup_server.sh"
+  cd /etc/credentials
+  $TOOL_PATH/certificate_generation/setup_server.sh "$current_ip" "$(hostname)"
+  cd -
 }
 
 full_device_setup(){
@@ -144,7 +140,18 @@ full_device_setup(){
   
   # SET Root password
   echo 'root:$6$WQBiS3eMvOMsmsDy$nebw3AB8weP3mqP/1qqcJsN/Xh.CW5S2hsSHMVSxdH5sqEMdJZzzDfmcoBeZeNNh43JqXSquoRES3D4bgxKBy.' |chpasswd -e
-  
+
+  # SET Hostname:
+  echo "PROMPT: Please enter the hostname of the device"
+  read HOSTNAME
+
+  #SETUP Hostname
+  echo "$HOSTNAME" > /etc/hostname
+  echo "127.0.0.1 $HOSTNAME" >> /etc/hosts
+  echo 
+  hostname $HOSTNAME
+  /etc/init.d/hostname.sh restart
+
   add_users
 
   setup_polling
@@ -158,3 +165,4 @@ full_device_setup(){
   cleanup_installation_files
 }
 
+full_device_setup
