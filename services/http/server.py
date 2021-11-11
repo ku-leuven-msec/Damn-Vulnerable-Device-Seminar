@@ -101,7 +101,7 @@ def logout():
     logout_user()
     return redirect(url_for('login'))
 
-if __name__ == "__main__":
+def main():
     app.config.update(dict(
         SECRET_KEY="powerful secretkey",
         WTF_CSRF_SECRET_KEY="a csrf secret key"
@@ -112,3 +112,6 @@ if __name__ == "__main__":
     context.load_verify_locations(cafile="{path}/root.cer".format(path = credential_path),capath=None,cadata=None)
     context.load_cert_chain('{path}/server.cer'.format(path = credential_path), '{path}/server.key'.format(path = credential_path))
     app.run(ssl_context=context,host="0.0.0.0",  port=443, threaded=True)
+
+if __name__ == "__main__":
+    main()

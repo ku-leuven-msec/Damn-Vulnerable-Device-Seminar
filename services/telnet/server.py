@@ -88,6 +88,10 @@ class MyTelnetHandler(TelnetHandler):
         self.writeresponse("Waiting %d seconds...", time)
         gevent.spawn_later(time, self.writemessage, message)
 
+def main():
+    server = gevent.server.StreamServer(("0.0.0.0", 23), MyTelnetHandler.streamserver_handle)
+    server.serve_forever()
 
-server = gevent.server.StreamServer(("0.0.0.0", 23), MyTelnetHandler.streamserver_handle)
-server.serve_forever()
+
+if __name__ == "__main__":
+    main()
