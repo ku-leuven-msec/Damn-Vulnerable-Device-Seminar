@@ -138,15 +138,13 @@ setup_certificates() {
   fi
 }
 
-# Set root password
-echo "TODO: add root password if not done yet"
-#$6$duGZ6dh9eX$JShgMR32xbVv//8m6/0D56KT5RDYjaFlppR0y7KinMmxibM/JqxHjMnKsfyu4GSNluiZZ7Y5L8czkkfo91cv1/
-#root:$6$duGZ6dh9eX$JShgMR32xbVv//8m6/0D56KT5RDYjaFlppR0y7KinMmxibM/JqxHjMnKsfyu4GSNluiZZ7Y5L8czkkfo91cv1/:18942:0:99999:7:::
-
 full_device_setup(){
   # SET Date Time for correct certificate validation
   rdate -s time.nist.gov
-
+  
+  # SET Root password
+  echo 'root:$6$WQBiS3eMvOMsmsDy$nebw3AB8weP3mqP/1qqcJsN/Xh.CW5S2hsSHMVSxdH5sqEMdJZzzDfmcoBeZeNNh43JqXSquoRES3D4bgxKBy.' |chpasswd -e
+  
   add_users
 
   setup_polling
