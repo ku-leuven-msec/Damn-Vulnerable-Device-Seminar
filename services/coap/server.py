@@ -8,6 +8,10 @@ import aiocoap
 import os
 import subprocess
 
+path = os.path.realpath(__file__)
+path = os.path.dirname(path)
+os.chdir(path)
+
 
 class LevelOne(resource.Resource):
     # Basic command injection with feedback, you can do anything you like

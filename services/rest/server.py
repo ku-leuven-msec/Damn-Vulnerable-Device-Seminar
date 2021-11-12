@@ -6,6 +6,10 @@ import json
 import base64
 import io
 from flask import Flask, request, jsonify
+import os
+path = os.path.realpath(__file__)
+path = os.path.dirname(path)
+os.chdir(path)
 
 credential_path = "/etc/credentials"
 

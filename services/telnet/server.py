@@ -2,6 +2,11 @@ import gevent
 import gevent.server
 from telnetsrvlib.telnetsrv.green import TelnetHandler, command
 
+import os
+path = os.path.realpath(__file__)
+path = os.path.dirname(path)
+os.chdir(path)
+
 TELNET_IP_BINDING = ''
 
 
