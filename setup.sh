@@ -80,7 +80,7 @@ setup_python() {
 
 
 monitor_service() {
-  echo "*/5 * * * * $2 $SERVICE_PATH/check_daemon.sh $1" >> /etc/crontab
+  echo "*/5 * * * * $2 $SERVICE_PATH/$1/check_daemon.sh" >> /etc/crontab
 }
 
 install_service() {
@@ -95,7 +95,7 @@ install_service() {
     else
       usr="root"
     fi
-    monitor_service $1 $usr
+    monitor_service $service $usr
   fi
 }
 

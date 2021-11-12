@@ -1,4 +1,4 @@
 #!/bin/bash
-service=$1
-cd `dirname $0`/$1
+service=rest
+cd `dirname $0`/$service
 ps | grep $service | grep -v grep | grep -v "check" && echo "ok" > /dev/null || (echo "Starting $service service" | python3 server.py)
