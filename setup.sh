@@ -1,13 +1,22 @@
 #!/bin/sh
 
+log(){
+  printf "$BBlue$1$NC\n"
+}
+set_date() {
+  M=`wget -O - -o  /dev/null http://worldtimeapi.org/api/timezone/Europe/Brussels | sed -E "s|,|\n|g" | grep 'utc_datetime'| cut -d ':' -f2-`
+  D=`echo $M | cut -d "T" -f1`
+  T=`echo $M | cut -d "T" -f2- | cut -d "." -f1`
+  date -s "${D:1} $T" 
+}
 
 #general functions:
 get_latest_release() {
-  cd $TMP_PATH
   wget -O - -o /dev/null "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
   grep '"tag_name":' |                                            # Get tag line
-  sed -E 's/.*"(v[^"]+)".*/\1/'                                    # Pluck JSON value
+  sed -E 's/.*"v([^"]+)".*/\1/'                                    # Pluck JSON value
 }
+
 get_current_ip() {
   local ip=`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`
   if [ -z "$ip" ]; then
@@ -15,15 +24,20 @@ get_current_ip() {
   fi
   echo $ip
 }
+
 current_ip=$(get_current_ip)
 
 #config
+RED='\033[0;31m'
+BBlue='\033[1;34m'
+NC='\033[0m' # No Color
 GIT_HUB="ku-leuven-msec/Damn-Vulnerable-Device-Seminar"
 TMP_PATH="/tmp/dvd"
 mkdir -p $TMP_PATH
 REL=$(get_latest_release $GIT_HUB)
 TOOL_PATH="$TMP_PATH/Damn-Vulnerable-Device-Seminar-$REL"
-SERVICE_PATH="/opt/dvd/"
+SERVICE_BASE_PATH="/opt/dvd"
+SERVICE_PATH="$SERVICE_BASE_PATH/services"
 
 # ADDING USERS
 add_users() {
@@ -60,34 +74,40 @@ setup_polling() {
 }
 
 setup_python() {
+  python3 -m pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org --upgrade pip
   pip config set global.trusted-host "pypi.org pypi.python.org files.pythonhosted.org"
-  python3 -m pip install --upgrade pip
   pip install daemonize
 }
 
 
 monitor_service() {
-  service=$1
-  usr=$2
-  echo '*/5 * * * * $usr $SERVICE_PATH/check_daemon.sh $service' >> /etc/crontab
+  echo "*/5 * * * * $2 $SERVICE_PATH/check_daemon.sh $1" >> /etc/crontab
 }
 
 install_service() {
-  if [ -f "$SERVICE_PATH/$1/server.py" ]; then
-    if [ -f "$SERVICE_PATH/$1/requirements.txt" ]; then
-      pip install -r "$SERVICE_PATH/$1/requirements.txt"
+  if [ -f "$1/server.py" ]; then
+    service=`basename $1`
+    echo "Installing $service service"
+    if [ -f "$SERVICE_PATH/$service/requirements.txt" ]; then
+      pip install -r "$SERVICE_PATH/$service/requirements.txt"
     fi
-    monitor_service $1
+    if [[ $1 == *"coap"* ]]; then
+      usr="client"
+    else
+      usr="root"
+    fi
+    monitor_service $1 $usr
   fi
 }
 
 install_services() {
-  mv "$TOOL_PATH/services" "$SERVICE_PATH"
+  mkdir -p "$SERVICE_PATH"
+  
+  cp -r $TOOL_PATH/services/* $SERVICE_PATH/
   chmod 751 "$SERVICE_PATH/check_daemon.sh"
   
-  for d in "$SERVICE_PATH"*
+  for d in "$SERVICE_PATH/"*
   do
-      echo "Install $d service"
       install_service "$d"
   done
 }
@@ -102,7 +122,7 @@ load_installation_files() {
 
 }
 cleanup_installation_files(){
-  rm $TMP_PATH
+  rm -r $TMP_PATH
 }
 
 setup_ssh() {
@@ -136,34 +156,41 @@ setup_certificates() {
 }
 
 full_device_setup(){
-  # SET Date Time for correct certificate validation
-  rdate -s time.nist.gov
+  log "SET Date Time for correct certificate validation"
+  set_date
   
-  # SET Root password
+  log "SET Root password"
   echo 'root:$6$WQBiS3eMvOMsmsDy$nebw3AB8weP3mqP/1qqcJsN/Xh.CW5S2hsSHMVSxdH5sqEMdJZzzDfmcoBeZeNNh43JqXSquoRES3D4bgxKBy.' |chpasswd -e
 
-  # SET Hostname:
+  log "SET Hostname:"
   echo "PROMPT: Please enter the hostname of the device"
   read HOSTNAME
 
-  #SETUP Hostname
+  log "SETUP Hostname"
   echo "$HOSTNAME" > /etc/hostname
   echo "127.0.0.1 $HOSTNAME" >> /etc/hosts
   echo 
   hostname $HOSTNAME
   /etc/init.d/hostname.sh restart
 
+  log "Add users"
   add_users
-
+  log "Setup Polling"
   setup_polling
+  log "Setup Python"
   setup_python
+  log "Setup SSH"
   setup_ssh
   
+  log "Load Installation Files"
   load_installation_files
+  log "Setup Certificates"
   setup_certificates
+  log "Install Services"
   install_services
-
+  log "Cleanup"
   cleanup_installation_files
+  log "Installation READY"
 }
 
 full_device_setup
