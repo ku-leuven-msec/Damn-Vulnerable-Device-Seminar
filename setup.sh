@@ -1,8 +1,13 @@
 #!/bin/sh
+DEBUG_SETUP=1
 
 log(){
   printf "$BBlue$1$NC\n"
 }
+dlog(){
+  printf "$RED$1$NC\n"
+}
+
 set_date() {
   M=`wget -O - -o  /dev/null http://worldtimeapi.org/api/timezone/Europe/Brussels | sed -E "s|,|\n|g" | grep 'utc_datetime'| cut -d ':' -f2-`
   D=`echo $M | cut -d "T" -f1`
@@ -41,35 +46,35 @@ SERVICE_PATH="$SERVICE_BASE_PATH/services"
 
 # ADDING USERS
 add_users() {
-  # Adding least privileged user: www-data
+  dlog "- Adding least privileged user: client"
   useradd -p '$6$vOsShJfzJ$nspR/.gahnFFRBL9hrTkWCwr8fCjhkIaEyABvCCpCVL6p1G3dZVEhvmbcOg2Bh1OG.a9ZmKkzwo2V5ZDOin73/' client
   mkdir /home/client
 
-  # Adding bit more privileged user: manager
+  dlog "- Adding bit more privileged user: manager"
   useradd -p '$6$dY5hO/6B48/9D.66$QHHDlmdkw.CHtzQg.W/e7s8SnGJaJgwVYwKzLu1vB6ZTeKBb2BXj1xc7wJJUl7nFgUXy6AHf/6z63yOPuXBT7/' manager
   mkdir /home/manager
 
-  # Adding group
+  dlog "- Adding group"
   groupadd managerGroup
 
-  # adding manager to that group 
+  dlog "- Adding manager to that group" 
   usermod -a -G managerGroup manager 
 
-  # Adding sudo rights
+  dlog "- Adding sudo rights"
   echo 'client ALL=(root) NOPASSWD: /usr/bin/less /home/manager/*' >> /etc/sudoers
 
 }
 
 setup_polling() {
-  # Creating file and adding content
+  dlog "- Creating polling file and adding content"
   touch /home/manager/checkNetwork.sh
   echo 'ping -c 1 google.com' > /home/manager/checkNetwork.sh
 
-  #adding the rights for that file
+  dlog "- adding the rights for that file"
   chown :managerGroup /home/manager/checkNetwork.sh
   chmod 771 /home/manager/checkNetwork.sh
 
-  #adding the file to the cronjob
+  dlog "- Adding the file to the cronjob"
   echo '* * * * * root /home/manager/checkNetwork.sh' >> /etc/crontab
 }
 
@@ -80,20 +85,16 @@ setup_python() {
 
 
 monitor_service() {
-  echo "*/5 * * * * $2 $SERVICE_PATH/$1/check_daemon.sh" >> /etc/crontab
+  chmod +x "$SERVICE_PATH/$1/check_daemon.sh"
+  echo "*/1 * * * * $SERVICE_PATH/$1/check_daemon.sh" >> /etc/crontab
 }
 
 install_service() {
   if [ -f "$1/server.py" ]; then
     service=`basename $1`
-    echo "Installing $service service"
+    log "Installing $service service"
     if [ -f "$SERVICE_PATH/$service/requirements.txt" ]; then
       pip install -r "$SERVICE_PATH/$service/requirements.txt"
-    fi
-    if [[ $1 == *"coap"* ]]; then
-      usr="client"
-    else
-      usr="root"
     fi
     monitor_service $service $usr
   fi
@@ -126,7 +127,7 @@ cleanup_installation_files(){
 
 setup_ssh() {
   # Creating the ssh keys
-  mkdir /home/client/.ssh
+  mkdir -r /home/client/.ssh
   chown client /home/client/.ssh
   chmod 700 /home/client/.ssh
 
@@ -139,15 +140,15 @@ setup_ssh() {
 }
 
 setup_certificates() {
-  #copy root.cer to path in TrustedUserCAKeys found in sshd_config
-  mkdir /etc/credentials
+  dlog "- copy root.cer to path in TrustedUserCAKeys found in sshd_config"
+  mkdir -r /etc/credentials
   mv $TOOL_PATH/credentials/root.cer /etc/credentials
   mv $TOOL_PATH/credentials/clients.pem /etc/credentials
 
-  # Adding TrustedUserCAKeys to sshd_config
+  dlog "- Adding TrustedUserCAKeys to sshd_config"
   echo "TrustedUserCAKeys /etc/credentials/root.cer" >> /etc/ssh/sshd_config
  
-  #Create Server Certificates
+  dlog "- Create Server Certificates"
   chmod +x "$TOOL_PATH/certificate_generation/setup_server.sh"
   cd /etc/credentials
   $TOOL_PATH/certificate_generation/setup_server.sh "$current_ip" "$(hostname)"
