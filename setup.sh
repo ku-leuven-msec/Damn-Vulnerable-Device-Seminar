@@ -18,10 +18,11 @@ get_current_ip() {
 current_ip=$(get_current_ip)
 
 #config
+GIT_HUB="ku-leuven-msec/Damn-Vulnerable-Device-Seminar"
 TMP_PATH="/tmp/dvd"
 mkdir -p $TMP_PATH
-REL=$(get_latest_release "victorGoeman/velcroTools")
-TOOL_PATH="$TMP_PATH/velcroTools-$REL"
+REL=$(get_latest_release $GIT_HUB)
+TOOL_PATH="$TMP_PATH/Damn-Vulnerable-Device-Seminar-$REL"
 SERVICE_PATH="/opt/dvd/"
 
 # ADDING USERS
@@ -96,7 +97,7 @@ load_installation_files() {
   mkdir "$TMP_PATH"
   cd "$TMP_PATH"
   
-  wget "https://github.com/victorGoeman/velcroTools/archive/refs/tags/v$REL.zip"
+  wget "https://github.com/$GIT_HUB/archive/refs/tags/v$REL.zip"
   unzip "v$REL".zip
 
 }
