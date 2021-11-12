@@ -48,7 +48,7 @@ public class Utils {
         kmf.init(keyStore, "".toCharArray());
         KeyManager[] keyManagers = kmf.getKeyManagers();
         SSLContext sslContext = SSLContext.getInstance("TLS");
-        sslContext.init(keyManagers, null, null);
+        sslContext.init(keyManagers, trustManagers, null);
 
         URL url = new URL("https://" + ip + ":" + port);
         HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
