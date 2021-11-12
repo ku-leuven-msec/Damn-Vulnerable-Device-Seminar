@@ -4,6 +4,10 @@ import sqlite3
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from forms import LoginForm
 import ssl
+import os
+path = os.path.realpath(__file__)
+path = os.path.dirname(path)
+os.chdir(path)
 
 app = Flask(__name__)
 

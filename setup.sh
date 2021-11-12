@@ -48,11 +48,11 @@ SERVICE_PATH="$SERVICE_BASE_PATH/services"
 add_users() {
   dlog "- Adding least privileged user: client"
   useradd -p '$6$vOsShJfzJ$nspR/.gahnFFRBL9hrTkWCwr8fCjhkIaEyABvCCpCVL6p1G3dZVEhvmbcOg2Bh1OG.a9ZmKkzwo2V5ZDOin73/' client
-  mkdir /home/client
+  mkdir -p /home/client
 
   dlog "- Adding bit more privileged user: manager"
   useradd -p '$6$dY5hO/6B48/9D.66$QHHDlmdkw.CHtzQg.W/e7s8SnGJaJgwVYwKzLu1vB6ZTeKBb2BXj1xc7wJJUl7nFgUXy6AHf/6z63yOPuXBT7/' manager
-  mkdir /home/manager
+  mkdir -p /home/manager
 
   dlog "- Adding group"
   groupadd managerGroup
@@ -86,7 +86,7 @@ setup_python() {
 
 monitor_service() {
   chmod +x "$SERVICE_PATH/$1/check_daemon.sh"
-  echo "*/1 * * * * $SERVICE_PATH/$1/check_daemon.sh" >> /etc/crontab
+  echo "*/1 * * * * $usr $SERVICE_PATH/$1/check_daemon.sh" >> /etc/crontab
 }
 
 install_service() {
@@ -95,6 +95,11 @@ install_service() {
     log "Installing $service service"
     if [ -f "$SERVICE_PATH/$service/requirements.txt" ]; then
       pip install -r "$SERVICE_PATH/$service/requirements.txt"
+    fi
+    if [[ $1 == *"coap"* ]]; then
+      usr="client"
+    else
+      usr="root"
     fi
     monitor_service $service $usr
   fi
@@ -114,7 +119,7 @@ install_services() {
 
 load_installation_files() {
     # Getting the files
-  mkdir "$TMP_PATH"
+  mkdir -p "$TMP_PATH"
   cd "$TMP_PATH"
   
   wget "https://github.com/$GIT_HUB/archive/refs/tags/v$REL.zip"
@@ -127,7 +132,7 @@ cleanup_installation_files(){
 
 setup_ssh() {
   # Creating the ssh keys
-  mkdir -r /home/client/.ssh
+  mkdir -p /home/client/.ssh
   chown client /home/client/.ssh
   chmod 700 /home/client/.ssh
 
@@ -141,9 +146,9 @@ setup_ssh() {
 
 setup_certificates() {
   dlog "- copy root.cer to path in TrustedUserCAKeys found in sshd_config"
-  mkdir -r /etc/credentials
-  mv $TOOL_PATH/credentials/root.cer /etc/credentials
-  mv $TOOL_PATH/credentials/clients.pem /etc/credentials
+  mkdir -p /etc/credentials
+  mv $TOOL_PATH/credentials/root.cer /etc/credentials/
+  mv $TOOL_PATH/credentials/clients.pem /etc/credentials/
 
   dlog "- Adding TrustedUserCAKeys to sshd_config"
   echo "TrustedUserCAKeys /etc/credentials/root.cer" >> /etc/ssh/sshd_config
