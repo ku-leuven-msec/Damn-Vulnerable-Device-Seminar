@@ -29,9 +29,6 @@ public class Utils {
 
         CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
 
-
-//        InputStream trustedCertificateAsInputStream = Files.newInputStream(Paths.get("badssl-server-certificate.pem"), StandardOpenOption.READ);
-
         InputStream trustedCertificateAsInputStream = app.getResources().openRawResource(R.raw.root);
         Certificate trustedCertificate = certificateFactory.generateCertificate(trustedCertificateAsInputStream);
         KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
@@ -54,10 +51,11 @@ public class Utils {
         sslContext.init(keyManagers, null, null);
 
         URL url = new URL("https://" + ip + ":" + port);
-        HttpsURLConnection urlConnection = (HttpsURLConnection)url.openConnection();
+        HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
         if(urlConnection != null) {
             urlConnection.setSSLSocketFactory(sslContext.getSocketFactory());
             urlConnection.setRequestProperty("Host", host);
+            urlConnection.setConnectTimeout(10000);
         }
 
         return urlConnection;

@@ -37,7 +37,7 @@ import be.distrinet.dvd.connection.Utils;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private final boolean DRAFT = true;
+    private final boolean DRAFT = false;
     private final String DRAFT_IP = "192.168.0.105";
     private final boolean MDNS = false;
 
@@ -83,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
             if (spinner.getSelectedItem() != null && !spinner.getSelectedItem().toString().equals(getString(R.string.select))) {
                 loginButton.setVisibility(View.INVISIBLE);
                 loadingProgressBar.setVisibility(View.VISIBLE);
+                spinner.setEnabled(false);
 
                 Thread sendHttpRequestThread = new Thread() {
                     @Override
@@ -192,6 +193,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         loginButton.setVisibility(View.VISIBLE);
+        spinner.setEnabled(true);
         loadingProgressBar.setVisibility(View.INVISIBLE);
 
     }
@@ -217,6 +219,7 @@ public class LoginActivity extends AppCompatActivity {
         runOnUiThread(() -> {
             e.printStackTrace();
             loadingProgressBar.setVisibility(View.INVISIBLE);
+            spinner.setEnabled(true);
             loginButton.setVisibility(View.VISIBLE);
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         });
