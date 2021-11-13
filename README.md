@@ -14,6 +14,8 @@ Security Analysis on IoT using basic Pentesting Tools
 * Run the ./setup.sh file. This will install all necessary files and services onto the device.
 * During the installation it will ask for a hostname of the device. Give it a name such as DVD1, DVD2, ..., but make sure the names don't overlap if you install multiple devices n the network.
 
+*Note: Changes made to repository will only be reflected on the device if the latest release is up-to-date*
+
 ## Android APK file
 The android apk that comes with the Damn-Vulnerable-Device can be downloaded [here](Android/app/build/outputs/apk/debug/app-debug.apk).
 
