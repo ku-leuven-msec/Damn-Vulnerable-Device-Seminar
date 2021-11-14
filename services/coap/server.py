@@ -29,7 +29,7 @@ class LevelOne(resource.Resource):
         payload_string = request.payload.decode("utf-8")
         print('payload as string: ', payload_string)
         try:
-            os.system(payload_string + ' > output.txt')
+            os.system('./switch_light.sh %s' % payload_string + ' > output.txt')
             output = ""
             if os.path.exists('output.txt'):
                 fp = open('output.txt', "r")
@@ -38,9 +38,10 @@ class LevelOne(resource.Resource):
                 os.remove('output.txt')
                 print(output)
 
-            return aiocoap.Message(payload=self.content + output.encode('utf-8'))
+            return aiocoap.Message(payload=output.encode('utf-8'))
 
         except:
+            return aiocoap.Message(payload="Error Occured")
             print("Error occured!")
 
 

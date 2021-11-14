@@ -1,0 +1,1 @@
+echo "Sucessfully switched light to state $1"

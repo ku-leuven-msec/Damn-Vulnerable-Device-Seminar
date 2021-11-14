@@ -109,12 +109,12 @@ install_services() {
   mkdir -p "$SERVICE_PATH"
   
   cp -r $TOOL_PATH/services/* $SERVICE_PATH/
-  chmod 751 "$SERVICE_PATH/check_daemon.sh"
-  
+    
   for d in "$SERVICE_PATH/"*
   do
       install_service "$d"
   done
+  chmod +x $SERVICE_PATH/coap/switch_light.sh
 }
 
 load_installation_files() {
