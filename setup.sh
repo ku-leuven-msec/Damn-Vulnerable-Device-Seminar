@@ -62,7 +62,8 @@ add_users() {
 
   dlog "- Adding sudo rights"
   echo 'client ALL=(root) NOPASSWD: /usr/bin/less /home/manager/*' >> /etc/sudoers
-
+  echo "Nice Work" > /home/manager/log.txt
+  chmod 770 /home/manager/log.txt
 }
 
 setup_polling() {
