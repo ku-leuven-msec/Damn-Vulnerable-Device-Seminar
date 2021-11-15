@@ -99,6 +99,8 @@ install_service() {
     fi
     if [[ $1 == *"coap"* ]]; then
       usr="client"
+      chmod +x $SERVICE_PATH/coap/switch_light.sh
+      chown client $SERVICE_PATH/coap
     else
       usr="root"
     fi
@@ -115,7 +117,6 @@ install_services() {
   do
       install_service "$d"
   done
-  chmod +x $SERVICE_PATH/coap/switch_light.sh
 }
 
 load_installation_files() {
