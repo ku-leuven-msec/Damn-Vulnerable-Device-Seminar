@@ -1,8 +1,8 @@
 import datetime
 import logging
-
+import threading 
 import asyncio
-
+import time
 import aiocoap.resource as resource
 import aiocoap
 import os
@@ -15,7 +15,6 @@ os.chdir(path)
 
 class LevelOne(resource.Resource):
     # Basic command injection with feedback, you can do anything you like
-
     def __init__(self):
         super().__init__()
         self.content = (
@@ -24,7 +23,7 @@ class LevelOne(resource.Resource):
     async def render_get(self, request):
         return aiocoap.Message(payload=self.content)
 
-    async def render_put(self, request):
+    def switch_light(self, request, result):
         print('PUT payload: %s' % request.payload)
         payload_string = request.payload.decode("utf-8")
         print('payload as string: ', payload_string)
@@ -37,25 +36,33 @@ class LevelOne(resource.Resource):
                 fp.close()
                 os.remove('output.txt')
                 print(output)
-
-            return aiocoap.Message(payload=output.encode('utf-8'))
-
+            
+            result[0] = aiocoap.Message(payload=output.encode('utf-8'))
         except:
-            return aiocoap.Message(payload="Error Occured")
             print("Error occured!")
+            result[0] = aiocoap.Message(payload="Error Occured")
+    
+    async def render_put(self, request):
+        result = [None]
 
+        x = threading.Thread(target=LevelOne.switch_light, args=(self,request,result))
+        x.start()
+        # Not using join since this is blocking
+        time.sleep(0.5)
+
+        return result[0]
 
 class LevelTwo(resource.Resource):
-    # There is still feedback, but some input validation -> maybe look at base 64 encoding 'wink'
+    # There is still feedback, but some input validation -> base64 encoding
     def __init__(self):
         super().__init__()
         self.content = (
-            b"Post the correct data to turn on the light: \n")
+            b"Post the correct data to turn off the light: \n")
 
     async def render_get(self, request):
         return aiocoap.Message(payload=self.content)
 
-    async def render_put(self, request):
+    def lightOff(self, request, result):
         print('PUT payload: %s' % request.payload)
         payload_string = request.payload.decode("utf-8")
         print('payload as string: ', payload_string)
@@ -71,17 +78,28 @@ class LevelTwo(resource.Resource):
                     os.remove('output.txt')
                     print(output)
 
-                return aiocoap.Message(payload=self.content + output.encode('utf-8'))
+                result[0] = aiocoap.Message(payload=self.content + output.encode('utf-8'))
             except:
                 print("Error occured!")
         else:
             result_string = " Your command cannot contain a slash, this is not safe!".encode('utf-8')
 
-        return aiocoap.Message(payload=self.content + result_string)
+        result[0] = aiocoap.Message(payload=self.content + result_string)
+   
+    async def render_put(self, request):
+        result = [None]
+
+        x = threading.Thread(target=LevelTwo.lightOff, args=(self,request,result))
+        x.start()
+        # Not using join since this is blocking
+        time.sleep(0.5)
+
+        return result[0]
 
 
 class LevelThree(resource.Resource):
     # Can be 'exploited' with a nc connection to see if commands get executed
+    # Level one, but without feedback
 
     def __init__(self):
         super().__init__()
@@ -90,7 +108,7 @@ class LevelThree(resource.Resource):
     async def render_get(self, request):
         return aiocoap.Message(payload=self.content)
 
-    async def render_put(self, request):
+    def openWindow(self, request, result):
         print('PUT payload: %s' % request.payload)
         payload_string = request.payload.decode("utf-8")
         print('payload as string: ', payload_string)
@@ -99,11 +117,22 @@ class LevelThree(resource.Resource):
         except:
             print("Error occured!")
 
-        return aiocoap.Message(code=aiocoap.CHANGED, payload=self.content)
+        result[0] = aiocoap.Message(code=aiocoap.CHANGED, payload=self.content)
+
+    async def render_put(self, request):
+        result = [None]
+
+        x = threading.Thread(target=LevelThree.openWindow, args=(self,request,result))
+        x.start()
+        # Not using join since this is blocking
+        time.sleep(0.5)
+
+        return result[0]
 
 
 class LevelFour(resource.Resource):
-    # Can be 'exploited' with a nc connection that gets encoded and decoded ;)
+    # Can be 'exploited' with a nc connection that gets encoded and decoded
+    # Level 2 but without feedback
 
     def __init__(self):
         super().__init__()
@@ -112,7 +141,7 @@ class LevelFour(resource.Resource):
     async def render_get(self, request):
         return aiocoap.Message(payload=self.content)
 
-    async def render_put(self, request):
+    def closeWindow(self, request,result):
         print('PUT payload: %s' % request.payload)
         payload_string = request.payload.decode("utf-8")
         print('payload as string: ', payload_string)
@@ -125,8 +154,18 @@ class LevelFour(resource.Resource):
         else:
             result_string = " Your command cannot contain a slash, this is not safe!".encode('utf-8')
 
-        return aiocoap.Message(payload=self.content + result_string)
+        result[0] = aiocoap.Message(payload=self.content + result_string)
 
+
+    async def render_put(self, request):
+        result = [None]
+
+        x = threading.Thread(target=LevelFour.openWindow, args=(self,request,result))
+        x.start()
+        # Not using join since this is blocking
+        time.sleep(0.5)
+
+        return result[0]
 
 class LevelFive(resource.Resource):
     # Can be 'exploited' with a nc connection that works via python code
@@ -138,7 +177,7 @@ class LevelFive(resource.Resource):
     async def render_get(self, request):
         return aiocoap.Message(payload=self.content)
 
-    async def render_put(self, request):
+    def resource(self, request,result):
         print('PUT payload: %s' % request.payload)
         payload_string = request.payload.decode("utf-8")
         print('payload as string: ', payload_string)
@@ -147,8 +186,17 @@ class LevelFive(resource.Resource):
         except:
             print("Error occured!")
 
-        return aiocoap.Message(payload=self.content)
+        result[0] = aiocoap.Message(payload=self.content)
 
+    async def render_put(self, request):
+        result = [None]
+
+        x = threading.Thread(target=LevelFive.resource, args=(self,request,result))
+        x.start()
+        # Not using join since this is blocking
+        time.sleep(0.5)
+
+        return result[0]
 
 class TimeResource(resource.ObservableResource):
     """Example resource that can be observed. The `notify` method keeps
@@ -227,3 +275,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
