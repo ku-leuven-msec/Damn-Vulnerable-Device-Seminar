@@ -24,8 +24,8 @@ echo "IP.2 = $IP" >> "./tmp/$NAME.cnf"
 echo "** Setup certificates for server $NAME**"
 echo ""
 
-echo $RANDOM > ./tmp/serial.srl
-
+echo "$RANDOM" > ./tmp/serial.srl
+cat ./tmp/serial.srl
 echo "Create server key pair & certificate request:"
 openssl req -nodes -new -keyout $NAME.key -out ./tmp/$NAME.csr -config ./tmp/$NAME.cnf
 echo ""
