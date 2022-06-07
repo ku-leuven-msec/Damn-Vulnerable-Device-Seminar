@@ -3,7 +3,7 @@ mkdir cert
 mkdir tmp
 
 echo "Create selfisgned CA Certificate"
-openssl req -x509 -new -keyout ./cert/root.key -out ./cert/root.cer -config root.cnf
+openssl req -x509 -new -keyout ./cert/root.key -out ./cert/root.cer -days 3650 -config root.cnf 
 
 #echo "Create server key pair & certificate request:"
 #openssl req -nodes -new -keyout ./cert/server.key -out ./tmp/server.csr -config server.cnf
@@ -15,7 +15,7 @@ echo "Create client key pair & certificate request:"
 openssl req -nodes -new -keyout ./cert/client.key -out ./tmp/client.csr -config client.cnf
 
 echo "Generate client certificate"
-openssl x509 -req -in ./tmp/client.csr -CA ./cert/root.cer -CAkey ./cert/root.key -out ./cert/client.cer -CAcreateserial -days 365 -extfile client.cnf -extensions x509_ext
+openssl x509 -req -in ./tmp/client.csr -CA ./cert/root.cer -CAkey ./cert/root.key -out ./cert/client.cer -CAcreateserial -days 3650 -extfile client.cnf -extensions x509_ext
 
 echo "Create pkcs12 keystore for Android:"
 openssl pkcs12 -export -inkey ./cert/client.key  -in ./cert/client.cer -certfile ./cert/root.cer -out ./cert/client.pfx

@@ -24,11 +24,13 @@ echo "IP.2 = $IP" >> "./tmp/$NAME.cnf"
 echo "** Setup certificates for server $NAME**"
 echo ""
 
+echo $RANDOM > ./tmp/serial.srl
+
 echo "Create server key pair & certificate request:"
 openssl req -nodes -new -keyout $NAME.key -out ./tmp/$NAME.csr -config ./tmp/$NAME.cnf
 echo ""
 echo "Generate server certificate"
-openssl x509 -days 3650 -req -in ./tmp/$NAME.csr -CA "$CFG_PATH/cert/root.cer" -passin pass:test -CAkey "$CFG_PATH/cert/root.key" -CAcreateserial -out $NAME.cer -extfile ./tmp/$NAME.cnf -extensions x509_ext
+openssl x509 -days 3650 -req -in ./tmp/$NAME.csr -CA "$CFG_PATH/cert/root.cer" -passin pass:test -CAkey "$CFG_PATH/cert/root.key" -CAserial ./tmp/serial.srl -out $NAME.cer -extfile ./tmp/$NAME.cnf -extensions x509_ext
 echo ""
 
 rm -r tmp
