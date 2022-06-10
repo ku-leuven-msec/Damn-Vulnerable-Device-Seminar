@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import datetime
 import logging
 import threading 
@@ -83,8 +84,8 @@ class LevelTwo(resource.Resource):
                 print("Error occured!")
         else:
             result_string = " Your command cannot contain a slash, this is not safe!".encode('utf-8')
-
-        result[0] = aiocoap.Message(payload=self.content + result_string)
+            result[0] = aiocoap.Message(payload=self.content + result_string)
+        
    
     async def render_put(self, request):
         result = [None]
@@ -160,7 +161,7 @@ class LevelFour(resource.Resource):
     async def render_put(self, request):
         result = [None]
 
-        x = threading.Thread(target=LevelFour.openWindow, args=(self,request,result))
+        x = threading.Thread(target=LevelFour.closeWindow, args=(self,request,result))
         x.start()
         # Not using join since this is blocking
         time.sleep(0.5)

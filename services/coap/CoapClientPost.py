@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import logging
 import asyncio
 from pickle import PUT
@@ -10,7 +11,7 @@ async def main():
     context = await Context.create_client_context()
     await asyncio.sleep(2)
     ip = input("Enter the ip of the raspberry that you want to POST information to \n")
-    print("1: other/lightOn, 2: other/lightOff, 3: other/openWindow, 4: other/cloweWindow, 5: other/resource")
+    print("1: other/lightOn, 2: other/lightOff, 3: other/openWindow, 4: other/closeWindow, 5: other/resource")
     level = input("Enter a number between 1 and 5 to show which resource you want to post to to \n")
     uri_string = ""
     if level == '1':

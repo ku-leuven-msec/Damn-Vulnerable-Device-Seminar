@@ -21,6 +21,9 @@ The android apk that comes with the Damn-Vulnerable-Device can be downloaded [he
 
 The full Android project is in this repository in the ([Android](Android)) folder.
 
+### TODO
+Fix the apk and make virtualisation possible and introduce an vulnerability between the communication of the phone and the DVD
+
 ## Kali VM
 For a hands-on seminar, it is easier to prepare a kali VM, containing a number of files on the desktop.
 * The Android APK file
