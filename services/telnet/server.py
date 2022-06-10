@@ -42,7 +42,7 @@ class MyTelnetHandler(TelnetHandler):
         '''Called to validate the username/password.'''
         # Note that this method will be ignored if the SSH server is invoked.
         # We accept everyone here, as long as any name is given!
-        if username != "client" and password != "devpass":
+        if username != "client" or password != "devpass":
             # complain by raising any exception
             raise ConnectionError
 
