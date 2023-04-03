@@ -43,6 +43,7 @@ REL=$(get_latest_release $GIT_HUB)
 TOOL_PATH="$TMP_PATH/Damn-Vulnerable-Device-Seminar-$REL"
 SERVICE_BASE_PATH="/opt/dvd"
 SERVICE_PATH="$SERVICE_BASE_PATH/services"
+ALPINE_VERSION=v$(cut -d'.' -f1,2 /etc/alpine-release)
 
 # ADDING USERS
 add_users() {
@@ -164,6 +165,27 @@ setup_certificates() {
 }
 
 full_device_setup(){
+  
+  log "Enabling community packages"
+  echo https://dl-cdn.alpinelinux.org/alpine/$ALPINE_VERSION/main > /etc/apk/repositories
+  echo https://dl-cdn.alpinelinux.org/alpine/$ALPINE_VERSION/community >> /etc/apk/repositories
+  echo https://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories
+  apk update
+
+  log "Installing python and pip"
+  apk add python3
+  apk add py3-pip
+
+  log "Installing sudo, shadow and bash"
+  apk add sudo
+  apk add shadow
+  apk add bash
+
+  log "Preparing some files and folders for the installation of the DVD"
+  touch /etc/login.defs
+  mkdir /etc/default
+  touch /etc/default/useradd
+  
   log "SET Date Time for correct certificate validation"
   set_date
   
