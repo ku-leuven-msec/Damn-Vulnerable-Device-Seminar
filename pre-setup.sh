@@ -1,5 +1,9 @@
 #!/bin/sh
 
+log(){
+  printf "$BBlue$1$NC\n"
+}
+
 ALPINE_VERSION=v$(cut -d'.' -f1,2 /etc/alpine-release)
 
 pre_setup(){
@@ -22,5 +26,11 @@ pre_setup(){
   touch /etc/login.defs
   mkdir /etc/default
   touch /etc/default/useradd
+  
+  log "Getting the setup script from github"
+  wget https://raw.githubusercontent.com/ku-leuven-msec/Damn-Vulnerable-Device-Seminar/main/setup.sh
+  chmod +x setup.sh
+  rm pre-setup.sh
+  
 }
 pre_setup
