@@ -1,0 +1,29 @@
+# OpenSSL configuration for end-entity cert
+
+[ req ]
+
+prompt             = no
+string_mask        = default
+
+# The size of the keys in bits:
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+
+x509_extensions    = x509_ext
+
+[ req_distinguished_name ]
+
+countryName = be
+organizationName = DVD Gateway
+commonName = client
+
+[ x509_ext ]
+
+basicConstraints = CA:FALSE
+nsCertType = client, email
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+keyUsage = critical, nonRepudiation, digitalSignature, keyEncipherment
+extendedKeyUsage = clientAuth, emailProtection
+
+
