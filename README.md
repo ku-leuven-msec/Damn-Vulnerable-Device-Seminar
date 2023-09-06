@@ -1,8 +1,6 @@
 # Damn Vulnerable Device Seminar
-Security Analysis on IoT using basic Pentesting Tools
+https://iotseminar.github.io/DamnVulnerableDevice/
 
-## Requirements
-* VirtualBox
 
 ## Setup
 * Download the OVA images from this Google Drive: https://drive.google.com/file/d/12fEXRy37317nlDIVaK8gEWu16q7QcMpV/view?usp=sharing for the DVD, https://drive.google.com/file/d/1pvWDoLb0uLPm9JkiqNQcRZ2EzjAgBpMs/view?usp=sharing for the Kali machine (optional)
@@ -13,3 +11,5 @@ The Android apk that comes with the Damn-Vulnerable-Device can be downloaded [he
 
 The full Android project is in this repository in the ([Android](build/Android)) folder.
 
+## Requirements
+* VirtualBox
