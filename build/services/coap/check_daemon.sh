@@ -1,7 +1,7 @@
 #!/bin/bash
 service=coap
 P=`dirname $0`
-ps -aux | grep "$service/server.py" | grep -v grep | grep -v "check"
+ps  | grep "$service/server.py" | grep -v grep | grep -v "check"
 if [ $? -eq 0 ]; then
   echo "Already Running" >> "$service.log"
 else
