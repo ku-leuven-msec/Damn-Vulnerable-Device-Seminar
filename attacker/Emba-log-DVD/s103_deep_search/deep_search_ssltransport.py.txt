@@ -1,0 +1,43 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/util/ssltransport.py[0m
+3:import ssl.
+8:SSL_BLOCKSIZE = 16.
+11:class SSLTransport:.
+13:    The SSLTransport wraps.
+13:establishes an SSL connection..
+15:lementation of SSLSocket, it allo.
+23: def _validate_ssl_context_for_tl.
+23:s_in_tls(ssl_context):.
+25:f the provided ssl_context can't .
+28:nt is that the ssl_context provid.
+32:if not hasattr(ssl_context, "wrap.
+35:n TLS requires SSLContext.wrap_bi.
+40:n TLS requires SSLContext.wrap_bi.
+41: on non-native SSLContext".
+45: self, socket, ssl_context, serve.
+48:     Create an SSLTransport aroun.
+48:g the provided ssl_context..
+50:elf.incoming = ssl.MemoryBIO().
+51:elf.outgoing = ssl.MemoryBIO().
+56:        self.sslobj = ssl_conte.
+61:        self._ssl_io_loop(self.s.
+73:urn self._wrap_ssl_read(len, buff.
+78:urn self._wrap_ssl_read(len).
+102:sponse = self._ssl_io_loop(self.s.
+151:        self._ssl_io_loop(self.s.
+157:   return self.sslobj.getpeercert.
+160:   return self.sslobj.version().
+163:   return self.sslobj.cipher().
+166:   return self.sslobj.selected_al.
+169:   return self.sslobj.selected_np.
+172:   return self.sslobj.shared_ciph.
+175:   return self.sslobj.compression.
+186:    def _wrap_ssl_read(self, len.
+188:  return self._ssl_io_loop(self.s.
+189:        except ssl.SSLError as e:.
+190: if e.errno == ssl.SSL_ERROR_EOF .
+195:    def _ssl_io_loop(self, .
+204:        except ssl.SSLError as e:.
+205:.errno not in (ssl.SSL_ERROR_WANT.
+205:_READ, ssl.SSL_ERROR_WANT_WRI.
+215: elif errno == ssl.SSL_ERROR_WANT.
+216:lf.socket.recv(SSL_BLOCKSIZE).

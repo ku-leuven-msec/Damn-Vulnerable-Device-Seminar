@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mhid-multitouch.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m210) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mhid-multitouch.ko[0m
+
+     370:	90000001 	adrp	x1, 0 <mt_resume>
+     374:	8b000280 	add	x0, x20, x0
+     378:	91000021 	add	x1, x1, #0x0
+     37c:	94000000 	bl	0 <_dev_err>
+     380:	17ffffce 	b	2b8 <mt_feature_mapping+0x58>
+     384:	d503201f 	nop
+
+0000000000000388 <mt_show_quirks>:
+     388:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     38c:	910003fd 	mov	x29, sp
+     390:	a90153f3 	stp	x19, x20, [sp, #16]
+     394:	aa0003f4 	mov	x20, x0
+     398:	aa0203f3 	mov	x19, x2
+     39c:	aa1e03e0 	mov	x0, x30
+     3a0:	94000000 	bl	0 <_mcount>
+     3a4:	f9403e82 	ldr	x2, [x20, #120]
+     3a8:	aa1303e0 	mov	x0, x19
+     3ac:	90000001 	adrp	x1, 0 <mt_resume>
+     3b0:	91000021 	add	x1, x1, #0x0
+     3b4:	b9400442 	ldr	w2, [x2, #4]
+[31m     3b8:	94000000 	bl	0 <sprintf>[0m
+     3bc:	93407c00 	sxtw	x0, w0
+     3c0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     af0:	54000b21 	b.ne	c54 <mt_input_configured+0x2ec>  // b.any
+     af4:	90000003 	adrp	x3, 0 <mt_resume>
+     af8:	91000073 	add	x19, x3, #0x0
+     afc:	d2800236 	mov	x22, #0x11                  	// #17
+     b00:	d2838300 	mov	x0, #0x1c18                	// #7192
+     b04:	8b0002b5 	add	x21, x21, x0
+     b08:	aa1503e0 	mov	x0, x21
+     b0c:	94000000 	bl	0 <strlen>
+     b10:	f9400e83 	ldr	x3, [x20, #24]
+     b14:	8b160001 	add	x1, x0, x22
+     b18:	91000821 	add	x1, x1, #0x2
+     b1c:	5281b802 	mov	w2, #0xdc0                 	// #3520
+     b20:	91088060 	add	x0, x3, #0x220
+     b24:	94000000 	bl	0 <devm_kmalloc>
+     b28:	aa0003f6 	mov	x22, x0
+     b2c:	b4000ca0 	cbz	x0, cc0 <mt_input_configured+0x358>
+     b30:	aa1303e3 	mov	x3, x19
+     b34:	aa1503e2 	mov	x2, x21
+     b38:	90000001 	adrp	x1, 0 <mt_resume>
+     b3c:	91000021 	add	x1, x1, #0x0
+[31m     b40:	94000000 	bl	0 <sprintf>[0m
+     b44:	f9400e81 	ldr	x1, [x20, #24]
+     b48:	52800000 	mov	w0, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mhid-multitouch.ko[0m
+

@@ -1,0 +1,52 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-mtpav.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m126) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-mtpav.ko[0m
+
+ 404:	5400042b 	b.lt	488 <snd_mtpav_set_name.isra.0+0xc8>  // b.tstop
+ 408:	6b01005f 	cmp	w2, w1
+ 40c:	54000500 	b.eq	4ac <snd_mtpav_set_name.isra.0+0xec>  // b.none
+ 410:	11000421 	add	w1, w1, #0x1
+ 414:	6b01005f 	cmp	w2, w1
+ 418:	54000260 	b.eq	464 <snd_mtpav_set_name.isra.0+0xa4>  // b.none
+ 41c:	90000001 	adrp	x1, 0 <snd_mtpav_input_open>
+ 420:	91000021 	add	x1, x1, #0x0
+ 424:	f9400022 	ldr	x2, [x1]
+ 428:	f9001e62 	str	x2, [x19, #56]
+ 42c:	f8406021 	ldur	x1, [x1, #6]
+ 430:	f8006001 	stur	x1, [x0, #6]
+ 434:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 438:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 43c:	d65f03c0 	ret
+ 440:	1ad40c43 	sdiv	w3, w2, w20
+ 444:	90000001 	adrp	x1, 0 <snd_mtpav_input_open>
+ 448:	91000021 	add	x1, x1, #0x0
+ 44c:	1b148862 	msub	w2, w3, w20, w2
+ 450:	11000442 	add	w2, w2, #0x1
+[31m 454:	94000000 	bl	0 <sprintf>[0m
+ 458:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 45c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 460:	d65f03c0 	ret
+ 464:	90000001 	adrp	x1, 0 <snd_mtpav_input_open>
+ 468:	91000021 	add	x1, x1, #0x0
+ 46c:	f9400022 	ldr	x2, [x1]
+ 470:	f9001e62 	str	x2, [x19, #56]
+ 474:	39402021 	ldrb	w1, [x1, #8]
+ 478:	39002001 	strb	w1, [x0, #8]
+ 47c:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 480:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 484:	d65f03c0 	ret
+ 488:	1ad40c43 	sdiv	w3, w2, w20
+ 48c:	90000001 	adrp	x1, 0 <snd_mtpav_input_open>
+ 490:	91000021 	add	x1, x1, #0x0
+ 494:	1b148862 	msub	w2, w3, w20, w2
+ 498:	11000442 	add	w2, w2, #0x1
+[31m 49c:	94000000 	bl	0 <sprintf>[0m
+ 4a0:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 4a4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33msnd-mtpav.ko[0m
+

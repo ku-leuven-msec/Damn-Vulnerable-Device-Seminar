@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33msit.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m198) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msit.ko[0m
+
+     dd4:	b9401020 	ldr	w0, [x1, #16]
+     dd8:	11000400 	add	w0, w0, #0x1
+     ddc:	b9001020 	str	w0, [x1, #16]
+     de0:	52800023 	mov	w3, #0x1                   	// #1
+     de4:	d538d082 	mrs	x2, tpidr_el1
+     de8:	f94256c0 	ldr	x0, [x22, #1192]
+     dec:	8b020000 	add	x0, x0, x2
+     df0:	885f7c05 	ldxr	w5, [x0]
+     df4:	0b0300a5 	add	w5, w5, w3
+     df8:	88047c05 	stxr	w4, w5, [x0]
+     dfc:	35ffffa4 	cbnz	w4, df0 <sit_init_net+0x118>
+     e00:	f9400820 	ldr	x0, [x1, #16]
+     e04:	d1000400 	sub	x0, x0, #0x1
+     e08:	b9001020 	str	w0, [x1, #16]
+     e0c:	b5000260 	cbnz	x0, e58 <sit_init_net+0x180>
+     e10:	94000000 	bl	0 <preempt_schedule_notrace>
+     e14:	910602a0 	add	x0, x21, #0x180
+     e18:	c89ffc17 	stlr	x23, [x0]
+     e1c:	f940d661 	ldr	x1, [x19, #424]
+     e20:	91236020 	add	x0, x1, #0x8d8
+[31m     e24:	94000000 	bl	0 <strcpy>[0m
+     e28:	2a1403e0 	mov	w0, w20
+     e2c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    1368:	94000000 	bl	0 <netdev_state_change>
+    136c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1370:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    1374:	f9401bf7 	ldr	x23, [sp, #48]
+    1378:	a8c47bfd 	ldp	x29, x30, [sp], #64
+    137c:	d65f03c0 	ret
+
+0000000000001380 <ipip6_tunnel_init>:
+    1380:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+    1384:	910003fd 	mov	x29, sp
+    1388:	a90153f3 	stp	x19, x20, [sp, #16]
+    138c:	a9025bf5 	stp	x21, x22, [sp, #32]
+    1390:	aa0003f3 	mov	x19, x0
+    1394:	aa1e03e0 	mov	x0, x30
+    1398:	94000000 	bl	0 <_mcount>
+    139c:	aa1303e1 	mov	x1, x19
+    13a0:	91236260 	add	x0, x19, #0x8d8
+    13a4:	f9427663 	ldr	x3, [x19, #1256]
+    13a8:	f9044e73 	str	x19, [x19, #2200]
+    13ac:	f9045263 	str	x3, [x19, #2208]
+[31m    13b0:	94000000 	bl	0 <strcpy>[0m
+    13b4:	aa1303e0 	mov	x0, x19
+    13b8:	97ffff56 	bl	1110 <ipip6_tunnel_bind_dev>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33msit.ko[0m
+

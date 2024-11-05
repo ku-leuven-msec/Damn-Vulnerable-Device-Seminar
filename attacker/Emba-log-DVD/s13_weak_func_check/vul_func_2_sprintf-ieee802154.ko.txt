@@ -1,0 +1,53 @@
+[[0;33m*[0m] Binary protection state of [0;33mieee802154.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m613) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mieee802154.ko[0m
+
+    4c04:	94000000 	bl	43d0 <cfg802154_dev_free>
+    4c08:	f9400bf3 	ldr	x19, [sp, #16]
+    4c0c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    4c10:	d65f03c0 	ret
+    4c14:	d503201f 	nop
+
+0000000000004c18 <name_show>:
+    4c18:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    4c1c:	910003fd 	mov	x29, sp
+    4c20:	a90153f3 	stp	x19, x20, [sp, #16]
+    4c24:	aa0003f3 	mov	x19, x0
+    4c28:	aa0203f4 	mov	x20, x2
+    4c2c:	aa1e03e0 	mov	x0, x30
+    4c30:	94000000 	bl	0 <_mcount>
+    4c34:	f9402a62 	ldr	x2, [x19, #80]
+    4c38:	b5000042 	cbnz	x2, 4c40 <name_show+0x28>
+    4c3c:	f9400262 	ldr	x2, [x19]
+    4c40:	aa1403e0 	mov	x0, x20
+    4c44:	90000001 	adrp	x1, 0 <ieee802154_nl_create>
+    4c48:	91000021 	add	x1, x1, #0x0
+[31m    4c4c:	94000000 	bl	0 <sprintf>[0m
+    4c50:	93407c00 	sxtw	x0, w0
+    4c54:	a94153f3 	ldp	x19, x20, [sp, #16]
+    4c58:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    4c5c:	d65f03c0 	ret
+
+0000000000004c60 <index_show>:
+    4c60:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    4c64:	910003fd 	mov	x29, sp
+    4c68:	a90153f3 	stp	x19, x20, [sp, #16]
+    4c6c:	aa0003f3 	mov	x19, x0
+    4c70:	d1054273 	sub	x19, x19, #0x150
+    4c74:	aa1e03e0 	mov	x0, x30
+    4c78:	aa0203f4 	mov	x20, x2
+    4c7c:	94000000 	bl	0 <_mcount>
+    4c80:	aa1403e0 	mov	x0, x20
+    4c84:	90000001 	adrp	x1, 0 <ieee802154_nl_create>
+    4c88:	b9401a62 	ldr	w2, [x19, #24]
+    4c8c:	91000021 	add	x1, x1, #0x0
+[31m    4c90:	94000000 	bl	0 <sprintf>[0m
+    4c94:	93407c00 	sxtw	x0, w0
+    4c98:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mieee802154.ko[0m
+

@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mscsi_id[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mscsi_id[0m
+
+    3ff4:	54000981 	b.ne	4124 <ferror@plt+0xc34>  // b.any
+    3ff8:	b4000a99 	cbz	x25, 4148 <ferror@plt+0xc58>
+    3ffc:	b4fff734 	cbz	x20, 3ee0 <ferror@plt+0x9f0>
+    4000:	aa1403e0 	mov	x0, x20
+    4004:	97fffb73 	bl	2dd0 <strlen@plt>
+    4008:	aa1403e1 	mov	x1, x20
+    400c:	aa0003e2 	mov	x2, x0
+    4010:	aa1903e0 	mov	x0, x25
+    4014:	97fffbeb 	bl	2fc0 <strncmp@plt>
+    4018:	35fff640 	cbnz	w0, 3ee0 <ferror@plt+0x9f0>
+    401c:	b4000117 	cbz	x23, 403c <ferror@plt+0xb4c>
+    4020:	aa1703e0 	mov	x0, x23
+    4024:	97fffb6b 	bl	2dd0 <strlen@plt>
+    4028:	aa0003e2 	mov	x2, x0
+    402c:	aa1703e1 	mov	x1, x23
+    4030:	f9403fe0 	ldr	x0, [sp, #120]
+    4034:	97fffbe3 	bl	2fc0 <strncmp@plt>
+    4038:	35fff540 	cbnz	w0, 3ee0 <ferror@plt+0x9f0>
+    403c:	f94047e0 	ldr	x0, [sp, #136]
+    4040:	aa1b03e1 	mov	x1, x27
+[31m    4044:	97fffcaf 	bl	3300 <strcpy@plt>[0m
+    4048:	f94047f9 	ldr	x25, [sp, #136]
+    404c:	39400320 	ldrb	w0, [x25]
+--
+    5354:	93407c14 	sxtw	x20, w0
+    5358:	8b0100c6 	add	x6, x6, x1
+    535c:	91001042 	add	x2, x2, #0x4
+    5360:	9135e063 	add	x3, x3, #0xd78
+    5364:	8b20c2c0 	add	x0, x22, w0, sxtw
+    5368:	91034063 	add	x3, x3, #0xd0
+    536c:	d503201f 	nop
+    5370:	38401441 	ldrb	w1, [x2], #1
+    5374:	91000800 	add	x0, x0, #0x2
+    5378:	12000c25 	and	w5, w1, #0xf
+    537c:	eb0200df 	cmp	x6, x2
+    5380:	53047c21 	lsr	w1, w1, #4
+    5384:	3865c865 	ldrb	w5, [x3, w5, sxtw]
+    5388:	3861c861 	ldrb	w1, [x3, w1, sxtw]
+    538c:	381fe001 	sturb	w1, [x0, #-2]
+    5390:	381ff005 	sturb	w5, [x0, #-1]
+    5394:	54fffee1 	b.ne	5370 <ferror@plt+0x1e80>  // b.any
+    5398:	8b1402d5 	add	x21, x22, x20
+    539c:	aa1803e0 	mov	x0, x24
+    53a0:	aa1503e1 	mov	x1, x21
+[31m    53a4:	97fff7d7 	bl	3300 <strcpy@plt>[0m
+    53a8:	71000f9f 	cmp	w28, #0x3
+    53ac:	540013a0 	b.eq	5620 <ferror@plt+0x2130>  // b.none
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mscsi_id[0m
+

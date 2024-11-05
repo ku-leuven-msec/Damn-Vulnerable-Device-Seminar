@@ -1,0 +1,70 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/serving.py[0m
+37:    import ssl.
+40:    class _SslDummy:.
+42: RuntimeError("SSL support unavai.
+44:    ssl = _SslDummy()  # type.
+72:_TSSLContextArg = t..
+73:    t.Union["ssl.SSLContext", t.
+170:if self.server.ssl_context is Non.
+237:      environ["SSL_CLIENT_CERT"] .
+237:= ssl.DER_cert_to_PE.
+239:            # SSL handshake hasn.
+240: "Cannot fetch SSL peer certifica.
+346:if self.server.ssl_context is not.
+346: None and is_ssl_error(e):.
+347:elf.log_error("SSL error occurred.
+460:generate_adhoc_ssl_pair(.
+506:def make_ssl_devcert(.
+509: """Creates an SSL key for develo.
+529:generate_adhoc_ssl_pair(cn=cn).
+542:TraditionalOpenSSL,.
+550:generate_adhoc_ssl_context() -> ".
+550:ssl.SSLContext":.
+551:rates an adhoc SSL context for th.
+555:generate_adhoc_ssl_pair().
+569:TraditionalOpenSSL,.
+576:    ctx = load_ssl_context(cert_f.
+580:def load_ssl_context(.
+582:) -> "ssl.SSLContext":.
+583:    """Loads SSL context from c.
+583:ert/private key files and opti.
+585:    :py:class:`ssl.SSLContext`..
+588:e: Path of the private key to use. If not.
+590:from the :mod:`ssl` module..
+591:ults to :data:`ssl.PROTOCOL_TLS_S.
+594:    protocol = ssl.PROTOCOL_TLS_S.
+596:    ctx = ssl.SSLContext(protoco.
+601:def is_ssl_error(error: t.
+602:ent one) is an SSL error.""".
+605:nstance(error, ssl.SSLError).
+667:        ssl_context: t.Opt.
+667:ional[_TSSLContextArg] = N.
+702:        if ssl_context is not.
+703: if isinstance(ssl_context, tuple.
+704:               ssl_context = load.
+704:_ssl_context(*ssl_context).
+705:            if ssl_context == "ad.
+706:               ssl_context = gene.
+706:rate_adhoc_ssl_context().
+708: self.socket = ssl_context.wrap_s.
+709:          self.ssl_context: t.Opt.
+709:ional["ssl.SSLContext"] = ssl.
+711:          self.ssl_context = None.
+754:        ssl_context: t.Opt.
+754:ional[_TSSLContextArg] = N.
+760:hrough_errors, ssl_context, fd.
+773:    ssl_context: t.Opt.
+773:ional[_TSSLContextArg] = N.
+783:hrough_errors, ssl_context, fd=fd.
+793:            ssl_context,.
+798:hrough_errors, ssl_context, fd=fd.
+827:    ssl_context: t.Opt.
+827:ional[_TSSLContextArg] = N.
+844:   support for SSL was added..
+847:ally loading a SSL context from c.
+848:      file and private key..
+898:    :param ssl_context: an SS.
+899:       :class:`ssl.SSLContext`, a.
+902:    to disable SSL (which is the .
+940:     "http" if ssl_context is Non.
+958:            ssl_context,.

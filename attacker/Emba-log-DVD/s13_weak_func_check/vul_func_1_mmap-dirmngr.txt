@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mdirmngr[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mdirmngr[0m
+
+[31m   1d6d0:	97ffb4dc 	bl	aa40 <mmap@plt>[0m
+   1d6d4:	aa0003e1 	mov	x1, x0
+   1d6d8:	b100041f 	cmn	x0, #0x1
+   1d6dc:	54000200 	b.eq	1d71c <gpgrt_snprintf@plt+0x11aac>  // b.none
+   1d6e0:	f94037e2 	ldr	x2, [sp, #104]
+   1d6e4:	52800000 	mov	w0, #0x0                   	// #0
+   1d6e8:	29000a75 	stp	w21, w2, [x19]
+   1d6ec:	a900fe61 	stp	x1, xzr, [x19, #8]
+   1d6f0:	f947a294 	ldr	x20, [x20, #3904]
+   1d6f4:	f9405fe2 	ldr	x2, [sp, #184]
+   1d6f8:	f9400281 	ldr	x1, [x20]
+   1d6fc:	ca010041 	eor	x1, x2, x1
+   1d700:	b5000121 	cbnz	x1, 1d724 <gpgrt_snprintf@plt+0x11ab4>
+   1d704:	a94153f3 	ldp	x19, x20, [sp, #16]
+   1d708:	f94013f5 	ldr	x21, [sp, #32]
+   1d70c:	a8cc7bfd 	ldp	x29, x30, [sp], #192
+   1d710:	d65f03c0 	ret
+   1d714:	528008e0 	mov	w0, #0x47                  	// #71
+   1d718:	97ffb8de 	bl	ba90 <gpg_err_set_errno@plt>
+   1d71c:	12800000 	mov	w0, #0xffffffff            	// #-1
+   1d720:	17fffff4 	b	1d6f0 <gpgrt_snprintf@plt+0x11a80>
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mdirmngr[0m
+

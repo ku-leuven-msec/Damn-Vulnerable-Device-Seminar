@@ -1,0 +1,367 @@
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 151:[0m
+[0m    if [ -z "${lists[$nout]}" -a -z "${ptns[$nout]}" ]; then[0m
+[33m                              ^-- SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 223:[0m
+[0m> "$SOURCEFILE"[0m
+[33m^-------------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 224:[0m
+[0m> "$LISTFILE"[0m
+[33m^-----------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 225:[0m
+[0m> "$LINKSFILE"[0m
+[33m^------------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 226:[0m
+[0m> "$ELFBINSFILE"[0m
+[33m^--------------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 240:[0m
+[0m  eu-strip --remove-comment $r $g ${keep_remove_args} -f "$1" "$2" || exit[0m
+[32m                                  ^-----------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  eu-strip --remove-comment $r $g "${keep_remove_args}" -f "$1" "$2" || exit
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 249:[0m
+[0m  local dynsyms=`mktemp`[0m
+[33m        ^-----^ SC2155: Declare and assign separately to avoid masking return values.[0m
+[32m                ^------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+  local dynsyms=$(mktemp)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 250:[0m
+[0m  local funcsyms=`mktemp`[0m
+[33m        ^------^ SC2155: Declare and assign separately to avoid masking return values.[0m
+[32m                 ^------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+  local funcsyms=$(mktemp)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 251:[0m
+[0m  local keep_symbols=`mktemp`[0m
+[33m        ^----------^ SC2155: Declare and assign separately to avoid masking return values.[0m
+[32m                     ^------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+  local keep_symbols=$(mktemp)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 252:[0m
+[0m  local mini_debuginfo=`mktemp`[0m
+[33m        ^------------^ SC2155: Declare and assign separately to avoid masking return values.[0m
+[32m                       ^------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+  local mini_debuginfo=$(mktemp)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 260:[0m
+[0m  local remove_sections=`readelf -W -S "$debuginfo" \[0m
+[33m        ^-------------^ SC2155: Declare and assign separately to avoid masking return values.[0m
+[32m                        ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+  local remove_sections=$(readelf -W -S "$debuginfo" \
+	| awk '{ if (index($2,".debug_") != 1 \
+		     && ($3 == "PROGBITS" || $3 == "NOTE" || $3 == "NOBITS") \
+		     && index($8,"A") == 0) \
+		   printf "--remove-section "$2" " }')
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 277:[0m
+[0m  objcopy -S $remove_sections --keep-symbols="$keep_symbols" "$debuginfo" "$mini_debuginfo" &> /dev/null[0m
+[32m             ^--------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  objcopy -S "$remove_sections" --keep-symbols="$keep_symbols" "$debuginfo" "$mini_debuginfo" &> /dev/null
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 329:[0m
+[0mtemp=$(mktemp -d ${TMPDIR:-/tmp}/find-debuginfo.XXXXXX)[0m
+[32m                 ^-------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+temp=$(mktemp -d "${TMPDIR:-/tmp}"/find-debuginfo.XXXXXX)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 339:[0m
+[0mwhile read nlinks inum f; do[0m
+[32m      ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 340:[0m
+[0m  if [ $nlinks -gt 1 ]; then[0m
+[32m       ^-----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  if [ "$nlinks" -gt 1 ]; then
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 346:[0m
+[0m      read "$var" < <(echo 1)[0m
+[32m      ^--^ SC2162: read without -r will mangle backslashes.[0m
+[33m           ^----^ SC2229: This does not read 'var'. Remove $/${} for that, or use ${var?} to quiet.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 364:[0m
+[0m  if [ ! -z "$unique_debug_src_base" ]; then[0m
+[32m       ^-- SC2236: Use -n instead of ! -z.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 372:[0m
+[0m  id=$(${lib_rpm_dir}/debugedit -b "$debug_base_name" -d "$debug_dest_name" \[0m
+[32m       ^------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  id=$("${lib_rpm_dir}"/debugedit -b "$debug_base_name" -d "$debug_dest_name" \
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 410:[0m
+[0m  if [ "$include_minidebug" = "true" -a "$strip_g" = "false" ]; then[0m
+[33m                                     ^-- SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 423:[0m
+[0m  if [ $nlinks -gt 1 ]; then[0m
+[32m       ^-----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  if [ "$nlinks" -gt 1 ]; then
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 424:[0m
+[0m    grep "^$inum " "$temp/linked" | while read inum linked; do[0m
+[32m                                          ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 440:[0m
+[0m  >"$SOURCEFILE"[0m
+[33m  ^------------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 441:[0m
+[0m  >"$ELFBINSFILE"[0m
+[33m  ^-------------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 449:[0m
+[0m    do_file $(sed -n "$(( 0x$filenum )) p" "$temp/primary")[0m
+[33m            ^-- SC2046: Quote this to prevent word splitting.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 455:[0m
+[0mif [ $n_jobs -gt $n_files ]; then[0m
+[32m     ^-----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                 ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+if [ "$n_jobs" -gt "$n_files" ]; then
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 458:[0m
+[0mif [ $n_jobs -le 1 ]; then[0m
+[32m     ^-----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+if [ "$n_jobs" -le 1 ]; then
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 459:[0m
+[0m  while read nlinks inum f; do[0m
+[32m        ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 464:[0m
+[0m    printf "%0${FILENUM_DIGITS}x\\n" $i[0m
+[32m                                     ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+    printf "%0${FILENUM_DIGITS}x\\n" "$i"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 470:[0m
+[0m      run_job $i <&3 &[0m
+[32m              ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+      run_job "$i" <&3 &
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 487:[0m
+[0m  readarray dwz_files < <(cd "${RPM_BUILD_ROOT}/usr/lib/debug"; find -type f -name \*.debug | LC_ALL=C sort)[0m
+[33m                          ^-- SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+[32m                                                                ^--^ SC2185: Some finds don't have a default path. Specify '.' explicitly.[0m
+
+[1mDid you mean: [0m
+  readarray dwz_files < <(cd "${RPM_BUILD_ROOT}/usr/lib/debug" || exit; find -type f -name \*.debug | LC_ALL=C sort)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 493:[0m
+[0m      let ++dwz_multifile_idx[0m
+[32m      ^---------------------^ SC2219: Instead of 'let expr', prefer (( expr )) .[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 506:[0m
+[0m      ( cd "${RPM_BUILD_ROOT}/usr/lib/debug" && dwz $dwz_opts ${dwz_files[@]} )[0m
+[32m                                                    ^-------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[31m                                                              ^-------------^ SC2068: Double quote array expansions to avoid re-splitting elements.[0m
+
+[1mDid you mean: [0m
+      ( cd "${RPM_BUILD_ROOT}/usr/lib/debug" && dwz "$dwz_opts" ${dwz_files[@]} )
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 514:[0m
+[0m      id="`readelf -Wn "${RPM_BUILD_ROOT}/usr/lib/debug/.dwz/${dwz_multifile_name}" \[0m
+[32m          ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+      id="$(readelf -Wn "${RPM_BUILD_ROOT}/usr/lib/debug/.dwz/${dwz_multifile_name}" \
+	     2>/dev/null | sed -n 's/^    Build ID: \([0-9a-f]\+\)/\1/p')"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 519:[0m
+[0m    cat "$ELFBINSFILE" |[0m
+[32m        ^------------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 520:[0m
+[0m    (cd "$RPM_BUILD_ROOT"; \[0m
+[33m     ^------------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+
+[1mDid you mean: [0m
+    (cd "$RPM_BUILD_ROOT" || exit; \
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 521:[0m
+[0m     xargs -d '\n' ${lib_rpm_dir}/sepdebugcrcfix usr/lib/debug)[0m
+[32m                   ^------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+     xargs -d '\n' "${lib_rpm_dir}"/sepdebugcrcfix usr/lib/debug)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 528:[0m
+[0mwhile read f[0m
+[32m      ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 543:[0m
+[0m  if [ ! -z "$unique_debug_src_base" ]; then[0m
+[32m       ^-- SC2236: Use -n instead of ! -z.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 554:[0m
+[0m  (cd "${debug_base_name}"; cpio -pd0mL "${RPM_BUILD_ROOT}${debug_dest_name}")[0m
+[33m   ^---------------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+
+[1mDid you mean: [0m
+  (cd "${debug_base_name}" || exit; cpio -pd0mL "${RPM_BUILD_ROOT}${debug_dest_name}")
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 561:[0m
+[0mif [ -d "${RPM_BUILD_ROOT}/usr/lib" -o -d "${RPM_BUILD_ROOT}/usr/src" ]; then[0m
+[33m                                    ^-- SC2166: Prefer [ p ] || [ q ] as [ p -o q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 564:[0m
+[0m  (cd "${RPM_BUILD_ROOT}/usr/lib"; find debug -type d) |[0m
+[33m   ^----------------------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+
+[1mDid you mean: [0m
+  (cd "${RPM_BUILD_ROOT}/usr/lib" || exit; find debug -type d) |
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 567:[0m
+[0m  (cd "${RPM_BUILD_ROOT}/usr"[0m
+[33m   ^------------------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+
+[1mDid you mean: [0m
+  (cd "${RPM_BUILD_ROOT}/usr" || exit
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 575:[0m
+[0m  > "$srcout"[0m
+[33m  ^---------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 577:[0m
+[0m    (cd "${RPM_BUILD_ROOT}/usr"[0m
+[33m     ^------------------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+
+[1mDid you mean: [0m
+    (cd "${RPM_BUILD_ROOT}/usr" || exit
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 586:[0m
+[0m  grep -F -f "$1" -x -v >> "$1"[0m
+[32m             ^--^ SC2094: Make sure not to read and write the same file in the same pipeline.[0m
+[32m                           ^--^ SC2094: Make sure not to read and write the same file in the same pipeline.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 607:[0m
+[0m  	-x $LISTFILE >> $out[0m
+[32m           ^-------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                        ^--^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  	-x "$LISTFILE" >> "$out"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 630:[0m
+[0m  > ${outs[$i]}[0m
+[33m  ^-----------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+[32m    ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  > "${outs[$i]}"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 631:[0m
+[0m  filtered_list ${outs[$i]} ${lists[$i]}[0m
+[32m                ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                            ^----------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  filtered_list "${outs[$i]}" "${lists[$i]}"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 632:[0m
+[0m  pattern_list ${outs[$i]} "${ptns[$i]}"[0m
+[32m               ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  pattern_list "${outs[$i]}" "${ptns[$i]}"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 633:[0m
+[0m  grep -Fvx -f ${outs[$i]} "$LISTFILE" > "${LISTFILE}.new"[0m
+[32m               ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  grep -Fvx -f "${outs[$i]}" "$LISTFILE" > "${LISTFILE}.new"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh line 639:[0m
+[0m  (cd "${RPM_BUILD_ROOT}"; find usr/lib/debug -type d) |[0m
+[33m   ^--------------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+
+[1mDid you mean: [0m
+  (cd "${RPM_BUILD_ROOT}" || exit; find usr/lib/debug -type d) |
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2068 -- Double quote array expansions to ...
+  https://www.shellcheck.net/wiki/SC2046 -- Quote this to prevent word splitt...
+  https://www.shellcheck.net/wiki/SC2155 -- Declare and assign separately to ...

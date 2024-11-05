@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mcypress_cy7c63.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m74) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mcypress_cy7c63.ko[0m
+
+ 2fc:	d65f03c0 	ret
+
+0000000000000300 <port0_show>:
+ 300:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 304:	910003fd 	mov	x29, sp
+ 308:	a90153f3 	stp	x19, x20, [sp, #16]
+ 30c:	aa0003f4 	mov	x20, x0
+ 310:	aa0203f3 	mov	x19, x2
+ 314:	aa1e03e0 	mov	x0, x30
+ 318:	94000000 	bl	0 <_mcount>
+ 31c:	f9403e94 	ldr	x20, [x20, #120]
+ 320:	52800003 	mov	w3, #0x0                   	// #0
+ 324:	52800002 	mov	w2, #0x0                   	// #0
+ 328:	52800081 	mov	w1, #0x4                   	// #4
+ 32c:	aa1403e0 	mov	x0, x20
+ 330:	97ffff34 	bl	0 <vendor_command>
+ 334:	39402282 	ldrb	w2, [x20, #8]
+ 338:	aa1303e0 	mov	x0, x19
+ 33c:	90000001 	adrp	x1, 0 <vendor_command>
+ 340:	91000021 	add	x1, x1, #0x0
+[31m 344:	94000000 	bl	0 <sprintf>[0m
+ 348:	93407c00 	sxtw	x0, w0
+ 34c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+ 354:	d65f03c0 	ret
+
+0000000000000358 <port1_show>:
+ 358:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 35c:	910003fd 	mov	x29, sp
+ 360:	a90153f3 	stp	x19, x20, [sp, #16]
+ 364:	aa0003f4 	mov	x20, x0
+ 368:	aa0203f3 	mov	x19, x2
+ 36c:	aa1e03e0 	mov	x0, x30
+ 370:	94000000 	bl	0 <_mcount>
+ 374:	f9403e94 	ldr	x20, [x20, #120]
+ 378:	52800003 	mov	w3, #0x0                   	// #0
+ 37c:	52800042 	mov	w2, #0x2                   	// #2
+ 380:	52800081 	mov	w1, #0x4                   	// #4
+ 384:	aa1403e0 	mov	x0, x20
+ 388:	97ffff1e 	bl	0 <vendor_command>
+ 38c:	39402682 	ldrb	w2, [x20, #9]
+ 390:	aa1303e0 	mov	x0, x19
+ 394:	90000001 	adrp	x1, 0 <vendor_command>
+ 398:	91000021 	add	x1, x1, #0x0
+[31m 39c:	94000000 	bl	0 <sprintf>[0m
+ 3a0:	93407c00 	sxtw	x0, w0
+ 3a4:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mcypress_cy7c63.ko[0m
+

@@ -1,0 +1,142 @@
+[[0;33m*[0m] Binary protection state of [0;33mpps_core.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m165) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mpps_core.ko[0m
+
+    1130:	2a0103f3 	mov	w19, w1
+    1134:	17ffffdc 	b	10a4 <pps_event+0x184>
+    1138:	aa1403e0 	mov	x0, x20
+    113c:	17ffffab 	b	fe8 <pps_event+0xc8>
+    1140:	aa1403e0 	mov	x0, x20
+    1144:	17ffffd8 	b	10a4 <pps_event+0x184>
+
+0000000000001148 <path_show>:
+    1148:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    114c:	910003fd 	mov	x29, sp
+    1150:	a90153f3 	stp	x19, x20, [sp, #16]
+    1154:	aa0003f4 	mov	x20, x0
+    1158:	aa0203f3 	mov	x19, x2
+    115c:	aa1e03e0 	mov	x0, x30
+    1160:	94000000 	bl	0 <_mcount>
+    1164:	f9403e82 	ldr	x2, [x20, #120]
+    1168:	aa1303e0 	mov	x0, x19
+    116c:	90000001 	adrp	x1, 0 <pps_cdev_poll>
+    1170:	91000021 	add	x1, x1, #0x0
+    1174:	91008042 	add	x2, x2, #0x20
+[31m    1178:	94000000 	bl	0 <sprintf>[0m
+    117c:	93407c00 	sxtw	x0, w0
+    1180:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1184:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    1188:	d65f03c0 	ret
+    118c:	d503201f 	nop
+
+0000000000001190 <name_show>:
+    1190:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    1194:	910003fd 	mov	x29, sp
+    1198:	a90153f3 	stp	x19, x20, [sp, #16]
+    119c:	aa0003f4 	mov	x20, x0
+    11a0:	aa0203f3 	mov	x19, x2
+    11a4:	aa1e03e0 	mov	x0, x30
+    11a8:	94000000 	bl	0 <_mcount>
+    11ac:	f9403e82 	ldr	x2, [x20, #120]
+    11b0:	aa1303e0 	mov	x0, x19
+    11b4:	90000001 	adrp	x1, 0 <pps_cdev_poll>
+    11b8:	91000021 	add	x1, x1, #0x0
+[31m    11bc:	94000000 	bl	0 <sprintf>[0m
+    11c0:	93407c00 	sxtw	x0, w0
+    11c4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    11c8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    11cc:	d65f03c0 	ret
+
+00000000000011d0 <echo_show>:
+    11d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    11d4:	910003fd 	mov	x29, sp
+    11d8:	a90153f3 	stp	x19, x20, [sp, #16]
+    11dc:	aa0003f4 	mov	x20, x0
+    11e0:	aa0203f3 	mov	x19, x2
+    11e4:	aa1e03e0 	mov	x0, x30
+    11e8:	94000000 	bl	0 <_mcount>
+    11ec:	f9403e82 	ldr	x2, [x20, #120]
+    11f0:	aa1303e0 	mov	x0, x19
+    11f4:	90000001 	adrp	x1, 0 <pps_cdev_poll>
+    11f8:	91000021 	add	x1, x1, #0x0
+    11fc:	f9402442 	ldr	x2, [x2, #72]
+    1200:	f100005f 	cmp	x2, #0x0
+    1204:	1a9f07e2 	cset	w2, ne  // ne = any
+[31m    1208:	94000000 	bl	0 <sprintf>[0m
+    120c:	d2800040 	mov	x0, #0x2                   	// #2
+    1210:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1214:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    1218:	d65f03c0 	ret
+    121c:	d503201f 	nop
+
+0000000000001220 <mode_show>:
+    1220:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    1224:	910003fd 	mov	x29, sp
+    1228:	a90153f3 	stp	x19, x20, [sp, #16]
+    122c:	aa0003f4 	mov	x20, x0
+    1230:	aa0203f3 	mov	x19, x2
+    1234:	aa1e03e0 	mov	x0, x30
+    1238:	94000000 	bl	0 <_mcount>
+    123c:	f9403e82 	ldr	x2, [x20, #120]
+    1240:	aa1303e0 	mov	x0, x19
+    1244:	90000001 	adrp	x1, 0 <pps_cdev_poll>
+    1248:	91000021 	add	x1, x1, #0x0
+    124c:	b9404042 	ldr	w2, [x2, #64]
+[31m    1250:	94000000 	bl	0 <sprintf>[0m
+    1254:	93407c00 	sxtw	x0, w0
+    1258:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    1268:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    126c:	910003fd 	mov	x29, sp
+    1270:	a90153f3 	stp	x19, x20, [sp, #16]
+    1274:	aa0003f3 	mov	x19, x0
+    1278:	aa0203f4 	mov	x20, x2
+    127c:	aa1e03e0 	mov	x0, x30
+    1280:	94000000 	bl	0 <_mcount>
+    1284:	f9403e63 	ldr	x3, [x19, #120]
+    1288:	b9404060 	ldr	w0, [x3, #64]
+    128c:	370800a0 	tbnz	w0, #1, 12a0 <clear_show+0x38>
+    1290:	d2800000 	mov	x0, #0x0                   	// #0
+    1294:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1298:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    129c:	d65f03c0 	ret
+    12a0:	b9408c64 	ldr	w4, [x3, #140]
+    12a4:	aa1403e0 	mov	x0, x20
+    12a8:	f9405062 	ldr	x2, [x3, #160]
+    12ac:	90000001 	adrp	x1, 0 <pps_cdev_poll>
+    12b0:	b940a863 	ldr	w3, [x3, #168]
+    12b4:	91000021 	add	x1, x1, #0x0
+[31m    12b8:	94000000 	bl	0 <sprintf>[0m
+    12bc:	93407c00 	sxtw	x0, w0
+    12c0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    12d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    12d4:	910003fd 	mov	x29, sp
+    12d8:	a90153f3 	stp	x19, x20, [sp, #16]
+    12dc:	aa0003f3 	mov	x19, x0
+    12e0:	aa0203f4 	mov	x20, x2
+    12e4:	aa1e03e0 	mov	x0, x30
+    12e8:	94000000 	bl	0 <_mcount>
+    12ec:	f9403e63 	ldr	x3, [x19, #120]
+    12f0:	b9404060 	ldr	w0, [x3, #64]
+    12f4:	370000a0 	tbnz	w0, #0, 1308 <assert_show+0x38>
+    12f8:	d2800000 	mov	x0, #0x0                   	// #0
+    12fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1300:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    1304:	d65f03c0 	ret
+    1308:	b9408864 	ldr	w4, [x3, #136]
+    130c:	aa1403e0 	mov	x0, x20
+    1310:	f9404862 	ldr	x2, [x3, #144]
+    1314:	90000001 	adrp	x1, 0 <pps_cdev_poll>
+    1318:	b9409863 	ldr	w3, [x3, #152]
+    131c:	91000021 	add	x1, x1, #0x0
+[31m    1320:	94000000 	bl	0 <sprintf>[0m
+    1324:	93407c00 	sxtw	x0, w0
+    1328:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m6[0m times [0;33mpps_core.ko[0m
+

@@ -1,0 +1,299 @@
+[[0;33m*[0m] Binary protection state of [0;33mindustrialio.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m725) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mindustrialio.ko[0m
+
+      a4:	8b010ca1 	add	x1, x5, x1, lsl #3
+      a8:	a9418425 	ldp	x5, x1, [x1, #24]
+      ac:	d63f00a0 	blr	x5
+      b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+      b4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+      b8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+      bc:	d65f03c0 	ret
+
+00000000000000c0 <iio_read_const_attr>:
+      c0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+      c4:	910003fd 	mov	x29, sp
+      c8:	a90153f3 	stp	x19, x20, [sp, #16]
+      cc:	aa0103f4 	mov	x20, x1
+      d0:	aa1e03e0 	mov	x0, x30
+      d4:	aa0203f3 	mov	x19, x2
+      d8:	94000000 	bl	0 <_mcount>
+      dc:	f85f8282 	ldur	x2, [x20, #-8]
+      e0:	aa1303e0 	mov	x0, x19
+      e4:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+      e8:	91000021 	add	x1, x1, #0x0
+[31m      ec:	94000000 	bl	0 <sprintf>[0m
+      f0:	93407c00 	sxtw	x0, w0
+      f4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    3228:	aa0203f5 	mov	x21, x2
+    322c:	aa1e03e0 	mov	x0, x30
+    3230:	94000000 	bl	0 <_mcount>
+    3234:	f9401e81 	ldr	x1, [x20, #56]
+    3238:	d1006260 	sub	x0, x19, #0x18
+    323c:	79404283 	ldrh	w3, [x20, #32]
+    3240:	f941e404 	ldr	x4, [x0, #968]
+    3244:	8b030863 	add	x3, x3, x3, lsl #2
+    3248:	f9403422 	ldr	x2, [x1, #104]
+    324c:	d37df063 	lsl	x3, x3, #3
+    3250:	f9401c84 	ldr	x4, [x4, #56]
+    3254:	8b030045 	add	x5, x2, x3
+    3258:	b8636842 	ldr	w2, [x2, x3]
+    325c:	b94004a3 	ldr	w3, [x5, #4]
+    3260:	d63f0080 	blr	x4
+    3264:	37f800c0 	tbnz	w0, #31, 327c <iio_ev_state_show+0x6c>
+    3268:	2a0003e2 	mov	w2, w0
+    326c:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    3270:	aa1503e0 	mov	x0, x21
+    3274:	91000021 	add	x1, x1, #0x0
+[31m    3278:	94000000 	bl	0 <sprintf>[0m
+    327c:	93407c00 	sxtw	x0, w0
+    3280:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    58a8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    58ac:	f9401bf7 	ldr	x23, [sp, #48]
+    58b0:	a8c47bfd 	ldp	x29, x30, [sp], #64
+    58b4:	d65f03c0 	ret
+    58b8:	aa1503e1 	mov	x1, x21
+    58bc:	17ffffe4 	b	584c <iio_push_to_buffers+0x84>
+
+00000000000058c0 <iio_buffer_show_watermark>:
+    58c0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    58c4:	910003fd 	mov	x29, sp
+    58c8:	a90153f3 	stp	x19, x20, [sp, #16]
+    58cc:	aa0003f4 	mov	x20, x0
+    58d0:	aa0203f3 	mov	x19, x2
+    58d4:	aa1e03e0 	mov	x0, x30
+    58d8:	94000000 	bl	0 <_mcount>
+    58dc:	f9417282 	ldr	x2, [x20, #736]
+    58e0:	aa1303e0 	mov	x0, x19
+    58e4:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    58e8:	91000021 	add	x1, x1, #0x0
+    58ec:	b9404842 	ldr	w2, [x2, #72]
+[31m    58f0:	94000000 	bl	0 <sprintf>[0m
+    58f4:	93407c00 	sxtw	x0, w0
+    58f8:	a94153f3 	ldp	x19, x20, [sp, #16]
+    58fc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5900:	d65f03c0 	ret
+    5904:	d503201f 	nop
+
+0000000000005908 <iio_buffer_read_length>:
+    5908:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    590c:	910003fd 	mov	x29, sp
+    5910:	a90153f3 	stp	x19, x20, [sp, #16]
+    5914:	aa0003f4 	mov	x20, x0
+    5918:	aa0203f3 	mov	x19, x2
+    591c:	aa1e03e0 	mov	x0, x30
+    5920:	94000000 	bl	0 <_mcount>
+    5924:	f9417282 	ldr	x2, [x20, #736]
+    5928:	aa1303e0 	mov	x0, x19
+    592c:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    5930:	91000021 	add	x1, x1, #0x0
+    5934:	b9400042 	ldr	w2, [x2]
+[31m    5938:	94000000 	bl	0 <sprintf>[0m
+    593c:	93407c00 	sxtw	x0, w0
+    5940:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5944:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5948:	d65f03c0 	ret
+    594c:	d503201f 	nop
+
+0000000000005950 <iio_dma_show_data_available>:
+    5950:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    5954:	910003fd 	mov	x29, sp
+    5958:	a90153f3 	stp	x19, x20, [sp, #16]
+    595c:	aa0003f4 	mov	x20, x0
+    5960:	aa0203f3 	mov	x19, x2
+    5964:	aa1e03e0 	mov	x0, x30
+    5968:	94000000 	bl	0 <_mcount>
+    596c:	f9417280 	ldr	x0, [x20, #736]
+    5970:	f9400801 	ldr	x1, [x0, #16]
+    5974:	f9400821 	ldr	x1, [x1, #16]
+    5978:	d63f0020 	blr	x1
+    597c:	aa0003e2 	mov	x2, x0
+    5980:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    5984:	aa1303e0 	mov	x0, x19
+    5988:	91000021 	add	x1, x1, #0x0
+[31m    598c:	94000000 	bl	0 <sprintf>[0m
+    5990:	93407c00 	sxtw	x0, w0
+    5994:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5998:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    599c:	d65f03c0 	ret
+
+00000000000059a0 <iio_buffer_show_enable>:
+    59a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    59a4:	910003fd 	mov	x29, sp
+    59a8:	a90153f3 	stp	x19, x20, [sp, #16]
+    59ac:	aa0003f4 	mov	x20, x0
+    59b0:	aa0203f3 	mov	x19, x2
+    59b4:	aa1e03e0 	mov	x0, x30
+    59b8:	94000000 	bl	0 <_mcount>
+    59bc:	f9417283 	ldr	x3, [x20, #736]
+    59c0:	aa1303e0 	mov	x0, x19
+    59c4:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    59c8:	91000021 	add	x1, x1, #0x0
+    59cc:	f84d8c62 	ldr	x2, [x3, #216]!
+    59d0:	eb02007f 	cmp	x3, x2
+    59d4:	1a9f07e2 	cset	w2, ne  // ne = any
+[31m    59d8:	94000000 	bl	0 <sprintf>[0m
+    59dc:	d2800040 	mov	x0, #0x2                   	// #2
+    59e0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    59e4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    59e8:	d65f03c0 	ret
+    59ec:	d503201f 	nop
+
+00000000000059f0 <iio_scan_el_ts_show>:
+    59f0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    59f4:	910003fd 	mov	x29, sp
+    59f8:	a90153f3 	stp	x19, x20, [sp, #16]
+    59fc:	aa0003f4 	mov	x20, x0
+    5a00:	aa0203f3 	mov	x19, x2
+    5a04:	aa1e03e0 	mov	x0, x30
+    5a08:	94000000 	bl	0 <_mcount>
+    5a0c:	f9417282 	ldr	x2, [x20, #736]
+    5a10:	aa1303e0 	mov	x0, x19
+    5a14:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    5a18:	91000021 	add	x1, x1, #0x0
+    5a1c:	39416042 	ldrb	w2, [x2, #88]
+[31m    5a20:	94000000 	bl	0 <sprintf>[0m
+    5a24:	d2800040 	mov	x0, #0x2                   	// #2
+    5a28:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    5a44:	f90013f5 	str	x21, [sp, #32]
+    5a48:	aa0103f5 	mov	x21, x1
+    5a4c:	aa0203f4 	mov	x20, x2
+    5a50:	aa0003f3 	mov	x19, x0
+    5a54:	aa1e03e0 	mov	x0, x30
+    5a58:	94000000 	bl	0 <_mcount>
+    5a5c:	f94012a4 	ldr	x4, [x21, #32]
+    5a60:	aa1403e0 	mov	x0, x20
+    5a64:	f9417262 	ldr	x2, [x19, #736]
+    5a68:	7100009f 	cmp	w4, #0x0
+    5a6c:	1100fc83 	add	w3, w4, #0x3f
+    5a70:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    5a74:	1a84b063 	csel	w3, w3, w4, lt  // lt = tstop
+    5a78:	91000021 	add	x1, x1, #0x0
+    5a7c:	f9400c42 	ldr	x2, [x2, #24]
+    5a80:	13067c63 	asr	w3, w3, #6
+    5a84:	93407c63 	sxtw	x3, w3
+    5a88:	f8637842 	ldr	x2, [x2, x3, lsl #3]
+    5a8c:	9ac42442 	lsr	x2, x2, x4
+    5a90:	12000042 	and	w2, w2, #0x1
+[31m    5a94:	94000000 	bl	0 <sprintf>[0m
+    5a98:	d2800040 	mov	x0, #0x2                   	// #2
+    5a9c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    5ac4:	aa0203f3 	mov	x19, x2
+    5ac8:	94000000 	bl	0 <_mcount>
+    5acc:	f9401e80 	ldr	x0, [x20, #56]
+    5ad0:	b9402401 	ldr	w1, [x0, #36]
+    5ad4:	72001c3f 	tst	w1, #0xff
+    5ad8:	54000280 	b.eq	5b28 <iio_show_fixed_type+0x78>  // b.none
+    5adc:	92401c21 	and	x1, x1, #0xff
+    5ae0:	90000002 	adrp	x2, 0 <iio_read_channel_ext_info>
+    5ae4:	91000042 	add	x2, x2, #0x0
+    5ae8:	39408006 	ldrb	w6, [x0, #32]
+    5aec:	39407003 	ldrb	w3, [x0, #28]
+    5af0:	39407404 	ldrb	w4, [x0, #29]
+    5af4:	710004df 	cmp	w6, #0x1
+    5af8:	39407805 	ldrb	w5, [x0, #30]
+    5afc:	39407c07 	ldrb	w7, [x0, #31]
+    5b00:	f8617842 	ldr	x2, [x2, x1, lsl #3]
+    5b04:	54000249 	b.ls	5b4c <iio_show_fixed_type+0x9c>  // b.plast
+    5b08:	aa1303e0 	mov	x0, x19
+    5b0c:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    5b10:	91000021 	add	x1, x1, #0x0
+[31m    5b14:	94000000 	bl	0 <sprintf>[0m
+    5b18:	93407c00 	sxtw	x0, w0
+    5b1c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5b20:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5b24:	d65f03c0 	ret
+    5b28:	39408006 	ldrb	w6, [x0, #32]
+    5b2c:	90000002 	adrp	x2, 0 <iio_read_channel_ext_info>
+    5b30:	39407003 	ldrb	w3, [x0, #28]
+    5b34:	91000042 	add	x2, x2, #0x0
+    5b38:	39407404 	ldrb	w4, [x0, #29]
+    5b3c:	710004df 	cmp	w6, #0x1
+    5b40:	39407805 	ldrb	w5, [x0, #30]
+    5b44:	39407c07 	ldrb	w7, [x0, #31]
+    5b48:	54fffe08 	b.hi	5b08 <iio_show_fixed_type+0x58>  // b.pmore
+    5b4c:	2a0703e6 	mov	w6, w7
+    5b50:	aa1303e0 	mov	x0, x19
+    5b54:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    5b58:	91000021 	add	x1, x1, #0x0
+[31m    5b5c:	94000000 	bl	0 <sprintf>[0m
+    5b60:	93407c00 	sxtw	x0, w0
+    5b64:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5b68:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5b6c:	d65f03c0 	ret
+
+0000000000005b70 <iio_show_scan_index>:
+    5b70:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    5b74:	910003fd 	mov	x29, sp
+    5b78:	a90153f3 	stp	x19, x20, [sp, #16]
+    5b7c:	aa0103f4 	mov	x20, x1
+    5b80:	aa1e03e0 	mov	x0, x30
+    5b84:	aa0203f3 	mov	x19, x2
+    5b88:	94000000 	bl	0 <_mcount>
+    5b8c:	f9401e82 	ldr	x2, [x20, #56]
+    5b90:	aa1303e0 	mov	x0, x19
+    5b94:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    5b98:	91000021 	add	x1, x1, #0x0
+    5b9c:	b9401842 	ldr	w2, [x2, #24]
+[31m    5ba0:	94000000 	bl	0 <sprintf>[0m
+    5ba4:	93407c00 	sxtw	x0, w0
+    5ba8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    797c:	d65f03c0 	ret
+    7980:	aa1303e0 	mov	x0, x19
+    7984:	d2800013 	mov	x19, #0x0                   	// #0
+    7988:	94000000 	bl	0 <kfree>
+    798c:	17fffff1 	b	7950 <iio_alloc_pollfunc+0xb8>
+    7990:	94000000 	bl	0 <__stack_chk_fail>
+    7994:	d503201f 	nop
+
+0000000000007998 <iio_trigger_read_name>:
+    7998:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    799c:	910003fd 	mov	x29, sp
+    79a0:	a90153f3 	stp	x19, x20, [sp, #16]
+    79a4:	aa0003f4 	mov	x20, x0
+    79a8:	aa0203f3 	mov	x19, x2
+    79ac:	aa1e03e0 	mov	x0, x30
+    79b0:	94000000 	bl	0 <_mcount>
+    79b4:	f85f8282 	ldur	x2, [x20, #-8]
+    79b8:	aa1303e0 	mov	x0, x19
+    79bc:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    79c0:	91000021 	add	x1, x1, #0x0
+[31m    79c4:	94000000 	bl	0 <sprintf>[0m
+    79c8:	93407c00 	sxtw	x0, w0
+    79cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    79d4:	d65f03c0 	ret
+
+00000000000079d8 <iio_trigger_read_current>:
+    79d8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    79dc:	910003fd 	mov	x29, sp
+    79e0:	a90153f3 	stp	x19, x20, [sp, #16]
+    79e4:	aa0003f3 	mov	x19, x0
+    79e8:	aa0203f4 	mov	x20, x2
+    79ec:	aa1e03e0 	mov	x0, x30
+    79f0:	94000000 	bl	0 <_mcount>
+    79f4:	f941a260 	ldr	x0, [x19, #832]
+    79f8:	b50000a0 	cbnz	x0, 7a0c <iio_trigger_read_current+0x34>
+    79fc:	d2800000 	mov	x0, #0x0                   	// #0
+    7a00:	a94153f3 	ldp	x19, x20, [sp, #16]
+    7a04:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    7a08:	d65f03c0 	ret
+    7a0c:	f9400c02 	ldr	x2, [x0, #24]
+    7a10:	90000001 	adrp	x1, 0 <iio_read_channel_ext_info>
+    7a14:	aa1403e0 	mov	x0, x20
+    7a18:	91000021 	add	x1, x1, #0x0
+[31m    7a1c:	94000000 	bl	0 <sprintf>[0m
+    7a20:	93407c00 	sxtw	x0, w0
+    7a24:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m13[0m times [0;33mindustrialio.ko[0m
+

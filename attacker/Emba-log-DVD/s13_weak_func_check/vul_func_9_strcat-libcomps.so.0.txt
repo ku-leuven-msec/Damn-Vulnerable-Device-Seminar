@@ -1,0 +1,211 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibcomps.so.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibcomps.so.0[0m
+
+   11ac4:	97fff4cb 	bl	edf0 <comps_object_tostr@plt>
+   11ac8:	aa0003f8 	mov	x24, x0
+   11acc:	97fff52d 	bl	ef80 <strlen@plt>
+   11ad0:	0b0002e0 	add	w0, w23, w0
+   11ad4:	0b130000 	add	w0, w0, w19
+   11ad8:	11004800 	add	w0, w0, #0x12
+   11adc:	93407c00 	sxtw	x0, w0
+   11ae0:	91003400 	add	x0, x0, #0xd
+   11ae4:	97fff39b 	bl	e950 <malloc@plt>
+   11ae8:	d0000081 	adrp	x1, 23000 <digits_count@@Base+0x20>
+   11aec:	91372021 	add	x1, x1, #0xdc8
+   11af0:	aa0003f3 	mov	x19, x0
+   11af4:	f9400020 	ldr	x0, [x1]
+   11af8:	f9000260 	str	x0, [x19]
+   11afc:	f8406020 	ldur	x0, [x1, #6]
+   11b00:	f8006260 	stur	x0, [x19, #6]
+   11b04:	d503201f 	nop
+   11b08:	f8408757 	ldr	x23, [x26], #8
+   11b0c:	aa1303e0 	mov	x0, x19
+   11b10:	aa1703e1 	mov	x1, x23
+[31m   11b14:	97fff11f 	bl	df90 <strcat@plt>[0m
+   11b18:	aa1703e0 	mov	x0, x23
+   11b1c:	97fff4a9 	bl	edc0 <free@plt>
+--
+   12cc4:	aa0003f7 	mov	x23, x0
+   12cc8:	97fff0ae 	bl	ef80 <strlen@plt>
+   12ccc:	0b000280 	add	w0, w20, w0
+   12cd0:	0b130000 	add	w0, w0, w19
+   12cd4:	11003800 	add	w0, w0, #0xe
+   12cd8:	93407c00 	sxtw	x0, w0
+   12cdc:	91004000 	add	x0, x0, #0x10
+   12ce0:	97ffef1c 	bl	e950 <malloc@plt>
+   12ce4:	b0000081 	adrp	x1, 23000 <digits_count@@Base+0x20>
+   12ce8:	913de021 	add	x1, x1, #0xf78
+   12cec:	aa0003f3 	mov	x19, x0
+   12cf0:	a9400c22 	ldp	x2, x3, [x1]
+   12cf4:	a9000c02 	stp	x2, x3, [x0]
+   12cf8:	39404020 	ldrb	w0, [x1, #16]
+   12cfc:	39004260 	strb	w0, [x19, #16]
+   12d00:	8b1a0ea1 	add	x1, x21, x26, lsl #3
+   12d04:	aa1303e0 	mov	x0, x19
+   12d08:	9100075a 	add	x26, x26, #0x1
+   12d0c:	f85f8034 	ldur	x20, [x1, #-8]
+   12d10:	aa1403e1 	mov	x1, x20
+[31m   12d14:	97ffec9f 	bl	df90 <strcat@plt>[0m
+   12d18:	aa1403e0 	mov	x0, x20
+   12d1c:	97fff029 	bl	edc0 <free@plt>
+--
+   13b1c:	0b1c0000 	add	w0, w0, w28
+   13b20:	9000009c 	adrp	x28, 23000 <digits_count@@Base+0x20>
+   13b24:	9137639c 	add	x28, x28, #0xdd8
+   13b28:	0b1b0000 	add	w0, w0, w27
+   13b2c:	11004800 	add	w0, w0, #0x12
+   13b30:	93407c00 	sxtw	x0, w0
+   13b34:	91002c00 	add	x0, x0, #0xb
+   13b38:	97ffeb86 	bl	e950 <malloc@plt>
+   13b3c:	b0000081 	adrp	x1, 24000 <expand@@Base+0x410>
+   13b40:	91022021 	add	x1, x1, #0x88
+   13b44:	aa0003f3 	mov	x19, x0
+   13b48:	f9400020 	ldr	x0, [x1]
+   13b4c:	f9000260 	str	x0, [x19]
+   13b50:	b9400820 	ldr	w0, [x1, #8]
+   13b54:	b9000a60 	str	w0, [x19, #8]
+   13b58:	8b1a0e81 	add	x1, x20, x26, lsl #3
+   13b5c:	aa1303e0 	mov	x0, x19
+   13b60:	9100075a 	add	x26, x26, #0x1
+   13b64:	f85f803b 	ldur	x27, [x1, #-8]
+   13b68:	aa1b03e1 	mov	x1, x27
+[31m   13b6c:	97ffe909 	bl	df90 <strcat@plt>[0m
+   13b70:	aa1b03e0 	mov	x0, x27
+   13b74:	97ffec93 	bl	edc0 <free@plt>
+--
+   1a15c:	f839dac0 	str	x0, [x22, w25, sxtw #3]
+   1a160:	97ffd388 	bl	ef80 <strlen@plt>
+   1a164:	0b000360 	add	w0, w27, w0
+   1a168:	93407c00 	sxtw	x0, w0
+   1a16c:	97ffd1f9 	bl	e950 <malloc@plt>
+   1a170:	aa0003f3 	mov	x19, x0
+   1a174:	52800b61 	mov	w1, #0x5b                  	// #91
+   1a178:	79000001 	strh	w1, [x0]
+   1a17c:	f9401300 	ldr	x0, [x24, #32]
+   1a180:	b4000440 	cbz	x0, 1a208 <comps_objlist_tostr_u@@Base+0x158>
+   1a184:	51000400 	sub	w0, w0, #0x1
+   1a188:	7100001f 	cmp	w0, #0x0
+   1a18c:	5400062d 	b.le	1a250 <comps_objlist_tostr_u@@Base+0x1a0>
+   1a190:	b0000059 	adrp	x25, 23000 <digits_count@@Base+0x20>
+   1a194:	91376339 	add	x25, x25, #0xdd8
+   1a198:	d2800014 	mov	x20, #0x0                   	// #0
+   1a19c:	d503201f 	nop
+   1a1a0:	f8747ad5 	ldr	x21, [x22, x20, lsl #3]
+   1a1a4:	aa1303e0 	mov	x0, x19
+   1a1a8:	aa1503e1 	mov	x1, x21
+[31m   1a1ac:	97ffcf79 	bl	df90 <strcat@plt>[0m
+   1a1b0:	aa1303e0 	mov	x0, x19
+   1a1b4:	97ffd373 	bl	ef80 <strlen@plt>
+   1a1b8:	aa0003e2 	mov	x2, x0
+   1a1bc:	8b000261 	add	x1, x19, x0
+   1a1c0:	79400324 	ldrh	w4, [x25]
+   1a1c4:	39400b23 	ldrb	w3, [x25, #2]
+   1a1c8:	aa1503e0 	mov	x0, x21
+   1a1cc:	78226a64 	strh	w4, [x19, x2]
+   1a1d0:	39000823 	strb	w3, [x1, #2]
+   1a1d4:	97ffd2fb 	bl	edc0 <free@plt>
+   1a1d8:	f9401300 	ldr	x0, [x24, #32]
+   1a1dc:	11000681 	add	w1, w20, #0x1
+   1a1e0:	91000694 	add	x20, x20, #0x1
+   1a1e4:	51000400 	sub	w0, w0, #0x1
+   1a1e8:	6b14001f 	cmp	w0, w20
+   1a1ec:	54fffdac 	b.gt	1a1a0 <comps_objlist_tostr_u@@Base+0xf0>
+   1a1f0:	f861dad4 	ldr	x20, [x22, w1, sxtw #3]
+   1a1f4:	aa1303e0 	mov	x0, x19
+   1a1f8:	aa1403e1 	mov	x1, x20
+[31m   1a1fc:	97ffcf65 	bl	df90 <strcat@plt>[0m
+   1a200:	aa1403e0 	mov	x0, x20
+   1a204:	97ffd2ef 	bl	edc0 <free@plt>
+--
+   216e0:	f9003260 	str	x0, [x19, #96]
+   216e4:	aa1403e0 	mov	x0, x20
+   216e8:	97ffb3a6 	bl	e580 <comps_str@plt>
+   216ec:	f9003660 	str	x0, [x19, #104]
+   216f0:	a94153f3 	ldp	x19, x20, [sp, #16]
+   216f4:	f94013f5 	ldr	x21, [sp, #32]
+   216f8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   216fc:	d65f03c0 	ret
+
+0000000000021700 <comps_parse_end_elem_handler@@Base>:
+   21700:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+   21704:	910003fd 	mov	x29, sp
+   21708:	a90153f3 	stp	x19, x20, [sp, #16]
+   2170c:	d2800014 	mov	x20, #0x0                   	// #0
+   21710:	a9025bf5 	stp	x21, x22, [sp, #32]
+   21714:	aa0003f5 	mov	x21, x0
+   21718:	aa0103f6 	mov	x22, x1
+   2171c:	b9401800 	ldr	w0, [x0, #24]
+   21720:	340000c0 	cbz	w0, 21738 <comps_parse_end_elem_handler@@Base+0x38>
+   21724:	1400004e 	b	2185c <comps_parse_end_elem_handler@@Base+0x15c>
+[31m   21728:	97ffb21a 	bl	df90 <strcat@plt>[0m
+   2172c:	aa0003f4 	mov	x20, x0
+   21730:	aa1303e0 	mov	x0, x19
+--
+   23158:	f8008700 	str	x0, [x24], #8
+   2315c:	97ffaf89 	bl	ef80 <strlen@plt>
+   23160:	91000400 	add	x0, x0, #0x1
+   23164:	f9400673 	ldr	x19, [x19, #8]
+   23168:	8b000294 	add	x20, x20, x0
+   2316c:	b5ffff33 	cbnz	x19, 23150 <__comps_xml_arch_str@@Base+0x60>
+   23170:	aa1403e0 	mov	x0, x20
+   23174:	97ffadf7 	bl	e950 <malloc@plt>
+   23178:	aa0003f4 	mov	x20, x0
+   2317c:	3900001f 	strb	wzr, [x0]
+   23180:	f94012a0 	ldr	x0, [x21, #32]
+   23184:	d2800013 	mov	x19, #0x0                   	// #0
+   23188:	f100041f 	cmp	x0, #0x1
+   2318c:	54000220 	b.eq	231d0 <__comps_xml_arch_str@@Base+0xe0>  // b.none
+   23190:	52800419 	mov	w25, #0x20                  	// #32
+   23194:	d503201f 	nop
+   23198:	f8737af8 	ldr	x24, [x23, x19, lsl #3]
+   2319c:	aa1403e0 	mov	x0, x20
+   231a0:	91000673 	add	x19, x19, #0x1
+   231a4:	aa1803e1 	mov	x1, x24
+[31m   231a8:	97ffab7a 	bl	df90 <strcat@plt>[0m
+   231ac:	aa1803e0 	mov	x0, x24
+   231b0:	97ffaf04 	bl	edc0 <free@plt>
+   231b4:	aa1403e0 	mov	x0, x20
+   231b8:	97ffaf72 	bl	ef80 <strlen@plt>
+   231bc:	f94012a1 	ldr	x1, [x21, #32]
+   231c0:	78206a99 	strh	w25, [x20, x0]
+   231c4:	d1000421 	sub	x1, x1, #0x1
+   231c8:	eb13003f 	cmp	x1, x19
+   231cc:	54fffe68 	b.hi	23198 <__comps_xml_arch_str@@Base+0xa8>  // b.pmore
+   231d0:	f8737af3 	ldr	x19, [x23, x19, lsl #3]
+   231d4:	aa1403e0 	mov	x0, x20
+   231d8:	aa1303e1 	mov	x1, x19
+[31m   231dc:	97ffab6d 	bl	df90 <strcat@plt>[0m
+   231e0:	aa1303e0 	mov	x0, x19
+   231e4:	97ffaef7 	bl	edc0 <free@plt>
+--
+[31m0000000000023310 <__comps_strcat@@Base>:[0m
+   23310:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   23314:	910003fd 	mov	x29, sp
+   23318:	a90153f3 	stp	x19, x20, [sp, #16]
+   2331c:	aa0103f4 	mov	x20, x1
+   23320:	a9025bf5 	stp	x21, x22, [sp, #32]
+   23324:	aa0003f6 	mov	x22, x0
+   23328:	97ffaf16 	bl	ef80 <strlen@plt>
+   2332c:	aa0003f5 	mov	x21, x0
+   23330:	aa1403e0 	mov	x0, x20
+   23334:	97ffaf13 	bl	ef80 <strlen@plt>
+   23338:	8b0002a0 	add	x0, x21, x0
+   2333c:	91000400 	add	x0, x0, #0x1
+   23340:	97ffad84 	bl	e950 <malloc@plt>
+   23344:	910006a2 	add	x2, x21, #0x1
+   23348:	aa0003f3 	mov	x19, x0
+   2334c:	aa1603e1 	mov	x1, x22
+   23350:	97ffab44 	bl	e060 <memcpy@plt>
+   23354:	aa1403e1 	mov	x1, x20
+   23358:	aa1303e0 	mov	x0, x19
+[31m   2335c:	97ffab0d 	bl	df90 <strcat@plt>[0m
+   23360:	aa1303e0 	mov	x0, x19
+   23364:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m9[0m times [0;33mlibcomps.so.0[0m
+

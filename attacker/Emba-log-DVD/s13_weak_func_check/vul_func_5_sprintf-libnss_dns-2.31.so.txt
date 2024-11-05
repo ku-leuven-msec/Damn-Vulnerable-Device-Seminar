@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibnss_dns-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mlibnss_dns-2.31.so[0m
+
+    2bc4:	6b02007f 	cmp	w3, w2
+    2bc8:	54fff121 	b.ne	29ec <_nss_dns_gethostbyaddr2_r@@GLIBC_PRIVATE+0xdc>  // b.any
+    2bcc:	d11003ff 	sub	sp, sp, #0x400
+    2bd0:	910032b5 	add	x21, x21, #0xc
+    2bd4:	910083fc 	add	x28, sp, #0x20
+    2bd8:	d2800080 	mov	x0, #0x4                   	// #4
+    2bdc:	52800096 	mov	w22, #0x4                   	// #4
+    2be0:	f9003ba0 	str	x0, [x29, #112]
+    2be4:	f9004bbc 	str	x28, [x29, #144]
+    2be8:	394006a4 	ldrb	w4, [x21, #1]
+    2bec:	910263a9 	add	x9, x29, #0x98
+    2bf0:	394002a5 	ldrb	w5, [x21]
+    2bf4:	52800046 	mov	w6, #0x2                   	// #2
+    2bf8:	39400aa3 	ldrb	w3, [x21, #2]
+    2bfc:	aa0903e0 	mov	x0, x9
+    2c00:	39400ea2 	ldrb	w2, [x21, #3]
+    2c04:	b0000001 	adrp	x1, 3000 <_nss_dns_gethostbyaddr_r@@GLIBC_PRIVATE+0x350>
+    2c08:	9121a021 	add	x1, x1, #0x868
+    2c0c:	f9003fa9 	str	x9, [x29, #120]
+    2c10:	b90083a6 	str	w6, [x29, #128]
+[31m    2c14:	97fff903 	bl	1020 <sprintf@plt>[0m
+    2c18:	f9403fa9 	ldr	x9, [x29, #120]
+    2c1c:	f9404ba4 	ldr	x4, [x29, #144]
+--
+    33dc:	52800083 	mov	w3, #0x4                   	// #4
+    33e0:	12001c20 	and	w0, w1, #0xff
+    33e4:	b9000c40 	str	w0, [x2, #12]
+    33e8:	51000463 	sub	w3, w3, #0x1
+    33ec:	53087c21 	lsr	w1, w1, #8
+    33f0:	d1001042 	sub	x2, x2, #0x4
+    33f4:	35ffff61 	cbnz	w1, 33e0 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x70>
+    33f8:	7100087f 	cmp	w3, #0x2
+    33fc:	54000be0 	b.eq	3578 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x208>  // b.none
+    3400:	71000c7f 	cmp	w3, #0x3
+    3404:	54000980 	b.eq	3534 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x1c4>  // b.none
+    3408:	34000863 	cbz	w3, 3514 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x1a4>
+    340c:	7100047f 	cmp	w3, #0x1
+    3410:	54000b01 	b.ne	3570 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x200>  // b.any
+    3414:	294f8fa4 	ldp	w4, w3, [x29, #124]
+    3418:	910223bb 	add	x27, x29, #0x88
+    341c:	b94087a2 	ldr	w2, [x29, #132]
+    3420:	90000001 	adrp	x1, 3000 <_nss_dns_gethostbyaddr_r@@GLIBC_PRIVATE+0x350>
+    3424:	91244021 	add	x1, x1, #0x910
+    3428:	aa1b03e0 	mov	x0, x27
+[31m    342c:	97fff6fd 	bl	1020 <sprintf@plt>[0m
+    3430:	d11003ff 	sub	sp, sp, #0x400
+    3434:	aa1b03e1 	mov	x1, x27
+--
+    34dc:	d65f03c0 	ret
+    34e0:	b9406fa1 	ldr	w1, [x29, #108]
+    34e4:	eb1b001f 	cmp	x0, x27
+    34e8:	b8796b54 	ldr	w20, [x26, x25]
+    34ec:	b8396b41 	str	w1, [x26, x25]
+    34f0:	54000040 	b.eq	34f8 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x188>  // b.none
+    34f4:	97fff6f3 	bl	10c0 <free@plt>
+    34f8:	aa1303e0 	mov	x0, x19
+    34fc:	97fff6f9 	bl	10e0 <__resolv_context_put@plt>
+    3500:	7101be9f 	cmp	w20, #0x6f
+    3504:	51018294 	sub	w20, w20, #0x60
+    3508:	7a411a80 	ccmp	w20, #0x1, #0x0, ne  // ne = any
+    350c:	5a9f83f5 	csetm	w21, ls  // ls = plast
+    3510:	17ffffea 	b	34b8 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x148>
+    3514:	294f13a5 	ldp	w5, w4, [x29, #120]
+    3518:	910223bb 	add	x27, x29, #0x88
+    351c:	29500ba3 	ldp	w3, w2, [x29, #128]
+    3520:	aa1b03e0 	mov	x0, x27
+    3524:	90000001 	adrp	x1, 3000 <_nss_dns_gethostbyaddr_r@@GLIBC_PRIVATE+0x350>
+    3528:	9121a021 	add	x1, x1, #0x868
+[31m    352c:	97fff6bd 	bl	1020 <sprintf@plt>[0m
+    3530:	17ffffc0 	b	3430 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0xc0>
+    3534:	b94087a2 	ldr	w2, [x29, #132]
+    3538:	910223bb 	add	x27, x29, #0x88
+    353c:	aa1b03e0 	mov	x0, x27
+    3540:	90000001 	adrp	x1, 3000 <_nss_dns_gethostbyaddr_r@@GLIBC_PRIVATE+0x350>
+    3544:	91238021 	add	x1, x1, #0x8e0
+[31m    3548:	97fff6b6 	bl	1020 <sprintf@plt>[0m
+    354c:	17ffffb9 	b	3430 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0xc0>
+    3550:	72001f9f 	tst	w28, #0xff
+    3554:	540000a1 	b.ne	3568 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x1f8>  // b.any
+    3558:	3400009c 	cbz	w28, 3568 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x1f8>
+    355c:	53087f9c 	lsr	w28, w28, #8
+    3560:	72001f9f 	tst	w28, #0xff
+    3564:	54ffffa0 	b.eq	3558 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x1e8>  // b.none
+    3568:	b900169c 	str	w28, [x20, #20]
+    356c:	17ffffd1 	b	34b0 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0x140>
+    3570:	910223bb 	add	x27, x29, #0x88
+    3574:	17ffffaf 	b	3430 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0xc0>
+    3578:	29500ba3 	ldp	w3, w2, [x29, #128]
+    357c:	910223bb 	add	x27, x29, #0x88
+    3580:	aa1b03e0 	mov	x0, x27
+    3584:	90000001 	adrp	x1, 3000 <_nss_dns_gethostbyaddr_r@@GLIBC_PRIVATE+0x350>
+    3588:	9123e021 	add	x1, x1, #0x8f8
+[31m    358c:	97fff6a5 	bl	1020 <sprintf@plt>[0m
+    3590:	17ffffa8 	b	3430 <_nss_dns_getnetbyaddr_r@@GLIBC_PRIVATE+0xc0>
+    3594:	12800015 	mov	w21, #0xffffffff            	// #-1
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m5[0m times [0;33mlibnss_dns-2.31.so[0m
+

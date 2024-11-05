@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibdb-5.3.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibdb-5.3.so[0m
+
+[31m   d65e0:	97fd2b8c 	bl	21410 <mmap@plt>[0m
+   d65e4:	aa0003f4 	mov	x20, x0
+   d65e8:	b100041f 	cmn	x0, #0x1
+   d65ec:	54000380 	b.eq	d665c <__os_openhandle@@Base+0x3cc>  // b.none
+   d65f0:	b9413661 	ldr	w1, [x19, #308]
+   d65f4:	371801a1 	tbnz	w1, #3, d6628 <__os_openhandle@@Base+0x398>
+   d65f8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   d65fc:	f90002f4 	str	x20, [x23]
+   d6600:	52800000 	mov	w0, #0x0                   	// #0
+   d6604:	a94153f3 	ldp	x19, x20, [sp, #16]
+   d6608:	f9401bf7 	ldr	x23, [sp, #48]
+   d660c:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   d6610:	d65f03c0 	ret
+   d6614:	aa0103e2 	mov	x2, x1
+   d6618:	b0000101 	adrp	x1, f7000 <__db_zero_extend@@Base+0xdd70>
+   d661c:	913ec021 	add	x1, x1, #0xfb0
+   d6620:	97fd2ba4 	bl	214b0 <__db_msg@plt>
+   d6624:	17ffffe5 	b	d65b8 <__os_openhandle@@Base+0x328>
+   d6628:	aa1503e1 	mov	x1, x21
+   d662c:	97fd2ea5 	bl	220c0 <mlock@plt>
+   d6630:	34fffe40 	cbz	w0, d65f8 <__os_openhandle@@Base+0x368>
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibdb-5.3.so[0m
+

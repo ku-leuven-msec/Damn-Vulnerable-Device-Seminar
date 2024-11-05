@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33msepdebugcrcfix[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33msepdebugcrcfix[0m
+
+[31m    1514:	97fffe6f 	bl	ed0 <mmap@plt>[0m
+    1518:	b100041f 	cmn	x0, #0x1
+    151c:	54000140 	b.eq	1544 <open@plt+0x4d4>  // b.none
+    1520:	b4000300 	cbz	x0, 1580 <open@plt+0x510>
+    1524:	2a3303f3 	mvn	w19, w19
+    1528:	8b160002 	add	x2, x0, x22
+    152c:	2a1303f3 	mov	w19, w19
+    1530:	eb02001f 	cmp	x0, x2
+    1534:	54fff622 	b.cs	13f8 <open@plt+0x388>  // b.hs, b.nlast
+    1538:	aa0003fb 	mov	x27, x0
+    153c:	d2800003 	mov	x3, #0x0                   	// #0
+    1540:	17ffffa6 	b	13d8 <open@plt+0x368>
+    1544:	97fffe7b 	bl	f30 <__errno_location@plt>
+    1548:	aa0003e3 	mov	x3, x0
+    154c:	f9405fe1 	ldr	x1, [sp, #184]
+    1550:	528000a2 	mov	w2, #0x5                   	// #5
+    1554:	b940007b 	ldr	w27, [x3]
+    1558:	90000000 	adrp	x0, 1000 <gelf_getehdr@plt>
+    155c:	9131a000 	add	x0, x0, #0xc68
+    1560:	97fffe9c 	bl	fd0 <dcgettext@plt>
+    1564:	aa0003e2 	mov	x2, x0
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33msepdebugcrcfix[0m
+

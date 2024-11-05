@@ -1,0 +1,152 @@
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 26:[0m
+[0m	CONTRIB_DIR=$(dirname $(readlink -f $0))[0m
+[33m                              ^---------------^ SC2046: Quote this to prevent word splitting.[0m
+[32m                                            ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	CONTRIB_DIR=$(dirname $(readlink -f "$0"))
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 32:[0m
+[0m	find $SRCDIR | while read FILE; do[0m
+[32m             ^-----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                             ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+[1mDid you mean: [0m
+	find "$SRCDIR" | while read FILE; do
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 38:[0m
+[0m		[ ! -z "$DIR" ] || continue[0m
+[32m                  ^-- SC2236: Use -n instead of ! -z.[0m
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 39:[0m
+[0m		[ ! -z "$TGT" ] || continue[0m
+[32m                  ^-- SC2236: Use -n instead of ! -z.[0m
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 47:[0m
+[0m		STAT=$(stat -c "TYPE=\"%F\";DEVNO=\"0x%t 0x%T\";MODE=\"%f\";U=\"%u\";G=\"%g\"" $FILE)[0m
+[32m                                                                                               ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		STAT=$(stat -c "TYPE=\"%F\";DEVNO=\"0x%t 0x%T\";MODE=\"%f\";U=\"%u\";G=\"%g\"" "$FILE")
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 48:[0m
+[0m		eval $STAT[0m
+[32m                     ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		eval "$STAT"
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 58:[0m
+[0m			LINK_TGT=$(readlink $FILE)[0m
+[32m                                            ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+			LINK_TGT=$(readlink "$FILE")
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 86:[0m
+[0m	INODE_DIR=`mktemp -d` || exit 1[0m
+[32m                  ^---------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+	INODE_DIR=$(mktemp -d) || exit 1
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 87:[0m
+[0m	for i in `find $SRCDIR -type f -links +1 -printf 'INODE=%i###FN=%p\n'`; do[0m
+[33m                 ^-- SC2044: For loops over find output are fragile. Use find -exec or a while read loop.[0m
+[32m                 ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                       ^-----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	for i in $(find "$SRCDIR" -type f -links +1 -printf 'INODE=%i###FN=%p\n'); do
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 88:[0m
+[0m		eval `echo $i | sed 's$###$ $'`[0m
+[33m                     ^------------------------^ SC2046: Quote this to prevent word splitting.[0m
+[32m                     ^------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                           ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		eval $(echo "$i" | sed 's$###$ $')
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 89:[0m
+[0m		echo ${FN#$SRCDIR} >>$INODE_DIR/$INODE[0m
+[32m                     ^-----------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                     ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                                ^----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		echo "${FN#$SRCDIR}" >>"$INODE_DIR"/"$INODE"
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 92:[0m
+[0m	for i in `ls $INODE_DIR`; do[0m
+[31m                 ^-------------^ SC2045: Iterating over ls output is fragile. Use globs.[0m
+[32m                 ^-------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                     ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	for i in $(ls "$INODE_DIR"); do
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 94:[0m
+[0m		SRC=`head -1 $INODE_DIR/$i`[0m
+[32m                    ^---------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                             ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                        ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		SRC=$(head -1 "$INODE_DIR"/"$i")
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 96:[0m
+[0m		for TGT in `sed -n -e '1!p' $INODE_DIR/$i`; do[0m
+[32m                           ^-----------------------------^ SC2013: To read lines rather than words, pipe/redirect to a 'while read' loop.[0m
+[32m                           ^-----------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                                            ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                                       ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		for TGT in $(sed -n -e '1!p' "$INODE_DIR"/"$i"); do
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 100:[0m
+[0m		LN_CNT=`cat $INODE_DIR/$i | wc -l`[0m
+[32m                       ^-------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                            ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                            ^-----------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+[32m                                       ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		LN_CNT=$(cat "$INODE_DIR"/"$i" | wc -l)
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 104:[0m
+[0m	rm -fr $INODE_DIR[0m
+[32m               ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	rm -fr "$INODE_DIR"
+
+
+[1mIn /log/firmware/firmware/sbin/populate-extfs.sh line 105:[0m
+[0m} | $DEBUGFS -w -f - $DEVICE[0m
+[32m                     ^-----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+} | $DEBUGFS -w -f - "$DEVICE"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2045 -- Iterating over ls output is fragi...
+  https://www.shellcheck.net/wiki/SC2044 -- For loops over find output are fr...
+  https://www.shellcheck.net/wiki/SC2046 -- Quote this to prevent word splitt...

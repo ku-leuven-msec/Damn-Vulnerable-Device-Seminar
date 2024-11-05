@@ -1,0 +1,54 @@
+[[0;33m*[0m] Binary protection state of [0;33mcdc-acm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m313) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mcdc-acm.ko[0m
+
+     348:	f9413260 	ldr	x0, [x19, #608]
+     34c:	91008000 	add	x0, x0, #0x20
+     350:	94000000 	bl	0 <tty_port_put>
+     354:	f9400bf3 	ldr	x19, [sp, #16]
+     358:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     35c:	d65f03c0 	ret
+
+0000000000000360 <bmCapabilities_show>:
+     360:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     364:	910003fd 	mov	x29, sp
+     368:	a90153f3 	stp	x19, x20, [sp, #16]
+     36c:	aa0003f4 	mov	x20, x0
+     370:	aa0203f3 	mov	x19, x2
+     374:	aa1e03e0 	mov	x0, x30
+     378:	94000000 	bl	0 <_mcount>
+     37c:	f9403e82 	ldr	x2, [x20, #120]
+     380:	aa1303e0 	mov	x0, x19
+     384:	90000001 	adrp	x1, 0 <acm_wb_is_avail>
+     388:	91000021 	add	x1, x1, #0x0
+     38c:	b9489442 	ldr	w2, [x2, #2196]
+[31m     390:	94000000 	bl	0 <sprintf>[0m
+     394:	93407c00 	sxtw	x0, w0
+     398:	a94153f3 	ldp	x19, x20, [sp, #16]
+     39c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     3a0:	d65f03c0 	ret
+     3a4:	d503201f 	nop
+
+00000000000003a8 <iCountryCodeRelDate_show>:
+     3a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     3ac:	910003fd 	mov	x29, sp
+     3b0:	a90153f3 	stp	x19, x20, [sp, #16]
+     3b4:	aa0003f4 	mov	x20, x0
+     3b8:	aa0203f3 	mov	x19, x2
+     3bc:	aa1e03e0 	mov	x0, x30
+     3c0:	94000000 	bl	0 <_mcount>
+     3c4:	f9403e82 	ldr	x2, [x20, #120]
+     3c8:	aa1303e0 	mov	x0, x19
+     3cc:	90000001 	adrp	x1, 0 <acm_wb_is_avail>
+     3d0:	91000021 	add	x1, x1, #0x0
+     3d4:	b941a442 	ldr	w2, [x2, #420]
+[31m     3d8:	94000000 	bl	0 <sprintf>[0m
+     3dc:	93407c00 	sxtw	x0, w0
+     3e0:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mcdc-acm.ko[0m
+

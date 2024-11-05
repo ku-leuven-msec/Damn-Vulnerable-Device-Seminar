@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33myat2m[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33myat2m[0m
+
+    47b4:	aa0103e0 	mov	x0, x1
+    47b8:	97fff49a 	bl	1a20 <strlen@plt>
+    47bc:	aa0003fb 	mov	x27, x0
+    47c0:	f94037e5 	ldr	x5, [sp, #104]
+    47c4:	aa0503e0 	mov	x0, x5
+    47c8:	97fff496 	bl	1a20 <strlen@plt>
+    47cc:	8b000360 	add	x0, x27, x0
+    47d0:	91000800 	add	x0, x0, #0x2
+    47d4:	97fff74f 	bl	2510 <ferror@plt+0x870>
+    47d8:	f9403be1 	ldr	x1, [sp, #112]
+    47dc:	aa0003fb 	mov	x27, x0
+    47e0:	97fff4a8 	bl	1a80 <stpcpy@plt>
+    47e4:	385ff001 	ldurb	w1, [x0, #-1]
+    47e8:	f94037e5 	ldr	x5, [sp, #104]
+    47ec:	7100bc3f 	cmp	w1, #0x2f
+    47f0:	54000060 	b.eq	47fc <ferror@plt+0x2b5c>  // b.none
+    47f4:	528005e1 	mov	w1, #0x2f                  	// #47
+    47f8:	79000001 	strh	w1, [x0]
+    47fc:	aa0503e1 	mov	x1, x5
+    4800:	aa1b03e0 	mov	x0, x27
+[31m    4804:	97fff4bb 	bl	1af0 <strcat@plt>[0m
+    4808:	90000000 	adrp	x0, 4000 <ferror@plt+0x2360>
+    480c:	913a6001 	add	x1, x0, #0xe98
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33myat2m[0m
+

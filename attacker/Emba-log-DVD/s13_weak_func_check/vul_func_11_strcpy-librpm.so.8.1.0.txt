@@ -1,0 +1,274 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibrpm.so.8.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibrpm.so.8.1.0[0m
+
+   29b48:	d503201f 	nop
+   29b4c:	d503201f 	nop
+   29b50:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+   29b54:	910003fd 	mov	x29, sp
+   29b58:	a90153f3 	stp	x19, x20, [sp, #16]
+   29b5c:	aa0403f4 	mov	x20, x4
+   29b60:	a9025bf5 	stp	x21, x22, [sp, #32]
+   29b64:	aa0103f6 	mov	x22, x1
+   29b68:	aa0003f5 	mov	x21, x0
+   29b6c:	aa0403e0 	mov	x0, x4
+   29b70:	a90363f7 	stp	x23, x24, [sp, #48]
+   29b74:	aa0203f7 	mov	x23, x2
+   29b78:	2a0303f8 	mov	w24, w3
+   29b7c:	97ffa4d1 	bl	12ec0 <strlen@plt>
+   29b80:	91000800 	add	x0, x0, #0x2
+   29b84:	97ffa807 	bl	13ba0 <rmalloc@plt>
+   29b88:	52800422 	mov	w2, #0x21                  	// #33
+   29b8c:	aa0003f3 	mov	x19, x0
+   29b90:	38001402 	strb	w2, [x0], #1
+   29b94:	aa1403e1 	mov	x1, x20
+[31m   29b98:	97ffa6ea 	bl	13740 <strcpy@plt>[0m
+   29b9c:	aa1303e4 	mov	x4, x19
+   29ba0:	2a1803e3 	mov	w3, w24
+--
+   29ce4:	f9403fe0 	ldr	x0, [sp, #120]
+   29ce8:	aa1903e2 	mov	x2, x25
+   29cec:	f9404be1 	ldr	x1, [sp, #144]
+   29cf0:	aa1603e3 	mov	x3, x22
+   29cf4:	97ffe873 	bl	23ec0 <rpmdbCtrl@@Base+0x14a0>
+   29cf8:	34fffda0 	cbz	w0, 29cac <rpmcpioFree@@Base+0x370c>
+   29cfc:	f9404fe0 	ldr	x0, [sp, #152]
+   29d00:	f8776800 	ldr	x0, [x0, x23]
+   29d04:	97ffa46f 	bl	12ec0 <strlen@plt>
+   29d08:	aa0003f4 	mov	x20, x0
+   29d0c:	aa1603e0 	mov	x0, x22
+   29d10:	97ffa46c 	bl	12ec0 <strlen@plt>
+   29d14:	8b000280 	add	x0, x20, x0
+   29d18:	91000400 	add	x0, x0, #0x1
+   29d1c:	97ffa7a1 	bl	13ba0 <rmalloc@plt>
+   29d20:	f9404fe1 	ldr	x1, [sp, #152]
+   29d24:	aa0003f4 	mov	x20, x0
+   29d28:	f8776821 	ldr	x1, [x1, x23]
+   29d2c:	97ffac15 	bl	14d80 <stpcpy@plt>
+   29d30:	aa1603e1 	mov	x1, x22
+[31m   29d34:	97ffa683 	bl	13740 <strcpy@plt>[0m
+   29d38:	b9406fe0 	ldr	w0, [sp, #108]
+   29d3c:	aa1403e4 	mov	x4, x20
+--
+   315c4:	97ff876b 	bl	13370 <free@plt>
+   315c8:	aa1603e0 	mov	x0, x22
+   315cc:	97ff8769 	bl	13370 <free@plt>
+   315d0:	f9406fa0 	ldr	x0, [x29, #216]
+   315d4:	97ff8767 	bl	13370 <free@plt>
+   315d8:	f9407fa0 	ldr	x0, [x29, #248]
+   315dc:	97ff8765 	bl	13370 <free@plt>
+   315e0:	34ffcadc 	cbz	w28, 30f38 <rpmPackageFilesInstall@@Base+0x328>
+   315e4:	17fffe9b 	b	31050 <rpmPackageFilesInstall@@Base+0x440>
+   315e8:	a94bcfb4 	ldp	x20, x19, [x29, #184]
+   315ec:	aa1b03f5 	mov	x21, x27
+   315f0:	f9404bbb 	ldr	x27, [x29, #144]
+   315f4:	f94077a1 	ldr	x1, [x29, #232]
+   315f8:	b940aba0 	ldr	w0, [x29, #168]
+   315fc:	eb20c03f 	cmp	x1, w0, sxtw
+   31600:	54000108 	b.hi	31620 <rpmPackageFilesInstall@@Base+0xa10>  // b.pmore
+   31604:	b4fff516 	cbz	x22, 314a4 <rpmPackageFilesInstall@@Base+0x894>
+   31608:	aa1503e1 	mov	x1, x21
+   3160c:	aa1603e0 	mov	x0, x22
+   31610:	b900d3bb 	str	w27, [x29, #208]
+[31m   31614:	97ff884b 	bl	13740 <strcpy@plt>[0m
+   31618:	9100029f 	mov	sp, x20
+   3161c:	17ffffa3 	b	314a8 <rpmPackageFilesInstall@@Base+0x898>
+--
+   47110:	340012dc 	cbz	w28, 47368 <rpmProblemCompare@@Base+0x1888>
+   47114:	b9400b60 	ldr	w0, [x27, #8]
+   47118:	7100ac1f 	cmp	w0, #0x2b
+   4711c:	540016a0 	b.eq	473f0 <rpmProblemCompare@@Base+0x1910>  // b.none
+   47120:	b9400f62 	ldr	w2, [x27, #12]
+   47124:	35000c62 	cbnz	w2, 472b0 <rpmProblemCompare@@Base+0x17d0>
+   47128:	b9401362 	ldr	w2, [x27, #16]
+   4712c:	34000a02 	cbz	w2, 4726c <rpmProblemCompare@@Base+0x178c>
+   47130:	d2800019 	mov	x25, #0x0                   	// #0
+   47134:	d00001fc 	adrp	x28, 85000 <rpmVerifyPoptTable@@Base+0xa8>
+   47138:	aa1a03e0 	mov	x0, x26
+   4713c:	97ff2f61 	bl	12ec0 <strlen@plt>
+   47140:	91000800 	add	x0, x0, #0x2
+   47144:	97ff3297 	bl	13ba0 <rmalloc@plt>
+   47148:	b9401761 	ldr	w1, [x27, #20]
+   4714c:	aa0003f8 	mov	x24, x0
+   47150:	34000061 	cbz	w1, 4715c <rpmProblemCompare@@Base+0x167c>
+   47154:	52800be1 	mov	w1, #0x5f                  	// #95
+   47158:	38001401 	strb	w1, [x0], #1
+   4715c:	f9400361 	ldr	x1, [x27]
+[31m   47160:	97ff3178 	bl	13740 <strcpy@plt>[0m
+   47164:	aa1803e1 	mov	x1, x24
+   47168:	aa1603e3 	mov	x3, x22
+--
+   52d78:	aa1503e0 	mov	x0, x21
+   52d7c:	97ff0749 	bl	14aa0 <rpmtdGetString@plt>
+   52d80:	2a1303e3 	mov	w3, w19
+   52d84:	aa0003e2 	mov	x2, x0
+   52d88:	2a1903e1 	mov	w1, w25
+   52d8c:	aa1803e0 	mov	x0, x24
+   52d90:	97fffcf0 	bl	52150 <rpmcliVerify@@Base+0x1560>
+   52d94:	aa0003f3 	mov	x19, x0
+   52d98:	aa1403e0 	mov	x0, x20
+   52d9c:	97ff0049 	bl	12ec0 <strlen@plt>
+   52da0:	91004400 	add	x0, x0, #0x11
+   52da4:	97ff037f 	bl	13ba0 <rmalloc@plt>
+   52da8:	f9000660 	str	x0, [x19, #8]
+   52dac:	91004002 	add	x2, x0, #0x10
+   52db0:	f9000002 	str	x2, [x0]
+   52db4:	aa1403e1 	mov	x1, x20
+   52db8:	f9400660 	ldr	x0, [x19, #8]
+   52dbc:	f900041f 	str	xzr, [x0, #8]
+   52dc0:	f9400660 	ldr	x0, [x19, #8]
+   52dc4:	f9400000 	ldr	x0, [x0]
+[31m   52dc8:	97ff025e 	bl	13740 <strcpy@plt>[0m
+   52dcc:	14000002 	b	52dd4 <rpmcliVerify@@Base+0x21e4>
+   52dd0:	d2800013 	mov	x19, #0x0                   	// #0
+--
+   54384:	97ff004b 	bl	144b0 <strcmp@plt>
+   54388:	34000420 	cbz	w0, 5440c <rpmugUid@@Base+0xac>
+   5438c:	a90363f7 	stp	x23, x24, [sp, #48]
+   54390:	f0000194 	adrp	x20, 87000 <_rpmds_nopromote@@Base+0x1628>
+   54394:	9109c298 	add	x24, x20, #0x270
+   54398:	aa1303e0 	mov	x0, x19
+   5439c:	97fefac9 	bl	12ec0 <strlen@plt>
+   543a0:	aa0003f6 	mov	x22, x0
+   543a4:	f9400717 	ldr	x23, [x24, #8]
+   543a8:	b4000097 	cbz	x23, 543b8 <rpmugUid@@Base+0x58>
+   543ac:	f9413a80 	ldr	x0, [x20, #624]
+   543b0:	eb0002df 	cmp	x22, x0
+   543b4:	54000500 	b.eq	54454 <rpmugUid@@Base+0xf4>  // b.none
+   543b8:	9109c298 	add	x24, x20, #0x270
+   543bc:	910006c0 	add	x0, x22, #0x1
+   543c0:	f9400f01 	ldr	x1, [x24, #24]
+   543c4:	eb01001f 	cmp	x0, x1
+   543c8:	540002c8 	b.hi	54420 <rpmugUid@@Base+0xc0>  // b.pmore
+   543cc:	aa1303e1 	mov	x1, x19
+   543d0:	aa1703e0 	mov	x0, x23
+[31m   543d4:	97fefcdb 	bl	13740 <strcpy@plt>[0m
+   543d8:	aa1303e0 	mov	x0, x19
+   543dc:	97fef9d1 	bl	12b20 <getpwnam@plt>
+--
+   543f0:	b90002a1 	str	w1, [x21]
+   543f4:	52800000 	mov	w0, #0x0                   	// #0
+   543f8:	a94363f7 	ldp	x23, x24, [sp, #48]
+   543fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+   54400:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   54404:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   54408:	d65f03c0 	ret
+   5440c:	b90002bf 	str	wzr, [x21]
+   54410:	a94153f3 	ldp	x19, x20, [sp, #16]
+   54414:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   54418:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   5441c:	d65f03c0 	ret
+   54420:	91002ac1 	add	x1, x22, #0xa
+   54424:	aa1703e0 	mov	x0, x23
+   54428:	f9000f01 	str	x1, [x24, #24]
+   5442c:	97ff0129 	bl	148d0 <rrealloc@plt>
+   54430:	aa1303e1 	mov	x1, x19
+   54434:	aa0003f7 	mov	x23, x0
+   54438:	f9000700 	str	x0, [x24, #8]
+   5443c:	aa1703e0 	mov	x0, x23
+[31m   54440:	97fefcc0 	bl	13740 <strcpy@plt>[0m
+   54444:	aa1303e0 	mov	x0, x19
+   54448:	97fef9b6 	bl	12b20 <getpwnam@plt>
+--
+   544c4:	34000440 	cbz	w0, 5454c <rpmugGid@@Base+0xac>
+   544c8:	a9025bf5 	stp	x21, x22, [sp, #32]
+   544cc:	aa1303e0 	mov	x0, x19
+   544d0:	a90363f7 	stp	x23, x24, [sp, #48]
+   544d4:	f0000196 	adrp	x22, 87000 <_rpmds_nopromote@@Base+0x1628>
+   544d8:	9109c2d8 	add	x24, x22, #0x270
+   544dc:	97fefa79 	bl	12ec0 <strlen@plt>
+   544e0:	aa0003f5 	mov	x21, x0
+   544e4:	f9401717 	ldr	x23, [x24, #40]
+   544e8:	b4000097 	cbz	x23, 544f8 <rpmugGid@@Base+0x58>
+   544ec:	f9401300 	ldr	x0, [x24, #32]
+   544f0:	eb0002bf 	cmp	x21, x0
+   544f4:	540004e0 	b.eq	54590 <rpmugGid@@Base+0xf0>  // b.none
+   544f8:	9109c2d8 	add	x24, x22, #0x270
+   544fc:	910006a0 	add	x0, x21, #0x1
+   54500:	f9401f01 	ldr	x1, [x24, #56]
+   54504:	eb01001f 	cmp	x0, x1
+   54508:	540002a8 	b.hi	5455c <rpmugGid@@Base+0xbc>  // b.pmore
+   5450c:	aa1303e1 	mov	x1, x19
+   54510:	aa1703e0 	mov	x0, x23
+[31m   54514:	97fefc8b 	bl	13740 <strcpy@plt>[0m
+   54518:	aa1303e0 	mov	x0, x19
+   5451c:	97fefa09 	bl	12d40 <getgrnam@plt>
+--
+   5452c:	b90032c1 	str	w1, [x22, #48]
+   54530:	b9000281 	str	w1, [x20]
+   54534:	52800000 	mov	w0, #0x0                   	// #0
+   54538:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   5453c:	a94363f7 	ldp	x23, x24, [sp, #48]
+   54540:	a94153f3 	ldp	x19, x20, [sp, #16]
+   54544:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   54548:	d65f03c0 	ret
+   5454c:	b900029f 	str	wzr, [x20]
+   54550:	a94153f3 	ldp	x19, x20, [sp, #16]
+   54554:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   54558:	d65f03c0 	ret
+   5455c:	91002aa1 	add	x1, x21, #0xa
+   54560:	aa1703e0 	mov	x0, x23
+   54564:	f9001f01 	str	x1, [x24, #56]
+   54568:	97ff00da 	bl	148d0 <rrealloc@plt>
+   5456c:	aa1303e1 	mov	x1, x19
+   54570:	aa0003f7 	mov	x23, x0
+   54574:	f9001700 	str	x0, [x24, #40]
+   54578:	aa1703e0 	mov	x0, x23
+[31m   5457c:	97fefc71 	bl	13740 <strcpy@plt>[0m
+   54580:	aa1303e0 	mov	x0, x19
+   54584:	97fef9ef 	bl	12d40 <getgrnam@plt>
+--
+   545fc:	a9025bf5 	stp	x21, x22, [sp, #32]
+   54600:	d0000195 	adrp	x21, 86000 <_rpmds_nopromote@@Base+0x628>
+   54604:	b9409aa1 	ldr	w1, [x21, #152]
+   54608:	6b00003f 	cmp	w1, w0
+   5460c:	540002e0 	b.eq	54668 <rpmugUname@@Base+0x88>  // b.none
+   54610:	97fefe6c 	bl	13fc0 <getpwuid@plt>
+   54614:	aa0003f4 	mov	x20, x0
+   54618:	b40005a0 	cbz	x0, 546cc <rpmugUname@@Base+0xec>
+   5461c:	f9400016 	ldr	x22, [x0]
+   54620:	b9009ab3 	str	w19, [x21, #152]
+   54624:	f0000193 	adrp	x19, 87000 <_rpmds_nopromote@@Base+0x1628>
+   54628:	9109c273 	add	x19, x19, #0x270
+   5462c:	aa1603e0 	mov	x0, x22
+   54630:	97fefa24 	bl	12ec0 <strlen@plt>
+   54634:	91000403 	add	x3, x0, #0x1
+   54638:	a9440662 	ldp	x2, x1, [x19, #64]
+   5463c:	eb01007f 	cmp	x3, x1
+   54640:	540002e8 	b.hi	5469c <rpmugUname@@Base+0xbc>  // b.pmore
+   54644:	aa1603e1 	mov	x1, x22
+   54648:	aa0203e0 	mov	x0, x2
+[31m   5464c:	97fefc3d 	bl	13740 <strcpy@plt>[0m
+   54650:	aa0003e2 	mov	x2, x0
+   54654:	a9425bf5 	ldp	x21, x22, [sp, #32]
+--
+   54700:	91026294 	add	x20, x20, #0x98
+   54704:	b9400681 	ldr	w1, [x20, #4]
+   54708:	6b00003f 	cmp	w1, w0
+   5470c:	54000300 	b.eq	5476c <rpmugGname@@Base+0x8c>  // b.none
+   54710:	a9025bf5 	stp	x21, x22, [sp, #32]
+   54714:	97feff37 	bl	143f0 <getgrgid@plt>
+   54718:	aa0003f5 	mov	x21, x0
+   5471c:	b4000580 	cbz	x0, 547cc <rpmugGname@@Base+0xec>
+   54720:	f9400016 	ldr	x22, [x0]
+   54724:	b9000693 	str	w19, [x20, #4]
+   54728:	f0000193 	adrp	x19, 87000 <_rpmds_nopromote@@Base+0x1628>
+   5472c:	9109c273 	add	x19, x19, #0x270
+   54730:	aa1603e0 	mov	x0, x22
+   54734:	97fef9e3 	bl	12ec0 <strlen@plt>
+   54738:	91000403 	add	x3, x0, #0x1
+   5473c:	a9450662 	ldp	x2, x1, [x19, #80]
+   54740:	eb01007f 	cmp	x3, x1
+   54744:	540002c8 	b.hi	5479c <rpmugGname@@Base+0xbc>  // b.pmore
+   54748:	aa1603e1 	mov	x1, x22
+   5474c:	aa0203e0 	mov	x0, x2
+[31m   54750:	97fefbfc 	bl	13740 <strcpy@plt>[0m
+   54754:	aa0003e2 	mov	x2, x0
+   54758:	a9425bf5 	ldp	x21, x22, [sp, #32]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m11[0m times [0;33mlibrpm.so.8.1.0[0m
+

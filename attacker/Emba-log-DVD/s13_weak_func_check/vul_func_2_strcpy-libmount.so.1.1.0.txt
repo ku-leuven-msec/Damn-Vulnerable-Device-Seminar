@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibmount.so.1.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibmount.so.1.1.0[0m
+
+   362cc:	91150063 	add	x3, x3, #0x540
+   362d0:	d2810002 	mov	x2, #0x800                 	// #2048
+   362d4:	52800021 	mov	w1, #0x1                   	// #1
+   362d8:	910123f3 	add	x19, sp, #0x48
+   362dc:	aa1303e0 	mov	x0, x19
+   362e0:	97ff5468 	bl	b480 <__sprintf_chk@plt>
+   362e4:	aa1303e0 	mov	x0, x19
+   362e8:	97ff5456 	bl	b440 <strlen@plt>
+   362ec:	f942a6c2 	ldr	x2, [x22, #1352]
+   362f0:	d1000841 	sub	x1, x2, #0x2
+   362f4:	eb00003f 	cmp	x1, x0
+   362f8:	54000042 	b.cs	36300 <mnt_monitor_event_cleanup@@MOUNT_2.26+0x5bd0>  // b.hs, b.nlast
+   362fc:	38216a7f 	strb	wzr, [x19, x1]
+   36300:	911522d6 	add	x22, x22, #0x548
+   36304:	52800001 	mov	w1, #0x0                   	// #0
+   36308:	f94006d5 	ldr	x21, [x22, #8]
+   3630c:	f94002a0 	ldr	x0, [x21]
+   36310:	97ff5690 	bl	bd50 <memset@plt>
+   36314:	f94002a0 	ldr	x0, [x21]
+   36318:	aa1303e1 	mov	x1, x19
+[31m   3631c:	97ff5901 	bl	c720 <strcpy@plt>[0m
+   36320:	f9401bf7 	ldr	x23, [sp, #48]
+   36324:	f90006bf 	str	xzr, [x21, #8]
+--
+   39258:	aa0003f3 	mov	x19, x0
+   3925c:	f100027f 	cmp	x19, #0x0
+   39260:	900000a0 	adrp	x0, 4d000 <mnt_monitor_event_cleanup@@MOUNT_2.26+0x1c8d0>
+   39264:	9123a000 	add	x0, x0, #0x8e8
+   39268:	9a930013 	csel	x19, x0, x19, eq  // eq = none
+   3926c:	aa1303e0 	mov	x0, x19
+   39270:	97ff4b68 	bl	c010 <strdup@plt>
+   39274:	a9025bf5 	stp	x21, x22, [sp, #32]
+   39278:	b4000400 	cbz	x0, 392f8 <mnt_monitor_event_cleanup@@MOUNT_2.26+0x8bc8>
+   3927c:	97ff4b2d 	bl	bf30 <__xpg_basename@plt>
+   39280:	aa0003f6 	mov	x22, x0
+   39284:	97ff486f 	bl	b440 <strlen@plt>
+   39288:	91000815 	add	x21, x0, #0x2
+   3928c:	aa1503e0 	mov	x0, x21
+   39290:	97ff4a24 	bl	bb20 <malloc@plt>
+   39294:	aa0003f4 	mov	x20, x0
+   39298:	b4000380 	cbz	x0, 39308 <mnt_monitor_event_cleanup@@MOUNT_2.26+0x8bd8>
+   3929c:	528005a2 	mov	w2, #0x2d                  	// #45
+   392a0:	38001402 	strb	w2, [x0], #1
+   392a4:	aa1603e1 	mov	x1, x22
+[31m   392a8:	97ff4d1e 	bl	c720 <strcpy@plt>[0m
+   392ac:	aa1403e1 	mov	x1, x20
+   392b0:	d2800002 	mov	x2, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mlibmount.so.1.1.0[0m
+

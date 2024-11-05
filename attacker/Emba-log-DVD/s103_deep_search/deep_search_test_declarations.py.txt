@@ -1,0 +1,34 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_declarations.py[0m
+1038:        IRoot = InterfaceCla.
+1038:ss('IRoot').
+1039:        ISecondRoot = InterfaceCla.
+1039:ss('ISecondRoot').
+1040:       IExtendsRoot = InterfaceCla.
+1040:ss('IExtendsRoot', (IRoot,)).
+1042:        impl_root = Implements.n.
+1042:amed('Root', IRoot).
+1043:        impl_root.declared = (IR.
+1045:        class Root1(object):.
+1046:ented__ = impl_root.
+1047:        class Root2(object):.
+1048:ented__ = impl_root.
+1050:  impl_extends_root = Implements.n.
+1050:amed('ExtendsRoot1', IExtendsRoo.
+1051:  impl_extends_root.declared = (IE.
+1051:xtendsRoot,).
+1052:  class ExtendsRoot(Root1, Root2):.
+1053:= impl_extends_root.
+1054:  impl_extends_root.inherit = Exte.
+1054:ndsRoot.
+1056:callFUT(ExtendsRoot, ISecondRoot).
+1058:ssertIs(ExtendsRoot.__implemented_.
+1058:, impl_extends_root).
+1059:l(impl_extends_root.inherit, Exten.
+1059:dsRoot).
+1060:l(impl_extends_root.declared,.
+1061:or_two(IExtendsRoot, ISecondRoot,).
+1062:l(impl_extends_root.__bases__,.
+1063:or_two(IExtendsRoot, ISecondRoot) .
+1063:+ (impl_root,)).
+1657: def test_w_classless_object(self.
+2171:ng_provides_classless(self):.

@@ -1,0 +1,295 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s103_deep_search.html" title="./../s103_deep_search.html" >&laquo; Back to s103_deep_search</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/sansio/request.py</span></pre>
+<pre>53:    :param root_path: The pref.</pre>
+<pre>56:he URL after ``root_path``..</pre>
+<pre>125:        root_path: str,.</pre>
+<pre>141:        self.root_path = root_pa.</pre>
+<pre>142:L after :attr:`root_path`. This is.</pre>
+<pre>215: scheme, host, root path, path,.</pre>
+<pre>218:elf.host, self.root_path, self.pat.</pre>
+<pre>224:elf.host, self.root_path, self.pat.</pre>
+<pre>227:    def root_url(self) -&gt; s.</pre>
+<pre>228:eme, host, and root path. This is .</pre>
+<pre>228:the root.</pre>
+<pre>231:elf.host, self.root_path).</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/util/request.py</span></pre>
+<pre>51:rated username:password string for 'au.</pre>
+<pre>55:rated username:password string for 'pr.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/urllib/request.py</span></pre>
+<pre>53:authinfo.add_password(realm='PDQ App.</pre>
+<pre>56:               passwd='geheim$parole.</pre>
+<pre>105:lituser, _splitpasswd,.</pre>
+<pre>110:# check for SSL.</pre>
+<pre>112:    import ssl.</pre>
+<pre>114:    _have_ssl = False.</pre>
+<pre>116:    _have_ssl = True.</pre>
+<pre>122:    'HTTPPasswordMgr', 'HTTPPass.</pre>
+<pre>123:    'HTTPPasswordMgrWithPriorAut.</pre>
+<pre>155:, it must be a ssl.SSLContext ins.</pre>
+<pre>156:   the various SSL options. See H.</pre>
+<pre>162:    ssl.SSLContext.load_ve.</pre>
+<pre>208:  if not _have_ssl:.</pre>
+<pre>209:se ValueError('SSL support not av.</pre>
+<pre>210:     context = ssl.create_default.</pre>
+<pre>210:_context(ssl.Purpose.SERVER.</pre>
+<pre>765:(scheme, user, password, host/port) gi.</pre>
+<pre>788:        user, password = _splitpasswd.</pre>
+<pre>790:        user = password = None.</pre>
+<pre>791: scheme, user, password, hostport.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/wrappers/request.py</span></pre>
+<pre>117:            root_path=_wsgi_dec.</pre>
+<pre>810:xy_type, user, password, hostport = _p.</pre>
+<pre>503:    def script_root(self) -&gt; str:.</pre>
+<pre>817:   if user and password:.</pre>
+<pre>504:or :attr:`self.root_path`. ``envir.</pre>
+<pre>819:       unquote(password)).</pre>
+<pre>504:on["SCRIPT_ROOT"]``.</pre>
+<pre>836:class HTTPPasswordMgr:.</pre>
+<pre>507:   return self.root_path.</pre>
+<pre>839:        self.passwd = {}.</pre>
+<pre>510:    def url_root(self) -&gt; str:.</pre>
+<pre>841:    def add_password(self, realm, u.</pre>
+<pre>841:ri, user, passwd):.</pre>
+<pre>511:ias for :attr:`root_url`. The URL .</pre>
+<pre>512:        root path. For exam.</pre>
+<pre>845:lm not in self.passwd:.</pre>
+<pre>514:   return self.root_url.</pre>
+<pre>846:          self.passwd[realm] = {}.</pre>
+<pre>850:          self.passwd[realm][reduced.</pre>
+<pre>850:_uri] = (user, passwd).</pre>
+<pre>852: def find_user_password(self, realm, a.</pre>
+<pre>853:domains = self.passwd.get(realm, {}).</pre>
+<pre>900:class HTTPPasswordMgrWithDefaultR.</pre>
+<pre>900:ealm(HTTPPasswordMgr):.</pre>
+<pre>902: def find_user_password(self, realm, a.</pre>
+<pre>903:        user, password = HTTPPassword.</pre>
+<pre>903:Mgr.find_user_password(self, realm,.</pre>
+<pre>906:  return user, password.</pre>
+<pre>907:    return HTTPPasswordMgr.find_user_p.</pre>
+<pre>910:class HTTPPasswordMgrWithPriorAut.</pre>
+<pre>910:h(HTTPPasswordMgrWithDefaultR.</pre>
+<pre>916:    def add_password(self, realm, u.</pre>
+<pre>916:ri, user, passwd, is_authentica.</pre>
+<pre>920:   super().add_password(None, uri, use.</pre>
+<pre>920:r, passwd).</pre>
+<pre>921:   super().add_password(realm, uri, us.</pre>
+<pre>921:er, passwd).</pre>
+<pre>955:__init__(self, password_mgr=None):.</pre>
+<pre>956:        if password_mgr is None:.</pre>
+<pre>957:            password_mgr = HTTPPass.</pre>
+<pre>958:        self.passwd = password_mgr.</pre>
+<pre>959:      self.add_password = self.passwd..</pre>
+<pre>959:add_password.</pre>
+<pre>984:ser, pw = self.passwd.find_user_pass.</pre>
+<pre>996:t hasattr(self.passwd, 'is_authentic.</pre>
+<pre>997:      not self.passwd.is_authenticat.</pre>
+<pre>1001:         user, passwd = self.passwd..</pre>
+<pre>1001:find_user_password(None, req.full.</pre>
+<pre>1002:'.format(user, passwd).encode().</pre>
+<pre>1009:f hasattr(self.passwd, 'is_authentic.</pre>
+<pre>1011:          self.passwd.update_authent.</pre>
+<pre>1013:          self.passwd.update_authent.</pre>
+<pre>1062:__init__(self, passwd=None):.</pre>
+<pre>1063:        if passwd is None:.</pre>
+<pre>1064:            passwd = HTTPPassword.</pre>
+<pre>1065:        self.passwd = passwd.</pre>
+<pre>1066:      self.add_password = self.passwd..</pre>
+<pre>1066:add_password.</pre>
+<pre>1077:on't fail endlessly - if we faile.</pre>
+<pre>1078:Hm. Unless the Password Manager is.</pre>
+<pre>1133:ser, pw = self.passwd.find_user_pass.</pre>
+<pre>1201:s not transmit passwords in the clear..</pre>
+<pre>1515:    # username/password handling.</pre>
+<pre>1518:         user, passwd = _splitpasswd.</pre>
+<pre>1520:            passwd = None.</pre>
+<pre>1523:        passwd = passwd or ''.</pre>
+<pre>1536:nect_ftp(user, passwd, host, port, d.</pre>
+<pre>1556:tp(self, user, passwd, host, port, d.</pre>
+<pre>1557:pwrapper(user, passwd, host, port, d.</pre>
+<pre>1576:tp(self, user, passwd, host, port, d.</pre>
+<pre>1581:pwrapper(user, passwd, host, port,.</pre>
+<pre>1856:        user_passwd = None.</pre>
+<pre>1857:        proxy_passwd= None.</pre>
+<pre>1861:          user_passwd, host = _split.</pre>
+<pre>1867:         proxy_passwd, host = _split.</pre>
+<pre>1871:          user_passwd = None.</pre>
+<pre>1877:          user_passwd, realhost = _s.</pre>
+<pre>1878:       if user_passwd:.</pre>
+<pre>1885:      if proxy_passwd:.</pre>
+<pre>1886:         proxy_passwd = unquote(prox.</pre>
+<pre>1886:y_passwd).</pre>
+<pre>1887:64encode(proxy_passwd.encode()).deco.</pre>
+<pre>1891:       if user_passwd:.</pre>
+<pre>1892:          user_passwd = unquote(user.</pre>
+<pre>1892:_passwd).</pre>
+<pre>1893:b64encode(user_passwd.encode()).deco.</pre>
+<pre>1960:    if _have_ssl:.</pre>
+<pre>2020:if user: user, passwd = _splitpasswd.</pre>
+<pre>2021:        else: passwd = None.</pre>
+<pre>2024:        passwd = unquote(pass.</pre>
+<pre>2049:pwrapper(user, passwd, host, port, d.</pre>
+<pre>2243:        user, passwd = self.get_use.</pre>
+<pre>2243:r_passwd(proxyhost, rea.</pre>
+<pre>2244:f not (user or passwd): return None.</pre>
+<pre>2246:         quote(passwd, safe=''), pro.</pre>
+<pre>2261:        user, passwd = self.get_use.</pre>
+<pre>2261:r_passwd(proxyhost, rea.</pre>
+<pre>2262:f not (user or passwd): return None.</pre>
+<pre>2264:         quote(passwd, safe=''), pro.</pre>
+<pre>2275:        user, passwd = self.get_use.</pre>
+<pre>2275:r_passwd(host, realm, i.</pre>
+<pre>2276:f not (user or passwd): return None.</pre>
+<pre>2278:         quote(passwd, safe=''), hos.</pre>
+<pre>2289:        user, passwd = self.get_use.</pre>
+<pre>2289:r_passwd(host, realm, i.</pre>
+<pre>2290:f not (user or passwd): return None.</pre>
+<pre>2292:         quote(passwd, safe=''), hos.</pre>
+<pre>2299:  def get_user_passwd(self, host, re.</pre>
+<pre>2306:        user, passwd = self.prompt_.</pre>
+<pre>2306:user_passwd(host, realm).</pre>
+<pre>2307:    if user or passwd: self.auth_cac.</pre>
+<pre>2307:[key] = (user, passwd).</pre>
+<pre>2308:  return user, passwd.</pre>
+<pre>2310:ef prompt_user_passwd(self, host, re.</pre>
+<pre>2315:            passwd = getpass.getp.</pre>
+<pre>2315:ass("Enter password for %s in %s a.</pre>
+<pre>2317:  return user, passwd.</pre>
+<pre>2367:__(self, user, passwd, host, port, d.</pre>
+<pre>2370:        self.passwd = passwd.</pre>
+<pre>2388:elf.user, self.passwd).</pre>
+<pre>2417:               pwd = self.ftp.pwd.</pre>
+<pre>2424:  self.ftp.cwd(pwd).</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

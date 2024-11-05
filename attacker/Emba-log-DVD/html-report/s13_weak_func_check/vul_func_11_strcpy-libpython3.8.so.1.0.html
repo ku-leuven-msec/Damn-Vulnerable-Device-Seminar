@@ -1,0 +1,389 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libpython3.8.so.1.0</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="green">Full RELRO   </span>   <span class="green">Canary found   </span>   <span class="green">NX enabled </span>   <span class="orange">DSO          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="green">No Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> tear down of </span><span class="orange">libpython3.8.so.1.0</span></pre>
+<br />
+<pre>   72c74:	91004001 	add	x1, x0, #0x10</pre>
+<pre>   72c78:	97fffee2 	bl	72800 &lt;PyOS_Readline&commat;&commat;Base+0x1f0&gt;</pre>
+<pre>   72c7c:	f94037e1 	ldr	x1, [sp, #104]</pre>
+<pre>   72c80:	f94fbf40 	ldr	x0, [x26, #8056]</pre>
+<pre>   72c84:	b9000020 	str	w0, [x1]</pre>
+<pre>   72c88:	aa1703e0 	mov	x0, x23</pre>
+<pre>   72c8c:	97ffda39 	bl	69570 &lt;PyParser_Delete&commat;plt&gt;</pre>
+<pre>   72c90:	f943c680 	ldr	x0, [x20, #1928]</pre>
+<pre>   72c94:	b4000280 	cbz	x0, 72ce4 &lt;PyOS_Readline&commat;&commat;Base+0x6d4&gt;</pre>
+<pre>   72c98:	52802aa0 	mov	w0, #0x155                 	// #341</pre>
+<pre>   72c9c:	97ffd6b5 	bl	68770 &lt;PyNode_New&commat;plt&gt;</pre>
+<pre>   72ca0:	aa0003f3 	mov	x19, x0</pre>
+<pre>   72ca4:	b4fff580 	cbz	x0, 72b54 &lt;PyOS_Readline&commat;&commat;Base+0x544&gt;</pre>
+<pre>   72ca8:	f943c680 	ldr	x0, [x20, #1928]</pre>
+<pre>   72cac:	97ffc339 	bl	63990 &lt;strlen&commat;plt&gt;</pre>
+<pre>   72cb0:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   72cb4:	97ffca8f 	bl	656f0 &lt;PyObject_Malloc&commat;plt&gt;</pre>
+<pre>   72cb8:	f9000660 	str	x0, [x19, #8]</pre>
+<pre>   72cbc:	b4000a40 	cbz	x0, 72e04 &lt;PyOS_Readline&commat;&commat;Base+0x7f4&gt;</pre>
+<pre>   72cc0:	f943c681 	ldr	x1, [x20, #1928]</pre>
+<pre><span class="red">   72cc4:	97ffd60b 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   72cc8:	f943c680 	ldr	x0, [x20, #1928]</pre>
+<pre>   72ccc:	97ffc551 	bl	64210 &lt;PyMem_Free&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   7463c:	aa0003f9 	mov	x25, x0</pre>
+<pre>   74640:	f943d262 	ldr	x2, [x19, #1952]</pre>
+<pre>   74644:	cb1502d6 	sub	x22, x22, x21</pre>
+<pre>   74648:	8b160339 	add	x25, x25, x22</pre>
+<pre>   7464c:	aa1503e0 	mov	x0, x21</pre>
+<pre>   74650:	91000721 	add	x1, x25, #0x1</pre>
+<pre>   74654:	cb15035a 	sub	x26, x26, x21</pre>
+<pre>   74658:	cb150055 	sub	x21, x2, x21</pre>
+<pre>   7465c:	97ffc535 	bl	65b30 &lt;PyMem_Realloc&commat;plt&gt;</pre>
+<pre>   74660:	b941ea61 	ldr	w1, [x19, #488]</pre>
+<pre>   74664:	aa0003e2 	mov	x2, x0</pre>
+<pre>   74668:	11000421 	add	w1, w1, #0x1</pre>
+<pre>   7466c:	b901ea61 	str	w1, [x19, #488]</pre>
+<pre>   74670:	b4002740 	cbz	x0, 74b58 &lt;PyParser_ParseFile&commat;&commat;Base+0x1768&gt;</pre>
+<pre>   74674:	aa1403e1 	mov	x1, x20</pre>
+<pre>   74678:	8b160000 	add	x0, x0, x22</pre>
+<pre>   7467c:	8b150055 	add	x21, x2, x21</pre>
+<pre>   74680:	a9000262 	stp	x2, x0, [x19]</pre>
+<pre>   74684:	f903ce60 	str	x0, [x19, #1944]</pre>
+<pre>   74688:	f903d275 	str	x21, [x19, #1952]</pre>
+<pre><span class="red">   7468c:	97ffcf99 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   74690:	aa1403e0 	mov	x0, x20</pre>
+<pre>   74694:	97ffbedf 	bl	64210 &lt;PyMem_Free&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   7480c:	35000cc0 	cbnz	w0, 749a4 &lt;PyParser_ParseFile&commat;&commat;Base+0x15b4&gt;</pre>
+<pre>   74810:	f9400a74 	ldr	x20, [x19, #16]</pre>
+<pre>   74814:	385ff280 	ldurb	w0, [x20, #-1]</pre>
+<pre>   74818:	7100281f 	cmp	w0, #0xa</pre>
+<pre>   7481c:	54fffd20 	b.eq	747c0 &lt;PyParser_ParseFile&commat;&commat;Base+0x13d0&gt;  // b.none</pre>
+<pre>   74820:	79000297 	strh	w23, [x20]</pre>
+<pre>   74824:	17ffffe6 	b	747bc &lt;PyParser_ParseFile&commat;&commat;Base+0x13cc&gt;</pre>
+<pre>   74828:	aa1403e0 	mov	x0, x20</pre>
+<pre>   7482c:	97fffb49 	bl	73550 &lt;PyParser_ParseFile&commat;&commat;Base+0x160&gt;</pre>
+<pre>   74830:	aa0003f5 	mov	x21, x0</pre>
+<pre>   74834:	aa1403e0 	mov	x0, x20</pre>
+<pre>   74838:	97ffbe76 	bl	64210 &lt;PyMem_Free&commat;plt&gt;</pre>
+<pre>   7483c:	b40019b5 	cbz	x21, 74b70 &lt;PyParser_ParseFile&commat;&commat;Base+0x1780&gt;</pre>
+<pre>   74840:	f9400aa0 	ldr	x0, [x21, #16]</pre>
+<pre>   74844:	910082b6 	add	x22, x21, #0x20</pre>
+<pre>   74848:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   7484c:	97ffd435 	bl	69920 &lt;PyMem_Malloc&commat;plt&gt;</pre>
+<pre>   74850:	aa0003f4 	mov	x20, x0</pre>
+<pre>   74854:	b40016e0 	cbz	x0, 74b30 &lt;PyParser_ParseFile&commat;&commat;Base+0x1740&gt;</pre>
+<pre>   74858:	aa1603e1 	mov	x1, x22</pre>
+<pre><span class="red">   7485c:	97ffcf25 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   74860:	f94002a0 	ldr	x0, [x21]</pre>
+<pre>   74864:	d1000400 	sub	x0, x0, #0x1</pre>
+<pre>--</pre>
+<pre>   76074:	97fff503 	bl	73480 &lt;PyParser_ParseFile&commat;&commat;Base+0x90&gt;</pre>
+<pre>   76078:	aa0003f3 	mov	x19, x0</pre>
+<pre>   7607c:	b40002a0 	cbz	x0, 760d0 &lt;PyTokenizer_FromFile&commat;&commat;Base+0x80&gt;</pre>
+<pre>   76080:	d2840000 	mov	x0, #0x2000                	// #8192</pre>
+<pre>   76084:	97ffce27 	bl	69920 &lt;PyMem_Malloc&commat;plt&gt;</pre>
+<pre>   76088:	f9000260 	str	x0, [x19]</pre>
+<pre>   7608c:	b40002e0 	cbz	x0, 760e8 &lt;PyTokenizer_FromFile&commat;&commat;Base+0x98&gt;</pre>
+<pre>   76090:	91400801 	add	x1, x0, #0x2, lsl #12</pre>
+<pre>   76094:	a9008260 	stp	x0, x0, [x19, #8]</pre>
+<pre>   76098:	f9000e61 	str	x1, [x19, #24]</pre>
+<pre>   7609c:	f9001a77 	str	x23, [x19, #48]</pre>
+<pre>   760a0:	a91dd676 	stp	x22, x21, [x19, #472]</pre>
+<pre>   760a4:	b4000174 	cbz	x20, 760d0 &lt;PyTokenizer_FromFile&commat;&commat;Base+0x80&gt;</pre>
+<pre>   760a8:	aa1403e0 	mov	x0, x20</pre>
+<pre>   760ac:	97ffb639 	bl	63990 &lt;strlen&commat;plt&gt;</pre>
+<pre>   760b0:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   760b4:	97ffce1b 	bl	69920 &lt;PyMem_Malloc&commat;plt&gt;</pre>
+<pre>   760b8:	f903c660 	str	x0, [x19, #1928]</pre>
+<pre>   760bc:	b4000160 	cbz	x0, 760e8 &lt;PyTokenizer_FromFile&commat;&commat;Base+0x98&gt;</pre>
+<pre>   760c0:	aa1403e1 	mov	x1, x20</pre>
+<pre><span class="red">   760c4:	97ffc90b 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   760c8:	52800040 	mov	w0, #0x2                   	// #2</pre>
+<pre>   760cc:	b9077a60 	str	w0, [x19, #1912]</pre>
+<pre>--</pre>
+<pre>   761d4:	aa1403e1 	mov	x1, x20</pre>
+<pre>   761d8:	aa1303e0 	mov	x0, x19</pre>
+<pre>   761dc:	97ffc03d 	bl	662d0 &lt;PyTokenizer_Get&commat;plt&gt;</pre>
+<pre>   761e0:	b941ea63 	ldr	w3, [x19, #488]</pre>
+<pre>   761e4:	7100047f 	cmp	w3, #0x1</pre>
+<pre>   761e8:	5400008c 	b.gt	761f8 &lt;PyTokenizer_FindEncodingFilename&commat;&commat;Base+0xb8&gt;</pre>
+<pre>   761ec:	b9402a63 	ldr	w3, [x19, #40]</pre>
+<pre>   761f0:	7100287f 	cmp	w3, #0xa</pre>
+<pre>   761f4:	54fffee0 	b.eq	761d0 &lt;PyTokenizer_FindEncodingFilename&commat;&commat;Base+0x90&gt;  // b.none</pre>
+<pre>   761f8:	aa1703e0 	mov	x0, x23</pre>
+<pre>   761fc:	97ffbc19 	bl	65260 &lt;fclose&commat;plt&gt;</pre>
+<pre>   76200:	f943c674 	ldr	x20, [x19, #1928]</pre>
+<pre>   76204:	b4000134 	cbz	x20, 76228 &lt;PyTokenizer_FindEncodingFilename&commat;&commat;Base+0xe8&gt;</pre>
+<pre>   76208:	aa1403e0 	mov	x0, x20</pre>
+<pre>   7620c:	97ffb5e1 	bl	63990 &lt;strlen&commat;plt&gt;</pre>
+<pre>   76210:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   76214:	97ffcdc3 	bl	69920 &lt;PyMem_Malloc&commat;plt&gt;</pre>
+<pre>   76218:	aa0003f4 	mov	x20, x0</pre>
+<pre>   7621c:	b4000060 	cbz	x0, 76228 &lt;PyTokenizer_FindEncodingFilename&commat;&commat;Base+0xe8&gt;</pre>
+<pre>   76220:	f943c661 	ldr	x1, [x19, #1928]</pre>
+<pre><span class="red">   76224:	97ffc8b3 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   76228:	aa1303e0 	mov	x0, x19</pre>
+<pre>   7622c:	97ffbb85 	bl	65040 &lt;PyTokenizer_Free&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   c8e6c:	d2800000 	mov	x0, #0x0                   	// #0</pre>
+<pre>   c8e70:	97fe6e7c 	bl	64860 &lt;PyBytes_FromStringAndSize&commat;plt&gt;</pre>
+<pre>   c8e74:	aa0003f4 	mov	x20, x0</pre>
+<pre>   c8e78:	b4000b20 	cbz	x0, c8fdc &lt;PyMemoryView_GetContiguous&commat;&commat;Base+0x1ec&gt;</pre>
+<pre>   c8e7c:	97fff265 	bl	c5810 &lt;PyODict_DelItem&commat;&commat;Base+0x18a0&gt;</pre>
+<pre>   c8e80:	aa0003f6 	mov	x22, x0</pre>
+<pre>   c8e84:	f9400281 	ldr	x1, [x20]</pre>
+<pre>   c8e88:	d1000420 	sub	x0, x1, #0x1</pre>
+<pre>   c8e8c:	f9000280 	str	x0, [x20]</pre>
+<pre>   c8e90:	b4000c00 	cbz	x0, c9010 &lt;PyMemoryView_GetContiguous&commat;&commat;Base+0x220&gt;</pre>
+<pre>   c8e94:	b4000a56 	cbz	x22, c8fdc &lt;PyMemoryView_GetContiguous&commat;&commat;Base+0x1ec&gt;</pre>
+<pre>   c8e98:	f94016b8 	ldr	x24, [x21, #40]</pre>
+<pre>   c8e9c:	b40001b8 	cbz	x24, c8ed0 &lt;PyMemoryView_GetContiguous&commat;&commat;Base+0xe0&gt;</pre>
+<pre>   c8ea0:	aa1803e0 	mov	x0, x24</pre>
+<pre>   c8ea4:	97fe6abb 	bl	63990 &lt;strlen&commat;plt&gt;</pre>
+<pre>   c8ea8:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   c8eac:	97fe829d 	bl	69920 &lt;PyMem_Malloc&commat;plt&gt;</pre>
+<pre>   c8eb0:	aa0003f4 	mov	x20, x0</pre>
+<pre>   c8eb4:	b40008a0 	cbz	x0, c8fc8 &lt;PyMemoryView_GetContiguous&commat;&commat;Base+0x1d8&gt;</pre>
+<pre>   c8eb8:	aa1803e1 	mov	x1, x24</pre>
+<pre><span class="red">   c8ebc:	97fe7d8d 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   c8ec0:	b94012c1 	ldr	w1, [x22, #16]</pre>
+<pre>   c8ec4:	f90026c0 	str	x0, [x22, #72]</pre>
+<pre>--</pre>
+<pre>  136564:	d2800000 	mov	x0, #0x0                   	// #0</pre>
+<pre>  136568:	97fcb8be 	bl	64860 &lt;PyBytes_FromStringAndSize&commat;plt&gt;</pre>
+<pre>  13656c:	f9002be0 	str	x0, [sp, #80]</pre>
+<pre>  136570:	b4000f80 	cbz	x0, 136760 &lt;_Py_asdl_int_seq_new&commat;&commat;Base+0x2df0&gt;</pre>
+<pre>  136574:	91008014 	add	x20, x0, #0x20</pre>
+<pre>  136578:	b9401a60 	ldr	w0, [x19, #24]</pre>
+<pre>  13657c:	7100001f 	cmp	w0, #0x0</pre>
+<pre>  136580:	540002cd 	b.le	1365d8 &lt;_Py_asdl_int_seq_new&commat;&commat;Base+0x2c68&gt;</pre>
+<pre>  136584:	d2800018 	mov	x24, #0x0                   	// #0</pre>
+<pre>  136588:	52800017 	mov	w23, #0x0                   	// #0</pre>
+<pre>  13658c:	a9046bf9 	stp	x25, x26, [sp, #64]</pre>
+<pre>  136590:	528005da 	mov	w26, #0x2e                  	// #46</pre>
+<pre>  136594:	d503201f 	nop</pre>
+<pre>  136598:	aa1403e0 	mov	x0, x20</pre>
+<pre>  13659c:	f9401261 	ldr	x1, [x19, #32]</pre>
+<pre>  1365a0:	11000af7 	add	w23, w23, #0x2</pre>
+<pre>  1365a4:	8b180021 	add	x1, x1, x24</pre>
+<pre>  1365a8:	91018318 	add	x24, x24, #0x60</pre>
+<pre>  1365ac:	f9400439 	ldr	x25, [x1, #8]</pre>
+<pre>  1365b0:	aa1903e1 	mov	x1, x25</pre>
+<pre><span class="red">  1365b4:	97fcc7cf 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>  1365b8:	aa1903e0 	mov	x0, x25</pre>
+<pre>  1365bc:	97fcb4f5 	bl	63990 &lt;strlen&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>  14bf14:	54fffd49 	b.ls	14bebc &lt;PyCodec_NameReplaceErrors&commat;&commat;Base+0x3dc&gt;  // b.plast</pre>
+<pre>  14bf18:	52800ea0 	mov	w0, #0x75                  	// #117</pre>
+<pre>  14bf1c:	39000760 	strb	w0, [x27, #1]</pre>
+<pre>  14bf20:	530c7f00 	lsr	w0, w24, #12</pre>
+<pre>  14bf24:	d3482f03 	ubfx	x3, x24, #8, #4</pre>
+<pre>  14bf28:	f9400344 	ldr	x4, [x26]</pre>
+<pre>  14bf2c:	38604880 	ldrb	w0, [x4, w0, uxtw]</pre>
+<pre>  14bf30:	39000b60 	strb	w0, [x27, #2]</pre>
+<pre>  14bf34:	f9400340 	ldr	x0, [x26]</pre>
+<pre>  14bf38:	38634800 	ldrb	w0, [x0, w3, uxtw]</pre>
+<pre>  14bf3c:	39000f60 	strb	w0, [x27, #3]</pre>
+<pre>  14bf40:	17ffffbc 	b	14be30 &lt;PyCodec_NameReplaceErrors&commat;&commat;Base+0x350&gt;</pre>
+<pre>  14bf44:	f9402660 	ldr	x0, [x19, #72]</pre>
+<pre>  14bf48:	17ffff90 	b	14bd88 &lt;PyCodec_NameReplaceErrors&commat;&commat;Base+0x2a8&gt;</pre>
+<pre>  14bf4c:	aa1503e1 	mov	x1, x21</pre>
+<pre>  14bf50:	528f69c0 	mov	w0, #0x7b4e                	// #31566</pre>
+<pre>  14bf54:	78001360 	sturh	w0, [x27, #1]</pre>
+<pre>  14bf58:	91000f78 	add	x24, x27, #0x3</pre>
+<pre>  14bf5c:	aa1803e0 	mov	x0, x24</pre>
+<pre>  14bf60:	9100079c 	add	x28, x28, #0x1</pre>
+<pre><span class="red">  14bf64:	97fc7163 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>  14bf68:	aa1503e0 	mov	x0, x21</pre>
+<pre>  14bf6c:	97fc5e89 	bl	63990 &lt;strlen&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>  18be3c:	d1000400 	sub	x0, x0, #0x1</pre>
+<pre>  18be40:	f9000060 	str	x0, [x3]</pre>
+<pre>  18be44:	b4000ac0 	cbz	x0, 18bf9c &lt;PyThread_GetInfo&commat;&commat;Base+0xdcc&gt;</pre>
+<pre>  18be48:	f9403fe0 	ldr	x0, [sp, #120]</pre>
+<pre>  18be4c:	97fb5ed1 	bl	63990 &lt;strlen&commat;plt&gt;</pre>
+<pre>  18be50:	eb00035f 	cmp	x26, x0</pre>
+<pre>  18be54:	54fffbe1 	b.ne	18bdd0 &lt;PyThread_GetInfo&commat;&commat;Base+0xc00&gt;  // b.any</pre>
+<pre>  18be58:	f9403fe2 	ldr	x2, [sp, #120]</pre>
+<pre>  18be5c:	f100035f 	cmp	x26, #0x0</pre>
+<pre>  18be60:	8b1a0040 	add	x0, x2, x26</pre>
+<pre>  18be64:	5400012d 	b.le	18be88 &lt;PyThread_GetInfo&commat;&commat;Base+0xcb8&gt;</pre>
+<pre>  18be68:	9102bfe1 	add	x1, sp, #0xaf</pre>
+<pre>  18be6c:	387a6821 	ldrb	w1, [x1, x26]</pre>
+<pre>  18be70:	7100bc3f 	cmp	w1, #0x2f</pre>
+<pre>  18be74:	540000a0 	b.eq	18be88 &lt;PyThread_GetInfo&commat;&commat;Base+0xcb8&gt;  // b.none</pre>
+<pre>  18be78:	91000740 	add	x0, x26, #0x1</pre>
+<pre>  18be7c:	528005e1 	mov	w1, #0x2f                  	// #47</pre>
+<pre>  18be80:	8b000040 	add	x0, x2, x0</pre>
+<pre>  18be84:	383a6841 	strb	w1, [x2, x26]</pre>
+<pre>  18be88:	f9404fe1 	ldr	x1, [sp, #152]</pre>
+<pre><span class="red">  18be8c:	97fb7199 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>  18be90:	a94a07e2 	ldp	x2, x1, [sp, #160]</pre>
+<pre>  18be94:	9114c364 	add	x4, x27, #0x530</pre>
+<pre>--</pre>
+<pre>  19e654:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>  19e658:	a94363f7 	ldp	x23, x24, [sp, #48]</pre>
+<pre>  19e65c:	aa1303e0 	mov	x0, x19</pre>
+<pre>  19e660:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>  19e664:	a8c77bfd 	ldp	x29, x30, [sp], #112</pre>
+<pre>  19e668:	d65f03c0 	ret</pre>
+<pre>  19e66c:	12800c60 	mov	w0, #0xffffff9c            	// #-100</pre>
+<pre>  19e670:	b9004260 	str	w0, [x19, #64]</pre>
+<pre>  19e674:	b4000c7b 	cbz	x27, 19e800 &lt;_Py_Gid_Converter&commat;&commat;Base+0x2f00&gt;</pre>
+<pre>  19e678:	aa1b03e0 	mov	x0, x27</pre>
+<pre>  19e67c:	97fb14c5 	bl	63990 &lt;strlen&commat;plt&gt;</pre>
+<pre>  19e680:	aa0003fc 	mov	x28, x0</pre>
+<pre>  19e684:	91000400 	add	x0, x0, #0x1</pre>
+<pre>  19e688:	f90037e0 	str	x0, [sp, #104]</pre>
+<pre>  19e68c:	8b000280 	add	x0, x20, x0</pre>
+<pre>  19e690:	91000400 	add	x0, x0, #0x1</pre>
+<pre>  19e694:	97fb2ca3 	bl	69920 &lt;PyMem_Malloc&commat;plt&gt;</pre>
+<pre>  19e698:	aa0003f8 	mov	x24, x0</pre>
+<pre>  19e69c:	b4000c60 	cbz	x0, 19e828 &lt;_Py_Gid_Converter&commat;&commat;Base+0x2f28&gt;</pre>
+<pre>  19e6a0:	aa1b03e1 	mov	x1, x27</pre>
+<pre><span class="red">  19e6a4:	97fb2793 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>  19e6a8:	aa1803e0 	mov	x0, x24</pre>
+<pre>  19e6ac:	b50007dc 	cbnz	x28, 19e7a4 &lt;_Py_Gid_Converter&commat;&commat;Base+0x2ea4&gt;</pre>
+<pre>  19e6b0:	aa1503e1 	mov	x1, x21</pre>
+<pre><span class="red">  19e6b4:	97fb278f 	bl	684f0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>  19e6b8:	f94012e0 	ldr	x0, [x23, #32]</pre>
+<pre>  19e6bc:	b40000a0 	cbz	x0, 19e6d0 &lt;_Py_Gid_Converter&commat;&commat;Base+0x2dd0&gt;</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> used </span><span class="orange">11</span> times </span><span class="orange">libpython3.8.so.1.0</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

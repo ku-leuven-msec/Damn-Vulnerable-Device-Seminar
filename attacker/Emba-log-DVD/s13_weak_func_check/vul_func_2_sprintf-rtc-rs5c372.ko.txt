@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mrtc-rs5c372.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m105) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrtc-rs5c372.ko[0m
+
+  4c:	d503201f 	nop
+
+0000000000000050 <rs5c372_sysfs_show_osc>:
+  50:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  54:	910003fd 	mov	x29, sp
+  58:	a90153f3 	stp	x19, x20, [sp, #16]
+  5c:	aa0003f4 	mov	x20, x0
+  60:	aa0203f3 	mov	x19, x2
+  64:	aa1e03e0 	mov	x0, x30
+  68:	94000000 	bl	0 <_mcount>
+  6c:	f9403e84 	ldr	x4, [x20, #120]
+  70:	aa1303e0 	mov	x0, x19
+  74:	52800402 	mov	w2, #0x20                  	// #32
+  78:	52806003 	mov	w3, #0x300                 	// #768
+  7c:	90000001 	adrp	x1, 0 <rs5c372_remove>
+  80:	91000021 	add	x1, x1, #0x0
+  84:	f9401484 	ldr	x4, [x4, #40]
+  88:	39c01c84 	ldrsb	w4, [x4, #7]
+  8c:	7100009f 	cmp	w4, #0x0
+  90:	1a9fa063 	csel	w3, w3, wzr, ge  // ge = tcont
+[31m  94:	94000000 	bl	0 <sprintf>[0m
+  98:	d2800160 	mov	x0, #0xb                   	// #11
+  9c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+  ac:	910003fd 	mov	x29, sp
+  b0:	a90153f3 	stp	x19, x20, [sp, #16]
+  b4:	aa0003f4 	mov	x20, x0
+  b8:	aa0203f3 	mov	x19, x2
+  bc:	aa1e03e0 	mov	x0, x30
+  c0:	94000000 	bl	0 <_mcount>
+  c4:	f9403e80 	ldr	x0, [x20, #120]
+  c8:	52800002 	mov	w2, #0x0                   	// #0
+  cc:	f9401400 	ldr	x0, [x0, #40]
+  d0:	39401c01 	ldrb	w1, [x0, #7]
+  d4:	721f103f 	tst	w1, #0x3e
+  d8:	540000c0 	b.eq	f0 <rs5c372_sysfs_show_trim+0x48>  // b.none
+  dc:	12001420 	and	w0, w1, #0x3f
+  e0:	f27a003f 	tst	x1, #0x40
+  e4:	51000402 	sub	w2, w0, #0x1
+  e8:	5a800440 	csneg	w0, w2, w0, eq  // eq = none
+  ec:	531f1802 	ubfiz	w2, w0, #1, #7
+  f0:	aa1303e0 	mov	x0, x19
+  f4:	90000001 	adrp	x1, 0 <rs5c372_remove>
+  f8:	91000021 	add	x1, x1, #0x0
+[31m  fc:	94000000 	bl	0 <sprintf>[0m
+ 100:	93407c00 	sxtw	x0, w0
+ 104:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mrtc-rs5c372.ko[0m
+

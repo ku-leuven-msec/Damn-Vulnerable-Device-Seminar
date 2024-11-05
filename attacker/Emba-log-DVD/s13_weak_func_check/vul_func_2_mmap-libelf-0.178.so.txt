@@ -1,0 +1,54 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibelf-0.178.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibelf-0.178.so[0m
+
+[31m    4124:	97fffbb7 	bl	3000 <mmap@plt>[0m
+    4128:	aa0003f9 	mov	x25, x0
+    412c:	d1000400 	sub	x0, x0, #0x1
+    4130:	b1000c1f 	cmn	x0, #0x3
+    4134:	54fff768 	b.hi	4020 <elf_fill@@ELFUTILS_1.0+0xbb0>  // b.pmore
+    4138:	2a1703e4 	mov	w4, w23
+    413c:	aa1403e2 	mov	x2, x20
+    4140:	2a1803e0 	mov	w0, w24
+    4144:	aa1303e3 	mov	x3, x19
+    4148:	aa1903e1 	mov	x1, x25
+    414c:	d2800005 	mov	x5, #0x0                   	// #0
+    4150:	97ffff30 	bl	3e10 <elf_fill@@ELFUTILS_1.0+0x9a0>
+    4154:	b4000620 	cbz	x0, 4218 <elf_fill@@ELFUTILS_1.0+0xda8>
+    4158:	b9403801 	ldr	w1, [x0, #56]
+    415c:	321a0021 	orr	w1, w1, #0x40
+    4160:	b9003801 	str	w1, [x0, #56]
+    4164:	17ffffa4 	b	3ff4 <elf_fill@@ELFUTILS_1.0+0xb84>
+    4168:	aa0003e1 	mov	x1, x0
+    416c:	f9403fe2 	ldr	x2, [sp, #120]
+    4170:	d2878420 	mov	x0, #0x3c21                	// #15393
+    4174:	f2ae4c20 	movk	x0, #0x7261, lsl #16
+--
+[31m    b5e0:	97ffde88 	bl	3000 <mmap@plt>[0m
+    b5e4:	f9000260 	str	x0, [x19]
+    b5e8:	b100041f 	cmn	x0, #0x1
+    b5ec:	540002a0 	b.eq	b640 <elf_update@@ELFUTILS_1.0+0x3c0>  // b.none
+    b5f0:	b9403a61 	ldr	w1, [x19, #56]
+    b5f4:	321a0021 	orr	w1, w1, #0x40
+    b5f8:	b9003a61 	str	w1, [x19, #56]
+    b5fc:	b4fff340 	cbz	x0, b464 <elf_update@@ELFUTILS_1.0+0x1e4>
+    b600:	17ffffa8 	b	b4a0 <elf_update@@ELFUTILS_1.0+0x220>
+    b604:	528004c0 	mov	w0, #0x26                  	// #38
+    b608:	92800015 	mov	x21, #0xffffffffffffffff    	// #-1
+    b60c:	97ffdf51 	bl	3350 <elf_errno@@ELFUTILS_1.0+0x30>
+    b610:	a94363f7 	ldp	x23, x24, [sp, #48]
+    b614:	17ffff2d 	b	b2c8 <elf_update@@ELFUTILS_1.0+0x48>
+    b618:	52800080 	mov	w0, #0x4                   	// #4
+    b61c:	92800015 	mov	x21, #0xffffffffffffffff    	// #-1
+    b620:	97ffdf4c 	bl	3350 <elf_errno@@ELFUTILS_1.0+0x30>
+    b624:	a94363f7 	ldp	x23, x24, [sp, #48]
+    b628:	17ffff28 	b	b2c8 <elf_update@@ELFUTILS_1.0+0x48>
+    b62c:	52800340 	mov	w0, #0x1a                  	// #26
+    b630:	92800015 	mov	x21, #0xffffffffffffffff    	// #-1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m2[0m times [0;33mlibelf-0.178.so[0m
+

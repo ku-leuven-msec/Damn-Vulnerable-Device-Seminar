@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibreadline.so.8.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibreadline.so.8.0[0m
+
+   28838:	97ffb772 	bl	16600 <xmalloc@plt>
+   2883c:	aa0003fb 	mov	x27, x0
+   28840:	71006f9f 	cmp	w28, #0x1b
+   28844:	54000800 	b.eq	28944 <rl_invoking_keyseqs_in_map@@Base+0x1f4>  // b.none
+   28848:	71007f9f 	cmp	w28, #0x1f
+   2884c:	540009ad 	b.le	28980 <rl_invoking_keyseqs_in_map@@Base+0x230>
+   28850:	7101ff9f 	cmp	w28, #0x7f
+   28854:	54000aa0 	b.eq	289a8 <rl_invoking_keyseqs_in_map@@Base+0x258>  // b.none
+   28858:	7101739f 	cmp	w28, #0x5c
+   2885c:	52800440 	mov	w0, #0x22                  	// #34
+   28860:	7a401384 	ccmp	w28, w0, #0x4, ne  // ne = any
+   28864:	54000681 	b.ne	28934 <rl_invoking_keyseqs_in_map@@Base+0x1e4>  // b.any
+   28868:	52800b80 	mov	w0, #0x5c                  	// #92
+   2886c:	39000360 	strb	w0, [x27]
+   28870:	3941b3e0 	ldrb	w0, [sp, #108]
+   28874:	39000760 	strb	w0, [x27, #1]
+   28878:	39000b7f 	strb	wzr, [x27, #2]
+   2887c:	f9400281 	ldr	x1, [x20]
+   28880:	aa1b03e0 	mov	x0, x27
+   28884:	110006f7 	add	w23, w23, #0x1
+[31m   28888:	97ffb732 	bl	16550 <strcat@plt>[0m
+   2888c:	f9400280 	ldr	x0, [x20]
+   28890:	97ffb6c8 	bl	163b0 <xfree@plt>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mlibreadline.so.8.0[0m
+

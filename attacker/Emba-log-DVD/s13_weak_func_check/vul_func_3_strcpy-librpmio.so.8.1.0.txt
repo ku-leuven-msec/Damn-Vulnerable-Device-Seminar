@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibrpmio.so.8.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibrpmio.so.8.1.0[0m
+
+    bd3c:	97fff055 	bl	7e90 <rpmlog@plt>
+    bd40:	b94022c0 	ldr	w0, [x22, #32]
+    bd44:	321f0000 	orr	w0, w0, #0x2
+    bd48:	b90022c0 	str	w0, [x22, #32]
+    bd4c:	17ffffc7 	b	bc68 <rpmDumpMacroTable@@Base+0x19b8>
+    bd50:	2a1903e2 	mov	w2, w25
+    bd54:	aa1a03e1 	mov	x1, x26
+    bd58:	910303a0 	add	x0, x29, #0xc0
+    bd5c:	97fff265 	bl	86f0 <rasprintf@plt>
+    bd60:	17ffff3e 	b	ba58 <rpmDumpMacroTable@@Base+0x17a8>
+    bd64:	f0000060 	adrp	x0, 1a000 <pgpSignatureNew@@Base+0xf50>
+    bd68:	91388000 	add	x0, x0, #0xe20
+    bd6c:	aa1c03e2 	mov	x2, x28
+    bd70:	aa1803e1 	mov	x1, x24
+    bd74:	97fff03b 	bl	7e60 <strncmp@plt>
+    bd78:	35ff7660 	cbnz	w0, ac44 <rpmDumpMacroTable@@Base+0x994>
+    bd7c:	f9405bb5 	ldr	x21, [x29, #176]
+    bd80:	97fff1b0 	bl	8440 <rpmConfigDir@plt>
+    bd84:	aa0003e1 	mov	x1, x0
+    bd88:	aa1503e0 	mov	x0, x21
+[31m    bd8c:	97fff291 	bl	87d0 <strcpy@plt>[0m
+    bd90:	f9405bb5 	ldr	x21, [x29, #176]
+    bd94:	f9005fb5 	str	x21, [x29, #184]
+--
+   10f68:	d65f03c0 	ret
+   10f6c:	aa1303e0 	mov	x0, x19
+   10f70:	f9400bf3 	ldr	x19, [sp, #16]
+   10f74:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   10f78:	17ffffa6 	b	10e10 <rpmlog@@Base+0x530>
+   10f7c:	d503201f 	nop
+
+0000000000010f80 <rstrdup@@Base>:
+   10f80:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   10f84:	910003fd 	mov	x29, sp
+   10f88:	a90153f3 	stp	x19, x20, [sp, #16]
+   10f8c:	aa0003f4 	mov	x20, x0
+   10f90:	97ffde34 	bl	8860 <strlen@plt>
+   10f94:	91000413 	add	x19, x0, #0x1
+   10f98:	aa1303e0 	mov	x0, x19
+   10f9c:	97ffdce1 	bl	8320 <malloc@plt>
+   10fa0:	aa0003e2 	mov	x2, x0
+   10fa4:	b40000e0 	cbz	x0, 10fc0 <rstrdup@@Base+0x40>
+   10fa8:	aa1403e1 	mov	x1, x20
+   10fac:	aa0203e0 	mov	x0, x2
+[31m   10fb0:	97ffde08 	bl	87d0 <strcpy@plt>[0m
+   10fb4:	a94153f3 	ldp	x19, x20, [sp, #16]
+   10fb8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+--
+   16d30:	71000adf 	cmp	w22, #0x2
+   16d34:	54001040 	b.eq	16f3c <rpmGlob@@Base+0x3dc>  // b.none
+   16d38:	91000740 	add	x0, x26, #0x1
+   16d3c:	97ffc45d 	bl	7eb0 <rmalloc@plt>
+   16d40:	aa0003f3 	mov	x19, x0
+   16d44:	aa0003fa 	mov	x26, x0
+   16d48:	350012f6 	cbnz	w22, 16fa4 <rpmGlob@@Base+0x444>
+   16d4c:	f94067e0 	ldr	x0, [sp, #200]
+   16d50:	3900035f 	strb	wzr, [x26]
+   16d54:	d280001c 	mov	x28, #0x0                   	// #0
+   16d58:	d280001b 	mov	x27, #0x0                   	// #0
+   16d5c:	b5000240 	cbnz	x0, 16da4 <rpmGlob@@Base+0x244>
+   16d60:	14000022 	b	16de8 <rpmGlob@@Base+0x288>
+   16d64:	eb1a027f 	cmp	x19, x26
+   16d68:	54000082 	b.cs	16d78 <rpmGlob@@Base+0x218>  // b.hs, b.nlast
+   16d6c:	385ff340 	ldurb	w0, [x26, #-1]
+   16d70:	7100bc1f 	cmp	w0, #0x2f
+   16d74:	54000b80 	b.eq	16ee4 <rpmGlob@@Base+0x384>  // b.none
+   16d78:	aa1603e1 	mov	x1, x22
+   16d7c:	aa1a03e0 	mov	x0, x26
+[31m   16d80:	97ffc694 	bl	87d0 <strcpy@plt>[0m
+   16d84:	aa1303e1 	mov	x1, x19
+   16d88:	aa1703e0 	mov	x0, x23
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mlibrpmio.so.8.1.0[0m
+

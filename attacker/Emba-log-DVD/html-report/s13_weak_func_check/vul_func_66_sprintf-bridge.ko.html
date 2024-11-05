@@ -1,0 +1,1449 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">bridge.ko</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="red">No RELRO     </span>   <span class="red">No canary found</span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">59) Symbols</pre>
+<pre><span class="red">No RELRO     </span>   <span class="green">Canary found   </span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">85) Symbols</pre>
+<pre><span class="red">No RELRO     </span>   <span class="green">Canary found   </span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">996) Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">bridge.ko</span></pre>
+<br />
+<pre>    9654:	a9017bfd 	stp	x29, x30, [sp, #16]</pre>
+<pre>    9658:	910043fd 	add	x29, sp, #0x10</pre>
+<pre>    965c:	a90253f3 	stp	x19, x20, [sp, #32]</pre>
+<pre>    9660:	aa0103f3 	mov	x19, x1</pre>
+<pre>    9664:	aa0003f4 	mov	x20, x0</pre>
+<pre>    9668:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    966c:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    9670:	39401667 	ldrb	w7, [x19, #5]</pre>
+<pre>    9674:	aa1403e0 	mov	x0, x20</pre>
+<pre>    9678:	39401266 	ldrb	w6, [x19, #4]</pre>
+<pre>    967c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    9680:	39400e65 	ldrb	w5, [x19, #3]</pre>
+<pre>    9684:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    9688:	39400a64 	ldrb	w4, [x19, #2]</pre>
+<pre>    968c:	39400663 	ldrb	w3, [x19, #1]</pre>
+<pre>    9690:	39400262 	ldrb	w2, [x19]</pre>
+<pre>    9694:	39401e68 	ldrb	w8, [x19, #7]</pre>
+<pre>    9698:	39401a69 	ldrb	w9, [x19, #6]</pre>
+<pre>    969c:	b90003e9 	str	w9, [sp]</pre>
+<pre>    96a0:	b9000be8 	str	w8, [sp, #8]</pre>
+<pre><span class="red">    96a4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    96a8:	d2800240 	mov	x0, #0x12                  	// #18</pre>
+<pre>    96ac:	a9417bfd 	ldp	x29, x30, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    ce68:	d65f03c0 	ret</pre>
+<pre>    ce6c:	d2800001 	mov	x1, #0x0                   	// #0</pre>
+<pre>    ce70:	17fffffa 	b	ce58 &lt;store_backup_port+0x50&gt;</pre>
+<pre>    ce74:	12800020 	mov	w0, #0xfffffffe            	// #-2</pre>
+<pre>    ce78:	17fffffa 	b	ce60 &lt;store_backup_port+0x58&gt;</pre>
+<pre>    ce7c:	d503201f 	nop</pre>
+<br />
+<pre>000000000000ce80 &lt;show_isolated&gt;:</pre>
+<pre>    ce80:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ce84:	910003fd 	mov	x29, sp</pre>
+<pre>    ce88:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ce8c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ce90:	aa0103f3 	mov	x19, x1</pre>
+<pre>    ce94:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ce98:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ce9c:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    cea0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    cea4:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    cea8:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    ceac:	53104042 	ubfx	w2, w2, #16, #1</pre>
+<pre><span class="red">    ceb0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ceb4:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    ceb8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    cebc:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    cec0:	d65f03c0 	ret</pre>
+<pre>    cec4:	d503201f 	nop</pre>
+<br />
+<pre>000000000000cec8 &lt;show_neigh_suppress&gt;:</pre>
+<pre>    cec8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    cecc:	910003fd 	mov	x29, sp</pre>
+<pre>    ced0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ced4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ced8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    cedc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    cee0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    cee4:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    cee8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    ceec:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    cef0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    cef4:	530f3c42 	ubfx	w2, w2, #15, #1</pre>
+<pre><span class="red">    cef8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    cefc:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    cf00:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    cf04:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    cf08:	d65f03c0 	ret</pre>
+<pre>    cf0c:	d503201f 	nop</pre>
+<br />
+<pre>000000000000cf10 &lt;show_group_fwd_mask&gt;:</pre>
+<pre>    cf10:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    cf14:	910003fd 	mov	x29, sp</pre>
+<pre>    cf18:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    cf1c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    cf20:	aa0103f3 	mov	x19, x1</pre>
+<pre>    cf24:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    cf28:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    cf2c:	7943e282 	ldrh	w2, [x20, #496]</pre>
+<pre>    cf30:	aa1303e0 	mov	x0, x19</pre>
+<pre>    cf34:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    cf38:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    cf3c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    cf40:	93407c00 	sxtw	x0, w0</pre>
+<pre>    cf44:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    cf48:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    cf4c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000cf50 &lt;show_broadcast_flood&gt;:</pre>
+<pre>    cf50:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    cf54:	910003fd 	mov	x29, sp</pre>
+<pre>    cf58:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    cf5c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    cf60:	aa0103f3 	mov	x19, x1</pre>
+<pre>    cf64:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    cf68:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    cf6c:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    cf70:	aa1303e0 	mov	x0, x19</pre>
+<pre>    cf74:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    cf78:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    cf7c:	530e3842 	ubfx	w2, w2, #14, #1</pre>
+<pre><span class="red">    cf80:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    cf84:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    cf88:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    cf8c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    cf90:	d65f03c0 	ret</pre>
+<pre>    cf94:	d503201f 	nop</pre>
+<br />
+<pre>000000000000cf98 &lt;show_multicast_flood&gt;:</pre>
+<pre>    cf98:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    cf9c:	910003fd 	mov	x29, sp</pre>
+<pre>    cfa0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    cfa4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    cfa8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    cfac:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    cfb0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    cfb4:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    cfb8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    cfbc:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    cfc0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    cfc4:	530b2c42 	ubfx	w2, w2, #11, #1</pre>
+<pre><span class="red">    cfc8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    cfcc:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    cfd0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    cfd4:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    cfd8:	d65f03c0 	ret</pre>
+<pre>    cfdc:	d503201f 	nop</pre>
+<br />
+<pre>000000000000cfe0 &lt;show_proxyarp_wifi&gt;:</pre>
+<pre>    cfe0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    cfe4:	910003fd 	mov	x29, sp</pre>
+<pre>    cfe8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    cfec:	aa0003f4 	mov	x20, x0</pre>
+<pre>    cff0:	aa0103f3 	mov	x19, x1</pre>
+<pre>    cff4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    cff8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    cffc:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d000:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d004:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d008:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d00c:	530a2842 	ubfx	w2, w2, #10, #1</pre>
+<pre><span class="red">    d010:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d014:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d018:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d01c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d020:	d65f03c0 	ret</pre>
+<pre>    d024:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d028 &lt;show_proxyarp&gt;:</pre>
+<pre>    d028:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d02c:	910003fd 	mov	x29, sp</pre>
+<pre>    d030:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d034:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d038:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d03c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d040:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d044:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d048:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d04c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d050:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d054:	53082042 	ubfx	w2, w2, #8, #1</pre>
+<pre><span class="red">    d058:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d05c:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d060:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d064:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d068:	d65f03c0 	ret</pre>
+<pre>    d06c:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d070 &lt;show_multicast_to_unicast&gt;:</pre>
+<pre>    d070:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d074:	910003fd 	mov	x29, sp</pre>
+<pre>    d078:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d07c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d080:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d084:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d088:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d08c:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d090:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d094:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d098:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d09c:	530c3042 	ubfx	w2, w2, #12, #1</pre>
+<pre><span class="red">    d0a0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d0a4:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d0a8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d0ac:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d0b0:	d65f03c0 	ret</pre>
+<pre>    d0b4:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d0b8 &lt;show_multicast_fast_leave&gt;:</pre>
+<pre>    d0b8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d0bc:	910003fd 	mov	x29, sp</pre>
+<pre>    d0c0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d0c4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d0c8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d0cc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d0d0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d0d4:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d0d8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d0dc:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d0e0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d0e4:	53030c42 	ubfx	w2, w2, #3, #1</pre>
+<pre><span class="red">    d0e8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d0ec:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d0f0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d0f4:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d0f8:	d65f03c0 	ret</pre>
+<pre>    d0fc:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d100 &lt;show_multicast_router&gt;:</pre>
+<pre>    d100:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d104:	910003fd 	mov	x29, sp</pre>
+<pre>    d108:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d10c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d110:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d114:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d118:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d11c:	39462282 	ldrb	w2, [x20, #392]</pre>
+<pre>    d120:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d124:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d128:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d12c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d130:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d134:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d138:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d13c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d140 &lt;show_unicast_flood&gt;:</pre>
+<pre>    d140:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d144:	910003fd 	mov	x29, sp</pre>
+<pre>    d148:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d14c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d150:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d154:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d158:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d15c:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d160:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d164:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d168:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d16c:	53061842 	ubfx	w2, w2, #6, #1</pre>
+<pre><span class="red">    d170:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d174:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d178:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d17c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d180:	d65f03c0 	ret</pre>
+<pre>    d184:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d188 &lt;show_learning&gt;:</pre>
+<pre>    d188:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d18c:	910003fd 	mov	x29, sp</pre>
+<pre>    d190:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d194:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d198:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d19c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d1a0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d1a4:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d1a8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d1ac:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d1b0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d1b4:	53051442 	ubfx	w2, w2, #5, #1</pre>
+<pre><span class="red">    d1b8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d1bc:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d1c0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d1c4:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d1c8:	d65f03c0 	ret</pre>
+<pre>    d1cc:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d1d0 &lt;show_root_block&gt;:</pre>
+<pre>    d1d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d1d4:	910003fd 	mov	x29, sp</pre>
+<pre>    d1d8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d1dc:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d1e0:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d1e4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d1e8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d1ec:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d1f0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d1f4:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d1f8:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d1fc:	53020842 	ubfx	w2, w2, #2, #1</pre>
+<pre><span class="red">    d200:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d204:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d208:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d20c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d210:	d65f03c0 	ret</pre>
+<pre>    d214:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d218 &lt;show_bpdu_guard&gt;:</pre>
+<pre>    d218:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d21c:	910003fd 	mov	x29, sp</pre>
+<pre>    d220:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d224:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d228:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d22c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d230:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d234:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d238:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d23c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d240:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d244:	53010442 	ubfx	w2, w2, #1, #1</pre>
+<pre><span class="red">    d248:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d24c:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d250:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d254:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d258:	d65f03c0 	ret</pre>
+<pre>    d25c:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d260 &lt;show_hairpin_mode&gt;:</pre>
+<pre>    d260:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d264:	910003fd 	mov	x29, sp</pre>
+<pre>    d268:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d26c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d270:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d274:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d278:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d27c:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>    d280:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d284:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d288:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    d28c:	12000042 	and	w2, w2, #0x1</pre>
+<pre><span class="red">    d290:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d294:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    d298:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d29c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d2a0:	d65f03c0 	ret</pre>
+<pre>    d2a4:	d503201f 	nop</pre>
+<br />
+<pre>000000000000d2a8 &lt;show_config_pending&gt;:</pre>
+<pre>    d2a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d2ac:	910003fd 	mov	x29, sp</pre>
+<pre>    d2b0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d2b4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d2b8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d2bc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d2c0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d2c4:	3940d682 	ldrb	w2, [x20, #53]</pre>
+<pre>    d2c8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d2cc:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d2d0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d2d4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d2d8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d2dc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d2e0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d2e4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d2e8 &lt;show_change_ack&gt;:</pre>
+<pre>    d2e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d2ec:	910003fd 	mov	x29, sp</pre>
+<pre>    d2f0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d2f4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d2f8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d2fc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d300:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d304:	3940d282 	ldrb	w2, [x20, #52]</pre>
+<pre>    d308:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d30c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d310:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d314:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d318:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d31c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d320:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d324:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d328 &lt;show_port_state&gt;:</pre>
+<pre>    d328:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d32c:	910003fd 	mov	x29, sp</pre>
+<pre>    d330:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d334:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d338:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d33c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d340:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d344:	3940c682 	ldrb	w2, [x20, #49]</pre>
+<pre>    d348:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d34c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d350:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d354:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d358:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d35c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d360:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d364:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d368 &lt;show_designated_cost&gt;:</pre>
+<pre>    d368:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d36c:	910003fd 	mov	x29, sp</pre>
+<pre>    d370:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d374:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d378:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d37c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d380:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d384:	b9405282 	ldr	w2, [x20, #80]</pre>
+<pre>    d388:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d38c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d390:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d394:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d398:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d39c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d3a0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d3a4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d3a8 &lt;show_designated_port&gt;:</pre>
+<pre>    d3a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d3ac:	910003fd 	mov	x29, sp</pre>
+<pre>    d3b0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d3b4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d3b8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d3bc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d3c0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d3c4:	79407282 	ldrh	w2, [x20, #56]</pre>
+<pre>    d3c8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d3cc:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d3d0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d3d4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d3d8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d3dc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d3e0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d3e4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d3e8 &lt;show_port_no&gt;:</pre>
+<pre>    d3e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d3ec:	910003fd 	mov	x29, sp</pre>
+<pre>    d3f0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d3f4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d3f8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d3fc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d400:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d404:	79406682 	ldrh	w2, [x20, #50]</pre>
+<pre>    d408:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d40c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d410:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d414:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d418:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d41c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d420:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d424:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d428 &lt;show_port_id&gt;:</pre>
+<pre>    d428:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d42c:	910003fd 	mov	x29, sp</pre>
+<pre>    d430:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d434:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d438:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d43c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d440:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d444:	79406e82 	ldrh	w2, [x20, #54]</pre>
+<pre>    d448:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d44c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d450:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d454:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d458:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d45c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d460:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d464:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d468 &lt;show_priority&gt;:</pre>
+<pre>    d468:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d46c:	910003fd 	mov	x29, sp</pre>
+<pre>    d470:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d474:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d478:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d47c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d480:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d484:	3940c282 	ldrb	w2, [x20, #48]</pre>
+<pre>    d488:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d48c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d490:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d494:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d498:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d49c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d4a0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d4a4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d4a8 &lt;show_path_cost&gt;:</pre>
+<pre>    d4a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d4ac:	910003fd 	mov	x29, sp</pre>
+<pre>    d4b0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d4b4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    d4b8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    d4bc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d4c0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d4c4:	b9404e82 	ldr	w2, [x20, #76]</pre>
+<pre>    d4c8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    d4cc:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d4d0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d4d4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d4d8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    d4dc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    d4e0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    d4e4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000d4e8 &lt;show_backup_port&gt;:</pre>
+<pre>    d4e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    d4ec:	910003fd 	mov	x29, sp</pre>
+<pre>    d4f0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    d4f4:	aa0003f3 	mov	x19, x0</pre>
+<pre>    d4f8:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    d4fc:	aa0103f4 	mov	x20, x1</pre>
+<pre>    d500:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    d504:	94000000 	bl	0 &lt;__rcu_read_lock&gt;</pre>
+<pre>    d508:	f9401660 	ldr	x0, [x19, #40]</pre>
+<pre>    d50c:	d2800013 	mov	x19, #0x0                   	// #0</pre>
+<pre>    d510:	b40000e0 	cbz	x0, d52c &lt;show_backup_port+0x44&gt;</pre>
+<pre>    d514:	f9400402 	ldr	x2, [x0, #8]</pre>
+<pre>    d518:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    d51c:	aa1403e0 	mov	x0, x20</pre>
+<pre>    d520:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    d524:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    d528:	93407c13 	sxtw	x19, w0</pre>
+<pre>    d52c:	94000000 	bl	0 &lt;__rcu_read_unlock&gt;</pre>
+<pre>--</pre>
+<pre>    da1c:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>    da20:	f9400bf3 	ldr	x19, [sp, #16]</pre>
+<pre>    da24:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    da28:	d65f03c0 	ret</pre>
+<pre>    da2c:	d503201f 	nop</pre>
+<br />
+<pre>000000000000da30 &lt;show_hold_timer&gt;:</pre>
+<pre>    da30:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    da34:	910003fd 	mov	x29, sp</pre>
+<pre>    da38:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    da3c:	aa0103f3 	mov	x19, x1</pre>
+<pre>    da40:	aa0003f4 	mov	x20, x0</pre>
+<pre>    da44:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    da48:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    da4c:	91022280 	add	x0, x20, #0x88</pre>
+<pre>    da50:	94000000 	bl	9b30 &lt;br_timer_value&gt;</pre>
+<pre>    da54:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    da58:	aa0003e2 	mov	x2, x0</pre>
+<pre>    da5c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    da60:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">    da64:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    da68:	93407c00 	sxtw	x0, w0</pre>
+<pre>    da6c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    da70:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    da74:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000da78 &lt;show_forward_delay_timer&gt;:</pre>
+<pre>    da78:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    da7c:	910003fd 	mov	x29, sp</pre>
+<pre>    da80:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    da84:	aa0103f3 	mov	x19, x1</pre>
+<pre>    da88:	aa0003f4 	mov	x20, x0</pre>
+<pre>    da8c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    da90:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    da94:	91018280 	add	x0, x20, #0x60</pre>
+<pre>    da98:	94000000 	bl	9b30 &lt;br_timer_value&gt;</pre>
+<pre>    da9c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    daa0:	aa0003e2 	mov	x2, x0</pre>
+<pre>    daa4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    daa8:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">    daac:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    dab0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dab4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dab8:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    dabc:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000dac0 &lt;show_message_age_timer&gt;:</pre>
+<pre>    dac0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dac4:	910003fd 	mov	x29, sp</pre>
+<pre>    dac8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dacc:	aa0103f3 	mov	x19, x1</pre>
+<pre>    dad0:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dad4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dad8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dadc:	9102c280 	add	x0, x20, #0xb0</pre>
+<pre>    dae0:	94000000 	bl	9b30 &lt;br_timer_value&gt;</pre>
+<pre>    dae4:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    dae8:	aa0003e2 	mov	x2, x0</pre>
+<pre>    daec:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    daf0:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">    daf4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    daf8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dafc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e0f8:	52800101 	mov	w1, #0x8                   	// #8</pre>
+<pre>    e0fc:	94000000 	bl	3e0 &lt;br_opt_toggle&gt;</pre>
+<pre>    e100:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>    e104:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e108:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e10c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e110 &lt;nf_call_arptables_show&gt;:</pre>
+<pre>    e110:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e114:	910003fd 	mov	x29, sp</pre>
+<pre>    e118:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e11c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e120:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e124:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e128:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e12c:	f941d682 	ldr	x2, [x20, #936]</pre>
+<pre>    e130:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e134:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e138:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e13c:	53041042 	ubfx	w2, w2, #4, #1</pre>
+<pre><span class="red">    e140:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e144:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    e148:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e14c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e150:	d65f03c0 	ret</pre>
+<pre>    e154:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e158 &lt;nf_call_ip6tables_show&gt;:</pre>
+<pre>    e158:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e15c:	910003fd 	mov	x29, sp</pre>
+<pre>    e160:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e164:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e168:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e16c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e170:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e174:	f941d682 	ldr	x2, [x20, #936]</pre>
+<pre>    e178:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e17c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e180:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e184:	53030c42 	ubfx	w2, w2, #3, #1</pre>
+<pre><span class="red">    e188:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e18c:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    e190:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e194:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e198:	d65f03c0 	ret</pre>
+<pre>    e19c:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e1a0 &lt;nf_call_iptables_show&gt;:</pre>
+<pre>    e1a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e1a4:	910003fd 	mov	x29, sp</pre>
+<pre>    e1a8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e1ac:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e1b0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e1b4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e1b8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e1bc:	f941d682 	ldr	x2, [x20, #936]</pre>
+<pre>    e1c0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e1c4:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e1c8:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e1cc:	53020842 	ubfx	w2, w2, #2, #1</pre>
+<pre><span class="red">    e1d0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e1d4:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    e1d8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e1dc:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e1e0:	d65f03c0 	ret</pre>
+<pre>    e1e4:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e1e8 &lt</span>ulticast_mld_version_show&gt;:</pre>
+<pre>    e1e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e1ec:	910003fd 	mov	x29, sp</pre>
+<pre>    e1f0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e1f4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e1f8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e1fc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e200:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e204:	39565a82 	ldrb	w2, [x20, #1430]</pre>
+<pre>    e208:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e20c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e210:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e214:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e218:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e21c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e220:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e224:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e228 &lt</span>ulticast_igmp_version_show&gt;:</pre>
+<pre>    e228:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e22c:	910003fd 	mov	x29, sp</pre>
+<pre>    e230:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e234:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e238:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e23c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e240:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e244:	39565282 	ldrb	w2, [x20, #1428]</pre>
+<pre>    e248:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e24c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e250:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e254:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e258:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e25c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e260:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e264:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e268 &lt</span>ulticast_stats_enabled_show&gt;:</pre>
+<pre>    e268:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e26c:	910003fd 	mov	x29, sp</pre>
+<pre>    e270:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e274:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e278:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e27c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e280:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e284:	f941d682 	ldr	x2, [x20, #936]</pre>
+<pre>    e288:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e28c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e290:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e294:	53092442 	ubfx	w2, w2, #9, #1</pre>
+<pre><span class="red">    e298:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e29c:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    e2a0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e2a4:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e2a8:	d65f03c0 	ret</pre>
+<pre>    e2ac:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e2b0 &lt</span>ulticast_startup_query_count_show&gt;:</pre>
+<pre>    e2b0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e2b4:	910003fd 	mov	x29, sp</pre>
+<pre>    e2b8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e2bc:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e2c0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e2c4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e2c8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e2cc:	b9459282 	ldr	w2, [x20, #1424]</pre>
+<pre>    e2d0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e2d4:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e2d8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e2dc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e2e0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e2e4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e2e8:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e2ec:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e2f0 &lt</span>ulticast_last_member_count_show&gt;:</pre>
+<pre>    e2f0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e2f4:	910003fd 	mov	x29, sp</pre>
+<pre>    e2f8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e2fc:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e300:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e304:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e308:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e30c:	b9458e82 	ldr	w2, [x20, #1420]</pre>
+<pre>    e310:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e314:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e318:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e31c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e320:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e324:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e328:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e32c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e330 &lt;hash_max_show&gt;:</pre>
+<pre>    e330:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e334:	910003fd 	mov	x29, sp</pre>
+<pre>    e338:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e33c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e340:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e344:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e348:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e34c:	b9458a82 	ldr	w2, [x20, #1416]</pre>
+<pre>    e350:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e354:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e358:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e35c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e360:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e364:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e368:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e36c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e370 &lt;hash_elasticity_show&gt;:</pre>
+<pre>    e370:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e374:	910003fd 	mov	x29, sp</pre>
+<pre>    e378:	f9000bf3 	str	x19, [sp, #16]</pre>
+<pre>    e37c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e380:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e384:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e388:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e38c:	52800202 	mov	w2, #0x10                  	// #16</pre>
+<pre>    e390:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e394:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e398:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e39c:	d2800060 	mov	x0, #0x3                   	// #3</pre>
+<pre>    e3a0:	f9400bf3 	ldr	x19, [sp, #16]</pre>
+<pre>    e3a4:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e3a8:	d65f03c0 	ret</pre>
+<pre>    e3ac:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e3b0 &lt</span>ulticast_query_use_ifaddr_show&gt;:</pre>
+<pre>    e3b0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e3b4:	910003fd 	mov	x29, sp</pre>
+<pre>    e3b8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e3bc:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e3c0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e3c4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e3c8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e3cc:	f941d682 	ldr	x2, [x20, #936]</pre>
+<pre>    e3d0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e3d4:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e3d8:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e3dc:	53082042 	ubfx	w2, w2, #8, #1</pre>
+<pre><span class="red">    e3e0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e3e4:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    e3e8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e3ec:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e3f0:	d65f03c0 	ret</pre>
+<pre>    e3f4:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e3f8 &lt</span>ulticast_querier_show&gt;:</pre>
+<pre>    e3f8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e3fc:	910003fd 	mov	x29, sp</pre>
+<pre>    e400:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e404:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e408:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e40c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e410:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e414:	f941d682 	ldr	x2, [x20, #936]</pre>
+<pre>    e418:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e41c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e420:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e424:	53071c42 	ubfx	w2, w2, #7, #1</pre>
+<pre><span class="red">    e428:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e42c:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    e430:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e434:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e438:	d65f03c0 	ret</pre>
+<pre>    e43c:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e440 &lt</span>ulticast_snooping_show&gt;:</pre>
+<pre>    e440:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e444:	910003fd 	mov	x29, sp</pre>
+<pre>    e448:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e44c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e450:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e454:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e458:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e45c:	f941d682 	ldr	x2, [x20, #936]</pre>
+<pre>    e460:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e464:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e468:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e46c:	53061842 	ubfx	w2, w2, #6, #1</pre>
+<pre><span class="red">    e470:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e474:	d2800040 	mov	x0, #0x2                   	// #2</pre>
+<pre>    e478:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e47c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e480:	d65f03c0 	ret</pre>
+<pre>    e484:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e488 &lt</span>ulticast_router_show&gt;:</pre>
+<pre>    e488:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e48c:	910003fd 	mov	x29, sp</pre>
+<pre>    e490:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e494:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e498:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e49c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e4a0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e4a4:	39565682 	ldrb	w2, [x20, #1429]</pre>
+<pre>    e4a8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e4ac:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e4b0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e4b4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e4b8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e4bc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e4c0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e4c4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e4c8 &lt;group_addr_show&gt;:</pre>
+<pre>    e4c8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e4cc:	910003fd 	mov	x29, sp</pre>
+<pre>    e4d0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e4d4:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e4d8:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e4dc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e4e0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e4e4:	9115f282 	add	x2, x20, #0x57c</pre>
+<pre>    e4e8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e4ec:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e4f0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e4f4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e4f8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e4fc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e500:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e504:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e508 &lt;topology_change_detected_show&gt;:</pre>
+<pre>    e508:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e50c:	910003fd 	mov	x29, sp</pre>
+<pre>    e510:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e514:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e518:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e51c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e520:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e524:	3954d682 	ldrb	w2, [x20, #1333]</pre>
+<pre>    e528:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e52c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e530:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e534:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e538:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e53c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e540:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e544:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e548 &lt;topology_change_show&gt;:</pre>
+<pre>    e548:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e54c:	910003fd 	mov	x29, sp</pre>
+<pre>    e550:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e554:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e558:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e55c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e560:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e564:	3954d282 	ldrb	w2, [x20, #1332]</pre>
+<pre>    e568:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e56c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e570:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e574:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e578:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e57c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e580:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e584:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e588 &lt;root_port_show&gt;:</pre>
+<pre>    e588:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e58c:	910003fd 	mov	x29, sp</pre>
+<pre>    e590:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e594:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e598:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e59c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e5a0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e5a4:	794a6e82 	ldrh	w2, [x20, #1334]</pre>
+<pre>    e5a8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e5ac:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e5b0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e5b4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e5b8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e5bc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e5c0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e5c4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e5c8 &lt;root_path_cost_show&gt;:</pre>
+<pre>    e5c8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e5cc:	910003fd 	mov	x29, sp</pre>
+<pre>    e5d0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e5d4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e5d8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e5dc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e5e0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e5e4:	b9457a82 	ldr	w2, [x20, #1400]</pre>
+<pre>    e5e8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e5ec:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e5f0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e5f4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e5f8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e5fc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e600:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e604:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e608 &lt;priority_show&gt;:</pre>
+<pre>    e608:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e60c:	910003fd 	mov	x29, sp</pre>
+<pre>    e610:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e614:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e618:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e61c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e620:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e624:	794a5a83 	ldrh	w3, [x20, #1324]</pre>
+<pre>    e628:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e62c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e630:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e634:	5ac00462 	rev16	w2, w3</pre>
+<pre>    e638:	12003c42 	and	w2, w2, #0xffff</pre>
+<pre><span class="red">    e63c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e640:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e644:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e648:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e64c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e650 &lt;group_fwd_mask_show&gt;:</pre>
+<pre>    e650:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e654:	910003fd 	mov	x29, sp</pre>
+<pre>    e658:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e65c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e660:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e664:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e668:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e66c:	794a4282 	ldrh	w2, [x20, #1312]</pre>
+<pre>    e670:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e674:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e678:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e67c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e680:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e684:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e688:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e68c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e690 &lt;stp_state_show&gt;:</pre>
+<pre>    e690:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e694:	910003fd 	mov	x29, sp</pre>
+<pre>    e698:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e69c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e6a0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e6a4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e6a8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e6ac:	b9458682 	ldr	w2, [x20, #1412]</pre>
+<pre>    e6b0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e6b4:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e6b8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e6bc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e6c0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e6c4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e83c:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>    e840:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e844:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e848:	d65f03c0 	ret</pre>
+<pre>    e84c:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e850 &lt</span>ulticast_startup_query_interval_show&gt;:</pre>
+<pre>    e850:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e854:	910003fd 	mov	x29, sp</pre>
+<pre>    e858:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e85c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e860:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e864:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e868:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e86c:	f942e680 	ldr	x0, [x20, #1480]</pre>
+<pre>    e870:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    e874:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e878:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e87c:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e880:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e884:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e888:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e88c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e890:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e894:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e898 &lt</span>ulticast_query_response_interval_show&gt;:</pre>
+<pre>    e898:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e89c:	910003fd 	mov	x29, sp</pre>
+<pre>    e8a0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e8a4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e8a8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e8ac:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e8b0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e8b4:	f942e280 	ldr	x0, [x20, #1472]</pre>
+<pre>    e8b8:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    e8bc:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e8c0:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e8c4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e8c8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e8cc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e8d0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e8d4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e8d8:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e8dc:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e8e0 &lt</span>ulticast_query_interval_show&gt;:</pre>
+<pre>    e8e0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e8e4:	910003fd 	mov	x29, sp</pre>
+<pre>    e8e8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e8ec:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e8f0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e8f4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e8f8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e8fc:	f942de80 	ldr	x0, [x20, #1464]</pre>
+<pre>    e900:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    e904:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e908:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e90c:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e910:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e914:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e918:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e91c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e920:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e924:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e928 &lt</span>ulticast_querier_interval_show&gt;:</pre>
+<pre>    e928:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e92c:	910003fd 	mov	x29, sp</pre>
+<pre>    e930:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e934:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e938:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e93c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e940:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e944:	f942da80 	ldr	x0, [x20, #1456]</pre>
+<pre>    e948:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    e94c:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e950:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e954:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e958:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e95c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e960:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e964:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e968:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e96c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e970 &lt</span>ulticast_membership_interval_show&gt;:</pre>
+<pre>    e970:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e974:	910003fd 	mov	x29, sp</pre>
+<pre>    e978:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e97c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e980:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e984:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e988:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e98c:	f942d680 	ldr	x0, [x20, #1448]</pre>
+<pre>    e990:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    e994:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e998:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e99c:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e9a0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e9a4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e9a8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e9ac:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e9b0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e9b4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e9b8 &lt</span>ulticast_last_member_interval_show&gt;:</pre>
+<pre>    e9b8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e9bc:	910003fd 	mov	x29, sp</pre>
+<pre>    e9c0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e9c4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    e9c8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    e9cc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e9d0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e9d4:	f942d280 	ldr	x0, [x20, #1440]</pre>
+<pre>    e9d8:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    e9dc:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e9e0:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    e9e4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e9e8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e9ec:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e9f0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e9f4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e9f8:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e9fc:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ea00 &lt;ageing_time_show&gt;:</pre>
+<pre>    ea00:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ea04:	910003fd 	mov	x29, sp</pre>
+<pre>    ea08:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ea0c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ea10:	aa0203f3 	mov	x19, x2</pre>
+<pre>    ea14:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ea18:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ea1c:	f942aa80 	ldr	x0, [x20, #1360]</pre>
+<pre>    ea20:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    ea24:	aa0003e2 	mov	x2, x0</pre>
+<pre>    ea28:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    ea2c:	aa1303e0 	mov	x0, x19</pre>
+<pre>    ea30:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    ea34:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ea38:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ea3c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ea40:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ea44:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ea48 &lt</span>ax_age_show&gt;:</pre>
+<pre>    ea48:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ea4c:	910003fd 	mov	x29, sp</pre>
+<pre>    ea50:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ea54:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ea58:	aa0203f3 	mov	x19, x2</pre>
+<pre>    ea5c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ea60:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ea64:	f9429e80 	ldr	x0, [x20, #1336]</pre>
+<pre>    ea68:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    ea6c:	aa0003e2 	mov	x2, x0</pre>
+<pre>    ea70:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    ea74:	aa1303e0 	mov	x0, x19</pre>
+<pre>    ea78:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    ea7c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ea80:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ea84:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ea88:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ea8c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ea90 &lt;hello_time_show&gt;:</pre>
+<pre>    ea90:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ea94:	910003fd 	mov	x29, sp</pre>
+<pre>    ea98:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ea9c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    eaa0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    eaa4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    eaa8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    eaac:	f942a280 	ldr	x0, [x20, #1344]</pre>
+<pre>    eab0:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    eab4:	aa0003e2 	mov	x2, x0</pre>
+<pre>    eab8:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    eabc:	aa1303e0 	mov	x0, x19</pre>
+<pre>    eac0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    eac4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    eac8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    eacc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ead0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ead4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ead8 &lt;forward_delay_show&gt;:</pre>
+<pre>    ead8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    eadc:	910003fd 	mov	x29, sp</pre>
+<pre>    eae0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    eae4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    eae8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    eaec:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    eaf0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    eaf4:	f942a680 	ldr	x0, [x20, #1352]</pre>
+<pre>    eaf8:	94000000 	bl	0 &lt;jiffies_to_clock_t&gt;</pre>
+<pre>    eafc:	aa0003e2 	mov	x2, x0</pre>
+<pre>    eb00:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    eb04:	aa1303e0 	mov	x0, x19</pre>
+<pre>    eb08:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    eb0c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    eb10:	93407c00 	sxtw	x0, w0</pre>
+<pre>    eb14:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    eb50:	94000000 	bl	4a8 &lt;br_boolopt_toggle&gt;</pre>
+<pre>    eb54:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    eb58:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    eb5c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000eb60 &lt;no_linklocal_learn_show&gt;:</pre>
+<pre>    eb60:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    eb64:	910003fd 	mov	x29, sp</pre>
+<pre>    eb68:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    eb6c:	aa0203f3 	mov	x19, x2</pre>
+<pre>    eb70:	aa0003f4 	mov	x20, x0</pre>
+<pre>    eb74:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    eb78:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    eb7c:	910e0280 	add	x0, x20, #0x380</pre>
+<pre>    eb80:	52800001 	mov	w1, #0x0                   	// #0</pre>
+<pre>    eb84:	94000000 	bl	360 &lt;br_boolopt_get&gt;</pre>
+<pre>    eb88:	2a0003e2 	mov	w2, w0</pre>
+<pre>    eb8c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    eb90:	aa1303e0 	mov	x0, x19</pre>
+<pre>    eb94:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    eb98:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    eb9c:	93407c00 	sxtw	x0, w0</pre>
+<pre>    eba0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    ebcc:	94000000 	bl	2af8 &lt;br_fdb_flush&gt;</pre>
+<pre>    ebd0:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>    ebd4:	f9400bf3 	ldr	x19, [sp, #16]</pre>
+<pre>    ebd8:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ebdc:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ebe0 &lt;gc_timer_show&gt;:</pre>
+<pre>    ebe0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ebe4:	910003fd 	mov	x29, sp</pre>
+<pre>    ebe8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ebec:	aa0203f3 	mov	x19, x2</pre>
+<pre>    ebf0:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ebf4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ebf8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ebfc:	9120c280 	add	x0, x20, #0x830</pre>
+<pre>    ec00:	94000000 	bl	9b30 &lt;br_timer_value&gt;</pre>
+<pre>    ec04:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    ec08:	aa0003e2 	mov	x2, x0</pre>
+<pre>    ec0c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    ec10:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">    ec14:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ec18:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ec1c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ec20:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ec24:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ec28 &lt;topology_change_timer_show&gt;:</pre>
+<pre>    ec28:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ec2c:	910003fd 	mov	x29, sp</pre>
+<pre>    ec30:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ec34:	aa0203f3 	mov	x19, x2</pre>
+<pre>    ec38:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ec3c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ec40:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ec44:	911fa280 	add	x0, x20, #0x7e8</pre>
+<pre>    ec48:	94000000 	bl	9b30 &lt;br_timer_value&gt;</pre>
+<pre>    ec4c:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    ec50:	aa0003e2 	mov	x2, x0</pre>
+<pre>    ec54:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    ec58:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">    ec5c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ec60:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ec64:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ec68:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ec6c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ec70 &lt;tcn_timer_show&gt;:</pre>
+<pre>    ec70:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ec74:	910003fd 	mov	x29, sp</pre>
+<pre>    ec78:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ec7c:	aa0203f3 	mov	x19, x2</pre>
+<pre>    ec80:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ec84:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ec88:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ec8c:	911f0280 	add	x0, x20, #0x7c0</pre>
+<pre>    ec90:	94000000 	bl	9b30 &lt;br_timer_value&gt;</pre>
+<pre>    ec94:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    ec98:	aa0003e2 	mov	x2, x0</pre>
+<pre>    ec9c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    eca0:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">    eca4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    eca8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ecac:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ecb0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ecb4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ecb8 &lt;hello_timer_show&gt;:</pre>
+<pre>    ecb8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ecbc:	910003fd 	mov	x29, sp</pre>
+<pre>    ecc0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ecc4:	aa0203f3 	mov	x19, x2</pre>
+<pre>    ecc8:	aa0003f4 	mov	x20, x0</pre>
+<pre>    eccc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ecd0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ecd4:	911e6280 	add	x0, x20, #0x798</pre>
+<pre>    ecd8:	94000000 	bl	9b30 &lt;br_timer_value&gt;</pre>
+<pre>    ecdc:	90000001 	adrp	x1, 0 &lt;br_device_event&gt;</pre>
+<pre>    ece0:	aa0003e2 	mov	x2, x0</pre>
+<pre>    ece4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    ece8:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">    ecec:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ecf0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ecf4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">66</span> times </span><span class="orange">bridge.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

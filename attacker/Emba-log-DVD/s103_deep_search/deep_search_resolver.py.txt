@@ -1,0 +1,36 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_internal/resolution/legacy/resolver.py[0m
+127:        upgrade_strategy: str,.
+131:        assert upgrade_strategy in se.
+144:        self.upgrade_strategy = upg.
+155:        self, root_reqs: List[Ins.
+168:    for req in root_reqs:.
+191:    def _is_upgrade_allowed(self, .
+192:       if self.upgrade_strategy == "t.
+194:     elif self.upgrade_strategy == "e.
+197:   assert self.upgrade_strategy == "o.
+215:ther we should upgrade.
+219:stall is to be upgraded/reinstalled e.
+225:cted to assess upgrade/.
+241:f not self._is_upgrade_allowed(req_to.
+242:       if self.upgrade_strategy == "o.
+243:fied, skipping upgrade".
+246:sibility of an upgrade.  For link-bas.
+251:eq_to_install, upgrade=True).
+265:        upgrade = self._is_upg.
+266:quirement(req, upgrade).
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_internal/resolution/resolvelib/resolver.py[0m
+290:t needed to be upgraded based on the .
+49:        upgrade_strategy: str,.
+291:        _is_upgrade_allowed()..
+53:        assert upgrade_strategy in se.
+336:e re-installed/upgraded or not and re.
+67:        self.upgrade_strategy = upg.
+340:o uninstall-on-upgrade.
+71:        self, root_reqs: List[Ins.
+347:          self.upgrade_strategy != "t.
+73:actory.collect_root_requirements(r.
+356:tisfied (use --upgrade to upgrade): %.
+78:            upgrade_strategy=self..
+78:upgrade_strategy,.
+202: any node from root, ignoring any.
+230:teed to be the root node by resolv.

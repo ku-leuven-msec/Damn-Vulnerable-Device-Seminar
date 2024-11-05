@@ -1,0 +1,117 @@
+[[0;33m*[0m] Binary protection state of [0;33mfsck.ext3[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mfsck.ext3[0m
+
+    f474:	97fff853 	bl	d5c0 <strlen@plt>
+    f478:	11003000 	add	w0, w0, #0xc
+    f47c:	93407c00 	sxtw	x0, w0
+    f480:	97fff9c0 	bl	db80 <malloc@plt>
+    f484:	aa0003f5 	mov	x21, x0
+    f488:	b4012a60 	cbz	x0, 119d4 <main@@Base+0x2f24>
+    f48c:	d0000140 	adrp	x0, 39000 <_IO_stdin_used@@Base+0xff8>
+    f490:	9135a000 	add	x0, x0, #0xd68
+    f494:	f9400001 	ldr	x1, [x0]
+    f498:	f90002a1 	str	x1, [x21]
+    f49c:	b8407000 	ldur	w0, [x0, #7]
+    f4a0:	b80072a0 	stur	w0, [x21, #7]
+    f4a4:	aa1503e0 	mov	x0, x21
+    f4a8:	97fff846 	bl	d5c0 <strlen@plt>
+    f4ac:	aa0003e2 	mov	x2, x0
+    f4b0:	52800743 	mov	w3, #0x3a                  	// #58
+    f4b4:	8b0002a0 	add	x0, x21, x0
+    f4b8:	aa1403e1 	mov	x1, x20
+    f4bc:	91000400 	add	x0, x0, #0x1
+    f4c0:	78226aa3 	strh	w3, [x21, x2]
+[31m    f4c4:	97fffc43 	bl	e5d0 <strcpy@plt>[0m
+    f4c8:	aa1503e0 	mov	x0, x21
+    f4cc:	97fffac5 	bl	dfe0 <putenv@plt>
+--
+   33970:	d65f03c0 	ret
+   33974:	394006a0 	ldrb	w0, [x21, #1]
+   33978:	7100bc1f 	cmp	w0, #0x2f
+   3397c:	54fffc81 	b.ne	3390c <check_plausibility@@Base+0x105c>  // b.any
+   33980:	d0000060 	adrp	x0, 41000 <_IO_stdin_used@@Base+0x8ff8>
+   33984:	91052000 	add	x0, x0, #0x148
+   33988:	97ff6bf6 	bl	e960 <getenv@plt>
+   3398c:	f90027e0 	str	x0, [sp, #72]
+   33990:	b40002a0 	cbz	x0, 339e4 <check_plausibility@@Base+0x1134>
+   33994:	97ff670b 	bl	d5c0 <strlen@plt>
+   33998:	aa0003f8 	mov	x24, x0
+   3399c:	0b0002c0 	add	w0, w22, w0
+   339a0:	97ff6878 	bl	db80 <malloc@plt>
+   339a4:	aa0003f4 	mov	x20, x0
+   339a8:	b4000260 	cbz	x0, 339f4 <check_plausibility@@Base+0x1144>
+   339ac:	f94027e1 	ldr	x1, [sp, #72]
+   339b0:	aa1803e2 	mov	x2, x24
+   339b4:	97ff66cf 	bl	d4f0 <memcpy@plt>
+   339b8:	910006a1 	add	x1, x21, #0x1
+   339bc:	8b180280 	add	x0, x20, x24
+[31m   339c0:	97ff6b04 	bl	e5d0 <strcpy@plt>[0m
+   339c4:	17ffffda 	b	3392c <check_plausibility@@Base+0x107c>
+   339c8:	aa1303e0 	mov	x0, x19
+--
+   34654:	f9001fe5 	str	x5, [sp, #56]
+   34658:	d2800005 	mov	x5, #0x0                   	// #0
+   3465c:	b40003a0 	cbz	x0, 346d0 <profile_get_string@@Base+0xa0>
+   34660:	9100c3e4 	add	x4, sp, #0x30
+   34664:	97ffffbb 	bl	34550 <profile_iterator_free@@Base+0x3e0>
+   34668:	d293ffc1 	mov	x1, #0x9ffe                	// #40958
+   3466c:	f2aaa6a1 	movk	x1, #0x5535, lsl #16
+   34670:	8b010001 	add	x1, x0, x1
+   34674:	f100043f 	cmp	x1, #0x1
+   34678:	540002c9 	b.ls	346d0 <profile_get_string@@Base+0xa0>  // b.plast
+   3467c:	b5000180 	cbnz	x0, 346ac <profile_get_string@@Base+0x7c>
+   34680:	f9401bf3 	ldr	x19, [sp, #48]
+   34684:	b40002b3 	cbz	x19, 346d8 <profile_get_string@@Base+0xa8>
+   34688:	aa1303e0 	mov	x0, x19
+   3468c:	97ff63cd 	bl	d5c0 <strlen@plt>
+   34690:	91000400 	add	x0, x0, #0x1
+   34694:	97ff653b 	bl	db80 <malloc@plt>
+   34698:	f90002a0 	str	x0, [x21]
+   3469c:	b4000260 	cbz	x0, 346e8 <profile_get_string@@Base+0xb8>
+   346a0:	aa1303e1 	mov	x1, x19
+[31m   346a4:	97ff67cb 	bl	e5d0 <strcpy@plt>[0m
+   346a8:	d2800000 	mov	x0, #0x0                   	// #0
+   346ac:	f947d294 	ldr	x20, [x20, #4000]
+--
+   34b8c:	f9400064 	ldr	x4, [x3]
+   34b90:	f9002fe4 	str	x4, [sp, #88]
+   34b94:	d2800004 	mov	x4, #0x0                   	// #0
+   34b98:	aa0203f6 	mov	x22, x2
+   34b9c:	910123e1 	add	x1, sp, #0x48
+   34ba0:	910143e2 	add	x2, sp, #0x50
+   34ba4:	97fffd8b 	bl	341d0 <profile_iterator_free@@Base+0x60>
+   34ba8:	aa0003f3 	mov	x19, x0
+   34bac:	b5000320 	cbnz	x0, 34c10 <profile_iterator@@Base+0xa0>
+   34bb0:	f9001bf7 	str	x23, [sp, #48]
+   34bb4:	b4000175 	cbz	x21, 34be0 <profile_iterator@@Base+0x70>
+   34bb8:	f94027f7 	ldr	x23, [sp, #72]
+   34bbc:	b40003f7 	cbz	x23, 34c38 <profile_iterator@@Base+0xc8>
+   34bc0:	aa1703e0 	mov	x0, x23
+   34bc4:	97ff627f 	bl	d5c0 <strlen@plt>
+   34bc8:	91000400 	add	x0, x0, #0x1
+   34bcc:	97ff63ed 	bl	db80 <malloc@plt>
+   34bd0:	f90002a0 	str	x0, [x21]
+   34bd4:	b4000460 	cbz	x0, 34c60 <profile_iterator@@Base+0xf0>
+   34bd8:	aa1703e1 	mov	x1, x23
+[31m   34bdc:	97ff667d 	bl	e5d0 <strcpy@plt>[0m
+   34be0:	b4000396 	cbz	x22, 34c50 <profile_iterator@@Base+0xe0>
+   34be4:	f9402bf7 	ldr	x23, [sp, #80]
+   34be8:	b40002f7 	cbz	x23, 34c44 <profile_iterator@@Base+0xd4>
+   34bec:	aa1703e0 	mov	x0, x23
+   34bf0:	97ff6274 	bl	d5c0 <strlen@plt>
+   34bf4:	91000400 	add	x0, x0, #0x1
+   34bf8:	97ff63e2 	bl	db80 <malloc@plt>
+   34bfc:	f90002c0 	str	x0, [x22]
+   34c00:	b4000360 	cbz	x0, 34c6c <profile_iterator@@Base+0xfc>
+   34c04:	aa1703e1 	mov	x1, x23
+[31m   34c08:	97ff6672 	bl	e5d0 <strcpy@plt>[0m
+   34c0c:	f9401bf7 	ldr	x23, [sp, #48]
+   34c10:	f947d294 	ldr	x20, [x20, #4000]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mfsck.ext3[0m
+

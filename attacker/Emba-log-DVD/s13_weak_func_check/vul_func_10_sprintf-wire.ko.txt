@@ -1,0 +1,241 @@
+[[0;33m*[0m] Binary protection state of [0;33mwire.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m358) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mwire.ko[0m
+
+     39c:	aa1303e0 	mov	x0, x19
+     3a0:	17ffffef 	b	35c <w1_master_attribute_store_pullup+0x4c>
+     3a4:	94000000 	bl	0 <__stack_chk_fail>
+
+00000000000003a8 <w1_master_attribute_show_pullup>:
+     3a8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     3ac:	910003fd 	mov	x29, sp
+     3b0:	a90153f3 	stp	x19, x20, [sp, #16]
+     3b4:	f90013f5 	str	x21, [sp, #32]
+     3b8:	aa0003f3 	mov	x19, x0
+     3bc:	aa0203f4 	mov	x20, x2
+     3c0:	aa1e03e0 	mov	x0, x30
+     3c4:	d1012275 	sub	x21, x19, #0x48
+     3c8:	94000000 	bl	0 <_mcount>
+     3cc:	aa1503e0 	mov	x0, x21
+     3d0:	94000000 	bl	0 <mutex_lock>
+     3d4:	b85a0262 	ldur	w2, [x19, #-96]
+     3d8:	90000001 	adrp	x1, 0 <w1_master_match>
+     3dc:	91000021 	add	x1, x1, #0x0
+     3e0:	aa1403e0 	mov	x0, x20
+[31m     3e4:	94000000 	bl	0 <sprintf>[0m
+     3e8:	2a0003f3 	mov	w19, w0
+     3ec:	aa1503e0 	mov	x0, x21
+--
+     3fc:	f94013f5 	ldr	x21, [sp, #32]
+     400:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     404:	d65f03c0 	ret
+
+0000000000000408 <w1_master_attribute_show_search>:
+     408:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     40c:	910003fd 	mov	x29, sp
+     410:	a90153f3 	stp	x19, x20, [sp, #16]
+     414:	f90013f5 	str	x21, [sp, #32]
+     418:	aa0003f3 	mov	x19, x0
+     41c:	aa0203f4 	mov	x20, x2
+     420:	aa1e03e0 	mov	x0, x30
+     424:	d1012275 	sub	x21, x19, #0x48
+     428:	94000000 	bl	0 <_mcount>
+     42c:	aa1503e0 	mov	x0, x21
+     430:	94000000 	bl	0 <mutex_lock>
+     434:	b8584262 	ldur	w2, [x19, #-124]
+     438:	90000001 	adrp	x1, 0 <w1_master_match>
+     43c:	91000021 	add	x1, x1, #0x0
+     440:	aa1403e0 	mov	x0, x20
+[31m     444:	94000000 	bl	0 <sprintf>[0m
+     448:	2a0003f3 	mov	w19, w0
+     44c:	aa1503e0 	mov	x0, x21
+--
+     460:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     464:	d65f03c0 	ret
+
+0000000000000468 <w1_master_attribute_show_pointer>:
+     468:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     46c:	910003fd 	mov	x29, sp
+     470:	a90153f3 	stp	x19, x20, [sp, #16]
+     474:	f90013f5 	str	x21, [sp, #32]
+     478:	aa0003f3 	mov	x19, x0
+     47c:	aa0203f4 	mov	x20, x2
+     480:	d1044273 	sub	x19, x19, #0x110
+     484:	aa1e03e0 	mov	x0, x30
+     488:	91032275 	add	x21, x19, #0xc8
+     48c:	94000000 	bl	0 <_mcount>
+     490:	aa1503e0 	mov	x0, x21
+     494:	94000000 	bl	0 <mutex_lock>
+     498:	f941f662 	ldr	x2, [x19, #1000]
+     49c:	90000001 	adrp	x1, 0 <w1_master_match>
+     4a0:	91000021 	add	x1, x1, #0x0
+     4a4:	aa1403e0 	mov	x0, x20
+[31m     4a8:	94000000 	bl	0 <sprintf>[0m
+     4ac:	2a0003f3 	mov	w19, w0
+     4b0:	aa1503e0 	mov	x0, x21
+     4b4:	94000000 	bl	0 <mutex_unlock>
+     4b8:	93407e60 	sxtw	x0, w19
+     4bc:	a94153f3 	ldp	x19, x20, [sp, #16]
+     4c0:	f94013f5 	ldr	x21, [sp, #32]
+     4c4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     4c8:	d65f03c0 	ret
+     4cc:	d503201f 	nop
+
+00000000000004d0 <w1_master_attribute_show_timeout_us>:
+     4d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     4d4:	910003fd 	mov	x29, sp
+     4d8:	f9000bf3 	str	x19, [sp, #16]
+     4dc:	aa1e03e0 	mov	x0, x30
+     4e0:	aa0203f3 	mov	x19, x2
+     4e4:	94000000 	bl	0 <_mcount>
+     4e8:	90000002 	adrp	x2, 0 <w1_master_match>
+     4ec:	aa1303e0 	mov	x0, x19
+     4f0:	90000001 	adrp	x1, 0 <w1_master_match>
+     4f4:	91000021 	add	x1, x1, #0x0
+     4f8:	b9400042 	ldr	w2, [x2]
+[31m     4fc:	94000000 	bl	0 <sprintf>[0m
+     500:	93407c00 	sxtw	x0, w0
+     504:	f9400bf3 	ldr	x19, [sp, #16]
+     508:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     50c:	d65f03c0 	ret
+
+0000000000000510 <w1_master_attribute_show_timeout>:
+     510:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     514:	910003fd 	mov	x29, sp
+     518:	f9000bf3 	str	x19, [sp, #16]
+     51c:	aa1e03e0 	mov	x0, x30
+     520:	aa0203f3 	mov	x19, x2
+     524:	94000000 	bl	0 <_mcount>
+     528:	90000002 	adrp	x2, 0 <w1_master_match>
+     52c:	aa1303e0 	mov	x0, x19
+     530:	90000001 	adrp	x1, 0 <w1_master_match>
+     534:	91000021 	add	x1, x1, #0x0
+     538:	b9400042 	ldr	w2, [x2]
+[31m     53c:	94000000 	bl	0 <sprintf>[0m
+     540:	93407c00 	sxtw	x0, w0
+     544:	f9400bf3 	ldr	x19, [sp, #16]
+     548:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     54c:	d65f03c0 	ret
+
+0000000000000550 <w1_master_attribute_show_attempts>:
+     550:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+     554:	910003fd 	mov	x29, sp
+     558:	a90153f3 	stp	x19, x20, [sp, #16]
+     55c:	f90013f5 	str	x21, [sp, #32]
+     560:	f9001fe0 	str	x0, [sp, #56]
+     564:	aa0203f4 	mov	x20, x2
+     568:	aa1e03e0 	mov	x0, x30
+     56c:	f9401ff3 	ldr	x19, [sp, #56]
+     570:	94000000 	bl	0 <_mcount>
+     574:	d1012275 	sub	x21, x19, #0x48
+     578:	aa1503e0 	mov	x0, x21
+     57c:	94000000 	bl	0 <mutex_lock>
+     580:	f8570262 	ldur	x2, [x19, #-144]
+     584:	90000001 	adrp	x1, 0 <w1_master_match>
+     588:	91000021 	add	x1, x1, #0x0
+     58c:	aa1403e0 	mov	x0, x20
+[31m     590:	94000000 	bl	0 <sprintf>[0m
+     594:	2a0003f3 	mov	w19, w0
+     598:	aa1503e0 	mov	x0, x21
+--
+     5ac:	a8c47bfd 	ldp	x29, x30, [sp], #64
+     5b0:	d65f03c0 	ret
+     5b4:	d503201f 	nop
+
+00000000000005b8 <w1_master_attribute_show_max_slave_count>:
+     5b8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     5bc:	910003fd 	mov	x29, sp
+     5c0:	a90153f3 	stp	x19, x20, [sp, #16]
+     5c4:	f90013f5 	str	x21, [sp, #32]
+     5c8:	aa0003f3 	mov	x19, x0
+     5cc:	aa0203f4 	mov	x20, x2
+     5d0:	aa1e03e0 	mov	x0, x30
+     5d4:	d1012275 	sub	x21, x19, #0x48
+     5d8:	94000000 	bl	0 <_mcount>
+     5dc:	aa1503e0 	mov	x0, x21
+     5e0:	94000000 	bl	0 <mutex_lock>
+     5e4:	b8568262 	ldur	w2, [x19, #-152]
+     5e8:	90000001 	adrp	x1, 0 <w1_master_match>
+     5ec:	91000021 	add	x1, x1, #0x0
+     5f0:	aa1403e0 	mov	x0, x20
+[31m     5f4:	94000000 	bl	0 <sprintf>[0m
+     5f8:	2a0003f3 	mov	w19, w0
+     5fc:	aa1503e0 	mov	x0, x21
+--
+     60c:	f94013f5 	ldr	x21, [sp, #32]
+     610:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     614:	d65f03c0 	ret
+
+0000000000000618 <w1_master_attribute_show_slave_count>:
+     618:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     61c:	910003fd 	mov	x29, sp
+     620:	a90153f3 	stp	x19, x20, [sp, #16]
+     624:	f90013f5 	str	x21, [sp, #32]
+     628:	aa0003f3 	mov	x19, x0
+     62c:	aa0203f4 	mov	x20, x2
+     630:	aa1e03e0 	mov	x0, x30
+     634:	d1012275 	sub	x21, x19, #0x48
+     638:	94000000 	bl	0 <_mcount>
+     63c:	aa1503e0 	mov	x0, x21
+     640:	94000000 	bl	0 <mutex_lock>
+     644:	b856c262 	ldur	w2, [x19, #-148]
+     648:	90000001 	adrp	x1, 0 <w1_master_match>
+     64c:	91000021 	add	x1, x1, #0x0
+     650:	aa1403e0 	mov	x0, x20
+[31m     654:	94000000 	bl	0 <sprintf>[0m
+     658:	2a0003f3 	mov	w19, w0
+     65c:	aa1503e0 	mov	x0, x21
+--
+     670:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     674:	d65f03c0 	ret
+
+0000000000000678 <w1_master_attribute_show_name>:
+     678:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     67c:	910003fd 	mov	x29, sp
+     680:	a90153f3 	stp	x19, x20, [sp, #16]
+     684:	f90013f5 	str	x21, [sp, #32]
+     688:	aa0003f3 	mov	x19, x0
+     68c:	aa0203f4 	mov	x20, x2
+     690:	d1044273 	sub	x19, x19, #0x110
+     694:	aa1e03e0 	mov	x0, x30
+     698:	91032275 	add	x21, x19, #0xc8
+     69c:	94000000 	bl	0 <_mcount>
+     6a0:	aa1503e0 	mov	x0, x21
+     6a4:	94000000 	bl	0 <mutex_lock>
+     6a8:	91006262 	add	x2, x19, #0x18
+     6ac:	90000001 	adrp	x1, 0 <w1_master_match>
+     6b0:	91000021 	add	x1, x1, #0x0
+     6b4:	aa1403e0 	mov	x0, x20
+[31m     6b8:	94000000 	bl	0 <sprintf>[0m
+     6bc:	2a0003f3 	mov	w19, w0
+     6c0:	aa1503e0 	mov	x0, x21
+     6c4:	94000000 	bl	0 <mutex_unlock>
+     6c8:	93407e60 	sxtw	x0, w19
+     6cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+     6d0:	f94013f5 	ldr	x21, [sp, #32]
+     6d4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     6d8:	d65f03c0 	ret
+     6dc:	d503201f 	nop
+
+00000000000006e0 <name_show>:
+     6e0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     6e4:	910003fd 	mov	x29, sp
+     6e8:	a90153f3 	stp	x19, x20, [sp, #16]
+     6ec:	aa0203f3 	mov	x19, x2
+     6f0:	aa0003f4 	mov	x20, x0
+     6f4:	aa1e03e0 	mov	x0, x30
+     6f8:	94000000 	bl	0 <_mcount>
+     6fc:	d1018282 	sub	x2, x20, #0x60
+     700:	aa1303e0 	mov	x0, x19
+     704:	90000001 	adrp	x1, 0 <w1_master_match>
+     708:	91000021 	add	x1, x1, #0x0
+[31m     70c:	94000000 	bl	0 <sprintf>[0m
+     710:	93407c00 	sxtw	x0, w0
+     714:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m10[0m times [0;33mwire.ko[0m
+

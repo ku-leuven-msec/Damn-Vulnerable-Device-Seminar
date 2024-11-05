@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mzram.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m239) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mzram.ko[0m
+
+     8f4:	94000000 	bl	0 <strlcpy>
+     8f8:	9100e3e0 	add	x0, sp, #0x38
+     8fc:	94000000 	bl	0 <strlen>
+     900:	b40000c0 	cbz	x0, 918 <comp_algorithm_store+0x68>
+     904:	d1000401 	sub	x1, x0, #0x1
+     908:	9100e3e0 	add	x0, sp, #0x38
+     90c:	38616800 	ldrb	w0, [x0, x1]
+     910:	7100281f 	cmp	w0, #0xa
+     914:	54000300 	b.eq	974 <comp_algorithm_store+0xc4>  // b.none
+     918:	9100e3e0 	add	x0, sp, #0x38
+     91c:	94000000 	bl	50 <zcomp_available_algorithm>
+     920:	72001c1f 	tst	w0, #0xff
+     924:	540002e0 	b.eq	980 <comp_algorithm_store+0xd0>  // b.none
+     928:	91008274 	add	x20, x19, #0x20
+     92c:	aa1403e0 	mov	x0, x20
+     930:	94000000 	bl	0 <down_write>
+     934:	f9405e60 	ldr	x0, [x19, #184]
+     938:	b50002a0 	cbnz	x0, 98c <comp_algorithm_store+0xdc>
+     93c:	9100e3e1 	add	x1, sp, #0x38
+     940:	91030260 	add	x0, x19, #0xc0
+[31m     944:	94000000 	bl	0 <strcpy>[0m
+     948:	aa1403e0 	mov	x0, x20
+     94c:	94000000 	bl	0 <up_write>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mzram.ko[0m
+

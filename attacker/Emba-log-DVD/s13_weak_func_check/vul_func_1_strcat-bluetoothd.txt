@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mbluetoothd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mbluetoothd[0m
+
+   9607c:	d503201f 	nop
+   96080:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   96084:	910003fd 	mov	x29, sp
+   96088:	a90153f3 	stp	x19, x20, [sp, #16]
+   9608c:	2a0003f4 	mov	w20, w0
+   96090:	d2800640 	mov	x0, #0x32                  	// #50
+   96094:	97fff17f 	bl	92690 <ba2str@@Base+0x510>
+   96098:	aa0003f3 	mov	x19, x0
+   9609c:	b40001e0 	cbz	x0, 960d8 <ba2str@@Base+0x3f58>
+   960a0:	36000254 	tbz	w20, #0, 960e8 <ba2str@@Base+0x3f68>
+   960a4:	3900001f 	strb	wzr, [x0]
+   960a8:	90000460 	adrp	x0, 122000 <btd_malloc@@Base+0x791b0>
+   960ac:	913e0000 	add	x0, x0, #0xf80
+   960b0:	2a1403e1 	mov	w1, w20
+   960b4:	910ac000 	add	x0, x0, #0x2b0
+   960b8:	97fffe0e 	bl	958f0 <ba2str@@Base+0x3770>
+   960bc:	aa0003f4 	mov	x20, x0
+   960c0:	b4000220 	cbz	x0, 96104 <ba2str@@Base+0x3f84>
+   960c4:	aa0003e1 	mov	x1, x0
+   960c8:	aa1303e0 	mov	x0, x19
+[31m   960cc:	97fe1f11 	bl	1dd10 <strcat@plt>[0m
+   960d0:	aa1403e0 	mov	x0, x20
+   960d4:	97fe208f 	bl	1e310 <free@plt>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mbluetoothd[0m
+

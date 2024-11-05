@@ -1,0 +1,76 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibell.so.0.0.2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibell.so.0.0.2[0m
+
+[31m   12ae4:	97ffeac7 	bl	d600 <mmap@plt>[0m
+   12ae8:	aa0003f5 	mov	x21, x0
+   12aec:	b100041f 	cmn	x0, #0x1
+   12af0:	54000740 	b.eq	12bd8 <l_settings_load_from_file@@ELL_0.10+0x178>  // b.none
+   12af4:	f94047e2 	ldr	x2, [sp, #136]
+   12af8:	aa1503e1 	mov	x1, x21
+   12afc:	aa1703e0 	mov	x0, x23
+   12b00:	97ffec18 	bl	db60 <l_settings_load_from_data@plt>
+   12b04:	12001c13 	and	w19, w0, #0xff
+   12b08:	f94047e1 	ldr	x1, [sp, #136]
+   12b0c:	aa1503e0 	mov	x0, x21
+   12b10:	97ffebc0 	bl	da10 <munmap@plt>
+   12b14:	2a1403e0 	mov	w0, w20
+   12b18:	97ffea36 	bl	d3f0 <close@plt>
+   12b1c:	f947bb00 	ldr	x0, [x24, #3952]
+   12b20:	f9406fe1 	ldr	x1, [sp, #216]
+   12b24:	f9400000 	ldr	x0, [x0]
+   12b28:	ca000020 	eor	x0, x1, x0
+   12b2c:	b50006e0 	cbnz	x0, 12c08 <l_settings_load_from_file@@ELL_0.10+0x1a8>
+   12b30:	2a1303e0 	mov	w0, w19
+   12b34:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+[31m   2bc60:	97ff8668 	bl	d600 <mmap@plt>[0m
+   2bc64:	aa0003f5 	mov	x21, x0
+   2bc68:	b100041f 	cmn	x0, #0x1
+   2bc6c:	54000560 	b.eq	2bd18 <l_hwdb_new@@ELL_0.10+0x128>  // b.none
+   2bc70:	f94002a1 	ldr	x1, [x21]
+   2bc74:	d28a6960 	mov	x0, #0x534b                	// #21323
+   2bc78:	f2aa0980 	movk	x0, #0x504c, lsl #16
+   2bc7c:	f2c90900 	movk	x0, #0x4848, lsl #32
+   2bc80:	f2e90a40 	movk	x0, #0x4852, lsl #48
+   2bc84:	eb00003f 	cmp	x1, x0
+   2bc88:	54000421 	b.ne	2bd0c <l_hwdb_new@@ELL_0.10+0x11c>  // b.any
+   2bc8c:	f9400aa0 	ldr	x0, [x21, #16]
+   2bc90:	eb16001f 	cmp	x0, x22
+   2bc94:	540003c1 	b.ne	2bd0c <l_hwdb_new@@ELL_0.10+0x11c>  // b.any
+   2bc98:	f9400ea0 	ldr	x0, [x21, #24]
+   2bc9c:	f101401f 	cmp	x0, #0x50
+   2bca0:	54000361 	b.ne	2bd0c <l_hwdb_new@@ELL_0.10+0x11c>  // b.any
+   2bca4:	f94012a0 	ldr	x0, [x21, #32]
+   2bca8:	f100601f 	cmp	x0, #0x18
+   2bcac:	54000301 	b.ne	2bd0c <l_hwdb_new@@ELL_0.10+0x11c>  // b.any
+   2bcb0:	f94016a0 	ldr	x0, [x21, #40]
+--
+[31m   2e0a4:	97ff7d57 	bl	d600 <mmap@plt>[0m
+   2e0a8:	f9004660 	str	x0, [x19, #136]
+   2e0ac:	b100041f 	cmn	x0, #0x1
+   2e0b0:	54000180 	b.eq	2e0e0 <l_base64_encode@@ELL_0.10+0x2f0>  // b.none
+   2e0b4:	2a1403e0 	mov	w0, w20
+   2e0b8:	a94153f3 	ldp	x19, x20, [sp, #16]
+   2e0bc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   2e0c0:	d65f03c0 	ret
+   2e0c4:	97ff7f6b 	bl	de70 <__errno_location@plt>
+   2e0c8:	b9400014 	ldr	w20, [x0]
+   2e0cc:	4b1403f4 	neg	w20, w20
+   2e0d0:	2a1403e0 	mov	w0, w20
+   2e0d4:	a94153f3 	ldp	x19, x20, [sp, #16]
+   2e0d8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   2e0dc:	d65f03c0 	ret
+   2e0e0:	97ff7f64 	bl	de70 <__errno_location@plt>
+   2e0e4:	b9400014 	ldr	w20, [x0]
+   2e0e8:	b9400260 	ldr	w0, [x19]
+   2e0ec:	4b1403f4 	neg	w20, w20
+   2e0f0:	97ff7cc0 	bl	d3f0 <close@plt>
+   2e0f4:	2a1403e0 	mov	w0, w20
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m3[0m times [0;33mlibell.so.0.0.2[0m
+

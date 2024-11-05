@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mubi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m623) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mubi.ko[0m
+
+    3498:	f90067e1 	str	x1, [sp, #200]
+    349c:	d2800001 	mov	x1, #0x0                   	// #0
+    34a0:	910223f4 	add	x20, sp, #0x88
+    34a4:	f9002ff4 	str	x20, [sp, #88]
+    34a8:	b40010b7 	cbz	x23, 36bc <ubi_mtd_param_parse+0x24c>
+    34ac:	90000015 	adrp	x21, 0 <ubi_update_layout_vol>
+    34b0:	b94002a1 	ldr	w1, [x21]
+    34b4:	7100803f 	cmp	w1, #0x20
+    34b8:	54001580 	b.eq	3768 <ubi_mtd_param_parse+0x2f8>  // b.none
+    34bc:	aa1703e0 	mov	x0, x23
+    34c0:	d2800801 	mov	x1, #0x40                  	// #64
+    34c4:	94000000 	bl	0 <strnlen>
+    34c8:	aa0003f3 	mov	x19, x0
+    34cc:	f101001f 	cmp	x0, #0x40
+    34d0:	2a0003f8 	mov	w24, w0
+    34d4:	54001220 	b.eq	3718 <ubi_mtd_param_parse+0x2a8>  // b.none
+    34d8:	34001520 	cbz	w0, 377c <ubi_mtd_param_parse+0x30c>
+    34dc:	51000673 	sub	w19, w19, #0x1
+    34e0:	aa1703e1 	mov	x1, x23
+    34e4:	aa1403e0 	mov	x0, x20
+[31m    34e8:	94000000 	bl	0 <strcpy>[0m
+    34ec:	3873ca80 	ldrb	w0, [x20, w19, sxtw]
+    34f0:	7100281f 	cmp	w0, #0xa
+--
+    34fc:	9101a3f3 	add	x19, sp, #0x68
+    3500:	90000014 	adrp	x20, 0 <ubi_update_layout_vol>
+    3504:	91008278 	add	x24, x19, #0x20
+    3508:	91000294 	add	x20, x20, #0x0
+    350c:	aa1403e1 	mov	x1, x20
+    3510:	910163e0 	add	x0, sp, #0x58
+    3514:	94000000 	bl	0 <strsep>
+    3518:	f8008660 	str	x0, [x19], #8
+    351c:	eb13031f 	cmp	x24, x19
+    3520:	54ffff61 	b.ne	350c <ubi_mtd_param_parse+0x9c>  // b.any
+    3524:	f9402fe0 	ldr	x0, [sp, #88]
+    3528:	b5001140 	cbnz	x0, 3750 <ubi_mtd_param_parse+0x2e0>
+    352c:	b94002b3 	ldr	w19, [x21]
+    3530:	52800994 	mov	w20, #0x4c                  	// #76
+    3534:	f94037e1 	ldr	x1, [sp, #104]
+    3538:	910002b7 	add	x23, x21, #0x0
+    353c:	f90023f9 	str	x25, [sp, #64]
+    3540:	910022f9 	add	x25, x23, #0x8
+    3544:	9b347e74 	smull	x20, w19, w20
+    3548:	8b140320 	add	x0, x25, x20
+[31m    354c:	94000000 	bl	0 <strcpy>[0m
+    3550:	f9403bf8 	ldr	x24, [sp, #112]
+    3554:	b4000798 	cbz	x24, 3644 <ubi_mtd_param_parse+0x1d4>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mubi.ko[0m
+

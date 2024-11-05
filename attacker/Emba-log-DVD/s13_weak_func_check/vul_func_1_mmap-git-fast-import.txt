@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mgit-fast-import[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mgit-fast-import[0m
+
+[31m   781b8:	97fe48ae 	bl	a470 <mmap64@plt>[0m
+   781bc:	f100027f 	cmp	x19, #0x0
+   781c0:	ba410800 	ccmn	x0, #0x1, #0x0, eq  // eq = none
+   781c4:	9a9f1000 	csel	x0, x0, xzr, ne  // ne = any
+   781c8:	a94153f3 	ldp	x19, x20, [sp, #16]
+   781cc:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   781d0:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   781d4:	d65f03c0 	ret
+   781d8:	d0000680 	adrp	x0, 14a000 <error@@Base+0xa5d40>
+   781dc:	d2800001 	mov	x1, #0x0                   	// #0
+   781e0:	9102a000 	add	x0, x0, #0xa8
+   781e4:	29078fe2 	stp	w2, w3, [sp, #60]
+   781e8:	b90047e4 	str	w4, [sp, #68]
+   781ec:	f90027e5 	str	x5, [sp, #72]
+   781f0:	97feaea4 	bl	23c80 <ferror@plt+0x19760>
+   781f4:	29478fe2 	ldp	w2, w3, [sp, #60]
+   781f8:	aa0003e6 	mov	x6, x0
+   781fc:	b94047e4 	ldr	w4, [sp, #68]
+   78200:	f94027e5 	ldr	x5, [sp, #72]
+   78204:	b5000080 	cbnz	x0, 78214 <ferror@plt+0x6dcf4>
+   78208:	92800000 	mov	x0, #0xffffffffffffffff    	// #-1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mgit-fast-import[0m
+

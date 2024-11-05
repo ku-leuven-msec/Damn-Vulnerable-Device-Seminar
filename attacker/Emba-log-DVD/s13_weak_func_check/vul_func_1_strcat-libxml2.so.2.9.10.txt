@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibxml2.so.2.9.10[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibxml2.so.2.9.10[0m
+
+   69608:	f94016c1 	ldr	x1, [x22, #40]
+   6960c:	b40011a1 	cbz	x1, 69840 <xmlSnprintfElementContent@@LIBXML2_2.4.30+0x2a0>
+   69610:	aa0103e0 	mov	x0, x1
+   69614:	9400e4af 	bl	a28d0 <xmlStrlen@@LIBXML2_2.4.30>
+   69618:	0b000300 	add	w0, w24, w0
+   6961c:	11002800 	add	w0, w0, #0xa
+   69620:	6b0002bf 	cmp	w21, w0
+   69624:	5400114d 	b.le	6984c <xmlSnprintfElementContent@@LIBXML2_2.4.30+0x2ac>
+   69628:	f94016d5 	ldr	x21, [x22, #40]
+   6962c:	b4000115 	cbz	x21, 6964c <xmlSnprintfElementContent@@LIBXML2_2.4.30+0xac>
+   69630:	aa1403e0 	mov	x0, x20
+   69634:	97ff0c57 	bl	2c790 <strlen@plt>
+   69638:	aa1503e1 	mov	x1, x21
+   6963c:	8b000280 	add	x0, x20, x0
+   69640:	97ff09c4 	bl	2bd50 <stpcpy@plt>
+   69644:	52800741 	mov	w1, #0x3a                  	// #58
+   69648:	79000001 	strh	w1, [x0]
+   6964c:	f94006c1 	ldr	x1, [x22, #8]
+   69650:	b4000081 	cbz	x1, 69660 <xmlSnprintfElementContent@@LIBXML2_2.4.30+0xc0>
+   69654:	aa1403e0 	mov	x0, x20
+[31m   69658:	97ff0a1a 	bl	2bec0 <strcat@plt>[0m
+   6965c:	d503201f 	nop
+   69660:	aa1403e0 	mov	x0, x20
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mlibxml2.so.2.9.10[0m
+

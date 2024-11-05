@@ -1,0 +1,302 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">mwifiex_sdio.ko</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="red">No RELRO     </span>   <span class="green">Canary found   </span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">212) Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">mwifiex_sdio.ko</span></pre>
+<br />
+<pre>    1250:	710006bf 	cmp	w21, #0x1</pre>
+<pre>    1254:	54000c40 	b.eq	13dc &lt</span>wifiex_sdio_reg_dump+0x23c&gt;  // b.none</pre>
+<pre>    1258:	71000b5f 	cmp	w26, #0x2</pre>
+<pre>    125c:	54001180 	b.eq	148c &lt</span>wifiex_sdio_reg_dump+0x2ec&gt;  // b.none</pre>
+<pre>    1260:	34000fba 	cbz	w26, 1454 &lt</span>wifiex_sdio_reg_dump+0x2b4&gt;</pre>
+<pre>    1264:	710012bf 	cmp	w21, #0x4</pre>
+<pre>    1268:	54001380 	b.eq	14d8 &lt</span>wifiex_sdio_reg_dump+0x338&gt;  // b.none</pre>
+<pre>    126c:	f9401e80 	ldr	x0, [x20, #56]</pre>
+<pre>    1270:	71000abf 	cmp	w21, #0x2</pre>
+<pre>    1274:	3940b81b 	ldrb	w27, [x0, #46]</pre>
+<pre>    1278:	11002b73 	add	w19, w27, #0xa</pre>
+<pre>    127c:	12001e73 	and	w19, w19, #0xff</pre>
+<pre>    1280:	54001140 	b.eq	14a8 &lt</span>wifiex_sdio_reg_dump+0x308&gt;  // b.none</pre>
+<pre>    1284:	90000001 	adrp	x1, 0 &lt</span>wifiex_cleanup_mpa_buf&gt;</pre>
+<pre>    1288:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    128c:	2a1303e4 	mov	w4, w19</pre>
+<pre>    1290:	2a1b03e3 	mov	w3, w27</pre>
+<pre>    1294:	910263e0 	add	x0, sp, #0x98</pre>
+<pre>    1298:	1100075a 	add	w26, w26, #0x1</pre>
+<pre>    129c:	52800022 	mov	w2, #0x1                   	// #1</pre>
+<pre><span class="red">    12a0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    12a4:	910263e1 	add	x1, sp, #0x98</pre>
+<pre>    12a8:	6b13037f 	cmp	w27, w19</pre>
+<pre>    12ac:	8b20c03c 	add	x28, x1, w0, sxtw</pre>
+<pre>    12b0:	12001f40 	and	w0, w26, #0xff</pre>
+<pre>    12b4:	b9006fe0 	str	w0, [sp, #108]</pre>
+<pre>    12b8:	54000668 	b.hi	1384 &lt</span>wifiex_sdio_reg_dump+0x1e4&gt;  // b.pmore</pre>
+<pre>    12bc:	52800037 	mov	w23, #0x1                   	// #1</pre>
+<pre>    12c0:	9000001a 	adrp	x26, 0 &lt</span>wifiex_cleanup_mpa_buf&gt;</pre>
+<pre>    12c4:	9100035a 	add	x26, x26, #0x0</pre>
+<pre>    12c8:	14000010 	b	1308 &lt</span>wifiex_sdio_reg_dump+0x168&gt;</pre>
+<pre>    12cc:	94000000 	bl	0 &lt;sdio_f0_readb&gt;</pre>
+<pre>    12d0:	12001c04 	and	w4, w0, #0xff</pre>
+<pre>    12d4:	71000abf 	cmp	w21, #0x2</pre>
+<pre>    12d8:	54000280 	b.eq	1328 &lt</span>wifiex_sdio_reg_dump+0x188&gt;  // b.none</pre>
+<pre>    12dc:	b94097e0 	ldr	w0, [sp, #148]</pre>
+<pre>    12e0:	35000b20 	cbnz	w0, 1444 &lt</span>wifiex_sdio_reg_dump+0x2a4&gt;</pre>
+<pre>    12e4:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    12e8:	2a0403e2 	mov	w2, w4</pre>
+<pre>    12ec:	aa1803e1 	mov	x1, x24</pre>
+<pre>    12f0:	91000f9c 	add	x28, x28, #0x3</pre>
+<pre><span class="red">    12f4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    12f8:	11000763 	add	w3, w27, #0x1</pre>
+<pre>    12fc:	12001c7b 	and	w27, w3, #0xff</pre>
+<pre>    1300:	6b13037f 	cmp	w27, w19</pre>
+<pre>    1304:	54000408 	b.hi	1384 &lt</span>wifiex_sdio_reg_dump+0x1e4&gt;  // b.pmore</pre>
+<pre>    1308:	910253e2 	add	x2, sp, #0x94</pre>
+<pre>    130c:	2a1b03e1 	mov	w1, w27</pre>
+<pre>    1310:	f9400280 	ldr	x0, [x20]</pre>
+<pre>    1314:	34fffdd7 	cbz	w23, 12cc &lt</span>wifiex_sdio_reg_dump+0x12c&gt;</pre>
+<pre>    1318:	94000000 	bl	0 &lt;sdio_readb&gt;</pre>
+<pre>    131c:	12001c04 	and	w4, w0, #0xff</pre>
+<pre>    1320:	71000abf 	cmp	w21, #0x2</pre>
+<pre>    1324:	54fffdc1 	b.ne	12dc &lt</span>wifiex_sdio_reg_dump+0x13c&gt;  // b.any</pre>
+<pre>    1328:	aa1a03e1 	mov	x1, x26</pre>
+<pre>    132c:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    1330:	2a1b03e2 	mov	w2, w27</pre>
+<pre>    1334:	b9006be4 	str	w4, [sp, #104]</pre>
+<pre><span class="red">    1338:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    133c:	b94097e1 	ldr	w1, [sp, #148]</pre>
+<pre>    1340:	8b20c39c 	add	x28, x28, w0, sxtw</pre>
+<pre>    1344:	35000801 	cbnz	w1, 1444 &lt</span>wifiex_sdio_reg_dump+0x2a4&gt;</pre>
+<pre>    1348:	b9406be4 	ldr	w4, [sp, #104]</pre>
+<pre>    134c:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    1350:	aa1803e1 	mov	x1, x24</pre>
+<pre>    1354:	91000f9c 	add	x28, x28, #0x3</pre>
+<pre>    1358:	2a0403e2 	mov	w2, w4</pre>
+<pre><span class="red">    135c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1360:	6b13037f 	cmp	w27, w19</pre>
+<pre>    1364:	54fffca2 	b.cs	12f8 &lt</span>wifiex_sdio_reg_dump+0x158&gt;  // b.hs, b.nlast</pre>
+<pre>    1368:	f9401e80 	ldr	x0, [x20, #56]</pre>
+<pre>    136c:	110006c1 	add	w1, w22, #0x1</pre>
+<pre>    1370:	8b36c000 	add	x0, x0, w22, sxtw</pre>
+<pre>    1374:	12001c36 	and	w22, w1, #0xff</pre>
+<pre>    1378:	3940c01b 	ldrb	w27, [x0, #48]</pre>
+<pre>    137c:	6b13037f 	cmp	w27, w19</pre>
+<pre>    1380:	54fffc49 	b.ls	1308 &lt</span>wifiex_sdio_reg_dump+0x168&gt;  // b.plast</pre>
+<pre>    1384:	a9474fe0 	ldp	x0, x19, [sp, #112]</pre>
+<pre>    1388:	910263e3 	add	x3, sp, #0x98</pre>
+<pre>    138c:	52800021 	mov	w1, #0x1                   	// #1</pre>
+<pre>    1390:	aa1303e2 	mov	x2, x19</pre>
+<pre>    1394:	94000000 	bl	0 &lt;_mwifiex_dbg&gt;</pre>
+<pre>    1398:	aa1303e1 	mov	x1, x19</pre>
+<pre>    139c:	aa1903e0 	mov	x0, x25</pre>
+<pre>    13a0:	910263e2 	add	x2, sp, #0x98</pre>
+<pre><span class="red">    13a4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    13a8:	b9406fe1 	ldr	w1, [sp, #108]</pre>
+<pre>    13ac:	8b20c339 	add	x25, x25, w0, sxtw</pre>
+<pre>--</pre>
+<pre>    141c:	f94043e1 	ldr	x1, [sp, #128]</pre>
+<pre>    1420:	91146021 	add	x1, x1, #0x518</pre>
+<pre>    1424:	f940cfe2 	ldr	x2, [sp, #408]</pre>
+<pre>    1428:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    142c:	ca010041 	eor	x1, x2, x1</pre>
+<pre>    1430:	b5000861 	cbnz	x1, 153c &lt</span>wifiex_sdio_reg_dump+0x39c&gt;</pre>
+<pre>    1434:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    1438:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>    143c:	a8da7bfd 	ldp	x29, x30, [sp], #416</pre>
+<pre>    1440:	d65f03c0 	ret</pre>
+<pre>    1444:	528a48a0 	mov	w0, #0x5245                	// #21061</pre>
+<pre>    1448:	72a00a40 	movk	w0, #0x52, lsl #16</pre>
+<pre>    144c:	b9000380 	str	w0, [x28]</pre>
+<pre>    1450:	17ffffcd 	b	1384 &lt</span>wifiex_sdio_reg_dump+0x1e4&gt;</pre>
+<pre>    1454:	910263e0 	add	x0, sp, #0x98</pre>
+<pre>    1458:	90000001 	adrp	x1, 0 &lt</span>wifiex_cleanup_mpa_buf&gt;</pre>
+<pre>    145c:	52800124 	mov	w4, #0x9                   	// #9</pre>
+<pre>    1460:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    1464:	52800003 	mov	w3, #0x0                   	// #0</pre>
+<pre>    1468:	52800002 	mov	w2, #0x0                   	// #0</pre>
+<pre><span class="red">    146c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1470:	5280001b 	mov	w27, #0x0                   	// #0</pre>
+<pre>    1474:	52800021 	mov	w1, #0x1                   	// #1</pre>
+<pre>    1478:	b9006fe1 	str	w1, [sp, #108]</pre>
+<pre>    147c:	910263e1 	add	x1, sp, #0x98</pre>
+<pre>    1480:	52800133 	mov	w19, #0x9                   	// #9</pre>
+<pre>    1484:	8b20c03c 	add	x28, x1, w0, sxtw</pre>
+<pre>    1488:	17ffff8e 	b	12c0 &lt</span>wifiex_sdio_reg_dump+0x120&gt;</pre>
+<pre>    148c:	f9401e81 	ldr	x1, [x20, #56]</pre>
+<pre>    1490:	52800036 	mov	w22, #0x1                   	// #1</pre>
+<pre>    1494:	3940bc20 	ldrb	w0, [x1, #47]</pre>
+<pre>    1498:	3940c03b 	ldrb	w27, [x1, #48]</pre>
+<pre>    149c:	51000400 	sub	w0, w0, #0x1</pre>
+<pre>    14a0:	8b20c020 	add	x0, x1, w0, sxtw</pre>
+<pre>    14a4:	3940c013 	ldrb	w19, [x0, #48]</pre>
+<pre>    14a8:	910263e0 	add	x0, sp, #0x98</pre>
+<pre>    14ac:	1100075a 	add	w26, w26, #0x1</pre>
+<pre>    14b0:	90000001 	adrp	x1, 0 &lt</span>wifiex_cleanup_mpa_buf&gt;</pre>
+<pre>    14b4:	52800022 	mov	w2, #0x1                   	// #1</pre>
+<pre>    14b8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    14bc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    14c0:	12001f40 	and	w0, w26, #0xff</pre>
+<pre>    14c4:	b9006fe0 	str	w0, [sp, #108]</pre>
+<pre>--</pre>
+<pre>    14e0:	f2a00837 	movk	x23, #0x41, lsl #16</pre>
+<pre>    14e4:	d503201f 	nop</pre>
+<pre>    14e8:	aa1703e0 	mov	x0, x23</pre>
+<pre>    14ec:	94000000 	bl	0 &lt;__const_udelay&gt;</pre>
+<pre>    14f0:	f1000673 	subs	x19, x19, #0x1</pre>
+<pre>    14f4:	54ffffa1 	b.ne	14e8 &lt</span>wifiex_sdio_reg_dump+0x348&gt;  // b.any</pre>
+<pre>    14f8:	f9401e80 	ldr	x0, [x20, #56]</pre>
+<pre>    14fc:	3940b81b 	ldrb	w27, [x0, #46]</pre>
+<pre>    1500:	11002b73 	add	w19, w27, #0xa</pre>
+<pre>    1504:	12001e73 	and	w19, w19, #0xff</pre>
+<pre>    1508:	17ffff5f 	b	1284 &lt</span>wifiex_sdio_reg_dump+0xe4&gt;</pre>
+<pre>    150c:	a9474fe0 	ldp	x0, x19, [sp, #112]</pre>
+<pre>    1510:	910263e3 	add	x3, sp, #0x98</pre>
+<pre>    1514:	52800021 	mov	w1, #0x1                   	// #1</pre>
+<pre>    1518:	110006b5 	add	w21, w21, #0x1</pre>
+<pre>    151c:	aa1303e2 	mov	x2, x19</pre>
+<pre>    1520:	94000000 	bl	0 &lt;_mwifiex_dbg&gt;</pre>
+<pre>    1524:	aa1903e0 	mov	x0, x25</pre>
+<pre>    1528:	910263e2 	add	x2, sp, #0x98</pre>
+<pre>    152c:	aa1303e1 	mov	x1, x19</pre>
+<pre><span class="red">    1530:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1534:	8b20c339 	add	x25, x25, w0, sxtw</pre>
+<pre>    1538:	17ffffa1 	b	13bc &lt</span>wifiex_sdio_reg_dump+0x21c&gt;</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">8</span> times </span><span class="orange">mwifiex_sdio.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

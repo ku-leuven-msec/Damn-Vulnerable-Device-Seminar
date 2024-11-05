@@ -1,0 +1,123 @@
+[[0;33m*[0m] Binary protection state of [0;33mledtrig-netdev.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m104) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mledtrig-netdev.ko[0m
+
+
+Disassembly of section .text:
+
+0000000000000000 <interval_show>:
+   0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   4:	910003fd 	mov	x29, sp
+   8:	a90153f3 	stp	x19, x20, [sp, #16]
+   c:	aa0003f4 	mov	x20, x0
+  10:	aa0203f3 	mov	x19, x2
+  14:	aa1e03e0 	mov	x0, x30
+  18:	94000000 	bl	0 <_mcount>
+  1c:	f9403e80 	ldr	x0, [x20, #120]
+  20:	f9409400 	ldr	x0, [x0, #296]
+  24:	b9409800 	ldr	w0, [x0, #152]
+  28:	93407c00 	sxtw	x0, w0
+  2c:	94000000 	bl	0 <jiffies_to_msecs>
+  30:	90000001 	adrp	x1, 0 <interval_show>
+  34:	2a0003e2 	mov	w2, w0
+  38:	91000021 	add	x1, x1, #0x0
+  3c:	aa1303e0 	mov	x0, x19
+[31m  40:	94000000 	bl	0 <sprintf>[0m
+  44:	93407c00 	sxtw	x0, w0
+  48:	a94153f3 	ldp	x19, x20, [sp, #16]
+  4c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  50:	d65f03c0 	ret
+  54:	d503201f 	nop
+
+0000000000000058 <tx_show>:
+  58:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  5c:	910003fd 	mov	x29, sp
+  60:	a90153f3 	stp	x19, x20, [sp, #16]
+  64:	aa0003f4 	mov	x20, x0
+  68:	aa0203f3 	mov	x19, x2
+  6c:	aa1e03e0 	mov	x0, x30
+  70:	94000000 	bl	0 <_mcount>
+  74:	f9403e82 	ldr	x2, [x20, #120]
+  78:	aa1303e0 	mov	x0, x19
+  7c:	90000001 	adrp	x1, 0 <interval_show>
+  80:	91000021 	add	x1, x1, #0x0
+  84:	f9409442 	ldr	x2, [x2, #296]
+  88:	f9405042 	ldr	x2, [x2, #160]
+  8c:	53010442 	ubfx	w2, w2, #1, #1
+[31m  90:	94000000 	bl	0 <sprintf>[0m
+  94:	d2800040 	mov	x0, #0x2                   	// #2
+  98:	a94153f3 	ldp	x19, x20, [sp, #16]
+  9c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  a0:	d65f03c0 	ret
+  a4:	d503201f 	nop
+
+00000000000000a8 <rx_show>:
+  a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  ac:	910003fd 	mov	x29, sp
+  b0:	a90153f3 	stp	x19, x20, [sp, #16]
+  b4:	aa0003f4 	mov	x20, x0
+  b8:	aa0203f3 	mov	x19, x2
+  bc:	aa1e03e0 	mov	x0, x30
+  c0:	94000000 	bl	0 <_mcount>
+  c4:	f9403e82 	ldr	x2, [x20, #120]
+  c8:	aa1303e0 	mov	x0, x19
+  cc:	90000001 	adrp	x1, 0 <interval_show>
+  d0:	91000021 	add	x1, x1, #0x0
+  d4:	f9409442 	ldr	x2, [x2, #296]
+  d8:	f9405042 	ldr	x2, [x2, #160]
+  dc:	53020842 	ubfx	w2, w2, #2, #1
+[31m  e0:	94000000 	bl	0 <sprintf>[0m
+  e4:	d2800040 	mov	x0, #0x2                   	// #2
+  e8:	a94153f3 	ldp	x19, x20, [sp, #16]
+  ec:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  f0:	d65f03c0 	ret
+  f4:	d503201f 	nop
+
+00000000000000f8 <link_show>:
+  f8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  fc:	910003fd 	mov	x29, sp
+ 100:	a90153f3 	stp	x19, x20, [sp, #16]
+ 104:	aa0003f4 	mov	x20, x0
+ 108:	aa0203f3 	mov	x19, x2
+ 10c:	aa1e03e0 	mov	x0, x30
+ 110:	94000000 	bl	0 <_mcount>
+ 114:	f9403e82 	ldr	x2, [x20, #120]
+ 118:	aa1303e0 	mov	x0, x19
+ 11c:	90000001 	adrp	x1, 0 <interval_show>
+ 120:	91000021 	add	x1, x1, #0x0
+ 124:	f9409442 	ldr	x2, [x2, #296]
+ 128:	f9405042 	ldr	x2, [x2, #160]
+ 12c:	12000042 	and	w2, w2, #0x1
+[31m 130:	94000000 	bl	0 <sprintf>[0m
+ 134:	d2800040 	mov	x0, #0x2                   	// #2
+ 138:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 13c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 140:	d65f03c0 	ret
+ 144:	d503201f 	nop
+
+0000000000000148 <device_name_show>:
+ 148:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 14c:	910003fd 	mov	x29, sp
+ 150:	a90153f3 	stp	x19, x20, [sp, #16]
+ 154:	aa0003f4 	mov	x20, x0
+ 158:	aa0203f3 	mov	x19, x2
+ 15c:	aa1e03e0 	mov	x0, x30
+ 160:	94000000 	bl	0 <_mcount>
+ 164:	f9403e80 	ldr	x0, [x20, #120]
+ 168:	f9409414 	ldr	x20, [x0, #296]
+ 16c:	aa1403e0 	mov	x0, x20
+ 170:	94000000 	bl	0 <_raw_spin_lock_bh>
+ 174:	91022282 	add	x2, x20, #0x88
+ 178:	90000001 	adrp	x1, 0 <interval_show>
+ 17c:	91000021 	add	x1, x1, #0x0
+ 180:	aa1303e0 	mov	x0, x19
+[31m 184:	94000000 	bl	0 <sprintf>[0m
+ 188:	2a0003f3 	mov	w19, w0
+ 18c:	aa1403e0 	mov	x0, x20
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m5[0m times [0;33mledtrig-netdev.ko[0m
+

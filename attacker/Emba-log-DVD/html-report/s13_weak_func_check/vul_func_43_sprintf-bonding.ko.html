@@ -1,0 +1,1099 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">bonding.ko</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="red">No RELRO     </span>   <span class="green">Canary found   </span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">768) Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">bonding.ko</span></pre>
+<br />
+<pre>    dac0:	f9001bf7 	str	x23, [sp, #48]</pre>
+<pre>    dac4:	aa0103f3 	mov	x19, x1</pre>
+<pre>    dac8:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dacc:	d1006037 	sub	x23, x1, #0x18</pre>
+<pre>    dad0:	aa0203f5 	mov	x21, x2</pre>
+<pre>    dad4:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dad8:	90000016 	adrp	x22, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dadc:	94000000 	bl	0 &lt;rtnl_lock&gt;</pre>
+<pre>    dae0:	910002d6 	add	x22, x22, #0x0</pre>
+<pre>    dae4:	f85e8273 	ldur	x19, [x19, #-24]</pre>
+<pre>    dae8:	52800014 	mov	w20, #0x0                   	// #0</pre>
+<pre>    daec:	eb1302ff 	cmp	x23, x19</pre>
+<pre>    daf0:	d1018273 	sub	x19, x19, #0x60</pre>
+<pre>    daf4:	54000081 	b.ne	db04 &lt;bonding_show_bonds+0x54&gt;  // b.any</pre>
+<pre>    daf8:	14000018 	b	db58 &lt;bonding_show_bonds+0xa8&gt;</pre>
+<pre>    dafc:	713fc29f 	cmp	w20, #0xff0</pre>
+<pre>    db00:	540003c8 	b.hi	db78 &lt;bonding_show_bonds+0xc8&gt;  // b.pmore</pre>
+<pre>    db04:	f9400262 	ldr	x2, [x19]</pre>
+<pre>    db08:	8b34c2a0 	add	x0, x21, w20, sxtw</pre>
+<pre>    db0c:	aa1603e1 	mov	x1, x22</pre>
+<pre><span class="red">    db10:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    db14:	0b000294 	add	w20, w20, w0</pre>
+<pre>    db18:	f9403273 	ldr	x19, [x19, #96]</pre>
+<pre>--</pre>
+<pre>    db9c:	8b0102a2 	add	x2, x21, x1</pre>
+<pre>    dba0:	11002694 	add	w20, w20, #0x9</pre>
+<pre>    dba4:	f9400003 	ldr	x3, [x0]</pre>
+<pre>    dba8:	f8216aa3 	str	x3, [x21, x1]</pre>
+<pre>    dbac:	79401000 	ldrh	w0, [x0, #8]</pre>
+<pre>    dbb0:	79001040 	strh	w0, [x2, #8]</pre>
+<pre>    dbb4:	17ffffdd 	b	db28 &lt;bonding_show_bonds+0x78&gt;</pre>
+<br />
+<pre>000000000000dbb8 &lt;bonding_show_tlb_dynamic_lb&gt;:</pre>
+<pre>    dbb8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dbbc:	910003fd 	mov	x29, sp</pre>
+<pre>    dbc0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dbc4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dbc8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    dbcc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dbd0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dbd4:	b9453e82 	ldr	w2, [x20, #1340]</pre>
+<pre>    dbd8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    dbdc:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dbe0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    dbe4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    dbe8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dbec:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dbf0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    dbf4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000dbf8 &lt;bonding_show_packets_per_slave&gt;:</pre>
+<pre>    dbf8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dbfc:	910003fd 	mov	x29, sp</pre>
+<pre>    dc00:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dc04:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dc08:	aa0203f3 	mov	x19, x2</pre>
+<pre>    dc0c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dc10:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dc14:	b9453a82 	ldr	w2, [x20, #1336]</pre>
+<pre>    dc18:	aa1303e0 	mov	x0, x19</pre>
+<pre>    dc1c:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dc20:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    dc24:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    dc28:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dc2c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dc30:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    dc34:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000dc38 &lt;bonding_show_lp_interval&gt;:</pre>
+<pre>    dc38:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dc3c:	910003fd 	mov	x29, sp</pre>
+<pre>    dc40:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dc44:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dc48:	aa0203f3 	mov	x19, x2</pre>
+<pre>    dc4c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dc50:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dc54:	b9453682 	ldr	w2, [x20, #1332]</pre>
+<pre>    dc58:	aa1303e0 	mov	x0, x19</pre>
+<pre>    dc5c:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dc60:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    dc64:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    dc68:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dc6c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dc70:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    dc74:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000dc78 &lt;bonding_show_min_links&gt;:</pre>
+<pre>    dc78:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dc7c:	910003fd 	mov	x29, sp</pre>
+<pre>    dc80:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dc84:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dc88:	aa0203f3 	mov	x19, x2</pre>
+<pre>    dc8c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dc90:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dc94:	b944ce82 	ldr	w2, [x20, #1228]</pre>
+<pre>    dc98:	aa1303e0 	mov	x0, x19</pre>
+<pre>    dc9c:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dca0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    dca4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    dca8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dcac:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dcb0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    dcb4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000dcb8 &lt;bonding_show_resend_igmp&gt;:</pre>
+<pre>    dcb8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dcbc:	910003fd 	mov	x29, sp</pre>
+<pre>    dcc0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dcc4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dcc8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    dccc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dcd0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dcd4:	b9453282 	ldr	w2, [x20, #1328]</pre>
+<pre>    dcd8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    dcdc:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dce0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    dce4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    dce8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dcec:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dcf0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    dcf4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000dcf8 &lt;bonding_show_slaves_active&gt;:</pre>
+<pre>    dcf8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dcfc:	910003fd 	mov	x29, sp</pre>
+<pre>    dd00:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dd04:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dd08:	aa0203f3 	mov	x19, x2</pre>
+<pre>    dd0c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dd10:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dd14:	b9452e82 	ldr	w2, [x20, #1324]</pre>
+<pre>    dd18:	aa1303e0 	mov	x0, x19</pre>
+<pre>    dd1c:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dd20:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    dd24:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    dd28:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dd2c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<br />
+<pre>000000000000dd38 &lt;bonding_show_mii_status&gt;:</pre>
+<pre>    dd38:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dd3c:	910003fd 	mov	x29, sp</pre>
+<pre>    dd40:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dd44:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dd48:	aa0203f3 	mov	x19, x2</pre>
+<pre>    dd4c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dd50:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dd54:	f941c282 	ldr	x2, [x20, #896]</pre>
+<pre>    dd58:	90000003 	adrp	x3, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dd5c:	90000004 	adrp	x4, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dd60:	91000063 	add	x3, x3, #0x0</pre>
+<pre>    dd64:	91000084 	add	x4, x4, #0x0</pre>
+<pre>    dd68:	aa1303e0 	mov	x0, x19</pre>
+<pre>    dd6c:	f9402442 	ldr	x2, [x2, #72]</pre>
+<pre>    dd70:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dd74:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    dd78:	f27e005f 	tst	x2, #0x4</pre>
+<pre>    dd7c:	9a830082 	csel	x2, x4, x3, eq  // eq = none</pre>
+<pre><span class="red">    dd80:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    dd84:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dd88:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dd8c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    dd90:	d65f03c0 	ret</pre>
+<pre>    dd94:	d503201f 	nop</pre>
+<br />
+<pre>000000000000dd98 &lt;bonding_show_carrier&gt;:</pre>
+<pre>    dd98:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dd9c:	910003fd 	mov	x29, sp</pre>
+<pre>    dda0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dda4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dda8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    ddac:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ddb0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ddb4:	b944b682 	ldr	w2, [x20, #1204]</pre>
+<pre>    ddb8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    ddbc:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    ddc0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    ddc4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ddc8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ddcc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ddd0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ddd4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ddd8 &lt;bonding_show_miimon&gt;:</pre>
+<pre>    ddd8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dddc:	910003fd 	mov	x29, sp</pre>
+<pre>    dde0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dde4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dde8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    ddec:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ddf0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ddf4:	b944a282 	ldr	w2, [x20, #1184]</pre>
+<pre>    ddf8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    ddfc:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    de00:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    de04:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    de08:	93407c00 	sxtw	x0, w0</pre>
+<pre>    de0c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    de10:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    de14:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000de18 &lt;bonding_show_num_peer_notif&gt;:</pre>
+<pre>    de18:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    de1c:	910003fd 	mov	x29, sp</pre>
+<pre>    de20:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    de24:	aa0003f4 	mov	x20, x0</pre>
+<pre>    de28:	aa0203f3 	mov	x19, x2</pre>
+<pre>    de2c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    de30:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    de34:	39529282 	ldrb	w2, [x20, #1188]</pre>
+<pre>    de38:	aa1303e0 	mov	x0, x19</pre>
+<pre>    de3c:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    de40:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    de44:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    de48:	93407c00 	sxtw	x0, w0</pre>
+<pre>    de4c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    de50:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    de54:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000de58 &lt;bonding_show_peer_notif_delay&gt;:</pre>
+<pre>    de58:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    de5c:	910003fd 	mov	x29, sp</pre>
+<pre>    de60:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    de64:	aa0003f3 	mov	x19, x0</pre>
+<pre>    de68:	aa0203f4 	mov	x20, x2</pre>
+<pre>    de6c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    de70:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    de74:	b944c663 	ldr	w3, [x19, #1220]</pre>
+<pre>    de78:	aa1403e0 	mov	x0, x20</pre>
+<pre>    de7c:	b944a262 	ldr	w2, [x19, #1184]</pre>
+<pre>    de80:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    de84:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    de88:	1b027c62 	mul	w2, w3, w2</pre>
+<pre><span class="red">    de8c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    de90:	93407c00 	sxtw	x0, w0</pre>
+<pre>    de94:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    de98:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    de9c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000dea0 &lt;bonding_show_updelay&gt;:</pre>
+<pre>    dea0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dea4:	910003fd 	mov	x29, sp</pre>
+<pre>    dea8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    deac:	aa0003f3 	mov	x19, x0</pre>
+<pre>    deb0:	aa0203f4 	mov	x20, x2</pre>
+<pre>    deb4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    deb8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    debc:	b944be63 	ldr	w3, [x19, #1212]</pre>
+<pre>    dec0:	aa1403e0 	mov	x0, x20</pre>
+<pre>    dec4:	b944a262 	ldr	w2, [x19, #1184]</pre>
+<pre>    dec8:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    decc:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    ded0:	1b027c62 	mul	w2, w3, w2</pre>
+<pre><span class="red">    ded4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ded8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    dedc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dee0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    dee4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000dee8 &lt;bonding_show_downdelay&gt;:</pre>
+<pre>    dee8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    deec:	910003fd 	mov	x29, sp</pre>
+<pre>    def0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    def4:	aa0003f3 	mov	x19, x0</pre>
+<pre>    def8:	aa0203f4 	mov	x20, x2</pre>
+<pre>    defc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    df00:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    df04:	b944c263 	ldr	w3, [x19, #1216]</pre>
+<pre>    df08:	aa1403e0 	mov	x0, x20</pre>
+<pre>    df0c:	b944a262 	ldr	w2, [x19, #1184]</pre>
+<pre>    df10:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    df14:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    df18:	1b027c62 	mul	w2, w3, w2</pre>
+<pre><span class="red">    df1c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    df20:	93407c00 	sxtw	x0, w0</pre>
+<pre>    df24:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    df40:	f9001bf7 	str	x23, [sp, #48]</pre>
+<pre>    df44:	aa0003f4 	mov	x20, x0</pre>
+<pre>    df48:	aa0203f6 	mov	x22, x2</pre>
+<pre>    df4c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    df50:	9113a293 	add	x19, x20, #0x4e8</pre>
+<pre>    df54:	90000017 	adrp	x23, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    df58:	9114a294 	add	x20, x20, #0x528</pre>
+<pre>    df5c:	910002f7 	add	x23, x23, #0x0</pre>
+<pre>    df60:	52800015 	mov	w21, #0x0                   	// #0</pre>
+<pre>    df64:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    df68:	14000004 	b	df78 &lt;bonding_show_arp_targets+0x48&gt;</pre>
+<pre>    df6c:	91001273 	add	x19, x19, #0x4</pre>
+<pre>    df70:	eb14027f 	cmp	x19, x20</pre>
+<pre>    df74:	54000160 	b.eq	dfa0 &lt;bonding_show_arp_targets+0x70&gt;  // b.none</pre>
+<pre>    df78:	b9400260 	ldr	w0, [x19]</pre>
+<pre>    df7c:	34ffff80 	cbz	w0, df6c &lt;bonding_show_arp_targets+0x3c&gt;</pre>
+<pre>    df80:	aa1303e2 	mov	x2, x19</pre>
+<pre>    df84:	8b35c2c0 	add	x0, x22, w21, sxtw</pre>
+<pre>    df88:	aa1703e1 	mov	x1, x23</pre>
+<pre>    df8c:	91001273 	add	x19, x19, #0x4</pre>
+<pre><span class="red">    df90:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    df94:	0b0002b5 	add	w21, w21, w0</pre>
+<pre>    df98:	eb14027f 	cmp	x19, x20</pre>
+<pre>--</pre>
+<pre>    dfb4:	381ff2c1 	sturb	w1, [x22, #-1]</pre>
+<pre>    dfb8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    dfbc:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>    dfc0:	f9401bf7 	ldr	x23, [sp, #48]</pre>
+<pre>    dfc4:	a8c47bfd 	ldp	x29, x30, [sp], #64</pre>
+<pre>    dfc8:	d65f03c0 	ret</pre>
+<pre>    dfcc:	d503201f 	nop</pre>
+<br />
+<pre>000000000000dfd0 &lt;bonding_show_arp_interval&gt;:</pre>
+<pre>    dfd0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    dfd4:	910003fd 	mov	x29, sp</pre>
+<pre>    dfd8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    dfdc:	aa0003f4 	mov	x20, x0</pre>
+<pre>    dfe0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    dfe4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    dfe8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    dfec:	b944aa82 	ldr	w2, [x20, #1192]</pre>
+<pre>    dff0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    dff4:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    dff8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    dffc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e000:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e004:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e118:	ca010041 	eor	x1, x2, x1</pre>
+<pre>    e11c:	b50002c1 	cbnz	x1, e174 &lt;bonding_show_ad_partner_mac+0xac&gt;</pre>
+<pre>    e120:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e124:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    e128:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>    e12c:	d65f03c0 	ret</pre>
+<pre>    e130:	52800180 	mov	w0, #0xc                   	// #12</pre>
+<pre>    e134:	94000000 	bl	0 &lt;capable&gt;</pre>
+<pre>    e138:	72001c1f 	tst	w0, #0xff</pre>
+<pre>    e13c:	54fffe60 	b.eq	e108 &lt;bonding_show_ad_partner_mac+0x40&gt;  // b.none</pre>
+<pre>    e140:	9100ebe1 	add	x1, sp, #0x3a</pre>
+<pre>    e144:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e148:	94000000 	bl	a668 &lt;bond_3ad_get_active_agg_info&gt;</pre>
+<pre>    e14c:	2a0003e1 	mov	w1, w0</pre>
+<pre>    e150:	d2800000 	mov	x0, #0x0                   	// #0</pre>
+<pre>    e154:	35fffdc1 	cbnz	w1, e10c &lt;bonding_show_ad_partner_mac+0x44&gt;</pre>
+<pre>    e158:	91010be2 	add	x2, sp, #0x42</pre>
+<pre>    e15c:	aa1503e0 	mov	x0, x21</pre>
+<pre>    e160:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e164:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e168:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e16c:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e170:	17ffffe7 	b	e10c &lt;bonding_show_ad_partner_mac+0x44&gt;</pre>
+<pre>--</pre>
+<pre>    e1c4:	f9400281 	ldr	x1, [x20]</pre>
+<pre>    e1c8:	ca010041 	eor	x1, x2, x1</pre>
+<pre>    e1cc:	b50002a1 	cbnz	x1, e220 &lt;bonding_show_ad_partner_key+0xa8&gt;</pre>
+<pre>    e1d0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e1d4:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    e1d8:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>    e1dc:	d65f03c0 	ret</pre>
+<pre>    e1e0:	52800180 	mov	w0, #0xc                   	// #12</pre>
+<pre>    e1e4:	94000000 	bl	0 &lt;capable&gt;</pre>
+<pre>    e1e8:	72001c1f 	tst	w0, #0xff</pre>
+<pre>    e1ec:	54fffe60 	b.eq	e1b8 &lt;bonding_show_ad_partner_key+0x40&gt;  // b.none</pre>
+<pre>    e1f0:	9100ebe1 	add	x1, sp, #0x3a</pre>
+<pre>    e1f4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e1f8:	94000000 	bl	a668 &lt;bond_3ad_get_active_agg_info&gt;</pre>
+<pre>    e1fc:	7100001f 	cmp	w0, #0x0</pre>
+<pre>    e200:	794083e2 	ldrh	w2, [sp, #64]</pre>
+<pre>    e204:	aa1503e0 	mov	x0, x21</pre>
+<pre>    e208:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e20c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e210:	1a9f0042 	csel	w2, w2, wzr, eq  // eq = none</pre>
+<pre><span class="red">    e214:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e218:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e21c:	17ffffe8 	b	e1bc &lt;bonding_show_ad_partner_key+0x44&gt;</pre>
+<pre>--</pre>
+<pre>    e274:	f9400281 	ldr	x1, [x20]</pre>
+<pre>    e278:	ca010041 	eor	x1, x2, x1</pre>
+<pre>    e27c:	b50002a1 	cbnz	x1, e2d0 &lt;bonding_show_ad_actor_key+0xa8&gt;</pre>
+<pre>    e280:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e284:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    e288:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>    e28c:	d65f03c0 	ret</pre>
+<pre>    e290:	52800180 	mov	w0, #0xc                   	// #12</pre>
+<pre>    e294:	94000000 	bl	0 &lt;capable&gt;</pre>
+<pre>    e298:	72001c1f 	tst	w0, #0xff</pre>
+<pre>    e29c:	54fffe60 	b.eq	e268 &lt;bonding_show_ad_actor_key+0x40&gt;  // b.none</pre>
+<pre>    e2a0:	9100ebe1 	add	x1, sp, #0x3a</pre>
+<pre>    e2a4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e2a8:	94000000 	bl	a668 &lt;bond_3ad_get_active_agg_info&gt;</pre>
+<pre>    e2ac:	7100001f 	cmp	w0, #0x0</pre>
+<pre>    e2b0:	79407fe2 	ldrh	w2, [sp, #62]</pre>
+<pre>    e2b4:	aa1503e0 	mov	x0, x21</pre>
+<pre>    e2b8:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e2bc:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e2c0:	1a9f0042 	csel	w2, w2, wzr, eq  // eq = none</pre>
+<pre><span class="red">    e2c4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e2c8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e2cc:	17ffffe8 	b	e26c &lt;bonding_show_ad_actor_key+0x44&gt;</pre>
+<pre>--</pre>
+<pre>    e314:	7100105f 	cmp	w2, #0x4</pre>
+<pre>    e318:	54000140 	b.eq	e340 &lt;bonding_show_ad_num_ports+0x68&gt;  // b.none</pre>
+<pre>    e31c:	91146294 	add	x20, x20, #0x518</pre>
+<pre>    e320:	f94027e2 	ldr	x2, [sp, #72]</pre>
+<pre>    e324:	f9400281 	ldr	x1, [x20]</pre>
+<pre>    e328:	ca010041 	eor	x1, x2, x1</pre>
+<pre>    e32c:	b5000221 	cbnz	x1, e370 &lt;bonding_show_ad_num_ports+0x98&gt;</pre>
+<pre>    e330:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e334:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    e338:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>    e33c:	d65f03c0 	ret</pre>
+<pre>    e340:	9100ebe1 	add	x1, sp, #0x3a</pre>
+<pre>    e344:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e348:	94000000 	bl	a668 &lt;bond_3ad_get_active_agg_info&gt;</pre>
+<pre>    e34c:	7100001f 	cmp	w0, #0x0</pre>
+<pre>    e350:	79407be2 	ldrh	w2, [sp, #60]</pre>
+<pre>    e354:	aa1503e0 	mov	x0, x21</pre>
+<pre>    e358:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e35c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e360:	1a9f0042 	csel	w2, w2, wzr, eq  // eq = none</pre>
+<pre><span class="red">    e364:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e368:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e36c:	17ffffec 	b	e31c &lt;bonding_show_ad_num_ports+0x44&gt;</pre>
+<pre>--</pre>
+<pre>    e3b4:	7100105f 	cmp	w2, #0x4</pre>
+<pre>    e3b8:	54000140 	b.eq	e3e0 &lt;bonding_show_ad_aggregator+0x68&gt;  // b.none</pre>
+<pre>    e3bc:	91146294 	add	x20, x20, #0x518</pre>
+<pre>    e3c0:	f94027e2 	ldr	x2, [sp, #72]</pre>
+<pre>    e3c4:	f9400281 	ldr	x1, [x20]</pre>
+<pre>    e3c8:	ca010041 	eor	x1, x2, x1</pre>
+<pre>    e3cc:	b5000221 	cbnz	x1, e410 &lt;bonding_show_ad_aggregator+0x98&gt;</pre>
+<pre>    e3d0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e3d4:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    e3d8:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>    e3dc:	d65f03c0 	ret</pre>
+<pre>    e3e0:	9100ebe1 	add	x1, sp, #0x3a</pre>
+<pre>    e3e4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    e3e8:	94000000 	bl	a668 &lt;bond_3ad_get_active_agg_info&gt;</pre>
+<pre>    e3ec:	7100001f 	cmp	w0, #0x0</pre>
+<pre>    e3f0:	794077e2 	ldrh	w2, [sp, #58]</pre>
+<pre>    e3f4:	aa1503e0 	mov	x0, x21</pre>
+<pre>    e3f8:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e3fc:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e400:	1a9f0042 	csel	w2, w2, wzr, eq  // eq = none</pre>
+<pre><span class="red">    e404:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e408:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e40c:	17ffffec 	b	e3bc &lt;bonding_show_ad_aggregator+0x44&gt;</pre>
+<pre>--</pre>
+<pre>    e41c:	910003fd 	mov	x29, sp</pre>
+<pre>    e420:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e424:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e428:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e42c:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e430:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e434:	94000000 	bl	0 &lt;__rcu_read_lock&gt;</pre>
+<pre>    e438:	b9449a60 	ldr	w0, [x19, #1176]</pre>
+<pre>    e43c:	f941c661 	ldr	x1, [x19, #904]</pre>
+<pre>    e440:	51001402 	sub	w2, w0, #0x5</pre>
+<pre>    e444:	7100045f 	cmp	w2, #0x1</pre>
+<pre>    e448:	7a418804 	ccmp	w0, #0x1, #0x4, hi  // hi = pmore</pre>
+<pre>    e44c:	540001e1 	b.ne	e488 &lt;bonding_show_active_slave+0x70&gt;  // b.any</pre>
+<pre>    e450:	b40001c1 	cbz	x1, e488 &lt;bonding_show_active_slave+0x70&gt;</pre>
+<pre>    e454:	f9400022 	ldr	x2, [x1]</pre>
+<pre>    e458:	d2800013 	mov	x19, #0x0                   	// #0</pre>
+<pre>    e45c:	b40000c2 	cbz	x2, e474 &lt;bonding_show_active_slave+0x5c&gt;</pre>
+<pre>    e460:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e464:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e468:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e46c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e470:	93407c13 	sxtw	x19, w0</pre>
+<pre>    e474:	94000000 	bl	0 &lt;__rcu_read_unlock&gt;</pre>
+<pre>--</pre>
+<pre>    e494:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e498:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e49c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e4a0 &lt;bonding_show_primary&gt;:</pre>
+<pre>    e4a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    e4a4:	910003fd 	mov	x29, sp</pre>
+<pre>    e4a8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e4ac:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e4b0:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e4b4:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e4b8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e4bc:	94000000 	bl	0 &lt;__rcu_read_lock&gt;</pre>
+<pre>    e4c0:	f941ce60 	ldr	x0, [x19, #920]</pre>
+<pre>    e4c4:	d2800013 	mov	x19, #0x0                   	// #0</pre>
+<pre>    e4c8:	b40000e0 	cbz	x0, e4e4 &lt;bonding_show_primary+0x44&gt;</pre>
+<pre>    e4cc:	f9400002 	ldr	x2, [x0]</pre>
+<pre>    e4d0:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e4d4:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e4d8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e4dc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e4e0:	93407c13 	sxtw	x19, w0</pre>
+<pre>    e4e4:	94000000 	bl	0 &lt;__rcu_read_unlock&gt;</pre>
+<pre>--</pre>
+<pre>    e4f4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000e4f8 &lt;bonding_show_primary_reselect&gt;:</pre>
+<pre>    e4f8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>    e4fc:	910003fd 	mov	x29, sp</pre>
+<pre>    e500:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e504:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    e508:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e50c:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e510:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e514:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e518:	52800200 	mov	w0, #0x10                  	// #16</pre>
+<pre>    e51c:	b984e661 	ldrsw	x1, [x19, #1252]</pre>
+<pre>    e520:	94000000 	bl	11948 &lt;bond_opt_get_val&gt;</pre>
+<pre>    e524:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e528:	b944e663 	ldr	w3, [x19, #1252]</pre>
+<pre>    e52c:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e530:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e534:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e538:	f9400042 	ldr	x2, [x2]</pre>
+<pre><span class="red">    e53c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e540:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e544:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e554:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e558 &lt;bonding_show_xmit_hash&gt;:</pre>
+<pre>    e558:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>    e55c:	910003fd 	mov	x29, sp</pre>
+<pre>    e560:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e564:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    e568:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e56c:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e570:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e574:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e578:	52800040 	mov	w0, #0x2                   	// #2</pre>
+<pre>    e57c:	b9849e61 	ldrsw	x1, [x19, #1180]</pre>
+<pre>    e580:	94000000 	bl	11948 &lt;bond_opt_get_val&gt;</pre>
+<pre>    e584:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e588:	b9449e63 	ldr	w3, [x19, #1180]</pre>
+<pre>    e58c:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e590:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e594:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e598:	f9400042 	ldr	x2, [x2]</pre>
+<pre><span class="red">    e59c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e5a0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e5a4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e5b4:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e5b8 &lt;bonding_show_ad_select&gt;:</pre>
+<pre>    e5b8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>    e5bc:	910003fd 	mov	x29, sp</pre>
+<pre>    e5c0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e5c4:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    e5c8:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e5cc:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e5d0:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e5d4:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e5d8:	52800180 	mov	w0, #0xc                   	// #12</pre>
+<pre>    e5dc:	b984d261 	ldrsw	x1, [x19, #1232]</pre>
+<pre>    e5e0:	94000000 	bl	11948 &lt;bond_opt_get_val&gt;</pre>
+<pre>    e5e4:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e5e8:	b944d263 	ldr	w3, [x19, #1232]</pre>
+<pre>    e5ec:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e5f0:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e5f4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e5f8:	f9400042 	ldr	x2, [x2]</pre>
+<pre><span class="red">    e5fc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e600:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e604:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e614:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e618 &lt;bonding_show_lacp&gt;:</pre>
+<pre>    e618:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>    e61c:	910003fd 	mov	x29, sp</pre>
+<pre>    e620:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e624:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    e628:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e62c:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e630:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e634:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e638:	52800140 	mov	w0, #0xa                   	// #10</pre>
+<pre>    e63c:	b984ca61 	ldrsw	x1, [x19, #1224]</pre>
+<pre>    e640:	94000000 	bl	11948 &lt;bond_opt_get_val&gt;</pre>
+<pre>    e644:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e648:	b944ca63 	ldr	w3, [x19, #1224]</pre>
+<pre>    e64c:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e650:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e654:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e658:	f9400042 	ldr	x2, [x2]</pre>
+<pre><span class="red">    e65c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e660:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e664:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e674:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e678 &lt;bonding_show_arp_all_targets&gt;:</pre>
+<pre>    e678:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>    e67c:	910003fd 	mov	x29, sp</pre>
+<pre>    e680:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e684:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    e688:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e68c:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e690:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e694:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e698:	52800080 	mov	w0, #0x4                   	// #4</pre>
+<pre>    e69c:	b984b261 	ldrsw	x1, [x19, #1200]</pre>
+<pre>    e6a0:	94000000 	bl	11948 &lt;bond_opt_get_val&gt;</pre>
+<pre>    e6a4:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e6a8:	b944b263 	ldr	w3, [x19, #1200]</pre>
+<pre>    e6ac:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e6b0:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e6b4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e6b8:	f9400042 	ldr	x2, [x2]</pre>
+<pre><span class="red">    e6bc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e6c0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e6c4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e6d4:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e6d8 &lt;bonding_show_arp_validate&gt;:</pre>
+<pre>    e6d8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>    e6dc:	910003fd 	mov	x29, sp</pre>
+<pre>    e6e0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e6e4:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    e6e8:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e6ec:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e6f0:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e6f4:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e6f8:	52800060 	mov	w0, #0x3                   	// #3</pre>
+<pre>    e6fc:	b984ae61 	ldrsw	x1, [x19, #1196]</pre>
+<pre>    e700:	94000000 	bl	11948 &lt;bond_opt_get_val&gt;</pre>
+<pre>    e704:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e708:	b944ae63 	ldr	w3, [x19, #1196]</pre>
+<pre>    e70c:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e710:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e714:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e718:	f9400042 	ldr	x2, [x2]</pre>
+<pre><span class="red">    e71c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e720:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e724:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e734:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e738 &lt;bonding_show_fail_over_mac&gt;:</pre>
+<pre>    e738:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>    e73c:	910003fd 	mov	x29, sp</pre>
+<pre>    e740:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e744:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    e748:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e74c:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e750:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e754:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e758:	528000a0 	mov	w0, #0x5                   	// #5</pre>
+<pre>    e75c:	b984ba61 	ldrsw	x1, [x19, #1208]</pre>
+<pre>    e760:	94000000 	bl	11948 &lt;bond_opt_get_val&gt;</pre>
+<pre>    e764:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e768:	b944ba63 	ldr	w3, [x19, #1208]</pre>
+<pre>    e76c:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e770:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e774:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e778:	f9400042 	ldr	x2, [x2]</pre>
+<pre><span class="red">    e77c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e780:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e784:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e794:	d503201f 	nop</pre>
+<br />
+<pre>000000000000e798 &lt;bonding_show_mode&gt;:</pre>
+<pre>    e798:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>    e79c:	910003fd 	mov	x29, sp</pre>
+<pre>    e7a0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e7a4:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    e7a8:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e7ac:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e7b0:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e7b4:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e7b8:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>    e7bc:	b9849a61 	ldrsw	x1, [x19, #1176]</pre>
+<pre>    e7c0:	94000000 	bl	11948 &lt;bond_opt_get_val&gt;</pre>
+<pre>    e7c4:	aa0003e2 	mov	x2, x0</pre>
+<pre>    e7c8:	b9449a63 	ldr	w3, [x19, #1176]</pre>
+<pre>    e7cc:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e7d0:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e7d4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    e7d8:	f9400042 	ldr	x2, [x2]</pre>
+<pre><span class="red">    e7dc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e7e0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e7e4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    e804:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e808:	910e0273 	add	x19, x19, #0x380</pre>
+<pre>    e80c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e810:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e814:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e818:	b9411a60 	ldr	w0, [x19, #280]</pre>
+<pre>    e81c:	7100101f 	cmp	w0, #0x4</pre>
+<pre>    e820:	540000a0 	b.eq	e834 &lt;bonding_show_ad_user_port_key+0x3c&gt;  // b.none</pre>
+<pre>    e824:	d2800000 	mov	x0, #0x0                   	// #0</pre>
+<pre>    e828:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e82c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e830:	d65f03c0 	ret</pre>
+<pre>    e834:	52800180 	mov	w0, #0xc                   	// #12</pre>
+<pre>    e838:	94000000 	bl	0 &lt;capable&gt;</pre>
+<pre>    e83c:	72001c1f 	tst	w0, #0xff</pre>
+<pre>    e840:	54ffff20 	b.eq	e824 &lt;bonding_show_ad_user_port_key+0x2c&gt;  // b.none</pre>
+<pre>    e844:	79439662 	ldrh	w2, [x19, #458]</pre>
+<pre>    e848:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e84c:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e850:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e854:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e858:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e85c:	17fffff3 	b	e828 &lt;bonding_show_ad_user_port_key+0x30&gt;</pre>
+<pre>--</pre>
+<pre>    e868:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    e86c:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e870:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e874:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e878:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e87c:	b9449a60 	ldr	w0, [x19, #1176]</pre>
+<pre>    e880:	7100101f 	cmp	w0, #0x4</pre>
+<pre>    e884:	540000a0 	b.eq	e898 &lt;bonding_show_ad_actor_system+0x38&gt;  // b.none</pre>
+<pre>    e888:	d2800000 	mov	x0, #0x0                   	// #0</pre>
+<pre>    e88c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e890:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e894:	d65f03c0 	ret</pre>
+<pre>    e898:	52800180 	mov	w0, #0xc                   	// #12</pre>
+<pre>    e89c:	94000000 	bl	0 &lt;capable&gt;</pre>
+<pre>    e8a0:	72001c1f 	tst	w0, #0xff</pre>
+<pre>    e8a4:	54ffff20 	b.eq	e888 &lt;bonding_show_ad_actor_system+0x28&gt;  // b.none</pre>
+<pre>    e8a8:	91153262 	add	x2, x19, #0x54c</pre>
+<pre>    e8ac:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e8b0:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e8b4:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e8b8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e8bc:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e8c0:	17fffff3 	b	e88c &lt;bonding_show_ad_actor_system+0x2c&gt;</pre>
+<pre>--</pre>
+<pre>    e8d4:	aa0003f3 	mov	x19, x0</pre>
+<pre>    e8d8:	910e0273 	add	x19, x19, #0x380</pre>
+<pre>    e8dc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    e8e0:	aa0203f4 	mov	x20, x2</pre>
+<pre>    e8e4:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    e8e8:	b9411a60 	ldr	w0, [x19, #280]</pre>
+<pre>    e8ec:	7100101f 	cmp	w0, #0x4</pre>
+<pre>    e8f0:	540000a0 	b.eq	e904 &lt;bonding_show_ad_actor_sys_prio+0x3c&gt;  // b.none</pre>
+<pre>    e8f4:	d2800000 	mov	x0, #0x0                   	// #0</pre>
+<pre>    e8f8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    e8fc:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    e900:	d65f03c0 	ret</pre>
+<pre>    e904:	52800180 	mov	w0, #0xc                   	// #12</pre>
+<pre>    e908:	94000000 	bl	0 &lt;capable&gt;</pre>
+<pre>    e90c:	72001c1f 	tst	w0, #0xff</pre>
+<pre>    e910:	54ffff20 	b.eq	e8f4 &lt;bonding_show_ad_actor_sys_prio+0x2c&gt;  // b.none</pre>
+<pre>    e914:	79439262 	ldrh	w2, [x19, #456]</pre>
+<pre>    e918:	aa1403e0 	mov	x0, x20</pre>
+<pre>    e91c:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e920:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    e924:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e928:	93407c00 	sxtw	x0, w0</pre>
+<pre>    e92c:	17fffff3 	b	e8f8 &lt;bonding_show_ad_actor_sys_prio+0x30&gt;</pre>
+<pre>--</pre>
+<pre>    e960:	94000000 	bl	0 &lt;rtnl_trylock&gt;</pre>
+<pre>    e964:	34000820 	cbz	w0, ea68 &lt;bonding_show_queue_id+0x138&gt;</pre>
+<pre>    e968:	f941c280 	ldr	x0, [x20, #896]</pre>
+<pre>    e96c:	910103e1 	add	x1, sp, #0x40</pre>
+<pre>    e970:	f9406002 	ldr	x2, [x0, #192]</pre>
+<pre>    e974:	f90023e2 	str	x2, [sp, #64]</pre>
+<pre>    e978:	94000000 	bl	0 &lt;netdev_lower_get_next_private&gt;</pre>
+<pre>    e97c:	b4000720 	cbz	x0, ea60 &lt;bonding_show_queue_id+0x130&gt;</pre>
+<pre>    e980:	910e0294 	add	x20, x20, #0x380</pre>
+<pre>    e984:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>    e988:	f9001bf7 	str	x23, [sp, #48]</pre>
+<pre>    e98c:	90000017 	adrp	x23, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    e990:	910002f7 	add	x23, x23, #0x0</pre>
+<pre>    e994:	14000003 	b	e9a0 &lt;bonding_show_queue_id+0x70&gt;</pre>
+<pre>    e998:	713faa7f 	cmp	w19, #0xfea</pre>
+<pre>    e99c:	540003e8 	b.hi	ea18 &lt;bonding_show_queue_id+0xe8&gt;  // b.pmore</pre>
+<pre>    e9a0:	79417003 	ldrh	w3, [x0, #184]</pre>
+<pre>    e9a4:	aa1703e1 	mov	x1, x23</pre>
+<pre>    e9a8:	f9400002 	ldr	x2, [x0]</pre>
+<pre>    e9ac:	8b33c2a0 	add	x0, x21, w19, sxtw</pre>
+<pre><span class="red">    e9b0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    e9b4:	0b000273 	add	w19, w19, w0</pre>
+<pre>    e9b8:	f9400280 	ldr	x0, [x20]</pre>
+<pre>--</pre>
+<pre>    eac4:	d2800001 	mov	x1, #0x0                   	// #0</pre>
+<pre>    eac8:	94000000 	bl	0 &lt;rtnl_trylock&gt;</pre>
+<pre>    eacc:	34000820 	cbz	w0, ebd0 &lt;bonding_show_slaves+0x138&gt;</pre>
+<pre>    ead0:	f941c280 	ldr	x0, [x20, #896]</pre>
+<pre>    ead4:	910103e1 	add	x1, sp, #0x40</pre>
+<pre>    ead8:	f9406002 	ldr	x2, [x0, #192]</pre>
+<pre>    eadc:	f90023e2 	str	x2, [sp, #64]</pre>
+<pre>    eae0:	94000000 	bl	0 &lt;netdev_lower_get_next_private&gt;</pre>
+<pre>    eae4:	b4000700 	cbz	x0, ebc4 &lt;bonding_show_slaves+0x12c&gt;</pre>
+<pre>    eae8:	910e0294 	add	x20, x20, #0x380</pre>
+<pre>    eaec:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>    eaf0:	f9001bf7 	str	x23, [sp, #48]</pre>
+<pre>    eaf4:	90000017 	adrp	x23, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    eaf8:	910002f7 	add	x23, x23, #0x0</pre>
+<pre>    eafc:	14000003 	b	eb08 &lt;bonding_show_slaves+0x70&gt;</pre>
+<pre>    eb00:	713fc27f 	cmp	w19, #0xff0</pre>
+<pre>    eb04:	540003a8 	b.hi	eb78 &lt;bonding_show_slaves+0xe0&gt;  // b.pmore</pre>
+<pre>    eb08:	f9400002 	ldr	x2, [x0]</pre>
+<pre>    eb0c:	aa1703e1 	mov	x1, x23</pre>
+<pre>    eb10:	8b33c2a0 	add	x0, x21, w19, sxtw</pre>
+<pre><span class="red">    eb14:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    eb18:	0b000273 	add	w19, w19, w0</pre>
+<pre>    eb1c:	f9400280 	ldr	x0, [x20]</pre>
+<pre>--</pre>
+<pre>    ed8c:	7100101f 	cmp	w0, #0x4</pre>
+<pre>    ed90:	540000a1 	b.ne	eda4 &lt;ad_partner_oper_port_state_show+0x3c&gt;  // b.any</pre>
+<pre>    ed94:	f9407280 	ldr	x0, [x20, #224]</pre>
+<pre>    ed98:	9100e000 	add	x0, x0, #0x38</pre>
+<pre>    ed9c:	f9403c01 	ldr	x1, [x0, #120]</pre>
+<pre>    eda0:	b5000161 	cbnz	x1, edcc &lt;ad_partner_oper_port_state_show+0x64&gt;</pre>
+<pre>    eda4:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    eda8:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    edac:	d2800080 	mov	x0, #0x4                   	// #4</pre>
+<pre>    edb0:	b9400022 	ldr	w2, [x1]</pre>
+<pre>    edb4:	39401021 	ldrb	w1, [x1, #4]</pre>
+<pre>    edb8:	b9000262 	str	w2, [x19]</pre>
+<pre>    edbc:	39001261 	strb	w1, [x19, #4]</pre>
+<pre>    edc0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    edc4:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    edc8:	d65f03c0 	ret</pre>
+<pre>    edcc:	79406802 	ldrh	w2, [x0, #52]</pre>
+<pre>    edd0:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    edd4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    edd8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    eddc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ede0:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ede4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    ee14:	7100101f 	cmp	w0, #0x4</pre>
+<pre>    ee18:	540000a1 	b.ne	ee2c &lt;ad_actor_oper_port_state_show+0x3c&gt;  // b.any</pre>
+<pre>    ee1c:	f9407280 	ldr	x0, [x20, #224]</pre>
+<pre>    ee20:	9100e000 	add	x0, x0, #0x38</pre>
+<pre>    ee24:	f9403c01 	ldr	x1, [x0, #120]</pre>
+<pre>    ee28:	b5000161 	cbnz	x1, ee54 &lt;ad_actor_oper_port_state_show+0x64&gt;</pre>
+<pre>    ee2c:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    ee30:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    ee34:	d2800080 	mov	x0, #0x4                   	// #4</pre>
+<pre>    ee38:	b9400022 	ldr	w2, [x1]</pre>
+<pre>    ee3c:	39401021 	ldrb	w1, [x1, #4]</pre>
+<pre>    ee40:	b9000262 	str	w2, [x19]</pre>
+<pre>    ee44:	39001261 	strb	w1, [x19, #4]</pre>
+<pre>    ee48:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ee4c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ee50:	d65f03c0 	ret</pre>
+<pre>    ee54:	39405402 	ldrb	w2, [x0, #21]</pre>
+<pre>    ee58:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    ee5c:	aa1303e0 	mov	x0, x19</pre>
+<pre>    ee60:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    ee64:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ee68:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ee6c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    ee98:	b9411800 	ldr	w0, [x0, #280]</pre>
+<pre>    ee9c:	7100101f 	cmp	w0, #0x4</pre>
+<pre>    eea0:	54000081 	b.ne	eeb0 &lt;ad_aggregator_id_show+0x38&gt;  // b.any</pre>
+<pre>    eea4:	f9407280 	ldr	x0, [x20, #224]</pre>
+<pre>    eea8:	f9405800 	ldr	x0, [x0, #176]</pre>
+<pre>    eeac:	b5000160 	cbnz	x0, eed8 &lt;ad_aggregator_id_show+0x60&gt;</pre>
+<pre>    eeb0:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    eeb4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    eeb8:	d2800080 	mov	x0, #0x4                   	// #4</pre>
+<pre>    eebc:	b9400022 	ldr	w2, [x1]</pre>
+<pre>    eec0:	39401021 	ldrb	w1, [x1, #4]</pre>
+<pre>    eec4:	b9000262 	str	w2, [x19]</pre>
+<pre>    eec8:	39001261 	strb	w1, [x19, #4]</pre>
+<pre>    eecc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    eed0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    eed4:	d65f03c0 	ret</pre>
+<pre>    eed8:	79400c02 	ldrh	w2, [x0, #6]</pre>
+<pre>    eedc:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    eee0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    eee4:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    eee8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    eeec:	93407c00 	sxtw	x0, w0</pre>
+<pre>    eef0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    eef4:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    eef8:	d65f03c0 	ret</pre>
+<pre>    eefc:	d503201f 	nop</pre>
+<br />
+<pre>000000000000ef00 &lt;queue_id_show&gt;:</pre>
+<pre>    ef00:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ef04:	910003fd 	mov	x29, sp</pre>
+<pre>    ef08:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ef0c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ef10:	aa0103f3 	mov	x19, x1</pre>
+<pre>    ef14:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ef18:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ef1c:	79417282 	ldrh	w2, [x20, #184]</pre>
+<pre>    ef20:	aa1303e0 	mov	x0, x19</pre>
+<pre>    ef24:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    ef28:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    ef2c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ef30:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ef34:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ef38:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ef3c:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ef40 &lt;perm_hwaddr_show&gt;:</pre>
+<pre>    ef40:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ef44:	910003fd 	mov	x29, sp</pre>
+<pre>    ef48:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ef4c:	aa0103f4 	mov	x20, x1</pre>
+<pre>    ef50:	aa0003f3 	mov	x19, x0</pre>
+<pre>    ef54:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    ef58:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    ef5c:	aa1303e3 	mov	x3, x19</pre>
+<pre>    ef60:	aa1403e0 	mov	x0, x20</pre>
+<pre>    ef64:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    ef68:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    ef6c:	f84ba462 	ldr	x2, [x3], #186</pre>
+<pre>    ef70:	39499c42 	ldrb	w2, [x2, #615]</pre>
+<pre><span class="red">    ef74:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    ef78:	93407c00 	sxtw	x0, w0</pre>
+<pre>    ef7c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    ef80:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    ef84:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000ef88 &lt;link_failure_count_show&gt;:</pre>
+<pre>    ef88:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    ef8c:	910003fd 	mov	x29, sp</pre>
+<pre>    ef90:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    ef94:	aa0003f4 	mov	x20, x0</pre>
+<pre>    ef98:	aa0103f3 	mov	x19, x1</pre>
+<pre>    ef9c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    efa0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    efa4:	b940b282 	ldr	w2, [x20, #176]</pre>
+<pre>    efa8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    efac:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    efb0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    efb4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    efb8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    efbc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    efc0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    efc4:	d65f03c0 	ret</pre>
+<br />
+<pre>000000000000efc8 &lt</span>ii_status_show&gt;:</pre>
+<pre>    efc8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    efcc:	910003fd 	mov	x29, sp</pre>
+<pre>    efd0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    efd4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    efd8:	aa0103f3 	mov	x19, x1</pre>
+<pre>    efdc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    efe0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    efe4:	3942a280 	ldrb	w0, [x20, #168]</pre>
+<pre>    efe8:	94000000 	bl	2ad8 &lt;bond_slave_link_status&gt;</pre>
+<pre>    efec:	aa0003e2 	mov	x2, x0</pre>
+<pre>    eff0:	90000001 	adrp	x1, 0 &lt;bond_neigh_setup&gt;</pre>
+<pre>    eff4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    eff8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    effc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    f000:	93407c00 	sxtw	x0, w0</pre>
+<pre>    f004:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">43</span> times </span><span class="orange">bonding.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

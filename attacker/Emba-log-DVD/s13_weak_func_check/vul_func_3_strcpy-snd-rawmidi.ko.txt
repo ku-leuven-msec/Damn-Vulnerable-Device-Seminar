@@ -1,0 +1,40 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-rawmidi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m281) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msnd-rawmidi.ko[0m
+
+     5dc:	b40004f4 	cbz	x20, 678 <snd_rawmidi_info+0xb8>
+     5e0:	f90013f5 	str	x21, [sp, #32]
+     5e4:	d2802182 	mov	x2, #0x10c                 	// #268
+     5e8:	52800001 	mov	w1, #0x0                   	// #0
+     5ec:	aa1303e0 	mov	x0, x19
+     5f0:	f9401695 	ldr	x21, [x20, #40]
+     5f4:	94000000 	bl	0 <memset>
+     5f8:	91005260 	add	x0, x19, #0x14
+     5fc:	910082a1 	add	x1, x21, #0x20
+     600:	f94002a2 	ldr	x2, [x21]
+     604:	b9400042 	ldr	w2, [x2]
+     608:	b9000e62 	str	w2, [x19, #12]
+     60c:	b9401aa2 	ldr	w2, [x21, #24]
+     610:	b9000262 	str	w2, [x19]
+     614:	b9401682 	ldr	w2, [x20, #20]
+     618:	b9000662 	str	w2, [x19, #4]
+     61c:	b9401282 	ldr	w2, [x20, #16]
+     620:	b9000a62 	str	w2, [x19, #8]
+     624:	b9401ea2 	ldr	w2, [x21, #28]
+     628:	b9001262 	str	w2, [x19, #16]
+[31m     62c:	94000000 	bl	0 <strcpy>[0m
+     630:	910182a1 	add	x1, x21, #0x60
+     634:	91015260 	add	x0, x19, #0x54
+[31m     638:	94000000 	bl	0 <strcpy>[0m
+     63c:	9100e281 	add	x1, x20, #0x38
+     640:	91029260 	add	x0, x19, #0xa4
+[31m     644:	94000000 	bl	0 <strcpy>[0m
+     648:	f9401a81 	ldr	x1, [x20, #48]
+     64c:	52800000 	mov	w0, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33msnd-rawmidi.ko[0m
+

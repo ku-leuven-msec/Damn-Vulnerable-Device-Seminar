@@ -1,0 +1,242 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module interface.tests.test_advice</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:38:8: C0415: Import outside toplevel (zope.interface.tests.advisory_testing) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:42:12: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:46:4: C0103: Method name "test_w_ClassicClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:47:8: C0415: Import outside toplevel (zope.interface.tests.advisory_testing) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:56:12: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:59:4: C0103: Method name "test_w_NewStyleClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:60:8: C0415: Import outside toplevel (zope.interface.tests.advisory_testing) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:67:12: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:63:9: W0612: Unused variable 'f_locals' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:71:8: C0415: Import outside toplevel (zope.interface.advice.getFrameInfo) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:72:57: W0212: Access to a protected member _getframe of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:75:12: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:79:8: C0415: Import outside toplevel (zope.interface.advice.getFrameInfo) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:82:8: W0122: Use of exec (exec-used)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:98:8: C0415: Import outside toplevel (zope.interface.tests.advisory_testing.ping) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:100:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:100:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:108:12: E0633: Attempting to unpack a non-sequence defined at line 100 (unpacking-non-sequence)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:108:12: C0103: Variable name "Foo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:106:12: W0612: Unused variable 'i' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:114:8: C0415: Import outside toplevel (zope.interface.tests.advisory_testing.ping) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:123:8: E0633: Attempting to unpack a non-sequence defined at line 119 (unpacking-non-sequence)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:123:8: C0103: Variable name "Concrete" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:129:8: C0415: Import outside toplevel (zope.interface.tests.advisory_testing.ping) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:137:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:140:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:144:12: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:153:8: E0102: class already defined line 144 (function-redefined)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:153:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:158:8: E0633: Attempting to unpack a non-sequence defined at line 144 (unpacking-non-sequence)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:158:8: C0103: Variable name "Derived" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:163:8: C0415: Import outside toplevel (zope.interface.tests.advisory_testing.ping) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:164:8: E0611: No name 'ClassType' in module 'types' (no-name-in-module)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:164:8: C0415: Import outside toplevel (types.ClassType) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:165:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:167:8: E0633: Attempting to unpack a non-sequence defined at line 165 (unpacking-non-sequence)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:171:0: C0103: Class name "Test_isClassAdvisor" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:173:4: C0103: Method name "_callFUT" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:174:8: C0415: Import outside toplevel (zope.interface.advice.isClassAdvisor) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:173:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:181:8: C0102: Black listed name "foo" (blacklisted-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:186:8: C0102: Black listed name "bar" (blacklisted-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:192:0: C0103: Class name "Test_determineMetaclass" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:194:4: C0103: Method name "_callFUT" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:195:8: C0415: Import outside toplevel (zope.interface.advice.determineMetaclass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:194:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:200:8: E0611: No name 'ClassType' in module 'types' (no-name-in-module)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:200:8: C0415: Import outside toplevel (types.ClassType) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:226:8: C0103: Variable name "EXEC" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:233:8: W0122: Use of exec (exec-used)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:234:8: C0103: Variable name "Meta" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:235:8: C0103: Variable name "Metameta" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:241:8: C0103: Class name "Meta_A" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:243:8: C0103: Class name "Meta_B" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:245:8: C0103: Class name "A" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:247:8: C0103: Class name "B" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:254:8: C0103: Variable name "EXEC" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:265:8: W0122: Use of exec (exec-used)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:266:8: C0103: Variable name "Meta_A" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:267:8: C0103: Variable name "Meta_B" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:268:8: C0103: Variable name "A" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:269:8: C0103: Variable name "B" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:266:8: W0612: Unused variable 'Meta_A' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:274:8: C0103: Class name "Meta_A" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:276:8: C0103: Class name "Meta_B" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:278:8: C0103: Class name "A" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:280:8: C0103: Class name "B" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:287:8: C0103: Variable name "EXEC" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:298:8: W0122: Use of exec (exec-used)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:299:8: C0103: Variable name "Meta_A" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:300:8: C0103: Variable name "Meta_B" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:301:8: C0103: Variable name "A" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:302:8: C0103: Variable name "B" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:299:8: W0612: Unused variable 'Meta_A' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:300:8: W0612: Unused variable 'Meta_B' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:306:0: C0103: Class name "Test_minimalBases" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:308:4: C0103: Method name "_callFUT" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:309:8: C0415: Import outside toplevel (zope.interface.advice.minimalBases) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:308:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:317:8: C0103: Class name "C" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:317:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:323:8: C0103: Class name "C" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:323:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:331:8: C0103: Class name "C" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:331:8: R0205: Class 'C' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:331:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:336:8: C0103: Class name "A" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:336:8: R0205: Class 'A' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:336:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:338:8: C0103: Class name "B" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:338:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:340:8: C0103: Class name "C" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:340:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:342:8: C0103: Class name "D" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:342:8: R0205: Class 'D' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:342:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:351:8: C0103: Class name "A" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:351:8: R0205: Class 'A' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:351:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:353:8: C0103: Class name "B" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:353:8: R0205: Class 'B' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_advice.py:353:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 3.93/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

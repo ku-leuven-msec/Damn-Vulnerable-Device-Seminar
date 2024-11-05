@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33math9k_htc.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m507) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33math9k_htc.ko[0m
+
+     f10:	a90153f3 	stp	x19, x20, [sp, #16]
+     f14:	a9025bf5 	stp	x21, x22, [sp, #32]
+     f18:	d5384116 	mrs	x22, sp_el0
+     f1c:	12001c34 	and	w20, w1, #0xff
+     f20:	aa0003f3 	mov	x19, x0
+     f24:	aa1e03e0 	mov	x0, x30
+     f28:	94000000 	bl	0 <_mcount>
+     f2c:	f9428ec1 	ldr	x1, [x22, #1304]
+     f30:	f9001fe1 	str	x1, [sp, #56]
+     f34:	d2800001 	mov	x1, #0x0                   	// #0
+     f38:	34000a74 	cbz	w20, 1084 <ath9k_hif_request_firmware+0x17c>
+     f3c:	90000000 	adrp	x0, c <htc_issue_send.constprop.0+0xc>
+     f40:	b9400000 	ldr	w0, [x0]
+     f44:	350006c0 	cbnz	w0, 101c <ath9k_hif_request_firmware+0x114>
+     f48:	52800082 	mov	w2, #0x4                   	// #4
+     f4c:	b901a262 	str	w2, [x19, #416]
+     f50:	9100c3f4 	add	x20, sp, #0x30
+     f54:	90000001 	adrp	x1, 0 <htc_issue_send.constprop.0>
+     f58:	aa1403e0 	mov	x0, x20
+     f5c:	91000021 	add	x1, x1, #0x0
+[31m     f60:	94000000 	bl	0 <sprintf>[0m
+     f64:	b941a260 	ldr	w0, [x19, #416]
+     f68:	71000c1f 	cmp	w0, #0x3
+--
+    1050:	aa1403e6 	mov	x6, x20
+    1054:	aa1503e0 	mov	x0, x21
+    1058:	90000003 	adrp	x3, 0 <htc_issue_send.constprop.0>
+    105c:	d1000442 	sub	x2, x2, #0x1
+    1060:	91000063 	add	x3, x3, #0x0
+    1064:	f100085f 	cmp	x2, #0x2
+    1068:	52800025 	mov	w5, #0x1                   	// #1
+    106c:	9a813084 	csel	x4, x4, x1, cc  // cc = lo, ul, last
+    1070:	90000002 	adrp	x2, 0 <htc_issue_send.constprop.0>
+    1074:	d2800401 	mov	x1, #0x20                  	// #32
+    1078:	91000042 	add	x2, x2, #0x0
+    107c:	94000000 	bl	0 <snprintf>
+    1080:	17ffffca 	b	fa8 <ath9k_hif_request_firmware+0xa0>
+    1084:	b941a262 	ldr	w2, [x19, #416]
+    1088:	9100c3f4 	add	x20, sp, #0x30
+    108c:	aa1403e0 	mov	x0, x20
+    1090:	90000001 	adrp	x1, 0 <htc_issue_send.constprop.0>
+    1094:	51000442 	sub	w2, w2, #0x1
+    1098:	b901a262 	str	w2, [x19, #416]
+    109c:	91000021 	add	x1, x1, #0x0
+[31m    10a0:	94000000 	bl	0 <sprintf>[0m
+    10a4:	b941a260 	ldr	w0, [x19, #416]
+    10a8:	71000c1f 	cmp	w0, #0x3
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33math9k_htc.ko[0m
+

@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibgio-2.0.so.0.6200.4[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [31mRPATH   [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibgio-2.0.so.0.6200.4[0m
+
+[31m  1542d4:	97fb9473 	bl	394a0 <mmap64@plt>[0m
+  1542d8:	aa0003f6 	mov	x22, x0
+  1542dc:	b100041f 	cmn	x0, #0x1
+  1542e0:	54fffd60 	b.eq	15428c <g_local_file_monitor_get_type@@Base+0x6f8c>  // b.none
+  1542e4:	a90363f7 	stp	x23, x24, [sp, #48]
+  1542e8:	f90023f9 	str	x25, [sp, #64]
+  1542ec:	f94047f9 	ldr	x25, [sp, #136]
+  1542f0:	79400017 	ldrh	w23, [x0]
+  1542f4:	5ac006f7 	rev16	w23, w23
+  1542f8:	12003ef7 	and	w23, w23, #0xffff
+  1542fc:	710006ff 	cmp	w23, #0x1
+  154300:	540000e1 	b.ne	15431c <g_local_file_monitor_get_type@@Base+0x701c>  // b.any
+  154304:	79400418 	ldrh	w24, [x0, #2]
+  154308:	5ac00718 	rev16	w24, w24
+  15430c:	12003f18 	and	w24, w24, #0xffff
+  154310:	51000700 	sub	w0, w24, #0x1
+  154314:	7100041f 	cmp	w0, #0x1
+  154318:	54000149 	b.ls	154340 <g_local_file_monitor_get_type@@Base+0x7040>  // b.plast
+  15431c:	aa1903e1 	mov	x1, x25
+  154320:	aa1603e0 	mov	x0, x22
+  154324:	d2800014 	mov	x20, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibgio-2.0.so.0.6200.4[0m
+

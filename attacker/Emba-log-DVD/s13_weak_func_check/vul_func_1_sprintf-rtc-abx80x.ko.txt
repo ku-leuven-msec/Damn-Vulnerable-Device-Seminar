@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mrtc-abx80x.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m111) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrtc-abx80x.ko[0m
+
+     2fc:	910003fd 	mov	x29, sp
+     300:	a90153f3 	stp	x19, x20, [sp, #16]
+     304:	f90013f5 	str	x21, [sp, #32]
+     308:	aa0003f5 	mov	x21, x0
+     30c:	aa0203f4 	mov	x20, x2
+     310:	aa1e03e0 	mov	x0, x30
+     314:	94000000 	bl	0 <_mcount>
+     318:	52800381 	mov	w1, #0x1c                  	// #28
+     31c:	f94022a0 	ldr	x0, [x21, #64]
+     320:	d1008000 	sub	x0, x0, #0x20
+     324:	94000000 	bl	0 <i2c_smbus_read_byte_data>
+     328:	2a0003f3 	mov	w19, w0
+     32c:	37f801c0 	tbnz	w0, #31, 364 <autocalibration_show+0x6c>
+     330:	52804002 	mov	w2, #0x200                 	// #512
+     334:	37280073 	tbnz	w19, #5, 340 <autocalibration_show+0x48>
+     338:	d3461a73 	ubfx	x19, x19, #6, #1
+     33c:	53165662 	lsl	w2, w19, #10
+     340:	aa1403e0 	mov	x0, x20
+     344:	90000001 	adrp	x1, 0 <abx80x_is_rc_mode>
+     348:	91000021 	add	x1, x1, #0x0
+[31m     34c:	94000000 	bl	0 <sprintf>[0m
+     350:	93407c00 	sxtw	x0, w0
+     354:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mrtc-abx80x.ko[0m
+

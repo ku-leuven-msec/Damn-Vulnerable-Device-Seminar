@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mgpgscm[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mgpgscm[0m
+
+[31m    4fa4:	97fffd47 	bl	44c0 <mmap@plt>[0m
+    4fa8:	aa0003f3 	mov	x19, x0
+    4fac:	b100041f 	cmn	x0, #0x1
+    4fb0:	54000140 	b.eq	4fd8 <ferror@plt+0x6d8>  // b.none
+    4fb4:	f94033e3 	ldr	x3, [sp, #96]
+    4fb8:	aa1503e2 	mov	x2, x21
+    4fbc:	aa0003e1 	mov	x1, x0
+    4fc0:	aa1b03e0 	mov	x0, x27
+    4fc4:	94004cf7 	bl	183a0 <ferror@plt+0x13aa0>
+    4fc8:	aa1503e1 	mov	x1, x21
+    4fcc:	aa1303e0 	mov	x0, x19
+    4fd0:	97fffda0 	bl	4650 <munmap@plt>
+    4fd4:	14000005 	b	4fe8 <ferror@plt+0x6e8>
+    4fd8:	f94033e2 	ldr	x2, [sp, #96]
+    4fdc:	aa1403e1 	mov	x1, x20
+    4fe0:	aa1b03e0 	mov	x0, x27
+    4fe4:	94004c8f 	bl	18220 <ferror@plt+0x13920>
+    4fe8:	aa1403e0 	mov	x0, x20
+    4fec:	97fffc25 	bl	4080 <fclose@plt>
+    4ff0:	b9401360 	ldr	w0, [x27, #16]
+    4ff4:	52800014 	mov	w20, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mgpgscm[0m
+

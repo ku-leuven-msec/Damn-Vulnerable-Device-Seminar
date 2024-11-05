@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mhostap.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m551) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mhostap.ko[0m
+
+    cca0:	5400020d 	b.le	cce0 <prism2_get_name+0x80>
+    cca4:	51000400 	sub	w0, w0, #0x1
+    cca8:	9100ffe3 	add	x3, sp, #0x3f
+    ccac:	9100fbe1 	add	x1, sp, #0x3e
+    ccb0:	8b000063 	add	x3, x3, x0
+    ccb4:	14000004 	b	ccc4 <prism2_get_name+0x64>
+    ccb8:	91000421 	add	x1, x1, #0x1
+    ccbc:	eb03003f 	cmp	x1, x3
+    ccc0:	54000100 	b.eq	cce0 <prism2_get_name+0x80>  // b.none
+    ccc4:	39400020 	ldrb	w0, [x1]
+    ccc8:	71002c1f 	cmp	w0, #0xb
+    cccc:	7a561804 	ccmp	w0, #0x16, #0x4, ne  // ne = any
+    ccd0:	54ffff41 	b.ne	ccb8 <prism2_get_name+0x58>  // b.any
+    ccd4:	90000001 	adrp	x1, 0 <prism2_frag_cache_find>
+    ccd8:	91000021 	add	x1, x1, #0x0
+    ccdc:	14000003 	b	cce8 <prism2_get_name+0x88>
+    cce0:	90000001 	adrp	x1, 0 <prism2_frag_cache_find>
+    cce4:	91000021 	add	x1, x1, #0x0
+    cce8:	91146273 	add	x19, x19, #0x518
+    ccec:	aa1403e0 	mov	x0, x20
+[31m    ccf0:	94000000 	bl	0 <strcpy>[0m
+    ccf4:	f94027e1 	ldr	x1, [sp, #72]
+    ccf8:	f9400260 	ldr	x0, [x19]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mhostap.ko[0m
+

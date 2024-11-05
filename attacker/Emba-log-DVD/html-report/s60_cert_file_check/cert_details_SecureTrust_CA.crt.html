@@ -1,0 +1,223 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s60_cert_file_check.html" title="./../s60_cert_file_check.html" >&laquo; Back to s60_cert_file_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>Certificate:</pre>
+<pre>    Data:</pre>
+<pre>        Version: 3 (0x2)</pre>
+<pre>        Serial Number:</pre>
+<pre>            0c:f0:8e:5c:08:16:a5:ad:42:7f:f0:eb:27:18:59:d0</pre>
+<pre>        Signature Algorithm: sha1WithRSAEncryption</pre>
+<pre>        Issuer: C = US, O = SecureTrust Corporation, CN = SecureTrust CA</pre>
+<pre>        Validity</pre>
+<pre>            Not Before: Nov  7 19:31:18 2006 GMT</pre>
+<pre>            Not After : Dec 31 19:40:55 2029 GMT</pre>
+<pre>        Subject: C = US, O = SecureTrust Corporation, CN = SecureTrust CA</pre>
+<pre>        Subject Public Key Info:</pre>
+<pre>            Public Key Algorithm: rsaEncryption</pre>
+<pre>                RSA Public-Key: (2048 bit)</pre>
+<pre>                Modulus:</pre>
+<pre>                    00:ab:a4:81:e5:95:cd:f5:f6:14:8e:c2:4f:ca:d4:</pre>
+<pre>                    e2:78:95:58:9c:41:e1:0d:99:40:24:17:39:91:33:</pre>
+<pre>                    66:e9:be:e1:83:af:62:5c:89:d1:fc:24:5b:61:b3:</pre>
+<pre>                    e0:11:11:41:1c:1d:6e:f0:b8:bb:f8:de:a7:81:ba:</pre>
+<pre>                    a6:48:c6:9f:1d:bd:be:8e:a9:41:3e:b8:94:ed:29:</pre>
+<pre>                    1a:d4:8e:d2:03:1d:03:ef:6d:0d:67:1c:57:d7:06:</pre>
+<pre>                    ad:ca:c8:f5:fe:0e:af:66:25:48:04:96:0b:5d:a3:</pre>
+<pre>                    ba:16:c3:08:4f:d1:46:f8:14:5c:f2:c8:5e:01:99:</pre>
+<pre>                    6d:fd:88:cc:86:a8:c1:6f:31:42:6c:52:3e:68:cb:</pre>
+<pre>                    f3:19:34:df:bb:87:18:56:80:26:c4:d0:dc:c0:6f:</pre>
+<pre>                    df:de:a0:c2:91:16:a0:64:11:4b:44:bc:1e:f6:e7:</pre>
+<pre>                    fa:63:de:66:ac:76:a4:71:a3:ec:36:94:68:7a:77:</pre>
+<pre>                    a4:b1:e7:0e:2f:81:7a:e2:b5:72:86:ef:a2:6b:8b:</pre>
+<pre>                    f0:0f:db:d3:59:3f:ba:72:bc:44:24:9c:e3:73:b3:</pre>
+<pre>                    f7:af:57:2f:42:26:9d:a9:74:ba:00:52:f2:4b:cd:</pre>
+<pre>                    53:7c:47:0b:36:85:0e:66:a9:08:97:16:34:57:c1:</pre>
+<pre>                    66:f7:80:e3:ed:70:54:c7:93:e0:2e:28:15:59:87:</pre>
+<pre>                    ba:bb</pre>
+<pre>                Exponent: 65537 (0x10001)</pre>
+<pre>        X509v3 extensions:</pre>
+<pre>            1.3.6.1.4.1.311.20.2: </pre>
+<pre>                ...C.A</pre>
+<pre>            X509v3 Key Usage: </pre>
+<pre>                Digital Signature, Certificate Sign, CRL Sign</pre>
+<pre>            X509v3 Basic Constraints: critical</pre>
+<pre>                CA:TRUE</pre>
+<pre>            X509v3 Subject Key Identifier: </pre>
+<pre>                42:32:B6:16:FA:04:FD:FE:5D:4B:7A:C3:FD:F7:4C:40:1D:5A:43:AF</pre>
+<pre>            X509v3 CRL Distribution Points: </pre>
+<br />
+<pre>                Full Name:</pre>
+<pre>                  URI:<a href="http://crl.securetrust.com/STCA.crl" title="http://crl.securetrust.com/STCA.crl" target="_blank" >http://crl.securetrust.com/STCA.crl</a></pre>
+<br />
+<pre>            1.3.6.1.4.1.311.21.1: </pre>
+<pre>                ...</pre>
+<pre>    Signature Algorithm: sha1WithRSAEncryption</pre>
+<pre>         30:ed:4f:4a:e1:58:3a:52:72:5b:b5:a6:a3:65:18:a6:bb:51:</pre>
+<pre>         3b:77:e9:9d:ea:d3:9f:5c:e0:45:65:7b:0d:ca:5b:e2:70:50:</pre>
+<pre>         b2:94:05:14:ae:49:c7:8d:41:07:12:73:94:7e:0c:23:21:fd:</pre>
+<pre>         bc:10:7f:60:10:5a:72:f5:98:0e:ac:ec:b9:7f:dd:7a:6f:5d:</pre>
+<pre>         d3:1c:f4:ff:88:05:69:42:a9:05:71:c8:b7:ac:26:e8:2e:b4:</pre>
+<pre>         8c:6a:ff:71:dc:b8:b1:df:99:bc:7c:21:54:2b:e4:58:a2:bb:</pre>
+<pre>         57:29:ae:9e:a9:a3:19:26:0f:99:2e:08:b0:ef:fd:69:cf:99:</pre>
+<pre>         1a:09:8d:e3:a7:9f:2b:c9:36:34:7b:24:b3:78:4c:95:17:a4:</pre>
+<pre>         06:26:1e:b6:64:52:36:5f:60:67:d9:9c:c5:05:74:0b:e7:67:</pre>
+<pre>         23:d2:08:fc:88:e9:ae:8b:7f:e1:30:f4:37:7e:fd:c6:32:da:</pre>
+<pre>         2d:9e:44:30:30:6c:ee:07:de:d2:34:fc:d2:ff:40:f6:4b:f4:</pre>
+<pre>         66:46:06:54:a6:f2:32:0a:63:26:30:6b:9b:d1:dc:8b:47:ba:</pre>
+<pre>         e1:b9:d5:62:d0:a2:a0:f4:67:05:78:29:63:1a:6f:04:d6:f8:</pre>
+<pre>         c6:4c:a3:9a:b1:37:b4:8d:e5:28:4b:1d:9e:2c:c2:b8:68:bc:</pre>
+<pre>         ed:02:ee:31</pre>
+<pre>-----BEGIN CERTIFICATE-----</pre>
+<pre>MIIDuDCCAqCgAwIBAgIQDPCOXAgWpa1Cf/DrJxhZ0DANBgkqhkiG9w0BAQUFADBI</pre>
+<pre>MQswCQYDVQQGEwJVUzEgMB4GA1UEChMXU2VjdXJlVHJ1c3QgQ29ycG9yYXRpb24x</pre>
+<pre>FzAVBgNVBAMTDlNlY3VyZVRydXN0IENBMB4XDTA2MTEwNzE5MzExOFoXDTI5MTIz</pre>
+<pre>MTE5NDA1NVowSDELMAkGA1UEBhMCVVMxIDAeBgNVBAoTF1NlY3VyZVRydXN0IENv</pre>
+<pre>cnBvcmF0aW9uMRcwFQYDVQQDEw5TZWN1cmVUcnVzdCBDQTCCASIwDQYJKoZIhvcN</pre>
+<pre>AQEBBQADggEPADCCAQoCggEBAKukgeWVzfX2FI7CT8rU4niVWJxB4Q2ZQCQXOZEz</pre>
+<pre>Zum+4YOvYlyJ0fwkW2Gz4BERQRwdbvC4u/jep4G6pkjGnx29vo6pQT64lO0pGtSO</pre>
+<pre>0gMdA+9tDWccV9cGrcrI9f4Or2YlSASWC12juhbDCE/RRvgUXPLIXgGZbf2IzIao</pre>
+<pre>wW8xQmxSPmjL8xk037uHGFaAJsTQ3MBv396gwpEWoGQRS0S8Hvbn+mPeZqx2pHGj</pre>
+<pre>7DaUaHp3pLHnDi+BeuK1cobvomuL8A/b01k/unK8RCSc43Oz969XL0Imnal0ugBS</pre>
+<pre>8kvNU3xHCzaFDmapCJcWNFfBZveA4+1wVMeT4C4oFVmHursCAwEAAaOBnTCBmjAT</pre>
+<pre>BgkrBgEEAYI3FAIEBh4EAEMAQTALBgNVHQ8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB</pre>
+<pre>/zAdBgNVHQ4EFgQUQjK2FvoE/f5dS3rD/fdMQB1aQ68wNAYDVR0fBC0wKzApoCeg</pre>
+<pre>JYYjaHR0cDovL2NybC5zZWN1cmV0cnVzdC5jb20vU1RDQS5jcmwwEAYJKwYBBAGC</pre>
+<pre>NxUBBAMCAQAwDQYJKoZIhvcNAQEFBQADggEBADDtT0rhWDpSclu1pqNlGKa7UTt3</pre>
+<pre>6Z3q059c4EVlew3KW+JwULKUBRSuSceNQQcSc5R+DCMh/bwQf2AQWnL1mA6s7Ll/</pre>
+<pre>3XpvXdMc9P+IBWlCqQVxyLesJugutIxq/3HcuLHfmbx8IVQr5Fiiu1cprp6poxkm</pre>
+<pre>D5kuCLDv/WnPmRoJjeOnnyvJNjR7JLN4TJUXpAYmHrZkUjZfYGfZnMUFdAvnZyPS</pre>
+<pre>CPyI6a6Lf+Ew9Dd+/cYy2i2eRDAwbO4H3tI0/NL/QPZL9GZGBlSm8jIKYyYwa5vR</pre>
+<pre>3ItHuuG51WLQoqD0ZwV4KWMabwTW+MZMo5qxN7SN5ShLHZ4swrhovO0C7jE=</pre>
+<pre>-----END CERTIFICATE-----</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibssl.so.1.1[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibssl.so.1.1[0m
+
+   34280:	aa0303f5 	mov	x21, x3
+   34284:	a9046bf9 	stp	x25, x26, [sp, #64]
+   34288:	aa0103f9 	mov	x25, x1
+   3428c:	a90573fb 	stp	x27, x28, [sp, #80]
+   34290:	aa0003fb 	mov	x27, x0
+   34294:	f90033e4 	str	x4, [sp, #96]
+   34298:	97ffa91e 	bl	1e710 <strlen@plt>
+   3429c:	aa0003fa 	mov	x26, x0
+   342a0:	900001c0 	adrp	x0, 6c000 <SSL_CTX_set_srp_client_pwd_callback@@OPENSSL_1_1_0+0x8240>
+   342a4:	9126c01c 	add	x28, x0, #0x9b0
+   342a8:	8b170757 	add	x23, x26, x23, lsl #1
+   342ac:	91000ef7 	add	x23, x23, #0x3
+   342b0:	aa1c03e1 	mov	x1, x28
+   342b4:	aa1703e0 	mov	x0, x23
+   342b8:	52828e42 	mov	w2, #0x1472                	// #5234
+   342bc:	97ffa4a1 	bl	1d540 <CRYPTO_malloc@plt>
+   342c0:	b4000800 	cbz	x0, 343c0 <OPENSSL_init_ssl@@OPENSSL_1_1_0+0xb10>
+   342c4:	aa0003f6 	mov	x22, x0
+   342c8:	aa1b03e1 	mov	x1, x27
+   342cc:	8b1a02dc 	add	x28, x22, x26
+[31m   342d0:	97ffa8f4 	bl	1e6a0 <strcpy@plt>[0m
+   342d4:	91000780 	add	x0, x28, #0x1
+   342d8:	900001c3 	adrp	x3, 6c000 <SSL_CTX_set_srp_client_pwd_callback@@OPENSSL_1_1_0+0x8240>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mlibssl.so.1.1[0m
+

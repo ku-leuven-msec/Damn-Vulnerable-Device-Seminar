@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-aloop.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m179) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-aloop.ko[0m
+
+    1904:	52800001 	mov	w1, #0x0                   	// #0
+    1908:	aa1603e0 	mov	x0, x22
+    190c:	97ffff1b 	bl	1578 <loopback_proc_new>
+    1910:	b94073e1 	ldr	w1, [sp, #112]
+    1914:	aa1603e0 	mov	x0, x22
+    1918:	97ffff18 	bl	1578 <loopback_proc_new>
+    191c:	b94067e0 	ldr	w0, [sp, #100]
+    1920:	90000001 	adrp	x1, 0 <loopback_rate_shift_info>
+    1924:	91000021 	add	x1, x1, #0x0
+    1928:	f9404be3 	ldr	x3, [sp, #144]
+    192c:	11000402 	add	w2, w0, #0x1
+    1930:	39402024 	ldrb	w4, [x1, #8]
+    1934:	f9400025 	ldr	x5, [x1]
+    1938:	f8014065 	stur	x5, [x3, #20]
+    193c:	39007064 	strb	w4, [x3, #28]
+    1940:	91011060 	add	x0, x3, #0x44
+    1944:	f8024065 	stur	x5, [x3, #36]
+    1948:	90000001 	adrp	x1, 0 <loopback_rate_shift_info>
+    194c:	3900b064 	strb	w4, [x3, #44]
+    1950:	91000021 	add	x1, x1, #0x0
+[31m    1954:	94000000 	bl	0 <sprintf>[0m
+    1958:	f9404be0 	ldr	x0, [sp, #144]
+    195c:	94000000 	bl	0 <snd_card_register>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33msnd-aloop.ko[0m
+

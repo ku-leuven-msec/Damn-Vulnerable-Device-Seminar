@@ -1,0 +1,46 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/bootmisc.sh line 13:[0m
+[0m. /etc/default/rcS[0m
+[32m  ^--------------^ SC1091: Not following: /etc/default/rcS was not specified as input (see shellcheck -x).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/bootmisc.sh line 14:[0m
+[0m[ -f /etc/default/timestamp ] && . /etc/default/timestamp[0m
+[32m                                   ^--------------------^ SC1091: Not following: /etc/default/timestamp was not specified as input (see shellcheck -x).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/bootmisc.sh line 72:[0m
+[0m	SYSTEMDATE=`date -u +%4Y%2m%2d%2H%2M%2S`[0m
+[32m                   ^---------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+	SYSTEMDATE=$(date -u +%4Y%2m%2d%2H%2M%2S)
+
+
+[1mIn /log/firmware/firmware/etc/init.d/bootmisc.sh line 73:[0m
+[0m	read TIMESTAMP < "$TIMESTAMP_FILE"[0m
+[32m        ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/bootmisc.sh line 74:[0m
+[0m	if [ ${TIMESTAMP} -gt $SYSTEMDATE ]; then[0m
+[32m             ^----------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                              ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	if [ "${TIMESTAMP}" -gt "$SYSTEMDATE" ]; then
+
+
+[1mIn /log/firmware/firmware/etc/init.d/bootmisc.sh line 80:[0m
+[0m		date -u ${TS_MIDDLE8}${TS_YR}.${TS_SEC}[0m
+[32m                        ^-----------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                     ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                              ^-------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		date -u "${TS_MIDDLE8}""${TS_YR}"."${TS_SEC}"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC1091 -- Not following: /etc/default/rcS w...
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...
+  https://www.shellcheck.net/wiki/SC2162 -- read without -r will mangle backs...

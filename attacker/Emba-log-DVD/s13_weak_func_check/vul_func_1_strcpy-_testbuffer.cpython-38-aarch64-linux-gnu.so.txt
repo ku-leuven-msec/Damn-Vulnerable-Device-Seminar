@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33m_testbuffer.cpython-38-aarch64-linux-gnu.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33m_testbuffer.cpython-38-aarch64-linux-gnu.so[0m
+
+    2fa4:	f9400020 	ldr	x0, [x1]
+    2fa8:	d1000400 	sub	x0, x0, #0x1
+    2fac:	f9000020 	str	x0, [x1]
+    2fb0:	b4000ca0 	cbz	x0, 3144 <PyMemoryView_FromBuffer@plt+0xe94>
+    2fb4:	35001139 	cbnz	w25, 31d8 <PyMemoryView_FromBuffer@plt+0xf28>
+    2fb8:	b9402aa1 	ldr	w1, [x21, #40]
+    2fbc:	f94037e0 	ldr	x0, [sp, #104]
+    2fc0:	f9000ed7 	str	x23, [x22, #24]
+    2fc4:	f27f003f 	tst	x1, #0x2
+    2fc8:	1a9f17e1 	cset	w1, eq  // eq = none
+    2fcc:	b90022c1 	str	w1, [x22, #32]
+    2fd0:	97fffc84 	bl	21e0 <PyUnicode_AsASCIIString@plt>
+    2fd4:	aa0003f4 	mov	x20, x0
+    2fd8:	b4001e40 	cbz	x0, 33a0 <PyMemoryView_FromBuffer@plt+0x10f0>
+    2fdc:	f9400800 	ldr	x0, [x0, #16]
+    2fe0:	91000400 	add	x0, x0, #0x1
+    2fe4:	97fffcaf 	bl	22a0 <PyMem_Malloc@plt>
+    2fe8:	aa0003f7 	mov	x23, x0
+    2fec:	b4001ca0 	cbz	x0, 3380 <PyMemoryView_FromBuffer@plt+0x10d0>
+    2ff0:	91008281 	add	x1, x20, #0x20
+[31m    2ff4:	97fffc83 	bl	2200 <strcpy@plt>[0m
+    2ff8:	f9400280 	ldr	x0, [x20]
+    2ffc:	d1000400 	sub	x0, x0, #0x1
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33m_testbuffer.cpython-38-aarch64-linux-gnu.so[0m
+

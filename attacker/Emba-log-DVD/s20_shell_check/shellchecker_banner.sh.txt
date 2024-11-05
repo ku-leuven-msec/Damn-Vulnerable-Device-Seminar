@@ -1,0 +1,17 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/banner.sh line 14:[0m
+[0mif ( > /dev/tty0 ) 2>/dev/null; then[0m
+[33m     ^---------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/banner.sh line 16:[0m
+[0melif ( > /dev/vc/0 ) 2>/dev/null; then[0m
+[33m       ^---------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/banner.sh line 18:[0m
+[0melif ( > /dev/console ) 2>/dev/null; then[0m
+[33m       ^------------^ SC2188: This redirection doesn't have a command. Move to its command (or use 'true' as no-op).[0m
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2188 -- This redirection doesn't have a c...

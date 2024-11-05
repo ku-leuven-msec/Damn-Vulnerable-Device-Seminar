@@ -1,0 +1,43 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-seq-midi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m108) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-seq-midi.ko[0m
+
+ a04:	b940c69b 	ldr	w27, [x20, #196]
+ a08:	6b18037f 	cmp	w27, w24
+ a0c:	1a982360 	csel	w0, w27, w24, cs  // cs = hs, nlast
+ a10:	b90083e0 	str	w0, [sp, #128]
+ a14:	17ffff55 	b	768 <snd_seq_midisynth_probe+0xe8>
+ a18:	528004a2 	mov	w2, #0x25                  	// #37
+ a1c:	2a020000 	orr	w0, w0, w2
+ a20:	b9004780 	str	w0, [x28, #68]
+ a24:	17ffffea 	b	9cc <snd_seq_midisynth_probe+0x34c>
+ a28:	52800942 	mov	w2, #0x4a                  	// #74
+ a2c:	2a020000 	orr	w0, w0, w2
+ a30:	b9004780 	str	w0, [x28, #68]
+ a34:	17ffffe3 	b	9c0 <snd_seq_midisynth_probe+0x340>
+ a38:	b94083e1 	ldr	w1, [sp, #128]
+ a3c:	b94002c2 	ldr	w2, [x22]
+ a40:	7100043f 	cmp	w1, #0x1
+ a44:	54000160 	b.eq	a70 <snd_seq_midisynth_probe+0x3f0>  // b.none
+ a48:	f9403fe1 	ldr	x1, [sp, #120]
+ a4c:	2a1303e4 	mov	w4, w19
+ a50:	2a1703e3 	mov	w3, w23
+[31m a54:	94000000 	bl	0 <sprintf>[0m
+ a58:	17ffffd4 	b	9a8 <snd_seq_midisynth_probe+0x328>
+ a5c:	90000002 	adrp	x2, 0 <snd_seq_midisynth_delete>
+ a60:	d2800801 	mov	x1, #0x40                  	// #64
+ a64:	91000042 	add	x2, x2, #0x0
+ a68:	94000000 	bl	0 <snprintf>
+ a6c:	17ffffcf 	b	9a8 <snd_seq_midisynth_probe+0x328>
+ a70:	f9404fe1 	ldr	x1, [sp, #152]
+ a74:	2a1703e3 	mov	w3, w23
+[31m a78:	94000000 	bl	0 <sprintf>[0m
+ a7c:	17ffffcb 	b	9a8 <snd_seq_midisynth_probe+0x328>
+ a80:	f9403be0 	ldr	x0, [sp, #112]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33msnd-seq-midi.ko[0m
+

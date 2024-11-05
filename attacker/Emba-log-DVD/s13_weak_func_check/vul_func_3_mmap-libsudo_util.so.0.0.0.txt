@@ -1,0 +1,76 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibsudo_util.so.0.0.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibsudo_util.so.0.0.0[0m
+
+[31m   10c78:	97ffd206 	bl	5490 <mmap@plt>[0m
+   10c7c:	d1000401 	sub	x1, x0, #0x1
+   10c80:	aa0003f4 	mov	x20, x0
+   10c84:	b1000c3f 	cmn	x1, #0x3
+   10c88:	54000508 	b.hi	10d28 <sudo_closefrom@@Base+0x218>  // b.pmore
+   10c8c:	b98002a2 	ldrsw	x2, [x21]
+   10c90:	f94002c1 	ldr	x1, [x22]
+   10c94:	97ffd09b 	bl	4f00 <memmove@plt>
+   10c98:	f94002c0 	ldr	x0, [x22]
+   10c9c:	b94002a2 	ldr	w2, [x21]
+   10ca0:	93407c41 	sxtw	x1, w2
+   10ca4:	b4000080 	cbz	x0, 10cb4 <sudo_closefrom@@Base+0x1a4>
+   10ca8:	97ffd25a 	bl	5610 <munmap@plt>
+   10cac:	b94002a2 	ldr	w2, [x21]
+   10cb0:	93407c41 	sxtw	x1, w2
+   10cb4:	f90002d4 	str	x20, [x22]
+   10cb8:	4b020262 	sub	w2, w19, w2
+   10cbc:	8b010280 	add	x0, x20, x1
+   10cc0:	52800001 	mov	w1, #0x0                   	// #0
+   10cc4:	93407c42 	sxtw	x2, w2
+   10cc8:	97ffd16e 	bl	5280 <memset@plt>
+--
+[31m   10ce4:	97ffd1eb 	bl	5490 <mmap@plt>[0m
+   10ce8:	b100041f 	cmn	x0, #0x1
+   10cec:	54000220 	b.eq	10d30 <sudo_closefrom@@Base+0x220>  // b.none
+   10cf0:	f90002c0 	str	x0, [x22]
+   10cf4:	b40001a0 	cbz	x0, 10d28 <sudo_closefrom@@Base+0x218>
+   10cf8:	b98002a2 	ldrsw	x2, [x21]
+   10cfc:	aa1403e1 	mov	x1, x20
+   10d00:	97ffd07c 	bl	4ef0 <memcpy@plt>
+   10d04:	b94002a2 	ldr	w2, [x21]
+   10d08:	f94002d4 	ldr	x20, [x22]
+   10d0c:	93407c41 	sxtw	x1, w2
+   10d10:	17ffffea 	b	10cb8 <sudo_closefrom@@Base+0x1a8>
+   10d14:	528003c0 	mov	w0, #0x1e                  	// #30
+   10d18:	97ffd262 	bl	56a0 <sysconf@plt>
+   10d1c:	93407c01 	sxtw	x1, w0
+   10d20:	aa0103f3 	mov	x19, x1
+   10d24:	17ffffcd 	b	10c58 <sudo_closefrom@@Base+0x148>
+   10d28:	12800000 	mov	w0, #0xffffffff            	// #-1
+   10d2c:	17ffffea 	b	10cd4 <sudo_closefrom@@Base+0x1c4>
+   10d30:	f90002df 	str	xzr, [x22]
+   10d34:	17ffffe8 	b	10cd4 <sudo_closefrom@@Base+0x1c4>
+--
+[31m   1166c:	97ffcf89 	bl	5490 <mmap@plt>[0m
+   11670:	b100041f 	cmn	x0, #0x1
+   11674:	54000460 	b.eq	11700 <sudo_closefrom@@Base+0xbf0>  // b.none
+   11678:	f94037e1 	ldr	x1, [sp, #104]
+   1167c:	f9000020 	str	x0, [x1]
+   11680:	b5ffbca0 	cbnz	x0, 10e14 <sudo_closefrom@@Base+0x304>
+   11684:	12800014 	mov	w20, #0xffffffff            	// #-1
+   11688:	17fffe0e 	b	10ec0 <sudo_closefrom@@Base+0x3b0>
+   1168c:	910253e1 	add	x1, sp, #0x94
+   11690:	910263e0 	add	x0, sp, #0x98
+   11694:	97fffd63 	bl	10c20 <sudo_closefrom@@Base+0x110>
+   11698:	17ffff37 	b	11374 <sudo_closefrom@@Base+0x864>
+   1169c:	f9403be6 	ldr	x6, [sp, #112]
+   116a0:	aa1a03e1 	mov	x1, x26
+   116a4:	8b37c0da 	add	x26, x6, w23, sxtw
+   116a8:	17ffff70 	b	11468 <sudo_closefrom@@Base+0x958>
+   116ac:	910253e1 	add	x1, sp, #0x94
+   116b0:	910263e0 	add	x0, sp, #0x98
+   116b4:	97fffd5b 	bl	10c20 <sudo_closefrom@@Base+0x110>
+   116b8:	d0000020 	adrp	x0, 17000 <sudo_str2sig@@Base+0x1430>
+   116bc:	911a8005 	add	x5, x0, #0x6a0
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m3[0m times [0;33mlibsudo_util.so.0.0.0[0m
+

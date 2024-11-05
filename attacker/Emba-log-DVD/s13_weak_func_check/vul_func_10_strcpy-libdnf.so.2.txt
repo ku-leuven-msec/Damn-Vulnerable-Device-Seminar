@@ -1,0 +1,227 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibdnf.so.2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibdnf.so.2[0m
+
+
+000000000005ba60 <_Z14pool_split_evrP6s_PoolPKcPPcS4_S4_@@Base>:
+   5ba60:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+   5ba64:	910003fd 	mov	x29, sp
+   5ba68:	a90153f3 	stp	x19, x20, [sp, #16]
+   5ba6c:	aa0103f3 	mov	x19, x1
+   5ba70:	aa0403f4 	mov	x20, x4
+   5ba74:	a9025bf5 	stp	x21, x22, [sp, #32]
+   5ba78:	aa0203f6 	mov	x22, x2
+   5ba7c:	aa0303f5 	mov	x21, x3
+   5ba80:	f9001bf7 	str	x23, [sp, #48]
+   5ba84:	aa0003f7 	mov	x23, x0
+   5ba88:	aa0103e0 	mov	x0, x1
+   5ba8c:	97ffd4b5 	bl	50d60 <strlen@plt>
+   5ba90:	aa0003e1 	mov	x1, x0
+   5ba94:	aa1703e0 	mov	x0, x23
+   5ba98:	11000421 	add	w1, w1, #0x1
+   5ba9c:	97ffdf9d 	bl	53910 <pool_alloctmpspace@plt>
+   5baa0:	aa1303e1 	mov	x1, x19
+   5baa4:	aa0003f3 	mov	x19, x0
+[31m   5baa8:	97ffdab6 	bl	52580 <strcpy@plt>[0m
+   5baac:	52800740 	mov	w0, #0x3a                  	// #58
+   5bab0:	91000665 	add	x5, x19, #0x1
+--
+   df3d4:	540000a0 	b.eq	df3e8 <_ZN5Regex6ResultC1ERKS0_@@Base+0x98>  // b.none
+   df3d8:	aa0303e0 	mov	x0, x3
+   df3dc:	aa1503e2 	mov	x2, x21
+   df3e0:	97fdd438 	bl	544c0 <memmove@plt>
+   df3e4:	aa0003e3 	mov	x3, x0
+   df3e8:	8b150063 	add	x3, x3, x21
+   df3ec:	f9400260 	ldr	x0, [x19]
+   df3f0:	f90006c3 	str	x3, [x22, #8]
+   df3f4:	350000f7 	cbnz	w23, df410 <_ZN5Regex6ResultC1ERKS0_@@Base+0xc0>
+   df3f8:	f9000280 	str	x0, [x20]
+   df3fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+   df400:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   df404:	f9401bf7 	ldr	x23, [sp, #48]
+   df408:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   df40c:	d65f03c0 	ret
+   df410:	97fdc654 	bl	50d60 <strlen@plt>
+   df414:	91000400 	add	x0, x0, #0x1
+   df418:	97fdc2b6 	bl	4fef0 <_Znam@plt>
+   df41c:	f9400261 	ldr	x1, [x19]
+   df420:	aa0003f3 	mov	x19, x0
+[31m   df424:	97fdcc57 	bl	52580 <strcpy@plt>[0m
+   df428:	f9000293 	str	x19, [x20]
+   df42c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   df4f8:	f9001264 	str	x4, [x19, #32]
+   df4fc:	d503201f 	nop
+   df500:	29007c1f 	stp	wzr, wzr, [x0]
+   df504:	91002000 	add	x0, x0, #0x8
+   df508:	eb04001f 	cmp	x0, x4
+   df50c:	54ffffa1 	b.ne	df500 <_ZN5Regex6ResultC1EPKcbm@@Base+0x60>  // b.any
+   df510:	f9000e64 	str	x4, [x19, #24]
+   df514:	350000f6 	cbnz	w22, df530 <_ZN5Regex6ResultC1EPKcbm@@Base+0x90>
+   df518:	f9000274 	str	x20, [x19]
+   df51c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   df520:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   df524:	f9401bf7 	ldr	x23, [sp, #48]
+   df528:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   df52c:	d65f03c0 	ret
+   df530:	aa1403e0 	mov	x0, x20
+   df534:	97fdc60b 	bl	50d60 <strlen@plt>
+   df538:	91000400 	add	x0, x0, #0x1
+   df53c:	97fdc26d 	bl	4fef0 <_Znam@plt>
+   df540:	aa1403e1 	mov	x1, x20
+   df544:	aa0003f4 	mov	x20, x0
+[31m   df548:	97fdcc0e 	bl	52580 <strcpy@plt>[0m
+   df54c:	f9000274 	str	x20, [x19]
+   df550:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+  102444:	910003fd 	mov	x29, sp
+  102448:	a90153f3 	stp	x19, x20, [sp, #16]
+  10244c:	f90013f5 	str	x21, [sp, #32]
+  102450:	b4000380 	cbz	x0, 1024c0 <_ZNK6libdnf10PackageSet4nextEi@@Base+0x120>
+  102454:	2a0103f5 	mov	w21, w1
+  102458:	aa0003f4 	mov	x20, x0
+  10245c:	97fd3a41 	bl	50d60 <strlen@plt>
+  102460:	aa0003f3 	mov	x19, x0
+  102464:	91000400 	add	x0, x0, #0x1
+  102468:	97fd36a2 	bl	4fef0 <_Znam@plt>
+  10246c:	71001ebf 	cmp	w21, #0x7
+  102470:	aa0003f5 	mov	x21, x0
+  102474:	fa410a60 	ccmp	x19, #0x1, #0x0, eq  // eq = none
+  102478:	540000a9 	b.ls	10248c <_ZNK6libdnf10PackageSet4nextEi@@Base+0xec>  // b.plast
+  10247c:	d1000673 	sub	x19, x19, #0x1
+  102480:	38736a81 	ldrb	w1, [x20, x19]
+  102484:	7100bc3f 	cmp	w1, #0x2f
+  102488:	54000120 	b.eq	1024ac <_ZNK6libdnf10PackageSet4nextEi@@Base+0x10c>  // b.none
+  10248c:	aa1403e1 	mov	x1, x20
+  102490:	aa1503e0 	mov	x0, x21
+[31m  102494:	97fd403b 	bl	52580 <strcpy@plt>[0m
+  102498:	aa1503e0 	mov	x0, x21
+  10249c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+  103a98:	aa1403e0 	mov	x0, x20
+  103a9c:	97fd34b1 	bl	50d60 <strlen@plt>
+  103aa0:	aa0003fa 	mov	x26, x0
+  103aa4:	aa1703e0 	mov	x0, x23
+  103aa8:	97fd34ae 	bl	50d60 <strlen@plt>
+  103aac:	b9006be0 	str	w0, [sp, #104]
+  103ab0:	f9403fe0 	ldr	x0, [sp, #120]
+  103ab4:	2a1803fc 	mov	w28, w24
+  103ab8:	0b180341 	add	w1, w26, w24
+  103abc:	b4000c00 	cbz	x0, 103c3c <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x30c>
+  103ac0:	b9406fe4 	ldr	w4, [sp, #108]
+  103ac4:	52800018 	mov	w24, #0x0                   	// #0
+  103ac8:	b9406be0 	ldr	w0, [sp, #104]
+  103acc:	b9006fe4 	str	w4, [sp, #108]
+  103ad0:	0b010001 	add	w1, w0, w1
+  103ad4:	aa1503e0 	mov	x0, x21
+  103ad8:	11000c21 	add	w1, w1, #0x3
+  103adc:	97fd3f8d 	bl	53910 <pool_alloctmpspace@plt>
+  103ae0:	aa1603e1 	mov	x1, x22
+  103ae4:	aa0003f9 	mov	x25, x0
+[31m  103ae8:	97fd3aa6 	bl	52580 <strcpy@plt>[0m
+  103aec:	b9406fe4 	ldr	w4, [sp, #108]
+  103af0:	7100035f 	cmp	w26, #0x0
+--
+  103b54:	aa0003f8 	mov	x24, x0
+  103b58:	aa1403e0 	mov	x0, x20
+  103b5c:	97fd3481 	bl	50d60 <strlen@plt>
+  103b60:	aa0003f9 	mov	x25, x0
+  103b64:	aa1703e0 	mov	x0, x23
+  103b68:	97fd347e 	bl	50d60 <strlen@plt>
+  103b6c:	f9403fe2 	ldr	x2, [sp, #120]
+  103b70:	b9006be0 	str	w0, [sp, #104]
+  103b74:	2a1803fc 	mov	w28, w24
+  103b78:	2a1903fa 	mov	w26, w25
+  103b7c:	0b180321 	add	w1, w25, w24
+  103b80:	b4000782 	cbz	x2, 103c70 <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x340>
+  103b84:	0b000021 	add	w1, w1, w0
+  103b88:	aa1503e0 	mov	x0, x21
+  103b8c:	11001421 	add	w1, w1, #0x5
+  103b90:	97fd3f60 	bl	53910 <pool_alloctmpspace@plt>
+  103b94:	11000701 	add	w1, w24, #0x1
+  103b98:	aa0003f9 	mov	x25, x0
+  103b9c:	b9006fe1 	str	w1, [sp, #108]
+  103ba0:	aa1603e1 	mov	x1, x22
+[31m  103ba4:	97fd3a77 	bl	52580 <strcpy@plt>[0m
+  103ba8:	b9806fe1 	ldrsw	x1, [sp, #108]
+  103bac:	528005a0 	mov	w0, #0x2d                  	// #45
+  103bb0:	3838cb20 	strb	w0, [x25, w24, sxtw]
+  103bb4:	11000b84 	add	w4, w28, #0x2
+  103bb8:	11000f9c 	add	w28, w28, #0x3
+  103bbc:	52800600 	mov	w0, #0x30                  	// #48
+  103bc0:	38216b20 	strb	w0, [x25, x1]
+  103bc4:	52800741 	mov	w1, #0x3a                  	// #58
+  103bc8:	8b3cc320 	add	x0, x25, w28, sxtw
+  103bcc:	3824cb21 	strb	w1, [x25, w4, sxtw]
+  103bd0:	383ccb3f 	strb	wzr, [x25, w28, sxtw]
+  103bd4:	34fff97a 	cbz	w26, 103b00 <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x1d0>
+  103bd8:	aa1403e1 	mov	x1, x20
+[31m  103bdc:	97fd3a69 	bl	52580 <strcpy@plt>[0m
+  103be0:	b9406be0 	ldr	w0, [sp, #104]
+  103be4:	34fff920 	cbz	w0, 103b08 <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x1d8>
+  103be8:	0b1c0344 	add	w4, w26, w28
+  103bec:	93407f40 	sxtw	x0, w26
+  103bf0:	528005c2 	mov	w2, #0x2e                  	// #46
+  103bf4:	8b3cc000 	add	x0, x0, w28, sxtw
+  103bf8:	91000400 	add	x0, x0, #0x1
+  103bfc:	aa1703e1 	mov	x1, x23
+  103c00:	3824cb22 	strb	w2, [x25, w4, sxtw]
+  103c04:	8b000320 	add	x0, x25, x0
+[31m  103c08:	97fd3a5e 	bl	52580 <strcpy@plt>[0m
+  103c0c:	b9409be0 	ldr	w0, [sp, #152]
+  103c10:	3667f800 	tbz	w0, #12, 103b10 <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x1e0>
+--
+  103c58:	a9446bf9 	ldp	x25, x26, [sp, #64]
+  103c5c:	a94573fb 	ldp	x27, x28, [sp, #80]
+  103c60:	a94153f3 	ldp	x19, x20, [sp, #16]
+  103c64:	a9425bf5 	ldp	x21, x22, [sp, #32]
+  103c68:	a8ca7bfd 	ldp	x29, x30, [sp], #160
+  103c6c:	d65f03c0 	ret
+  103c70:	52800004 	mov	w4, #0x0                   	// #0
+  103c74:	52800018 	mov	w24, #0x0                   	// #0
+  103c78:	17ffff94 	b	103ac8 <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x198>
+  103c7c:	11000780 	add	w0, w28, #0x1
+  103c80:	528005a1 	mov	w1, #0x2d                  	// #45
+  103c84:	383ccb21 	strb	w1, [x25, w28, sxtw]
+  103c88:	7100031f 	cmp	w24, #0x0
+  103c8c:	b9006fe0 	str	w0, [sp, #108]
+  103c90:	93407c01 	sxtw	x1, w0
+  103c94:	8b20c320 	add	x0, x25, w0, sxtw
+  103c98:	54fff8ec 	b.gt	103bb4 <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x284>
+  103c9c:	540000c0 	b.eq	103cb4 <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x384>  // b.none
+  103ca0:	cb38c281 	sub	x1, x20, w24, sxtw
+  103ca4:	0b18035a 	add	w26, w26, w24
+[31m  103ca8:	97fd3a36 	bl	52580 <strcpy@plt>[0m
+  103cac:	b9406ffc 	ldr	w28, [sp, #108]
+  103cb0:	17ffff94 	b	103b00 <_ZN6libdnf5Query4Impl11filterNevraERKNS_6FilterEP5s_Map@@Base+0x1d0>
+--
+  10e648:	f940dac0 	ldr	x0, [x22, #432]
+  10e64c:	f90023e1 	str	x1, [sp, #64]
+  10e650:	b40005e0 	cbz	x0, 10e70c <_ZN6libdnf4Repo4Impl14setHttpHeadersEPPKc@@Base+0x15c>
+  10e654:	f9400e82 	ldr	x2, [x20, #24]
+  10e658:	aa1403e0 	mov	x0, x20
+  10e65c:	910103e1 	add	x1, sp, #0x40
+  10e660:	d63f0040 	blr	x2
+  10e664:	b4000213 	cbz	x19, 10e6a4 <_ZN6libdnf4Repo4Impl14setHttpHeadersEPPKc@@Base+0xf4>
+  10e668:	d37df274 	lsl	x20, x19, #3
+  10e66c:	d2800013 	mov	x19, #0x0                   	// #0
+  10e670:	f8736aa0 	ldr	x0, [x21, x19]
+  10e674:	97fd09bb 	bl	50d60 <strlen@plt>
+  10e678:	91000400 	add	x0, x0, #0x1
+  10e67c:	f940e2d7 	ldr	x23, [x22, #448]
+  10e680:	97fd061c 	bl	4fef0 <_Znam@plt>
+  10e684:	f940e2c2 	ldr	x2, [x22, #448]
+  10e688:	f8336ae0 	str	x0, [x23, x19]
+  10e68c:	f8736aa1 	ldr	x1, [x21, x19]
+  10e690:	f8736840 	ldr	x0, [x2, x19]
+  10e694:	91002273 	add	x19, x19, #0x8
+[31m  10e698:	97fd0fba 	bl	52580 <strcpy@plt>[0m
+  10e69c:	eb13029f 	cmp	x20, x19
+  10e6a0:	54fffe81 	b.ne	10e670 <_ZN6libdnf4Repo4Impl14setHttpHeadersEPPKc@@Base+0xc0>  // b.any
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m10[0m times [0;33mlibdnf.so.2[0m
+

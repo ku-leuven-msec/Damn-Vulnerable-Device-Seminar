@@ -1,0 +1,119 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/gevent/_ssl2.py[0m
+3:er module for _ssl. Written by Bi.
+6:SSL wrapper for so.
+8:refer to :mod:`ssl` module manual.
+10:ts cooperative SSL socket wrapper.
+14: this level of SSL will be droppe.
+21:import ssl as __ssl__.
+23:_ssl = __ssl__._ssl.
+36:    'SSLSocket',.
+39:    'sslwrap_simple',.
+42: from Python's ssl.py, except tho.
+44:copy_globals(__ssl__, globals(),.
+45:             # SSLSocket *must* s.
+55:class SSLSocket(socket):.
+57:    gevent `ssl.SSLSocket <htt.
+57:rg/2.6/library/ssl.html#sslsocket.
+63:               ssl_version=PROTOC.
+63:OL_SSLv23, ca_certs=N.
+81:         self._sslobj = None.
+83:es, create the SSL object.
+85:         self._sslobj = _ssl.sslw.
+87:    cert_reqs, ssl_version, ca_ce.
+89:         self._sslobj = _ssl.sslw.
+91:    cert_reqs, ssl_version, ca_ce.
+98:        self.ssl_version = ssl_.
+110:  return self._sslobj.read(len).
+111:        except SSLError as ex:.
+112: ex.args[0] == SSL_ERROR_EOF and .
+114: ex.args[0] == SSL_ERROR_WANT_REA.
+118:, timeout_exc=_SSLErrorReadTimeou.
+119: ex.args[0] == SSL_ERROR_WANT_WRI.
+123:# note: using _SSLErrorReadTimeou.
+123:t rather than _SSLErrorWriteTimeo.
+124:, timeout_exc=_SSLErrorReadTimeou.
+129:the underlying SSL channel.  Retu.
+133:  return self._sslobj.write(data).
+134:        except SSLError as ex:.
+135: ex.args[0] == SSL_ERROR_WANT_REA.
+139:, timeout_exc=_SSLErrorWriteTimeo.
+140: ex.args[0] == SSL_ERROR_WANT_WRI.
+144:, timeout_exc=_SSLErrorWriteTimeo.
+150:her end of the SSL channel..
+153:  return self._sslobj.peer_certif.
+156:  if not self._sslobj:.
+158:  return self._sslobj.cipher().
+163:      if self._sslobj:.
+170:     v = self._sslobj.write(data).
+171:        except SSLError as x:.
+172:f x.args[0] == SSL_ERROR_WANT_REA.
+177:f x.args[0] == SSL_ERROR_WANT_WRI.
+188: end shut down SSL?.
+196:ython 3 raises SSLWantWriteError..
+197:         raise SSLError(SSL_ERROR.
+198:ut back to the sslerror.
+199:         raise SSLError(*ex.args).
+202:      if self._sslobj:.
+208:      if self._sslobj:.
+213:'t we wrap the SSL_WANT_READ erro.
+222:      if self._sslobj:.
+233:        except SSLError as x:.
+234:f x.args[0] == SSL_ERROR_WANT_REA.
+245:      if self._sslobj:.
+251:      if self._sslobj:.
+257:      if self._sslobj:.
+258:  return self._sslobj.pending().
+261:    def _sslobj_shutdown(se.
+264:  return self._sslobj.shutdown().
+265:        except SSLError as ex:.
+266: ex.args[0] == SSL_ERROR_EOF and .
+268: ex.args[0] == SSL_ERROR_WANT_REA.
+272:, timeout_exc=_SSLErrorReadTimeou.
+273: ex.args[0] == SSL_ERROR_WANT_WRI.
+277:, timeout_exc=_SSLErrorWriteTimeo.
+282:  if not self._sslobj:.
+283:ValueError("No SSL wrapper around.
+284:     s = self._sslobj_shutdown().
+285:        self._sslobj = None.
+289:        self._sslobj = None.
+294:         self._sslobj = None.
+311:"Perform a TLS/SSL handshake.""".
+314:  return self._sslobj.do_handshak.
+315:        except SSLError as ex:.
+316: ex.args[0] == SSL_ERROR_WANT_REA.
+320:, timeout_exc=_SSLErrorHandshakeT.
+321: ex.args[0] == SSL_ERROR_WANT_WRI.
+325:, timeout_exc=_SSLErrorHandshakeT.
+331:        an SSL channel.""".
+334:      if self._sslobj:.
+335:eady-connected SSLSocket!").
+338:         self._sslobj = _ssl.sslw.
+339:ert_reqs, self.ssl_version,.
+342:         self._sslobj = _ssl.sslw.
+343:ert_reqs, self.ssl_version,.
+351:        SSL channel, and t.
+363:        sslobj = SSLSocket.
+368:               ssl_version=self.s.
+374:        return sslobj, address.
+378:works with the SSL connection.  J.
+386:or not hasattr(SSLSocket, 'timeou.
+390:# socket (when ssl is used with P.
+394:    SSLSocket.timeout .
+398:_SSLErrorReadTimeou.
+398:t = SSLError('The read.
+399:_SSLErrorWriteTimeo.
+399:ut = SSLError('The writ.
+400:_SSLErrorHandshakeT.
+400:imeout = SSLError('The hand.
+405:               ssl_version=PROTOC.
+405:OL_SSLv23, ca_certs=N.
+408: a new :class:`SSLSocket` instanc.
+409:    return SSLSocket(sock, ke.
+411:               ssl_version=ssl_ve.
+417:tificate(addr, ssl_version=PROTOC.
+417:OL_SSLv23, ca_certs=N.
+421:    If 'ssl_version' is sp.
+427:cket(socket(), ssl_version=ssl_ve.
+435:def sslwrap_simple(soc.
+436:the old socket.ssl function.  Des.
+439:    return SSLSocket(sock, ke.

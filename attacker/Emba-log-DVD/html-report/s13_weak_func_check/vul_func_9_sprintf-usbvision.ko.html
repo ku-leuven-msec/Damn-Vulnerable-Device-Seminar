@@ -1,0 +1,356 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">usbvision.ko</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="red">No RELRO     </span>   <span class="green">Canary found   </span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">440) Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">usbvision.ko</span></pre>
+<br />
+<pre>    4690:	f9400bf3 	ldr	x19, [sp, #16]</pre>
+<pre>    4694:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    4698:	d65f03c0 	ret</pre>
+<pre>    469c:	128002a0 	mov	w0, #0xffffffea            	// #-22</pre>
+<pre>    46a0:	17fffffc 	b	4690 &lt;vidioc_enum_fmt_vid_cap+0x40&gt;</pre>
+<pre>    46a4:	d503201f 	nop</pre>
+<br />
+<pre>00000000000046a8 &lt;show_device_bridge&gt;:</pre>
+<pre>    46a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    46ac:	910003fd 	mov	x29, sp</pre>
+<pre>    46b0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    46b4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    46b8:	aa0203f3 	mov	x19, x2</pre>
+<pre>    46bc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    46c0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    46c4:	f9403e82 	ldr	x2, [x20, #120]</pre>
+<pre>    46c8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    46cc:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    46d0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    46d4:	b94ffc42 	ldr	w2, [x2, #4092]</pre>
+<pre><span class="red">    46d8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    46dc:	93407c00 	sxtw	x0, w0</pre>
+<pre>    46e0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<br />
+<pre>00000000000046f0 &lt;show_compression&gt;:</pre>
+<pre>    46f0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    46f4:	910003fd 	mov	x29, sp</pre>
+<pre>    46f8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    46fc:	aa0003f4 	mov	x20, x0</pre>
+<pre>    4700:	aa0203f3 	mov	x19, x2</pre>
+<pre>    4704:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    4708:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    470c:	f9403e82 	ldr	x2, [x20, #120]</pre>
+<pre>    4710:	90000003 	adrp	x3, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    4714:	90000004 	adrp	x4, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    4718:	91000063 	add	x3, x3, #0x0</pre>
+<pre>    471c:	91000084 	add	x4, x4, #0x0</pre>
+<pre>    4720:	aa1303e0 	mov	x0, x19</pre>
+<pre>    4724:	b9502042 	ldr	w2, [x2, #4128]</pre>
+<pre>    4728:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    472c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    4730:	7101805f 	cmp	w2, #0x60</pre>
+<pre>    4734:	9a830082 	csel	x2, x4, x3, eq  // eq = none</pre>
+<pre><span class="red">    4738:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    473c:	93407c00 	sxtw	x0, w0</pre>
+<pre>    4740:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<br />
+<pre>0000000000004750 &lt;show_streaming&gt;:</pre>
+<pre>    4750:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    4754:	910003fd 	mov	x29, sp</pre>
+<pre>    4758:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    475c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    4760:	aa0203f3 	mov	x19, x2</pre>
+<pre>    4764:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    4768:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    476c:	f9403e82 	ldr	x2, [x20, #120]</pre>
+<pre>    4770:	90000003 	adrp	x3, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    4774:	90000004 	adrp	x4, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    4778:	91000063 	add	x3, x3, #0x0</pre>
+<pre>    477c:	91000084 	add	x4, x4, #0x0</pre>
+<pre>    4780:	aa1303e0 	mov	x0, x19</pre>
+<pre>    4784:	b9507842 	ldr	w2, [x2, #4216]</pre>
+<pre>    4788:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    478c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    4790:	71000c5f 	cmp	w2, #0x3</pre>
+<pre>    4794:	9a830082 	csel	x2, x4, x3, eq  // eq = none</pre>
+<pre><span class="red">    4798:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    479c:	93407c00 	sxtw	x0, w0</pre>
+<pre>    47a0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    47a8:	d65f03c0 	ret</pre>
+<pre>    47ac:	d503201f 	nop</pre>
+<br />
+<pre>00000000000047b0 &lt;show_model&gt;:</pre>
+<pre>    47b0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    47b4:	910003fd 	mov	x29, sp</pre>
+<pre>    47b8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    47bc:	aa0003f4 	mov	x20, x0</pre>
+<pre>    47c0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    47c4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    47c8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    47cc:	f9403e82 	ldr	x2, [x20, #120]</pre>
+<pre>    47d0:	90000003 	adrp	x3, 1678 &lt;usbvision_isoc_irq+0x610&gt;</pre>
+<pre>    47d4:	91000063 	add	x3, x3, #0x0</pre>
+<pre>    47d8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    47dc:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    47e0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    47e4:	b9907442 	ldrsw	x2, [x2, #4212]</pre>
+<pre>    47e8:	8b021462 	add	x2, x3, x2, lsl #5</pre>
+<pre>    47ec:	f9400442 	ldr	x2, [x2, #8]</pre>
+<pre><span class="red">    47f0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    47f4:	93407c00 	sxtw	x0, w0</pre>
+<pre>    47f8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    47fc:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    4800:	d65f03c0 	ret</pre>
+<pre>    4804:	d503201f 	nop</pre>
+<br />
+<pre>0000000000004808 &lt;show_version&gt;:</pre>
+<pre>    4808:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    480c:	910003fd 	mov	x29, sp</pre>
+<pre>    4810:	f9000bf3 	str	x19, [sp, #16]</pre>
+<pre>    4814:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    4818:	aa0203f3 	mov	x19, x2</pre>
+<pre>    481c:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    4820:	aa1303e0 	mov	x0, x19</pre>
+<pre>    4824:	90000002 	adrp	x2, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    4828:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    482c:	91000042 	add	x2, x2, #0x0</pre>
+<pre>    4830:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    4834:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    4838:	d28000e0 	mov	x0, #0x7                   	// #7</pre>
+<pre>    483c:	f9400bf3 	ldr	x19, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    4844:	d65f03c0 	ret</pre>
+<br />
+<pre>0000000000004848 &lt;show_saturation&gt;:</pre>
+<pre>    4848:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    484c:	910003fd 	mov	x29, sp</pre>
+<pre>    4850:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    4854:	aa0003f4 	mov	x20, x0</pre>
+<pre>    4858:	aa0203f3 	mov	x19, x2</pre>
+<pre>    485c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    4860:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    4864:	52812041 	mov	w1, #0x902                 	// #2306</pre>
+<pre>    4868:	f9403e80 	ldr	x0, [x20, #120]</pre>
+<pre>    486c:	72a01301 	movk	w1, #0x98, lsl #16</pre>
+<pre>    4870:	9101e000 	add	x0, x0, #0x78</pre>
+<pre>    4874:	94000000 	bl	0 &lt;v4l2_ctrl_find&gt;</pre>
+<pre>    4878:	94000000 	bl	0 &lt;v4l2_ctrl_g_ctrl&gt;</pre>
+<pre>    487c:	2a0003e2 	mov	w2, w0</pre>
+<pre>    4880:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    4884:	aa1303e0 	mov	x0, x19</pre>
+<pre>    4888:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    488c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    4890:	93407c00 	sxtw	x0, w0</pre>
+<pre>    4894:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    489c:	d65f03c0 	ret</pre>
+<br />
+<pre>00000000000048a0 &lt;show_brightness&gt;:</pre>
+<pre>    48a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    48a4:	910003fd 	mov	x29, sp</pre>
+<pre>    48a8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    48ac:	aa0003f4 	mov	x20, x0</pre>
+<pre>    48b0:	aa0203f3 	mov	x19, x2</pre>
+<pre>    48b4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    48b8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    48bc:	52812001 	mov	w1, #0x900                 	// #2304</pre>
+<pre>    48c0:	f9403e80 	ldr	x0, [x20, #120]</pre>
+<pre>    48c4:	72a01301 	movk	w1, #0x98, lsl #16</pre>
+<pre>    48c8:	9101e000 	add	x0, x0, #0x78</pre>
+<pre>    48cc:	94000000 	bl	0 &lt;v4l2_ctrl_find&gt;</pre>
+<pre>    48d0:	94000000 	bl	0 &lt;v4l2_ctrl_g_ctrl&gt;</pre>
+<pre>    48d4:	2a0003e2 	mov	w2, w0</pre>
+<pre>    48d8:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    48dc:	aa1303e0 	mov	x0, x19</pre>
+<pre>    48e0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    48e4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    48e8:	93407c00 	sxtw	x0, w0</pre>
+<pre>    48ec:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    48f4:	d65f03c0 	ret</pre>
+<br />
+<pre>00000000000048f8 &lt;show_contrast&gt;:</pre>
+<pre>    48f8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    48fc:	910003fd 	mov	x29, sp</pre>
+<pre>    4900:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    4904:	aa0003f4 	mov	x20, x0</pre>
+<pre>    4908:	aa0203f3 	mov	x19, x2</pre>
+<pre>    490c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    4910:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    4914:	52812021 	mov	w1, #0x901                 	// #2305</pre>
+<pre>    4918:	f9403e80 	ldr	x0, [x20, #120]</pre>
+<pre>    491c:	72a01301 	movk	w1, #0x98, lsl #16</pre>
+<pre>    4920:	9101e000 	add	x0, x0, #0x78</pre>
+<pre>    4924:	94000000 	bl	0 &lt;v4l2_ctrl_find&gt;</pre>
+<pre>    4928:	94000000 	bl	0 &lt;v4l2_ctrl_g_ctrl&gt;</pre>
+<pre>    492c:	2a0003e2 	mov	w2, w0</pre>
+<pre>    4930:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    4934:	aa1303e0 	mov	x0, x19</pre>
+<pre>    4938:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    493c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    4940:	93407c00 	sxtw	x0, w0</pre>
+<pre>    4944:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>    494c:	d65f03c0 	ret</pre>
+<br />
+<pre>0000000000004950 &lt;show_hue&gt;:</pre>
+<pre>    4950:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    4954:	910003fd 	mov	x29, sp</pre>
+<pre>    4958:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    495c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    4960:	aa0203f3 	mov	x19, x2</pre>
+<pre>    4964:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    4968:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    496c:	52812061 	mov	w1, #0x903                 	// #2307</pre>
+<pre>    4970:	f9403e80 	ldr	x0, [x20, #120]</pre>
+<pre>    4974:	72a01301 	movk	w1, #0x98, lsl #16</pre>
+<pre>    4978:	9101e000 	add	x0, x0, #0x78</pre>
+<pre>    497c:	94000000 	bl	0 &lt;v4l2_ctrl_find&gt;</pre>
+<pre>    4980:	94000000 	bl	0 &lt;v4l2_ctrl_g_ctrl&gt;</pre>
+<pre>    4984:	2a0003e2 	mov	w2, w0</pre>
+<pre>    4988:	90000001 	adrp	x1, 0 &lt;usbvision_decompress&gt;</pre>
+<pre>    498c:	aa1303e0 	mov	x0, x19</pre>
+<pre>    4990:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    4994:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    4998:	93407c00 	sxtw	x0, w0</pre>
+<pre>    499c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">9</span> times </span><span class="orange">usbvision.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

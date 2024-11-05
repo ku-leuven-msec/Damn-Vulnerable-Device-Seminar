@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mudevadm[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mudevadm[0m
+
+    fc84:	910003bf 	mov	sp, x29
+    fc88:	a94153f3 	ldp	x19, x20, [sp, #16]
+    fc8c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    fc90:	f9401bf7 	ldr	x23, [sp, #48]
+    fc94:	a8cd7bfd 	ldp	x29, x30, [sp], #208
+    fc98:	d65f03c0 	ret
+    fc9c:	aa1303e0 	mov	x0, x19
+    fca0:	97ffeaf4 	bl	a870 <strlen@plt>
+    fca4:	0b0002e0 	add	w0, w23, w0
+    fca8:	aa1403e1 	mov	x1, x20
+    fcac:	11000400 	add	w0, w0, #0x1
+    fcb0:	93407c00 	sxtw	x0, w0
+    fcb4:	91003c00 	add	x0, x0, #0xf
+    fcb8:	927cec00 	and	x0, x0, #0xfffffffffffffff0
+    fcbc:	cb2063ff 	sub	sp, sp, x0
+    fcc0:	910003f4 	mov	x20, sp
+    fcc4:	aa1403e0 	mov	x0, x20
+    fcc8:	97ffeb7e 	bl	aac0 <stpcpy@plt>
+    fccc:	aa1303e1 	mov	x1, x19
+    fcd0:	aa1403f3 	mov	x19, x20
+[31m    fcd4:	97ffed2b 	bl	b180 <strcpy@plt>[0m
+    fcd8:	f0000121 	adrp	x1, 36000 <kmod_set_log_fn@plt+0x2ab80>
+    fcdc:	aa1303e0 	mov	x0, x19
+--
+   1fcbc:	b4001083 	cbz	x3, 1fecc <kmod_set_log_fn@plt+0x14a4c>
+   1fcc0:	aa0103f4 	mov	x20, x1
+   1fcc4:	aa0203f5 	mov	x21, x2
+   1fcc8:	b4000e61 	cbz	x1, 1fe94 <kmod_set_log_fn@plt+0x14a14>
+   1fccc:	aa0103e0 	mov	x0, x1
+   1fcd0:	97ffaae8 	bl	a870 <strlen@plt>
+   1fcd4:	2a0003f3 	mov	w19, w0
+   1fcd8:	aa1503e0 	mov	x0, x21
+   1fcdc:	97ffaae5 	bl	a870 <strlen@plt>
+   1fce0:	0b000260 	add	w0, w19, w0
+   1fce4:	aa1403e1 	mov	x1, x20
+   1fce8:	11000400 	add	w0, w0, #0x1
+   1fcec:	93407c00 	sxtw	x0, w0
+   1fcf0:	91003c00 	add	x0, x0, #0xf
+   1fcf4:	927cec00 	and	x0, x0, #0xfffffffffffffff0
+   1fcf8:	cb2063ff 	sub	sp, sp, x0
+   1fcfc:	910003f8 	mov	x24, sp
+   1fd00:	aa1803e0 	mov	x0, x24
+   1fd04:	97ffab6f 	bl	aac0 <stpcpy@plt>
+   1fd08:	aa1503e1 	mov	x1, x21
+[31m   1fd0c:	97ffad1d 	bl	b180 <strcpy@plt>[0m
+   1fd10:	aa1803e0 	mov	x0, x24
+   1fd14:	97ffab2f 	bl	a9d0 <opendir@plt>
+--
+   281d0:	b4000714 	cbz	x20, 282b0 <kmod_set_log_fn@plt+0x1ce30>
+   281d4:	97fff4ef 	bl	25590 <kmod_set_log_fn@plt+0x1a110>
+   281d8:	7100181f 	cmp	w0, #0x6
+   281dc:	540003ec 	b.gt	28258 <kmod_set_log_fn@plt+0x1cdd8>
+   281e0:	aa1303e0 	mov	x0, x19
+   281e4:	97ff89a3 	bl	a870 <strlen@plt>
+   281e8:	11002c02 	add	w2, w0, #0xb
+   281ec:	900000c3 	adrp	x3, 40000 <kmod_set_log_fn@plt+0x34b80>
+   281f0:	91154063 	add	x3, x3, #0x550
+   281f4:	aa1303e1 	mov	x1, x19
+   281f8:	93407c42 	sxtw	x2, w2
+   281fc:	91003c42 	add	x2, x2, #0xf
+   28200:	927cec42 	and	x2, x2, #0xfffffffffffffff0
+   28204:	79401064 	ldrh	w4, [x3, #8]
+   28208:	cb2263ff 	sub	sp, sp, x2
+   2820c:	910003f3 	mov	x19, sp
+   28210:	f9400062 	ldr	x2, [x3]
+   28214:	91002a60 	add	x0, x19, #0xa
+   28218:	f9000262 	str	x2, [x19]
+   2821c:	79001264 	strh	w4, [x19, #8]
+[31m   28220:	97ff8bd8 	bl	b180 <strcpy@plt>[0m
+   28224:	aa1403e1 	mov	x1, x20
+   28228:	aa1303e0 	mov	x0, x19
+--
+   28300:	f9001fa1 	str	x1, [x29, #56]
+   28304:	d2800001 	mov	x1, #0x0                   	// #0
+   28308:	b4000400 	cbz	x0, 28388 <kmod_set_log_fn@plt+0x1cf08>
+   2830c:	b4000515 	cbz	x21, 283ac <kmod_set_log_fn@plt+0x1cf2c>
+   28310:	aa0003f4 	mov	x20, x0
+   28314:	97ff8957 	bl	a870 <strlen@plt>
+   28318:	11002c02 	add	w2, w0, #0xb
+   2831c:	900000c0 	adrp	x0, 40000 <kmod_set_log_fn@plt+0x34b80>
+   28320:	91154000 	add	x0, x0, #0x550
+   28324:	aa1403e1 	mov	x1, x20
+   28328:	93407c42 	sxtw	x2, w2
+   2832c:	91003c42 	add	x2, x2, #0xf
+   28330:	927cec42 	and	x2, x2, #0xfffffffffffffff0
+   28334:	79401003 	ldrh	w3, [x0, #8]
+   28338:	cb2263ff 	sub	sp, sp, x2
+   2833c:	910003f4 	mov	x20, sp
+   28340:	f9400002 	ldr	x2, [x0]
+   28344:	91002a80 	add	x0, x20, #0xa
+   28348:	f9000282 	str	x2, [x20]
+   2834c:	79001283 	strh	w3, [x20, #8]
+[31m   28350:	97ff8b8c 	bl	b180 <strcpy@plt>[0m
+   28354:	aa1503e1 	mov	x1, x21
+   28358:	d2800002 	mov	x2, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m4[0m times [0;33mudevadm[0m
+

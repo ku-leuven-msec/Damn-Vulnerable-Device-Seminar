@@ -1,0 +1,557 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s103_deep_search.html" title="./../s103_deep_search.html" >&laquo; Back to s103_deep_search</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/setuptools/extern/__init__.py</span></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/pkg_resources/__init__.py</span></pre>
+<pre>7: packages from root_name..</pre>
+<pre>1594:      self.egg_root = path.</pre>
+<pre>10:__init__(self, root_name, vendored.</pre>
+<pre>1723:swith(self.egg_root + os.sep):.</pre>
+<pre>11:        self.root_name = root_na.</pre>
+<pre>1724:h[len(self.egg_root) + 1:].split(o.</pre>
+<pre>13: vendor_pkg or root_name.replace('.</pre>
+<pre>1726:path, self.egg_root).</pre>
+<pre>25:me starts with root_name and the.</pre>
+<pre>1863:f._fn(self.egg_root, resource_name.</pre>
+<pre>28:        root, base, target .</pre>
+<pre>28:partition(self.root_name + '.').</pre>
+<pre>2125:    root = os.path.dirn.</pre>
+<pre>29:        if root:.</pre>
+<pre>2130:= PathMetadata(root, path).</pre>
+<pre>39:        root, base, target .</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/collections/__init__.py</span></pre>
+<pre>2135:        root, entry, metada.</pre>
+<pre>39:partition(self.root_name + '.').</pre>
+<pre>91: in self.__hardroot with a weakref.</pre>
+<pre>91:roxy in self.__root..</pre>
+<pre>101:        self.__root.</pre>
+<pre>103:    self.__hardroot = _Link().</pre>
+<pre>104:        self.__root = root = _prox.</pre>
+<pre>104:y(self.__hardroot).</pre>
+<pre>105:            root.prev = root.ne.</pre>
+<pre>105:xt = root.</pre>
+<pre>116:            root = self.__root.</pre>
+<pre>117:        last = root.prev.</pre>
+<pre>118:nk.key = last, root, key.</pre>
+<pre>120:            root.prev = proxy(l.</pre>
+<pre>139:        root = self.__root.</pre>
+<pre>140:        curr = root.next.</pre>
+<pre>141:le curr is not root:.</pre>
+<pre>148:        root = self.__root.</pre>
+<pre>149:        curr = root.prev.</pre>
+<pre>150:le curr is not root:.</pre>
+<pre>156:        root = self.__root.</pre>
+<pre>157:        root.prev = root.ne.</pre>
+<pre>157:xt = root.</pre>
+<pre>168:        root = self.__root.</pre>
+<pre>170:        link = root.prev.</pre>
+<pre>172:nk_prev.next = root.</pre>
+<pre>173:            root.prev = link_pr.</pre>
+<pre>175:        link = root.next.</pre>
+<pre>177:            root.next = link_ne.</pre>
+<pre>178:nk_next.prev = root.</pre>
+<pre>195:        root = self.__root.</pre>
+<pre>197:        last = root.prev.</pre>
+<pre>199:   link.next = root.</pre>
+<pre>200:            root.prev = soft_li.</pre>
+<pre>203:       first = root.next.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/http/__init__.py</span></pre>
+<pre>204:   link.prev = root.</pre>
+<pre>32:protocol; obey Upgrade header').</pre>
+<pre>207:            root.next = link.</pre>
+<pre>108:    UPGRADE_REQUIRED = 426.</pre>
+<pre>211:inks including root.</pre>
+<pre>108:, 'Upgrade Required'.</pre>
+<pre>214:eof(self.__hardroot) * n     # lin.</pre>
+<pre>215: sizeof(self.__root) * n         #.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/hawkey/__init__.py</span></pre>
+<pre>148:DISTUPGRADE = _hawkey.DIST.</pre>
+<pre>148:UPGRADE.</pre>
+<pre>149:DISTUPGRADE_ALL = _hawkey..</pre>
+<pre>149:DISTUPGRADE_ALL.</pre>
+<pre>152:UPGRADE = _hawkey.UPGR.</pre>
+<pre>153:UPGRADE_ALL = _hawkey..</pre>
+<pre>153:UPGRADE_ALL.</pre>
+<pre>195:        DISTUPGRADE,.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/ensurepip/__init__.py</span></pre>
+<pre>196:        DISTUPGRADE_ALL,.</pre>
+<pre>49:f bootstrap(*, root=None, upgrade=.</pre>
+<pre>199:        UPGRADE,.</pre>
+<pre>53: (or the given root.</pre>
+<pre>200:        UPGRADE_ALL.</pre>
+<pre>59:    _bootstrap(root=root, upgrade=.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/__init__.py</span></pre>
+<pre>59:upgrade, user=user,.</pre>
+<pre>87:.contrib.pyopenssl").</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/setuptools/_vendor/packaging/__init__.py</span></pre>
+<pre>64: _bootstrap(*, root=None, upgrade=.</pre>
+<pre>94:llib3.packages.ssl_match_hostname.</pre>
+<pre>2:SE file in the root of this reposi.</pre>
+<pre>68: (or the given root.</pre>
+<pre>95:llib3.packages.ssl_match_hostname.</pre>
+<pre>76:ip.bootstrap", root).</pre>
+<pre>105:s.urllib3.util.ssl_").</pre>
+<pre>110:        if root:.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pkg_resources/extern/__init__.py</span></pre>
+<pre>111:   args += ["--root", root].</pre>
+<pre>7: packages from root_name..</pre>
+<pre>112:        if upgrade:.</pre>
+<pre>10:__init__(self, root_name, vendored.</pre>
+<pre>113:   args += ["--upgrade"].</pre>
+<pre>11:        self.root_name = root_na.</pre>
+<pre>167:      "-U", "--upgrade",.</pre>
+<pre>13: vendor_pkg or root_name.replace('.</pre>
+<pre>170:        help="Upgrade pip and depend.</pre>
+<pre>25:me starts with root_name and the.</pre>
+<pre>179:        "--root",.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/venv/__init__.py</span></pre>
+<pre>28:        root, base, target .</pre>
+<pre>181:this alternate root directory.",.</pre>
+<pre>37:    :param upgrade: If True, upgr.</pre>
+<pre>28:partition(self.root_name + '.').</pre>
+<pre>201:        root=args.root,.</pre>
+<pre>44:ymlinks=False, upgrade=False, with_pi.</pre>
+<pre>29:        if root:.</pre>
+<pre>202:        upgrade=args.upgrade,.</pre>
+<pre>39:        root, base, target .</pre>
+<pre>48:        self.upgrade = upgrade.</pre>
+<pre>69:   if not self.upgrade:.</pre>
+<pre>39:partition(self.root_name + '.').</pre>
+<pre>247:te copy of the root directory.</pre>
+<pre>271:           for root, dirs, files i.</pre>
+<pre>273:.path.basename(root).</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/flask/json/__init__.py</span></pre>
+<pre>277:= os.path.join(root, 'init.tcl').</pre>
+<pre>322:  "username": "admin",.</pre>
+<pre>283:"""Installs or upgrades pip in a virt.</pre>
+<pre>287:ensurepip', '--upgrade',.</pre>
+<pre>323:     "email": "admin&commat;localhost",.</pre>
+<pre>349:        for root, dirs, files i.</pre>
+<pre>350:            if root == path: # at .</pre>
+<pre>359:= os.path.join(root, f).</pre>
+<pre>360:      suffix = root[plen:].split(o.</pre>
+<pre>440:dd_argument('--upgrade', default=Fals.</pre>
+<pre>441:         dest='upgrade', help='Upgrad.</pre>
+<pre>444:     'has been upgraded in-place.').</pre>
+<pre>454:    if options.upgrade and options.cl.</pre>
+<pre>455:annot supply --upgrade and --clear to.</pre>
+<pre>459:               upgrade=options.upgrad.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/librepo/__init__.py</span></pre>
+<pre>89:data:: LRO_USERPWD.</pre>
+<pre>91:t username and password for HTTP authe.</pre>
+<pre>92:rmat 'username:password'..</pre>
+<pre>115:: LRO_PROXYUSERPWD.</pre>
+<pre>117:t username and password for proxy.</pre>
+<pre>118:rmat 'username:password'..</pre>
+<pre>287:.. data:: LRO_SSLVERIFYPEER.</pre>
+<pre>291:al signatures, rooted in certifica.</pre>
+<pre>294:.. data:: LRO_SSLVERIFYHOST.</pre>
+<pre>299:.. data:: LRO_SSLCLIENTCERT.</pre>
+<pre>301:the PEM format SSL client certifi.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/packages/ssl_match_hostname/__init__.py</span></pre>
+<pre>304:.. data:: LRO_SSLCLIENTKEY.</pre>
+<pre>306:the PEM format SSL client key to .</pre>
+<pre>11:    from ssl import Certifi.</pre>
+<pre>309:.. data:: LRO_SSLCACERT.</pre>
+<pre>15:from backports.ssl_match_hostname.</pre>
+<pre>419:.. data:: LRI_SSLVERIFYPEER.</pre>
+<pre>420:.. data:: LRI_SSLVERIFYHOST.</pre>
+<pre>421:.. data:: LRI_SSLCLIENTCERT.</pre>
+<pre>422:.. data:: LRI_SSLCLIENTKEY.</pre>
+<pre>423:.. data:: LRI_SSLCACERT.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/setuptools/__init__.py</span></pre>
+<pre>745:data:: LRE_OPENSSL.</pre>
+<pre>55:'where' is the root directory whic.</pre>
+<pre>747:    (32) OpenSSL library relate.</pre>
+<pre>80:        for root, dirs, files i.</pre>
+<pre>1217:ttribute:: userpwd:.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/aiocoap/__init__.py</span></pre>
+<pre>86:= os.path.join(root, dir).</pre>
+<pre>1219:data:`.LRO_USERPWD`.</pre>
+<pre>23:This root module re-expo.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/html5lib/treebuilders/__init__.py</span></pre>
+<pre>23: - Returns the root node of the co.</pre>
+<pre>1237:ute:: proxyuserpwd:.</pre>
+<pre>27:ontext` in the root module is.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/logging/__init__.py</span></pre>
+<pre>1239:`.LRO_PROXYUSERPWD`.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/packages/__init__.py</span></pre>
+<pre>1261:__init__(self, rootnode):.</pre>
+<pre>3:from . import ssl_match_hostname.</pre>
+<pre>1357:.. attribute:: sslverifypeer:.</pre>
+<pre>1263:nager with the root node of the lo.</pre>
+<pre>5:__all__ = ("ssl_match_hostname.</pre>
+<pre>1359:ee :data:`.LRO_SSLVERIFYPEER`.</pre>
+<pre>1265:        self.root = rootnode.</pre>
+<pre>1361:.. attribute:: sslverifyhost:.</pre>
+<pre>1326: logger to the root of the logger .</pre>
+<pre>1363:ee :data:`.LRO_SSLVERIFYHOST`.</pre>
+<pre>1344:     rv = self.root.</pre>
+<pre>1365:.. attribute:: sslclientcert:.</pre>
+<pre>1370:        self.root._cache.clear().</pre>
+<pre>1367:ee :data:`.LRO_SSLCLIENTCERT`.</pre>
+<pre>1714:       if self.root is not self:.</pre>
+<pre>1369:.. attribute:: sslclientkey:.</pre>
+<pre>1723:eral, only the root logger will no.</pre>
+<pre>1371:ee :data:`.LRO_SSLCLIENTKEY`.</pre>
+<pre>1724:# However, the root logger's class.</pre>
+<pre>1373:.. attribute:: sslcacert:.</pre>
+<pre>1731:class RootLogger(Logger):.</pre>
+<pre>1375:ee :data:`.LRO_SSLCACERT`.</pre>
+<pre>1733:    A root logger is not .</pre>
+<pre>1739:with the name "root"..</pre>
+<pre>1741:_init__(self, "root", level).</pre>
+<pre>1888:root = RootLogger(WARNING).</pre>
+<pre>1889:Logger.root = root.</pre>
+<pre>1890:Manager(Logger.root).</pre>
+<pre>1900:nothing if the root logger already.</pre>
+<pre>1907:handler to the root logger..</pre>
+<pre>1922:el     Set the root logger level t.</pre>
+<pre>1927:e added to the root handler. Any h.</pre>
+<pre>1931:ttached to the root logger are rem.</pre>
+<pre>1959:      for h in root.handlers[:]:.</pre>
+<pre>1960:               root.removeHandler(.</pre>
+<pre>1962:        if len(root.handlers) == 0.</pre>
+<pre>1991:               root.addHandler(h).</pre>
+<pre>1994:               root.setLevel(level.</pre>
+<pre>2003:rything to the root logger..</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/greenlet/__init__.py</span></pre>
+<pre>2010:ed, return the root logger..</pre>
+<pre>3:The root of the greenle.</pre>
+<pre>2015:        return root.</pre>
+<pre>2019:ITICAL' on the root logger. If the.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/dnf/rpm/__init__.py</span></pre>
+<pre>2023:    if len(root.handlers) == 0.</pre>
+<pre>2025:    root.critical(msg, .</pre>
+<pre>29:easever(installroot):.</pre>
+<pre>2031:'ERROR' on the root logger. If the.</pre>
+<pre>33:nlyTransaction(root=installroot).</pre>
+<pre>2035:    if len(root.handlers) == 0.</pre>
+<pre>2037:    root.error(msg, *ar.</pre>
+<pre>2041:'ERROR' on the root logger, with e.</pre>
+<pre>2049:ARNING' on the root logger. If the.</pre>
+<pre>2053:    if len(root.handlers) == 0.</pre>
+<pre>2055:    root.warning(msg, *.</pre>
+<pre>2064: 'INFO' on the root logger. If the.</pre>
+<pre>2068:    if len(root.handlers) == 0.</pre>
+<pre>2070:    root.info(msg, *arg.</pre>
+<pre>2074:'DEBUG' on the root logger. If the.</pre>
+<pre>2078:    if len(root.handlers) == 0.</pre>
+<pre>2080:    root.debug(msg, *ar.</pre>
+<pre>2084:'level' on the root logger. If.</pre>
+<pre>2088:    if len(root.handlers) == 0.</pre>
+<pre>2090:    root.log(level, msg.</pre>
+<pre>2096:    root.manager.disabl.</pre>
+<pre>2097:    root.manager._clear.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pkg_resources/_vendor/packaging/__init__.py</span></pre>
+<pre>2:SE file in the root of this reposi.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/dnf/cli/commands/__init__.py</span></pre>
+<pre>166:', 'updates', 'upgrades',.</pre>
+<pre>185:const', const='upgrades',.</pre>
+<pre>186:p=_("show only upgrades packages")).</pre>
+<pre>187:dd_argument('--upgrades', dest='_pack.</pre>
+<pre>188:const', const='upgrades',.</pre>
+<pre>189:p=_("show only upgrades packages")).</pre>
+<pre>213:ages_action = 'upgrades'.</pre>
+<pre>261:pdate', 'check-upgrade').</pre>
+<pre>262:ilable package upgrades').</pre>
+<pre>280:e.sack.query().upgrades().</pre>
+<pre>350:       demands.root_user = True.</pre>
+<pre>402:       demands.root_user = True.</pre>
+<pre>457:       demands.root_user = True.</pre>
+<pre>545:       demands.root_user = True.</pre>
+<pre>564:base._goal.distupgrade(package).</pre>
+<pre>607:       demands.root_user = True.</pre>
+<pre>657:       demands.root_user = True.</pre>
+<pre>686:    class UpgradeSubCommand(Comm.</pre>
+<pre>687:ntation of the upgrade sub-command."".</pre>
+<pre>689:   aliases = ('upgrade', 'upgrade-to'.</pre>
+<pre>696:       demands.root_user = True.</pre>
+<pre>706:     self.base.upgrade_all(self.repon.</pre>
+<pre>712:     self.base.upgrade(pkg_spec, self.</pre>
+<pre>719:ges marked for upgrade.')).</pre>
+<pre>725:               UpgradeSubCommand}.</pre>
+<pre>748:              'upgrades'}.</pre>
+<pre>764:const', const='upgrades',.</pre>
+<pre>765:p=_("show only upgrades packages")).</pre>
+<pre>766:dd_argument('--upgrades', dest='_pkg_.</pre>
+<pre>767:const', const='upgrades',.</pre>
+<pre>768:p=_("show only upgrades packages")).</pre>
+<pre>854:       demands.root_user = True.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/requests/__init__.py</span></pre>
+<pre>105:# 'ssl' library isn't.</pre>
+<pre>113:        import ssl.</pre>
+<pre>115:        ssl = None.</pre>
+<pre>117:if not getattr(ssl, "HAS_SNI", Fa.</pre>
+<pre>118:b import pyopenssl.</pre>
+<pre>119:        pyopenssl.inject_into_ur.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/packaging/__init__.py</span></pre>
+<pre>2:SE file in the root of this reposi.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_internal/locations/__init__.py</span></pre>
+<pre>175:    root: Optional[str].</pre>
+<pre>182:        "root = %r",.</pre>
+<pre>186:), user, home, root, prefix).</pre>
+<pre>193:    root: Optional[str].</pre>
+<pre>201:        root=root,.</pre>
+<pre>212:        root=root,.</pre>
+<pre>330:        root,.</pre>
+<pre>351:er, home=home, root=root, prefix=p.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/common/__init__.py</span></pre>
+<pre>75:     ... class Root(object):.</pre>
+<pre>78:&gt;&gt; class Child(Root):.</pre>
+<pre>82:nstance(child, Root).</pre>
+<pre>263: to create the root ABCInterface, .</pre>
+<pre>266:    # root..</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/platformdirs/__init__.py</span></pre>
+<pre>19:etenv("ANDROID_ROOT") == "/system".</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_internal/req/__init__.py</span></pre>
+<pre>41:    root: Optional[str].</pre>
+<pre>76:               root=root,.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/click/__init__.py</span></pre>
+<pre>25:orators import password_option as pass.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/tkinter/__init__.py</span></pre>
+<pre>222:    x_root - x-position o.</pre>
+<pre>224:    y_root - y-position o.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/util/__init__.py</span></pre>
+<pre>263:        # x_root and y_root mos.</pre>
+<pre>8:from .ssl_ import (.</pre>
+<pre>274:upport_default_root = 1.</pre>
+<pre>11:    IS_PYOPENSSL,.</pre>
+<pre>275:_default_root = None.</pre>
+<pre>14:    SSLContext,.</pre>
+<pre>278:def NoDefaultRoot():.</pre>
+<pre>17:    resolve_ssl_version,.</pre>
+<pre>279:ing of default root window..</pre>
+<pre>18:    ssl_wrap_socket,.</pre>
+<pre>284:upport_default_root.</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/pkg_resources/__init__.py</span></pre>
+<pre>26:    "IS_PYOPENSSL",.</pre>
+<pre>1595:      self.egg_root = path.</pre>
+<pre>285:upport_default_root = 0.</pre>
+<pre>28:    "SSLContext",.</pre>
+<pre>286:lobal _default_root.</pre>
+<pre>1724:swith(self.egg_root + os.sep):.</pre>
+<pre>42:    "resolve_ssl_version",.</pre>
+<pre>287:    _default_root = None.</pre>
+<pre>1725:h[len(self.egg_root) + 1:].split(o.</pre>
+<pre>44:    "ssl_wrap_socket",.</pre>
+<pre>1727:path, self.egg_root).</pre>
+<pre>288:  del _default_root.</pre>
+<pre>1864:f._fn(self.egg_root, resource_name.</pre>
+<pre>334:ter = _default_root.</pre>
+<pre>2126:    root = os.path.dirn.</pre>
+<pre>335:        self._root = master._root.</pre>
+<pre>2131:= PathMetadata(root, path).</pre>
+<pre>374:k, None, self._root).__call__.</pre>
+<pre>2136:        root, entry, metada.</pre>
+<pre>593:    _default_root.tk.mainloop(n).</pre>
+<pre>604:eturn _default_root.tk.getboolean(.</pre>
+<pre>847:efaults to the root window of the .</pre>
+<pre>1058:ntaining(self, rootX, rootY, displ.</pre>
+<pre>1059:hich is at the root coordinates RO.</pre>
+<pre>1059:OTX, ROOTY.""".</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/debug/__init__.py</span></pre>
+<pre>162:er imports the pwd module, which .</pre>
+<pre>1061:(displayof) + (rootX, rootY).</pre>
+<pre>1128:pointer on the root window.""".</pre>
+<pre>1133:pointer on the root window.""".</pre>
+<pre>1138:pointer on the root window.""".</pre>
+<pre>1158:    def winfo_rootx(self):.</pre>
+<pre>1160:        root window.""".</pre>
+<pre>1162:call('winfo', 'rootx', self._w)).</pre>
+<pre>1164:    def winfo_rooty(self):.</pre>
+<pre>1166:        root window.""".</pre>
+<pre>1168:call('winfo', 'rooty', self._w)).</pre>
+<pre>1181:r pixel of the root window of the.</pre>
+<pre>1260:    def winfo_vrootheight(self):.</pre>
+<pre>1261:of the virtual root window associa.</pre>
+<pre>1262: is no virtual root window return .</pre>
+<pre>1265:all('winfo', 'vrootheight', self._.</pre>
+<pre>1267:    def winfo_vrootwidth(self):.</pre>
+<pre>1268:of the virtual root window associa.</pre>
+<pre>1269: is no virtual root window return .</pre>
+<pre>1272:all('winfo', 'vrootwidth', self._w.</pre>
+<pre>1274:    def winfo_vrootx(self):.</pre>
+<pre>1275:of the virtual root relative to th.</pre>
+<pre>1275:e root.</pre>
+<pre>1278:all('winfo', 'vrootx', self._w)).</pre>
+<pre>1280:    def winfo_vrooty(self):.</pre>
+<pre>1281:of the virtual root relative to th.</pre>
+<pre>1281:e root.</pre>
+<pre>1284:all('winfo', 'vrooty', self._w)).</pre>
+<pre>1453:  return self._root()._windowingsy.</pre>
+<pre>1455:    ws = self._root()._windowingsy.</pre>
+<pre>1492:        w = w._root().</pre>
+<pre>1528:    def _root(self):.</pre>
+<pre>1565:        # x_root, y_root fields.</pre>
+<pre>1591:        e.x_root = getint_event.</pre>
+<pre>1592:        e.y_root = getint_event.</pre>
+<pre>1602:        root = self._root().</pre>
+<pre>1603:        root.report_callbac.</pre>
+<pre>1845:   (e.g. x, y, rootx, rooty).""".</pre>
+<pre>2066:     (example: root.iconbitmap(def.</pre>
+<pre>2275:lobal _default_root.</pre>
+<pre>2295:upport_default_root and not _defau.</pre>
+<pre>2295:lt_root:.</pre>
+<pre>2296:      _default_root = self.</pre>
+<pre>2305:lobal _default_root.</pre>
+<pre>2306:upport_default_root and _default_r.</pre>
+<pre>2307:      _default_root = None.</pre>
+<pre>2523:upport_default_root:.</pre>
+<pre>2524:lobal _default_root.</pre>
+<pre>2526:f not _default_root:.</pre>
+<pre>2527:      _default_root = Tk().</pre>
+<pre>2528:ter = _default_root.</pre>
+<pre>2617:        root = self._root().</pre>
+<pre>2618: self.iconname(root.iconname()).</pre>
+<pre>2619:    self.title(root.title()).</pre>
+<pre>3992:ter = _default_root.</pre>
+<pre>4016: happen if the root was destroyed.</pre>
+<pre>4148:eturn _default_root.tk.splitlist(_.</pre>
+<pre>4148:default_root.tk.call('image.</pre>
+<pre>4152:eturn _default_root.tk.splitlist(_.</pre>
+<pre>4152:default_root.tk.call('image.</pre>
+<pre>4552:    root = Tk().</pre>
+<pre>4555: label = Label(root, text=text).</pre>
+<pre>4557: test = Button(root, text="Click m.</pre>
+<pre>4558:command=lambda root=root: root.tes.</pre>
+<pre>4559: text="[%s]" % root.test['text'])).</pre>
+<pre>4561:    root.test = test.</pre>
+<pre>4562: quit = Button(root, text="QUIT", .</pre>
+<pre>4562:command=root.destroy).</pre>
+<pre>4566:    root.iconify().</pre>
+<pre>4567:    root.update().</pre>
+<pre>4568:    root.deiconify().</pre>
+<pre>4569:    root.mainloop().</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msps30.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m99) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msps30.ko[0m
+
+ 798:	f9001fe2 	str	x2, [sp, #56]
+ 79c:	d2800002 	mov	x2, #0x0                   	// #0
+ 7a0:	9112c276 	add	x22, x19, #0x4b0
+ 7a4:	aa1603e0 	mov	x0, x22
+ 7a8:	94000000 	bl	0 <mutex_lock>
+ 7ac:	9100d3e2 	add	x2, sp, #0x34
+ 7b0:	52800083 	mov	w3, #0x4                   	// #4
+ 7b4:	128fff41 	mov	w1, #0xffff8005            	// #-32763
+ 7b8:	9112a260 	add	x0, x19, #0x4a8
+ 7bc:	97fffe25 	bl	50 <sps30_do_cmd>
+ 7c0:	2a0003f3 	mov	w19, w0
+ 7c4:	aa1603e0 	mov	x0, x22
+ 7c8:	94000000 	bl	0 <mutex_unlock>
+ 7cc:	93407e60 	sxtw	x0, w19
+ 7d0:	35000113 	cbnz	w19, 7f0 <cleaning_period_show+0x80>
+ 7d4:	b94037e2 	ldr	w2, [sp, #52]
+ 7d8:	aa1503e0 	mov	x0, x21
+ 7dc:	90000001 	adrp	x1, 0 <cleaning_period_available_show>
+ 7e0:	91000021 	add	x1, x1, #0x0
+ 7e4:	5ac00842 	rev	w2, w2
+[31m 7e8:	94000000 	bl	0 <sprintf>[0m
+ 7ec:	93407c00 	sxtw	x0, w0
+ 7f0:	91146294 	add	x20, x20, #0x518
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33msps30.ko[0m
+

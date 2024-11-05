@@ -1,0 +1,560 @@
+[[0;33m*[0m] Binary protection state of [0;33mbatman-adv.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m912) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mbatman-adv.ko[0m
+
+    3304:	d65f03c0 	ret
+
+0000000000003308 <batadv_v_show_sel_class>:
+    3308:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    330c:	910003fd 	mov	x29, sp
+    3310:	a90153f3 	stp	x19, x20, [sp, #16]
+    3314:	aa0003f4 	mov	x20, x0
+    3318:	aa0103f3 	mov	x19, x1
+    331c:	aa1e03e0 	mov	x0, x30
+    3320:	94000000 	bl	0 <_mcount>
+    3324:	b9434284 	ldr	w4, [x20, #832]
+    3328:	529999a2 	mov	w2, #0xcccd                	// #52429
+    332c:	72b99982 	movk	w2, #0xcccc, lsl #16
+    3330:	aa1303e0 	mov	x0, x19
+    3334:	90000001 	adrp	x1, 0 <batadv_algo_get>
+    3338:	91000021 	add	x1, x1, #0x0
+    333c:	9ba27c82 	umull	x2, w4, w2
+    3340:	d363fc42 	lsr	x2, x2, #35
+    3344:	0b020843 	add	w3, w2, w2, lsl #2
+    3348:	4b030483 	sub	w3, w4, w3, lsl #1
+[31m    334c:	94000000 	bl	0 <sprintf>[0m
+    3350:	93407c00 	sxtw	x0, w0
+    3354:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    c764:	b4000077 	cbz	x23, c770 <batadv_gw_election+0x140>
+    c768:	aa1703e0 	mov	x0, x23
+    c76c:	94000000 	bl	14138 <batadv_neigh_node_put>
+    c770:	b40008f8 	cbz	x24, c88c <batadv_gw_election+0x25c>
+    c774:	aa1803e0 	mov	x0, x24
+    c778:	94000000 	bl	14010 <batadv_neigh_ifinfo_put>
+    c77c:	a94363f7 	ldp	x23, x24, [sp, #48]
+    c780:	17ffffd4 	b	c6d0 <batadv_gw_election+0xa0>
+    c784:	f9407a61 	ldr	x1, [x19, #240]
+    c788:	aa1303e0 	mov	x0, x19
+    c78c:	f9404421 	ldr	x1, [x1, #136]
+    c790:	d63f0020 	blr	x1
+    c794:	aa0003f4 	mov	x20, x0
+    c798:	b40007a0 	cbz	x0, c88c <batadv_gw_election+0x25c>
+    c79c:	f90023f9 	str	x25, [sp, #64]
+    c7a0:	91015bf9 	add	x25, sp, #0x56
+    c7a4:	aa1903e0 	mov	x0, x25
+    c7a8:	90000001 	adrp	x1, 0 <batadv_algo_get>
+    c7ac:	f9400a82 	ldr	x2, [x20, #16]
+    c7b0:	91000021 	add	x1, x1, #0x0
+[31m    c7b4:	94000000 	bl	0 <sprintf>[0m
+    c7b8:	f9400a80 	ldr	x0, [x20, #16]
+    c7bc:	d2800001 	mov	x1, #0x0                   	// #0
+--
+    c804:	d2800017 	mov	x23, #0x0                   	// #0
+    c808:	17ffffd1 	b	c74c <batadv_gw_election+0x11c>
+    c80c:	aa1503f4 	mov	x20, x21
+    c810:	f90023f9 	str	x25, [sp, #64]
+    c814:	91015bf9 	add	x25, sp, #0x56
+    c818:	d2800018 	mov	x24, #0x0                   	// #0
+    c81c:	d2800017 	mov	x23, #0x0                   	// #0
+    c820:	aa1903e3 	mov	x3, x25
+    c824:	aa1303e0 	mov	x0, x19
+    c828:	52800042 	mov	w2, #0x2                   	// #2
+    c82c:	52800001 	mov	w1, #0x0                   	// #0
+    c830:	94000000 	bl	fae8 <batadv_throw_uevent>
+    c834:	f94023f9 	ldr	x25, [sp, #64]
+    c838:	17ffffc2 	b	c740 <batadv_gw_election+0x110>
+    c83c:	f90023f9 	str	x25, [sp, #64]
+    c840:	91015bf9 	add	x25, sp, #0x56
+    c844:	aa1903e0 	mov	x0, x25
+    c848:	90000001 	adrp	x1, 0 <batadv_algo_get>
+    c84c:	f9400a82 	ldr	x2, [x20, #16]
+    c850:	91000021 	add	x1, x1, #0x0
+[31m    c854:	94000000 	bl	0 <sprintf>[0m
+    c858:	f9400a80 	ldr	x0, [x20, #16]
+    c85c:	d2800001 	mov	x1, #0x0                   	// #0
+--
+   106f4:	1a851063 	csel	w3, w3, w5, ne  // ne = any
+   106f8:	f27e001f 	tst	x0, #0x4
+   106fc:	1a851084 	csel	w4, w4, w5, ne  // ne = any
+   10700:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   10704:	f27d001f 	tst	x0, #0x8
+   10708:	91000021 	add	x1, x1, #0x0
+   1070c:	90000005 	adrp	x5, 0 <batadv_algo_get>
+   10710:	910000a5 	add	x5, x5, #0x0
+   10714:	f94000e8 	ldr	x8, [x7]
+   10718:	9a8100a5 	csel	x5, x5, x1, eq  // eq = none
+   1071c:	794010e7 	ldrh	w7, [x7, #8]
+   10720:	f27c001f 	tst	x0, #0x10
+   10724:	90000006 	adrp	x6, 0 <batadv_algo_get>
+   10728:	910000c6 	add	x6, x6, #0x0
+   1072c:	9a8100c6 	csel	x6, x6, x1, eq  // eq = none
+   10730:	9102fbe0 	add	x0, sp, #0xbe
+   10734:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   10738:	91000021 	add	x1, x1, #0x0
+   1073c:	f80be3e8 	stur	x8, [sp, #190]
+   10740:	79018fe7 	strh	w7, [sp, #198]
+[31m   10744:	94000000 	bl	0 <sprintf>[0m
+   10748:	39427fe5 	ldrb	w5, [sp, #159]
+   1074c:	aa1903e0 	mov	x0, x25
+--
+   19fcc:	17ffffea 	b	19f74 <batadv_store_isolation_mark+0x8c>
+
+0000000000019fd0 <batadv_show_isolation_mark>:
+   19fd0:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   19fd4:	910003fd 	mov	x29, sp
+   19fd8:	a90153f3 	stp	x19, x20, [sp, #16]
+   19fdc:	f90013f5 	str	x21, [sp, #32]
+   19fe0:	aa0003f3 	mov	x19, x0
+   19fe4:	aa0103f5 	mov	x21, x1
+   19fe8:	aa1e03e0 	mov	x0, x30
+   19fec:	aa0203f4 	mov	x20, x2
+   19ff0:	94000000 	bl	0 <_mcount>
+   19ff4:	f9400e73 	ldr	x19, [x19, #24]
+   19ff8:	aa1503e0 	mov	x0, x21
+   19ffc:	97ffffa3 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a000:	aa1403e0 	mov	x0, x20
+   1a004:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a008:	b943c662 	ldr	w2, [x19, #964]
+   1a00c:	91000021 	add	x1, x1, #0x0
+   1a010:	b943ca63 	ldr	w3, [x19, #968]
+[31m   1a014:	94000000 	bl	0 <sprintf>[0m
+   1a018:	93407c00 	sxtw	x0, w0
+   1a01c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a04c:	aa0203f3 	mov	x19, x2
+   1a050:	94000000 	bl	0 <_mcount>
+   1a054:	f9400eb5 	ldr	x21, [x21, #24]
+   1a058:	aa1403e0 	mov	x0, x20
+   1a05c:	97ffff8b 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a060:	529999a4 	mov	w4, #0xcccd                	// #52429
+   1a064:	aa1303e0 	mov	x0, x19
+   1a068:	b946c6a7 	ldr	w7, [x21, #1732]
+   1a06c:	72b99984 	movk	w4, #0xcccc, lsl #16
+   1a070:	b946caa6 	ldr	w6, [x21, #1736]
+   1a074:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a078:	91000021 	add	x1, x1, #0x0
+   1a07c:	9ba47ce2 	umull	x2, w7, w4
+   1a080:	9ba47cc4 	umull	x4, w6, w4
+   1a084:	d363fc42 	lsr	x2, x2, #35
+   1a088:	d363fc84 	lsr	x4, x4, #35
+   1a08c:	0b020843 	add	w3, w2, w2, lsl #2
+   1a090:	0b040885 	add	w5, w4, w4, lsl #2
+   1a094:	4b0304e3 	sub	w3, w7, w3, lsl #1
+   1a098:	4b0504c5 	sub	w5, w6, w5, lsl #1
+[31m   1a09c:	94000000 	bl	0 <sprintf>[0m
+   1a0a0:	93407c00 	sxtw	x0, w0
+   1a0a4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a0e0:	aa1303e0 	mov	x0, x19
+   1a0e4:	97ffff69 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a0e8:	910e0280 	add	x0, x20, #0x380
+   1a0ec:	f9407801 	ldr	x1, [x0, #240]
+   1a0f0:	f9404422 	ldr	x2, [x1, #136]
+   1a0f4:	b40002a2 	cbz	x2, 1a148 <batadv_show_gw_sel_class+0x90>
+   1a0f8:	f9404822 	ldr	x2, [x1, #144]
+   1a0fc:	b4000262 	cbz	x2, 1a148 <batadv_show_gw_sel_class+0x90>
+   1a100:	f9404022 	ldr	x2, [x1, #128]
+   1a104:	b40000e2 	cbz	x2, 1a120 <batadv_show_gw_sel_class+0x68>
+   1a108:	aa1503e1 	mov	x1, x21
+   1a10c:	d63f0040 	blr	x2
+   1a110:	a94153f3 	ldp	x19, x20, [sp, #16]
+   1a114:	f94013f5 	ldr	x21, [sp, #32]
+   1a118:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   1a11c:	d65f03c0 	ret
+   1a120:	b946c282 	ldr	w2, [x20, #1728]
+   1a124:	aa1503e0 	mov	x0, x21
+   1a128:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a12c:	91000021 	add	x1, x1, #0x0
+[31m   1a130:	94000000 	bl	0 <sprintf>[0m
+   1a134:	93407c00 	sxtw	x0, w0
+   1a138:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a148:	92800020 	mov	x0, #0xfffffffffffffffe    	// #-2
+   1a14c:	17fffff1 	b	1a110 <batadv_show_gw_sel_class+0x58>
+
+000000000001a150 <batadv_show_hop_penalty>:
+   1a150:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   1a154:	910003fd 	mov	x29, sp
+   1a158:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a15c:	f90013f5 	str	x21, [sp, #32]
+   1a160:	aa0003f5 	mov	x21, x0
+   1a164:	aa0103f4 	mov	x20, x1
+   1a168:	aa1e03e0 	mov	x0, x30
+   1a16c:	aa0203f3 	mov	x19, x2
+   1a170:	94000000 	bl	0 <_mcount>
+   1a174:	f9400eb5 	ldr	x21, [x21, #24]
+   1a178:	aa1403e0 	mov	x0, x20
+   1a17c:	97ffff43 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a180:	aa1303e0 	mov	x0, x19
+   1a184:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a188:	b943c2a2 	ldr	w2, [x21, #960]
+   1a18c:	91000021 	add	x1, x1, #0x0
+[31m   1a190:	94000000 	bl	0 <sprintf>[0m
+   1a194:	93407c00 	sxtw	x0, w0
+   1a198:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a1a0:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   1a1a4:	d65f03c0 	ret
+
+000000000001a1a8 <batadv_show_orig_interval>:
+   1a1a8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   1a1ac:	910003fd 	mov	x29, sp
+   1a1b0:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a1b4:	f90013f5 	str	x21, [sp, #32]
+   1a1b8:	aa0003f5 	mov	x21, x0
+   1a1bc:	aa0103f4 	mov	x20, x1
+   1a1c0:	aa1e03e0 	mov	x0, x30
+   1a1c4:	aa0203f3 	mov	x19, x2
+   1a1c8:	94000000 	bl	0 <_mcount>
+   1a1cc:	f9400eb5 	ldr	x21, [x21, #24]
+   1a1d0:	aa1403e0 	mov	x0, x20
+   1a1d4:	97ffff2d 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a1d8:	aa1303e0 	mov	x0, x19
+   1a1dc:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a1e0:	b943bea2 	ldr	w2, [x21, #956]
+   1a1e4:	91000021 	add	x1, x1, #0x0
+[31m   1a1e8:	94000000 	bl	0 <sprintf>[0m
+   1a1ec:	93407c00 	sxtw	x0, w0
+   1a1f0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a21c:	aa0203f5 	mov	x21, x2
+   1a220:	94000000 	bl	0 <_mcount>
+   1a224:	f9400e94 	ldr	x20, [x20, #24]
+   1a228:	aa1303e0 	mov	x0, x19
+   1a22c:	97ffff17 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a230:	f9423a80 	ldr	x0, [x20, #1136]
+   1a234:	f9404401 	ldr	x1, [x0, #136]
+   1a238:	b4000521 	cbz	x1, 1a2dc <batadv_show_gw_mode+0xdc>
+   1a23c:	f9404800 	ldr	x0, [x0, #144]
+   1a240:	b40004e0 	cbz	x0, 1a2dc <batadv_show_gw_mode+0xdc>
+   1a244:	b946be80 	ldr	w0, [x20, #1724]
+   1a248:	7100041f 	cmp	w0, #0x1
+   1a24c:	54000320 	b.eq	1a2b0 <batadv_show_gw_mode+0xb0>  // b.none
+   1a250:	7100081f 	cmp	w0, #0x2
+   1a254:	54000181 	b.ne	1a284 <batadv_show_gw_mode+0x84>  // b.any
+   1a258:	aa1503e0 	mov	x0, x21
+   1a25c:	90000002 	adrp	x2, 0 <batadv_algo_get>
+   1a260:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a264:	91000042 	add	x2, x2, #0x0
+   1a268:	91000021 	add	x1, x1, #0x0
+[31m   1a26c:	94000000 	bl	0 <sprintf>[0m
+   1a270:	d28000e0 	mov	x0, #0x7                   	// #7
+   1a274:	a94153f3 	ldp	x19, x20, [sp, #16]
+   1a278:	f94013f5 	ldr	x21, [sp, #32]
+   1a27c:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   1a280:	d65f03c0 	ret
+   1a284:	aa1503e0 	mov	x0, x21
+   1a288:	90000002 	adrp	x2, 0 <batadv_algo_get>
+   1a28c:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a290:	91000042 	add	x2, x2, #0x0
+   1a294:	91000021 	add	x1, x1, #0x0
+[31m   1a298:	94000000 	bl	0 <sprintf>[0m
+   1a29c:	d2800080 	mov	x0, #0x4                   	// #4
+   1a2a0:	a94153f3 	ldp	x19, x20, [sp, #16]
+   1a2a4:	f94013f5 	ldr	x21, [sp, #32]
+   1a2a8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   1a2ac:	d65f03c0 	ret
+   1a2b0:	aa1503e0 	mov	x0, x21
+   1a2b4:	90000002 	adrp	x2, 0 <batadv_algo_get>
+   1a2b8:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a2bc:	91000042 	add	x2, x2, #0x0
+   1a2c0:	91000021 	add	x1, x1, #0x0
+[31m   1a2c4:	94000000 	bl	0 <sprintf>[0m
+   1a2c8:	d28000e0 	mov	x0, #0x7                   	// #7
+   1a2cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a2e4:	d503201f 	nop
+
+000000000001a2e8 <batadv_show_bat_algo>:
+   1a2e8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   1a2ec:	910003fd 	mov	x29, sp
+   1a2f0:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a2f4:	f90013f5 	str	x21, [sp, #32]
+   1a2f8:	aa0003f5 	mov	x21, x0
+   1a2fc:	aa0103f4 	mov	x20, x1
+   1a300:	aa1e03e0 	mov	x0, x30
+   1a304:	aa0203f3 	mov	x19, x2
+   1a308:	94000000 	bl	0 <_mcount>
+   1a30c:	f9400eb5 	ldr	x21, [x21, #24]
+   1a310:	aa1403e0 	mov	x0, x20
+   1a314:	97fffedd 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a318:	aa1303e0 	mov	x0, x19
+   1a31c:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a320:	f9423aa2 	ldr	x2, [x21, #1136]
+   1a324:	91000021 	add	x1, x1, #0x0
+   1a328:	f9400842 	ldr	x2, [x2, #16]
+[31m   1a32c:	94000000 	bl	0 <sprintf>[0m
+   1a330:	93407c00 	sxtw	x0, w0
+   1a334:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a350:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a354:	f90013f5 	str	x21, [sp, #32]
+   1a358:	aa0003f5 	mov	x21, x0
+   1a35c:	aa0103f4 	mov	x20, x1
+   1a360:	aa1e03e0 	mov	x0, x30
+   1a364:	aa0203f3 	mov	x19, x2
+   1a368:	94000000 	bl	0 <_mcount>
+   1a36c:	f9400eb5 	ldr	x21, [x21, #24]
+   1a370:	aa1403e0 	mov	x0, x20
+   1a374:	97fffec5 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a378:	90000003 	adrp	x3, 0 <batadv_algo_get>
+   1a37c:	90000004 	adrp	x4, 0 <batadv_algo_get>
+   1a380:	b943a2a2 	ldr	w2, [x21, #928]
+   1a384:	91000063 	add	x3, x3, #0x0
+   1a388:	91000084 	add	x4, x4, #0x0
+   1a38c:	aa1303e0 	mov	x0, x19
+   1a390:	7100005f 	cmp	w2, #0x0
+   1a394:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a398:	9a830082 	csel	x2, x4, x3, eq  // eq = none
+   1a39c:	91000021 	add	x1, x1, #0x0
+[31m   1a3a0:	94000000 	bl	0 <sprintf>[0m
+   1a3a4:	93407c00 	sxtw	x0, w0
+   1a3a8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a3c0:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a3c4:	f90013f5 	str	x21, [sp, #32]
+   1a3c8:	aa0003f5 	mov	x21, x0
+   1a3cc:	aa0103f4 	mov	x20, x1
+   1a3d0:	aa1e03e0 	mov	x0, x30
+   1a3d4:	aa0203f3 	mov	x19, x2
+   1a3d8:	94000000 	bl	0 <_mcount>
+   1a3dc:	f9400eb5 	ldr	x21, [x21, #24]
+   1a3e0:	aa1403e0 	mov	x0, x20
+   1a3e4:	97fffea9 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a3e8:	90000003 	adrp	x3, 0 <batadv_algo_get>
+   1a3ec:	90000004 	adrp	x4, 0 <batadv_algo_get>
+   1a3f0:	b943b6a2 	ldr	w2, [x21, #948]
+   1a3f4:	91000063 	add	x3, x3, #0x0
+   1a3f8:	91000084 	add	x4, x4, #0x0
+   1a3fc:	aa1303e0 	mov	x0, x19
+   1a400:	7100005f 	cmp	w2, #0x0
+   1a404:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a408:	9a830082 	csel	x2, x4, x3, eq  // eq = none
+   1a40c:	91000021 	add	x1, x1, #0x0
+[31m   1a410:	94000000 	bl	0 <sprintf>[0m
+   1a414:	93407c00 	sxtw	x0, w0
+   1a418:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a430:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a434:	f90013f5 	str	x21, [sp, #32]
+   1a438:	aa0003f5 	mov	x21, x0
+   1a43c:	aa0103f4 	mov	x20, x1
+   1a440:	aa1e03e0 	mov	x0, x30
+   1a444:	aa0203f3 	mov	x19, x2
+   1a448:	94000000 	bl	0 <_mcount>
+   1a44c:	f9400eb5 	ldr	x21, [x21, #24]
+   1a450:	aa1403e0 	mov	x0, x20
+   1a454:	97fffe8d 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a458:	90000003 	adrp	x3, 0 <batadv_algo_get>
+   1a45c:	90000004 	adrp	x4, 0 <batadv_algo_get>
+   1a460:	b943b2a2 	ldr	w2, [x21, #944]
+   1a464:	91000063 	add	x3, x3, #0x0
+   1a468:	91000084 	add	x4, x4, #0x0
+   1a46c:	aa1303e0 	mov	x0, x19
+   1a470:	7100005f 	cmp	w2, #0x0
+   1a474:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a478:	9a830082 	csel	x2, x4, x3, eq  // eq = none
+   1a47c:	91000021 	add	x1, x1, #0x0
+[31m   1a480:	94000000 	bl	0 <sprintf>[0m
+   1a484:	93407c00 	sxtw	x0, w0
+   1a488:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a4a0:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a4a4:	f90013f5 	str	x21, [sp, #32]
+   1a4a8:	aa0003f5 	mov	x21, x0
+   1a4ac:	aa0103f4 	mov	x20, x1
+   1a4b0:	aa1e03e0 	mov	x0, x30
+   1a4b4:	aa0203f3 	mov	x19, x2
+   1a4b8:	94000000 	bl	0 <_mcount>
+   1a4bc:	f9400eb5 	ldr	x21, [x21, #24]
+   1a4c0:	aa1403e0 	mov	x0, x20
+   1a4c4:	97fffe71 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a4c8:	90000003 	adrp	x3, 0 <batadv_algo_get>
+   1a4cc:	90000004 	adrp	x4, 0 <batadv_algo_get>
+   1a4d0:	b943aea2 	ldr	w2, [x21, #940]
+   1a4d4:	91000063 	add	x3, x3, #0x0
+   1a4d8:	91000084 	add	x4, x4, #0x0
+   1a4dc:	aa1303e0 	mov	x0, x19
+   1a4e0:	7100005f 	cmp	w2, #0x0
+   1a4e4:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a4e8:	9a830082 	csel	x2, x4, x3, eq  // eq = none
+   1a4ec:	91000021 	add	x1, x1, #0x0
+[31m   1a4f0:	94000000 	bl	0 <sprintf>[0m
+   1a4f4:	93407c00 	sxtw	x0, w0
+   1a4f8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a510:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a514:	f90013f5 	str	x21, [sp, #32]
+   1a518:	aa0003f5 	mov	x21, x0
+   1a51c:	aa0103f4 	mov	x20, x1
+   1a520:	aa1e03e0 	mov	x0, x30
+   1a524:	aa0203f3 	mov	x19, x2
+   1a528:	94000000 	bl	0 <_mcount>
+   1a52c:	f9400eb5 	ldr	x21, [x21, #24]
+   1a530:	aa1403e0 	mov	x0, x20
+   1a534:	97fffe55 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a538:	90000003 	adrp	x3, 0 <batadv_algo_get>
+   1a53c:	90000004 	adrp	x4, 0 <batadv_algo_get>
+   1a540:	b9439ea2 	ldr	w2, [x21, #924]
+   1a544:	91000063 	add	x3, x3, #0x0
+   1a548:	91000084 	add	x4, x4, #0x0
+   1a54c:	aa1303e0 	mov	x0, x19
+   1a550:	7100005f 	cmp	w2, #0x0
+   1a554:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a558:	9a830082 	csel	x2, x4, x3, eq  // eq = none
+   1a55c:	91000021 	add	x1, x1, #0x0
+[31m   1a560:	94000000 	bl	0 <sprintf>[0m
+   1a564:	93407c00 	sxtw	x0, w0
+   1a568:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1a580:	a90153f3 	stp	x19, x20, [sp, #16]
+   1a584:	f90013f5 	str	x21, [sp, #32]
+   1a588:	aa0003f5 	mov	x21, x0
+   1a58c:	aa0103f4 	mov	x20, x1
+   1a590:	aa1e03e0 	mov	x0, x30
+   1a594:	aa0203f3 	mov	x19, x2
+   1a598:	94000000 	bl	0 <_mcount>
+   1a59c:	f9400eb5 	ldr	x21, [x21, #24]
+   1a5a0:	aa1403e0 	mov	x0, x20
+   1a5a4:	97fffe39 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1a5a8:	90000003 	adrp	x3, 0 <batadv_algo_get>
+   1a5ac:	90000004 	adrp	x4, 0 <batadv_algo_get>
+   1a5b0:	b9439aa2 	ldr	w2, [x21, #920]
+   1a5b4:	91000063 	add	x3, x3, #0x0
+   1a5b8:	91000084 	add	x4, x4, #0x0
+   1a5bc:	aa1303e0 	mov	x0, x19
+   1a5c0:	7100005f 	cmp	w2, #0x0
+   1a5c4:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1a5c8:	9a830082 	csel	x2, x4, x3, eq  // eq = none
+   1a5cc:	91000021 	add	x1, x1, #0x0
+[31m   1a5d0:	94000000 	bl	0 <sprintf>[0m
+   1a5d4:	93407c00 	sxtw	x0, w0
+   1a5d8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1af58:	90000000 	adrp	x0, 0 <batadv_algo_get>
+   1af5c:	91000000 	add	x0, x0, #0x0
+   1af60:	94000000 	bl	0 <strcmp>
+   1af64:	f9400e63 	ldr	x3, [x19, #24]
+   1af68:	34000360 	cbz	w0, 1afd4 <batadv_show_vlan_ap_isolation+0xa4>
+   1af6c:	f9400c60 	ldr	x0, [x3, #24]
+   1af70:	910e0000 	add	x0, x0, #0x380
+   1af74:	aa1303e1 	mov	x1, x19
+   1af78:	97fffba2 	bl	19e00 <batadv_kobj_to_vlan>
+   1af7c:	aa0003f3 	mov	x19, x0
+   1af80:	90000003 	adrp	x3, 0 <batadv_algo_get>
+   1af84:	90000002 	adrp	x2, 0 <batadv_algo_get>
+   1af88:	91000063 	add	x3, x3, #0x0
+   1af8c:	91000042 	add	x2, x2, #0x0
+   1af90:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1af94:	b9401a64 	ldr	w4, [x19, #24]
+   1af98:	91000021 	add	x1, x1, #0x0
+   1af9c:	aa1403e0 	mov	x0, x20
+   1afa0:	7100009f 	cmp	w4, #0x0
+   1afa4:	9a830042 	csel	x2, x2, x3, eq  // eq = none
+[31m   1afa8:	94000000 	bl	0 <sprintf>[0m
+   1afac:	2a0003f4 	mov	w20, w0
+   1afb0:	aa1503e0 	mov	x0, x21
+--
+   1b29c:	aa1303e0 	mov	x0, x19
+   1b2a0:	94000000 	bl	dee8 <batadv_hardif_get_by_netdev>
+   1b2a4:	b4000300 	cbz	x0, 1b304 <batadv_show_throughput_override+0x9c>
+   1b2a8:	9100a014 	add	x20, x0, #0x28
+   1b2ac:	b9419813 	ldr	w19, [x0, #408]
+   1b2b0:	aa1403e0 	mov	x0, x20
+   1b2b4:	94000000 	bl	0 <refcount_dec_and_test_checked>
+   1b2b8:	72001c1f 	tst	w0, #0xff
+   1b2bc:	54000060 	b.eq	1b2c8 <batadv_show_throughput_override+0x60>  // b.none
+   1b2c0:	aa1403e0 	mov	x0, x20
+   1b2c4:	94000000 	bl	dbe8 <batadv_hardif_release>
+   1b2c8:	529999a4 	mov	w4, #0xcccd                	// #52429
+   1b2cc:	aa1503e0 	mov	x0, x21
+   1b2d0:	72b99984 	movk	w4, #0xcccc, lsl #16
+   1b2d4:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1b2d8:	91000021 	add	x1, x1, #0x0
+   1b2dc:	9ba47e62 	umull	x2, w19, w4
+   1b2e0:	d363fc42 	lsr	x2, x2, #35
+   1b2e4:	0b020843 	add	w3, w2, w2, lsl #2
+   1b2e8:	4b030663 	sub	w3, w19, w3, lsl #1
+[31m   1b2ec:	94000000 	bl	0 <sprintf>[0m
+   1b2f0:	93407c00 	sxtw	x0, w0
+   1b2f4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   1b320:	aa0003f3 	mov	x19, x0
+   1b324:	aa0103f4 	mov	x20, x1
+   1b328:	aa1e03e0 	mov	x0, x30
+   1b32c:	aa0203f5 	mov	x21, x2
+   1b330:	94000000 	bl	0 <_mcount>
+   1b334:	f9400e73 	ldr	x19, [x19, #24]
+   1b338:	aa1403e0 	mov	x0, x20
+   1b33c:	97fffad3 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1b340:	d1140273 	sub	x19, x19, #0x500
+   1b344:	aa1303e0 	mov	x0, x19
+   1b348:	94000000 	bl	dee8 <batadv_hardif_get_by_netdev>
+   1b34c:	aa0003f3 	mov	x19, x0
+   1b350:	b4000300 	cbz	x0, 1b3b0 <batadv_show_mesh_iface+0xa0>
+   1b354:	39404000 	ldrb	w0, [x0, #16]
+   1b358:	34000260 	cbz	w0, 1b3a4 <batadv_show_mesh_iface+0x94>
+   1b35c:	f9403a62 	ldr	x2, [x19, #112]
+   1b360:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1b364:	91000021 	add	x1, x1, #0x0
+   1b368:	aa1503e0 	mov	x0, x21
+   1b36c:	9100a273 	add	x19, x19, #0x28
+[31m   1b370:	94000000 	bl	0 <sprintf>[0m
+   1b374:	93407c14 	sxtw	x20, w0
+   1b378:	aa1303e0 	mov	x0, x19
+--
+   1b3d4:	f90013f5 	str	x21, [sp, #32]
+   1b3d8:	aa0003f3 	mov	x19, x0
+   1b3dc:	aa0103f4 	mov	x20, x1
+   1b3e0:	aa1e03e0 	mov	x0, x30
+   1b3e4:	aa0203f5 	mov	x21, x2
+   1b3e8:	94000000 	bl	0 <_mcount>
+   1b3ec:	f9400e73 	ldr	x19, [x19, #24]
+   1b3f0:	aa1403e0 	mov	x0, x20
+   1b3f4:	97fffaa5 	bl	19e88 <batadv_sysfs_deprecated.isra.0>
+   1b3f8:	d2800014 	mov	x20, #0x0                   	// #0
+   1b3fc:	d1140273 	sub	x19, x19, #0x500
+   1b400:	aa1303e0 	mov	x0, x19
+   1b404:	94000000 	bl	dee8 <batadv_hardif_get_by_netdev>
+   1b408:	aa0003f3 	mov	x19, x0
+   1b40c:	b4000180 	cbz	x0, 1b43c <batadv_show_elp_interval+0x74>
+   1b410:	b940ba62 	ldr	w2, [x19, #184]
+   1b414:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1b418:	91000021 	add	x1, x1, #0x0
+   1b41c:	aa1503e0 	mov	x0, x21
+   1b420:	9100a273 	add	x19, x19, #0x28
+[31m   1b424:	94000000 	bl	0 <sprintf>[0m
+   1b428:	93407c14 	sxtw	x20, w0
+   1b42c:	aa1303e0 	mov	x0, x19
+--
+   1ba5c:	d2800002 	mov	x2, #0x0                   	// #0
+   1ba60:	94000000 	bl	0 <sysfs_create_file_ns>
+   1ba64:	35000420 	cbnz	w0, 1bae8 <batadv_sysfs_add_vlan+0xf0>
+   1ba68:	f8408e61 	ldr	x1, [x19, #8]!
+   1ba6c:	b5ffff61 	cbnz	x1, 1ba58 <batadv_sysfs_add_vlan+0x60>
+   1ba70:	52800000 	mov	w0, #0x0                   	// #0
+   1ba74:	911462b5 	add	x21, x21, #0x518
+   1ba78:	f9402fe2 	ldr	x2, [sp, #88]
+   1ba7c:	f94002a1 	ldr	x1, [x21]
+   1ba80:	ca010041 	eor	x1, x2, x1
+   1ba84:	b5000301 	cbnz	x1, 1bae4 <batadv_sysfs_add_vlan+0xec>
+   1ba88:	a94153f3 	ldp	x19, x20, [sp, #16]
+   1ba8c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   1ba90:	a94363f7 	ldp	x23, x24, [sp, #48]
+   1ba94:	a8c67bfd 	ldp	x29, x30, [sp], #96
+   1ba98:	d65f03c0 	ret
+   1ba9c:	12002c42 	and	w2, w2, #0xfff
+   1baa0:	91013be0 	add	x0, sp, #0x4e
+   1baa4:	90000001 	adrp	x1, 0 <batadv_algo_get>
+   1baa8:	91000021 	add	x1, x1, #0x0
+[31m   1baac:	94000000 	bl	0 <sprintf>[0m
+   1bab0:	91013be0 	add	x0, sp, #0x4e
+   1bab4:	f9402f01 	ldr	x1, [x24, #88]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m24[0m times [0;33mbatman-adv.ko[0m
+

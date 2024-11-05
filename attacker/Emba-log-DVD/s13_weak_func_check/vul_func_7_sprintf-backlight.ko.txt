@@ -1,0 +1,156 @@
+[[0;33m*[0m] Binary protection state of [0;33mbacklight.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m187) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m64) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m69) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mbacklight.ko[0m
+
+     748:	aa1303e0 	mov	x0, x19
+     74c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     750:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     754:	d65f03c0 	ret
+
+0000000000000758 <type_show>:
+     758:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     75c:	910003fd 	mov	x29, sp
+     760:	a90153f3 	stp	x19, x20, [sp, #16]
+     764:	aa0003f4 	mov	x20, x0
+     768:	aa0203f3 	mov	x19, x2
+     76c:	aa1e03e0 	mov	x0, x30
+     770:	94000000 	bl	0 <_mcount>
+     774:	b8580282 	ldur	w2, [x20, #-128]
+     778:	90000003 	adrp	x3, 0 <devm_backlight_device_match>
+     77c:	91000063 	add	x3, x3, #0x0
+     780:	aa1303e0 	mov	x0, x19
+     784:	90000001 	adrp	x1, 0 <devm_backlight_device_match>
+     788:	91000021 	add	x1, x1, #0x0
+     78c:	f8627862 	ldr	x2, [x3, x2, lsl #3]
+[31m     790:	94000000 	bl	0 <sprintf>[0m
+     794:	93407c00 	sxtw	x0, w0
+     798:	a94153f3 	ldp	x19, x20, [sp, #16]
+     79c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     7a0:	d65f03c0 	ret
+     7a4:	d503201f 	nop
+
+00000000000007a8 <max_brightness_show>:
+     7a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     7ac:	910003fd 	mov	x29, sp
+     7b0:	a90153f3 	stp	x19, x20, [sp, #16]
+     7b4:	aa0003f4 	mov	x20, x0
+     7b8:	aa0203f3 	mov	x19, x2
+     7bc:	aa1e03e0 	mov	x0, x30
+     7c0:	94000000 	bl	0 <_mcount>
+     7c4:	b8574282 	ldur	w2, [x20, #-140]
+     7c8:	aa1303e0 	mov	x0, x19
+     7cc:	90000001 	adrp	x1, 0 <devm_backlight_device_match>
+     7d0:	91000021 	add	x1, x1, #0x0
+[31m     7d4:	94000000 	bl	0 <sprintf>[0m
+     7d8:	93407c00 	sxtw	x0, w0
+     7dc:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     7f0:	a90153f3 	stp	x19, x20, [sp, #16]
+     7f4:	a9025bf5 	stp	x21, x22, [sp, #32]
+     7f8:	aa0003f3 	mov	x19, x0
+     7fc:	d1024276 	sub	x22, x19, #0x90
+     800:	aa1e03e0 	mov	x0, x30
+     804:	aa0203f4 	mov	x20, x2
+     808:	910102d5 	add	x21, x22, #0x40
+     80c:	94000000 	bl	0 <_mcount>
+     810:	aa1503e0 	mov	x0, x21
+     814:	94000000 	bl	0 <mutex_lock>
+     818:	f85d0260 	ldur	x0, [x19, #-48]
+     81c:	b4000240 	cbz	x0, 864 <actual_brightness_show+0x7c>
+     820:	f9400801 	ldr	x1, [x0, #16]
+     824:	b4000201 	cbz	x1, 864 <actual_brightness_show+0x7c>
+     828:	aa1603e0 	mov	x0, x22
+     82c:	d63f0020 	blr	x1
+     830:	90000001 	adrp	x1, 0 <devm_backlight_device_match>
+     834:	2a0003e2 	mov	w2, w0
+     838:	91000021 	add	x1, x1, #0x0
+     83c:	aa1403e0 	mov	x0, x20
+[31m     840:	94000000 	bl	0 <sprintf>[0m
+     844:	2a0003f3 	mov	w19, w0
+     848:	aa1503e0 	mov	x0, x21
+     84c:	94000000 	bl	0 <mutex_unlock>
+     850:	93407e60 	sxtw	x0, w19
+     854:	a94153f3 	ldp	x19, x20, [sp, #16]
+     858:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     85c:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     860:	d65f03c0 	ret
+     864:	b8570262 	ldur	w2, [x19, #-144]
+     868:	90000001 	adrp	x1, 0 <devm_backlight_device_match>
+     86c:	91000021 	add	x1, x1, #0x0
+     870:	aa1403e0 	mov	x0, x20
+[31m     874:	94000000 	bl	0 <sprintf>[0m
+     878:	2a0003f3 	mov	w19, w0
+     87c:	aa1503e0 	mov	x0, x21
+     880:	94000000 	bl	0 <mutex_unlock>
+     884:	93407e60 	sxtw	x0, w19
+     888:	a94153f3 	ldp	x19, x20, [sp, #16]
+     88c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     890:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     894:	d65f03c0 	ret
+
+0000000000000898 <brightness_show>:
+     898:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     89c:	910003fd 	mov	x29, sp
+     8a0:	a90153f3 	stp	x19, x20, [sp, #16]
+     8a4:	aa0003f4 	mov	x20, x0
+     8a8:	aa0203f3 	mov	x19, x2
+     8ac:	aa1e03e0 	mov	x0, x30
+     8b0:	94000000 	bl	0 <_mcount>
+     8b4:	b8570282 	ldur	w2, [x20, #-144]
+     8b8:	aa1303e0 	mov	x0, x19
+     8bc:	90000001 	adrp	x1, 0 <devm_backlight_device_match>
+     8c0:	91000021 	add	x1, x1, #0x0
+[31m     8c4:	94000000 	bl	0 <sprintf>[0m
+     8c8:	93407c00 	sxtw	x0, w0
+     8cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+     8d0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     8d4:	d65f03c0 	ret
+
+00000000000008d8 <bl_power_show>:
+     8d8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     8dc:	910003fd 	mov	x29, sp
+     8e0:	a90153f3 	stp	x19, x20, [sp, #16]
+     8e4:	aa0003f4 	mov	x20, x0
+     8e8:	aa0203f3 	mov	x19, x2
+     8ec:	aa1e03e0 	mov	x0, x30
+     8f0:	94000000 	bl	0 <_mcount>
+     8f4:	b8578282 	ldur	w2, [x20, #-136]
+     8f8:	aa1303e0 	mov	x0, x19
+     8fc:	90000001 	adrp	x1, 0 <devm_backlight_device_match>
+     900:	91000021 	add	x1, x1, #0x0
+[31m     904:	94000000 	bl	0 <sprintf>[0m
+     908:	93407c00 	sxtw	x0, w0
+     90c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     a6c:	d65f03c0 	ret
+
+0000000000000a70 <scale_show>:
+     a70:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     a74:	910003fd 	mov	x29, sp
+     a78:	a90153f3 	stp	x19, x20, [sp, #16]
+     a7c:	aa0003f4 	mov	x20, x0
+     a80:	aa0203f3 	mov	x19, x2
+     a84:	aa1e03e0 	mov	x0, x30
+     a88:	94000000 	bl	0 <_mcount>
+     a8c:	b8588282 	ldur	w2, [x20, #-120]
+     a90:	7100085f 	cmp	w2, #0x2
+     a94:	540001a8 	b.hi	ac8 <scale_show+0x58>  // b.pmore
+     a98:	90000003 	adrp	x3, 0 <devm_backlight_device_match>
+     a9c:	91000063 	add	x3, x3, #0x0
+     aa0:	91008063 	add	x3, x3, #0x20
+     aa4:	aa1303e0 	mov	x0, x19
+     aa8:	90000001 	adrp	x1, 0 <devm_backlight_device_match>
+     aac:	91000021 	add	x1, x1, #0x0
+     ab0:	f8625862 	ldr	x2, [x3, w2, uxtw #3]
+[31m     ab4:	94000000 	bl	0 <sprintf>[0m
+     ab8:	93407c00 	sxtw	x0, w0
+     abc:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m7[0m times [0;33mbacklight.ko[0m
+

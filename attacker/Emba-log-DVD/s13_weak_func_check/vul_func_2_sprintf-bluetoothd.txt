@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mbluetoothd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mbluetoothd[0m
+
+   961c8:	b4000075 	cbz	x21, 961d4 <ba2str@@Base+0x4054>
+   961cc:	97fe1d01 	bl	1d5d0 <strlen@plt>
+   961d0:	2a0003e1 	mov	w1, w0
+   961d4:	0b190021 	add	w1, w1, w25
+   961d8:	11000f18 	add	w24, w24, #0x3
+   961dc:	0b180038 	add	w24, w1, w24
+   961e0:	f8410e60 	ldr	x0, [x19, #16]!
+   961e4:	b5fffde0 	cbnz	x0, 961a0 <ba2str@@Base+0x4020>
+   961e8:	93407f00 	sxtw	x0, w24
+   961ec:	97fff129 	bl	92690 <ba2str@@Base+0x510>
+   961f0:	f90037e0 	str	x0, [sp, #104]
+   961f4:	aa0003f8 	mov	x24, x0
+   961f8:	b4000720 	cbz	x0, 962dc <ba2str@@Base+0x415c>
+   961fc:	a90573fb 	stp	x27, x28, [sp, #80]
+   96200:	aa0003f3 	mov	x19, x0
+   96204:	3900001f 	strb	wzr, [x0]
+   96208:	b40000d5 	cbz	x21, 96220 <ba2str@@Base+0x40a0>
+   9620c:	aa1503e2 	mov	x2, x21
+   96210:	d0000121 	adrp	x1, bc000 <btd_malloc@@Base+0x131b0>
+   96214:	913ae021 	add	x1, x1, #0xeb8
+[31m   96218:	97fe1daa 	bl	1d8c0 <sprintf@plt>[0m
+   9621c:	8b20c313 	add	x19, x24, w0, sxtw
+   96220:	913e02f7 	add	x23, x23, #0xf80
+--
+   96440:	11000673 	add	w19, w19, #0x1
+   96444:	0b1a0021 	add	w1, w1, w26
+   96448:	0b010273 	add	w19, w19, w1
+   9644c:	f8410f80 	ldr	x0, [x28, #16]!
+   96450:	b5fffe40 	cbnz	x0, 96418 <ba2str@@Base+0x4298>
+   96454:	91000739 	add	x25, x25, #0x1
+   96458:	91024318 	add	x24, x24, #0x90
+   9645c:	eb19037f 	cmp	x27, x25
+   96460:	54fffd41 	b.ne	96408 <ba2str@@Base+0x4288>  // b.any
+   96464:	93407e60 	sxtw	x0, w19
+   96468:	97fff08a 	bl	92690 <ba2str@@Base+0x510>
+   9646c:	f9003fe0 	str	x0, [sp, #120]
+   96470:	aa0003f3 	mov	x19, x0
+   96474:	b40007e0 	cbz	x0, 96570 <ba2str@@Base+0x43f0>
+   96478:	3900001f 	strb	wzr, [x0]
+   9647c:	aa0003fa 	mov	x26, x0
+   96480:	b40000d6 	cbz	x22, 96498 <ba2str@@Base+0x4318>
+   96484:	aa1603e2 	mov	x2, x22
+   96488:	d0000121 	adrp	x1, bc000 <btd_malloc@@Base+0x131b0>
+   9648c:	913ae021 	add	x1, x1, #0xeb8
+[31m   96490:	97fe1d0c 	bl	1d8c0 <sprintf@plt>[0m
+   96494:	8b20c27a 	add	x26, x19, w0, sxtw
+   96498:	f10002df 	cmp	x22, #0x0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mbluetoothd[0m
+

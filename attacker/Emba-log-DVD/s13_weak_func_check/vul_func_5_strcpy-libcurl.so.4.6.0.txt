@@ -1,0 +1,113 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibcurl.so.4.6.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibcurl.so.4.6.0[0m
+
+   14334:	528003d7 	mov	w23, #0x1e                  	// #30
+   14338:	d00002a1 	adrp	x1, 6a000 <curl_global_sslset@@Base+0x24160>
+   1433c:	aa1303e0 	mov	x0, x19
+   14340:	f947c421 	ldr	x1, [x1, #3976]
+   14344:	f9400021 	ldr	x1, [x1]
+   14348:	d63f0020 	blr	x1
+   1434c:	17ffff99 	b	141b0 <curl_formfree@@Base+0x8c20>
+   14350:	aa1603e0 	mov	x0, x22
+   14354:	52800ba1 	mov	w1, #0x5d                  	// #93
+   14358:	97ffccb6 	bl	7630 <strchr@plt>
+   1435c:	aa0003f7 	mov	x23, x0
+   14360:	b4ffdc80 	cbz	x0, 13ef0 <curl_formfree@@Base+0x8960>
+   14364:	910006c1 	add	x1, x22, #0x1
+   14368:	aa1303e0 	mov	x0, x19
+   1436c:	cb0102e2 	sub	x2, x23, x1
+   14370:	17fffec7 	b	13e8c <curl_formfree@@Base+0x88fc>
+   14374:	aa1603e1 	mov	x1, x22
+   14378:	aa1303e0 	mov	x0, x19
+   1437c:	5280001b 	mov	w27, #0x0                   	// #0
+   14380:	5280001c 	mov	w28, #0x0                   	// #0
+[31m   14384:	97ffccfb 	bl	7770 <strcpy@plt>[0m
+   14388:	17fffedc 	b	13ef8 <curl_formfree@@Base+0x8968>
+   1438c:	910643e1 	add	x1, sp, #0x190
+--
+   3d94c:	b0000161 	adrp	x1, 6a000 <curl_global_sslset@@Base+0x24160>
+   3d950:	aa1303e0 	mov	x0, x19
+   3d954:	f947a821 	ldr	x1, [x1, #3920]
+   3d958:	f9400021 	ldr	x1, [x1]
+   3d95c:	d63f0020 	blr	x1
+   3d960:	f9001ae0 	str	x0, [x23, #48]
+   3d964:	b5fff6a0 	cbnz	x0, 3d838 <curl_easy_setopt@@Base+0x24a8>
+   3d968:	528000fa 	mov	w26, #0x7                   	// #7
+   3d96c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   3d970:	a94573fb 	ldp	x27, x28, [sp, #80]
+   3d974:	17ffff42 	b	3d67c <curl_easy_setopt@@Base+0x22ec>
+   3d978:	a94153f3 	ldp	x19, x20, [sp, #16]
+   3d97c:	17ffff3f 	b	3d678 <curl_easy_setopt@@Base+0x22e8>
+   3d980:	a94573fb 	ldp	x27, x28, [sp, #80]
+   3d984:	d503201f 	nop
+   3d988:	528000fa 	mov	w26, #0x7                   	// #7
+   3d98c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   3d990:	17ffff3b 	b	3d67c <curl_easy_setopt@@Base+0x22ec>
+   3d994:	91001661 	add	x1, x19, #0x5
+   3d998:	aa1403e0 	mov	x0, x20
+[31m   3d99c:	97ff2775 	bl	7770 <strcpy@plt>[0m
+   3d9a0:	b0000161 	adrp	x1, 6a000 <curl_global_sslset@@Base+0x24160>
+   3d9a4:	aa1c03e0 	mov	x0, x28
+--
+   3e73c:	b4001a99 	cbz	x25, 3ea8c <curl_url_set@@Base+0x50c>
+   3e740:	aa1903e0 	mov	x0, x25
+   3e744:	97ff2437 	bl	7820 <strlen@plt>
+   3e748:	aa0003fb 	mov	x27, x0
+   3e74c:	b4001a00 	cbz	x0, 3ea8c <curl_url_set@@Base+0x50c>
+   3e750:	8b000339 	add	x25, x25, x0
+   3e754:	aa1603e0 	mov	x0, x22
+   3e758:	97ff2432 	bl	7820 <strlen@plt>
+   3e75c:	90000161 	adrp	x1, 6a000 <curl_global_sslset@@Base+0x24160>
+   3e760:	385ff339 	ldurb	w25, [x25, #-1]
+   3e764:	f947b421 	ldr	x1, [x1, #3944]
+   3e768:	71009b3f 	cmp	w25, #0x26
+   3e76c:	9a9b0777 	cinc	x23, x27, ne  // ne = any
+   3e770:	910006e2 	add	x2, x23, #0x1
+   3e774:	f9400021 	ldr	x1, [x1]
+   3e778:	8b000040 	add	x0, x2, x0
+   3e77c:	d63f0020 	blr	x1
+   3e780:	aa0003f5 	mov	x21, x0
+   3e784:	b4003cc0 	cbz	x0, 3ef1c <curl_url_set@@Base+0x99c>
+   3e788:	f9402261 	ldr	x1, [x19, #64]
+[31m   3e78c:	97ff23f9 	bl	7770 <strcpy@plt>[0m
+   3e790:	71009b3f 	cmp	w25, #0x26
+   3e794:	54000060 	b.eq	3e7a0 <curl_url_set@@Base+0x220>  // b.none
+   3e798:	528004c0 	mov	w0, #0x26                  	// #38
+   3e79c:	383b6aa0 	strb	w0, [x21, x27]
+   3e7a0:	8b1702a0 	add	x0, x21, x23
+   3e7a4:	aa1603e1 	mov	x1, x22
+[31m   3e7a8:	97ff23f2 	bl	7770 <strcpy@plt>[0m
+   3e7ac:	52800019 	mov	w25, #0x0                   	// #0
+   3e7b0:	f947c75a 	ldr	x26, [x26, #3976]
+--
+   44274:	aa1603e0 	mov	x0, x22
+   44278:	aa1c03e5 	mov	x5, x28
+   4427c:	d0000042 	adrp	x2, 4e000 <curl_global_sslset@@Base+0x8160>
+   44280:	91254042 	add	x2, x2, #0x950
+   44284:	97ff0c6f 	bl	7440 <curl_msnprintf@plt>
+   44288:	8b20c2d6 	add	x22, x22, w0, sxtw
+   4428c:	f8408e9b 	ldr	x27, [x20, #8]!
+   44290:	b500041b 	cbnz	x27, 44310 <curl_url_set@@Base+0x5d90>
+   44294:	91092263 	add	x3, x19, #0x248
+   44298:	cb0302c3 	sub	x3, x22, x3
+   4429c:	91092260 	add	x0, x19, #0x248
+   442a0:	a94573fb 	ldp	x27, x28, [sp, #80]
+   442a4:	f9006803 	str	x3, [x0, #208]
+   442a8:	d2800014 	mov	x20, #0x0                   	// #0
+   442ac:	b40000f7 	cbz	x23, 442c8 <curl_url_set@@Base+0x5d48>
+   442b0:	91092261 	add	x1, x19, #0x248
+   442b4:	f9406834 	ldr	x20, [x1, #208]
+   442b8:	eb17029f 	cmp	x20, x23
+   442bc:	540001e2 	b.cs	442f8 <curl_url_set@@Base+0x5d78>  // b.hs, b.nlast
+   442c0:	aa1803e0 	mov	x0, x24
+[31m   442c4:	97ff0d2b 	bl	7770 <strcpy@plt>[0m
+   442c8:	f9478ab5 	ldr	x21, [x21, #3856]
+   442cc:	f9409fe1 	ldr	x1, [sp, #312]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mlibcurl.so.4.6.0[0m
+

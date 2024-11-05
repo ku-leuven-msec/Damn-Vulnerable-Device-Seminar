@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mbaycom_ser_fdx.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m116) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mbaycom_ser_fdx.ko[0m
+
+ 1e4:	6b0002df 	cmp	w22, w0
+ 1e8:	540015c1 	b.ne	4a0 <baycom_ioctl+0x318>  // b.any
+ 1ec:	b9400282 	ldr	w2, [x20]
+ 1f0:	7100a45f 	cmp	w2, #0x29
+ 1f4:	540013c0 	b.eq	46c <baycom_ioctl+0x2e4>  // b.none
+ 1f8:	540005ec 	b.gt	2b4 <baycom_ioctl+0x12c>
+ 1fc:	7100085f 	cmp	w2, #0x2
+ 200:	52800060 	mov	w0, #0x3                   	// #3
+ 204:	54000440 	b.eq	28c <baycom_ioctl+0x104>  // b.none
+ 208:	7100a05f 	cmp	w2, #0x28
+ 20c:	54000a21 	b.ne	350 <baycom_ioctl+0x1c8>  // b.any
+ 210:	b9469b02 	ldr	w2, [x24, #1688]
+ 214:	5290a3e3 	mov	w3, #0x851f                	// #34079
+ 218:	72aa3d63 	movk	w3, #0x51eb, lsl #16
+ 21c:	91002293 	add	x19, x20, #0x8
+ 220:	aa1303e0 	mov	x0, x19
+ 224:	90000001 	adrp	x1, 0 <ser12_close>
+ 228:	91000021 	add	x1, x1, #0x0
+ 22c:	9ba37c42 	umull	x2, w2, w3
+ 230:	d365fc42 	lsr	x2, x2, #37
+[31m 234:	94000000 	bl	0 <sprintf>[0m
+ 238:	b946af00 	ldr	w0, [x24, #1708]
+ 23c:	7100001f 	cmp	w0, #0x0
+--
+  28:	aa1e03e0 	mov	x0, x30
+  2c:	9000001b 	adrp	x27, 0 <init_module>
+  30:	94000000 	bl	0 <_mcount>
+  34:	9000001a 	adrp	x26, 0 <init_module>
+  38:	f9428f21 	ldr	x1, [x25, #1304]
+  3c:	f90047e1 	str	x1, [sp, #136]
+  40:	d2800001 	mov	x1, #0x0                   	// #0
+  44:	91008277 	add	x23, x19, #0x20
+  48:	9100c276 	add	x22, x19, #0x30
+  4c:	9100037b 	add	x27, x27, #0x0
+  50:	9100035a 	add	x26, x26, #0x0
+  54:	d2800014 	mov	x20, #0x0                   	// #0
+  58:	5280003c 	mov	w28, #0x1                   	// #1
+  5c:	90000018 	adrp	x24, 0 <init_module>
+  60:	91000318 	add	x24, x24, #0x0
+  64:	9100e300 	add	x0, x24, #0x38
+  68:	94000000 	bl	0 <printk>
+  6c:	2a1403e2 	mov	w2, w20
+  70:	aa1b03e1 	mov	x1, x27
+  74:	9101e3e0 	add	x0, sp, #0x78
+[31m  78:	94000000 	bl	0 <sprintf>[0m
+  7c:	f9400260 	ldr	x0, [x19]
+  80:	2a1403e7 	mov	w7, w20
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mbaycom_ser_fdx.ko[0m
+

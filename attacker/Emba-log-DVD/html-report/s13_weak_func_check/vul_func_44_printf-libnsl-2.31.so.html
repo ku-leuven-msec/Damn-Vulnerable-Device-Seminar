@@ -1,0 +1,919 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libnsl-2.31.so</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="green">Full RELRO   </span>   <span class="red">No canary found</span>   <span class="green">NX enabled </span>   <span class="orange">DSO          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="green">No Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">printf</span> tear down of </span><span class="orange">libnsl-2.31.so</span></pre>
+<br />
+<pre>    76f8:	94000cb2 	bl	a9c0 &lt;nis_list&commat;GLIBC_2.17&gt;</pre>
+<pre>    76fc:	aa0003f4 	mov	x20, x0</pre>
+<pre>    7700:	b4000480 	cbz	x0, 7790 &lt;nis_local_host&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>    7704:	b9400001 	ldr	w1, [x0]</pre>
+<pre>    7708:	35000421 	cbnz	w1, 778c &lt;nis_local_host&commat;GLIBC_2.17+0x1ec&gt;</pre>
+<pre>    770c:	b9400800 	ldr	w0, [x0, #8]</pre>
+<pre>    7710:	7100041f 	cmp	w0, #0x1</pre>
+<pre>    7714:	540001e9 	b.ls	7750 &lt;nis_local_host&commat;GLIBC_2.17+0x1b0&gt;  // b.plast</pre>
+<pre>    7718:	b00000e0 	adrp	x0, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    771c:	90000041 	adrp	x1, f000 &lt;__nis_default_access&commat;GLIBC_2.17+0x650&gt;</pre>
+<pre>    7720:	913be021 	add	x1, x1, #0xef8</pre>
+<pre>    7724:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7728:	f947e800 	ldr	x0, [x0, #4048]</pre>
+<pre>    772c:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    7730:	97fff4d0 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7734:	aa0003f5 	mov	x21, x0</pre>
+<pre>    7738:	97ffff42 	bl	7440 &lt;nis_local_directory&commat;GLIBC_2.17&gt;</pre>
+<pre>    773c:	aa0003e2 	mov	x2, x0</pre>
+<pre>    7740:	2a1303e1 	mov	w1, w19</pre>
+<pre>    7744:	aa1503e0 	mov	x0, x21</pre>
+<pre><span class="red">    7748:	97fff4d6 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    774c:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    7750:	d00000f3 	adrp	x19, 25000 &lt;nis_clone_result&commat;GLIBC_2.17+0x156f0&gt;</pre>
+<pre>--</pre>
+<pre>    7d98:	d503201f 	nop</pre>
+<pre>    7d9c:	d503201f 	nop</pre>
+<br />
+<pre>0000000000007da0 &lt;nis_print_directory&commat;GLIBC_2.17&gt;:</pre>
+<pre>    7da0:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!</pre>
+<pre>    7da4:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7da8:	b0000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7dac:	910003fd 	mov	x29, sp</pre>
+<pre>    7db0:	a90363f7 	stp	x23, x24, [sp, #48]</pre>
+<pre>    7db4:	b00000f8 	adrp	x24, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    7db8:	91006021 	add	x1, x1, #0x18</pre>
+<pre>    7dbc:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    7dc0:	f947eb13 	ldr	x19, [x24, #4048]</pre>
+<pre>    7dc4:	a9046bf9 	stp	x25, x26, [sp, #64]</pre>
+<pre>    7dc8:	aa0003f9 	mov	x25, x0</pre>
+<pre>    7dcc:	aa1303e0 	mov	x0, x19</pre>
+<pre>    7dd0:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>    7dd4:	97fff327 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7dd8:	f9400321 	ldr	x1, [x25]</pre>
+<pre>    7ddc:	b00000f6 	adrp	x22, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre><span class="red">    7de0:	97fff330 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7de4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    7de8:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7dec:	b0000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7df0:	9100a021 	add	x1, x1, #0x28</pre>
+<pre>    7df4:	97fff31f 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7df8:	aa0003e2 	mov	x2, x0</pre>
+<pre>    7dfc:	b9400b20 	ldr	w0, [x25, #8]</pre>
+<pre>    7e00:	97ffff4c 	bl	7b30 &lt;nis_write_obj&commat;GLIBC_2.17+0x10&gt;</pre>
+<pre>    7e04:	aa0003e1 	mov	x1, x0</pre>
+<pre>    7e08:	aa0203e0 	mov	x0, x2</pre>
+<pre><span class="red">    7e0c:	97fff325 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7e10:	b9401320 	ldr	w0, [x25, #16]</pre>
+<pre>    7e14:	f9400f33 	ldr	x19, [x25, #24]</pre>
+<pre>--</pre>
+<pre>    7e1c:	b000005a 	adrp	x26, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7e20:	9104a35a 	add	x26, x26, #0x128</pre>
+<pre>    7e24:	52800017 	mov	w23, #0x0                   	// #0</pre>
+<pre>    7e28:	b00000f6 	adrp	x22, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    7e2c:	a90573fb 	stp	x27, x28, [sp, #80]</pre>
+<pre>    7e30:	1400002d 	b	7ee4 &lt;nis_print_directory&commat;GLIBC_2.17+0x144&gt;</pre>
+<pre>    7e34:	b0000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7e38:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7e3c:	9100e021 	add	x1, x1, #0x38</pre>
+<pre>    7e40:	97fff30c 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7e44:	f947f2c1 	ldr	x1, [x22, #4064]</pre>
+<pre>    7e48:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    7e4c:	97fff1ad 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    7e50:	f947eb15 	ldr	x21, [x24, #4048]</pre>
+<pre>    7e54:	b0000040 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7e58:	91018001 	add	x1, x0, #0x60</pre>
+<pre>    7e5c:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7e60:	aa1503e0 	mov	x0, x21</pre>
+<pre>    7e64:	97fff303 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7e68:	f9400261 	ldr	x1, [x19]</pre>
+<pre><span class="red">    7e6c:	97fff30d 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7e70:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7e74:	aa1503e0 	mov	x0, x21</pre>
+<pre>    7e78:	b0000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7e7c:	9101e021 	add	x1, x1, #0x78</pre>
+<pre>    7e80:	97fff2fc 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7e84:	f947f2d4 	ldr	x20, [x22, #4064]</pre>
+<pre>    7e88:	f9400281 	ldr	x1, [x20]</pre>
+<pre>    7e8c:	97fff19d 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    7e90:	b9401a60 	ldr	w0, [x19, #24]</pre>
+<pre>    7e94:	7100081f 	cmp	w0, #0x2</pre>
+<pre>    7e98:	54000b40 	b.eq	8000 &lt;nis_print_directory&commat;GLIBC_2.17+0x260&gt;  // b.none</pre>
+<pre>    7e9c:	54000388 	b.hi	7f0c &lt;nis_print_directory&commat;GLIBC_2.17+0x16c&gt;  // b.pmore</pre>
+<pre>    7ea0:	34000d00 	cbz	w0, 8040 &lt;nis_print_directory&commat;GLIBC_2.17+0x2a0&gt;</pre>
+<pre>    7ea4:	b0000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7ea8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    7eac:	91024021 	add	x1, x1, #0x90</pre>
+<pre>    7eb0:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7eb4:	97fff2ef 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7eb8:	b9402261 	ldr	w1, [x19, #32]</pre>
+<pre>    7ebc:	51000421 	sub	w1, w1, #0x1</pre>
+<pre>    7ec0:	531e7421 	lsl	w1, w1, #2</pre>
+<pre><span class="red">    7ec4:	97fff2f7 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7ec8:	b9400a60 	ldr	w0, [x19, #8]</pre>
+<pre>    7ecc:	35000360 	cbnz	w0, 7f38 &lt;nis_print_directory&commat;GLIBC_2.17+0x198&gt;</pre>
+<pre>--</pre>
+<pre>    7f04:	97fff17f 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    7f08:	17ffffd2 	b	7e50 &lt;nis_print_directory&commat;GLIBC_2.17+0xb0&gt;</pre>
+<pre>    7f0c:	71000c1f 	cmp	w0, #0x3</pre>
+<pre>    7f10:	54000821 	b.ne	8014 &lt;nis_print_directory&commat;GLIBC_2.17+0x274&gt;  // b.any</pre>
+<pre>    7f14:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7f18:	aa1503e0 	mov	x0, x21</pre>
+<pre>    7f1c:	b0000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7f20:	91030021 	add	x1, x1, #0xc0</pre>
+<pre>    7f24:	97fff2d3 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7f28:	f9400281 	ldr	x1, [x20]</pre>
+<pre>    7f2c:	97fff175 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    7f30:	b9400a60 	ldr	w0, [x19, #8]</pre>
+<pre>    7f34:	34fffce0 	cbz	w0, 7ed0 &lt;nis_print_directory&commat;GLIBC_2.17+0x130&gt;</pre>
+<pre>    7f38:	f947eb00 	ldr	x0, [x24, #4048]</pre>
+<pre>    7f3c:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    7f40:	b0000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7f44:	9103c021 	add	x1, x1, #0xf0</pre>
+<pre>    7f48:	f9400a74 	ldr	x20, [x19, #16]</pre>
+<pre>    7f4c:	97fff2c9 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    7f50:	b9400a61 	ldr	w1, [x19, #8]</pre>
+<pre><span class="red">    7f54:	97fff2d3 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7f58:	b9400a60 	ldr	w0, [x19, #8]</pre>
+<pre>    7f5c:	34fffba0 	cbz	w0, 7ed0 &lt;nis_print_directory&commat;GLIBC_2.17+0x130&gt;</pre>
+<pre>    7f60:	b000005b 	adrp	x27, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7f64:	9104437b 	add	x27, x27, #0x110</pre>
+<pre>    7f68:	b000005c 	adrp	x28, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7f6c:	9104839c 	add	x28, x28, #0x120</pre>
+<pre>    7f70:	52800015 	mov	w21, #0x0                   	// #0</pre>
+<pre>    7f74:	14000018 	b	7fd4 &lt;nis_print_directory&commat;GLIBC_2.17+0x234&gt;</pre>
+<pre>    7f78:	aa1a03e0 	mov	x0, x26</pre>
+<pre><span class="red">    7f7c:	97fff2c9 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7f80:	f9400681 	ldr	x1, [x20, #8]</pre>
+<pre>    7f84:	b4000061 	cbz	x1, 7f90 &lt;nis_print_directory&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>    7f88:	39400020 	ldrb	w0, [x1]</pre>
+<pre>    7f8c:	350006e0 	cbnz	w0, 8068 &lt;nis_print_directory&commat;GLIBC_2.17+0x2c8&gt;</pre>
+<pre>    7f90:	aa1a03e0 	mov	x0, x26</pre>
+<pre><span class="red">    7f94:	97fff2c3 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7f98:	f9400280 	ldr	x0, [x20]</pre>
+<pre>    7f9c:	b4000060 	cbz	x0, 7fa8 &lt;nis_print_directory&commat;GLIBC_2.17+0x208&gt;</pre>
+<pre>    7fa0:	39400001 	ldrb	w1, [x0]</pre>
+<pre>    7fa4:	350005e1 	cbnz	w1, 8060 &lt;nis_print_directory&commat;GLIBC_2.17+0x2c0&gt;</pre>
+<pre>    7fa8:	f947f2c3 	ldr	x3, [x22, #4064]</pre>
+<pre>    7fac:	b0000040 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    7fb0:	d2800042 	mov	x2, #0x2                   	// #2</pre>
+<pre>    7fb4:	9104c000 	add	x0, x0, #0x130</pre>
+<pre>    7fb8:	d2800021 	mov	x1, #0x1                   	// #1</pre>
+<pre>    7fbc:	f9400063 	ldr	x3, [x3]</pre>
+<pre>    7fc0:	97fff278 	bl	49a0 &lt;fwrite&commat;plt&gt;</pre>
+<pre>    7fc4:	b9400a60 	ldr	w0, [x19, #8]</pre>
+<pre>    7fc8:	91006294 	add	x20, x20, #0x18</pre>
+<pre>    7fcc:	6b0002bf 	cmp	w21, w0</pre>
+<pre>    7fd0:	54fff802 	b.cs	7ed0 &lt;nis_print_directory&commat;GLIBC_2.17+0x130&gt;  // b.hs, b.nlast</pre>
+<pre>    7fd4:	110006b5 	add	w21, w21, #0x1</pre>
+<pre>    7fd8:	aa1b03e0 	mov	x0, x27</pre>
+<pre>    7fdc:	2a1503e1 	mov	w1, w21</pre>
+<pre><span class="red">    7fe0:	97fff2b0 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7fe4:	f9400a81 	ldr	x1, [x20, #16]</pre>
+<pre>    7fe8:	b4fffc81 	cbz	x1, 7f78 &lt;nis_print_directory&commat;GLIBC_2.17+0x1d8&gt;</pre>
+<pre>    7fec:	39400020 	ldrb	w0, [x1]</pre>
+<pre>    7ff0:	34fffc40 	cbz	w0, 7f78 &lt;nis_print_directory&commat;GLIBC_2.17+0x1d8&gt;</pre>
+<pre>    7ff4:	aa1c03e0 	mov	x0, x28</pre>
+<pre><span class="red">    7ff8:	97fff2aa 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    7ffc:	17ffffe1 	b	7f80 &lt;nis_print_directory&commat;GLIBC_2.17+0x1e0&gt;</pre>
+<pre>    8000:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8004:	aa1503e0 	mov	x0, x21</pre>
+<pre>    8008:	9102c021 	add	x1, x1, #0xb0</pre>
+<pre>    800c:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8010:	17ffffa9 	b	7eb4 &lt;nis_print_directory&commat;GLIBC_2.17+0x114&gt;</pre>
+<pre>    8014:	aa1503e0 	mov	x0, x21</pre>
+<pre>    8018:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    801c:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8020:	91034021 	add	x1, x1, #0xd0</pre>
+<pre>    8024:	97fff293 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8028:	b9402262 	ldr	w2, [x19, #32]</pre>
+<pre>    802c:	b9401a61 	ldr	w1, [x19, #24]</pre>
+<pre>    8030:	51000442 	sub	w2, w2, #0x1</pre>
+<pre>    8034:	531e7442 	lsl	w2, w2, #2</pre>
+<pre><span class="red">    8038:	97fff29a 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    803c:	17ffffa3 	b	7ec8 &lt;nis_print_directory&commat;GLIBC_2.17+0x128&gt;</pre>
+<pre>    8040:	aa1503e0 	mov	x0, x21</pre>
+<pre>    8044:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8048:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    804c:	91022021 	add	x1, x1, #0x88</pre>
+<pre>    8050:	97fff288 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8054:	f9400281 	ldr	x1, [x20]</pre>
+<pre>    8058:	97fff12a 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    805c:	17ffff9b 	b	7ec8 &lt;nis_print_directory&commat;GLIBC_2.17+0x128&gt;</pre>
+<pre>    8060:	97fff1fc 	bl	4850 &lt;puts&commat;plt&gt;</pre>
+<pre>    8064:	17ffffd8 	b	7fc4 &lt;nis_print_directory&commat;GLIBC_2.17+0x224&gt;</pre>
+<pre>    8068:	aa1c03e0 	mov	x0, x28</pre>
+<pre><span class="red">    806c:	97fff28d 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8070:	17ffffca 	b	7f98 &lt;nis_print_directory&commat;GLIBC_2.17+0x1f8&gt;</pre>
+<pre>    8074:	a94573fb 	ldp	x27, x28, [sp, #80]</pre>
+<pre>--</pre>
+<pre>    808c:	97fff279 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8090:	f947f2d6 	ldr	x22, [x22, #4064]</pre>
+<pre>    8094:	f94002c1 	ldr	x1, [x22]</pre>
+<pre>    8098:	97fff11a 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    809c:	b9402324 	ldr	w4, [x25, #32]</pre>
+<pre>    80a0:	529678a1 	mov	w1, #0xb3c5                	// #46021</pre>
+<pre>    80a4:	72b23441 	movk	w1, #0x91a2, lsl #16</pre>
+<pre>    80a8:	5281c206 	mov	w6, #0xe10                 	// #3600</pre>
+<pre>    80ac:	52911122 	mov	w2, #0x8889                	// #34953</pre>
+<pre>    80b0:	72b11102 	movk	w2, #0x8888, lsl #16</pre>
+<pre>    80b4:	52800785 	mov	w5, #0x3c                  	// #60</pre>
+<pre>    80b8:	90000040 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    80bc:	91052000 	add	x0, x0, #0x148</pre>
+<pre>    80c0:	9ba17c81 	umull	x1, w4, w1</pre>
+<pre>    80c4:	d36bfc23 	lsr	x3, x1, #43</pre>
+<pre>    80c8:	aa0303e1 	mov	x1, x3</pre>
+<pre>    80cc:	1b069063 	msub	w3, w3, w6, w4</pre>
+<pre>    80d0:	9ba27c62 	umull	x2, w3, w2</pre>
+<pre>    80d4:	d365fc42 	lsr	x2, x2, #37</pre>
+<pre>    80d8:	1b058c43 	msub	w3, w2, w5, w3</pre>
+<pre><span class="red">    80dc:	97fff271 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    80e0:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    80e4:	aa1803e0 	mov	x0, x24</pre>
+<pre>--</pre>
+<pre>    8100:	34000460 	cbz	w0, 818c &lt;nis_print_directory&commat;GLIBC_2.17+0x3ec&gt;</pre>
+<pre>    8104:	f9401b33 	ldr	x19, [x25, #48]</pre>
+<pre>    8108:	90000057 	adrp	x23, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    810c:	90000055 	adrp	x21, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8110:	9105e2f7 	add	x23, x23, #0x178</pre>
+<pre>    8114:	910642b5 	add	x21, x21, #0x190</pre>
+<pre>    8118:	52800014 	mov	w20, #0x0                   	// #0</pre>
+<pre>    811c:	d503201f 	nop</pre>
+<pre>    8120:	b9400260 	ldr	w0, [x19]</pre>
+<pre>    8124:	11000694 	add	w20, w20, #0x1</pre>
+<pre>    8128:	97fffefa 	bl	7d10 &lt;nis_print_rights&commat;GLIBC_2.17&gt;</pre>
+<pre>    812c:	aa1703e1 	mov	x1, x23</pre>
+<pre>    8130:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8134:	aa1803e0 	mov	x0, x24</pre>
+<pre>    8138:	97fff24e 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    813c:	aa0003e2 	mov	x2, x0</pre>
+<pre>    8140:	b9400660 	ldr	w0, [x19, #4]</pre>
+<pre>    8144:	97fffe7b 	bl	7b30 &lt;nis_write_obj&commat;GLIBC_2.17+0x10&gt;</pre>
+<pre>    8148:	aa0003e1 	mov	x1, x0</pre>
+<pre>    814c:	aa0203e0 	mov	x0, x2</pre>
+<pre><span class="red">    8150:	97fff254 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8154:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8158:	aa1503e1 	mov	x1, x21</pre>
+<pre>--</pre>
+<pre>    81e8:	97fff0c6 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    81ec:	b9400281 	ldr	w1, [x20]</pre>
+<pre>    81f0:	35000341 	cbnz	w1, 8258 &lt;nis_print_group&commat;GLIBC_2.17+0xa8&gt;</pre>
+<pre>    81f4:	f947eaa0 	ldr	x0, [x21, #4048]</pre>
+<pre>    81f8:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    81fc:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8200:	91070021 	add	x1, x1, #0x1c0</pre>
+<pre>    8204:	97fff21b 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8208:	f947f273 	ldr	x19, [x19, #4064]</pre>
+<pre>    820c:	f9400261 	ldr	x1, [x19]</pre>
+<pre>    8210:	97fff0bc 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    8214:	b9400a80 	ldr	w0, [x20, #8]</pre>
+<pre>    8218:	34000180 	cbz	w0, 8248 &lt;nis_print_group&commat;GLIBC_2.17+0x98&gt;</pre>
+<pre>    821c:	90000055 	adrp	x21, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8220:	910762b5 	add	x21, x21, #0x1d8</pre>
+<pre>    8224:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>    8228:	f9400a81 	ldr	x1, [x20, #16]</pre>
+<pre>    822c:	aa1503e0 	mov	x0, x21</pre>
+<pre>    8230:	f8735821 	ldr	x1, [x1, w19, uxtw #3]</pre>
+<pre>    8234:	11000673 	add	w19, w19, #0x1</pre>
+<pre><span class="red">    8238:	97fff21a 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    823c:	b9400a80 	ldr	w0, [x20, #8]</pre>
+<pre>    8240:	6b13001f 	cmp	w0, w19</pre>
+<pre>    8244:	54ffff28 	b.hi	8228 &lt;nis_print_group&commat;GLIBC_2.17+0x78&gt;  // b.pmore</pre>
+<pre>    8248:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    824c:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    8250:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    8254:	d65f03c0 	ret</pre>
+<pre>    8258:	90000040 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    825c:	9106e000 	add	x0, x0, #0x1b8</pre>
+<pre><span class="red">    8260:	97fff210 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8264:	17ffffe4 	b	81f4 &lt;nis_print_group&commat;GLIBC_2.17+0x44&gt;</pre>
+<pre>    8268:	d503201f 	nop</pre>
+<pre>    826c:	d503201f 	nop</pre>
+<br />
+<pre>0000000000008270 &lt;nis_print_table&commat;GLIBC_2.17&gt;:</pre>
+<pre>    8270:	a9b97bfd 	stp	x29, x30, [sp, #-112]!</pre>
+<pre>    8274:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8278:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    827c:	910003fd 	mov	x29, sp</pre>
+<pre>    8280:	a9046bf9 	stp	x25, x26, [sp, #64]</pre>
+<pre>    8284:	900000f9 	adrp	x25, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    8288:	91078021 	add	x1, x1, #0x1e0</pre>
+<pre>    828c:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    8290:	f947eb33 	ldr	x19, [x25, #4048]</pre>
+<pre>    8294:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>    8298:	aa0003f5 	mov	x21, x0</pre>
+<pre>    829c:	aa1303e0 	mov	x0, x19</pre>
+<pre>    82a0:	a90363f7 	stp	x23, x24, [sp, #48]</pre>
+<pre>    82a4:	97fff1f3 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    82a8:	f94002a1 	ldr	x1, [x21]</pre>
+<pre>    82ac:	900000f8 	adrp	x24, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre><span class="red">    82b0:	97fff1fc 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    82b4:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    82b8:	aa1303e0 	mov	x0, x19</pre>
+<pre>    82bc:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    82c0:	91080021 	add	x1, x1, #0x200</pre>
+<pre>    82c4:	97fff1eb 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    82c8:	b9400aa1 	ldr	w1, [x21, #8]</pre>
+<pre><span class="red">    82cc:	97fff1f5 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    82d0:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    82d4:	aa1303e0 	mov	x0, x19</pre>
+<pre>    82d8:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    82dc:	91088021 	add	x1, x1, #0x220</pre>
+<pre>    82e0:	97fff1e4 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    82e4:	394032a1 	ldrb	w1, [x21, #12]</pre>
+<pre><span class="red">    82e8:	97fff1ee 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    82ec:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    82f0:	aa1303e0 	mov	x0, x19</pre>
+<pre>    82f4:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    82f8:	91090021 	add	x1, x1, #0x240</pre>
+<pre>    82fc:	97fff1dd 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8300:	f94012a1 	ldr	x1, [x21, #32]</pre>
+<pre><span class="red">    8304:	97fff1e7 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8308:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    830c:	aa1303e0 	mov	x0, x19</pre>
+<pre>--</pre>
+<pre>    832c:	340008e0 	cbz	w0, 8448 &lt;nis_print_table&commat;GLIBC_2.17+0x1d8&gt;</pre>
+<pre>    8330:	9000005a 	adrp	x26, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8334:	9109e35a 	add	x26, x26, #0x278</pre>
+<pre>    8338:	90000040 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    833c:	910d2000 	add	x0, x0, #0x348</pre>
+<pre>    8340:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>    8344:	a90573fb 	stp	x27, x28, [sp, #80]</pre>
+<pre>    8348:	9000005c 	adrp	x28, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    834c:	9000005b 	adrp	x27, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8350:	f90037e0 	str	x0, [sp, #104]</pre>
+<pre>    8354:	d503201f 	nop</pre>
+<pre>    8358:	f947eb34 	ldr	x20, [x25, #4048]</pre>
+<pre>    835c:	aa1a03e1 	mov	x1, x26</pre>
+<pre>    8360:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8364:	d37c7e77 	ubfiz	x23, x19, #4, #32</pre>
+<pre>    8368:	aa1403e0 	mov	x0, x20</pre>
+<pre>    836c:	97fff1c1 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8370:	f9400ea2 	ldr	x2, [x21, #24]</pre>
+<pre>    8374:	2a1303e1 	mov	w1, w19</pre>
+<pre>    8378:	f8776842 	ldr	x2, [x2, x23]</pre>
+<pre><span class="red">    837c:	97fff1c9 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8380:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8384:	aa1403e0 	mov	x0, x20</pre>
+<pre>--</pre>
+<pre>    85a8:	f9400e61 	ldr	x1, [x19, #24]</pre>
+<pre>    85ac:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    85b0:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre><span class="red">    85b4:	17fff13b 	b	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    85b8:	d503201f 	nop</pre>
+<pre>    85bc:	d503201f 	nop</pre>
+<br />
+<pre>00000000000085c0 &lt;nis_print_entry&commat;GLIBC_2.17&gt;:</pre>
+<pre>    85c0:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!</pre>
+<pre>    85c4:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    85c8:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    85cc:	910003fd 	mov	x29, sp</pre>
+<pre>    85d0:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>    85d4:	900000f6 	adrp	x22, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    85d8:	910e0021 	add	x1, x1, #0x380</pre>
+<pre>    85dc:	a9046bf9 	stp	x25, x26, [sp, #64]</pre>
+<pre>    85e0:	aa0003fa 	mov	x26, x0</pre>
+<pre>    85e4:	f947eac0 	ldr	x0, [x22, #4048]</pre>
+<pre>    85e8:	97fff122 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    85ec:	f9400341 	ldr	x1, [x26]</pre>
+<pre><span class="red">    85f0:	97fff12c 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    85f4:	b9400b40 	ldr	w0, [x26, #8]</pre>
+<pre>    85f8:	34000700 	cbz	w0, 86d8 &lt;nis_print_entry&commat;GLIBC_2.17+0x118&gt;</pre>
+<pre>--</pre>
+<pre>    8638:	910f4000 	add	x0, x0, #0x3d0</pre>
+<pre>    863c:	d2800021 	mov	x1, #0x1                   	// #1</pre>
+<pre>    8640:	35000544 	cbnz	w4, 86e8 &lt;nis_print_entry&commat;GLIBC_2.17+0x128&gt;</pre>
+<pre>    8644:	f9400323 	ldr	x3, [x25]</pre>
+<pre>    8648:	97fff0d6 	bl	49a0 &lt;fwrite&commat;plt&gt;</pre>
+<pre>    864c:	b9400b40 	ldr	w0, [x26, #8]</pre>
+<pre>    8650:	11000694 	add	w20, w20, #0x1</pre>
+<pre>    8654:	6b14001f 	cmp	w0, w20</pre>
+<pre>    8658:	540003a9 	b.ls	86cc &lt;nis_print_entry&commat;GLIBC_2.17+0x10c&gt;  // b.plast</pre>
+<pre>    865c:	f947eadb 	ldr	x27, [x22, #4048]</pre>
+<pre>    8660:	aa1503e1 	mov	x1, x21</pre>
+<pre>    8664:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8668:	52800313 	mov	w19, #0x18                  	// #24</pre>
+<pre>    866c:	aa1b03e0 	mov	x0, x27</pre>
+<pre>    8670:	97fff100 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8674:	f9400b42 	ldr	x2, [x26, #16]</pre>
+<pre>    8678:	9bb37e93 	umull	x19, w20, w19</pre>
+<pre>    867c:	2a1403e1 	mov	w1, w20</pre>
+<pre>    8680:	8b130042 	add	x2, x2, x19</pre>
+<pre>    8684:	b9400842 	ldr	w2, [x2, #8]</pre>
+<pre><span class="red">    8688:	97fff106 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    868c:	f9400b40 	ldr	x0, [x26, #16]</pre>
+<pre>    8690:	8b130003 	add	x3, x0, x19</pre>
+<pre>--</pre>
+<pre>    86a4:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    86a8:	910ec021 	add	x1, x1, #0x3b0</pre>
+<pre>    86ac:	97fff0f1 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    86b0:	11000694 	add	w20, w20, #0x1</pre>
+<pre>    86b4:	f947f2e1 	ldr	x1, [x23, #4064]</pre>
+<pre>    86b8:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    86bc:	97ffef91 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    86c0:	b9400b40 	ldr	w0, [x26, #8]</pre>
+<pre>    86c4:	6b14001f 	cmp	w0, w20</pre>
+<pre>    86c8:	54fffca8 	b.hi	865c &lt;nis_print_entry&commat;GLIBC_2.17+0x9c&gt;  // b.pmore</pre>
+<pre>    86cc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    86d0:	a94363f7 	ldp	x23, x24, [sp, #48]</pre>
+<pre>    86d4:	f9402bfb 	ldr	x27, [sp, #80]</pre>
+<pre>    86d8:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>    86dc:	a9446bf9 	ldp	x25, x26, [sp, #64]</pre>
+<pre>    86e0:	a8c67bfd 	ldp	x29, x30, [sp], #96</pre>
+<pre>    86e4:	d65f03c0 	ret</pre>
+<pre>    86e8:	f9400862 	ldr	x2, [x3, #16]</pre>
+<pre>    86ec:	2a0403e1 	mov	w1, w4</pre>
+<pre>    86f0:	aa1803e0 	mov	x0, x24</pre>
+<pre><span class="red">    86f4:	97fff0eb 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    86f8:	17ffffd5 	b	864c &lt;nis_print_entry&commat;GLIBC_2.17+0x8c&gt;</pre>
+<pre>    86fc:	aa1b03e0 	mov	x0, x27</pre>
+<pre>--</pre>
+<pre>    8718:	97ffef7a 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    871c:	17ffffcc 	b	864c &lt;nis_print_entry&commat;GLIBC_2.17+0x8c&gt;</pre>
+<br />
+<pre>0000000000008720 &lt;nis_print_object&commat;GLIBC_2.17&gt;:</pre>
+<pre>    8720:	a9bb7bfd 	stp	x29, x30, [sp, #-80]!</pre>
+<pre>    8724:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8728:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    872c:	910003fd 	mov	x29, sp</pre>
+<pre>    8730:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    8734:	900000f4 	adrp	x20, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    8738:	aa0003f3 	mov	x19, x0</pre>
+<pre>    873c:	f947ea94 	ldr	x20, [x20, #4048]</pre>
+<pre>    8740:	910fa021 	add	x1, x1, #0x3e8</pre>
+<pre>    8744:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>    8748:	900000f5 	adrp	x21, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    874c:	aa1403e0 	mov	x0, x20</pre>
+<pre>    8750:	f9001bf7 	str	x23, [sp, #48]</pre>
+<pre>    8754:	97fff0c7 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8758:	f9400661 	ldr	x1, [x19, #8]</pre>
+<pre>    875c:	910123f6 	add	x22, sp, #0x48</pre>
+<pre><span class="red">    8760:	97fff0d0 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8764:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8768:	aa1403e0 	mov	x0, x20</pre>
+<pre>    876c:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8770:	91100021 	add	x1, x1, #0x400</pre>
+<pre>    8774:	97fff0bf 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8778:	f9401261 	ldr	x1, [x19, #32]</pre>
+<pre><span class="red">    877c:	97fff0c9 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8780:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8784:	aa1403e0 	mov	x0, x20</pre>
+<pre>    8788:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    878c:	91106021 	add	x1, x1, #0x418</pre>
+<pre>    8790:	97fff0b8 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8794:	f9400a61 	ldr	x1, [x19, #16]</pre>
+<pre><span class="red">    8798:	97fff0c2 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    879c:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    87a0:	aa1403e0 	mov	x0, x20</pre>
+<pre>    87a4:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    87a8:	9110c021 	add	x1, x1, #0x430</pre>
+<pre>    87ac:	97fff0b1 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    87b0:	f9400e61 	ldr	x1, [x19, #24]</pre>
+<pre><span class="red">    87b4:	97fff0bb 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    87b8:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    87bc:	aa1403e0 	mov	x0, x20</pre>
+<pre>    87c0:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    87c4:	91112021 	add	x1, x1, #0x448</pre>
+<pre>    87c8:	97fff0aa 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    87cc:	f947f2b5 	ldr	x21, [x21, #4064]</pre>
+<pre>    87d0:	f94002a1 	ldr	x1, [x21]</pre>
+<pre>    87d4:	97ffef4b 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    87d8:	b9402a60 	ldr	w0, [x19, #40]</pre>
+<pre>    87dc:	97fffd4d 	bl	7d10 &lt;nis_print_rights&commat;GLIBC_2.17&gt;</pre>
+<pre>    87e0:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    87e4:	91118021 	add	x1, x1, #0x460</pre>
+<pre>    87e8:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    87ec:	aa1403e0 	mov	x0, x20</pre>
+<pre>    87f0:	97fff0a0 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre><span class="red">    87f4:	97fff0ab 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    87f8:	b9402e64 	ldr	w4, [x19, #44]</pre>
+<pre>    87fc:	529678a1 	mov	w1, #0xb3c5                	// #46021</pre>
+<pre>    8800:	72b23441 	movk	w1, #0x91a2, lsl #16</pre>
+<pre>    8804:	5281c206 	mov	w6, #0xe10                 	// #3600</pre>
+<pre>    8808:	52911122 	mov	w2, #0x8889                	// #34953</pre>
+<pre>    880c:	72b11102 	movk	w2, #0x8888, lsl #16</pre>
+<pre>    8810:	52800785 	mov	w5, #0x3c                  	// #60</pre>
+<pre>    8814:	90000040 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8818:	91052000 	add	x0, x0, #0x148</pre>
+<pre>    881c:	9ba17c81 	umull	x1, w4, w1</pre>
+<pre>    8820:	d36bfc23 	lsr	x3, x1, #43</pre>
+<pre>    8824:	aa0303e1 	mov	x1, x3</pre>
+<pre>    8828:	1b069063 	msub	w3, w3, w6, w4</pre>
+<pre>    882c:	9ba27c62 	umull	x2, w3, w2</pre>
+<pre>    8830:	d365fc42 	lsr	x2, x2, #37</pre>
+<pre>    8834:	1b058c43 	msub	w3, w2, w5, w3</pre>
+<pre><span class="red">    8838:	97fff09a 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    883c:	b9400263 	ldr	w3, [x19]</pre>
+<pre>    8840:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8844:	9111e021 	add	x1, x1, #0x478</pre>
+<pre>    8848:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    884c:	aa1403e0 	mov	x0, x20</pre>
+<pre>    8850:	f90027e3 	str	x3, [sp, #72]</pre>
+<pre>    8854:	97fff087 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8858:	aa0003f7 	mov	x23, x0</pre>
+<pre>    885c:	aa1603e0 	mov	x0, x22</pre>
+<pre>    8860:	97ffef68 	bl	4600 &lt;ctime&commat;plt&gt;</pre>
+<pre>    8864:	aa0003e1 	mov	x1, x0</pre>
+<pre>    8868:	aa1703e0 	mov	x0, x23</pre>
+<pre><span class="red">    886c:	97fff08d 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8870:	b9400663 	ldr	w3, [x19, #4]</pre>
+<pre>    8874:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8878:	91124021 	add	x1, x1, #0x490</pre>
+<pre>    887c:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8880:	aa1403e0 	mov	x0, x20</pre>
+<pre>    8884:	f90027e3 	str	x3, [sp, #72]</pre>
+<pre>    8888:	97fff07a 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    888c:	aa0003f7 	mov	x23, x0</pre>
+<pre>    8890:	aa1603e0 	mov	x0, x22</pre>
+<pre>    8894:	97ffef5b 	bl	4600 &lt;ctime&commat;plt&gt;</pre>
+<pre>    8898:	aa0003e1 	mov	x1, x0</pre>
+<pre>    889c:	aa1703e0 	mov	x0, x23</pre>
+<pre><span class="red">    88a0:	97fff080 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    88a4:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    88a8:	aa1403e0 	mov	x0, x20</pre>
+<pre>--</pre>
+<pre>    88dc:	54000540 	b.eq	8984 &lt;nis_print_object&commat;GLIBC_2.17+0x264&gt;  // b.none</pre>
+<pre>    88e0:	7100101f 	cmp	w0, #0x4</pre>
+<pre>    88e4:	54000301 	b.ne	8944 &lt;nis_print_object&commat;GLIBC_2.17+0x224&gt;  // b.any</pre>
+<pre>    88e8:	9100e260 	add	x0, x19, #0x38</pre>
+<pre>    88ec:	97fffe61 	bl	8270 &lt;nis_print_table&commat;GLIBC_2.17&gt;</pre>
+<pre>    88f0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    88f4:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>    88f8:	f9401bf7 	ldr	x23, [sp, #48]</pre>
+<pre>    88fc:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>    8900:	d65f03c0 	ret</pre>
+<pre>    8904:	7100181f 	cmp	w0, #0x6</pre>
+<pre>    8908:	540004c0 	b.eq	89a0 &lt;nis_print_object&commat;GLIBC_2.17+0x280&gt;  // b.none</pre>
+<pre>    890c:	71001c1f 	cmp	w0, #0x7</pre>
+<pre>    8910:	54ffff01 	b.ne	88f0 &lt;nis_print_object&commat;GLIBC_2.17+0x1d0&gt;  // b.any</pre>
+<pre>    8914:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8918:	aa1403e0 	mov	x0, x20</pre>
+<pre>    891c:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8920:	91130021 	add	x1, x1, #0x4c0</pre>
+<pre>    8924:	97fff053 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8928:	b9403a61 	ldr	w1, [x19, #56]</pre>
+<pre><span class="red">    892c:	97fff05d 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8930:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    8934:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>--</pre>
+<pre>    89bc:	d503201f 	nop</pre>
+<br />
+<pre>00000000000089c0 &lt;nis_print_result&commat;GLIBC_2.17&gt;:</pre>
+<pre>    89c0:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!</pre>
+<pre>    89c4:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    89c8:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    89cc:	910003fd 	mov	x29, sp</pre>
+<pre>    89d0:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>    89d4:	900000f5 	adrp	x21, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    89d8:	91136021 	add	x1, x1, #0x4d8</pre>
+<pre>    89dc:	f947eab5 	ldr	x21, [x21, #4048]</pre>
+<pre>    89e0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    89e4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    89e8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    89ec:	97fff021 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    89f0:	aa0003f3 	mov	x19, x0</pre>
+<pre>    89f4:	b9400280 	ldr	w0, [x20]</pre>
+<pre>    89f8:	94000032 	bl	8ac0 &lt;nis_sperrno&commat;GLIBC_2.17&gt;</pre>
+<pre>    89fc:	aa0003e1 	mov	x1, x0</pre>
+<pre>    8a00:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">    8a04:	97fff027 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8a08:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8a0c:	aa1503e0 	mov	x0, x21</pre>
+<pre>    8a10:	90000041 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8a14:	9113c021 	add	x1, x1, #0x4f0</pre>
+<pre>    8a18:	97fff016 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8a1c:	b9400a81 	ldr	w1, [x20, #8]</pre>
+<pre><span class="red">    8a20:	97fff020 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8a24:	b9400a80 	ldr	w0, [x20, #8]</pre>
+<pre>    8a28:	34000280 	cbz	w0, 8a78 &lt;nis_print_result&commat;GLIBC_2.17+0xb8&gt;</pre>
+<pre>    8a2c:	90000056 	adrp	x22, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    8a30:	911422d6 	add	x22, x22, #0x508</pre>
+<pre>    8a34:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>    8a38:	f9001bf7 	str	x23, [sp, #48]</pre>
+<pre>    8a3c:	52800e17 	mov	w23, #0x70                  	// #112</pre>
+<pre>    8a40:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    8a44:	aa1603e1 	mov	x1, x22</pre>
+<pre>    8a48:	aa1503e0 	mov	x0, x21</pre>
+<pre>    8a4c:	97fff009 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    8a50:	2a1303e1 	mov	w1, w19</pre>
+<pre><span class="red">    8a54:	97fff013 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    8a58:	f9400a80 	ldr	x0, [x20, #16]</pre>
+<pre>    8a5c:	9bb70260 	umaddl	x0, w19, w23, x0</pre>
+<pre>--</pre>
+<pre>    d82c:	912e2021 	add	x1, x1, #0xb88</pre>
+<pre>    d830:	97ffdc90 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    d834:	f9400a61 	ldr	x1, [x19, #16]</pre>
+<pre>    d838:	aa0003e3 	mov	x3, x0</pre>
+<pre>    d83c:	f90047a3 	str	x3, [x29, #136]</pre>
+<pre>    d840:	f9400427 	ldr	x7, [x1, #8]</pre>
+<pre>    d844:	f9401024 	ldr	x4, [x1, #32]</pre>
+<pre>    d848:	a90a13a7 	stp	x7, x4, [x29, #160]</pre>
+<pre>    d84c:	aa0403e0 	mov	x0, x4</pre>
+<pre>    d850:	97ffdb24 	bl	44e0 &lt;strlen&commat;plt&gt;</pre>
+<pre>    d854:	91002802 	add	x2, x0, #0xa</pre>
+<pre>    d858:	f94057a4 	ldr	x4, [x29, #168]</pre>
+<pre>    d85c:	910003e1 	mov	x1, sp</pre>
+<pre>    d860:	aa0403e0 	mov	x0, x4</pre>
+<pre>    d864:	9400010b 	bl	dc90 &lt;nis_domain_of_r&commat;GLIBC_2.17&gt;</pre>
+<pre>    d868:	aa0003e2 	mov	x2, x0</pre>
+<pre>    d86c:	f94047a3 	ldr	x3, [x29, #136]</pre>
+<pre>    d870:	f94053a7 	ldr	x7, [x29, #160]</pre>
+<pre>    d874:	aa0303e0 	mov	x0, x3</pre>
+<pre>    d878:	aa0703e1 	mov	x1, x7</pre>
+<pre><span class="red">    d87c:	97ffdc89 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    d880:	f94043a6 	ldr	x6, [x29, #128]</pre>
+<pre>    d884:	910000df 	mov	sp, x6</pre>
+<pre>    d888:	b4001c18 	cbz	x24, dc08 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x618&gt;</pre>
+<pre>    d88c:	f00000a0 	adrp	x0, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    d890:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    d894:	f0000001 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    d898:	912ea021 	add	x1, x1, #0xba8</pre>
+<pre>    d89c:	f90057a0 	str	x0, [x29, #168]</pre>
+<pre>    d8a0:	aa1903e0 	mov	x0, x25</pre>
+<pre>    d8a4:	97ffdc73 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    d8a8:	52800019 	mov	w25, #0x0                   	// #0</pre>
+<pre>    d8ac:	f00000a1 	adrp	x1, 24000 &lt;nis_clone_result&commat;GLIBC_2.17+0x146f0&gt;</pre>
+<pre>    d8b0:	f947f021 	ldr	x1, [x1, #4064]</pre>
+<pre>    d8b4:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    d8b8:	97ffdb12 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    d8bc:	f0000000 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    d8c0:	91076000 	add	x0, x0, #0x1d8</pre>
+<pre>    d8c4:	f90053a0 	str	x0, [x29, #160]</pre>
+<pre>    d8c8:	f94053a0 	ldr	x0, [x29, #160]</pre>
+<pre>    d8cc:	11000739 	add	w25, w25, #0x1</pre>
+<pre>    d8d0:	aa1c03e1 	mov	x1, x28</pre>
+<pre><span class="red">    d8d4:	97ffdc73 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    d8d8:	eb39431f 	cmp	x24, w25, uxtw</pre>
+<pre>    d8dc:	54ffff68 	b.hi	d8c8 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x2d8&gt;  // b.pmore</pre>
+<pre>    d8e0:	f9405ba0 	ldr	x0, [x29, #176]</pre>
+<pre>    d8e4:	f947e800 	ldr	x0, [x0, #4048]</pre>
+<pre>    d8e8:	b4001316 	cbz	x22, db48 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x558&gt;</pre>
+<pre>    d8ec:	f9404ba3 	ldr	x3, [x29, #144]</pre>
+<pre>    d8f0:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    d8f4:	f0000001 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    d8f8:	912f8021 	add	x1, x1, #0xbe0</pre>
+<pre>    d8fc:	9100087c 	add	x28, x3, #0x2</pre>
+<pre>    d900:	52800018 	mov	w24, #0x0                   	// #0</pre>
+<pre>    d904:	97ffdc5b 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    d908:	f94057a1 	ldr	x1, [x29, #168]</pre>
+<pre>    d90c:	f947f021 	ldr	x1, [x1, #4064]</pre>
+<pre>    d910:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    d914:	97ffdafb 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    d918:	f0000000 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    d91c:	91076019 	add	x25, x0, #0x1d8</pre>
+<pre>    d920:	11000718 	add	w24, w24, #0x1</pre>
+<pre>    d924:	aa1c03e1 	mov	x1, x28</pre>
+<pre>    d928:	aa1903e0 	mov	x0, x25</pre>
+<pre><span class="red">    d92c:	97ffdc5d 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    d930:	eb3842df 	cmp	x22, w24, uxtw</pre>
+<pre>    d934:	54ffff68 	b.hi	d920 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x330&gt;  // b.pmore</pre>
+<pre>    d938:	f9405ba0 	ldr	x0, [x29, #176]</pre>
+<pre>    d93c:	f947e800 	ldr	x0, [x0, #4048]</pre>
+<pre>    d940:	b4000f37 	cbz	x23, db24 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x534&gt;</pre>
+<pre>    d944:	f9404fa3 	ldr	x3, [x29, #152]</pre>
+<pre>    d948:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    d94c:	f0000001 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    d950:	91306021 	add	x1, x1, #0xc18</pre>
+<pre>    d954:	9100047c 	add	x28, x3, #0x1</pre>
+<pre>    d958:	52800018 	mov	w24, #0x0                   	// #0</pre>
+<pre>    d95c:	97ffdc45 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    d960:	f94057a1 	ldr	x1, [x29, #168]</pre>
+<pre>    d964:	f947f021 	ldr	x1, [x1, #4064]</pre>
+<pre>    d968:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    d96c:	97ffdae5 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    d970:	f0000000 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    d974:	91076016 	add	x22, x0, #0x1d8</pre>
+<pre>    d978:	11000718 	add	w24, w24, #0x1</pre>
+<pre>    d97c:	aa1c03e1 	mov	x1, x28</pre>
+<pre>    d980:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">    d984:	97ffdc47 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    d988:	eb3842ff 	cmp	x23, w24, uxtw</pre>
+<pre>    d98c:	54ffff68 	b.hi	d978 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x388&gt;  // b.pmore</pre>
+<pre>    d990:	f9405ba0 	ldr	x0, [x29, #176]</pre>
+<pre>    d994:	f947e800 	ldr	x0, [x0, #4048]</pre>
+<pre>    d998:	b4000b5b 	cbz	x27, db00 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x510&gt;</pre>
+<pre>    d99c:	f94037a3 	ldr	x3, [x29, #104]</pre>
+<pre>    d9a0:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    d9a4:	f0000001 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    d9a8:	91314021 	add	x1, x1, #0xc50</pre>
+<pre>    d9ac:	91000477 	add	x23, x3, #0x1</pre>
+<pre>    d9b0:	52800018 	mov	w24, #0x0                   	// #0</pre>
+<pre>    d9b4:	97ffdc2f 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    d9b8:	f94057a1 	ldr	x1, [x29, #168]</pre>
+<pre>    d9bc:	f947f021 	ldr	x1, [x1, #4064]</pre>
+<pre>    d9c0:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    d9c4:	97ffdacf 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    d9c8:	f0000000 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    d9cc:	91076016 	add	x22, x0, #0x1d8</pre>
+<pre>    d9d0:	11000718 	add	w24, w24, #0x1</pre>
+<pre>    d9d4:	aa1703e1 	mov	x1, x23</pre>
+<pre>    d9d8:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">    d9dc:	97ffdc31 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    d9e0:	eb38437f 	cmp	x27, w24, uxtw</pre>
+<pre>    d9e4:	54ffff68 	b.hi	d9d0 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x3e0&gt;  // b.pmore</pre>
+<pre>    d9e8:	f9405fa0 	ldr	x0, [x29, #184]</pre>
+<pre>    d9ec:	b4000740 	cbz	x0, dad4 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x4e4&gt;</pre>
+<pre>    d9f0:	f9405ba0 	ldr	x0, [x29, #176]</pre>
+<pre>    d9f4:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    d9f8:	f9403ba3 	ldr	x3, [x29, #112]</pre>
+<pre>    d9fc:	f0000001 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    da00:	f947e800 	ldr	x0, [x0, #4048]</pre>
+<pre>    da04:	91324021 	add	x1, x1, #0xc90</pre>
+<pre>    da08:	91000c77 	add	x23, x3, #0x3</pre>
+<pre>    da0c:	52800018 	mov	w24, #0x0                   	// #0</pre>
+<pre>    da10:	97ffdc18 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    da14:	f94057a1 	ldr	x1, [x29, #168]</pre>
+<pre>    da18:	f947f021 	ldr	x1, [x1, #4064]</pre>
+<pre>    da1c:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    da20:	97ffdab8 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    da24:	f0000000 	adrp	x0, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    da28:	91076016 	add	x22, x0, #0x1d8</pre>
+<pre>    da2c:	d503201f 	nop</pre>
+<pre>    da30:	aa1703e1 	mov	x1, x23</pre>
+<pre>    da34:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">    da38:	97ffdc1a 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    da3c:	11000718 	add	w24, w24, #0x1</pre>
+<pre>    da40:	f9405fa0 	ldr	x0, [x29, #184]</pre>
+<pre>    da44:	eb38401f 	cmp	x0, w24, uxtw</pre>
+<pre>    da48:	54ffff48 	b.hi	da30 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x440&gt;  // b.pmore</pre>
+<pre>    da4c:	f9405ba0 	ldr	x0, [x29, #176]</pre>
+<pre>    da50:	f947e800 	ldr	x0, [x0, #4048]</pre>
+<pre>    da54:	b40002fa 	cbz	x26, dab0 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x4c0&gt;</pre>
+<pre>    da58:	f9403fa3 	ldr	x3, [x29, #120]</pre>
+<pre>    da5c:	f0000001 	adrp	x1, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    da60:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>    da64:	91334021 	add	x1, x1, #0xcd0</pre>
+<pre>    da68:	91000877 	add	x23, x3, #0x2</pre>
+<pre>    da6c:	f0000016 	adrp	x22, 10000 &lt;nis_clone_result&commat;GLIBC_2.17+0x6f0&gt;</pre>
+<pre>    da70:	9133c2d6 	add	x22, x22, #0xcf0</pre>
+<pre>    da74:	97ffdbff 	bl	4a70 &lt;__dcgettext&commat;plt&gt;</pre>
+<pre>    da78:	f94057a1 	ldr	x1, [x29, #168]</pre>
+<pre>    da7c:	f947f021 	ldr	x1, [x1, #4064]</pre>
+<pre>    da80:	f9400021 	ldr	x1, [x1]</pre>
+<pre>    da84:	97ffda9f 	bl	4500 &lt;fputs&commat;plt&gt;</pre>
+<pre>    da88:	11000694 	add	w20, w20, #0x1</pre>
+<pre>    da8c:	aa1703e1 	mov	x1, x23</pre>
+<pre>    da90:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">    da94:	97ffdc03 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    da98:	eb34435f 	cmp	x26, w20, uxtw</pre>
+<pre>    da9c:	54ffff68 	b.hi	da88 &lt;nis_print_group_entry&commat;GLIBC_2.17+0x498&gt;  // b.pmore</pre>
+<pre>--</pre>
+<pre>    dbac:	f9400a61 	ldr	x1, [x19, #16]</pre>
+<pre>    dbb0:	aa0003f8 	mov	x24, x0</pre>
+<pre>    dbb4:	f9005fbf 	str	xzr, [x29, #184]</pre>
+<pre>    dbb8:	d2800017 	mov	x23, #0x0                   	// #0</pre>
+<pre>    dbbc:	d280001a 	mov	x26, #0x0                   	// #0</pre>
+<pre>    dbc0:	d2800016 	mov	x22, #0x0                   	// #0</pre>
+<pre>    dbc4:	f9400424 	ldr	x4, [x1, #8]</pre>
+<pre>    dbc8:	f90057a4 	str	x4, [x29, #168]</pre>
+<pre>    dbcc:	f940103c 	ldr	x28, [x1, #32]</pre>
+<pre>    dbd0:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    dbd4:	97ffda43 	bl	44e0 &lt;strlen&commat;plt&gt;</pre>
+<pre>    dbd8:	aa0003e2 	mov	x2, x0</pre>
+<pre>    dbdc:	910003e1 	mov	x1, sp</pre>
+<pre>    dbe0:	91002842 	add	x2, x2, #0xa</pre>
+<pre>    dbe4:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    dbe8:	9400002a 	bl	dc90 &lt;nis_domain_of_r&commat;GLIBC_2.17&gt;</pre>
+<pre>    dbec:	aa0003e2 	mov	x2, x0</pre>
+<pre>    dbf0:	f94057a4 	ldr	x4, [x29, #168]</pre>
+<pre>    dbf4:	aa1803e0 	mov	x0, x24</pre>
+<pre>    dbf8:	aa0403e1 	mov	x1, x4</pre>
+<pre><span class="red">    dbfc:	97ffdba9 	bl	4aa0 &lt;printf&commat;plt&gt</span></span></pre>
+<pre>    dc00:	f94053a3 	ldr	x3, [x29, #160]</pre>
+<pre>    dc04:	9100007f 	mov	sp, x3</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">printf</span> used </span><span class="orange">44</span> times </span><span class="orange">libnsl-2.31.so</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

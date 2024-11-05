@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33m_multiprocessing.cpython-38-aarch64-linux-gnu.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33m_multiprocessing.cpython-38-aarch64-linux-gnu.so[0m
+
+    1e1c:	b9002817 	str	w23, [x0, #40]
+    1e20:	f9001816 	str	x22, [x0, #48]
+    1e24:	a9435bf5 	ldp	x21, x22, [sp, #48]
+    1e28:	a94463f7 	ldp	x23, x24, [sp, #64]
+    1e2c:	f947ee94 	ldr	x20, [x20, #4056]
+    1e30:	f94037e1 	ldr	x1, [sp, #104]
+    1e34:	f9400280 	ldr	x0, [x20]
+    1e38:	ca000020 	eor	x0, x1, x0
+    1e3c:	b50006a0 	cbnz	x0, 1f10 <PyInit__multiprocessing@@Base+0x3f0>
+    1e40:	aa1303e0 	mov	x0, x19
+    1e44:	a9417bfd 	ldp	x29, x30, [sp, #16]
+    1e48:	a94253f3 	ldp	x19, x20, [sp, #32]
+    1e4c:	9101c3ff 	add	sp, sp, #0x70
+    1e50:	d65f03c0 	ret
+    1e54:	97fffe37 	bl	1730 <strlen@plt>
+    1e58:	91000400 	add	x0, x0, #0x1
+    1e5c:	97fffecd 	bl	1990 <PyMem_Malloc@plt>
+    1e60:	aa0003f6 	mov	x22, x0
+    1e64:	b4000460 	cbz	x0, 1ef0 <PyInit__multiprocessing@@Base+0x3d0>
+    1e68:	f94033e1 	ldr	x1, [sp, #96]
+[31m    1e6c:	97fffea5 	bl	1900 <strcpy@plt>[0m
+    1e70:	b9405be3 	ldr	w3, [sp, #88]
+    1e74:	52803002 	mov	w2, #0x180                 	// #384
+--
+    1f40:	aa0003f6 	mov	x22, x0
+    1f44:	f9400043 	ldr	x3, [x2]
+    1f48:	f9002fe3 	str	x3, [sp, #88]
+    1f4c:	d2800003 	mov	x3, #0x0                   	// #0
+    1f50:	aa0103e0 	mov	x0, x1
+    1f54:	910103e3 	add	x3, sp, #0x40
+    1f58:	b0000001 	adrp	x1, 2000 <PyInit__multiprocessing@@Base+0x4e0>
+    1f5c:	910123e2 	add	x2, sp, #0x48
+    1f60:	911fa021 	add	x1, x1, #0x7e8
+    1f64:	97fffe4b 	bl	1890 <_PyArg_ParseTuple_SizeT@plt>
+    1f68:	34000500 	cbz	w0, 2008 <PyInit__multiprocessing@@Base+0x4e8>
+    1f6c:	f9402bf4 	ldr	x20, [sp, #80]
+    1f70:	b4000474 	cbz	x20, 1ffc <PyInit__multiprocessing@@Base+0x4dc>
+    1f74:	aa1403e0 	mov	x0, x20
+    1f78:	97fffdee 	bl	1730 <strlen@plt>
+    1f7c:	91000400 	add	x0, x0, #0x1
+    1f80:	97fffe84 	bl	1990 <PyMem_Malloc@plt>
+    1f84:	aa0003f4 	mov	x20, x0
+    1f88:	b4000440 	cbz	x0, 2010 <PyInit__multiprocessing@@Base+0x4f0>
+    1f8c:	f9402be1 	ldr	x1, [sp, #80]
+[31m    1f90:	97fffe5c 	bl	1900 <strcpy@plt>[0m
+    1f94:	f9402be0 	ldr	x0, [sp, #80]
+    1f98:	b4000320 	cbz	x0, 1ffc <PyInit__multiprocessing@@Base+0x4dc>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33m_multiprocessing.cpython-38-aarch64-linux-gnu.so[0m
+

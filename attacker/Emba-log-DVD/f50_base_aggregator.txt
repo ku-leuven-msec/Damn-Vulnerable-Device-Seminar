@@ -1,0 +1,111 @@
+[[0;34m+[0m] [0;36m[1mFinal aggregator[0m
+[1m=================================================================[0m
+[[0;32m+[0m][0;32m Tested firmware:[0;33m /log/firmware[0m
+[[0;32m+[0m][0;32m Emba start command:[0;33m ./emba.sh -l /log -f /firmware -i -W -t -c[0m
+[[0;32m+[0m][0;32m Detected architecture and endianness ([0;33mverified[0;32m):[0;33m ARM / EL[0m[0m
+[[0;32m+[0m][0;32m Operating system detected ([0;33mverified[0;32m): [0;33mLinux / v5.4.72[0m[0m
+
+-----------------------------------------------------------------
+
+[[0;32m+[0m][0;32m [0;33m8580[0;32m files and [0;33m1188 [0;32mdirectories detected.[0m
+[[0;32m+[0m][0;32m Found [0;33m133 issues[0;32m in [0;33m30[0;32m shell scripts.[0m[0m
+[[0;32m+[0m][0;32m Found [0;33m56512 issues[0;32m in [0;33m1788[0;32m python files.[0m[0m
+
+-----------------------------------------------------------------
+
+[[0;32m+[0m][0;32m Found the following configuration issues:[0m
+    [0;32mFound [0;33m1[0;32m history files.[0m
+    [0;32mFound [0;33m3[0;32m authentication issues.[0m
+    [0;32mFound [0;33m2[0;32m SSHd issues.[0m
+    [0;32mFound [0;33m5[0;32m password hashes.[0m
+    [0;32mFound [0;33m14[0;32m outdated certificates in [0;33m143[0;32m certificates.[0m
+    [0;32mFound [0;33m1471[0;32m kernel modules with [0;33m1[0;32m licensing issues.[0m
+    [0;32mFound [0;33m0[0;32m interesting files and [0;33m2[0;32m files that could be useful for post-exploitation.[0m
+
+-----------------------------------------------------------------
+
+[[0;32m+[0m][0;32m Found [0;33m460 (24%)[0;32m binaries without enabled stack canaries in [0;33m1928[0;32m binaries.[0m
+[[0;32m+[0m][0;32m Found [0;33m1472 (76%)[0;32m binaries without enabled RELRO in [0;33m1928[0;32m binaries.[0m
+[[0;32m+[0m][0;32m Found [0;33m1472 (76%)[0;32m binaries without enabled NX in [0;33m1928[0;32m binaries.[0m
+[[0;32m+[0m][0;32m Found [0;33m1 (0%)[0;32m binaries without enabled PIE in [0;33m1928[0;32m binaries.[0m
+[[0;32m+[0m][0;32m Found [0;33m435 (23%)[0;32m stripped binaries without symbols in [0;33m1928[0;32m binaries.[0m
+
+-----------------------------------------------------------------
+
+[[0;32m+[0m][0;32m Found [0;33m1684[0;32m usages of strcpy in [0;33m1928[0;32m binaries.[0m[0m
+
+
+[[0;32m+[0m][0;32m STRCPY - top 10 results:[0m
+[32m	461   : bash.bash       : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	98    : mac80211.ko     : common linux file: yes  |  [31mNo RELRO  |  [32mCanary     |  [31mNX disabled  |  [31mSymbols     |[0m
+[32m	92    : libreadline.so. : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	60    : ocfs2.ko        : common linux file: yes  |  [31mNo RELRO  |  [32mCanary     |  [31mNX disabled  |  [31mSymbols     |[0m
+[32m	53    : gpg2            : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	35    : libX11.so.6.3.0 : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[33m	34    : busybox.nosuid  : common linux file: no   |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	33    : gpgsm           : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	30    : libhistory.so.8 : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	28    : dirmngr         : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[0m
+
+[[0;32m+[0m][0;32m SYSTEM - top 10 results:[0m
+[32m	5     : raid456.ko      : common linux file: yes  |  [31mNo RELRO  |  [32mCanary     |  [31mNX disabled  |  [31mSymbols     |[0m
+[33m	3     : busybox.nosuid  : common linux file: no   |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	2     : mceusb.ko       : common linux file: yes  |  [31mNo RELRO  |  [32mCanary     |  [31mNX disabled  |  [31mSymbols     |[0m
+[32m	2     : kmod            : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	2     : gpg2            : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	2     : cifs.ko         : common linux file: yes  |  [31mNo RELRO  |  [32mCanary     |  [31mNX disabled  |  [31mSymbols     |[0m
+[33m	1     : vipw.shadow     : common linux file: no   |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[33m	1     : ssh.openssh     : common linux file: no   |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	1     : libss.so.2.0    : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[32m	1     : librpmbuild.so. : common linux file: yes  |  [32mRELRO     |  [32mCanary     |  [32mNX enabled   |  [32mNo Symbols  |[0m
+[0m
+
+-----------------------------------------------------------------
+
+[[0;33m*[0m] Identified the following software inventory, vulnerabilities and exploits:
+[[0;33m+[0m][0;33m Found version details: 	e2fsprogs           	:	1.45.4         	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	fsck.fat            	:	4.1            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	bash                	:	5.0.16         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	busybox             	:	1.31.1         	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;35m+[0m][0;35m Found version details: 	bc                  	:	0              	:	CVEs: 93      	:	Exploits: 13      [0m
+[[0;33m+[0m][0;33m Found version details: 	bc                  	:	2.31           	:	CVEs: 11      	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	alsa                	:	1.2.1          	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	libcurl             	:	7.69.1         	:	CVEs: 6       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	expat               	:	2.2.9          	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	kmod                	:	26             	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	glibc               	:	2.31           	:	CVEs: 11      	:	Exploits: 0       [0m
+[[0;35m+[0m][0;35m Found version details: 	openssl             	:	1.0.1          	:	CVEs: 85      	:	Exploits: 8       [0m
+[[0;35m+[0m][0;35m Found version details: 	kernel              	:	5.4.72         	:	CVEs: 197     	:	Exploits: 3       [0m
+[[0;33m+[0m][0;33m Found version details: 	expat               	:	2.2.8          	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	libarchive          	:	3.4.2          	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	mkfs.fat            	:	4.1            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	libgcrypt           	:	1.8.5          	:	CVEs: 2       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	gnutls              	:	3.6.12         	:	CVEs: 5       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	gnu sed             	:	4.0            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	openssl             	:	1.1.1f         	:	CVEs: 7       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	pcre                	:	1.2.12         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	rngd                	:	6.9            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	openssh             	:	8.2-p1         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	util-linux          	:	2.35.1         	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	perl                	:	5.30.1         	:	CVEs: 2       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	usbutils            	:	012            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	udhcp               	:	1.31.1         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	yat2m               	:	1.37           	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	gnu ncurses         	:	6.2            	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	udev                	:	3.2.9          	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	zlib                	:	1.2.11         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	wpa cli             	:	2.9            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	wpa supplicant      	:	2.9            	:	CVEs: 3       	:	Exploits: 0       [0m
+
+[[0;32m+[0m][0;32m Identified [0;33m34[0;32m software components with version details.
+[0m
+[[0;32m+[0m][0;32m Confirmed [0;33m429[0;32m CVE entries.[0m
+    [0;32mConfirmed [0;31m[1m83[0m[0;32m High rated CVE entries.[0m
+    [0;32mConfirmed [0;33m[1m253[0m[0;32m Medium rated CVE entries.[0m
+    [0;32mConfirmed [0;32m[1m93[0m[0;32m Low rated CVE entries.[0m
+    [0;32m[0;35m[1m24[0m[0;32m possible exploits available ([0;35m12[0;32m Metasploit modules).[0m
+
+-----------------------------------------------------------------
+
+[[0;33m*[0m] Sun Nov 14 09:59:07 EST 2021 - F50_base_aggregator finished

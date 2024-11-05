@@ -1,0 +1,48 @@
+[[0;33m*[0m] Binary protection state of [0;33mcorecext.cpython-38-aarch64-linux-gnu.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1700) Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mcorecext.cpython-38-aarch64-linux-gnu.so[0m
+
+[31m    f01c:	97fffc39 	bl	e100 <mmap64@plt>[0m
+    f020:	f900d260 	str	x0, [x19, #416]
+    f024:	d2a10005 	mov	x5, #0x8000000             	// #134217728
+    f028:	b9419264 	ldr	w4, [x19, #400]
+    f02c:	52900023 	mov	w3, #0x8001                	// #32769
+    f030:	52800062 	mov	w2, #0x3                   	// #3
+    f034:	b941be61 	ldr	w1, [x19, #444]
+    f038:	d2800000 	mov	x0, #0x0                   	// #0
+[31m    f03c:	97fffc31 	bl	e100 <mmap64@plt>[0m
+    f040:	f900d660 	str	x0, [x19, #424]
+    f044:	d2a20005 	mov	x5, #0x10000000            	// #268435456
+    f048:	b9419264 	ldr	w4, [x19, #400]
+    f04c:	52900023 	mov	w3, #0x8001                	// #32769
+    f050:	52800062 	mov	w2, #0x3                   	// #3
+    f054:	b941c261 	ldr	w1, [x19, #448]
+    f058:	d2800000 	mov	x0, #0x0                   	// #0
+[31m    f05c:	97fffc29 	bl	e100 <mmap64@plt>[0m
+    f060:	f900da60 	str	x0, [x19, #432]
+    f064:	f940d261 	ldr	x1, [x19, #416]
+    f068:	b100043f 	cmn	x1, #0x1
+    f06c:	54000660 	b.eq	f138 <iouring_internal_init+0x1f8>  // b.none
+    f070:	f940d661 	ldr	x1, [x19, #424]
+    f074:	b100043f 	cmn	x1, #0x1
+    f078:	54000640 	b.eq	f140 <iouring_internal_init+0x200>  // b.none
+    f07c:	b100041f 	cmn	x0, #0x1
+    f080:	54000640 	b.eq	f148 <iouring_internal_init+0x208>  // b.none
+    f084:	b94063e0 	ldr	w0, [sp, #96]
+    f088:	b901c660 	str	w0, [x19, #452]
+    f08c:	b94067e0 	ldr	w0, [sp, #100]
+    f090:	b901ca60 	str	w0, [x19, #456]
+    f094:	b9406be0 	ldr	w0, [sp, #104]
+    f098:	b901ce60 	str	w0, [x19, #460]
+    f09c:	b9406fe0 	ldr	w0, [sp, #108]
+    f0a0:	b901d260 	str	w0, [x19, #464]
+    f0a4:	b94073e0 	ldr	w0, [sp, #112]
+    f0a8:	b901d660 	str	w0, [x19, #468]
+    f0ac:	b94077e0 	ldr	w0, [sp, #116]
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m3[0m times [0;33mcorecext.cpython-38-aarch64-linux-gnu.so[0m
+

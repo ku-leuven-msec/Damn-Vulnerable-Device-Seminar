@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mudevadm[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mudevadm[0m
+
+[31m   32978:	97ff6176 	bl	af50 <mmap@plt>[0m
+   3297c:	f9004e60 	str	x0, [x19, #152]
+   32980:	aa0003f4 	mov	x20, x0
+   32984:	b100041f 	cmn	x0, #0x1
+   32988:	540012e0 	b.eq	32be4 <kmod_set_log_fn@plt+0x27764>  // b.none
+   3298c:	97ffcb01 	bl	25590 <kmod_set_log_fn@plt+0x1a110>
+   32990:	f9400281 	ldr	x1, [x20]
+   32994:	f94023e2 	ldr	x2, [sp, #64]
+   32998:	eb01005f 	cmp	x2, x1
+   3299c:	54000d01 	b.ne	32b3c <kmod_set_log_fn@plt+0x276bc>  // b.any
+   329a0:	f9400a81 	ldr	x1, [x20, #16]
+   329a4:	f9402662 	ldr	x2, [x19, #72]
+   329a8:	eb01005f 	cmp	x2, x1
+   329ac:	54000c81 	b.ne	32b3c <kmod_set_log_fn@plt+0x276bc>  // b.any
+   329b0:	7100181f 	cmp	w0, #0x6
+   329b4:	5400024c 	b.gt	329fc <kmod_set_log_fn@plt+0x2757c>
+   329b8:	f947daa0 	ldr	x0, [x21, #4016]
+   329bc:	f94027e1 	ldr	x1, [sp, #72]
+   329c0:	f9400000 	ldr	x0, [x0]
+   329c4:	ca000020 	eor	x0, x1, x0
+   329c8:	b50012e0 	cbnz	x0, 32c24 <kmod_set_log_fn@plt+0x277a4>
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mudevadm[0m
+

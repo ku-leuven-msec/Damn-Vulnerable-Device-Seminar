@@ -1,0 +1,173 @@
+[[0;33m*[0m] Binary protection state of [0;33mhostap.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m551) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mhostap.ko[0m
+
+    2a64:	aa0003f4 	mov	x20, x0
+    2a68:	aa1e03e0 	mov	x0, x30
+    2a6c:	94000000 	bl	0 <_mcount>
+    2a70:	d5384115 	mrs	x21, sp_el0
+    2a74:	b940ea60 	ldr	w0, [x19, #232]
+    2a78:	f9428ea2 	ldr	x2, [x21, #1304]
+    2a7c:	f90027e2 	str	x2, [sp, #72]
+    2a80:	d2800002 	mov	x2, #0x0                   	// #0
+    2a84:	340000c0 	cbz	w0, 2a9c <ap_free_sta+0x4c>
+    2a88:	f9407a60 	ldr	x0, [x19, #240]
+    2a8c:	b4000080 	cbz	x0, 2a9c <ap_free_sta+0x4c>
+    2a90:	f9400c00 	ldr	x0, [x0, #24]
+    2a94:	aa1303e1 	mov	x1, x19
+    2a98:	97ffffaa 	bl	2940 <hostap_event_expired_sta>
+    2a9c:	f9442280 	ldr	x0, [x20, #2112]
+    2aa0:	b4000120 	cbz	x0, 2ac4 <ap_free_sta+0x74>
+    2aa4:	9100d3e0 	add	x0, sp, #0x34
+    2aa8:	9100a262 	add	x2, x19, #0x28
+    2aac:	90000001 	adrp	x1, 0 <prism2_frag_cache_find>
+    2ab0:	91000021 	add	x1, x1, #0x0
+[31m    2ab4:	94000000 	bl	0 <sprintf>[0m
+    2ab8:	9100d3e0 	add	x0, sp, #0x34
+    2abc:	f9442281 	ldr	x1, [x20, #2112]
+--
+    3e7c:	b9400322 	ldr	w2, [x25]
+    3e80:	14000003 	b	3e8c <handle_add_proc_queue+0x84>
+    3e84:	f9400a73 	ldr	x19, [x19, #16]
+    3e88:	b4000553 	cbz	x19, 3f30 <handle_add_proc_queue+0x128>
+    3e8c:	79405a61 	ldrh	w1, [x19, #44]
+    3e90:	b9402a60 	ldr	w0, [x19, #40]
+    3e94:	4a030021 	eor	w1, w1, w3
+    3e98:	4a000040 	eor	w0, w2, w0
+    3e9c:	2a010000 	orr	w0, w0, w1
+    3ea0:	35ffff20 	cbnz	w0, 3e84 <handle_add_proc_queue+0x7c>
+    3ea4:	9100627a 	add	x26, x19, #0x18
+    3ea8:	14000036 	b	3f80 <handle_add_proc_queue+0x178>
+    3eac:	14000035 	b	3f80 <handle_add_proc_queue+0x178>
+    3eb0:	52800020 	mov	w0, #0x1                   	// #1
+    3eb4:	b820035f 	stadd	w0, [x26]
+    3eb8:	aa1403e0 	mov	x0, x20
+    3ebc:	94000000 	bl	0 <_raw_spin_unlock_bh>
+    3ec0:	9100a262 	add	x2, x19, #0x28
+    3ec4:	aa1703e1 	mov	x1, x23
+    3ec8:	910153e0 	add	x0, sp, #0x54
+[31m    3ecc:	94000000 	bl	0 <sprintf>[0m
+    3ed0:	f94422a2 	ldr	x2, [x21, #2112]
+    3ed4:	aa1303e4 	mov	x4, x19
+--
+    5b58:	aa1a03e4 	mov	x4, x26
+    5b5c:	9101c3e3 	add	x3, sp, #0x70
+    5b60:	aa1503e2 	mov	x2, x21
+    5b64:	aa1403e0 	mov	x0, x20
+    5b68:	7900e7e7 	strh	w7, [sp, #114]
+    5b6c:	790107e5 	strh	w5, [sp, #130]
+    5b70:	94000000 	bl	0 <iwe_stream_add_point>
+    5b74:	b9412261 	ldr	w1, [x19, #288]
+    5b78:	aa0003fa 	mov	x26, x0
+    5b7c:	51000420 	sub	w0, w1, #0x1
+    5b80:	7100341f 	cmp	w0, #0xd
+    5b84:	54000529 	b.ls	5c28 <prism2_ap_translate_scan+0x330>  // b.plast
+    5b88:	79406e62 	ldrh	w2, [x19, #54]
+    5b8c:	128e7fa4 	mov	w4, #0xffff8c02            	// #-29694
+    5b90:	90000001 	adrp	x1, 0 <prism2_frag_cache_find>
+    5b94:	91000021 	add	x1, x1, #0x0
+    5b98:	a9077fff 	stp	xzr, xzr, [sp, #112]
+    5b9c:	910223e0 	add	x0, sp, #0x88
+    5ba0:	7900e7e4 	strh	w4, [sp, #114]
+    5ba4:	f90043ff 	str	xzr, [sp, #128]
+[31m    5ba8:	94000000 	bl	0 <sprintf>[0m
+    5bac:	910223e0 	add	x0, sp, #0x88
+    5bb0:	94000000 	bl	0 <strlen>
+--
+    d058:	cb190065 	sub	x5, x3, x25
+    d05c:	d2800086 	mov	x6, #0x4                   	// #4
+    d060:	f9400000 	ldr	x0, [x0]
+    d064:	f240003f 	tst	x1, #0x1
+    d068:	d2800104 	mov	x4, #0x8                   	// #8
+    d06c:	9a860084 	csel	x4, x4, x6, eq  // eq = none
+    d070:	eb0400bf 	cmp	x5, x4
+    d074:	d28013c2 	mov	x2, #0x9e                  	// #158
+    d078:	9a83d339 	csel	x25, x25, x3, le
+    d07c:	52814401 	mov	w1, #0xa20                 	// #2592
+    d080:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    d084:	aa0003fb 	mov	x27, x0
+    d088:	b4000560 	cbz	x0, d134 <__prism2_translate_scan.isra.0+0x34c>
+    d08c:	79401ae2 	ldrh	w2, [x23, #12]
+    d090:	90000001 	adrp	x1, 0 <prism2_frag_cache_find>
+    d094:	91000021 	add	x1, x1, #0x0
+    d098:	a9077fff 	stp	xzr, xzr, [sp, #112]
+    d09c:	128e7fba 	mov	w26, #0xffff8c02            	// #-29694
+    d0a0:	7900e7fa 	strh	w26, [sp, #114]
+    d0a4:	f90043ff 	str	xzr, [sp, #128]
+[31m    d0a8:	94000000 	bl	0 <sprintf>[0m
+    d0ac:	aa1b03e0 	mov	x0, x27
+    d0b0:	94000000 	bl	0 <strlen>
+    d0b4:	aa0003e5 	mov	x5, x0
+    d0b8:	aa1b03e4 	mov	x4, x27
+    d0bc:	aa1503e3 	mov	x3, x21
+    d0c0:	aa1903e1 	mov	x1, x25
+    d0c4:	aa1403e2 	mov	x2, x20
+    d0c8:	aa1303e0 	mov	x0, x19
+    d0cc:	790103e5 	strh	w5, [sp, #128]
+    d0d0:	94000000 	bl	0 <iwe_stream_add_point>
+    d0d4:	79407ae2 	ldrh	w2, [x23, #60]
+    d0d8:	90000001 	adrp	x1, 0 <prism2_frag_cache_find>
+    d0dc:	91000021 	add	x1, x1, #0x0
+    d0e0:	a9077fff 	stp	xzr, xzr, [sp, #112]
+    d0e4:	aa0003f9 	mov	x25, x0
+    d0e8:	aa1b03e0 	mov	x0, x27
+    d0ec:	7900e7fa 	strh	w26, [sp, #114]
+    d0f0:	f90043ff 	str	xzr, [sp, #128]
+[31m    d0f4:	94000000 	bl	0 <sprintf>[0m
+    d0f8:	aa1b03e0 	mov	x0, x27
+    d0fc:	94000000 	bl	0 <strlen>
+--
+    d30c:	52800027 	mov	w7, #0x1                   	// #1
+    d310:	aa1503e3 	mov	x3, x21
+    d314:	52800204 	mov	w4, #0x10                  	// #16
+    d318:	f860d845 	ldr	x5, [x2, w0, sxtw #3]
+    d31c:	aa1403e2 	mov	x2, x20
+    d320:	aa1303e0 	mov	x0, x19
+    d324:	7900fbe7 	strh	w7, [sp, #124]
+    d328:	1b067ca5 	mul	w5, w5, w6
+    d32c:	b9007be5 	str	w5, [sp, #120]
+    d330:	94000000 	bl	0 <iwe_stream_add_event>
+    d334:	aa0003e1 	mov	x1, x0
+    d338:	17fffefb 	b	cf24 <__prism2_translate_scan.isra.0+0x13c>
+    d33c:	360fefdc 	tbz	w28, #1, d134 <__prism2_translate_scan.isra.0+0x34c>
+    d340:	79407ee2 	ldrh	w2, [x23, #62]
+    d344:	90000001 	adrp	x1, 0 <prism2_frag_cache_find>
+    d348:	91000021 	add	x1, x1, #0x0
+    d34c:	a9007ebf 	stp	xzr, xzr, [x21]
+    d350:	aa1b03e0 	mov	x0, x27
+    d354:	f9000abf 	str	xzr, [x21, #16]
+    d358:	7900e7fa 	strh	w26, [sp, #114]
+[31m    d35c:	94000000 	bl	0 <sprintf>[0m
+    d360:	aa1b03e0 	mov	x0, x27
+    d364:	94000000 	bl	0 <strlen>
+--
+    f1a4:	b9400085 	ldr	w5, [x4]
+    f1a8:	b9000065 	str	w5, [x3]
+    f1ac:	79400884 	ldrh	w4, [x4, #4]
+    f1b0:	79000864 	strh	w4, [x3, #4]
+    f1b4:	f9401e83 	ldr	x3, [x20, #56]
+    f1b8:	f9001c03 	str	x3, [x0, #56]
+    f1bc:	b9404283 	ldr	w3, [x20, #64]
+    f1c0:	b9004003 	str	w3, [x0, #64]
+    f1c4:	f9401a83 	ldr	x3, [x20, #48]
+    f1c8:	f9001803 	str	x3, [x0, #48]
+    f1cc:	f9401683 	ldr	x3, [x20, #40]
+    f1d0:	f9001403 	str	x3, [x0, #40]
+    f1d4:	94000000 	bl	f028 <hostap_setup_dev>
+    f1d8:	52800020 	mov	w0, #0x1                   	// #1
+    f1dc:	39135260 	strb	w0, [x19, #1236]
+    f1e0:	90000001 	adrp	x1, 0 <prism2_frag_cache_find>
+    f1e4:	aa1803e3 	mov	x3, x24
+    f1e8:	aa1703e2 	mov	x2, x23
+    f1ec:	aa1303e0 	mov	x0, x19
+    f1f0:	91000021 	add	x1, x1, #0x0
+[31m    f1f4:	94000000 	bl	0 <sprintf>[0m
+    f1f8:	34000296 	cbz	w22, f248 <hostap_add_interface+0x130>
+    f1fc:	f942a280 	ldr	x0, [x20, #1344]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m7[0m times [0;33mhostap.ko[0m
+

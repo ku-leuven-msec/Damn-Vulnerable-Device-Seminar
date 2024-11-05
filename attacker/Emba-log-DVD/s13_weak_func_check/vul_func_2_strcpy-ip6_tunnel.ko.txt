@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mip6_tunnel.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m270) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mip6_tunnel.ko[0m
+
+    1554:	8b020000 	add	x0, x0, x2
+    1558:	885f7c05 	ldxr	w5, [x0]
+    155c:	0b0300a5 	add	w5, w5, w3
+    1560:	88047c05 	stxr	w4, w5, [x0]
+    1564:	35ffffa4 	cbnz	w4, 1558 <ip6_tnl_init_net+0xf8>
+    1568:	f9400820 	ldr	x0, [x1, #16]
+    156c:	d1000400 	sub	x0, x0, #0x1
+    1570:	b9001020 	str	w0, [x1, #16]
+    1574:	b5000320 	cbnz	x0, 15d8 <ip6_tnl_init_net+0x178>
+    1578:	94000000 	bl	0 <preempt_schedule_notrace>
+    157c:	d503201f 	nop
+    1580:	910422a0 	add	x0, x21, #0x108
+    1584:	c89ffc16 	stlr	x22, [x0]
+    1588:	f9400260 	ldr	x0, [x19]
+    158c:	94000000 	bl	0 <register_netdev>
+    1590:	2a0003f4 	mov	w20, w0
+    1594:	37f802a0 	tbnz	w0, #31, 15e8 <ip6_tnl_init_net+0x188>
+    1598:	f9400261 	ldr	x1, [x19]
+    159c:	52800014 	mov	w20, #0x0                   	// #0
+    15a0:	91226020 	add	x0, x1, #0x898
+[31m    15a4:	94000000 	bl	0 <strcpy>[0m
+    15a8:	2a1403e0 	mov	w0, w20
+    15ac:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    34c8:	a90153f3 	stp	x19, x20, [sp, #16]
+    34cc:	a9025bf5 	stp	x21, x22, [sp, #32]
+    34d0:	aa0003f3 	mov	x19, x0
+    34d4:	aa1e03e0 	mov	x0, x30
+    34d8:	94000000 	bl	0 <_mcount>
+    34dc:	90000000 	adrp	x0, 0 <ip6_tnl_bucket>
+    34e0:	91000014 	add	x20, x0, #0x0
+    34e4:	f9427676 	ldr	x22, [x19, #1256]
+    34e8:	91002294 	add	x20, x20, #0x8
+    34ec:	b9400015 	ldr	w21, [x0]
+    34f0:	94000000 	bl	0 <__rcu_read_lock>
+    34f4:	f9471ac0 	ldr	x0, [x22, #3632]
+    34f8:	f8755815 	ldr	x21, [x0, w21, uxtw #3]
+    34fc:	94000000 	bl	0 <__rcu_read_unlock>
+    3500:	f9040274 	str	x20, [x19, #2048]
+    3504:	aa1303e0 	mov	x0, x19
+    3508:	94000000 	bl	0 <register_netdevice>
+    350c:	37f80320 	tbnz	w0, #31, 3570 <ip6_tnl_create2+0xb0>
+    3510:	aa1303e1 	mov	x1, x19
+    3514:	91226260 	add	x0, x19, #0x898
+[31m    3518:	94000000 	bl	0 <strcpy>[0m
+    351c:	d5384101 	mrs	x1, sp_el0
+    3520:	b9401020 	ldr	w0, [x1, #16]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mip6_tunnel.ko[0m
+

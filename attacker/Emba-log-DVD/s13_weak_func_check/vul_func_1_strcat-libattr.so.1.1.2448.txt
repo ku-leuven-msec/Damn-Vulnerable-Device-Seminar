@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibattr.so.1.1.2448[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibattr.so.1.1.2448[0m
+
+    2638:	a90153f3 	stp	x19, x20, [sp, #16]
+    263c:	aa0103f4 	mov	x20, x1
+    2640:	aa0003f3 	mov	x19, x0
+    2644:	aa0103e0 	mov	x0, x1
+    2648:	a9025bf5 	stp	x21, x22, [sp, #32]
+    264c:	2a0203f5 	mov	w21, w2
+    2650:	2a0303f6 	mov	w22, w3
+    2654:	97fffb2f 	bl	1310 <strlen@plt>
+    2658:	f103fc1f 	cmp	x0, #0xff
+    265c:	540004e8 	b.hi	26f8 <attr_copy_file@@ATTR_1.1+0x6c8>  // b.pmore
+    2660:	37080215 	tbnz	w21, #1, 26a0 <attr_copy_file@@ATTR_1.1+0x670>
+    2664:	361802f5 	tbz	w21, #3, 26c0 <attr_copy_file@@ATTR_1.1+0x690>
+    2668:	b0000000 	adrp	x0, 3000 <attr_list@@ATTR_1.2+0xd0>
+    266c:	911d2000 	add	x0, x0, #0x748
+    2670:	f9400001 	ldr	x1, [x0]
+    2674:	f9000261 	str	x1, [x19]
+    2678:	79401000 	ldrh	w0, [x0, #8]
+    267c:	79001260 	strh	w0, [x19, #8]
+    2680:	aa1403e1 	mov	x1, x20
+    2684:	aa1303e0 	mov	x0, x19
+[31m    2688:	97fffb4a 	bl	13b0 <strcat@plt>[0m
+    268c:	52800000 	mov	w0, #0x0                   	// #0
+    2690:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mlibattr.so.1.1.2448[0m
+

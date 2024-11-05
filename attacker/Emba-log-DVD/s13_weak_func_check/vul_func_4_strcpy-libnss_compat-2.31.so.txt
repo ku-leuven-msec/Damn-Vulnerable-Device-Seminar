@@ -1,0 +1,102 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibnss_compat-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibnss_compat-2.31.so[0m
+
+    2724:	a90153f3 	stp	x19, x20, [sp, #16]
+    2728:	aa0103f3 	mov	x19, x1
+    272c:	a90363f7 	stp	x23, x24, [sp, #48]
+    2730:	aa0203f4 	mov	x20, x2
+    2734:	b40002b5 	cbz	x21, 2788 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x6f8>
+    2738:	394002a0 	ldrb	w0, [x21]
+    273c:	34000260 	cbz	w0, 2788 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x6f8>
+    2740:	b4000a82 	cbz	x2, 2890 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x800>
+    2744:	f94006d8 	ldr	x24, [x22, #8]
+    2748:	b4000118 	cbz	x24, 2768 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x6d8>
+    274c:	aa1803e0 	mov	x0, x24
+    2750:	97fffacc 	bl	1280 <strlen@plt>
+    2754:	aa0003f7 	mov	x23, x0
+    2758:	aa1503e0 	mov	x0, x21
+    275c:	97fffac9 	bl	1280 <strlen@plt>
+    2760:	eb0002ff 	cmp	x23, x0
+    2764:	54000f42 	b.cs	294c <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x8bc>  // b.hs, b.nlast
+    2768:	f90006d4 	str	x20, [x22, #8]
+    276c:	aa1403e0 	mov	x0, x20
+    2770:	f9400661 	ldr	x1, [x19, #8]
+[31m    2774:	97fffb2f 	bl	1430 <strcpy@plt>[0m
+    2778:	f94006c0 	ldr	x0, [x22, #8]
+    277c:	97fffac1 	bl	1280 <strlen@plt>
+    2780:	91000400 	add	x0, x0, #0x1
+    2784:	8b000294 	add	x20, x20, x0
+    2788:	f9400e75 	ldr	x21, [x19, #24]
+    278c:	b40002b5 	cbz	x21, 27e0 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x750>
+    2790:	394002a0 	ldrb	w0, [x21]
+    2794:	34000260 	cbz	w0, 27e0 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x750>
+    2798:	b40008b4 	cbz	x20, 28ac <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x81c>
+    279c:	f9400ed8 	ldr	x24, [x22, #24]
+    27a0:	b4000118 	cbz	x24, 27c0 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x730>
+    27a4:	aa1803e0 	mov	x0, x24
+    27a8:	97fffab6 	bl	1280 <strlen@plt>
+    27ac:	aa0003f7 	mov	x23, x0
+    27b0:	aa1503e0 	mov	x0, x21
+    27b4:	97fffab3 	bl	1280 <strlen@plt>
+    27b8:	eb0002ff 	cmp	x23, x0
+    27bc:	54000be2 	b.cs	2938 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x8a8>  // b.hs, b.nlast
+    27c0:	f9000ed4 	str	x20, [x22, #24]
+    27c4:	aa1403e0 	mov	x0, x20
+    27c8:	f9400e61 	ldr	x1, [x19, #24]
+[31m    27cc:	97fffb19 	bl	1430 <strcpy@plt>[0m
+    27d0:	f9400ec0 	ldr	x0, [x22, #24]
+    27d4:	97fffaab 	bl	1280 <strlen@plt>
+    27d8:	91000400 	add	x0, x0, #0x1
+    27dc:	8b000294 	add	x20, x20, x0
+    27e0:	f9401275 	ldr	x21, [x19, #32]
+    27e4:	b40002b5 	cbz	x21, 2838 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x7a8>
+    27e8:	394002a0 	ldrb	w0, [x21]
+    27ec:	34000260 	cbz	w0, 2838 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x7a8>
+    27f0:	b40006d4 	cbz	x20, 28c8 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x838>
+    27f4:	f94012d8 	ldr	x24, [x22, #32]
+    27f8:	b4000118 	cbz	x24, 2818 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x788>
+    27fc:	aa1803e0 	mov	x0, x24
+    2800:	97fffaa0 	bl	1280 <strlen@plt>
+    2804:	aa0003f7 	mov	x23, x0
+    2808:	aa1503e0 	mov	x0, x21
+    280c:	97fffa9d 	bl	1280 <strlen@plt>
+    2810:	eb0002ff 	cmp	x23, x0
+    2814:	54000882 	b.cs	2924 <_nss_compat_getgrgid_r@@GLIBC_PRIVATE+0x894>  // b.hs, b.nlast
+    2818:	f90012d4 	str	x20, [x22, #32]
+    281c:	aa1403e0 	mov	x0, x20
+    2820:	f9401261 	ldr	x1, [x19, #32]
+[31m    2824:	97fffb03 	bl	1430 <strcpy@plt>[0m
+    2828:	f94012c0 	ldr	x0, [x22, #32]
+    282c:	97fffa95 	bl	1280 <strlen@plt>
+--
+    4148:	f9002280 	str	x0, [x20, #64]
+    414c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    4150:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    4154:	a8c47bfd 	ldp	x29, x30, [sp], #64
+    4158:	d65f03c0 	ret
+    415c:	aa0203f5 	mov	x21, x2
+    4160:	b40002e2 	cbz	x2, 41bc <_nss_compat_getpwuid_r@@GLIBC_PRIVATE+0x86c>
+    4164:	a90363f7 	stp	x23, x24, [sp, #48]
+    4168:	f9400698 	ldr	x24, [x20, #8]
+    416c:	b4000118 	cbz	x24, 418c <_nss_compat_getpwuid_r@@GLIBC_PRIVATE+0x83c>
+    4170:	aa1803e0 	mov	x0, x24
+    4174:	97fff443 	bl	1280 <strlen@plt>
+    4178:	aa0003f7 	mov	x23, x0
+    417c:	aa1603e0 	mov	x0, x22
+    4180:	97fff440 	bl	1280 <strlen@plt>
+    4184:	eb0002ff 	cmp	x23, x0
+    4188:	540000e2 	b.cs	41a4 <_nss_compat_getpwuid_r@@GLIBC_PRIVATE+0x854>  // b.hs, b.nlast
+    418c:	f9000695 	str	x21, [x20, #8]
+    4190:	aa1503e0 	mov	x0, x21
+    4194:	f9400661 	ldr	x1, [x19, #8]
+[31m    4198:	97fff4a6 	bl	1430 <strcpy@plt>[0m
+    419c:	a94363f7 	ldp	x23, x24, [sp, #48]
+    41a0:	17ffffd2 	b	40e8 <_nss_compat_getpwuid_r@@GLIBC_PRIVATE+0x798>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m4[0m times [0;33mlibnss_compat-2.31.so[0m
+

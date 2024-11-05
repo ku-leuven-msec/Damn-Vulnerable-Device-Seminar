@@ -1,0 +1,122 @@
+[[0;33m*[0m] Binary protection state of [0;33mbusybox.suid[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mbusybox.suid[0m
+
+    3de4:	52800022 	mov	w2, #0x1                   	// #1
+    3de8:	f90037e5 	str	x5, [sp, #104]
+    3dec:	a9072fea 	stp	x10, x11, [sp, #112]
+    3df0:	a90827e8 	stp	x8, x9, [sp, #128]
+    3df4:	a909afea 	stp	x10, x11, [sp, #152]
+    3df8:	a90aa7e8 	stp	x8, x9, [sp, #168]
+    3dfc:	a90bafea 	stp	x10, x11, [sp, #184]
+    3e00:	a90ca7e8 	stp	x8, x9, [sp, #200]
+    3e04:	97fffa63 	bl	2790 <__vsnprintf_chk@plt>
+    3e08:	528009a1 	mov	w1, #0x4d                  	// #77
+    3e0c:	4b180021 	sub	w1, w1, w24
+    3e10:	f9004bf5 	str	x21, [sp, #144]
+    3e14:	0b00027b 	add	w27, w19, w0
+    3e18:	4b170021 	sub	w1, w1, w23
+    3e1c:	aa1503e0 	mov	x0, x21
+    3e20:	6b1b003f 	cmp	w1, w27
+    3e24:	f94037e5 	ldr	x5, [sp, #104]
+    3e28:	54fff90d 	b.le	3d48 <ioctl@plt+0x1008>
+    3e2c:	f00000c1 	adrp	x1, 1e000 <ioctl@plt+0x1b2c0>
+    3e30:	f9402021 	ldr	x1, [x1, #64]
+[31m    3e34:	97fffb3f 	bl	2b30 <strcpy@plt>[0m
+    3e38:	f9404be0 	ldr	x0, [sp, #144]
+    3e3c:	52800745 	mov	w5, #0x3a                  	// #58
+    3e40:	52800401 	mov	w1, #0x20                  	// #32
+    3e44:	93407f62 	sxtw	x2, w27
+    3e48:	8b1c0000 	add	x0, x0, x28
+    3e4c:	381fe005 	sturb	w5, [x0, #-2]
+    3e50:	f9404be0 	ldr	x0, [sp, #144]
+    3e54:	8b1c0007 	add	x7, x0, x28
+    3e58:	381ff0e1 	sturb	w1, [x7, #-1]
+    3e5c:	b5000556 	cbnz	x22, 3f04 <ioctl@plt+0x11c4>
+    3e60:	f00000c0 	adrp	x0, 1e000 <ioctl@plt+0x1b2c0>
+    3e64:	f9400401 	ldr	x1, [x0, #8]
+    3e68:	0b180378 	add	w24, w27, w24
+    3e6c:	f9404be0 	ldr	x0, [sp, #144]
+    3e70:	8b020000 	add	x0, x0, x2
+[31m    3e74:	97fffb2f 	bl	2b30 <strcpy@plt>[0m
+    3e78:	b9401341 	ldr	w1, [x26, #16]
+    3e7c:	360000e1 	tbz	w1, #0, 3e98 <ioctl@plt+0x1158>
+--
+    3ee8:	a94263f7 	ldp	x23, x24, [sp, #32]
+    3eec:	a9436bf9 	ldp	x25, x26, [sp, #48]
+    3ef0:	a94473fb 	ldp	x27, x28, [sp, #64]
+    3ef4:	f9402bfe 	ldr	x30, [sp, #80]
+    3ef8:	a8d353f3 	ldp	x19, x20, [sp], #304
+    3efc:	d65f03c0 	ret
+    3f00:	97fffa80 	bl	2900 <__stack_chk_fail@plt>
+    3f04:	39400286 	ldrb	w6, [x20]
+    3f08:	f9404be4 	ldr	x4, [sp, #144]
+    3f0c:	8b020080 	add	x0, x4, x2
+    3f10:	34000106 	cbz	w6, 3f30 <ioctl@plt+0x11f0>
+    3f14:	38226885 	strb	w5, [x4, x2]
+    3f18:	11000762 	add	w2, w27, #0x1
+    3f1c:	11000b7b 	add	w27, w27, #0x2
+    3f20:	f9404be0 	ldr	x0, [sp, #144]
+    3f24:	3822c801 	strb	w1, [x0, w2, sxtw]
+    3f28:	f9404be0 	ldr	x0, [sp, #144]
+    3f2c:	8b3bc000 	add	x0, x0, w27, sxtw
+    3f30:	0b17037b 	add	w27, w27, w23
+    3f34:	aa1603e1 	mov	x1, x22
+[31m    3f38:	97fffafe 	bl	2b30 <strcpy@plt>[0m
+    3f3c:	93407f62 	sxtw	x2, w27
+    3f40:	17ffffc8 	b	3e60 <ioctl@plt+0x1120>
+--
+    7be4:	97ffeb1b 	bl	2850 <memset@plt>
+    7be8:	aa1403e0 	mov	x0, x20
+    7bec:	97ffea7d 	bl	25e0 <strlen@plt>
+    7bf0:	39400281 	ldrb	w1, [x20]
+    7bf4:	b90087a1 	str	w1, [x29, #132]
+    7bf8:	7101783f 	cmp	w1, #0x5e
+    7bfc:	540000c1 	b.ne	7c14 <ioctl@plt+0x4ed4>  // b.any
+    7c00:	91000681 	add	x1, x20, #0x1
+    7c04:	39400682 	ldrb	w2, [x20, #1]
+    7c08:	8b20403c 	add	x28, x1, w0, uxtw
+    7c0c:	aa0103f4 	mov	x20, x1
+    7c10:	b90087a2 	str	w2, [x29, #132]
+    7c14:	b94087a1 	ldr	w1, [x29, #132]
+    7c18:	11000400 	add	w0, w0, #0x1
+    7c1c:	91003c00 	add	x0, x0, #0xf
+    7c20:	7100843f 	cmp	w1, #0x21
+    7c24:	927c7000 	and	x0, x0, #0x1fffffff0
+    7c28:	9a941681 	cinc	x1, x20, eq  // eq = none
+    7c2c:	cb2063ff 	sub	sp, sp, x0
+    7c30:	910003e0 	mov	x0, sp
+[31m    7c34:	97ffebbf 	bl	2b30 <strcpy@plt>[0m
+    7c38:	39400001 	ldrb	w1, [x0]
+    7c3c:	aa0003f4 	mov	x20, x0
+--
+    ac94:	97ffdf6b 	bl	2a40 <free@plt>
+    ac98:	aa1303e0 	mov	x0, x19
+    ac9c:	d2800013 	mov	x19, #0x0                   	// #0
+    aca0:	97ffdf68 	bl	2a40 <free@plt>
+    aca4:	aa1303e0 	mov	x0, x19
+    aca8:	a9415bf5 	ldp	x21, x22, [sp, #16]
+    acac:	f94013fe 	ldr	x30, [sp, #32]
+    acb0:	a8c353f3 	ldp	x19, x20, [sp], #48
+    acb4:	d65f03c0 	ret
+    acb8:	39400001 	ldrb	w1, [x0]
+    acbc:	7100bc3f 	cmp	w1, #0x2f
+    acc0:	540001a0 	b.eq	acf4 <ioctl@plt+0x7fb4>  // b.none
+    acc4:	97ffde47 	bl	25e0 <strlen@plt>
+    acc8:	0b0002b5 	add	w21, w21, w0
+    accc:	aa1303e0 	mov	x0, x19
+    acd0:	93407ea1 	sxtw	x1, w21
+    acd4:	97ffe5f1 	bl	4498 <ioctl@plt+0x1758>
+    acd8:	aa0003f3 	mov	x19, x0
+    acdc:	97ffe32f 	bl	3998 <ioctl@plt+0xc58>
+    ace0:	aa1403e1 	mov	x1, x20
+[31m    ace4:	97ffdf93 	bl	2b30 <strcpy@plt>[0m
+    ace8:	aa1403e0 	mov	x0, x20
+    acec:	97ffdf55 	bl	2a40 <free@plt>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mbusybox.suid[0m
+

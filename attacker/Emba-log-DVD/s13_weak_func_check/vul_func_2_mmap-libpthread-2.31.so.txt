@@ -1,0 +1,54 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibpthread-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibpthread-2.31.so[0m
+
+[31m   11158:	97ffd57e 	bl	6750 <mmap@plt>[0m
+   1115c:	aa0003f4 	mov	x20, x0
+   11160:	17ffffd4 	b	110b0 <sem_destroy@@GLIBC_2.17+0x180>
+   11164:	d503201f 	nop
+   11168:	d503201f 	nop
+   1116c:	d503201f 	nop
+   11170:	f9400403 	ldr	x3, [x0, #8]
+   11174:	f9400422 	ldr	x2, [x1, #8]
+   11178:	eb02007f 	cmp	x3, x2
+   1117c:	540000a1 	b.ne	11190 <sem_destroy@@GLIBC_2.17+0x260>  // b.any
+   11180:	f9400003 	ldr	x3, [x0]
+   11184:	f9400022 	ldr	x2, [x1]
+   11188:	eb02007f 	cmp	x3, x2
+   1118c:	54000080 	b.eq	1119c <sem_destroy@@GLIBC_2.17+0x26c>  // b.none
+   11190:	52800020 	mov	w0, #0x1                   	// #1
+   11194:	5a802400 	cneg	w0, w0, cc  // cc = lo, ul, last
+   11198:	d65f03c0 	ret
+   1119c:	91008021 	add	x1, x1, #0x20
+   111a0:	91008000 	add	x0, x0, #0x20
+   111a4:	17ffd567 	b	6740 <strcmp@plt>
+   111a8:	d503201f 	nop
+--
+[31m   11400:	97ffd4d4 	bl	6750 <mmap@plt>[0m
+   11404:	aa0003f9 	mov	x25, x0
+   11408:	b9407fa4 	ldr	w4, [x29, #124]
+   1140c:	b100041f 	cmn	x0, #0x1
+   11410:	b9007fa4 	str	w4, [x29, #124]
+   11414:	540008e0 	b.eq	11530 <sem_open@@GLIBC_2.17+0x380>  // b.none
+   11418:	f94037a1 	ldr	x1, [x29, #104]
+   1141c:	aa1a03e0 	mov	x0, x26
+   11420:	97ffd528 	bl	68c0 <link@plt>
+   11424:	b9407fa4 	ldr	w4, [x29, #124]
+   11428:	340008e0 	cbz	w0, 11544 <sem_open@@GLIBC_2.17+0x394>
+   1142c:	aa1803e1 	mov	x1, x24
+   11430:	aa1903e0 	mov	x0, x25
+   11434:	b9007fa4 	str	w4, [x29, #124]
+   11438:	97ffd506 	bl	6850 <munmap@plt>
+   1143c:	b9407fa4 	ldr	w4, [x29, #124]
+   11440:	37380776 	tbnz	w22, #7, 1152c <sem_open@@GLIBC_2.17+0x37c>
+   11444:	b8776b60 	ldr	w0, [x27, x23]
+   11448:	b9007fa4 	str	w4, [x29, #124]
+   1144c:	7100441f 	cmp	w0, #0x11
+   11450:	aa1a03e0 	mov	x0, x26
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m2[0m times [0;33mlibpthread-2.31.so[0m
+

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-usb-6fire.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m251) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-usb-6fire.ko[0m
+
+     180:	91000021 	add	x1, x1, #0x0
+     184:	f94033e3 	ldr	x3, [sp, #96]
+     188:	90000006 	adrp	x6, 0 <usb6fire_chip_destroy>
+     18c:	910000c6 	add	x6, x6, #0x0
+     190:	91010294 	add	x20, x20, #0x40
+     194:	f9400024 	ldr	x4, [x1]
+     198:	91009062 	add	x2, x3, #0x24
+     19c:	f8014064 	stur	x4, [x3, #20]
+     1a0:	91011060 	add	x0, x3, #0x44
+     1a4:	39402024 	ldrb	w4, [x1, #8]
+     1a8:	90000001 	adrp	x1, 0 <usb6fire_chip_destroy>
+     1ac:	39007064 	strb	w4, [x3, #28]
+     1b0:	91000021 	add	x1, x1, #0x0
+     1b4:	a94014c4 	ldp	x4, x5, [x6]
+     1b8:	a9001444 	stp	x4, x5, [x2]
+     1bc:	f840d0c4 	ldur	x4, [x6, #13]
+     1c0:	f8031064 	stur	x4, [x3, #49]
+     1c4:	f85a8303 	ldur	x3, [x24, #-88]
+     1c8:	b8560304 	ldur	w4, [x24, #-160]
+     1cc:	b9401063 	ldr	w3, [x3, #16]
+[31m     1d0:	94000000 	bl	0 <sprintf>[0m
+     1d4:	f94033e0 	ldr	x0, [sp, #96]
+     1d8:	52800021 	mov	w1, #0x1                   	// #1
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33msnd-usb-6fire.ko[0m
+

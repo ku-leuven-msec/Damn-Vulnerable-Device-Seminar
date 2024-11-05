@@ -1,0 +1,202 @@
+[[0;33m*[0m] Binary protection state of [0;33mubi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m623) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mubi.ko[0m
+
+    12b8:	aa1603e0 	mov	x0, x22
+    12bc:	94000000 	bl	0 <_raw_spin_unlock>
+    12c0:	aa1503e0 	mov	x0, x21
+    12c4:	94000000 	bl	3a28 <ubi_put_device>
+    12c8:	aa1803e0 	mov	x0, x24
+    12cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    12d0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    12d4:	a94363f7 	ldp	x23, x24, [sp, #48]
+    12d8:	a8c47bfd 	ldp	x29, x30, [sp], #64
+    12dc:	d65f03c0 	ret
+    12e0:	b9436660 	ldr	w0, [x19, #868]
+    12e4:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    12e8:	90000002 	adrp	x2, 0 <ubi_update_layout_vol>
+    12ec:	91000021 	add	x1, x1, #0x0
+    12f0:	71000c1f 	cmp	w0, #0x3
+    12f4:	91000042 	add	x2, x2, #0x0
+    12f8:	9a810042 	csel	x2, x2, x1, eq  // eq = none
+    12fc:	aa1703e0 	mov	x0, x23
+    1300:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    1304:	91000021 	add	x1, x1, #0x0
+[31m    1308:	94000000 	bl	0 <sprintf>[0m
+    130c:	93407c18 	sxtw	x24, w0
+    1310:	17ffffe4 	b	12a0 <vol_attribute_show+0xd8>
+    1314:	aa1703e0 	mov	x0, x23
+    1318:	910e3262 	add	x2, x19, #0x38c
+    131c:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    1320:	91000021 	add	x1, x1, #0x0
+[31m    1324:	94000000 	bl	0 <sprintf>[0m
+    1328:	93407c18 	sxtw	x24, w0
+    132c:	17ffffdd 	b	12a0 <vol_attribute_show+0xd8>
+    1330:	b9436262 	ldr	w2, [x19, #864]
+    1334:	aa1703e0 	mov	x0, x23
+    1338:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    133c:	91000021 	add	x1, x1, #0x0
+[31m    1340:	94000000 	bl	0 <sprintf>[0m
+    1344:	93407c18 	sxtw	x24, w0
+    1348:	17ffffd6 	b	12a0 <vol_attribute_show+0xd8>
+    134c:	3950e262 	ldrb	w2, [x19, #1080]
+    1350:	aa1703e0 	mov	x0, x23
+    1354:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    1358:	d2800058 	mov	x24, #0x2                   	// #2
+    135c:	91000021 	add	x1, x1, #0x0
+    1360:	d3420842 	ubfx	x2, x2, #2, #1
+[31m    1364:	94000000 	bl	0 <sprintf>[0m
+    1368:	17ffffce 	b	12a0 <vol_attribute_show+0xd8>
+    136c:	b9438262 	ldr	w2, [x19, #896]
+    1370:	17fffff1 	b	1334 <vol_attribute_show+0x16c>
+    1374:	b9436a62 	ldr	w2, [x19, #872]
+    1378:	17ffffef 	b	1334 <vol_attribute_show+0x16c>
+    137c:	3950e262 	ldrb	w2, [x19, #1080]
+    1380:	aa1703e0 	mov	x0, x23
+    1384:	d2800058 	mov	x24, #0x2                   	// #2
+    1388:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    138c:	91000021 	add	x1, x1, #0x0
+    1390:	d3430c42 	ubfx	x2, x2, #3, #1
+[31m    1394:	94000000 	bl	0 <sprintf>[0m
+    1398:	17ffffc2 	b	12a0 <vol_attribute_show+0xd8>
+    139c:	f941be62 	ldr	x2, [x19, #888]
+    13a0:	aa1703e0 	mov	x0, x23
+    13a4:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    13a8:	91000021 	add	x1, x1, #0x0
+[31m    13ac:	94000000 	bl	0 <sprintf>[0m
+    13b0:	93407c18 	sxtw	x24, w0
+    13b4:	17ffffbb 	b	12a0 <vol_attribute_show+0xd8>
+--
+    3210:	f9421260 	ldr	x0, [x19, #1056]
+    3214:	17ffffd4 	b	3164 <ubi_more_leb_change_data+0x18c>
+    3218:	d500409f 	msr	pan, #0x0
+    321c:	d500419f 	msr	pan, #0x1
+    3220:	d500409f 	msr	pan, #0x0
+    3224:	d500419f 	msr	pan, #0x1
+    3228:	d500409f 	msr	pan, #0x0
+    322c:	d500419f 	msr	pan, #0x1
+
+0000000000003230 <version_show>:
+    3230:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    3234:	910003fd 	mov	x29, sp
+    3238:	f9000bf3 	str	x19, [sp, #16]
+    323c:	aa1e03e0 	mov	x0, x30
+    3240:	aa0203f3 	mov	x19, x2
+    3244:	94000000 	bl	0 <_mcount>
+    3248:	aa1303e0 	mov	x0, x19
+    324c:	52800022 	mov	w2, #0x1                   	// #1
+    3250:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    3254:	91000021 	add	x1, x1, #0x0
+[31m    3258:	94000000 	bl	0 <sprintf>[0m
+    325c:	d2800040 	mov	x0, #0x2                   	// #2
+    3260:	f9400bf3 	ldr	x19, [sp, #16]
+--
+    3b30:	91050060 	add	x0, x3, #0x140
+    3b34:	eb00027f 	cmp	x19, x0
+    3b38:	54000580 	b.eq	3be8 <dev_attribute_show+0x168>  // b.none
+    3b3c:	91058063 	add	x3, x3, #0x160
+    3b40:	928002b6 	mov	x22, #0xffffffffffffffea    	// #-22
+    3b44:	eb03027f 	cmp	x19, x3
+    3b48:	54000600 	b.eq	3c08 <dev_attribute_show+0x188>  // b.none
+    3b4c:	d503201f 	nop
+    3b50:	aa1403e0 	mov	x0, x20
+    3b54:	94000000 	bl	3a28 <ubi_put_device>
+    3b58:	aa1603e0 	mov	x0, x22
+    3b5c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    3b60:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    3b64:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    3b68:	d65f03c0 	ret
+    3b6c:	b9435282 	ldr	w2, [x20, #848]
+    3b70:	aa1503e0 	mov	x0, x21
+    3b74:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    3b78:	91000021 	add	x1, x1, #0x0
+    3b7c:	51000442 	sub	w2, w2, #0x1
+[31m    3b80:	94000000 	bl	0 <sprintf>[0m
+    3b84:	93407c16 	sxtw	x22, w0
+    3b88:	17fffff2 	b	3b50 <dev_attribute_show+0xd0>
+    3b8c:	b9526002 	ldr	w2, [x0, #4704]
+    3b90:	aa1503e0 	mov	x0, x21
+    3b94:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    3b98:	91000021 	add	x1, x1, #0x0
+[31m    3b9c:	94000000 	bl	0 <sprintf>[0m
+    3ba0:	93407c16 	sxtw	x22, w0
+    3ba4:	17ffffeb 	b	3b50 <dev_attribute_show+0xd0>
+--
+    3bac:	17fffff9 	b	3b90 <dev_attribute_show+0x110>
+    3bb0:	b9524682 	ldr	w2, [x20, #4676]
+    3bb4:	17fffff7 	b	3b90 <dev_attribute_show+0x110>
+    3bb8:	b947ba82 	ldr	w2, [x20, #1976]
+    3bbc:	17fffff5 	b	3b90 <dev_attribute_show+0x110>
+    3bc0:	b9477682 	ldr	w2, [x20, #1908]
+    3bc4:	17fffff3 	b	3b90 <dev_attribute_show+0x110>
+    3bc8:	b9524282 	ldr	w2, [x20, #4672]
+    3bcc:	17fffff1 	b	3b90 <dev_attribute_show+0x110>
+    3bd0:	b9525682 	ldr	w2, [x20, #4692]
+    3bd4:	17ffffef 	b	3b90 <dev_attribute_show+0x110>
+    3bd8:	b9478682 	ldr	w2, [x20, #1924]
+    3bdc:	17ffffed 	b	3b90 <dev_attribute_show+0x110>
+    3be0:	b9521a82 	ldr	w2, [x20, #4632]
+    3be4:	17ffffeb 	b	3b90 <dev_attribute_show+0x110>
+    3be8:	f9494682 	ldr	x2, [x20, #4744]
+    3bec:	aa1503e0 	mov	x0, x21
+    3bf0:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    3bf4:	91000021 	add	x1, x1, #0x0
+    3bf8:	b9404842 	ldr	w2, [x2, #72]
+[31m    3bfc:	94000000 	bl	0 <sprintf>[0m
+    3c00:	93407c16 	sxtw	x22, w0
+    3c04:	17ffffd3 	b	3b50 <dev_attribute_show+0xd0>
+--
+    421c:	912622d6 	add	x22, x22, #0x988
+    4220:	aa1303e0 	mov	x0, x19
+    4224:	f8217adf 	str	xzr, [x22, x1, lsl #3]
+    4228:	94000000 	bl	ef68 <ubi_wl_close>
+    422c:	aa1303e0 	mov	x0, x19
+    4230:	94000000 	bl	3d90 <ubi_free_internal_volumes>
+    4234:	f943ca60 	ldr	x0, [x19, #1936]
+    4238:	94000000 	bl	0 <vfree>
+    423c:	f9494a60 	ldr	x0, [x19, #4752]
+    4240:	17ffff86 	b	4058 <ubi_attach_mtd_dev+0x258>
+    4244:	b9434262 	ldr	w2, [x19, #832]
+    4248:	93407e84 	sxtw	x4, w20
+    424c:	912622c3 	add	x3, x22, #0x988
+    4250:	910d127b 	add	x27, x19, #0x344
+    4254:	90000018 	adrp	x24, 0 <ubi_update_layout_vol>
+    4258:	91000318 	add	x24, x24, #0x0
+    425c:	aa1803e1 	mov	x1, x24
+    4260:	aa1b03e0 	mov	x0, x27
+    4264:	f8247873 	str	x19, [x3, x4, lsl #3]
+    4268:	a9066fe4 	stp	x4, x27, [sp, #96]
+[31m    426c:	94000000 	bl	0 <sprintf>[0m
+    4270:	b9478662 	ldr	w2, [x19, #1924]
+    4274:	aa1b03e3 	mov	x3, x27
+--
+    eaa8:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    eaac:	91000021 	add	x1, x1, #0x0
+    eab0:	94000000 	bl	0 <__mutex_init>
+    eab4:	d2823507 	mov	x7, #0x11a8                	// #4520
+    eab8:	aa1303e2 	mov	x2, x19
+    eabc:	8b0702a0 	add	x0, x21, x7
+    eac0:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    eac4:	91000021 	add	x1, x1, #0x0
+    eac8:	94000000 	bl	0 <__init_rwsem>
+    eacc:	b94342a2 	ldr	w2, [x21, #832]
+    ead0:	d2823f08 	mov	x8, #0x11f8                	// #4600
+    ead4:	b9408341 	ldr	w1, [x26, #128]
+    ead8:	8b0802a3 	add	x3, x21, x8
+    eadc:	d2824389 	mov	x9, #0x121c                	// #4636
+    eae0:	b907baa1 	str	w1, [x21, #1976]
+    eae4:	f908fea3 	str	x3, [x21, #4600]
+    eae8:	8b0902a0 	add	x0, x21, x9
+    eaec:	f90902a3 	str	x3, [x21, #4608]
+    eaf0:	90000001 	adrp	x1, 0 <ubi_update_layout_vol>
+    eaf4:	91000021 	add	x1, x1, #0x0
+[31m    eaf8:	94000000 	bl	0 <sprintf>[0m
+    eafc:	b9923aa0 	ldrsw	x0, [x21, #4664]
+    eb00:	eb40f7ff 	cmp	xzr, x0, lsr #61
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m12[0m times [0;33mubi.ko[0m
+

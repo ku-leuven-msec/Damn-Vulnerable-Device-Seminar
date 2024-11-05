@@ -1,0 +1,490 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibksba.so.8.11.6[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibksba.so.8.11.6[0m
+
+    a7b8:	97ffee2a 	bl	6060 <gpg_err_code_from_syserror@plt>
+    a7bc:	12003c01 	and	w1, w0, #0xffff
+    a7c0:	7100001f 	cmp	w0, #0x0
+    a7c4:	52a12002 	mov	w2, #0x9000000             	// #150994944
+    a7c8:	2a020020 	orr	w0, w1, w2
+    a7cc:	1a9f1000 	csel	w0, w0, wzr, ne  // ne = any
+    a7d0:	17fffff0 	b	a790 <ksba_name_get_uri@@KSBA_0.9+0x3b90>
+    a7d4:	f94027e0 	ldr	x0, [sp, #72]
+    a7d8:	9400074a 	bl	c500 <ksba_name_get_uri@@KSBA_0.9+0x5900>
+    a7dc:	f94027e0 	ldr	x0, [sp, #72]
+    a7e0:	94000784 	bl	c5f0 <ksba_name_get_uri@@KSBA_0.9+0x59f0>
+    a7e4:	aa1403e0 	mov	x0, x20
+    a7e8:	97ffedba 	bl	5ed0 <strlen@plt>
+    a7ec:	91006000 	add	x0, x0, #0x18
+    a7f0:	94006d34 	bl	25cc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4600>
+    a7f4:	a9448be3 	ldp	x3, x2, [sp, #72]
+    a7f8:	aa1403e1 	mov	x1, x20
+    a7fc:	aa0003f4 	mov	x20, x0
+    a800:	91004000 	add	x0, x0, #0x10
+    a804:	a9000a83 	stp	x3, x2, [x20]
+[31m    a808:	97ffee46 	bl	6120 <strcpy@plt>[0m
+    a80c:	f90002b4 	str	x20, [x21]
+    a810:	17ffffdd 	b	a784 <ksba_name_get_uri@@KSBA_0.9+0x3b84>
+--
+    a9c0:	f9400299 	ldr	x25, [x20]
+    a9c4:	aa1903e0 	mov	x0, x25
+    a9c8:	97ffed42 	bl	5ed0 <strlen@plt>
+    a9cc:	f94002f8 	ldr	x24, [x23]
+    a9d0:	aa0003f3 	mov	x19, x0
+    a9d4:	aa1803e0 	mov	x0, x24
+    a9d8:	97ffed3e 	bl	5ed0 <strlen@plt>
+    a9dc:	8b000273 	add	x19, x19, x0
+    a9e0:	91000a60 	add	x0, x19, #0x2
+    a9e4:	f100c81f 	cmp	x0, #0x32
+    a9e8:	54000369 	b.ls	aa54 <ksba_name_get_uri@@KSBA_0.9+0x3e54>  // b.plast
+    a9ec:	94006c75 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+    a9f0:	aa0003f8 	mov	x24, x0
+    a9f4:	b4000aa0 	cbz	x0, ab48 <ksba_name_get_uri@@KSBA_0.9+0x3f48>
+    a9f8:	f9400281 	ldr	x1, [x20]
+    a9fc:	97ffed55 	bl	5f50 <stpcpy@plt>
+    aa00:	528005c1 	mov	w1, #0x2e                  	// #46
+    aa04:	78001401 	strh	w1, [x0], #1
+    aa08:	f94002e1 	ldr	x1, [x23]
+    aa0c:	910143f7 	add	x23, sp, #0x50
+[31m    aa10:	97ffedc4 	bl	6120 <strcpy@plt>[0m
+    aa14:	aa1803e1 	mov	x1, x24
+    aa18:	aa1403e0 	mov	x0, x20
+--
+    aa20:	aa0003f3 	mov	x19, x0
+    aa24:	b40000a0 	cbz	x0, aa38 <ksba_name_get_uri@@KSBA_0.9+0x3e38>
+    aa28:	b9400800 	ldr	w0, [x0, #8]
+    aa2c:	910143f7 	add	x23, sp, #0x50
+    aa30:	7102041f 	cmp	w0, #0x81
+    aa34:	540004a0 	b.eq	aac8 <ksba_name_get_uri@@KSBA_0.9+0x3ec8>  // b.none
+    aa38:	eb17031f 	cmp	x24, x23
+    aa3c:	540002c0 	b.eq	aa94 <ksba_name_get_uri@@KSBA_0.9+0x3e94>  // b.none
+    aa40:	aa1803e0 	mov	x0, x24
+    aa44:	94006c97 	bl	25ca0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x45e0>
+    aa48:	a94363f7 	ldp	x23, x24, [sp, #48]
+    aa4c:	f94023f9 	ldr	x25, [sp, #64]
+    aa50:	14000013 	b	aa9c <ksba_name_get_uri@@KSBA_0.9+0x3e9c>
+    aa54:	910143f7 	add	x23, sp, #0x50
+    aa58:	aa1903e1 	mov	x1, x25
+    aa5c:	aa1703e0 	mov	x0, x23
+    aa60:	97ffed3c 	bl	5f50 <stpcpy@plt>
+    aa64:	528005c2 	mov	w2, #0x2e                  	// #46
+    aa68:	38001402 	strb	w2, [x0], #1
+    aa6c:	aa1803e1 	mov	x1, x24
+[31m    aa70:	97ffedac 	bl	6120 <strcpy@plt>[0m
+    aa74:	aa1703e1 	mov	x1, x23
+    aa78:	aa1403e0 	mov	x0, x20
+--
+    cf40:	121a7800 	and	w0, w0, #0xffffffdf
+    cf44:	52800055 	mov	w21, #0x2                   	// #2
+    cf48:	39004a60 	strb	w0, [x19, #18]
+    cf4c:	17ffffa4 	b	cddc <ksba_name_get_uri@@KSBA_0.9+0x61dc>
+    cf50:	528006f4 	mov	w20, #0x37                  	// #55
+    cf54:	72a12014 	movk	w20, #0x900, lsl #16
+    cf58:	17ffffef 	b	cf14 <ksba_name_get_uri@@KSBA_0.9+0x6314>
+    cf5c:	aa1c03e0 	mov	x0, x28
+    cf60:	97fffd68 	bl	c500 <ksba_name_get_uri@@KSBA_0.9+0x5900>
+    cf64:	aa1c03e0 	mov	x0, x28
+    cf68:	97fffda2 	bl	c5f0 <ksba_name_get_uri@@KSBA_0.9+0x59f0>
+    cf6c:	aa1803e0 	mov	x0, x24
+    cf70:	97ffe3d8 	bl	5ed0 <strlen@plt>
+    cf74:	91006000 	add	x0, x0, #0x18
+    cf78:	94006312 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+    cf7c:	aa0003f3 	mov	x19, x0
+    cf80:	b4000120 	cbz	x0, cfa4 <ksba_name_get_uri@@KSBA_0.9+0x63a4>
+    cf84:	a9006a7c 	stp	x28, x26, [x19]
+    cf88:	aa1803e1 	mov	x1, x24
+    cf8c:	91004000 	add	x0, x0, #0x10
+[31m    cf90:	97ffe464 	bl	6120 <strcpy@plt>[0m
+    cf94:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    cf98:	a94573fb 	ldp	x27, x28, [sp, #80]
+--
+   10818:	f9401bf7 	ldr	x23, [sp, #48]
+   1081c:	52800000 	mov	w0, #0x0                   	// #0
+   10820:	a94153f3 	ldp	x19, x20, [sp, #16]
+   10824:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   10828:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   1082c:	d65f03c0 	ret
+   10830:	528006e0 	mov	w0, #0x37                  	// #55
+   10834:	72a12000 	movk	w0, #0x900, lsl #16
+   10838:	d65f03c0 	ret
+   1083c:	b4fffef7 	cbz	x23, 10818 <ksba_name_get_uri@@KSBA_0.9+0x9c18>
+   10840:	aa1403e0 	mov	x0, x20
+   10844:	97ffd5a3 	bl	5ed0 <strlen@plt>
+   10848:	aa0003e1 	mov	x1, x0
+   1084c:	d2800020 	mov	x0, #0x1                   	// #1
+   10850:	91008021 	add	x1, x1, #0x20
+   10854:	940054df 	bl	25bd0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4510>
+   10858:	aa0003f3 	mov	x19, x0
+   1085c:	b4fffd60 	cbz	x0, 10808 <ksba_name_get_uri@@KSBA_0.9+0x9c08>
+   10860:	aa1403e1 	mov	x1, x20
+   10864:	91007000 	add	x0, x0, #0x1c
+[31m   10868:	97ffd62e 	bl	6120 <strcpy@plt>[0m
+   1086c:	f10012df 	cmp	x22, #0x4
+   10870:	54000449 	b.ls	108f8 <ksba_name_get_uri@@KSBA_0.9+0x9cf8>  // b.plast
+--
+   10f18:	b9403264 	ldr	w4, [x19, #48]
+   10f1c:	f00000a3 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   10f20:	913d0063 	add	x3, x3, #0xf40
+   10f24:	d28002c2 	mov	x2, #0x16                  	// #22
+   10f28:	52800021 	mov	w1, #0x1                   	// #1
+   10f2c:	a90363f7 	stp	x23, x24, [sp, #48]
+   10f30:	910103f8 	add	x24, sp, #0x40
+   10f34:	aa1803e0 	mov	x0, x24
+   10f38:	97ffd3ee 	bl	5ef0 <__sprintf_chk@plt>
+   10f3c:	aa1803e0 	mov	x0, x24
+   10f40:	97ffd3e4 	bl	5ed0 <strlen@plt>
+   10f44:	b9403261 	ldr	w1, [x19, #48]
+   10f48:	aa0003f7 	mov	x23, x0
+   10f4c:	0b000020 	add	w0, w1, w0
+   10f50:	11000800 	add	w0, w0, #0x2
+   10f54:	93407c00 	sxtw	x0, w0
+   10f58:	9400531a 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   10f5c:	aa0003f6 	mov	x22, x0
+   10f60:	b40003e0 	cbz	x0, 10fdc <ksba_name_get_uri@@KSBA_0.9+0xa3dc>
+   10f64:	aa1803e1 	mov	x1, x24
+[31m   10f68:	97ffd46e 	bl	6120 <strcpy@plt>[0m
+   10f6c:	69450663 	ldpsw	x3, x1, [x19, #40]
+   10f70:	8b1702c0 	add	x0, x22, x23
+--
+   13574:	54000bc1 	b.ne	136ec <ksba_name_get_uri@@KSBA_0.9+0xcaec>  // b.any
+   13578:	2a1803e1 	mov	w1, w24
+   1357c:	900000a3 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   13580:	913d0063 	add	x3, x3, #0xf40
+   13584:	d28003c2 	mov	x2, #0x1e                  	// #30
+   13588:	9103a3f4 	add	x20, sp, #0xe8
+   1358c:	aa1403e0 	mov	x0, x20
+   13590:	97ffca58 	bl	5ef0 <__sprintf_chk@plt>
+   13594:	aa1403e0 	mov	x0, x20
+   13598:	97ffca4e 	bl	5ed0 <strlen@plt>
+   1359c:	f9405be1 	ldr	x1, [sp, #176]
+   135a0:	aa0003f3 	mov	x19, x0
+   135a4:	91000820 	add	x0, x1, #0x2
+   135a8:	8b130000 	add	x0, x0, x19
+   135ac:	94004985 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   135b0:	f9000360 	str	x0, [x27]
+   135b4:	b9406fe5 	ldr	w5, [sp, #108]
+   135b8:	b4000cc0 	cbz	x0, 13750 <ksba_name_get_uri@@KSBA_0.9+0xcb50>
+   135bc:	aa1403e1 	mov	x1, x20
+   135c0:	b9006fe5 	str	w5, [sp, #108]
+[31m   135c4:	97ffcad7 	bl	6120 <strcpy@plt>[0m
+   135c8:	f9404fe1 	ldr	x1, [sp, #152]
+   135cc:	f9405be2 	ldr	x2, [sp, #176]
+--
+   13618:	540004e0 	b.eq	136b4 <ksba_name_get_uri@@KSBA_0.9+0xcab4>  // b.none
+   1361c:	2a1503e4 	mov	w4, w21
+   13620:	900000a3 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   13624:	913d0063 	add	x3, x3, #0xf40
+   13628:	d28003c2 	mov	x2, #0x1e                  	// #30
+   1362c:	52800021 	mov	w1, #0x1                   	// #1
+   13630:	9103a3f7 	add	x23, sp, #0xe8
+   13634:	aa1703e0 	mov	x0, x23
+   13638:	b9006fe5 	str	w5, [sp, #108]
+   1363c:	97ffca2d 	bl	5ef0 <__sprintf_chk@plt>
+   13640:	aa1703e0 	mov	x0, x23
+   13644:	97ffca23 	bl	5ed0 <strlen@plt>
+   13648:	8b0002b4 	add	x20, x21, x0
+   1364c:	aa0003f3 	mov	x19, x0
+   13650:	91000a80 	add	x0, x20, #0x2
+   13654:	9400495b 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   13658:	f94033f8 	ldr	x24, [sp, #96]
+   1365c:	f9000300 	str	x0, [x24]
+   13660:	b4000780 	cbz	x0, 13750 <ksba_name_get_uri@@KSBA_0.9+0xcb50>
+   13664:	aa1703e1 	mov	x1, x23
+[31m   13668:	97ffcaae 	bl	6120 <strcpy@plt>[0m
+   1366c:	f9400300 	ldr	x0, [x24]
+   13670:	aa1603e1 	mov	x1, x22
+--
+   138e4:	eb00009f 	cmp	x4, x0
+   138e8:	54000888 	b.hi	139f8 <ksba_name_get_uri@@KSBA_0.9+0xcdf8>  // b.pmore
+   138ec:	540006e1 	b.ne	139c8 <ksba_name_get_uri@@KSBA_0.9+0xcdc8>  // b.any
+   138f0:	900000a3 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   138f4:	913d0063 	add	x3, x3, #0xf40
+   138f8:	d28003c2 	mov	x2, #0x1e                  	// #30
+   138fc:	52800021 	mov	w1, #0x1                   	// #1
+   13900:	9103a3f5 	add	x21, sp, #0xe8
+   13904:	aa1503e0 	mov	x0, x21
+   13908:	97ffc97a 	bl	5ef0 <__sprintf_chk@plt>
+   1390c:	aa1503e0 	mov	x0, x21
+   13910:	97ffc970 	bl	5ed0 <strlen@plt>
+   13914:	f9405be1 	ldr	x1, [sp, #176]
+   13918:	aa0003f4 	mov	x20, x0
+   1391c:	91000820 	add	x0, x1, #0x2
+   13920:	8b140000 	add	x0, x0, x20
+   13924:	940048a7 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   13928:	f90002e0 	str	x0, [x23]
+   1392c:	b4000720 	cbz	x0, 13a10 <ksba_name_get_uri@@KSBA_0.9+0xce10>
+   13930:	aa1503e1 	mov	x1, x21
+[31m   13934:	97ffc9fb 	bl	6120 <strcpy@plt>[0m
+   13938:	f9404fe1 	ldr	x1, [sp, #152]
+   1393c:	f9405be2 	ldr	x2, [sp, #176]
+--
+   1639c:	b9403284 	ldr	w4, [x20, #48]
+   163a0:	b0000083 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   163a4:	913d0063 	add	x3, x3, #0xf40
+   163a8:	d28002c2 	mov	x2, #0x16                  	// #22
+   163ac:	52800021 	mov	w1, #0x1                   	// #1
+   163b0:	f90023f9 	str	x25, [sp, #64]
+   163b4:	910143f9 	add	x25, sp, #0x50
+   163b8:	aa1903e0 	mov	x0, x25
+   163bc:	97ffbecd 	bl	5ef0 <__sprintf_chk@plt>
+   163c0:	aa1903e0 	mov	x0, x25
+   163c4:	97ffbec3 	bl	5ed0 <strlen@plt>
+   163c8:	b9403281 	ldr	w1, [x20, #48]
+   163cc:	aa0003f8 	mov	x24, x0
+   163d0:	0b000020 	add	w0, w1, w0
+   163d4:	11000800 	add	w0, w0, #0x2
+   163d8:	93407c00 	sxtw	x0, w0
+   163dc:	94003df9 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   163e0:	aa0003f6 	mov	x22, x0
+   163e4:	b40008c0 	cbz	x0, 164fc <ksba_name_get_uri@@KSBA_0.9+0xf8fc>
+   163e8:	aa1903e1 	mov	x1, x25
+[31m   163ec:	97ffbf4d 	bl	6120 <strcpy@plt>[0m
+   163f0:	69450e81 	ldpsw	x1, x3, [x20, #40]
+   163f4:	8b1802c0 	add	x0, x22, x24
+--
+   16aec:	5280015a 	mov	w26, #0xa                   	// #10
+   16af0:	a90573fb 	stp	x27, x28, [sp, #80]
+   16af4:	14000016 	b	16b4c <ksba_name_get_uri@@KSBA_0.9+0xff4c>
+   16af8:	97ffbcf6 	bl	5ed0 <strlen@plt>
+   16afc:	aa0003fc 	mov	x28, x0
+   16b00:	aa1403e0 	mov	x0, x20
+   16b04:	97ffbcf3 	bl	5ed0 <strlen@plt>
+   16b08:	8b1c0001 	add	x1, x0, x28
+   16b0c:	aa1403e0 	mov	x0, x20
+   16b10:	91000c21 	add	x1, x1, #0x3
+   16b14:	94003c4b 	bl	25c40 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4580>
+   16b18:	aa0003fc 	mov	x28, x0
+   16b1c:	b4000520 	cbz	x0, 16bc0 <ksba_name_get_uri@@KSBA_0.9+0xffc0>
+   16b20:	97ffbcec 	bl	5ed0 <strlen@plt>
+   16b24:	aa0003e1 	mov	x1, x0
+   16b28:	8b000380 	add	x0, x28, x0
+   16b2c:	aa1c03f4 	mov	x20, x28
+   16b30:	91000400 	add	x0, x0, #0x1
+   16b34:	78216b9a 	strh	w26, [x28, x1]
+   16b38:	aa1b03e1 	mov	x1, x27
+[31m   16b3c:	97ffbd79 	bl	6120 <strcpy@plt>[0m
+   16b40:	110006f7 	add	w23, w23, #0x1
+   16b44:	aa1b03e0 	mov	x0, x27
+--
+   1a290:	f9407b60 	ldr	x0, [x27, #240]
+   1a294:	910543fc 	add	x28, sp, #0x150
+   1a298:	94002e82 	bl	25ca0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x45e0>
+   1a29c:	b940d3e4 	ldr	w4, [sp, #208]
+   1a2a0:	b0000063 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   1a2a4:	913d0063 	add	x3, x3, #0xf40
+   1a2a8:	d28002c2 	mov	x2, #0x16                  	// #22
+   1a2ac:	52800021 	mov	w1, #0x1                   	// #1
+   1a2b0:	aa1c03e0 	mov	x0, x28
+   1a2b4:	97ffaf0f 	bl	5ef0 <__sprintf_chk@plt>
+   1a2b8:	aa1c03e0 	mov	x0, x28
+   1a2bc:	97ffaf05 	bl	5ed0 <strlen@plt>
+   1a2c0:	f9406be1 	ldr	x1, [sp, #208]
+   1a2c4:	aa0003f8 	mov	x24, x0
+   1a2c8:	91000820 	add	x0, x1, #0x2
+   1a2cc:	8b180000 	add	x0, x0, x24
+   1a2d0:	94002e3c 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   1a2d4:	f9007b60 	str	x0, [x27, #240]
+   1a2d8:	b4000c80 	cbz	x0, 1a468 <ksba_name_get_uri@@KSBA_0.9+0x13868>
+   1a2dc:	aa1c03e1 	mov	x1, x28
+[31m   1a2e0:	97ffaf90 	bl	6120 <strcpy@plt>[0m
+   1a2e4:	f94047e3 	ldr	x3, [sp, #136]
+   1a2e8:	f9406be2 	ldr	x2, [sp, #208]
+--
+   1b4c0:	fa421820 	ccmp	x1, #0x2, #0x0, ne  // ne = any
+   1b4c4:	54000b81 	b.ne	1b634 <ksba_name_get_uri@@KSBA_0.9+0x14a34>  // b.any
+   1b4c8:	f94037e3 	ldr	x3, [sp, #104]
+   1b4cc:	d28003c2 	mov	x2, #0x1e                  	// #30
+   1b4d0:	910323f8 	add	x24, sp, #0xc8
+   1b4d4:	2a0303e1 	mov	w1, w3
+   1b4d8:	90000063 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   1b4dc:	913d0063 	add	x3, x3, #0xf40
+   1b4e0:	aa1803e0 	mov	x0, x24
+   1b4e4:	97ffaa83 	bl	5ef0 <__sprintf_chk@plt>
+   1b4e8:	aa1803e0 	mov	x0, x24
+   1b4ec:	97ffaa79 	bl	5ed0 <strlen@plt>
+   1b4f0:	aa0003f4 	mov	x20, x0
+   1b4f4:	f9404be1 	ldr	x1, [sp, #144]
+   1b4f8:	91000820 	add	x0, x1, #0x2
+   1b4fc:	8b140000 	add	x0, x0, x20
+   1b500:	940029b0 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   1b504:	f90002e0 	str	x0, [x23]
+   1b508:	b4000e00 	cbz	x0, 1b6c8 <ksba_name_get_uri@@KSBA_0.9+0x14ac8>
+   1b50c:	aa1803e1 	mov	x1, x24
+[31m   1b510:	97ffab04 	bl	6120 <strcpy@plt>[0m
+   1b514:	f9403fe1 	ldr	x1, [sp, #120]
+   1b518:	f9404be2 	ldr	x2, [sp, #144]
+--
+   1b554:	fa401b24 	ccmp	x25, #0x0, #0x4, ne  // ne = any
+   1b558:	fa401ac4 	ccmp	x22, #0x0, #0x4, ne  // ne = any
+   1b55c:	54000760 	b.eq	1b648 <ksba_name_get_uri@@KSBA_0.9+0x14a48>  // b.none
+   1b560:	2a1903e4 	mov	w4, w25
+   1b564:	90000063 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   1b568:	913d0063 	add	x3, x3, #0xf40
+   1b56c:	d28003c2 	mov	x2, #0x1e                  	// #30
+   1b570:	52800021 	mov	w1, #0x1                   	// #1
+   1b574:	910323f8 	add	x24, sp, #0xc8
+   1b578:	aa1803e0 	mov	x0, x24
+   1b57c:	97ffaa5d 	bl	5ef0 <__sprintf_chk@plt>
+   1b580:	aa1803e0 	mov	x0, x24
+   1b584:	97ffaa53 	bl	5ed0 <strlen@plt>
+   1b588:	8b000337 	add	x23, x25, x0
+   1b58c:	aa0003f4 	mov	x20, x0
+   1b590:	91000ae0 	add	x0, x23, #0x2
+   1b594:	9400298b 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   1b598:	f90002c0 	str	x0, [x22]
+   1b59c:	b4000aa0 	cbz	x0, 1b6f0 <ksba_name_get_uri@@KSBA_0.9+0x14af0>
+   1b5a0:	aa1803e1 	mov	x1, x24
+[31m   1b5a4:	97ffaadf 	bl	6120 <strcpy@plt>[0m
+   1b5a8:	f94002c0 	ldr	x0, [x22]
+   1b5ac:	aa1c03e1 	mov	x1, x28
+--
+   1b7e4:	f94023e0 	ldr	x0, [sp, #64]
+   1b7e8:	eb00009f 	cmp	x4, x0
+   1b7ec:	540008c8 	b.hi	1b904 <ksba_name_get_uri@@KSBA_0.9+0x14d04>  // b.pmore
+   1b7f0:	90000063 	adrp	x3, 27000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x5940>
+   1b7f4:	913d0063 	add	x3, x3, #0xf40
+   1b7f8:	d28003c2 	mov	x2, #0x1e                  	// #30
+   1b7fc:	52800021 	mov	w1, #0x1                   	// #1
+   1b800:	910263f5 	add	x21, sp, #0x98
+   1b804:	aa1503e0 	mov	x0, x21
+   1b808:	97ffa9ba 	bl	5ef0 <__sprintf_chk@plt>
+   1b80c:	aa1503e0 	mov	x0, x21
+   1b810:	97ffa9b0 	bl	5ed0 <strlen@plt>
+   1b814:	f94033e1 	ldr	x1, [sp, #96]
+   1b818:	aa0003f4 	mov	x20, x0
+   1b81c:	91000820 	add	x0, x1, #0x2
+   1b820:	8b140000 	add	x0, x0, x20
+   1b824:	940028e7 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   1b828:	f90002c0 	str	x0, [x22]
+   1b82c:	b4000520 	cbz	x0, 1b8d0 <ksba_name_get_uri@@KSBA_0.9+0x14cd0>
+   1b830:	aa1503e1 	mov	x1, x21
+[31m   1b834:	97ffaa3b 	bl	6120 <strcpy@plt>[0m
+   1b838:	f94027e1 	ldr	x1, [sp, #72]
+   1b83c:	f94033e2 	ldr	x2, [sp, #96]
+--
+   1c294:	aa0403f5 	mov	x21, x4
+   1c298:	fa401884 	ccmp	x4, #0x0, #0x4, ne  // ne = any
+   1c29c:	54000380 	b.eq	1c30c <ksba_name_get_uri@@KSBA_0.9+0x1570c>  // b.none
+   1c2a0:	aa0103e0 	mov	x0, x1
+   1c2a4:	a90363f7 	stp	x23, x24, [sp, #48]
+   1c2a8:	2a0203f8 	mov	w24, w2
+   1c2ac:	97ffa709 	bl	5ed0 <strlen@plt>
+   1c2b0:	910082a1 	add	x1, x21, #0x20
+   1c2b4:	8b000020 	add	x0, x1, x0
+   1c2b8:	94002642 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   1c2bc:	aa0003f7 	mov	x23, x0
+   1c2c0:	b4000420 	cbz	x0, 1c344 <ksba_name_get_uri@@KSBA_0.9+0x15744>
+   1c2c4:	aa1503e2 	mov	x2, x21
+   1c2c8:	29020af8 	stp	w24, w2, [x23, #16]
+   1c2cc:	91006000 	add	x0, x0, #0x18
+   1c2d0:	aa1603e1 	mov	x1, x22
+   1c2d4:	8b150015 	add	x21, x0, x21
+   1c2d8:	97ffa6f6 	bl	5eb0 <memcpy@plt>
+   1c2dc:	aa1503e0 	mov	x0, x21
+   1c2e0:	aa1303e1 	mov	x1, x19
+[31m   1c2e4:	97ffa78f 	bl	6120 <strcpy@plt>[0m
+   1c2e8:	f9405280 	ldr	x0, [x20, #160]
+   1c2ec:	a90056e0 	stp	x0, x21, [x23]
+--
+   1e3e8:	35000dc0 	cbnz	w0, 1e5a0 <ksba_name_get_uri@@KSBA_0.9+0x179a0>
+   1e3ec:	f94043e1 	ldr	x1, [sp, #128]
+   1e3f0:	f940a3fb 	ldr	x27, [sp, #320]
+   1e3f4:	aa1b03e0 	mov	x0, x27
+   1e3f8:	97ff9f26 	bl	6090 <strcmp@plt>
+   1e3fc:	34000760 	cbz	w0, 1e4e8 <ksba_name_get_uri@@KSBA_0.9+0x178e8>
+   1e400:	f94163f8 	ldr	x24, [sp, #704]
+   1e404:	aa1b03e0 	mov	x0, x27
+   1e408:	97ff9eb2 	bl	5ed0 <strlen@plt>
+   1e40c:	8b180000 	add	x0, x0, x24
+   1e410:	91008000 	add	x0, x0, #0x20
+   1e414:	94001deb 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   1e418:	aa0003f8 	mov	x24, x0
+   1e41c:	b40013e0 	cbz	x0, 1e698 <ksba_name_get_uri@@KSBA_0.9+0x17a98>
+   1e420:	f940a3fc 	ldr	x28, [sp, #320]
+   1e424:	9100701b 	add	x27, x0, #0x1c
+   1e428:	b940ffe2 	ldr	w2, [sp, #252]
+   1e42c:	aa1b03e0 	mov	x0, x27
+   1e430:	aa1c03e1 	mov	x1, x28
+   1e434:	b9001b02 	str	w2, [x24, #24]
+[31m   1e438:	97ff9f3a 	bl	6120 <strcpy@plt>[0m
+   1e43c:	aa1c03e0 	mov	x0, x28
+   1e440:	97ff9ea4 	bl	5ed0 <strlen@plt>
+--
+   1e848:	aa1c03e2 	mov	x2, x28
+   1e84c:	aa1803e1 	mov	x1, x24
+   1e850:	aa1a03e0 	mov	x0, x26
+   1e854:	97fffb87 	bl	1d670 <ksba_name_get_uri@@KSBA_0.9+0x16a70>
+   1e858:	35001540 	cbnz	w0, 1eb00 <ksba_name_get_uri@@KSBA_0.9+0x17f00>
+   1e85c:	f94097e0 	ldr	x0, [sp, #296]
+   1e860:	97ff9d9c 	bl	5ed0 <strlen@plt>
+   1e864:	f9413fe1 	ldr	x1, [sp, #632]
+   1e868:	91008021 	add	x1, x1, #0x20
+   1e86c:	8b000020 	add	x0, x1, x0
+   1e870:	94001cd4 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   1e874:	aa0003f5 	mov	x21, x0
+   1e878:	b40010a0 	cbz	x0, 1ea8c <ksba_name_get_uri@@KSBA_0.9+0x17e8c>
+   1e87c:	f94097f6 	ldr	x22, [sp, #296]
+   1e880:	91007004 	add	x4, x0, #0x1c
+   1e884:	b940fbe2 	ldr	w2, [sp, #248]
+   1e888:	aa0403e0 	mov	x0, x4
+   1e88c:	aa1603e1 	mov	x1, x22
+   1e890:	b9001aa2 	str	w2, [x21, #24]
+   1e894:	f9006fe4 	str	x4, [sp, #216]
+[31m   1e898:	97ff9e22 	bl	6120 <strcpy@plt>[0m
+   1e89c:	aa1603e0 	mov	x0, x22
+   1e8a0:	97ff9d8c 	bl	5ed0 <strlen@plt>
+--
+   1f9e0:	54000660 	b.eq	1faac <ksba_name_get_uri@@KSBA_0.9+0x18eac>  // b.none
+   1f9e4:	f9404a64 	ldr	x4, [x19, #144]
+   1f9e8:	b0000043 	adrp	x3, 28000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x6940>
+   1f9ec:	91308063 	add	x3, x3, #0xc20
+   1f9f0:	d2800642 	mov	x2, #0x32                  	// #50
+   1f9f4:	52800021 	mov	w1, #0x1                   	// #1
+   1f9f8:	f9001bf7 	str	x23, [sp, #48]
+   1f9fc:	910103f7 	add	x23, sp, #0x40
+   1fa00:	aa1703e0 	mov	x0, x23
+   1fa04:	97ff993b 	bl	5ef0 <__sprintf_chk@plt>
+   1fa08:	aa1703e0 	mov	x0, x23
+   1fa0c:	97ff9931 	bl	5ed0 <strlen@plt>
+   1fa10:	f9404a61 	ldr	x1, [x19, #144]
+   1fa14:	aa0003f5 	mov	x21, x0
+   1fa18:	91000820 	add	x0, x1, #0x2
+   1fa1c:	8b150000 	add	x0, x0, x21
+   1fa20:	94001868 	bl	25bc0 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x4500>
+   1fa24:	f9000280 	str	x0, [x20]
+   1fa28:	b40004e0 	cbz	x0, 1fac4 <ksba_name_get_uri@@KSBA_0.9+0x18ec4>
+   1fa2c:	aa1703e1 	mov	x1, x23
+[31m   1fa30:	97ff99bc 	bl	6120 <strcpy@plt>[0m
+   1fa34:	a9488a61 	ldp	x1, x2, [x19, #136]
+   1fa38:	f9400280 	ldr	x0, [x20]
+--
+   25c30:	aa1303e0 	mov	x0, x19
+   25c34:	a94153f3 	ldp	x19, x20, [sp, #16]
+   25c38:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   25c3c:	d65f03c0 	ret
+   25c40:	f0000102 	adrp	x2, 48000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x26940>
+   25c44:	f9400842 	ldr	x2, [x2, #16]
+   25c48:	aa0203f0 	mov	x16, x2
+   25c4c:	d61f0200 	br	x16
+   25c50:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   25c54:	910003fd 	mov	x29, sp
+   25c58:	a90153f3 	stp	x19, x20, [sp, #16]
+   25c5c:	aa0003f4 	mov	x20, x0
+   25c60:	97ff809c 	bl	5ed0 <strlen@plt>
+   25c64:	f0000101 	adrp	x1, 48000 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x26940>
+   25c68:	f9400421 	ldr	x1, [x1, #8]
+   25c6c:	91000400 	add	x0, x0, #0x1
+   25c70:	d63f0020 	blr	x1
+   25c74:	aa0003f3 	mov	x19, x0
+   25c78:	b4000060 	cbz	x0, 25c84 <_ksba_keyinfo_from_sexp@@KSBA_PRIVATE_TESTS+0x45c4>
+   25c7c:	aa1403e1 	mov	x1, x20
+[31m   25c80:	97ff8128 	bl	6120 <strcpy@plt>[0m
+   25c84:	aa1303e0 	mov	x0, x19
+   25c88:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m20[0m times [0;33mlibksba.so.8.11.6[0m
+

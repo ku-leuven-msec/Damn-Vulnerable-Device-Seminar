@@ -1,0 +1,23 @@
+[[0;34m+[0m] [0;36m[1mCheck cronjobs[0m
+[1m=================================================================[0m
+[[0;32m+[0m][0;32m Crontab content:[0m
+    # /etc/crontab: system-wide crontab
+    # Unlike any other crontab you don't have to run the `crontab'
+    # command to install the new version when you edit this file
+    # and files in /etc/cron.d. These files also have username fields,
+    # that none of the other crontabs do.
+    
+    SHELL=/bin/sh
+    PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+    
+    #  m  h  dom mon dow user	command
+    #  1  *     * * *    root        cd / && run-parts /etc/cron.hourly
+    # 30  7     * * *    root        cd / && run-parts /etc/cron.daily
+    # 42  7     * * 7    root        cd / && run-parts /etc/cron.weekly
+    # 55  7     1 * *    root        cd / && run-parts /etc/cron.monthly
+    * * * * * root /home/manager/checkNetwork.sh
+    */1 * * * * client /opt/dvd/services/coap/check_daemon.sh
+    */1 * * * * root /opt/dvd/services/http/check_daemon.sh
+    */1 * * * * root /opt/dvd/services/rest/check_daemon.sh
+    */1 * * * * root /opt/dvd/services/telnet/check_daemon.sh
+[[0;33m*[0m] Sun Nov 14 07:32:58 EST 2021 - S80_cronjob_check finished

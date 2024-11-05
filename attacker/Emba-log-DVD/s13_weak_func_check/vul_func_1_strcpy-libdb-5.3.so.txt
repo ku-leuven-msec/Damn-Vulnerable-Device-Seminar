@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibdb-5.3.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibdb-5.3.so[0m
+
+   d93ac:	f9410c00 	ldr	x0, [x0, #536]
+   d93b0:	b40007e0 	cbz	x0, d94ac <__partition_set_dirs@@Base+0x23c>
+   d93b4:	f94043e1 	ldr	x1, [sp, #128]
+   d93b8:	a94153f3 	ldp	x19, x20, [sp, #16]
+   d93bc:	a94363f7 	ldp	x23, x24, [sp, #48]
+   d93c0:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   d93c4:	a94573fb 	ldp	x27, x28, [sp, #80]
+   d93c8:	f9000c01 	str	x1, [x0, #24]
+   d93cc:	d0000280 	adrp	x0, 12b000 <__errno_location@GLIBC_2.17>
+   d93d0:	f9448c00 	ldr	x0, [x0, #2328]
+   d93d4:	f94047e1 	ldr	x1, [sp, #136]
+   d93d8:	f9400000 	ldr	x0, [x0]
+   d93dc:	ca000020 	eor	x0, x1, x0
+   d93e0:	b5000800 	cbnz	x0, d94e0 <__partition_set_dirs@@Base+0x270>
+   d93e4:	b94077e0 	ldr	w0, [sp, #116]
+   d93e8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   d93ec:	a8c97bfd 	ldp	x29, x30, [sp], #144
+   d93f0:	d65f03c0 	ret
+   d93f4:	aa1c03e1 	mov	x1, x28
+   d93f8:	aa1503e0 	mov	x0, x21
+[31m   d93fc:	97fd22b5 	bl	21ed0 <strcpy@plt>[0m
+   d9400:	f90002f5 	str	x21, [x23]
+   d9404:	f94002c0 	ldr	x0, [x22]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mlibdb-5.3.so[0m
+

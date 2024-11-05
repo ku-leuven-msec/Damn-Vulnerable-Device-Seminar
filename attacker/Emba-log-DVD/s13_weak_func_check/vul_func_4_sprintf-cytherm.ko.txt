@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mcytherm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m78) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mcytherm.ko[0m
+
+ 2f0:	52801001 	mov	w1, #0x80                  	// #128
+ 2f4:	f94002a0 	ldr	x0, [x21]
+ 2f8:	72b00001 	movk	w1, #0x8000, lsl #16
+ 2fc:	52827102 	mov	w2, #0x1388                	// #5000
+ 300:	52800107 	mov	w7, #0x8                   	// #8
+ 304:	52800005 	mov	w5, #0x0                   	// #0
+ 308:	52800024 	mov	w4, #0x1                   	// #1
+ 30c:	b9400008 	ldr	w8, [x0]
+ 310:	12800783 	mov	w3, #0xffffffc3            	// #-61
+ 314:	b90003e2 	str	w2, [sp]
+ 318:	52800082 	mov	w2, #0x4                   	// #4
+ 31c:	2a082021 	orr	w1, w1, w8, lsl #8
+ 320:	94000000 	bl	0 <usb_control_msg>
+ 324:	39400675 	ldrb	w21, [x19, #1]
+ 328:	aa1303e0 	mov	x0, x19
+ 32c:	94000000 	bl	0 <kfree>
+ 330:	2a1503e2 	mov	w2, w21
+ 334:	aa1403e0 	mov	x0, x20
+ 338:	90000001 	adrp	x1, 0 <port1_store>
+ 33c:	91000021 	add	x1, x1, #0x0
+[31m 340:	94000000 	bl	0 <sprintf>[0m
+ 344:	93407c00 	sxtw	x0, w0
+ 348:	a9417bfd 	ldp	x29, x30, [sp, #16]
+--
+ 3b0:	52801001 	mov	w1, #0x80                  	// #128
+ 3b4:	f94002a0 	ldr	x0, [x21]
+ 3b8:	72b00001 	movk	w1, #0x8000, lsl #16
+ 3bc:	52827102 	mov	w2, #0x1388                	// #5000
+ 3c0:	52800107 	mov	w7, #0x8                   	// #8
+ 3c4:	52800005 	mov	w5, #0x0                   	// #0
+ 3c8:	52800004 	mov	w4, #0x0                   	// #0
+ 3cc:	b9400008 	ldr	w8, [x0]
+ 3d0:	12800783 	mov	w3, #0xffffffc3            	// #-61
+ 3d4:	b90003e2 	str	w2, [sp]
+ 3d8:	52800082 	mov	w2, #0x4                   	// #4
+ 3dc:	2a082021 	orr	w1, w1, w8, lsl #8
+ 3e0:	94000000 	bl	0 <usb_control_msg>
+ 3e4:	39400675 	ldrb	w21, [x19, #1]
+ 3e8:	aa1303e0 	mov	x0, x19
+ 3ec:	94000000 	bl	0 <kfree>
+ 3f0:	2a1503e2 	mov	w2, w21
+ 3f4:	aa1403e0 	mov	x0, x20
+ 3f8:	90000001 	adrp	x1, 0 <port1_store>
+ 3fc:	91000021 	add	x1, x1, #0x0
+[31m 400:	94000000 	bl	0 <sprintf>[0m
+ 404:	93407c00 	sxtw	x0, w0
+ 408:	a9417bfd 	ldp	x29, x30, [sp, #16]
+--
+ 4c0:	b9400001 	ldr	w1, [x0]
+ 4c4:	52800042 	mov	w2, #0x2                   	// #2
+ 4c8:	b90003f7 	str	w23, [sp]
+ 4cc:	2a0122c1 	orr	w1, w22, w1, lsl #8
+ 4d0:	39400675 	ldrb	w21, [x19, #1]
+ 4d4:	94000000 	bl	0 <usb_control_msg>
+ 4d8:	39400676 	ldrb	w22, [x19, #1]
+ 4dc:	aa1303e0 	mov	x0, x19
+ 4e0:	94000000 	bl	0 <kfree>
+ 4e4:	710002df 	cmp	w22, #0x0
+ 4e8:	120002a3 	and	w3, w21, #0x1
+ 4ec:	52800561 	mov	w1, #0x2b                  	// #43
+ 4f0:	531e02a4 	ubfiz	w4, w21, #2, #1
+ 4f4:	0b030084 	add	w4, w4, w3
+ 4f8:	aa1403e0 	mov	x0, x20
+ 4fc:	53017ea3 	lsr	w3, w21, #1
+ 500:	528005a2 	mov	w2, #0x2d                  	// #45
+ 504:	1a811042 	csel	w2, w2, w1, ne  // ne = any
+ 508:	90000001 	adrp	x1, 0 <port1_store>
+ 50c:	91000021 	add	x1, x1, #0x0
+[31m 510:	94000000 	bl	0 <sprintf>[0m
+ 514:	f94023f7 	ldr	x23, [sp, #64]
+ 518:	93407c00 	sxtw	x0, w0
+--
+ 520:	a94253f3 	ldp	x19, x20, [sp, #32]
+ 524:	a9435bf5 	ldp	x21, x22, [sp, #48]
+ 528:	910143ff 	add	sp, sp, #0x50
+ 52c:	d65f03c0 	ret
+ 530:	d2800000 	mov	x0, #0x0                   	// #0
+ 534:	17fffffa 	b	51c <temp_show+0xf4>
+
+0000000000000538 <brightness_show>:
+ 538:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 53c:	910003fd 	mov	x29, sp
+ 540:	a90153f3 	stp	x19, x20, [sp, #16]
+ 544:	aa0003f4 	mov	x20, x0
+ 548:	aa0203f3 	mov	x19, x2
+ 54c:	aa1e03e0 	mov	x0, x30
+ 550:	94000000 	bl	0 <_mcount>
+ 554:	f9403e82 	ldr	x2, [x20, #120]
+ 558:	aa1303e0 	mov	x0, x19
+ 55c:	90000001 	adrp	x1, 0 <port1_store>
+ 560:	91000021 	add	x1, x1, #0x0
+ 564:	b9401042 	ldr	w2, [x2, #16]
+[31m 568:	94000000 	bl	0 <sprintf>[0m
+ 56c:	93407c00 	sxtw	x0, w0
+ 570:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33mcytherm.ko[0m
+

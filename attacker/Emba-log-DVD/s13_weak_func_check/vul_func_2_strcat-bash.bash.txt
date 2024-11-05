@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mbash.bash[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mbash.bash[0m
+
+   81898:	93407ee2 	sxtw	x2, w23
+   8189c:	8b030021 	add	x1, x1, x3
+   818a0:	97feb730 	bl	2f560 <strncpy@plt>
+   818a4:	3837cb1f 	strb	wzr, [x24, w23, sxtw]
+   818a8:	52800002 	mov	w2, #0x0                   	// #0
+   818ac:	d2800001 	mov	x1, #0x0                   	// #0
+   818b0:	aa1803e0 	mov	x0, x24
+   818b4:	9400ca87 	bl	b42d0 <sh_backslash_quote@@Base>
+   818b8:	aa0003f6 	mov	x22, x0
+   818bc:	aa1803e0 	mov	x0, x24
+   818c0:	97feb64c 	bl	2f1f0 <free@plt>
+   818c4:	aa1603e0 	mov	x0, x22
+   818c8:	97feb43e 	bl	2e9c0 <strlen@plt>
+   818cc:	aa0003e1 	mov	x1, x0
+   818d0:	aa1303e0 	mov	x0, x19
+   818d4:	0b010294 	add	w20, w20, w1
+   818d8:	93407e81 	sxtw	x1, w20
+   818dc:	94003ead 	bl	91390 <xrealloc@@Base>
+   818e0:	aa1603e1 	mov	x1, x22
+   818e4:	aa0003f3 	mov	x19, x0
+[31m   818e8:	97feb566 	bl	2ee80 <strcat@plt>[0m
+   818ec:	aa1603e0 	mov	x0, x22
+   818f0:	97feb640 	bl	2f1f0 <free@plt>
+--
+   c8d08:	97ff218e 	bl	91340 <xmalloc@@Base>
+   c8d0c:	aa0003fb 	mov	x27, x0
+   c8d10:	71006f9f 	cmp	w28, #0x1b
+   c8d14:	54000800 	b.eq	c8e14 <rl_invoking_keyseqs_in_map@@Base+0x1f4>  // b.none
+   c8d18:	71007f9f 	cmp	w28, #0x1f
+   c8d1c:	540009ad 	b.le	c8e50 <rl_invoking_keyseqs_in_map@@Base+0x230>
+   c8d20:	7101ff9f 	cmp	w28, #0x7f
+   c8d24:	54000aa0 	b.eq	c8e78 <rl_invoking_keyseqs_in_map@@Base+0x258>  // b.none
+   c8d28:	7101739f 	cmp	w28, #0x5c
+   c8d2c:	52800440 	mov	w0, #0x22                  	// #34
+   c8d30:	7a401384 	ccmp	w28, w0, #0x4, ne  // ne = any
+   c8d34:	54000681 	b.ne	c8e04 <rl_invoking_keyseqs_in_map@@Base+0x1e4>  // b.any
+   c8d38:	52800b80 	mov	w0, #0x5c                  	// #92
+   c8d3c:	39000360 	strb	w0, [x27]
+   c8d40:	3941b3e0 	ldrb	w0, [sp, #108]
+   c8d44:	39000760 	strb	w0, [x27, #1]
+   c8d48:	39000b7f 	strb	wzr, [x27, #2]
+   c8d4c:	f9400281 	ldr	x1, [x20]
+   c8d50:	aa1b03e0 	mov	x0, x27
+   c8d54:	110006f7 	add	w23, w23, #0x1
+[31m   c8d58:	97fd984a 	bl	2ee80 <strcat@plt>[0m
+   c8d5c:	f9400280 	ldr	x0, [x20]
+   c8d60:	97ff21a8 	bl	91400 <xfree@@Base>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m2[0m times [0;33mbash.bash[0m
+

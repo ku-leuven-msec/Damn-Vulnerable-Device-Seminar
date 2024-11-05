@@ -1,0 +1,34 @@
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/libtooldeps.sh line 12:[0m
+[0m    while read possible[0m
+[32m          ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/libtooldeps.sh line 17:[0m
+[0m		possible="`echo ${possible} | sed -e s,${RPM_BUILD_ROOT}/,/,`"[0m
+[32m                          ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                                ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                                       ^---------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		possible="$(echo "${possible}" | sed -e s,"${RPM_BUILD_ROOT}"/,/,)"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/libtooldeps.sh line 25:[0m
+[0m    while read possible ; do[0m
+[32m          ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/libtooldeps.sh line 28:[0m
+[0m	    for dep in `grep '^dependency_libs='"$possible" 2> /dev/null | \[0m
+[32m                       ^-- SC2013: To read lines rather than words, pipe/redirect to a 'while read' loop.[0m
+[32m                       ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+	    for dep in $(grep '^dependency_libs='"$possible" 2> /dev/null | \
+			sed -e "s,^dependency_libs='\(.*\)',\1,g")
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2013 -- To read lines rather than words, ...
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...
+  https://www.shellcheck.net/wiki/SC2162 -- read without -r will mangle backs...

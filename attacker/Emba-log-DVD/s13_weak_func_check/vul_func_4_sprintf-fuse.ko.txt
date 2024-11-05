@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mfuse.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m833) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mfuse.ko[0m
+
+   10ae8:	aa0003f6 	mov	x22, x0
+   10aec:	aa0203f7 	mov	x23, x2
+   10af0:	aa1e03e0 	mov	x0, x30
+   10af4:	94000000 	bl	0 <_mcount>
+   10af8:	f94002b3 	ldr	x19, [x21]
+   10afc:	f9428e81 	ldr	x1, [x20, #1304]
+   10b00:	f90037e1 	str	x1, [sp, #104]
+   10b04:	d2800001 	mov	x1, #0x0                   	// #0
+   10b08:	b5000113 	cbnz	x19, 10b28 <fuse_conn_waiting_read+0x60>
+   10b0c:	aa1603e0 	mov	x0, x22
+   10b10:	97ffffd8 	bl	10a70 <fuse_ctl_file_conn_get>
+   10b14:	b4000220 	cbz	x0, 10b58 <fuse_conn_waiting_read+0x90>
+   10b18:	b9413401 	ldr	w1, [x0, #308]
+   10b1c:	93407c21 	sxtw	x1, w1
+   10b20:	f90066c1 	str	x1, [x22, #200]
+   10b24:	94000000 	bl	fb10 <fuse_conn_put>
+   10b28:	f94066c2 	ldr	x2, [x22, #200]
+   10b2c:	910123e0 	add	x0, sp, #0x48
+   10b30:	90000001 	adrp	x1, 0 <fuse_len_args>
+   10b34:	91000021 	add	x1, x1, #0x0
+[31m   10b38:	94000000 	bl	0 <sprintf>[0m
+   10b3c:	93407c04 	sxtw	x4, w0
+   10b40:	910123e3 	add	x3, sp, #0x48
+--
+   10fec:	d5384113 	mrs	x19, sp_el0
+   10ff0:	aa0003f4 	mov	x20, x0
+   10ff4:	aa0103f5 	mov	x21, x1
+   10ff8:	aa1e03e0 	mov	x0, x30
+   10ffc:	aa0203f7 	mov	x23, x2
+   11000:	aa0303f6 	mov	x22, x3
+   11004:	94000000 	bl	0 <_mcount>
+   11008:	f9428e62 	ldr	x2, [x19, #1304]
+   1100c:	f90037e2 	str	x2, [sp, #104]
+   11010:	d2800002 	mov	x2, #0x0                   	// #0
+   11014:	aa1403e0 	mov	x0, x20
+   11018:	97fffe96 	bl	10a70 <fuse_ctl_file_conn_get>
+   1101c:	d2800005 	mov	x5, #0x0                   	// #0
+   11020:	b40001e0 	cbz	x0, 1105c <fuse_conn_max_background_read+0x84>
+   11024:	b940e014 	ldr	w20, [x0, #224]
+   11028:	94000000 	bl	fb10 <fuse_conn_put>
+   1102c:	90000001 	adrp	x1, 0 <fuse_len_args>
+   11030:	910123e0 	add	x0, sp, #0x48
+   11034:	2a1403e2 	mov	w2, w20
+   11038:	91000021 	add	x1, x1, #0x0
+[31m   1103c:	94000000 	bl	0 <sprintf>[0m
+   11040:	93407c04 	sxtw	x4, w0
+   11044:	910123e3 	add	x3, sp, #0x48
+--
+   110a4:	d5384113 	mrs	x19, sp_el0
+   110a8:	aa0003f4 	mov	x20, x0
+   110ac:	aa0103f5 	mov	x21, x1
+   110b0:	aa1e03e0 	mov	x0, x30
+   110b4:	aa0203f7 	mov	x23, x2
+   110b8:	aa0303f6 	mov	x22, x3
+   110bc:	94000000 	bl	0 <_mcount>
+   110c0:	f9428e62 	ldr	x2, [x19, #1304]
+   110c4:	f90037e2 	str	x2, [sp, #104]
+   110c8:	d2800002 	mov	x2, #0x0                   	// #0
+   110cc:	aa1403e0 	mov	x0, x20
+   110d0:	97fffe68 	bl	10a70 <fuse_ctl_file_conn_get>
+   110d4:	d2800005 	mov	x5, #0x0                   	// #0
+   110d8:	b40001e0 	cbz	x0, 11114 <fuse_conn_congestion_threshold_read+0x84>
+   110dc:	b940e414 	ldr	w20, [x0, #228]
+   110e0:	94000000 	bl	fb10 <fuse_conn_put>
+   110e4:	90000001 	adrp	x1, 0 <fuse_len_args>
+   110e8:	910123e0 	add	x0, sp, #0x48
+   110ec:	2a1403e2 	mov	w2, w20
+   110f0:	91000021 	add	x1, x1, #0x0
+[31m   110f4:	94000000 	bl	0 <sprintf>[0m
+   110f8:	93407c04 	sxtw	x4, w0
+   110fc:	910123e3 	add	x3, sp, #0x48
+--
+   111d4:	910003fd 	mov	x29, sp
+   111d8:	a90153f3 	stp	x19, x20, [sp, #16]
+   111dc:	aa0003f3 	mov	x19, x0
+   111e0:	aa1e03e0 	mov	x0, x30
+   111e4:	94000000 	bl	0 <_mcount>
+   111e8:	90000000 	adrp	x0, 0 <fuse_len_args>
+   111ec:	d5384114 	mrs	x20, sp_el0
+   111f0:	f9428e82 	ldr	x2, [x20, #1304]
+   111f4:	f9002fe2 	str	x2, [sp, #88]
+   111f8:	d2800002 	mov	x2, #0x0                   	// #0
+   111fc:	f9400000 	ldr	x0, [x0]
+   11200:	b4000800 	cbz	x0, 11300 <fuse_ctl_add_conn+0x130>
+   11204:	a9025bf5 	stp	x21, x22, [sp, #32]
+   11208:	f9403415 	ldr	x21, [x0, #104]
+   1120c:	f9401aa0 	ldr	x0, [x21, #48]
+   11210:	94000000 	bl	0 <inc_nlink>
+   11214:	9100e3e0 	add	x0, sp, #0x38
+   11218:	b9415262 	ldr	w2, [x19, #336]
+   1121c:	90000001 	adrp	x1, 0 <fuse_len_args>
+   11220:	91000021 	add	x1, x1, #0x0
+[31m   11224:	94000000 	bl	0 <sprintf>[0m
+   11228:	9100e3e2 	add	x2, sp, #0x38
+   1122c:	aa1503e0 	mov	x0, x21
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33mfuse.ko[0m
+

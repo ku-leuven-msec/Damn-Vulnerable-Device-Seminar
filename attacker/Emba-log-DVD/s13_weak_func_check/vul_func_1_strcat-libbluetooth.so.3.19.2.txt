@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibbluetooth.so.3.19.2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibbluetooth.so.3.19.2[0m
+
+000000000000b6e0 <hci_lmtostr@@Base>:
+    b6e0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    b6e4:	910003fd 	mov	x29, sp
+    b6e8:	a90153f3 	stp	x19, x20, [sp, #16]
+    b6ec:	2a0003f4 	mov	w20, w0
+    b6f0:	d2800640 	mov	x0, #0x32                  	// #50
+    b6f4:	97ffef13 	bl	7340 <bt_malloc@plt>
+    b6f8:	aa0003f3 	mov	x19, x0
+    b6fc:	b40001e0 	cbz	x0, b738 <hci_lmtostr@@Base+0x58>
+    b700:	36000254 	tbz	w20, #0, b748 <hci_lmtostr@@Base+0x68>
+    b704:	3900001f 	strb	wzr, [x0]
+    b708:	90000140 	adrp	x0, 33000 <sdp_add_lang_attr@@Base+0x1cee0>
+    b70c:	91002000 	add	x0, x0, #0x8
+    b710:	2a1403e1 	mov	w1, w20
+    b714:	910ac000 	add	x0, x0, #0x2b0
+    b718:	97fffe0e 	bl	af50 <bt_compidtostr@@Base+0x3120>
+    b71c:	aa0003f4 	mov	x20, x0
+    b720:	b4000220 	cbz	x0, b764 <hci_lmtostr@@Base+0x84>
+    b724:	aa0003e1 	mov	x1, x0
+    b728:	aa1303e0 	mov	x0, x19
+[31m    b72c:	97ffeec5 	bl	7240 <strcat@plt>[0m
+    b730:	aa1403e0 	mov	x0, x20
+    b734:	97ffef47 	bl	7450 <free@plt>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mlibbluetooth.so.3.19.2[0m
+

@@ -1,0 +1,259 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s103_deep_search.html" title="./../s103_deep_search.html" >&laquo; Back to s103_deep_search</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/__pycache__/ssl.cpython-38.opt-2.pyc</span></pre>
+<pre>9:IntFlag)...OPENSSL_VERSION_NUMBER.</pre>
+<pre>9:..OPENSSL_VERSION_INFO...</pre>
+<pre>9:OPENSSL_VERSION)..._SS.</pre>
+<pre>10:SSLSession)...SSLError..SSLZeroR.</pre>
+<pre>10:eturnError..SSLWantReadError...</pre>
+<pre>10:SSLWantWriteError..</pre>
+<pre>10:.SSLSyscallError..S.</pre>
+<pre>10:SLEOFError..SSLCertVerificatio.</pre>
+<pre>12:.HAS_ALPN..HAS_SSLv2..HAS_SSLv3...</pre>
+<pre>12:_CIPHERS.._OPENSSL_API_VERSION..</pre>
+<pre>13:_SSLMethodc..</pre>
+<pre>13:COL_..PROTOCOL_SSLv23....</pre>
+<pre>14:/lib/python3.8/ssl.py..&lt;lambda&gt;|.</pre>
+<pre>16:/.r0..SSLErrorNumberc..</pre>
+<pre>18:SSL_ERROR_r)r+.</pre>
+<pre>22:&gt;..PROTOCOL_SSLv2c.</pre>
+<pre>25:__qualname__.._ssl..PROTO_MINIMUM.</pre>
+<pre>25:PPORTED..PROTO_SSLv3..SSLv3..PROT.</pre>
+<pre>45:stname needs a SSL socket or SSL .</pre>
+<pre>50:ile capath openssl_cafile_env ope.</pre>
+<pre>50:nssl_cafile openssl.</pre>
+<pre>50:capath_env openssl_capathc.</pre>
+<pre>53:SSLContext)...CA...</pre>
+<pre>53:ROOTNc...</pre>
+<pre>53:..s....z.SSLContext.__new__.</pre>
+<pre>56:...z.SSLContext._encode.</pre>
+<pre>56:xt..session)...sslsocket_class.._.</pre>
+<pre>56:.............z.SSLContext.wrap_so.</pre>
+<pre>56:r4.r3.)...sslobject_classr6..</pre>
+<pre>56:..........z.SSLContext.wrap_bi.</pre>
+<pre>58:.........z.SSLContext.set_npn.</pre>
+<pre>58:.).r-.)...sslobj..</pre>
+<pre>59:servername..sslctx..r&amp;...ser.</pre>
+<pre>60:.z3SSLContext.set_ser.</pre>
+<pre>60:...........z"SSLContext.set_ser.</pre>
+<pre>62:.........z.SSLContext.set_alp.</pre>
+<pre>63:.............z$SSLContext._load_w.</pre>
+<pre>66:...z.SSLContext.load_de.</pre>
+<pre>66:B.s..z.SSLContext.minimum.</pre>
+<pre>66:nsr2..OP_NO_SSLv3r..r .rc..</pre>
+<pre>67:L.s..z.SSLContext.maximum.</pre>
+<pre>67:T.s..z.SSLContext.options.</pre>
+<pre>67:].s....z&amp;SSLContext.hostnam.</pre>
+<pre>67:s.!......z.SSLContext._msg_ca.</pre>
+<pre>72:...........z'SSLContext._msg_ca.</pre>
+<pre>73:..s..z.SSLContext.protoco.</pre>
+<pre>73:..s..z.SSLContext.verify_.</pre>
+<pre>77:...z.SSLContext.verify_.</pre>
+<pre>84:ylog_filename..SSLKEYLOGFILE).r)..</pre>
+<pre>100:/d0.Z.d.S)5..SSLObjectc..</pre>
+<pre>100:re returned by SSLContext.wrap_bi.</pre>
+<pre>100:s......z.SSLObject.__init__.</pre>
+<pre>100:.._wrap_bio.._sslobj).r..r9..</pre>
+<pre>101:...........z.SSLObject._createc.</pre>
+<pre>101:M.s..z.SSLObject.contextc.</pre>
+<pre>101:V.s..z.SSLObject.sessionc.</pre>
+<pre>101:_.s..z.SSLObject.session_.</pre>
+<pre>101:d.s..z.SSLObject.server_s.</pre>
+<pre>101:i.s..z.SSLObject.server_h.</pre>
+<pre>101:s........z.SSLObject.readc..</pre>
+<pre>101:{.s..z.SSLObject.writec..</pre>
+<pre>101:..s..z.SSLObject.getpeerc.</pre>
+<pre>101:..s....z.SSLObject.selected.</pre>
+<pre>101:..s....z SSLObject.selected.</pre>
+<pre>102:..s..z.SSLObject.cipherc..</pre>
+<pre>103:..s..z.SSLObject.shared_c.</pre>
+<pre>104:..s..z.SSLObject.compress.</pre>
+<pre>105:..s..z.SSLObject.pendingc.</pre>
+<pre>105:..s..z.SSLObject.do_hands.</pre>
+<pre>106:ap..s..z.SSLObject.unwrapr..</pre>
+<pre>106:..s..z.SSLObject.get_chan.</pre>
+<pre>107:..s..z.SSLObject.versionc.</pre>
+<pre>108:..s..z&amp;SSLObject.verify_c.</pre>
+<pre>118:r-r..._sslcopydoc..s..</pre>
+<pre>122:.Z-..Z.S)e..SSLSocketc..</pre>
+<pre>122:re returned by SSLContext.wrap_so.</pre>
+<pre>122:s......z.SSLSocket.__init__.</pre>
+<pre>137:...........z.SSLSocket._createc.</pre>
+<pre>137:..s..z.SSLSocket.contextc.</pre>
+<pre>138:.z.SSLSocket.sessionc.</pre>
+<pre>140:.z.SSLSocket.session_.</pre>
+<pre>140:s......z.SSLSocket.dupc..</pre>
+<pre>140:ed6.s..z.SSLSocket._checkCl.</pre>
+<pre>140::.s....z.SSLSocket._check_c.</pre>
+<pre>142:d or unwrapped SSL socket.r.r0.</pre>
+<pre>142:.r.r$...SSL_ERROR_EOFr1..</pre>
+<pre>144:...z.SSLSocket.readc..</pre>
+<pre>144:d or unwrapped SSL socket.).r...</pre>
+<pre>145:...z.SSLSocket.writec..</pre>
+<pre>145:s......z.SSLSocket.getpeerc.</pre>
+<pre>145:s........z.SSLSocket.selected.</pre>
+<pre>145:s........z SSLSocket.selected.</pre>
+<pre>146:...z.SSLSocket.cipherc..</pre>
+<pre>147:...z.SSLSocket.shared_c.</pre>
+<pre>148:...z.SSLSocket.compress.</pre>
+<pre>149:.............z.SSLSocket.sendc..</pre>
+<pre>150:...........z.SSLSocket.sendtoc..</pre>
+<pre>150:s......z.SSLSocket.sendmsgc.</pre>
+<pre>154:........... .z.SSLSocket.sendallc.</pre>
+<pre>155:...z.SSLSocket.sendfile.</pre>
+<pre>157:.z.SSLSocket.recvc..</pre>
+<pre>159:.............z.SSLSocket.recv_int.</pre>
+<pre>160:.......z.SSLSocket.recvfrom.</pre>
+<pre>161:.......z.SSLSocket.recvfrom.</pre>
+<pre>161:s......z.SSLSocket.recvmsgc.</pre>
+<pre>161:s......z.SSLSocket.recvmsg_.</pre>
+<pre>163:.z.SSLSocket.pendingc.</pre>
+<pre>163:s......z.SSLSocket.shutdown.</pre>
+<pre>163:...dS..Nz.No SSL wrapper around.</pre>
+<pre>165:.....z.SSLSocket.unwrapc..</pre>
+<pre>166:.z&amp;SSLSocket.verify_c.</pre>
+<pre>166:..s....z.SSLSocket._real_cl.</pre>
+<pre>167:...z.SSLSocket.do_hands.</pre>
+<pre>169:eady-connected SSLSocket!Fr..T).</pre>
+<pre>170:.............z.SSLSocket._real_co.</pre>
+<pre>170:;.s..z.SSLSocket.connectc.</pre>
+<pre>170:&commat;.s..z.SSLSocket.connect_.</pre>
+<pre>170:.............z.SSLSocket.acceptr..</pre>
+<pre>171:...........z.SSLSocket.get_chan.</pre>
+<pre>173:.z.SSLSocket.version).</pre>
+<pre>196:.r/.r....ssl_version..ca_ce.</pre>
+<pre>211:.r3.r....sslsock..dercertr-.</pre>
+<pre>213:msr9.r...._SSLv2_IF_EXISTSr&commat;.</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

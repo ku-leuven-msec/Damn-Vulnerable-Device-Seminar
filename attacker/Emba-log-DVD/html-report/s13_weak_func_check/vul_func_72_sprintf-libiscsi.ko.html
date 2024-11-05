@@ -1,0 +1,680 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libiscsi.ko</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="red">No RELRO     </span>   <span class="green">Canary found   </span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">432) Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">libiscsi.ko</span></pre>
+<br />
+<pre>    1e24:	51001261 	sub	w1, w19, #0x4</pre>
+<pre>    1e28:	7101083f 	cmp	w1, #0x42</pre>
+<pre>    1e2c:	f9408e82 	ldr	x2, [x20, #280]</pre>
+<pre>    1e30:	540000c9 	b.ls	1e48 &lt;iscsi_session_get_param+0x48&gt;  // b.plast</pre>
+<pre>    1e34:	128004a0 	mov	w0, #0xffffffda            	// #-38</pre>
+<pre>    1e38:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    1e3c:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    1e40:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    1e44:	d65f03c0 	ret</pre>
+<pre>    1e48:	90000000 	adrp	x0, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1e4c:	91000000 	add	x0, x0, #0x0</pre>
+<pre>    1e50:	78615800 	ldrh	w0, [x0, w1, uxtw #1]</pre>
+<pre>    1e54:	10000061 	adr	x1, 1e60 &lt;iscsi_session_get_param+0x60&gt;</pre>
+<pre>    1e58:	8b20a820 	add	x0, x1, w0, sxth #2</pre>
+<pre>    1e5c:	d61f0000 	br	x0</pre>
+<pre>    1e60:	f9406c42 	ldr	x2, [x2, #216]</pre>
+<pre>    1e64:	b4001d42 	cbz	x2, 220c &lt;iscsi_session_get_param+0x40c&gt;</pre>
+<pre>    1e68:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1e6c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1e70:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1e74:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1e78:	17fffff0 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1e7c:	7941c042 	ldrh	w2, [x2, #224]</pre>
+<pre>    1e80:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1e84:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1e88:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1e8c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1e90:	17ffffea 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1e94:	7941c442 	ldrh	w2, [x2, #226]</pre>
+<pre>    1e98:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1e9c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1ea0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1ea4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1ea8:	17ffffe4 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1eac:	7941c842 	ldrh	w2, [x2, #228]</pre>
+<pre>    1eb0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1eb4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1eb8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1ebc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1ec0:	17ffffde 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1ec4:	b9405c42 	ldr	w2, [x2, #92]</pre>
+<pre>    1ec8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1ecc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1ed0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1ed4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1ed8:	17ffffd8 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1edc:	b9405842 	ldr	w2, [x2, #88]</pre>
+<pre>    1ee0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1ee4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1ee8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1eec:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1ef0:	17ffffd2 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1ef4:	3943ac42 	ldrb	w2, [x2, #235]</pre>
+<pre>    1ef8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1efc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1f00:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1f04:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1f08:	17ffffcc 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1f0c:	3943a842 	ldrb	w2, [x2, #234]</pre>
+<pre>    1f10:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1f14:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1f18:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1f1c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1f20:	17ffffc6 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1f24:	3943a442 	ldrb	w2, [x2, #233]</pre>
+<pre>    1f28:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1f2c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1f30:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1f34:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1f38:	17ffffc0 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1f3c:	3943a042 	ldrb	w2, [x2, #232]</pre>
+<pre>    1f40:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1f44:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1f48:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1f4c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1f50:	17ffffba 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1f54:	f9406842 	ldr	x2, [x2, #208]</pre>
+<pre>    1f58:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1f5c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1f60:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1f64:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1f68:	17ffffb4 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1f6c:	39439c42 	ldrb	w2, [x2, #231]</pre>
+<pre>    1f70:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1f74:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1f78:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1f7c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1f80:	17ffffae 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1f84:	39439842 	ldrb	w2, [x2, #230]</pre>
+<pre>    1f88:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1f8c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1f90:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1f94:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1f98:	17ffffa8 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1f9c:	f9406442 	ldr	x2, [x2, #200]</pre>
+<pre>    1fa0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1fa4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1fa8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1fac:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1fb0:	17ffffa2 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1fb4:	f9406042 	ldr	x2, [x2, #192]</pre>
+<pre>    1fb8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1fbc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1fc0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1fc4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1fc8:	17ffff9c 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1fcc:	f9405c42 	ldr	x2, [x2, #184]</pre>
+<pre>    1fd0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1fd4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1fd8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1fdc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1fe0:	17ffff96 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1fe4:	f9405042 	ldr	x2, [x2, #160]</pre>
+<pre>    1fe8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    1fec:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    1ff0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    1ff4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    1ff8:	17ffff90 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    1ffc:	b9404042 	ldr	w2, [x2, #64]</pre>
+<pre>    2000:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2004:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2008:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    200c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2010:	17ffff8a 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    2014:	f9405842 	ldr	x2, [x2, #176]</pre>
+<pre>    2018:	aa1503e0 	mov	x0, x21</pre>
+<pre>    201c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2020:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2024:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2028:	17ffff84 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    202c:	3943c447 	ldrb	w7, [x2, #241]</pre>
+<pre>    2030:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2034:	3943c046 	ldrb	w6, [x2, #240]</pre>
+<pre>    2038:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    203c:	3943bc45 	ldrb	w5, [x2, #239]</pre>
+<pre>    2040:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    2044:	3943b844 	ldrb	w4, [x2, #238]</pre>
+<pre>    2048:	3943b443 	ldrb	w3, [x2, #237]</pre>
+<pre>    204c:	3943b042 	ldrb	w2, [x2, #236]</pre>
+<pre><span class="red">    2050:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2054:	528001a0 	mov	w0, #0xd                   	// #13</pre>
+<pre>    2058:	17ffff78 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    205c:	f9405442 	ldr	x2, [x2, #168]</pre>
+<pre>    2060:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2064:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2068:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    206c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2070:	17ffff72 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    2074:	b9403c42 	ldr	w2, [x2, #60]</pre>
+<pre>    2078:	aa1503e0 	mov	x0, x21</pre>
+<pre>    207c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2080:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2084:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2088:	17ffff6c 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    208c:	b9403842 	ldr	w2, [x2, #56]</pre>
+<pre>    2090:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2094:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2098:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    209c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    20a0:	17ffff66 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    20a4:	b9406c42 	ldr	w2, [x2, #108]</pre>
+<pre>    20a8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    20ac:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    20b0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    20b4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    20b8:	17ffff60 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    20bc:	f9404842 	ldr	x2, [x2, #144]</pre>
+<pre>    20c0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    20c4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    20c8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    20cc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    20d0:	17ffff5a 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    20d4:	f9404442 	ldr	x2, [x2, #136]</pre>
+<pre>    20d8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    20dc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    20e0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    20e4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    20e8:	17ffff54 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    20ec:	f9404042 	ldr	x2, [x2, #128]</pre>
+<pre>    20f0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    20f4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    20f8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    20fc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2100:	17ffff4e 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    2104:	f9403c42 	ldr	x2, [x2, #120]</pre>
+<pre>    2108:	aa1503e0 	mov	x0, x21</pre>
+<pre>    210c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2110:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2114:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2118:	17ffff48 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    211c:	b9407042 	ldr	w2, [x2, #112]</pre>
+<pre>    2120:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2124:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2128:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    212c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2130:	17ffff42 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    2134:	f9404c42 	ldr	x2, [x2, #152]</pre>
+<pre>    2138:	aa1503e0 	mov	x0, x21</pre>
+<pre>    213c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2140:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2144:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2148:	17ffff3c 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    214c:	b9406842 	ldr	w2, [x2, #104]</pre>
+<pre>    2150:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2154:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2158:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    215c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2160:	17ffff36 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    2164:	b9406442 	ldr	w2, [x2, #100]</pre>
+<pre>    2168:	aa1503e0 	mov	x0, x21</pre>
+<pre>    216c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2170:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2174:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2178:	17ffff30 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    217c:	b9406042 	ldr	w2, [x2, #96]</pre>
+<pre>    2180:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2184:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2188:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    218c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2190:	17ffff2a 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    2194:	b9405442 	ldr	w2, [x2, #84]</pre>
+<pre>    2198:	aa1503e0 	mov	x0, x21</pre>
+<pre>    219c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    21a0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    21a4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    21a8:	17ffff24 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    21ac:	b9405042 	ldr	w2, [x2, #80]</pre>
+<pre>    21b0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    21b4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    21b8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    21bc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    21c0:	17ffff1e 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    21c4:	b9404c42 	ldr	w2, [x2, #76]</pre>
+<pre>    21c8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    21cc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    21d0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    21d4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    21d8:	17ffff18 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    21dc:	79409042 	ldrh	w2, [x2, #72]</pre>
+<pre>    21e0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    21e4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    21e8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    21ec:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    21f0:	17ffff12 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    21f4:	b9404442 	ldr	w2, [x2, #68]</pre>
+<pre>    21f8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    21fc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2200:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2204:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2208:	17ffff0c 	b	1e38 &lt;iscsi_session_get_param+0x38&gt;</pre>
+<pre>    220c:	52800141 	mov	w1, #0xa                   	// #10</pre>
+<pre>--</pre>
+<pre>    2240:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    2244:	79400280 	ldrh	w0, [x20]</pre>
+<pre>    2248:	7100081f 	cmp	w0, #0x2</pre>
+<pre>    224c:	540003a0 	b.eq	22c0 &lt;iscsi_conn_get_addr_param+0xa0&gt;  // b.none</pre>
+<pre>    2250:	7100281f 	cmp	w0, #0xa</pre>
+<pre>    2254:	540002c1 	b.ne	22ac &lt;iscsi_conn_get_addr_param+0x8c&gt;  // b.any</pre>
+<pre>    2258:	7100567f 	cmp	w19, #0x15</pre>
+<pre>    225c:	54000500 	b.eq	22fc &lt;iscsi_conn_get_addr_param+0xdc&gt;  // b.none</pre>
+<pre>    2260:	54000228 	b.hi	22a4 &lt;iscsi_conn_get_addr_param+0x84&gt;  // b.pmore</pre>
+<pre>    2264:	71000e7f 	cmp	w19, #0x3</pre>
+<pre>    2268:	540004a0 	b.eq	22fc &lt;iscsi_conn_get_addr_param+0xdc&gt;  // b.none</pre>
+<pre>    226c:	7100527f 	cmp	w19, #0x14</pre>
+<pre>    2270:	540001e1 	b.ne	22ac &lt;iscsi_conn_get_addr_param+0x8c&gt;  // b.any</pre>
+<pre>    2274:	79400682 	ldrh	w2, [x20, #2]</pre>
+<pre>    2278:	aa1503e0 	mov	x0, x21</pre>
+<pre>    227c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2280:	91000021 	add	x1, x1, #0x0</pre>
+<pre>    2284:	53087c43 	lsr	w3, w2, #8</pre>
+<pre>    2288:	2a022062 	orr	w2, w3, w2, lsl #8</pre>
+<pre>    228c:	12003c42 	and	w2, w2, #0xffff</pre>
+<pre><span class="red">    2290:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2294:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    2298:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    229c:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    22a0:	d65f03c0 	ret</pre>
+<pre>    22a4:	7100da7f 	cmp	w19, #0x36</pre>
+<pre>    22a8:	54fffe60 	b.eq	2274 &lt;iscsi_conn_get_addr_param+0x54&gt;  // b.none</pre>
+<pre>    22ac:	128002a0 	mov	w0, #0xffffffea            	// #-22</pre>
+<pre>    22b0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    22b4:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    22b8:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    22bc:	d65f03c0 	ret</pre>
+<pre>    22c0:	7100567f 	cmp	w19, #0x15</pre>
+<pre>    22c4:	54000080 	b.eq	22d4 &lt;iscsi_conn_get_addr_param+0xb4&gt;  // b.none</pre>
+<pre>    22c8:	54fffee8 	b.hi	22a4 &lt;iscsi_conn_get_addr_param+0x84&gt;  // b.pmore</pre>
+<pre>    22cc:	71000e7f 	cmp	w19, #0x3</pre>
+<pre>    22d0:	54fffce1 	b.ne	226c &lt;iscsi_conn_get_addr_param+0x4c&gt;  // b.any</pre>
+<pre>    22d4:	b4000154 	cbz	x20, 22fc &lt;iscsi_conn_get_addr_param+0xdc&gt;</pre>
+<pre>    22d8:	91001282 	add	x2, x20, #0x4</pre>
+<pre>    22dc:	aa1503e0 	mov	x0, x21</pre>
+<pre>    22e0:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    22e4:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    22e8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    22ec:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    22f0:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    22f4:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    22f8:	d65f03c0 	ret</pre>
+<pre>    22fc:	91002282 	add	x2, x20, #0x8</pre>
+<pre>    2300:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2304:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2308:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    230c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2310:	17ffffe8 	b	22b0 &lt;iscsi_conn_get_addr_param+0x90&gt;</pre>
+<pre>    2314:	d503201f 	nop</pre>
+<pre>--</pre>
+<pre>    2334:	aa0203f5 	mov	x21, x2</pre>
+<pre>    2338:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    233c:	71011e7f 	cmp	w19, #0x47</pre>
+<pre>    2340:	f9400a81 	ldr	x1, [x20, #16]</pre>
+<pre>    2344:	540000c9 	b.ls	235c &lt;iscsi_conn_get_param+0x44&gt;  // b.plast</pre>
+<pre>    2348:	128004a0 	mov	w0, #0xffffffda            	// #-38</pre>
+<pre>    234c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    2350:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    2354:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    2358:	d65f03c0 	ret</pre>
+<pre>    235c:	90000000 	adrp	x0, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2360:	91000000 	add	x0, x0, #0x0</pre>
+<pre>    2364:	78735800 	ldrh	w0, [x0, w19, uxtw #1]</pre>
+<pre>    2368:	10000062 	adr	x2, 2374 &lt;iscsi_conn_get_param+0x5c&gt;</pre>
+<pre>    236c:	8b20a840 	add	x0, x2, w0, sxth #2</pre>
+<pre>    2370:	d61f0000 	br	x0</pre>
+<pre>    2374:	f940d822 	ldr	x2, [x1, #432]</pre>
+<pre>    2378:	aa1503e0 	mov	x0, x21</pre>
+<pre>    237c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2380:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2384:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2388:	17fffff1 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    238c:	3946a422 	ldrb	w2, [x1, #425]</pre>
+<pre>    2390:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2394:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2398:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    239c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    23a0:	17ffffeb 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    23a4:	3946a022 	ldrb	w2, [x1, #424]</pre>
+<pre>    23a8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    23ac:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    23b0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    23b4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    23b8:	17ffffe5 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    23bc:	39469c22 	ldrb	w2, [x1, #423]</pre>
+<pre>    23c0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    23c4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    23c8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    23cc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    23d0:	17ffffdf 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    23d4:	39469822 	ldrb	w2, [x1, #422]</pre>
+<pre>    23d8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    23dc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    23e0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    23e4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    23e8:	17ffffd9 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    23ec:	39469422 	ldrb	w2, [x1, #421]</pre>
+<pre>    23f0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    23f4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    23f8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    23fc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2400:	17ffffd3 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    2404:	b9419822 	ldr	w2, [x1, #408]</pre>
+<pre>    2408:	aa1503e0 	mov	x0, x21</pre>
+<pre>    240c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2410:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2414:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2418:	17ffffcd 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    241c:	b9419422 	ldr	w2, [x1, #404]</pre>
+<pre>    2420:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2424:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2428:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    242c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2430:	17ffffc7 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    2434:	39469022 	ldrb	w2, [x1, #420]</pre>
+<pre>    2438:	aa1503e0 	mov	x0, x21</pre>
+<pre>    243c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2440:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2444:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2448:	17ffffc1 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    244c:	39468c22 	ldrb	w2, [x1, #419]</pre>
+<pre>    2450:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2454:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2458:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    245c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2460:	17ffffbb 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    2464:	39468422 	ldrb	w2, [x1, #417]</pre>
+<pre>    2468:	aa1503e0 	mov	x0, x21</pre>
+<pre>    246c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2470:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2474:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2478:	17ffffb5 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    247c:	39468822 	ldrb	w2, [x1, #418]</pre>
+<pre>    2480:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2484:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2488:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    248c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2490:	17ffffaf 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    2494:	39468022 	ldrb	w2, [x1, #416]</pre>
+<pre>    2498:	aa1503e0 	mov	x0, x21</pre>
+<pre>    249c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    24a0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    24a4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    24a8:	17ffffa9 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    24ac:	79433c22 	ldrh	w2, [x1, #414]</pre>
+<pre>    24b0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    24b4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    24b8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    24bc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    24c0:	17ffffa3 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    24c4:	79433822 	ldrh	w2, [x1, #412]</pre>
+<pre>    24c8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    24cc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    24d0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    24d4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    24d8:	17ffff9d 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    24dc:	b9406c22 	ldr	w2, [x1, #108]</pre>
+<pre>    24e0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    24e4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    24e8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    24ec:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    24f0:	17ffff97 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    24f4:	b9419022 	ldr	w2, [x1, #400]</pre>
+<pre>    24f8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    24fc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2500:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2504:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2508:	17ffff91 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    250c:	b9405c22 	ldr	w2, [x1, #92]</pre>
+<pre>    2510:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2514:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2518:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    251c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2520:	17ffff8b 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    2524:	b9405822 	ldr	w2, [x1, #88]</pre>
+<pre>    2528:	aa1503e0 	mov	x0, x21</pre>
+<pre>    252c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2530:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2534:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2538:	17ffff85 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    253c:	b9418422 	ldr	w2, [x1, #388]</pre>
+<pre>    2540:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2544:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2548:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    254c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2550:	17ffff7f 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    2554:	f940c422 	ldr	x2, [x1, #392]</pre>
+<pre>    2558:	aa1503e0 	mov	x0, x21</pre>
+<pre>    255c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2560:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2564:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2568:	17ffff79 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    256c:	b9406822 	ldr	w2, [x1, #104]</pre>
+<pre>    2570:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2574:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2578:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    257c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2580:	17ffff73 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    2584:	b9418022 	ldr	w2, [x1, #384]</pre>
+<pre>    2588:	aa1503e0 	mov	x0, x21</pre>
+<pre>    258c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2590:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    2594:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2598:	17ffff6d 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    259c:	b9417c22 	ldr	w2, [x1, #380]</pre>
+<pre>    25a0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    25a4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    25a8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    25ac:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    25b0:	17ffff67 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    25b4:	b9417822 	ldr	w2, [x1, #376]</pre>
+<pre>    25b8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    25bc:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    25c0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    25c4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    25c8:	17ffff61 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    25cc:	b9417422 	ldr	w2, [x1, #372]</pre>
+<pre>    25d0:	aa1503e0 	mov	x0, x21</pre>
+<pre>    25d4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    25d8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    25dc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    25e0:	17ffff5b 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    25e4:	b9417022 	ldr	w2, [x1, #368]</pre>
+<pre>    25e8:	aa1503e0 	mov	x0, x21</pre>
+<pre>    25ec:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    25f0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    25f4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    25f8:	17ffff55 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    25fc:	b9416c22 	ldr	w2, [x1, #364]</pre>
+<pre>    2600:	aa1503e0 	mov	x0, x21</pre>
+<pre>    2604:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    2608:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    260c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2610:	17ffff4f 	b	234c &lt;iscsi_conn_get_param+0x34&gt;</pre>
+<pre>    2614:	d503201f 	nop</pre>
+<pre>--</pre>
+<pre>    3c7c:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    3c80:	2a0103f3 	mov	w19, w1</pre>
+<pre>    3c84:	aa0003f5 	mov	x21, x0</pre>
+<pre>    3c88:	aa0203f4 	mov	x20, x2</pre>
+<pre>    3c8c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    3c90:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    3c94:	7100067f 	cmp	w19, #0x1</pre>
+<pre>    3c98:	54000120 	b.eq	3cbc &lt;iscsi_host_get_param+0x4c&gt;  // b.none</pre>
+<pre>    3c9c:	71000a7f 	cmp	w19, #0x2</pre>
+<pre>    3ca0:	54000320 	b.eq	3d04 &lt;iscsi_host_get_param+0x94&gt;  // b.none</pre>
+<pre>    3ca4:	128004a0 	mov	w0, #0xffffffda            	// #-38</pre>
+<pre>    3ca8:	340001d3 	cbz	w19, 3ce0 &lt;iscsi_host_get_param+0x70&gt;</pre>
+<pre>    3cac:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    3cb0:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    3cb4:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    3cb8:	d65f03c0 	ret</pre>
+<pre>    3cbc:	f943e6a2 	ldr	x2, [x21, #1992]</pre>
+<pre>    3cc0:	aa1403e0 	mov	x0, x20</pre>
+<pre>    3cc4:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    3cc8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    3ccc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    3cd0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    3cd4:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    3cd8:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    3cdc:	d65f03c0 	ret</pre>
+<pre>    3ce0:	f943eaa2 	ldr	x2, [x21, #2000]</pre>
+<pre>    3ce4:	aa1403e0 	mov	x0, x20</pre>
+<pre>    3ce8:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    3cec:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    3cf0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    3cf4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    3cf8:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>    3cfc:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>    3d00:	d65f03c0 	ret</pre>
+<pre>    3d04:	f943eea2 	ldr	x2, [x21, #2008]</pre>
+<pre>    3d08:	aa1403e0 	mov	x0, x20</pre>
+<pre>    3d0c:	90000001 	adrp	x1, 0 &lt;iscsi_itt_to_task&gt;</pre>
+<pre>    3d10:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">    3d14:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    3d18:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    3d1c:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">72</span> times </span><span class="orange">libiscsi.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

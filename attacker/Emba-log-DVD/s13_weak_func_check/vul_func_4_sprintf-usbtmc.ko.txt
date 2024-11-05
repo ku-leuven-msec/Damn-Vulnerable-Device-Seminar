@@ -1,0 +1,93 @@
+[[0;33m*[0m] Binary protection state of [0;33musbtmc.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m169) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33musbtmc.ko[0m
+
+
+/log/firmware/firmware/lib/modules/5.4.72-v8/kernel/drivers/usb/class/usbtmc.ko:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000000000 <usb488_device_capabilities_show>:
+       0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+       4:	910003fd 	mov	x29, sp
+       8:	a90153f3 	stp	x19, x20, [sp, #16]
+       c:	aa0003f4 	mov	x20, x0
+      10:	aa0203f3 	mov	x19, x2
+      14:	aa1e03e0 	mov	x0, x30
+      18:	94000000 	bl	0 <_mcount>
+      1c:	f9403e82 	ldr	x2, [x20, #120]
+      20:	aa1303e0 	mov	x0, x19
+      24:	90000001 	adrp	x1, 0 <usb488_device_capabilities_show>
+      28:	91000021 	add	x1, x1, #0x0
+      2c:	39419c42 	ldrb	w2, [x2, #103]
+[31m      30:	94000000 	bl	0 <sprintf>[0m
+      34:	93407c00 	sxtw	x0, w0
+      38:	a94153f3 	ldp	x19, x20, [sp, #16]
+      3c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+      40:	d65f03c0 	ret
+      44:	d503201f 	nop
+
+0000000000000048 <usb488_interface_capabilities_show>:
+      48:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+      4c:	910003fd 	mov	x29, sp
+      50:	a90153f3 	stp	x19, x20, [sp, #16]
+      54:	aa0003f4 	mov	x20, x0
+      58:	aa0203f3 	mov	x19, x2
+      5c:	aa1e03e0 	mov	x0, x30
+      60:	94000000 	bl	0 <_mcount>
+      64:	f9403e82 	ldr	x2, [x20, #120]
+      68:	aa1303e0 	mov	x0, x19
+      6c:	90000001 	adrp	x1, 0 <usb488_device_capabilities_show>
+      70:	91000021 	add	x1, x1, #0x0
+      74:	39419842 	ldrb	w2, [x2, #102]
+[31m      78:	94000000 	bl	0 <sprintf>[0m
+      7c:	93407c00 	sxtw	x0, w0
+      80:	a94153f3 	ldp	x19, x20, [sp, #16]
+      84:	a8c27bfd 	ldp	x29, x30, [sp], #32
+      88:	d65f03c0 	ret
+      8c:	d503201f 	nop
+
+0000000000000090 <device_capabilities_show>:
+      90:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+      94:	910003fd 	mov	x29, sp
+      98:	a90153f3 	stp	x19, x20, [sp, #16]
+      9c:	aa0003f4 	mov	x20, x0
+      a0:	aa0203f3 	mov	x19, x2
+      a4:	aa1e03e0 	mov	x0, x30
+      a8:	94000000 	bl	0 <_mcount>
+      ac:	f9403e82 	ldr	x2, [x20, #120]
+      b0:	aa1303e0 	mov	x0, x19
+      b4:	90000001 	adrp	x1, 0 <usb488_device_capabilities_show>
+      b8:	91000021 	add	x1, x1, #0x0
+      bc:	39419442 	ldrb	w2, [x2, #101]
+[31m      c0:	94000000 	bl	0 <sprintf>[0m
+      c4:	93407c00 	sxtw	x0, w0
+      c8:	a94153f3 	ldp	x19, x20, [sp, #16]
+      cc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+      d0:	d65f03c0 	ret
+      d4:	d503201f 	nop
+
+00000000000000d8 <interface_capabilities_show>:
+      d8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+      dc:	910003fd 	mov	x29, sp
+      e0:	a90153f3 	stp	x19, x20, [sp, #16]
+      e4:	aa0003f4 	mov	x20, x0
+      e8:	aa0203f3 	mov	x19, x2
+      ec:	aa1e03e0 	mov	x0, x30
+      f0:	94000000 	bl	0 <_mcount>
+      f4:	f9403e82 	ldr	x2, [x20, #120]
+      f8:	aa1303e0 	mov	x0, x19
+      fc:	90000001 	adrp	x1, 0 <usb488_device_capabilities_show>
+     100:	91000021 	add	x1, x1, #0x0
+     104:	39419042 	ldrb	w2, [x2, #100]
+[31m     108:	94000000 	bl	0 <sprintf>[0m
+     10c:	93407c00 	sxtw	x0, w0
+     110:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33musbtmc.ko[0m
+

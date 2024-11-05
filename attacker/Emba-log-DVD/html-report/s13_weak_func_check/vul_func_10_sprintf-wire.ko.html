@@ -1,0 +1,376 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">wire.ko</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="red">No RELRO     </span>   <span class="green">Canary found   </span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">358) Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">wire.ko</span></pre>
+<br />
+<pre>     39c:	aa1303e0 	mov	x0, x19</pre>
+<pre>     3a0:	17ffffef 	b	35c &lt;w1_master_attribute_store_pullup+0x4c&gt;</pre>
+<pre>     3a4:	94000000 	bl	0 &lt;__stack_chk_fail&gt;</pre>
+<br />
+<pre>00000000000003a8 &lt;w1_master_attribute_show_pullup&gt;:</pre>
+<pre>     3a8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>     3ac:	910003fd 	mov	x29, sp</pre>
+<pre>     3b0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>     3b4:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>     3b8:	aa0003f3 	mov	x19, x0</pre>
+<pre>     3bc:	aa0203f4 	mov	x20, x2</pre>
+<pre>     3c0:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     3c4:	d1012275 	sub	x21, x19, #0x48</pre>
+<pre>     3c8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     3cc:	aa1503e0 	mov	x0, x21</pre>
+<pre>     3d0:	94000000 	bl	0 &lt</span>utex_lock&gt;</pre>
+<pre>     3d4:	b85a0262 	ldur	w2, [x19, #-96]</pre>
+<pre>     3d8:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     3dc:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     3e0:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">     3e4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     3e8:	2a0003f3 	mov	w19, w0</pre>
+<pre>     3ec:	aa1503e0 	mov	x0, x21</pre>
+<pre>--</pre>
+<pre>     3fc:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>     400:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>     404:	d65f03c0 	ret</pre>
+<br />
+<pre>0000000000000408 &lt;w1_master_attribute_show_search&gt;:</pre>
+<pre>     408:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>     40c:	910003fd 	mov	x29, sp</pre>
+<pre>     410:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>     414:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>     418:	aa0003f3 	mov	x19, x0</pre>
+<pre>     41c:	aa0203f4 	mov	x20, x2</pre>
+<pre>     420:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     424:	d1012275 	sub	x21, x19, #0x48</pre>
+<pre>     428:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     42c:	aa1503e0 	mov	x0, x21</pre>
+<pre>     430:	94000000 	bl	0 &lt</span>utex_lock&gt;</pre>
+<pre>     434:	b8584262 	ldur	w2, [x19, #-124]</pre>
+<pre>     438:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     43c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     440:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">     444:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     448:	2a0003f3 	mov	w19, w0</pre>
+<pre>     44c:	aa1503e0 	mov	x0, x21</pre>
+<pre>--</pre>
+<pre>     460:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>     464:	d65f03c0 	ret</pre>
+<br />
+<pre>0000000000000468 &lt;w1_master_attribute_show_pointer&gt;:</pre>
+<pre>     468:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>     46c:	910003fd 	mov	x29, sp</pre>
+<pre>     470:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>     474:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>     478:	aa0003f3 	mov	x19, x0</pre>
+<pre>     47c:	aa0203f4 	mov	x20, x2</pre>
+<pre>     480:	d1044273 	sub	x19, x19, #0x110</pre>
+<pre>     484:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     488:	91032275 	add	x21, x19, #0xc8</pre>
+<pre>     48c:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     490:	aa1503e0 	mov	x0, x21</pre>
+<pre>     494:	94000000 	bl	0 &lt</span>utex_lock&gt;</pre>
+<pre>     498:	f941f662 	ldr	x2, [x19, #1000]</pre>
+<pre>     49c:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     4a0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     4a4:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">     4a8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     4ac:	2a0003f3 	mov	w19, w0</pre>
+<pre>     4b0:	aa1503e0 	mov	x0, x21</pre>
+<pre>     4b4:	94000000 	bl	0 &lt</span>utex_unlock&gt;</pre>
+<pre>     4b8:	93407e60 	sxtw	x0, w19</pre>
+<pre>     4bc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>     4c0:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>     4c4:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>     4c8:	d65f03c0 	ret</pre>
+<pre>     4cc:	d503201f 	nop</pre>
+<br />
+<pre>00000000000004d0 &lt;w1_master_attribute_show_timeout_us&gt;:</pre>
+<pre>     4d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>     4d4:	910003fd 	mov	x29, sp</pre>
+<pre>     4d8:	f9000bf3 	str	x19, [sp, #16]</pre>
+<pre>     4dc:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     4e0:	aa0203f3 	mov	x19, x2</pre>
+<pre>     4e4:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     4e8:	90000002 	adrp	x2, 0 &lt;w1_master_match&gt;</pre>
+<pre>     4ec:	aa1303e0 	mov	x0, x19</pre>
+<pre>     4f0:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     4f4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     4f8:	b9400042 	ldr	w2, [x2]</pre>
+<pre><span class="red">     4fc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     500:	93407c00 	sxtw	x0, w0</pre>
+<pre>     504:	f9400bf3 	ldr	x19, [sp, #16]</pre>
+<pre>     508:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>     50c:	d65f03c0 	ret</pre>
+<br />
+<pre>0000000000000510 &lt;w1_master_attribute_show_timeout&gt;:</pre>
+<pre>     510:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>     514:	910003fd 	mov	x29, sp</pre>
+<pre>     518:	f9000bf3 	str	x19, [sp, #16]</pre>
+<pre>     51c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     520:	aa0203f3 	mov	x19, x2</pre>
+<pre>     524:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     528:	90000002 	adrp	x2, 0 &lt;w1_master_match&gt;</pre>
+<pre>     52c:	aa1303e0 	mov	x0, x19</pre>
+<pre>     530:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     534:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     538:	b9400042 	ldr	w2, [x2]</pre>
+<pre><span class="red">     53c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     540:	93407c00 	sxtw	x0, w0</pre>
+<pre>     544:	f9400bf3 	ldr	x19, [sp, #16]</pre>
+<pre>     548:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>     54c:	d65f03c0 	ret</pre>
+<br />
+<pre>0000000000000550 &lt;w1_master_attribute_show_attempts&gt;:</pre>
+<pre>     550:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!</pre>
+<pre>     554:	910003fd 	mov	x29, sp</pre>
+<pre>     558:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>     55c:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>     560:	f9001fe0 	str	x0, [sp, #56]</pre>
+<pre>     564:	aa0203f4 	mov	x20, x2</pre>
+<pre>     568:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     56c:	f9401ff3 	ldr	x19, [sp, #56]</pre>
+<pre>     570:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     574:	d1012275 	sub	x21, x19, #0x48</pre>
+<pre>     578:	aa1503e0 	mov	x0, x21</pre>
+<pre>     57c:	94000000 	bl	0 &lt</span>utex_lock&gt;</pre>
+<pre>     580:	f8570262 	ldur	x2, [x19, #-144]</pre>
+<pre>     584:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     588:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     58c:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">     590:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     594:	2a0003f3 	mov	w19, w0</pre>
+<pre>     598:	aa1503e0 	mov	x0, x21</pre>
+<pre>--</pre>
+<pre>     5ac:	a8c47bfd 	ldp	x29, x30, [sp], #64</pre>
+<pre>     5b0:	d65f03c0 	ret</pre>
+<pre>     5b4:	d503201f 	nop</pre>
+<br />
+<pre>00000000000005b8 &lt;w1_master_attribute_show_max_slave_count&gt;:</pre>
+<pre>     5b8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>     5bc:	910003fd 	mov	x29, sp</pre>
+<pre>     5c0:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>     5c4:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>     5c8:	aa0003f3 	mov	x19, x0</pre>
+<pre>     5cc:	aa0203f4 	mov	x20, x2</pre>
+<pre>     5d0:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     5d4:	d1012275 	sub	x21, x19, #0x48</pre>
+<pre>     5d8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     5dc:	aa1503e0 	mov	x0, x21</pre>
+<pre>     5e0:	94000000 	bl	0 &lt</span>utex_lock&gt;</pre>
+<pre>     5e4:	b8568262 	ldur	w2, [x19, #-152]</pre>
+<pre>     5e8:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     5ec:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     5f0:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">     5f4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     5f8:	2a0003f3 	mov	w19, w0</pre>
+<pre>     5fc:	aa1503e0 	mov	x0, x21</pre>
+<pre>--</pre>
+<pre>     60c:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>     610:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>     614:	d65f03c0 	ret</pre>
+<br />
+<pre>0000000000000618 &lt;w1_master_attribute_show_slave_count&gt;:</pre>
+<pre>     618:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>     61c:	910003fd 	mov	x29, sp</pre>
+<pre>     620:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>     624:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>     628:	aa0003f3 	mov	x19, x0</pre>
+<pre>     62c:	aa0203f4 	mov	x20, x2</pre>
+<pre>     630:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     634:	d1012275 	sub	x21, x19, #0x48</pre>
+<pre>     638:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     63c:	aa1503e0 	mov	x0, x21</pre>
+<pre>     640:	94000000 	bl	0 &lt</span>utex_lock&gt;</pre>
+<pre>     644:	b856c262 	ldur	w2, [x19, #-148]</pre>
+<pre>     648:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     64c:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     650:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">     654:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     658:	2a0003f3 	mov	w19, w0</pre>
+<pre>     65c:	aa1503e0 	mov	x0, x21</pre>
+<pre>--</pre>
+<pre>     670:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>     674:	d65f03c0 	ret</pre>
+<br />
+<pre>0000000000000678 &lt;w1_master_attribute_show_name&gt;:</pre>
+<pre>     678:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!</pre>
+<pre>     67c:	910003fd 	mov	x29, sp</pre>
+<pre>     680:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>     684:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>     688:	aa0003f3 	mov	x19, x0</pre>
+<pre>     68c:	aa0203f4 	mov	x20, x2</pre>
+<pre>     690:	d1044273 	sub	x19, x19, #0x110</pre>
+<pre>     694:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     698:	91032275 	add	x21, x19, #0xc8</pre>
+<pre>     69c:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     6a0:	aa1503e0 	mov	x0, x21</pre>
+<pre>     6a4:	94000000 	bl	0 &lt</span>utex_lock&gt;</pre>
+<pre>     6a8:	91006262 	add	x2, x19, #0x18</pre>
+<pre>     6ac:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     6b0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     6b4:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">     6b8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     6bc:	2a0003f3 	mov	w19, w0</pre>
+<pre>     6c0:	aa1503e0 	mov	x0, x21</pre>
+<pre>     6c4:	94000000 	bl	0 &lt</span>utex_unlock&gt;</pre>
+<pre>     6c8:	93407e60 	sxtw	x0, w19</pre>
+<pre>     6cc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>     6d0:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>     6d4:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>     6d8:	d65f03c0 	ret</pre>
+<pre>     6dc:	d503201f 	nop</pre>
+<br />
+<pre>00000000000006e0 &lt;name_show&gt;:</pre>
+<pre>     6e0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>     6e4:	910003fd 	mov	x29, sp</pre>
+<pre>     6e8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>     6ec:	aa0203f3 	mov	x19, x2</pre>
+<pre>     6f0:	aa0003f4 	mov	x20, x0</pre>
+<pre>     6f4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>     6f8:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>     6fc:	d1018282 	sub	x2, x20, #0x60</pre>
+<pre>     700:	aa1303e0 	mov	x0, x19</pre>
+<pre>     704:	90000001 	adrp	x1, 0 &lt;w1_master_match&gt;</pre>
+<pre>     708:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     70c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     710:	93407c00 	sxtw	x0, w0</pre>
+<pre>     714:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">10</span> times </span><span class="orange">wire.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

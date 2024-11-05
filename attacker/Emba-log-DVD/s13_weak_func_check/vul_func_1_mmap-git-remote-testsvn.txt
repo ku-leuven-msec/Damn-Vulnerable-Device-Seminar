@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mgit-remote-testsvn[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mgit-remote-testsvn[0m
+
+[31m   59fc8:	97fec11a 	bl	a430 <mmap64@plt>[0m
+   59fcc:	f100027f 	cmp	x19, #0x0
+   59fd0:	ba410800 	ccmn	x0, #0x1, #0x0, eq  // eq = none
+   59fd4:	9a9f1000 	csel	x0, x0, xzr, ne  // ne = any
+   59fd8:	a94153f3 	ldp	x19, x20, [sp, #16]
+   59fdc:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   59fe0:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   59fe4:	d65f03c0 	ret
+   59fe8:	f0000720 	adrp	x0, 140000 <error@@Base+0xc24c0>
+   59fec:	d2800001 	mov	x1, #0x0                   	// #0
+   59ff0:	913fe000 	add	x0, x0, #0xff8
+   59ff4:	29078fe2 	stp	w2, w3, [sp, #60]
+   59ff8:	b90047e4 	str	w4, [sp, #68]
+   59ffc:	f90027e5 	str	x5, [sp, #72]
+   5a000:	97fedffc 	bl	11ff0 <ferror@plt+0x7b10>
+   5a004:	29478fe2 	ldp	w2, w3, [sp, #60]
+   5a008:	aa0003e6 	mov	x6, x0
+   5a00c:	b94047e4 	ldr	w4, [sp, #68]
+   5a010:	f94027e5 	ldr	x5, [sp, #72]
+   5a014:	b5000080 	cbnz	x0, 5a024 <ferror@plt+0x4fb44>
+   5a018:	92800000 	mov	x0, #0xffffffffffffffff    	// #-1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mgit-remote-testsvn[0m
+

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mfilefrag[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mfilefrag[0m
+
+    120c:	910f80a5 	add	x5, x5, #0x3e0
+    1210:	0b0600c4 	add	w4, w6, w6
+    1214:	b0000003 	adrp	x3, 2000 <ioctl@plt+0x1200>
+    1218:	910fe063 	add	x3, x3, #0x3f8
+    121c:	0b020042 	add	w2, w2, w2
+    1220:	110004c6 	add	w6, w6, #0x1
+    1224:	11000c84 	add	w4, w4, #0x3
+    1228:	11000c42 	add	w2, w2, #0x3
+    122c:	52800020 	mov	w0, #0x1                   	// #1
+    1230:	b0000001 	adrp	x1, 2000 <ioctl@plt+0x1200>
+    1234:	91102021 	add	x1, x1, #0x408
+    1238:	17fffeba 	b	d20 <__printf_chk@plt>
+    123c:	d503201f 	nop
+    1240:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    1244:	910003fd 	mov	x29, sp
+    1248:	a90153f3 	stp	x19, x20, [sp, #16]
+    124c:	aa0003f4 	mov	x20, x0
+    1250:	2a0103f3 	mov	w19, w1
+    1254:	aa0203e0 	mov	x0, x2
+    1258:	aa0303e1 	mov	x1, x3
+[31m    125c:	97fffead 	bl	d10 <strcat@plt>[0m
+    1260:	b9400281 	ldr	w1, [x20]
+    1264:	0a330033 	bic	w19, w1, w19
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mfilefrag[0m
+

@@ -1,0 +1,538 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module interface.tests.test_adapter</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:23:0: C0103: Function name "_makeInterfaces" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:24:4: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:26:4: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:28:4: R0901: Too many ancestors (9/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:30:4: R0901: Too many ancestors (9/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:32:4: R0901: Too many ancestors (11/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:34:4: R0901: Too many ancestors (11/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:37:4: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:39:4: R0901: Too many ancestors (9/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:42:4: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:44:4: R0901: Too many ancestors (9/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:53:0: R0205: Class 'CustomDataTypeBase' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:81:0: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:90:0: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:97:0: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:100:0: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:108:4: C0103: Method name "_getBaseAdapterRegistry" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:109:8: C0415: Import outside toplevel (zope.interface.adapter.BaseAdapterRegistry) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:108:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:112:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:301:8: C0103: Attribute name "_mappingType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:302:8: C0103: Attribute name "_leafSequenceType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:303:8: C0103: Attribute name "_sequenceType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:304:8: C0103: Attribute name "_providedType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:309:8: C0103: Attribute name "_addValueToLeaf" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:115:12: R0205: Class 'LookupClass' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:124:38: R1728: Consider using a generator instead 'tuple(x for x in self._extendors if x != provided)' (consider-using-generator)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:130:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:133:4: C0103: Method name "_getMappingType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:133:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:136:4: C0103: Method name "_getProvidedType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:136:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:139:4: C0103: Method name "_getMutableListType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:139:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:142:4: C0103: Method name "_getLeafSequenceType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:142:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:165:8: R0205: Class '_Base' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:165:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:218:4: C0103: Method name "test_register_multiple_allRegistrations" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:218:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:235:8: C0103: Argument name "L" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:235:8: C0103: Argument name "MT" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:305:8: C0103: Function name "addValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:325:4: C0103: Method name "test_register_with_value_None_unregisters" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:335:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:336:8: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:431:4: C0103: Method name "test_unregister_with_value_not_None_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:509:4: C0103: Method name "assertLeafIdentity" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:521:4: R0914: Too many local variables (22/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:547:8: C0103: Variable name "IR0_leaf_orig" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:548:8: C0103: Variable name "Non_leaf_orig" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:562:8: C0103: Variable name "IR0_leaf_new" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:563:8: C0103: Variable name "Non_leaf_new" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:598:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:647:4: C0103: Method name "test_unsubscribe_w_None_after_multiple" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:689:4: C0103: Method name "test_unsubscribe_with_value_not_None_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:710:4: C0103: Method name "test_subscribe_multiple_allRegistrations" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:710:4: R0914: Too many local variables (17/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:728:8: C0103: Argument name "L" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:728:8: C0103: Argument name "F" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:728:8: C0103: Argument name "MT" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:771:8: C0103: Argument name "P" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:808:8: C0103: Function name "addValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:104:0: R0904: Too many public methods (32/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:846:8: C0415: Import outside toplevel (zope.interface.adapter.BaseAdapterRegistry) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:876:4: C0103: Method name "_getFallbackClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:877:8: C0415: Import outside toplevel (zope.interface.adapter.LookupBaseFallback) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:876:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:882:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:882:4: C0103: Argument name "uc_lookupAll" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:886:26: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:886:32: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:886:42: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:886:52: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:889:12: C0103: Function name "uc_lookupAll" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:894:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:901:26: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:901:36: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:901:46: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:903:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:909:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:912:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:920:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:923:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:930:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:930:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:930:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:932:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:935:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:943:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:943:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:943:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:945:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:948:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:957:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:957:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:957:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:959:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:962:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:970:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:970:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:970:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:972:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:975:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:984:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:984:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:984:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:986:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:989:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:999:26: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:999:36: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:999:46: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1002:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1008:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1011:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1019:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1022:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1030:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1033:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1042:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1042:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1042:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1044:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1047:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1055:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1055:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1055:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1057:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1060:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1069:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1069:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1069:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1071:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1074:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1085:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1091:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1097:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1101:4: C0103: Method name "test_adapter_hook_hit_factory_returns_None" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1106:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1106:26: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1106:36: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1106:46: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1109:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1120:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1120:26: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1120:36: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1120:46: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1123:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1133:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1133:26: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1133:36: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1133:46: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1135:19: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1137:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1142:4: C0103: Method name "test_queryAdapter" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1148:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1148:26: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1148:36: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1148:46: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1151:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1156:4: C0103: Method name "test_lookupAll_uncached" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1159:8: C0103: Function name "_lookupAll" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1159:23: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1162:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1167:4: C0103: Method name "test_lookupAll_cached" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1170:8: C0103: Function name "_lookupAll" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1170:23: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1173:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1182:27: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1185:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1193:27: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1196:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:874:0: R0904: Too many public methods (26/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1207:8: C0415: Import outside toplevel (zope.interface.adapter.LookupBase) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1213:4: C0103: Method name "_getFallbackClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1214:8: C0415: Import outside toplevel (zope.interface.adapter.VerifyingBaseFallback) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1213:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1219:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1219:4: C0103: Argument name "uc_lookupAll" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1226:12: C0103: Function name "uc_lookupAll" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1236:16: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1231:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1242:4: C0103: Method name "_makeRegistry" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1243:8: R0205: Class 'WithGeneration' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1243:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1247:16: C0103: Attribute name "ro" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1245:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1252:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1252:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1252:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1254:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1258:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1273:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1273:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1273:14: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1275:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1279:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1293:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1293:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1294:22: W0613: Unused argument 'context' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1296:22: W0613: Unused argument 'context' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1298:22: W0613: Unused argument 'context' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1301:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1301:26: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1301:36: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1301:46: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1305:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1314:4: C0103: Method name "test_queryAdapter" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1315:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1315:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1316:22: W0613: Unused argument 'context' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1318:22: W0613: Unused argument 'context' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1320:22: W0613: Unused argument 'context' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1323:20: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1323:26: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1323:36: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1323:46: W0613: Unused argument 'name' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1327:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1336:4: C0103: Method name "test_lookupAll" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1340:8: C0103: Function name "_lookupAll" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1340:23: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1340:29: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1340:39: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1343:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1356:27: W0613: Unused argument 'self' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1356:33: W0613: Unused argument 'required' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1356:43: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1359:8: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1373:8: C0415: Import outside toplevel (zope.interface.adapter.VerifyingBase) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1379:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1380:8: C0415: Import outside toplevel (zope.interface.adapter.AdapterLookupBase) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1379:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1383:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1386:4: C0103: Method name "_makeSubregistry" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1387:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1386:0: W0613: Unused argument 'provided' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1393:4: C0103: Method name "_makeRegistry" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1397:16: C0103: Attribute name "ro" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1394:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1406:8: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1407:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1408:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1409:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1421:8: R0205: Class 'Mixin' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1421:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1432:8: R0205: Class 'Mixin' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1432:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1437:8: R0205: Class 'FauxWeakref' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1457:8: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1458:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1459:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1460:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1473:8: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1474:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1475:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1476:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1489:8: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1490:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1491:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1492:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1506:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1507:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1508:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1517:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1518:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1519:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1528:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1529:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1530:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1541:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1542:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1543:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1544:8: C0103: Variable name "IQux" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1560:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1561:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1562:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1579:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1580:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1581:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1596:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1597:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1598:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1614:4: C0103: Method name "test_queryMultiAdaptor_lookup_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1615:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1616:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1617:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1618:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1620:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1620:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1637:4: C0103: Method name "test_queryMultiAdapter_errors_on_attribute_access" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1642:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1643:8: C0415: Import outside toplevel (zope.interface.tests.MissingSomeAttrs) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1645:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1650:8: C0103: Argument name "ob" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1656:8: C0103: Variable name "PY3" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1660:4: C0103: Method name "test_queryMultiAdaptor_factory_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1661:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1662:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1663:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1664:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1666:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1666:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1689:4: C0103: Method name "test_queryMultiAdaptor_factory_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1690:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1691:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1692:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1693:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1695:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1695:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1718:4: C0103: Method name "test_queryMultiAdapter_super_unwraps" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1720:0: W0613: Unused argument 'args' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1727:12: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1730:12: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1741:4: C0103: Method name "test__uncached_lookupAll_empty_ro" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1742:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1743:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1744:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1752:4: C0103: Method name "test__uncached_lookupAll_order_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1753:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1754:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1755:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1764:4: C0103: Method name "test__uncached_lookupAll_extendors_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1765:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1766:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1767:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1777:4: C0103: Method name "test__uncached_lookupAll_components_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1778:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1779:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1780:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1781:8: C0103: Variable name "IQux" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1795:4: C0103: Method name "test__uncached_lookupAll_simple_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1796:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1797:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1798:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1814:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1815:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1816:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1833:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1834:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1835:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1844:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1845:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1846:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1856:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1857:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1858:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1869:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1870:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1871:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1872:8: C0103: Variable name "IQux" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1887:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1888:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1889:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1904:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1905:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1906:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1909:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1909:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1924:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1925:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1926:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1927:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1929:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1929:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1952:4: R0914: Too many local variables (17/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1953:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1954:8: C0415: Import outside toplevel (zope.interface.interface.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1955:8: C0103: Variable name "IFoo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1956:8: C0103: Variable name "IBar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1958:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1958:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1377:0: R0904: Too many public methods (33/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1999:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2000:8: C0415: Import outside toplevel (zope.interface.adapter.VerifyingAdapterRegistry) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:1999:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2003:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2006:4: C0103: Method name "test_verify_object_provides_IAdapterRegistry" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2007:8: C0415: Import outside toplevel (zope.interface.verify.verifyObject) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2008:8: C0415: Import outside toplevel (zope.interface.interfaces.IAdapterRegistry) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2016:8: C0415: Import outside toplevel (zope.interface.adapter.AdapterRegistry) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2020:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2032:4: C0103: Method name "test__setBases_removing_existing_subregistry" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2041:4: C0103: Method name "test__setBases_wo_stray_entry" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2052:4: C0103: Method name "test__setBases_w_existing_entry_continuing" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2064:8: R0205: Class 'Derived' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2064:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2077:0: C0103: Class name "Test_utils" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2079:4: C0103: Method name "test__convert_None_to_Interface_w_None" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2080:8: C0415: Import outside toplevel (zope.interface.adapter._convert_None_to_Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2081:8: C0415: Import outside toplevel (zope.interface.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2084:4: C0103: Method name "test__convert_None_to_Interface_w_other" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2085:8: C0415: Import outside toplevel (zope.interface.adapter._convert_None_to_Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2090:8: C0415: Import outside toplevel (zope.interface.adapter._normalize_name) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2091:8: C0103: Variable name "STR" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2092:8: C0103: Variable name "UNICODE" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2098:8: C0415: Import outside toplevel (zope.interface.adapter._normalize_name) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2100:8: C0103: Variable name "USTR" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_adapter.py:2104:8: C0415: Import outside toplevel (zope.interface.adapter._normalize_name) (import-outside-toplevel)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 7.33/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

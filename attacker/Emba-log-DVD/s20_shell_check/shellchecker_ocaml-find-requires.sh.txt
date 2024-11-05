@@ -1,0 +1,84 @@
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 16:[0m
+[0mTEMP=`getopt -o ci:f: -n ocaml-find-requires.sh -- "$@"`[0m
+[32m     ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+TEMP=$(getopt -o ci:f: -n ocaml-find-requires.sh -- "$@")
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 17:[0m
+[0mif [ $? != 0 ]; then echo "ocaml-find-requires.sh: failed" >&2; exit 1; fi[0m
+[32m     ^-- SC2181: Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 34:[0m
+[0mfiles=`sed "s/['\"]/\\\&/g"`[0m
+[32m      ^--------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+files=$(sed "s/['\"]/\\\&/g")
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 40:[0m
+[0mfiles=`echo $files | tr '[:blank:]' '\n' | grep '\.cm[ioa]$'`[0m
+[32m      ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m            ^----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+files=$(echo "$files" | tr '[:blank:]' '\n' | grep '\.cm[ioa]$')
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 45:[0m
+[0mmodules=`$OCAMLOBJINFO $files |[0m
+[32m        ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                       ^----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+modules=$($OCAMLOBJINFO "$files" |
+          grep -E '(Unit|Module) name: ' |
+          awk '{print $3}')
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 50:[0m
+[0mmodules_re=`echo $modules | sed 's/ /|/g'`[0m
+[32m           ^-----------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                 ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+modules_re=$(echo "$modules" | sed 's/ /|/g')
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 51:[0m
+[0mignore_modules_re=`echo $ignore_modules | sed 's/ /|/g'`[0m
+[32m                  ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                        ^-------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+ignore_modules_re=$(echo "$ignore_modules" | sed 's/ /|/g')
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 54:[0m
+[0m$OCAMLOBJINFO $files |[0m
+[32m              ^----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+$OCAMLOBJINFO "$files" |
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 57:[0m
+[0mwhile read md5sum module; do[0m
+[32m      ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh line 67:[0m
+[0m    echo "ocaml(runtime) = `ocamlrun -version | awk '{print $NF}' | sed 's/\+.*//'`"[0m
+[32m                           ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+    echo "ocaml(runtime) = $(ocamlrun -version | awk '{print $NF}' | sed 's/\+.*//')"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...
+  https://www.shellcheck.net/wiki/SC2162 -- read without -r will mangle backs...
+  https://www.shellcheck.net/wiki/SC2006 -- Use $(...) notation instead of le...

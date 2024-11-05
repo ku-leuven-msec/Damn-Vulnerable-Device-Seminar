@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibsmartcols.so.1.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibsmartcols.so.1.1.0[0m
+
+   119e8:	a90153f3 	stp	x19, x20, [sp, #16]
+   119ec:	aa0103f3 	mov	x19, x1
+   119f0:	a9025bf5 	stp	x21, x22, [sp, #32]
+   119f4:	aa0203f5 	mov	x21, x2
+   119f8:	aa0303f6 	mov	x22, x3
+   119fc:	f9001bf7 	str	x23, [sp, #48]
+   11a00:	aa0003f7 	mov	x23, x0
+   11a04:	aa0103e0 	mov	x0, x1
+   11a08:	97ffffe6 	bl	119a0 <scols_get_library_version@@SMARTCOLS_2.25+0x440>
+   11a0c:	b4000460 	cbz	x0, 11a98 <scols_get_library_version@@SMARTCOLS_2.25+0x538>
+   11a10:	aa0003f4 	mov	x20, x0
+   11a14:	f9400a60 	ldr	x0, [x19, #16]
+   11a18:	b4000340 	cbz	x0, 11a80 <scols_get_library_version@@SMARTCOLS_2.25+0x520>
+   11a1c:	3943e6e0 	ldrb	w0, [x23, #249]
+   11a20:	36200240 	tbz	w0, #4, 11a68 <scols_get_library_version@@SMARTCOLS_2.25+0x508>
+   11a24:	aa1403e0 	mov	x0, x20
+   11a28:	94001952 	bl	17f70 <scols_init_debug@@SMARTCOLS_2.25+0x2d00>
+   11a2c:	f90002a0 	str	x0, [x21]
+   11a30:	aa1403e1 	mov	x1, x20
+   11a34:	f9400a60 	ldr	x0, [x19, #16]
+[31m   11a38:	97ffd7b6 	bl	7910 <strcpy@plt>[0m
+   11a3c:	f9400a60 	ldr	x0, [x19, #16]
+   11a40:	b40002c0 	cbz	x0, 11a98 <scols_get_library_version@@SMARTCOLS_2.25+0x538>
+--
+   1abfc:	911cc063 	add	x3, x3, #0x730
+   1ac00:	d2810002 	mov	x2, #0x800                 	// #2048
+   1ac04:	52800021 	mov	w1, #0x1                   	// #1
+   1ac08:	910123f3 	add	x19, sp, #0x48
+   1ac0c:	aa1303e0 	mov	x0, x19
+   1ac10:	97ffb0b0 	bl	6ed0 <__sprintf_chk@plt>
+   1ac14:	aa1303e0 	mov	x0, x19
+   1ac18:	97ffb09e 	bl	6e90 <strlen@plt>
+   1ac1c:	f941b6c2 	ldr	x2, [x22, #872]
+   1ac20:	d1000841 	sub	x1, x2, #0x2
+   1ac24:	eb00003f 	cmp	x1, x0
+   1ac28:	54000042 	b.cs	1ac30 <scols_init_debug@@SMARTCOLS_2.25+0x59c0>  // b.hs, b.nlast
+   1ac2c:	38216a7f 	strb	wzr, [x19, x1]
+   1ac30:	910da2d6 	add	x22, x22, #0x368
+   1ac34:	52800001 	mov	w1, #0x0                   	// #0
+   1ac38:	f94006d5 	ldr	x21, [x22, #8]
+   1ac3c:	f94002a0 	ldr	x0, [x21]
+   1ac40:	97ffb1e4 	bl	73d0 <memset@plt>
+   1ac44:	f94002a0 	ldr	x0, [x21]
+   1ac48:	aa1303e1 	mov	x1, x19
+[31m   1ac4c:	97ffb331 	bl	7910 <strcpy@plt>[0m
+   1ac50:	f9401bf7 	ldr	x23, [sp, #48]
+   1ac54:	f90006bf 	str	xzr, [x21, #8]
+--
+   1db88:	aa0003f3 	mov	x19, x0
+   1db8c:	f100027f 	cmp	x19, #0x0
+   1db90:	90000080 	adrp	x0, 2d000 <scols_init_debug@@SMARTCOLS_2.25+0x17d90>
+   1db94:	912ba000 	add	x0, x0, #0xae8
+   1db98:	9a930013 	csel	x19, x0, x19, eq  // eq = none
+   1db9c:	aa1303e0 	mov	x0, x19
+   1dba0:	97ffa660 	bl	7520 <strdup@plt>
+   1dba4:	a9025bf5 	stp	x21, x22, [sp, #32]
+   1dba8:	b4000400 	cbz	x0, 1dc28 <scols_init_debug@@SMARTCOLS_2.25+0x89b8>
+   1dbac:	97ffa645 	bl	74c0 <__xpg_basename@plt>
+   1dbb0:	aa0003f6 	mov	x22, x0
+   1dbb4:	97ffa4b7 	bl	6e90 <strlen@plt>
+   1dbb8:	91000815 	add	x21, x0, #0x2
+   1dbbc:	aa1503e0 	mov	x0, x21
+   1dbc0:	97ffa5ac 	bl	7270 <malloc@plt>
+   1dbc4:	aa0003f4 	mov	x20, x0
+   1dbc8:	b4000380 	cbz	x0, 1dc38 <scols_init_debug@@SMARTCOLS_2.25+0x89c8>
+   1dbcc:	528005a2 	mov	w2, #0x2d                  	// #45
+   1dbd0:	38001402 	strb	w2, [x0], #1
+   1dbd4:	aa1603e1 	mov	x1, x22
+[31m   1dbd8:	97ffa74e 	bl	7910 <strcpy@plt>[0m
+   1dbdc:	aa1403e1 	mov	x1, x20
+   1dbe0:	d2800002 	mov	x2, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mlibsmartcols.so.1.1.0[0m
+

@@ -1,0 +1,193 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">_multiprocessing.cpython-38-aarch64-linux-gnu.so</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="green">Full RELRO   </span>   <span class="green">Canary found   </span>   <span class="green">NX enabled </span>   <span class="orange">DSO          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="green">No Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> tear down of </span><span class="orange">_multiprocessing.cpython-38-aarch64-linux-gnu.so</span></pre>
+<br />
+<pre>    1e1c:	b9002817 	str	w23, [x0, #40]</pre>
+<pre>    1e20:	f9001816 	str	x22, [x0, #48]</pre>
+<pre>    1e24:	a9435bf5 	ldp	x21, x22, [sp, #48]</pre>
+<pre>    1e28:	a94463f7 	ldp	x23, x24, [sp, #64]</pre>
+<pre>    1e2c:	f947ee94 	ldr	x20, [x20, #4056]</pre>
+<pre>    1e30:	f94037e1 	ldr	x1, [sp, #104]</pre>
+<pre>    1e34:	f9400280 	ldr	x0, [x20]</pre>
+<pre>    1e38:	ca000020 	eor	x0, x1, x0</pre>
+<pre>    1e3c:	b50006a0 	cbnz	x0, 1f10 &lt;PyInit__multiprocessing&commat;&commat;Base+0x3f0&gt;</pre>
+<pre>    1e40:	aa1303e0 	mov	x0, x19</pre>
+<pre>    1e44:	a9417bfd 	ldp	x29, x30, [sp, #16]</pre>
+<pre>    1e48:	a94253f3 	ldp	x19, x20, [sp, #32]</pre>
+<pre>    1e4c:	9101c3ff 	add	sp, sp, #0x70</pre>
+<pre>    1e50:	d65f03c0 	ret</pre>
+<pre>    1e54:	97fffe37 	bl	1730 &lt;strlen&commat;plt&gt;</pre>
+<pre>    1e58:	91000400 	add	x0, x0, #0x1</pre>
+<pre>    1e5c:	97fffecd 	bl	1990 &lt;PyMem_Malloc&commat;plt&gt;</pre>
+<pre>    1e60:	aa0003f6 	mov	x22, x0</pre>
+<pre>    1e64:	b4000460 	cbz	x0, 1ef0 &lt;PyInit__multiprocessing&commat;&commat;Base+0x3d0&gt;</pre>
+<pre>    1e68:	f94033e1 	ldr	x1, [sp, #96]</pre>
+<pre><span class="red">    1e6c:	97fffea5 	bl	1900 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    1e70:	b9405be3 	ldr	w3, [sp, #88]</pre>
+<pre>    1e74:	52803002 	mov	w2, #0x180                 	// #384</pre>
+<pre>--</pre>
+<pre>    1f40:	aa0003f6 	mov	x22, x0</pre>
+<pre>    1f44:	f9400043 	ldr	x3, [x2]</pre>
+<pre>    1f48:	f9002fe3 	str	x3, [sp, #88]</pre>
+<pre>    1f4c:	d2800003 	mov	x3, #0x0                   	// #0</pre>
+<pre>    1f50:	aa0103e0 	mov	x0, x1</pre>
+<pre>    1f54:	910103e3 	add	x3, sp, #0x40</pre>
+<pre>    1f58:	b0000001 	adrp	x1, 2000 &lt;PyInit__multiprocessing&commat;&commat;Base+0x4e0&gt;</pre>
+<pre>    1f5c:	910123e2 	add	x2, sp, #0x48</pre>
+<pre>    1f60:	911fa021 	add	x1, x1, #0x7e8</pre>
+<pre>    1f64:	97fffe4b 	bl	1890 &lt;_PyArg_ParseTuple_SizeT&commat;plt&gt;</pre>
+<pre>    1f68:	34000500 	cbz	w0, 2008 &lt;PyInit__multiprocessing&commat;&commat;Base+0x4e8&gt;</pre>
+<pre>    1f6c:	f9402bf4 	ldr	x20, [sp, #80]</pre>
+<pre>    1f70:	b4000474 	cbz	x20, 1ffc &lt;PyInit__multiprocessing&commat;&commat;Base+0x4dc&gt;</pre>
+<pre>    1f74:	aa1403e0 	mov	x0, x20</pre>
+<pre>    1f78:	97fffdee 	bl	1730 &lt;strlen&commat;plt&gt;</pre>
+<pre>    1f7c:	91000400 	add	x0, x0, #0x1</pre>
+<pre>    1f80:	97fffe84 	bl	1990 &lt;PyMem_Malloc&commat;plt&gt;</pre>
+<pre>    1f84:	aa0003f4 	mov	x20, x0</pre>
+<pre>    1f88:	b4000440 	cbz	x0, 2010 &lt;PyInit__multiprocessing&commat;&commat;Base+0x4f0&gt;</pre>
+<pre>    1f8c:	f9402be1 	ldr	x1, [sp, #80]</pre>
+<pre><span class="red">    1f90:	97fffe5c 	bl	1900 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    1f94:	f9402be0 	ldr	x0, [sp, #80]</pre>
+<pre>    1f98:	b4000320 	cbz	x0, 1ffc &lt;PyInit__multiprocessing&commat;&commat;Base+0x4dc&gt;</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> used </span><span class="orange">2</span> times </span><span class="orange">_multiprocessing.cpython-38-aarch64-linux-gnu.so</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

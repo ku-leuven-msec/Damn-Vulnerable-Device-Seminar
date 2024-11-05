@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mhciconfig[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mhciconfig[0m
+
+   138b8:	b4000075 	cbz	x21, 138c4 <ioctl@plt+0xc884>
+   138bc:	97ffcd0d 	bl	6cf0 <strlen@plt>
+   138c0:	2a0003e1 	mov	w1, w0
+   138c4:	0b190021 	add	w1, w1, w25
+   138c8:	11000f18 	add	w24, w24, #0x3
+   138cc:	0b180038 	add	w24, w1, w24
+   138d0:	f8410e60 	ldr	x0, [x19, #16]!
+   138d4:	b5fffde0 	cbnz	x0, 13890 <ioctl@plt+0xc850>
+   138d8:	93407f00 	sxtw	x0, w24
+   138dc:	97fff129 	bl	fd80 <ioctl@plt+0x8d40>
+   138e0:	f90037e0 	str	x0, [sp, #104]
+   138e4:	aa0003f8 	mov	x24, x0
+   138e8:	b4000720 	cbz	x0, 139cc <ioctl@plt+0xc98c>
+   138ec:	a90573fb 	stp	x27, x28, [sp, #80]
+   138f0:	aa0003f3 	mov	x19, x0
+   138f4:	3900001f 	strb	wzr, [x0]
+   138f8:	b40000d5 	cbz	x21, 13910 <ioctl@plt+0xc8d0>
+   138fc:	aa1503e2 	mov	x2, x21
+   13900:	b0000021 	adrp	x1, 18000 <ioctl@plt+0x10fc0>
+   13904:	91302021 	add	x1, x1, #0xc08
+[31m   13908:	97ffcd12 	bl	6d50 <sprintf@plt>[0m
+   1390c:	8b20c313 	add	x19, x24, w0, sxtw
+   13910:	9105a2f7 	add	x23, x23, #0x168
+--
+   13b30:	11000673 	add	w19, w19, #0x1
+   13b34:	0b1a0021 	add	w1, w1, w26
+   13b38:	0b010273 	add	w19, w19, w1
+   13b3c:	f8410f80 	ldr	x0, [x28, #16]!
+   13b40:	b5fffe40 	cbnz	x0, 13b08 <ioctl@plt+0xcac8>
+   13b44:	91000739 	add	x25, x25, #0x1
+   13b48:	91024318 	add	x24, x24, #0x90
+   13b4c:	eb19037f 	cmp	x27, x25
+   13b50:	54fffd41 	b.ne	13af8 <ioctl@plt+0xcab8>  // b.any
+   13b54:	93407e60 	sxtw	x0, w19
+   13b58:	97fff08a 	bl	fd80 <ioctl@plt+0x8d40>
+   13b5c:	f9003fe0 	str	x0, [sp, #120]
+   13b60:	aa0003f3 	mov	x19, x0
+   13b64:	b40007e0 	cbz	x0, 13c60 <ioctl@plt+0xcc20>
+   13b68:	3900001f 	strb	wzr, [x0]
+   13b6c:	aa0003fa 	mov	x26, x0
+   13b70:	b40000d6 	cbz	x22, 13b88 <ioctl@plt+0xcb48>
+   13b74:	aa1603e2 	mov	x2, x22
+   13b78:	b0000021 	adrp	x1, 18000 <ioctl@plt+0x10fc0>
+   13b7c:	91302021 	add	x1, x1, #0xc08
+[31m   13b80:	97ffcc74 	bl	6d50 <sprintf@plt>[0m
+   13b84:	8b20c27a 	add	x26, x19, w0, sxtw
+   13b88:	f10002df 	cmp	x22, #0x0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mhciconfig[0m
+

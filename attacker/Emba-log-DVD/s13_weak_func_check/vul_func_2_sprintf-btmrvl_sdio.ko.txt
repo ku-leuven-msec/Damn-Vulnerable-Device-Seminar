@@ -1,0 +1,43 @@
+[[0;33m*[0m] Binary protection state of [0;33mbtmrvl_sdio.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m171) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mbtmrvl_sdio.ko[0m
+
+      f4:	90000019 	adrp	x25, 0 <btmrvl_sdio_wakeup_fw>
+      f8:	90000017 	adrp	x23, 0 <btmrvl_sdio_wakeup_fw>
+      fc:	9100035a 	add	x26, x26, #0x0
+     100:	91000339 	add	x25, x25, #0x0
+     104:	910002f7 	add	x23, x23, #0x0
+     108:	94000000 	bl	0 <sdio_claim_host>
+     10c:	5280005b 	mov	w27, #0x2                   	// #2
+     110:	9101a3e0 	add	x0, sp, #0x68
+     114:	52800015 	mov	w21, #0x0                   	// #0
+     118:	72a00a5c 	movk	w28, #0x52, lsl #16
+     11c:	d2802002 	mov	x2, #0x100                 	// #256
+     120:	52800001 	mov	w1, #0x0                   	// #0
+     124:	94000000 	bl	0 <memset>
+     128:	9101f3f4 	add	x20, sp, #0x7c
+     12c:	2a1503e2 	mov	w2, w21
+     130:	aa1a03e1 	mov	x1, x26
+     134:	52800013 	mov	w19, #0x0                   	// #0
+     138:	52800124 	mov	w4, #0x9                   	// #9
+     13c:	52800003 	mov	w3, #0x0                   	// #0
+     140:	9101a3e0 	add	x0, sp, #0x68
+[31m     144:	94000000 	bl	0 <sprintf>[0m
+     148:	1400000c 	b	178 <btmrvl_sdio_dump_regs+0xd8>
+     14c:	94000000 	bl	0 <sdio_f0_readb>
+     150:	12001c02 	and	w2, w0, #0xff
+     154:	b94067e0 	ldr	w0, [sp, #100]
+     158:	35000200 	cbnz	w0, 198 <btmrvl_sdio_dump_regs+0xf8>
+     15c:	aa1403e0 	mov	x0, x20
+     160:	11000673 	add	w19, w19, #0x1
+     164:	aa1703e1 	mov	x1, x23
+[31m     168:	94000000 	bl	0 <sprintf>[0m
+     16c:	91000e94 	add	x20, x20, #0x3
+     170:	71002a7f 	cmp	w19, #0xa
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mbtmrvl_sdio.ko[0m
+

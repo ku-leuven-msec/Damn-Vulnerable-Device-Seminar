@@ -1,0 +1,27 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/poplib.py[0m
+10:Added the POP3_SSL class. Methods.
+10: based on IMAP_SSL. Hector Urtubi.
+22:    import ssl.
+23:    HAVE_SSL = True.
+25:    HAVE_SSL = False.
+36:# POP SSL PORT.
+37:POP3_SSL_PORT = 995.
+204:hould indicate password required)..
+210:       """Send password, return respon.
+316:op(self, user, password):.
+323:               password - mailbox pass.
+327:secret = bytes(password, self.encoding.
+396:   context - a ssl.SSLContext.
+398:   if not HAVE_SSL:.
+406:     context = ssl._create_stdlib.
+415:if HAVE_SSL:.
+417:    class POP3_SSL(POP3):.
+418:ent class over SSL connection.
+420:ate with: POP3_SSL(hostname, port.
+423: the pop3 over ssl server.
+425: contains your private key.
+427:   context - a ssl.SSLContext.
+432:ost, port=POP3_SSL_PORT, keyfile=.
+447:     context = ssl._create_stdlib.
+461:            SSL/TLS session..
+465:_.append("POP3_SSL").

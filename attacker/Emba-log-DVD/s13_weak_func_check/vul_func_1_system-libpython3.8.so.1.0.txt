@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibpython3.8.so.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mlibpython3.8.so.1.0[0m
+
+  1a44d8:	b40005c1 	cbz	x1, 1a4590 <_Py_Gid_Converter@@Base+0x8c90>
+  1a44dc:	f9400000 	ldr	x0, [x0]
+  1a44e0:	910123e1 	add	x1, sp, #0x48
+  1a44e4:	97fb02a7 	bl	64f80 <PyUnicode_FSConverter@plt>
+  1a44e8:	340006c0 	cbz	w0, 1a45c0 <_Py_Gid_Converter@@Base+0x8cc0>
+  1a44ec:	f94027f4 	ldr	x20, [sp, #72]
+  1a44f0:	aa1403e0 	mov	x0, x20
+  1a44f4:	97fb11a3 	bl	68b80 <PyBytes_AsString@plt>
+  1a44f8:	aa1403e2 	mov	x2, x20
+  1a44fc:	b0000541 	adrp	x1, 24d000 <_Py_ctype_table@@Base+0x8d58>
+  1a4500:	aa0003f4 	mov	x20, x0
+  1a4504:	9119c021 	add	x1, x1, #0x670
+  1a4508:	b0000540 	adrp	x0, 24d000 <_Py_ctype_table@@Base+0x8d58>
+  1a450c:	91296000 	add	x0, x0, #0xa58
+  1a4510:	97fb0eb0 	bl	67fd0 <PySys_Audit@plt>
+  1a4514:	37f805e0 	tbnz	w0, #31, 1a45d0 <_Py_Gid_Converter@@Base+0x8cd0>
+  1a4518:	f9001bf5 	str	x21, [sp, #48]
+  1a451c:	97fb1101 	bl	68920 <PyEval_SaveThread@plt>
+  1a4520:	aa0003f5 	mov	x21, x0
+  1a4524:	aa1403e0 	mov	x0, x20
+[31m  1a4528:	97fb0866 	bl	666c0 <system@plt>[0m
+  1a452c:	93407c14 	sxtw	x20, w0
+  1a4530:	aa1503e0 	mov	x0, x21
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m1[0m times [0;33mlibpython3.8.so.1.0[0m
+

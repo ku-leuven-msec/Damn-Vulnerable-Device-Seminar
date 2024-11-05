@@ -1,0 +1,76 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-soc-core.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1531) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-soc-core.ko[0m
+
+    2438:	9a931000 	csel	x0, x0, x19, ne  // ne = any
+    243c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    2440:	f94013f5 	ldr	x21, [sp, #32]
+    2444:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    2448:	d65f03c0 	ret
+    244c:	d503201f 	nop
+
+0000000000002450 <pmdown_time_show>:
+    2450:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    2454:	910003fd 	mov	x29, sp
+    2458:	a90153f3 	stp	x19, x20, [sp, #16]
+    245c:	aa0003f4 	mov	x20, x0
+    2460:	aa0203f3 	mov	x19, x2
+    2464:	aa1e03e0 	mov	x0, x30
+    2468:	94000000 	bl	0 <_mcount>
+    246c:	f9403e82 	ldr	x2, [x20, #120]
+    2470:	aa1303e0 	mov	x0, x19
+    2474:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    2478:	91000021 	add	x1, x1, #0x0
+    247c:	f942ec42 	ldr	x2, [x2, #1496]
+[31m    2480:	94000000 	bl	0 <sprintf>[0m
+    2484:	93407c00 	sxtw	x0, w0
+    2488:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    7764:	8b040320 	add	x0, x25, x4
+    7768:	eb01037f 	cmp	x27, x1
+    776c:	54ffff01 	b.ne	774c <dapm_widget_show+0xb4>  // b.any
+    7770:	b9400262 	ldr	w2, [x19]
+    7774:	d2800021 	mov	x1, #0x1                   	// #1
+    7778:	7100845f 	cmp	w2, #0x21
+    777c:	54fffe88 	b.hi	774c <dapm_widget_show+0xb4>  // b.pmore
+    7780:	9ac22021 	lsl	x1, x1, x2
+    7784:	d28ffe02 	mov	x2, #0x7ff0                	// #32752
+    7788:	f2a00f02 	movk	x2, #0x78, lsl #16
+    778c:	f2c00042 	movk	x2, #0x2, lsl #32
+    7790:	ea02003f 	tst	x1, x2
+    7794:	54fffdc0 	b.eq	774c <dapm_widget_show+0xb4>  // b.none
+    7798:	f9400662 	ldr	x2, [x19, #8]
+    779c:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    77a0:	91000021 	add	x1, x1, #0x0
+    77a4:	b4fffd42 	cbz	x2, 774c <dapm_widget_show+0xb4>
+    77a8:	39417263 	ldrb	w3, [x19, #92]
+    77ac:	f240007f 	tst	x3, #0x1
+    77b0:	9a951283 	csel	x3, x20, x21, ne  // ne = any
+[31m    77b4:	94000000 	bl	0 <sprintf>[0m
+    77b8:	0b00039c 	add	w28, w28, w0
+    77bc:	f9401303 	ldr	x3, [x24, #32]
+    77c0:	93407f84 	sxtw	x4, w28
+    77c4:	f9400e73 	ldr	x19, [x19, #24]
+    77c8:	91092061 	add	x1, x3, #0x248
+    77cc:	8b040320 	add	x0, x25, x4
+    77d0:	eb01027f 	cmp	x19, x1
+    77d4:	d1006273 	sub	x19, x19, #0x18
+    77d8:	54fffc41 	b.ne	7760 <dapm_widget_show+0xc8>  // b.any
+    77dc:	d503201f 	nop
+    77e0:	b940c301 	ldr	w1, [x24, #192]
+    77e4:	71000c3f 	cmp	w1, #0x3
+    77e8:	54000328 	b.hi	784c <dapm_widget_show+0x1b4>  // b.pmore
+    77ec:	f94037e2 	ldr	x2, [sp, #104]
+    77f0:	f8615842 	ldr	x2, [x2, w1, uxtw #3]
+    77f4:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    77f8:	91000021 	add	x1, x1, #0x0
+[31m    77fc:	94000000 	bl	0 <sprintf>[0m
+    7800:	0b1c02c1 	add	w1, w22, w28
+    7804:	b9460ae2 	ldr	w2, [x23, #1544]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33msnd-soc-core.ko[0m
+

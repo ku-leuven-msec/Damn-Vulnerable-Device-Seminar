@@ -1,0 +1,145 @@
+[[0;33m*[0m] Binary protection state of [0;33mextcon-core.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m264) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mextcon-core.ko[0m
+
+     268:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+     26c:	910003fd 	mov	x29, sp
+     270:	aa1e03e0 	mov	x0, x30
+     274:	94000000 	bl	0 <_mcount>
+     278:	a8c17bfd 	ldp	x29, x30, [sp], #16
+     27c:	d65f03c0 	ret
+
+0000000000000280 <name_show>:
+     280:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     284:	910003fd 	mov	x29, sp
+     288:	a90153f3 	stp	x19, x20, [sp, #16]
+     28c:	aa0003f4 	mov	x20, x0
+     290:	aa0203f3 	mov	x19, x2
+     294:	aa1e03e0 	mov	x0, x30
+     298:	94000000 	bl	0 <_mcount>
+     29c:	f9403e82 	ldr	x2, [x20, #120]
+     2a0:	aa1303e0 	mov	x0, x19
+     2a4:	90000001 	adrp	x1, 0 <extcon_get_state>
+     2a8:	91000021 	add	x1, x1, #0x0
+     2ac:	f9400042 	ldr	x2, [x2]
+[31m     2b0:	94000000 	bl	0 <sprintf>[0m
+     2b4:	93407c00 	sxtw	x0, w0
+     2b8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     2f8:	d2800000 	mov	x0, #0x0                   	// #0
+     2fc:	5400034d 	b.le	364 <state_show+0x9c>
+     300:	a90363f7 	stp	x23, x24, [sp, #48]
+     304:	90000017 	adrp	x23, 0 <extcon_get_state>
+     308:	90000018 	adrp	x24, 0 <extcon_get_state>
+     30c:	910002f7 	add	x23, x23, #0x0
+     310:	91000318 	add	x24, x24, #0x0
+     314:	52800014 	mov	w20, #0x0                   	// #0
+     318:	52800013 	mov	w19, #0x0                   	// #0
+     31c:	d503201f 	nop
+     320:	f94006a2 	ldr	x2, [x21, #8]
+     324:	8b34c2c0 	add	x0, x22, w20, sxtw
+     328:	b9431aa3 	ldr	w3, [x21, #792]
+     32c:	aa1803e1 	mov	x1, x24
+     330:	b873d844 	ldr	w4, [x2, w19, sxtw #2]
+     334:	9ad32463 	lsr	x3, x3, x19
+     338:	12000063 	and	w3, w3, #0x1
+     33c:	11000673 	add	w19, w19, #0x1
+     340:	8b0412e4 	add	x4, x23, x4, lsl #4
+     344:	f9400482 	ldr	x2, [x4, #8]
+[31m     348:	94000000 	bl	0 <sprintf>[0m
+     34c:	0b000294 	add	w20, w20, w0
+     350:	b94312a3 	ldr	w3, [x21, #784]
+     354:	6b13007f 	cmp	w3, w19
+     358:	54fffe4c 	b.gt	320 <state_show+0x58>
+     35c:	a94363f7 	ldp	x23, x24, [sp, #48]
+     360:	93407e80 	sxtw	x0, w20
+     364:	a94153f3 	ldp	x19, x20, [sp, #16]
+     368:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     36c:	a8c47bfd 	ldp	x29, x30, [sp], #64
+     370:	d65f03c0 	ret
+     374:	b9431aa2 	ldr	w2, [x21, #792]
+     378:	aa1603e0 	mov	x0, x22
+     37c:	90000001 	adrp	x1, 0 <extcon_get_state>
+     380:	91000021 	add	x1, x1, #0x0
+[31m     384:	94000000 	bl	0 <sprintf>[0m
+     388:	93407c00 	sxtw	x0, w0
+     38c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     438:	aa1503e2 	mov	x2, x21
+     43c:	8b130c00 	add	x0, x0, x19, lsl #3
+     440:	94000000 	bl	0 <raw_notifier_call_chain>
+     444:	aa1603e1 	mov	x1, x22
+     448:	aa1503e2 	mov	x2, x21
+     44c:	910bc2a0 	add	x0, x21, #0x2f0
+     450:	94000000 	bl	0 <raw_notifier_call_chain>
+     454:	aa1403e0 	mov	x0, x20
+     458:	94000000 	bl	0 <_raw_spin_lock_irqsave>
+     45c:	aa0003f6 	mov	x22, x0
+     460:	52814400 	mov	w0, #0xa20                 	// #2592
+     464:	94000000 	bl	0 <get_zeroed_page>
+     468:	aa0003f3 	mov	x19, x0
+     46c:	b4000920 	cbz	x0, 590 <extcon_sync+0x1f0>
+     470:	a9046bf9 	stp	x25, x26, [sp, #64]
+     474:	90000001 	adrp	x1, 0 <extcon_get_state>
+     478:	91000021 	add	x1, x1, #0x0
+     47c:	f9404aa2 	ldr	x2, [x21, #144]
+     480:	52800015 	mov	w21, #0x0                   	// #0
+     484:	f9400042 	ldr	x2, [x2]
+[31m     488:	94000000 	bl	0 <sprintf>[0m
+     48c:	7100001f 	cmp	w0, #0x0
+     490:	5400020d 	b.le	4d0 <extcon_sync+0x130>
+--
+     5c0:	a9046bf9 	stp	x25, x26, [sp, #64]
+     5c4:	94000000 	bl	0 <__stack_chk_fail>
+
+00000000000005c8 <cable_state_show>:
+     5c8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     5cc:	910003fd 	mov	x29, sp
+     5d0:	a90153f3 	stp	x19, x20, [sp, #16]
+     5d4:	aa0103f3 	mov	x19, x1
+     5d8:	aa1e03e0 	mov	x0, x30
+     5dc:	aa0203f4 	mov	x20, x2
+     5e0:	94000000 	bl	0 <_mcount>
+     5e4:	f85a8260 	ldur	x0, [x19, #-88]
+     5e8:	b89b0262 	ldursw	x2, [x19, #-80]
+     5ec:	f9400401 	ldr	x1, [x0, #8]
+     5f0:	b8627821 	ldr	w1, [x1, x2, lsl #2]
+     5f4:	94000000 	bl	0 <extcon_get_state>
+     5f8:	2a0003e2 	mov	w2, w0
+     5fc:	90000001 	adrp	x1, 0 <extcon_get_state>
+     600:	aa1403e0 	mov	x0, x20
+     604:	91000021 	add	x1, x1, #0x0
+[31m     608:	94000000 	bl	0 <sprintf>[0m
+     60c:	93407c00 	sxtw	x0, w0
+     610:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+
+0000000000000620 <cable_name_show>:
+     620:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     624:	910003fd 	mov	x29, sp
+     628:	a90153f3 	stp	x19, x20, [sp, #16]
+     62c:	aa0103f3 	mov	x19, x1
+     630:	aa1e03e0 	mov	x0, x30
+     634:	aa0203f4 	mov	x20, x2
+     638:	94000000 	bl	0 <_mcount>
+     63c:	f85c8262 	ldur	x2, [x19, #-56]
+     640:	90000003 	adrp	x3, 0 <extcon_get_state>
+     644:	b89d0264 	ldursw	x4, [x19, #-48]
+     648:	91000063 	add	x3, x3, #0x0
+     64c:	aa1403e0 	mov	x0, x20
+     650:	90000001 	adrp	x1, 0 <extcon_get_state>
+     654:	f9400442 	ldr	x2, [x2, #8]
+     658:	91000021 	add	x1, x1, #0x0
+     65c:	b8647842 	ldr	w2, [x2, x4, lsl #2]
+     660:	8b021062 	add	x2, x3, x2, lsl #4
+     664:	f9400442 	ldr	x2, [x2, #8]
+[31m     668:	94000000 	bl	0 <sprintf>[0m
+     66c:	93407c00 	sxtw	x0, w0
+     670:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m6[0m times [0;33mextcon-core.ko[0m
+

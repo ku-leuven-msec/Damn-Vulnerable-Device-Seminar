@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibss.so.2.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibss.so.2.0[0m
+
+    2b1c:	a8c67bfd 	ldp	x29, x30, [sp], #96
+    2b20:	17fffe04 	b	2330 <close@plt>
+    2b24:	a94363f7 	ldp	x23, x24, [sp, #48]
+    2b28:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    2b2c:	a8c67bfd 	ldp	x29, x30, [sp], #96
+    2b30:	17fffe50 	b	2470 <ss_list_requests@plt>
+    2b34:	f94006f4 	ldr	x20, [x23, #8]
+    2b38:	aa1403e0 	mov	x0, x20
+    2b3c:	97fffd61 	bl	20c0 <strlen@plt>
+    2b40:	91004c00 	add	x0, x0, #0x13
+    2b44:	97fffdcb 	bl	2270 <malloc@plt>
+    2b48:	d0000002 	adrp	x2, 4000 <ss_self_identify@@Base+0x20>
+    2b4c:	911a6042 	add	x2, x2, #0x698
+    2b50:	aa0003f3 	mov	x19, x0
+    2b54:	aa1403e1 	mov	x1, x20
+    2b58:	91004800 	add	x0, x0, #0x12
+    2b5c:	a9401444 	ldp	x4, x5, [x2]
+    2b60:	a9001664 	stp	x4, x5, [x19]
+    2b64:	79402042 	ldrh	w2, [x2, #16]
+    2b68:	79002262 	strh	w2, [x19, #16]
+[31m    2b6c:	97fffe39 	bl	2450 <strcpy@plt>[0m
+    2b70:	aa1303e2 	mov	x2, x19
+    2b74:	2a1a03e0 	mov	w0, w26
+--
+    2ca0:	f8646801 	ldr	x1, [x0, x4]
+    2ca4:	aa0403f5 	mov	x21, x4
+    2ca8:	aa0303f4 	mov	x20, x3
+    2cac:	91002084 	add	x4, x4, #0x8
+    2cb0:	91000463 	add	x3, x3, #0x1
+    2cb4:	b5ffff61 	cbnz	x1, 2ca0 <ss_add_info_dir@@Base+0x80>
+    2cb8:	11000a81 	add	w1, w20, #0x2
+    2cbc:	937d7c21 	sbfiz	x1, x1, #3, #32
+    2cc0:	97fffd8c 	bl	22f0 <realloc@plt>
+    2cc4:	aa0003f8 	mov	x24, x0
+    2cc8:	b4000220 	cbz	x0, 2d0c <ss_add_info_dir@@Base+0xec>
+    2ccc:	91000694 	add	x20, x20, #0x1
+    2cd0:	f90016f8 	str	x24, [x23, #40]
+    2cd4:	aa1303e0 	mov	x0, x19
+    2cd8:	f8347b1f 	str	xzr, [x24, x20, lsl #3]
+    2cdc:	97fffcf9 	bl	20c0 <strlen@plt>
+    2ce0:	11000400 	add	w0, w0, #0x1
+    2ce4:	97fffd63 	bl	2270 <malloc@plt>
+    2ce8:	f8356b00 	str	x0, [x24, x21]
+    2cec:	aa1303e1 	mov	x1, x19
+[31m    2cf0:	97fffdd8 	bl	2450 <strcpy@plt>[0m
+    2cf4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    2cf8:	a94363f7 	ldp	x23, x24, [sp, #48]
+--
+    40f0:	aa0003f3 	mov	x19, x0
+    40f4:	b4000160 	cbz	x0, 4120 <ss_get_readline@@Base+0x70>
+    40f8:	39400001 	ldrb	w1, [x0]
+    40fc:	340000a1 	cbz	w1, 4110 <ss_get_readline@@Base+0x60>
+    4100:	90000001 	adrp	x1, 4000 <ss_self_identify@@Base+0x20>
+    4104:	9120c021 	add	x1, x1, #0x830
+    4108:	97fff8a2 	bl	2390 <strcmp@plt>
+    410c:	35000b00 	cbnz	w0, 426c <ss_get_readline@@Base+0x1bc>
+    4110:	a94153f3 	ldp	x19, x20, [sp, #16]
+    4114:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    4118:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    411c:	d65f03c0 	ret
+    4120:	90000013 	adrp	x19, 4000 <ss_self_identify@@Base+0x20>
+    4124:	911e2273 	add	x19, x19, #0x788
+    4128:	d2801160 	mov	x0, #0x8b                  	// #139
+    412c:	97fff851 	bl	2270 <malloc@plt>
+    4130:	aa0003f6 	mov	x22, x0
+    4134:	b4fffee0 	cbz	x0, 4110 <ss_get_readline@@Base+0x60>
+    4138:	aa1303e1 	mov	x1, x19
+    413c:	aa0003f4 	mov	x20, x0
+[31m    4140:	97fff8c4 	bl	2450 <strcpy@plt>[0m
+    4144:	aa1403e0 	mov	x0, x20
+    4148:	52800741 	mov	w1, #0x3a                  	// #58
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mlibss.so.2.0[0m
+

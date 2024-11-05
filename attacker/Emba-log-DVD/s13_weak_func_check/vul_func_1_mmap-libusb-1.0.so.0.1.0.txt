@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibusb-1.0.so.0.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibusb-1.0.so.0.1.0[0m
+
+[31m    ed34:	97ffd4ef 	bl	40f0 <mmap@plt>[0m
+    ed38:	b100041f 	cmn	x0, #0x1
+    ed3c:	54000080 	b.eq	ed4c <libusb_interrupt_transfer@@Base+0x314c>  // b.none
+    ed40:	f9400bf3 	ldr	x19, [sp, #16]
+    ed44:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    ed48:	d65f03c0 	ret
+    ed4c:	97ffd581 	bl	4350 <__errno_location@plt>
+    ed50:	b9400004 	ldr	w4, [x0]
+    ed54:	f9402661 	ldr	x1, [x19, #72]
+    ed58:	d0000022 	adrp	x2, 14000 <libusb_interrupt_transfer@@Base+0x8400>
+    ed5c:	910e4042 	add	x2, x2, #0x390
+    ed60:	b0000023 	adrp	x3, 13000 <libusb_interrupt_transfer@@Base+0x7400>
+    ed64:	91350063 	add	x3, x3, #0xd40
+    ed68:	910a0042 	add	x2, x2, #0x280
+    ed6c:	f9401c20 	ldr	x0, [x1, #56]
+    ed70:	52800021 	mov	w1, #0x1                   	// #1
+    ed74:	97ffd853 	bl	4ec0 <libusb_has_capability@@Base+0x560>
+    ed78:	d2800000 	mov	x0, #0x0                   	// #0
+    ed7c:	17fffff1 	b	ed40 <libusb_interrupt_transfer@@Base+0x3140>
+    ed80:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ed84:	910003fd 	mov	x29, sp
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibusb-1.0.so.0.1.0[0m
+

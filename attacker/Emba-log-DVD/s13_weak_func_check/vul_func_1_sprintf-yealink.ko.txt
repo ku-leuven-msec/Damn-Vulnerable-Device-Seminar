@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33myealink.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m126) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33myealink.ko[0m
+
+     554:	9000001b 	adrp	x27, 0 <show_map>
+     558:	9100037b 	add	x27, x27, #0x0
+     55c:	52800035 	mov	w21, #0x1                   	// #1
+     560:	90000019 	adrp	x25, 0 <show_map>
+     564:	d503201f 	nop
+     568:	91003e73 	add	x19, x19, #0xf
+     56c:	8b35c2e0 	add	x0, x23, w21, sxtw
+     570:	91000321 	add	x1, x25, #0x0
+     574:	91000694 	add	x20, x20, #0x1
+     578:	aa1303e3 	mov	x3, x19
+     57c:	eb16027f 	cmp	x19, x22
+     580:	54000200 	b.eq	5c0 <get_icons+0xd0>  // b.none
+     584:	385fd264 	ldurb	w4, [x19, #-3]
+     588:	7100b89f 	cmp	w4, #0x2e
+     58c:	54fffee1 	b.ne	568 <get_icons+0x78>  // b.any
+     590:	39400282 	ldrb	w2, [x20]
+     594:	91003e73 	add	x19, x19, #0xf
+     598:	91000694 	add	x20, x20, #0x1
+     59c:	7100805f 	cmp	w2, #0x20
+     5a0:	9a9b0342 	csel	x2, x26, x27, eq  // eq = none
+[31m     5a4:	94000000 	bl	0 <sprintf>[0m
+     5a8:	0b0002b5 	add	w21, w21, w0
+     5ac:	91000321 	add	x1, x25, #0x0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33myealink.ko[0m
+

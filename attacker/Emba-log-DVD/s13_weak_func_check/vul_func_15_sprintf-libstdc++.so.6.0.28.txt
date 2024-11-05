@@ -1,0 +1,370 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibstdc++.so.6.0.28[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mlibstdc++.so.6.0.28[0m
+
+   a6a74:	a9510a63 	ldp	x3, x2, [x19, #272]
+   a6a78:	3903fe7f 	strb	wzr, [x19, #255]
+   a6a7c:	aa1303e0 	mov	x0, x19
+   a6a80:	d63f0060 	blr	x3
+   a6a84:	f940a262 	ldr	x2, [x19, #320]
+   a6a88:	d2800020 	mov	x0, #0x1                   	// #1
+   a6a8c:	d2800001 	mov	x1, #0x0                   	// #0
+   a6a90:	8b000042 	add	x2, x2, x0
+   a6a94:	f900a262 	str	x2, [x19, #320]
+   a6a98:	f9008260 	str	x0, [x19, #256]
+   a6a9c:	38216a74 	strb	w20, [x19, x1]
+   a6aa0:	39042274 	strb	w20, [x19, #264]
+   a6aa4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   a6aa8:	a94363f7 	ldp	x23, x24, [sp, #48]
+   a6aac:	17fff9de 	b	a5224 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x46f4>
+   a6ab0:	b9400a82 	ldr	w2, [x20, #8]
+   a6ab4:	900006a1 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a6ab8:	9130c021 	add	x1, x1, #0xc30
+   a6abc:	910183f4 	add	x20, sp, #0x60
+   a6ac0:	aa1403e0 	mov	x0, x20
+[31m   a6ac4:	97ffcb9f 	bl	99940 <sprintf@plt>[0m
+   a6ac8:	aa1403e0 	mov	x0, x20
+   a6acc:	97ffccb9 	bl	99db0 <strlen@plt>
+--
+   a715c:	d63f0060 	blr	x3
+   a7160:	f940a262 	ldr	x2, [x19, #320]
+   a7164:	d2800021 	mov	x1, #0x1                   	// #1
+   a7168:	d2800000 	mov	x0, #0x0                   	// #0
+   a716c:	8b010042 	add	x2, x2, x1
+   a7170:	f900a262 	str	x2, [x19, #320]
+   a7174:	17ffffee 	b	a712c <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x65fc>
+   a7178:	f9400682 	ldr	x2, [x20, #8]
+   a717c:	2a1503e1 	mov	w1, w21
+   a7180:	aa1303e0 	mov	x0, x19
+   a7184:	94000793 	bl	a8fd0 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x84a0>
+   a7188:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   a718c:	a94363f7 	ldp	x23, x24, [sp, #48]
+   a7190:	17fff825 	b	a5224 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x46f4>
+   a7194:	f9400682 	ldr	x2, [x20, #8]
+   a7198:	f0000681 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a719c:	9130c021 	add	x1, x1, #0xc30
+   a71a0:	910183f4 	add	x20, sp, #0x60
+   a71a4:	11000442 	add	w2, w2, #0x1
+   a71a8:	aa1403e0 	mov	x0, x20
+[31m   a71ac:	97ffc9e5 	bl	99940 <sprintf@plt>[0m
+   a71b0:	aa1403e0 	mov	x0, x20
+   a71b4:	97ffcaff 	bl	99db0 <strlen@plt>
+--
+   a72f4:	540001c0 	b.eq	a732c <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x67fc>  // b.none
+   a72f8:	d2800036 	mov	x22, #0x1                   	// #1
+   a72fc:	f103fc3f 	cmp	x1, #0xff
+   a7300:	54fffec1 	b.ne	a72d8 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x67a8>  // b.any
+   a7304:	a9510a63 	ldp	x3, x2, [x19, #272]
+   a7308:	3903fe7f 	strb	wzr, [x19, #255]
+   a730c:	aa1303e0 	mov	x0, x19
+   a7310:	d63f0060 	blr	x3
+   a7314:	f940a262 	ldr	x2, [x19, #320]
+   a7318:	d2800021 	mov	x1, #0x1                   	// #1
+   a731c:	d2800000 	mov	x0, #0x0                   	// #0
+   a7320:	8b010042 	add	x2, x2, x1
+   a7324:	f900a262 	str	x2, [x19, #320]
+   a7328:	17ffffee 	b	a72e0 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x67b0>
+   a732c:	b9401282 	ldr	w2, [x20, #16]
+   a7330:	f0000681 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a7334:	9130c021 	add	x1, x1, #0xc30
+   a7338:	910183f4 	add	x20, sp, #0x60
+   a733c:	11000442 	add	w2, w2, #0x1
+   a7340:	aa1403e0 	mov	x0, x20
+[31m   a7344:	97ffc97f 	bl	99940 <sprintf@plt>[0m
+   a7348:	aa1403e0 	mov	x0, x20
+   a734c:	97ffca99 	bl	99db0 <strlen@plt>
+--
+   a77e4:	b4fed360 	cbz	x0, a5250 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x4720>
+   a77e8:	b9400001 	ldr	w1, [x0]
+   a77ec:	7100bc3f 	cmp	w1, #0x2f
+   a77f0:	540082c0 	b.eq	a8848 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x7d18>  // b.none
+   a77f4:	f9409274 	ldr	x20, [x19, #288]
+   a77f8:	2a1503e1 	mov	w1, w21
+   a77fc:	aa1303e0 	mov	x0, x19
+   a7800:	f9400283 	ldr	x3, [x20]
+   a7804:	f9009263 	str	x3, [x19, #288]
+   a7808:	940005f2 	bl	a8fd0 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x84a0>
+   a780c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   a7810:	a94363f7 	ldp	x23, x24, [sp, #48]
+   a7814:	f9009274 	str	x20, [x19, #288]
+   a7818:	17fff683 	b	a5224 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x46f4>
+   a781c:	f9400682 	ldr	x2, [x20, #8]
+   a7820:	f0000681 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a7824:	9130c021 	add	x1, x1, #0xc30
+   a7828:	910183f4 	add	x20, sp, #0x60
+   a782c:	11000442 	add	w2, w2, #0x1
+   a7830:	aa1403e0 	mov	x0, x20
+[31m   a7834:	97ffc843 	bl	99940 <sprintf@plt>[0m
+   a7838:	aa1403e0 	mov	x0, x20
+   a783c:	97ffc95d 	bl	99db0 <strlen@plt>
+--
+   a78dc:	f103fc3f 	cmp	x1, #0xff
+   a78e0:	54fffec1 	b.ne	a78b8 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x6d88>  // b.any
+   a78e4:	a9510a63 	ldp	x3, x2, [x19, #272]
+   a78e8:	3903fe7f 	strb	wzr, [x19, #255]
+   a78ec:	aa1303e0 	mov	x0, x19
+   a78f0:	d63f0060 	blr	x3
+   a78f4:	f940a262 	ldr	x2, [x19, #320]
+   a78f8:	d2800021 	mov	x1, #0x1                   	// #1
+   a78fc:	d2800000 	mov	x0, #0x0                   	// #0
+   a7900:	8b010042 	add	x2, x2, x1
+   a7904:	f900a262 	str	x2, [x19, #320]
+   a7908:	17ffffee 	b	a78c0 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x6d90>
+   a790c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   a7910:	a94363f7 	ldp	x23, x24, [sp, #48]
+   a7914:	17fff644 	b	a5224 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x46f4>
+   a7918:	2a1703e2 	mov	w2, w23
+   a791c:	f0000681 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a7920:	9130c021 	add	x1, x1, #0xc30
+   a7924:	910183f4 	add	x20, sp, #0x60
+   a7928:	aa1403e0 	mov	x0, x20
+[31m   a792c:	97ffc805 	bl	99940 <sprintf@plt>[0m
+   a7930:	aa1403e0 	mov	x0, x20
+   a7934:	97ffc91f 	bl	99db0 <strlen@plt>
+--
+   a7c8c:	39400ae3 	ldrb	w3, [x23, #2]
+   a7c90:	35000843 	cbnz	w3, a7d98 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x7268>
+   a7c94:	aa1403e1 	mov	x1, x20
+   a7c98:	aa1303e0 	mov	x0, x19
+   a7c9c:	97ffe6f5 	bl	a1870 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0xd40>
+   a7ca0:	b50000e0 	cbnz	x0, a7cbc <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x718c>
+   a7ca4:	14000009 	b	a7cc8 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x7198>
+   a7ca8:	f9400401 	ldr	x1, [x0, #8]
+   a7cac:	b40000e1 	cbz	x1, a7cc8 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x7198>
+   a7cb0:	f9400800 	ldr	x0, [x0, #16]
+   a7cb4:	11000463 	add	w3, w3, #0x1
+   a7cb8:	b4000080 	cbz	x0, a7cc8 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x7198>
+   a7cbc:	b9400001 	ldr	w1, [x0]
+   a7cc0:	7100bc3f 	cmp	w1, #0x2f
+   a7cc4:	54ffff20 	b.eq	a7ca8 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x7178>  // b.none
+   a7cc8:	2a0303e2 	mov	w2, w3
+   a7ccc:	f0000681 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a7cd0:	9130c021 	add	x1, x1, #0xc30
+   a7cd4:	910183f4 	add	x20, sp, #0x60
+   a7cd8:	aa1403e0 	mov	x0, x20
+[31m   a7cdc:	97ffc719 	bl	99940 <sprintf@plt>[0m
+   a7ce0:	aa1403e0 	mov	x0, x20
+   a7ce4:	97ffc833 	bl	99db0 <strlen@plt>
+--
+   a8340:	540001c0 	b.eq	a8378 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x7848>  // b.none
+   a8344:	384016d4 	ldrb	w20, [x22], #1
+   a8348:	f103fc3f 	cmp	x1, #0xff
+   a834c:	54fffee1 	b.ne	a8328 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x77f8>  // b.any
+   a8350:	a9510a63 	ldp	x3, x2, [x19, #272]
+   a8354:	3903fe7f 	strb	wzr, [x19, #255]
+   a8358:	aa1303e0 	mov	x0, x19
+   a835c:	d63f0060 	blr	x3
+   a8360:	f940a262 	ldr	x2, [x19, #320]
+   a8364:	d2800021 	mov	x1, #0x1                   	// #1
+   a8368:	d2800000 	mov	x0, #0x0                   	// #0
+   a836c:	8b010042 	add	x2, x2, x1
+   a8370:	f900a262 	str	x2, [x19, #320]
+   a8374:	17ffffef 	b	a8330 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x7800>
+   a8378:	b94012e2 	ldr	w2, [x23, #16]
+   a837c:	d0000681 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a8380:	9130c021 	add	x1, x1, #0xc30
+   a8384:	910183f4 	add	x20, sp, #0x60
+   a8388:	11000442 	add	w2, w2, #0x1
+   a838c:	aa1403e0 	mov	x0, x20
+[31m   a8390:	97ffc56c 	bl	99940 <sprintf@plt>[0m
+   a8394:	aa1403e0 	mov	x0, x20
+   a8398:	97ffc686 	bl	99db0 <strlen@plt>
+--
+   a8850:	97ffe3ec 	bl	a1800 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0xcd0>
+   a8854:	aa0003e2 	mov	x2, x0
+   a8858:	b5ff7ce0 	cbnz	x0, a77f4 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x6cc4>
+   a885c:	17fff27d 	b	a5250 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x4720>
+   a8860:	71018c3f 	cmp	w1, #0x63
+   a8864:	54001e40 	b.eq	a8c2c <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x80fc>  // b.none
+   a8868:	2a1503e1 	mov	w1, w21
+   a886c:	aa1303e0 	mov	x0, x19
+   a8870:	94000644 	bl	aa180 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x9650>
+   a8874:	f9400a82 	ldr	x2, [x20, #16]
+   a8878:	2a1503e1 	mov	w1, w21
+   a887c:	aa1303e0 	mov	x0, x19
+   a8880:	f9400842 	ldr	x2, [x2, #16]
+   a8884:	9400066f 	bl	aa240 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x9710>
+   a8888:	17fff848 	b	a69a8 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x5e78>
+   a888c:	2a0303e2 	mov	w2, w3
+   a8890:	d0000681 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a8894:	9130c021 	add	x1, x1, #0xc30
+   a8898:	910183f4 	add	x20, sp, #0x60
+   a889c:	aa1403e0 	mov	x0, x20
+[31m   a88a0:	97ffc428 	bl	99940 <sprintf@plt>[0m
+   a88a4:	aa1403e0 	mov	x0, x20
+   a88a8:	97ffc542 	bl	99db0 <strlen@plt>
+--
+   a9db8:	540001c0 	b.eq	a9df0 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x92c0>  // b.none
+   a9dbc:	384016d3 	ldrb	w19, [x22], #1
+   a9dc0:	f103fc3f 	cmp	x1, #0xff
+   a9dc4:	54fffee1 	b.ne	a9da0 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x9270>  // b.any
+   a9dc8:	a9510b43 	ldp	x3, x2, [x26, #272]
+   a9dcc:	3903ff5f 	strb	wzr, [x26, #255]
+   a9dd0:	aa1a03e0 	mov	x0, x26
+   a9dd4:	d63f0060 	blr	x3
+   a9dd8:	f940a342 	ldr	x2, [x26, #320]
+   a9ddc:	d2800021 	mov	x1, #0x1                   	// #1
+   a9de0:	d2800000 	mov	x0, #0x0                   	// #0
+   a9de4:	8b010042 	add	x2, x2, x1
+   a9de8:	f900a342 	str	x2, [x26, #320]
+   a9dec:	17ffffef 	b	a9da8 <_ZN9__gnu_cxx27__verbose_terminate_handlerEv@@CXXABI_1.3+0x9278>
+   a9df0:	b94012a2 	ldr	w2, [x21, #16]
+   a9df4:	b0000681 	adrp	x1, 17a000 <_ZNKSscvSt17basic_string_viewIcSt11char_traitsIcEEEv@@GLIBCXX_3.4.26>
+   a9df8:	9130c021 	add	x1, x1, #0xc30
+   a9dfc:	910143f3 	add	x19, sp, #0x50
+   a9e00:	11000442 	add	w2, w2, #0x1
+   a9e04:	aa1303e0 	mov	x0, x19
+[31m   a9e08:	97ffbece 	bl	99940 <sprintf@plt>[0m
+   a9e0c:	aa1303e0 	mov	x0, x19
+   a9e10:	97ffbfe8 	bl	99db0 <strlen@plt>
+--
+   c6028:	f90013f5 	str	x21, [sp, #32]
+   c602c:	b40001c1 	cbz	x1, c6064 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x474>
+   c6030:	d2800022 	mov	x2, #0x1                   	// #1
+   c6034:	f00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c6038:	9105a021 	add	x1, x1, #0x168
+   c603c:	97ffff61 	bl	c5dc0 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x1d0>
+   c6040:	f9400261 	ldr	x1, [x19]
+   c6044:	aa1403e0 	mov	x0, x20
+   c6048:	92800002 	mov	x2, #0xffffffffffffffff    	// #-1
+   c604c:	97ffff5d 	bl	c5dc0 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x1d0>
+   c6050:	f00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c6054:	aa1403e0 	mov	x0, x20
+   c6058:	9105c021 	add	x1, x1, #0x170
+   c605c:	d2800042 	mov	x2, #0x2                   	// #2
+   c6060:	97ffff58 	bl	c5dc0 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x1d0>
+   c6064:	f9400a62 	ldr	x2, [x19, #16]
+   c6068:	9100c3f5 	add	x21, sp, #0x30
+   c606c:	aa1503e0 	mov	x0, x21
+   c6070:	f00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c6074:	9105e021 	add	x1, x1, #0x178
+[31m   c6078:	97ff4e32 	bl	99940 <sprintf@plt>[0m
+   c607c:	93407c02 	sxtw	x2, w0
+   c6080:	aa1503e1 	mov	x1, x21
+--
+   c61ac:	aa0103f5 	mov	x21, x1
+   c61b0:	97ffffc8 	bl	c60d0 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x4e0>
+   c61b4:	72001c13 	ands	w19, w0, #0xff
+   c61b8:	540000c1 	b.ne	c61d0 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x5e0>  // b.any
+   c61bc:	f00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c61c0:	910a6021 	add	x1, x1, #0x298
+   c61c4:	aa1503e0 	mov	x0, x21
+   c61c8:	97ff4b7e 	bl	98fc0 <strcmp@plt>
+   c61cc:	340000c0 	cbz	w0, c61e4 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x5f4>
+   c61d0:	2a1303e0 	mov	w0, w19
+   c61d4:	a94153f3 	ldp	x19, x20, [sp, #16]
+   c61d8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   c61dc:	a8c77bfd 	ldp	x29, x30, [sp], #112
+   c61e0:	d65f03c0 	ret
+   c61e4:	f9400a82 	ldr	x2, [x20, #16]
+   c61e8:	9100c3f4 	add	x20, sp, #0x30
+   c61ec:	aa1403e0 	mov	x0, x20
+   c61f0:	f00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c61f4:	910a8021 	add	x1, x1, #0x2a0
+   c61f8:	52800033 	mov	w19, #0x1                   	// #1
+[31m   c61fc:	97ff4dd1 	bl	99940 <sprintf@plt>[0m
+   c6200:	93407c02 	sxtw	x2, w0
+   c6204:	aa1403e1 	mov	x1, x20
+--
+   c6314:	910ce021 	add	x1, x1, #0x338
+   c6318:	aa1403e0 	mov	x0, x20
+   c631c:	97ff4b29 	bl	98fc0 <strcmp@plt>
+   c6320:	34000a00 	cbz	w0, c6460 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x870>
+   c6324:	f00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c6328:	910d2021 	add	x1, x1, #0x348
+   c632c:	aa1403e0 	mov	x0, x20
+   c6330:	97ff4b24 	bl	98fc0 <strcmp@plt>
+   c6334:	34000760 	cbz	w0, c6420 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x830>
+   c6338:	f00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c633c:	910d4021 	add	x1, x1, #0x350
+   c6340:	aa1403e0 	mov	x0, x20
+   c6344:	97ff4b1f 	bl	98fc0 <strcmp@plt>
+   c6348:	350009c0 	cbnz	w0, c6480 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x890>
+   c634c:	f9401262 	ldr	x2, [x19, #32]
+   c6350:	b40012e2 	cbz	x2, c65ac <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x9bc>
+   c6354:	9100c3f3 	add	x19, sp, #0x30
+   c6358:	f00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c635c:	910a8021 	add	x1, x1, #0x2a0
+   c6360:	aa1303e0 	mov	x0, x19
+[31m   c6364:	97ff4d77 	bl	99940 <sprintf@plt>[0m
+   c6368:	93407c02 	sxtw	x2, w0
+   c636c:	aa1303e1 	mov	x1, x19
+--
+   c6700:	aa1c03f4 	mov	x20, x28
+   c6704:	35fff8b3 	cbnz	w19, c6618 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0xa28>
+   c6708:	17ffffd0 	b	c6648 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0xa58>
+   c670c:	aa1503e1 	mov	x1, x21
+   c6710:	93407f62 	sxtw	x2, w27
+   c6714:	aa1903e0 	mov	x0, x25
+   c6718:	383bcabf 	strb	wzr, [x21, w27, sxtw]
+   c671c:	97fffda9 	bl	c5dc0 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x1d0>
+   c6720:	39400681 	ldrb	w1, [x20, #1]
+   c6724:	17ffffd4 	b	c6674 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0xa84>
+   c6728:	39400a93 	ldrb	w19, [x20, #2]
+   c672c:	91000a94 	add	x20, x20, #0x2
+   c6730:	383bcaa1 	strb	w1, [x21, w27, sxtw]
+   c6734:	1100077b 	add	w27, w27, #0x1
+   c6738:	35fff713 	cbnz	w19, c6618 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0xa28>
+   c673c:	17ffffc3 	b	c6648 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0xa58>
+   c6740:	f94008c2 	ldr	x2, [x6, #16]
+   c6744:	aa1a03e1 	mov	x1, x26
+   c6748:	aa1503e0 	mov	x0, x21
+   c674c:	5280001b 	mov	w27, #0x0                   	// #0
+[31m   c6750:	97ff4c7c 	bl	99940 <sprintf@plt>[0m
+   c6754:	93407c02 	sxtw	x2, w0
+   c6758:	aa1503e1 	mov	x1, x21
+--
+   c7828:	d00005a3 	adrp	x3, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c782c:	d00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c7830:	d00005a0 	adrp	x0, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c7834:	91144063 	add	x3, x3, #0x510
+   c7838:	91086021 	add	x1, x1, #0x218
+   c783c:	91152000 	add	x0, x0, #0x548
+   c7840:	52808922 	mov	w2, #0x449                 	// #1097
+   c7844:	97ff41af 	bl	97f00 <__assert_fail@plt>
+   c7848:	f9403be1 	ldr	x1, [sp, #112]
+   c784c:	39400021 	ldrb	w1, [x1]
+   c7850:	35fff7e1 	cbnz	w1, c774c <_ZNK11__gnu_debug16_Error_formatter8_M_errorEv@@GLIBCXX_3.4+0x4c>
+   c7854:	f9002fe0 	str	x0, [sp, #88]
+   c7858:	17ffffbd 	b	c774c <_ZNK11__gnu_debug16_Error_formatter8_M_errorEv@@GLIBCXX_3.4+0x4c>
+   c785c:	b9400ac2 	ldr	w2, [x22, #8]
+   c7860:	910163f4 	add	x20, sp, #0x58
+   c7864:	34fff982 	cbz	w2, c7794 <_ZNK11__gnu_debug16_Error_formatter8_M_errorEv@@GLIBCXX_3.4+0x94>
+   c7868:	9101c3f3 	add	x19, sp, #0x70
+   c786c:	d00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c7870:	9113c021 	add	x1, x1, #0x4f0
+   c7874:	aa1303e0 	mov	x0, x19
+[31m   c7878:	97ff4832 	bl	99940 <sprintf@plt>[0m
+   c787c:	93407c02 	sxtw	x2, w0
+   c7880:	aa1303e1 	mov	x1, x19
+--
+   c7ac0:	b4000200 	cbz	x0, c7b00 <_ZNK11__gnu_debug16_Error_formatter8_M_errorEv@@GLIBCXX_3.4+0x400>
+   c7ac4:	aa1403e0 	mov	x0, x20
+   c7ac8:	d2800162 	mov	x2, #0xb                   	// #11
+   c7acc:	d00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c7ad0:	91174021 	add	x1, x1, #0x5d0
+   c7ad4:	97fff8bb 	bl	c5dc0 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x1d0>
+   c7ad8:	aa1303e1 	mov	x1, x19
+   c7adc:	aa1403e0 	mov	x0, x20
+   c7ae0:	d00005a2 	adrp	x2, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c7ae4:	910de042 	add	x2, x2, #0x378
+   c7ae8:	97fff9d2 	bl	c6230 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x640>
+   c7aec:	d00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c7af0:	aa1403e0 	mov	x0, x20
+   c7af4:	91178021 	add	x1, x1, #0x5e0
+   c7af8:	d2800042 	mov	x2, #0x2                   	// #2
+   c7afc:	97fff8b1 	bl	c5dc0 <_ZNSt12ctype_bynameIwEC1EPKcm@@GLIBCXX_3.4+0x1d0>
+   c7b00:	f9401662 	ldr	x2, [x19, #40]
+   c7b04:	aa1903e0 	mov	x0, x25
+   c7b08:	d00005a1 	adrp	x1, 17d000 <_ZTSSt19__codecvt_utf8_baseIDiE@@GLIBCXX_3.4.21>
+   c7b0c:	9117a021 	add	x1, x1, #0x5e8
+[31m   c7b10:	97ff478c 	bl	99940 <sprintf@plt>[0m
+   c7b14:	93407c02 	sxtw	x2, w0
+   c7b18:	aa1903e1 	mov	x1, x25
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m15[0m times [0;33mlibstdc++.so.6.0.28[0m
+

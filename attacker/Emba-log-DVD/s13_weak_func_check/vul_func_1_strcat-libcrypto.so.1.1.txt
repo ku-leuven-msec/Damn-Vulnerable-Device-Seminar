@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibcrypto.so.1.1[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibcrypto.so.1.1[0m
+
+   977f0:	aa0003f9 	mov	x25, x0
+   977f4:	aa1803e0 	mov	x0, x24
+   977f8:	97ff78c2 	bl	75b00 <strlen@plt>
+   977fc:	8b000320 	add	x0, x25, x0
+   97800:	d0000974 	adrp	x20, 1c5000 <ERR_load_X509V3_strings@@OPENSSL_1_1_0+0x7490>
+   97804:	91000800 	add	x0, x0, #0x2
+   97808:	9121c281 	add	x1, x20, #0x870
+   9780c:	52801fe2 	mov	w2, #0xff                  	// #255
+   97810:	9402c5ac 	bl	148ec0 <CRYPTO_zalloc@@OPENSSL_1_1_0>
+   97814:	f90002e0 	str	x0, [x23]
+   97818:	b4000460 	cbz	x0, 978a4 <BIO_accept@@OPENSSL_1_1_0+0x1b4>
+   9781c:	aa1503e1 	mov	x1, x21
+   97820:	97ff7a68 	bl	761c0 <strcpy@plt>
+   97824:	f94002f9 	ldr	x25, [x23]
+   97828:	aa1903e0 	mov	x0, x25
+   9782c:	97ff78b5 	bl	75b00 <strlen@plt>
+   97830:	52800742 	mov	w2, #0x3a                  	// #58
+   97834:	78206b22 	strh	w2, [x25, x0]
+   97838:	aa1803e1 	mov	x1, x24
+   9783c:	f94002e0 	ldr	x0, [x23]
+[31m   97840:	97ff797c 	bl	75e30 <strcat@plt>[0m
+   97844:	f94023f9 	ldr	x25, [sp, #64]
+   97848:	17ffffd3 	b	97794 <BIO_accept@@OPENSSL_1_1_0+0xa4>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mlibcrypto.so.1.1[0m
+

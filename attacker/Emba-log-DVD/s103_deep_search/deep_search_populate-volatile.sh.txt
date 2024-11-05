@@ -1,0 +1,32 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/etc/init.d/populate-volatile.sh[0m
+11:# Get ROOT_DIR.
+13:ROOT_DIR=`echo $DIR.
+15:[ -e ${ROOT_DIR}/etc/defau.
+15:t/rcS ] && . ${ROOT_DIR}/etc/defau.
+16:volatile.sh at rootfs time, disabl.
+17:[ -n "$ROOT_DIR" ] && VOLA.
+18:# If rootfs is read-only.
+19:[ "$ROOTFS_READ_ONLY" =.
+21:CFGDIR="${ROOT_DIR}/etc/defau.
+22:TMPROOT="${ROOT_DIR}/var/volat.
+48:..if [ -z "$ROOT_DIR" ]; then.
+51: some files at rootfs time may fai.
+52:ke sure the do_rootfs.
+70:..if [ -z "$ROOT_DIR" ]; then.
+98:.if [ -z "$ROOT_DIR" ]; then.
+116:INTERMED="${TMPROOT}/tmp.$$".
+117:_DEFINED="${TMPROOT}/tmpdefined.$$.
+118:COMBINED="${TMPROOT}/tmpcombined.$.
+120::\)*:.*@\1@' ${ROOT_DIR}/etc/passw.
+134::\)*:.*@\1@' ${ROOT_DIR}/etc/group.
+168:..TNAME=${ROOT_DIR}${TNAME}.
+231:if test -e ${ROOT_DIR}/etc/volat.
+233:.sh ${ROOT_DIR}/etc/volat.
+235:.rm -f ${ROOT_DIR}/etc/volat.
+235:ile.cache ${ROOT_DIR}/etc/volat.
+237:irements. ${TMPROOT} is.
+246:TMP_FILE="${TMPROOT}/tmp_volatile..
+267:.[ -e ${ROOT_DIR}/etc/volat.
+267:& sync && mv ${ROOT_DIR}/etc/volat.
+267:.cache.build ${ROOT_DIR}/etc/volat.
+270:if [ -z "${ROOT_DIR}" ] && [ -.

@@ -1,0 +1,331 @@
+[[0;33m*[0m] Binary protection state of [0;33mocfs2_nodemanager.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m718) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mocfs2_nodemanager.ko[0m
+
+     508:	f8767821 	ldr	x1, [x1, x22, lsl #3]
+     50c:	94000000 	bl	0 <printk>
+     510:	aa1503e0 	mov	x0, x21
+     514:	17ffffe6 	b	4ac <o2hb_heartbeat_group_mode_store+0x84>
+
+0000000000000518 <o2hb_heartbeat_group_mode_show>:
+     518:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     51c:	910003fd 	mov	x29, sp
+     520:	f9000bf3 	str	x19, [sp, #16]
+     524:	aa1e03e0 	mov	x0, x30
+     528:	aa0103f3 	mov	x19, x1
+     52c:	94000000 	bl	0 <_mcount>
+     530:	90000000 	adrp	x0, 0 <o2hb_setup_callback>
+     534:	90000002 	adrp	x2, 0 <o2hb_setup_callback>
+     538:	91000042 	add	x2, x2, #0x0
+     53c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+     540:	b9400003 	ldr	w3, [x0]
+     544:	91000021 	add	x1, x1, #0x0
+     548:	aa1303e0 	mov	x0, x19
+     54c:	f8637842 	ldr	x2, [x2, x3, lsl #3]
+[31m     550:	94000000 	bl	0 <sprintf>[0m
+     554:	93407c00 	sxtw	x0, w0
+     558:	f9400bf3 	ldr	x19, [sp, #16]
+     55c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     560:	d65f03c0 	ret
+     564:	d503201f 	nop
+
+0000000000000568 <o2hb_heartbeat_group_dead_threshold_show>:
+     568:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     56c:	910003fd 	mov	x29, sp
+     570:	f9000bf3 	str	x19, [sp, #16]
+     574:	aa1e03e0 	mov	x0, x30
+     578:	aa0103f3 	mov	x19, x1
+     57c:	94000000 	bl	0 <_mcount>
+     580:	90000002 	adrp	x2, 0 <o2hb_setup_callback>
+     584:	aa1303e0 	mov	x0, x19
+     588:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+     58c:	91000021 	add	x1, x1, #0x0
+     590:	b9400042 	ldr	w2, [x2]
+[31m     594:	94000000 	bl	0 <sprintf>[0m
+     598:	93407c00 	sxtw	x0, w0
+     59c:	f9400bf3 	ldr	x19, [sp, #16]
+--
+     5b4:	f90013f5 	str	x21, [sp, #32]
+     5b8:	90000013 	adrp	x19, 0 <o2hb_setup_callback>
+     5bc:	aa0003f4 	mov	x20, x0
+     5c0:	91000273 	add	x19, x19, #0x0
+     5c4:	aa1e03e0 	mov	x0, x30
+     5c8:	aa0103f5 	mov	x21, x1
+     5cc:	91002273 	add	x19, x19, #0x8
+     5d0:	94000000 	bl	0 <_mcount>
+     5d4:	aa1303e0 	mov	x0, x19
+     5d8:	94000000 	bl	0 <_raw_spin_lock>
+     5dc:	f9403680 	ldr	x0, [x20, #104]
+     5e0:	b40001e0 	cbz	x0, 61c <o2hb_region_pid_show+0x74>
+     5e4:	b9451014 	ldr	w20, [x0, #1296]
+     5e8:	aa1303e0 	mov	x0, x19
+     5ec:	94000000 	bl	0 <_raw_spin_unlock>
+     5f0:	34000254 	cbz	w20, 638 <o2hb_region_pid_show+0x90>
+     5f4:	2a1403e2 	mov	w2, w20
+     5f8:	aa1503e0 	mov	x0, x21
+     5fc:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+     600:	91000021 	add	x1, x1, #0x0
+[31m     604:	94000000 	bl	0 <sprintf>[0m
+     608:	93407c00 	sxtw	x0, w0
+     60c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     63c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     640:	f94013f5 	ldr	x21, [sp, #32]
+     644:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     648:	d65f03c0 	ret
+     64c:	d503201f 	nop
+
+0000000000000650 <o2hb_region_dev_show>:
+     650:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     654:	910003fd 	mov	x29, sp
+     658:	a90153f3 	stp	x19, x20, [sp, #16]
+     65c:	aa0003f3 	mov	x19, x0
+     660:	aa0103f4 	mov	x20, x1
+     664:	aa1e03e0 	mov	x0, x30
+     668:	94000000 	bl	0 <_mcount>
+     66c:	f9404e60 	ldr	x0, [x19, #152]
+     670:	b4000140 	cbz	x0, 698 <o2hb_region_dev_show+0x48>
+     674:	91040262 	add	x2, x19, #0x100
+     678:	aa1403e0 	mov	x0, x20
+     67c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+     680:	91000021 	add	x1, x1, #0x0
+[31m     684:	94000000 	bl	0 <sprintf>[0m
+     688:	2a0003e0 	mov	w0, w0
+     68c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     690:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     694:	d65f03c0 	ret
+     698:	d2800000 	mov	x0, #0x0                   	// #0
+     69c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     6a0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     6a4:	d65f03c0 	ret
+
+00000000000006a8 <o2hb_region_blocks_show>:
+     6a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     6ac:	910003fd 	mov	x29, sp
+     6b0:	a90153f3 	stp	x19, x20, [sp, #16]
+     6b4:	aa0003f4 	mov	x20, x0
+     6b8:	aa0103f3 	mov	x19, x1
+     6bc:	aa1e03e0 	mov	x0, x30
+     6c0:	94000000 	bl	0 <_mcount>
+     6c4:	b9407282 	ldr	w2, [x20, #112]
+     6c8:	aa1303e0 	mov	x0, x19
+     6cc:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+     6d0:	91000021 	add	x1, x1, #0x0
+[31m     6d4:	94000000 	bl	0 <sprintf>[0m
+     6d8:	93407c00 	sxtw	x0, w0
+     6dc:	a94153f3 	ldp	x19, x20, [sp, #16]
+     6e0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     6e4:	d65f03c0 	ret
+
+00000000000006e8 <o2hb_region_start_block_show>:
+     6e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     6ec:	910003fd 	mov	x29, sp
+     6f0:	a90153f3 	stp	x19, x20, [sp, #16]
+     6f4:	aa0003f4 	mov	x20, x0
+     6f8:	aa0103f3 	mov	x19, x1
+     6fc:	aa1e03e0 	mov	x0, x30
+     700:	94000000 	bl	0 <_mcount>
+     704:	f9403e82 	ldr	x2, [x20, #120]
+     708:	aa1303e0 	mov	x0, x19
+     70c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+     710:	91000021 	add	x1, x1, #0x0
+[31m     714:	94000000 	bl	0 <sprintf>[0m
+     718:	93407c00 	sxtw	x0, w0
+     71c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     720:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     724:	d65f03c0 	ret
+
+0000000000000728 <o2hb_region_block_bytes_show>:
+     728:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     72c:	910003fd 	mov	x29, sp
+     730:	a90153f3 	stp	x19, x20, [sp, #16]
+     734:	aa0003f4 	mov	x20, x0
+     738:	aa0103f3 	mov	x19, x1
+     73c:	aa1e03e0 	mov	x0, x30
+     740:	94000000 	bl	0 <_mcount>
+     744:	b9408682 	ldr	w2, [x20, #132]
+     748:	aa1303e0 	mov	x0, x19
+     74c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+     750:	91000021 	add	x1, x1, #0x0
+[31m     754:	94000000 	bl	0 <sprintf>[0m
+     758:	93407c00 	sxtw	x0, w0
+     75c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    5240:	390226e0 	strb	w0, [x23, #137]
+    5244:	b900c27f 	str	wzr, [x19, #192]
+    5248:	17ffffdb 	b	51b4 <o2nm_node_local_store+0xec>
+    524c:	94000000 	bl	0 <__stack_chk_fail>
+
+0000000000005250 <o2nm_node_local_show>:
+    5250:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    5254:	910003fd 	mov	x29, sp
+    5258:	a90153f3 	stp	x19, x20, [sp, #16]
+    525c:	aa0003f3 	mov	x19, x0
+    5260:	aa0103f4 	mov	x20, x1
+    5264:	aa1e03e0 	mov	x0, x30
+    5268:	94000000 	bl	0 <_mcount>
+    526c:	f100027f 	cmp	x19, #0x0
+    5270:	d1002261 	sub	x1, x19, #0x8
+    5274:	9a931033 	csel	x19, x1, x19, ne  // ne = any
+    5278:	aa1403e0 	mov	x0, x20
+    527c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+    5280:	91000021 	add	x1, x1, #0x0
+    5284:	b940c262 	ldr	w2, [x19, #192]
+[31m    5288:	94000000 	bl	0 <sprintf>[0m
+    528c:	93407c00 	sxtw	x0, w0
+    5290:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5294:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5298:	d65f03c0 	ret
+    529c:	d503201f 	nop
+
+00000000000052a0 <o2nm_node_ipv4_address_show>:
+    52a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    52a4:	910003fd 	mov	x29, sp
+    52a8:	a90153f3 	stp	x19, x20, [sp, #16]
+    52ac:	aa0003f3 	mov	x19, x0
+    52b0:	aa0103f4 	mov	x20, x1
+    52b4:	aa1e03e0 	mov	x0, x30
+    52b8:	94000000 	bl	0 <_mcount>
+    52bc:	f100027f 	cmp	x19, #0x0
+    52c0:	d1002261 	sub	x1, x19, #0x8
+    52c4:	9a931033 	csel	x19, x1, x19, ne  // ne = any
+    52c8:	aa1403e0 	mov	x0, x20
+    52cc:	91027262 	add	x2, x19, #0x9c
+    52d0:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+    52d4:	91000021 	add	x1, x1, #0x0
+[31m    52d8:	94000000 	bl	0 <sprintf>[0m
+    52dc:	93407c00 	sxtw	x0, w0
+    52e0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    52ec:	d503201f 	nop
+
+00000000000052f0 <o2nm_node_ipv4_port_show>:
+    52f0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    52f4:	910003fd 	mov	x29, sp
+    52f8:	a90153f3 	stp	x19, x20, [sp, #16]
+    52fc:	aa0003f3 	mov	x19, x0
+    5300:	aa0103f4 	mov	x20, x1
+    5304:	aa1e03e0 	mov	x0, x30
+    5308:	94000000 	bl	0 <_mcount>
+    530c:	f100027f 	cmp	x19, #0x0
+    5310:	d1002261 	sub	x1, x19, #0x8
+    5314:	9a931033 	csel	x19, x1, x19, ne  // ne = any
+    5318:	aa1403e0 	mov	x0, x20
+    531c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+    5320:	91000021 	add	x1, x1, #0x0
+    5324:	79414262 	ldrh	w2, [x19, #160]
+    5328:	53087c43 	lsr	w3, w2, #8
+    532c:	2a022062 	orr	w2, w3, w2, lsl #8
+    5330:	12003c42 	and	w2, w2, #0xffff
+[31m    5334:	94000000 	bl	0 <sprintf>[0m
+    5338:	93407c00 	sxtw	x0, w0
+    533c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5340:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5344:	d65f03c0 	ret
+
+0000000000005348 <o2nm_node_num_show>:
+    5348:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    534c:	910003fd 	mov	x29, sp
+    5350:	a90153f3 	stp	x19, x20, [sp, #16]
+    5354:	aa0003f3 	mov	x19, x0
+    5358:	aa0103f4 	mov	x20, x1
+    535c:	aa1e03e0 	mov	x0, x30
+    5360:	94000000 	bl	0 <_mcount>
+    5364:	f100027f 	cmp	x19, #0x0
+    5368:	d1002261 	sub	x1, x19, #0x8
+    536c:	9a931033 	csel	x19, x1, x19, ne  // ne = any
+    5370:	aa1403e0 	mov	x0, x20
+    5374:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+    5378:	91000021 	add	x1, x1, #0x0
+    537c:	39426662 	ldrb	w2, [x19, #153]
+[31m    5380:	94000000 	bl	0 <sprintf>[0m
+    5384:	93407c00 	sxtw	x0, w0
+    5388:	a94153f3 	ldp	x19, x20, [sp, #16]
+    538c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5390:	d65f03c0 	ret
+    5394:	d503201f 	nop
+
+0000000000005398 <o2nm_cluster_fence_method_show>:
+    5398:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    539c:	910003fd 	mov	x29, sp
+    53a0:	a90153f3 	stp	x19, x20, [sp, #16]
+    53a4:	aa0003f3 	mov	x19, x0
+    53a8:	aa0103f4 	mov	x20, x1
+    53ac:	aa1e03e0 	mov	x0, x30
+    53b0:	94000000 	bl	0 <_mcount>
+    53b4:	b40001b3 	cbz	x19, 53e8 <o2nm_cluster_fence_method_show+0x50>
+    53b8:	b948a663 	ldr	w3, [x19, #2212]
+    53bc:	90000002 	adrp	x2, 0 <o2hb_setup_callback>
+    53c0:	91000042 	add	x2, x2, #0x0
+    53c4:	aa1403e0 	mov	x0, x20
+    53c8:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+    53cc:	91000021 	add	x1, x1, #0x0
+    53d0:	f8637842 	ldr	x2, [x2, x3, lsl #3]
+[31m    53d4:	94000000 	bl	0 <sprintf>[0m
+    53d8:	93407c00 	sxtw	x0, w0
+    53dc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    53e0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    53e4:	d65f03c0 	ret
+    53e8:	d2800000 	mov	x0, #0x0                   	// #0
+    53ec:	a94153f3 	ldp	x19, x20, [sp, #16]
+    53f0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    53f4:	d65f03c0 	ret
+
+00000000000053f8 <o2nm_cluster_reconnect_delay_ms_show>:
+    53f8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    53fc:	910003fd 	mov	x29, sp
+    5400:	a90153f3 	stp	x19, x20, [sp, #16]
+    5404:	aa0003f4 	mov	x20, x0
+    5408:	aa0103f3 	mov	x19, x1
+    540c:	aa1e03e0 	mov	x0, x30
+    5410:	94000000 	bl	0 <_mcount>
+    5414:	b948a282 	ldr	w2, [x20, #2208]
+    5418:	aa1303e0 	mov	x0, x19
+    541c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+    5420:	91000021 	add	x1, x1, #0x0
+[31m    5424:	94000000 	bl	0 <sprintf>[0m
+    5428:	93407c00 	sxtw	x0, w0
+    542c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5430:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5434:	d65f03c0 	ret
+
+0000000000005438 <o2nm_cluster_keepalive_delay_ms_show>:
+    5438:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    543c:	910003fd 	mov	x29, sp
+    5440:	a90153f3 	stp	x19, x20, [sp, #16]
+    5444:	aa0003f4 	mov	x20, x0
+    5448:	aa0103f3 	mov	x19, x1
+    544c:	aa1e03e0 	mov	x0, x30
+    5450:	94000000 	bl	0 <_mcount>
+    5454:	b9489e82 	ldr	w2, [x20, #2204]
+    5458:	aa1303e0 	mov	x0, x19
+    545c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+    5460:	91000021 	add	x1, x1, #0x0
+[31m    5464:	94000000 	bl	0 <sprintf>[0m
+    5468:	93407c00 	sxtw	x0, w0
+    546c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5470:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5474:	d65f03c0 	ret
+
+0000000000005478 <o2nm_cluster_idle_timeout_ms_show>:
+    5478:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    547c:	910003fd 	mov	x29, sp
+    5480:	a90153f3 	stp	x19, x20, [sp, #16]
+    5484:	aa0003f4 	mov	x20, x0
+    5488:	aa0103f3 	mov	x19, x1
+    548c:	aa1e03e0 	mov	x0, x30
+    5490:	94000000 	bl	0 <_mcount>
+    5494:	b9489a82 	ldr	w2, [x20, #2200]
+    5498:	aa1303e0 	mov	x0, x19
+    549c:	90000001 	adrp	x1, 0 <o2hb_setup_callback>
+    54a0:	91000021 	add	x1, x1, #0x0
+[31m    54a4:	94000000 	bl	0 <sprintf>[0m
+    54a8:	93407c00 	sxtw	x0, w0
+    54ac:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m15[0m times [0;33mocfs2_nodemanager.ko[0m
+

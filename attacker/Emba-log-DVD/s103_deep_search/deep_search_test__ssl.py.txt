@@ -1,0 +1,33 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/gevent/tests/test__ssl.py[0m
+11:import ssl.
+15:def ssl_listener(priva.
+19:    sock = ssl.wrap_socket(ra.
+23:class TestSSL(test__socket.T.
+26:    # openssl req -x509 -new.
+29:2.x has socket.sslerror (which  i.
+30:    # ssl.SSLError); That's .
+31:    # as SSLError, but Pyth.
+32:MEOUT_ERROR be SSLError on Py2 an.
+34:es much of the SSL implementation.
+35:y does `socket.sslerror = SSLErro.
+35:r` when ssl is imported..
+37:ERROR = socket.sslerror if PY2 el.
+40:raw_listener = ssl_listener(self..
+47:            ssl.wrap_socket(su.
+47:per(TestSSL, self).create_.
+49:    # The SSL library can ta.
+53:    # The SSL layer has extr.
+70:    def test_ssl_sendall_timeou.
+71: # Issue #317: SSL_WRITE_PENDING .
+80:ython 3 raises ssl.SSLWantWriteEr.
+82:6 doesn't have SSLWantWriteError.
+83:cted = getattr(ssl, 'SSLWantWrite.
+83:Error', ssl.SSLError).
+93:     super(TestSSL, self).test_fu.
+101: longer raises SSLError").
+105:        # ssl.SSLEOFError in the.
+106:he superclass, ssl.SSLError..
+112:f.assertRaises(ssl.SSLError):.
+113:     super(TestSSL, self).test_em.
+117:sn't work with SSL sockets..
+122:sn't work with SSL sockets..

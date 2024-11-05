@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mocfs2_nodemanager.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m718) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mocfs2_nodemanager.ko[0m
+
+    57dc:	f94027e1 	ldr	x1, [sp, #72]
+    57e0:	f9400280 	ldr	x0, [x20]
+    57e4:	ca000020 	eor	x0, x1, x0
+    57e8:	b5000480 	cbnz	x0, 5878 <o2nm_node_group_make_item+0xe0>
+    57ec:	aa1603e0 	mov	x0, x22
+    57f0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    57f4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    57f8:	a8c57bfd 	ldp	x29, x30, [sp], #80
+    57fc:	d65f03c0 	ret
+    5800:	90000000 	adrp	x0, 0 <kmalloc_caches>
+    5804:	d2801a02 	mov	x2, #0xd0                  	// #208
+    5808:	5281b801 	mov	w1, #0xdc0                 	// #3520
+    580c:	f9400000 	ldr	x0, [x0]
+    5810:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    5814:	aa0003f5 	mov	x21, x0
+    5818:	b4000340 	cbz	x0, 5880 <o2nm_node_group_make_item+0xe8>
+    581c:	aa1303e1 	mov	x1, x19
+    5820:	91016000 	add	x0, x0, #0x58
+    5824:	910022b6 	add	x22, x21, #0x8
+    5828:	f9001bf7 	str	x23, [sp, #48]
+[31m    582c:	94000000 	bl	0 <strcpy>[0m
+    5830:	90000017 	adrp	x23, 0 <o2hb_setup_callback>
+    5834:	910002f7 	add	x23, x23, #0x0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mocfs2_nodemanager.ko[0m
+

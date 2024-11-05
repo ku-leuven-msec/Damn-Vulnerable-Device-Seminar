@@ -1,0 +1,202 @@
+[[0;33m*[0m] Binary protection state of [0;33muvcvideo.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m566) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33muvcvideo.ko[0m
+
+    1314:	a91c1404 	stp	x4, x5, [x0, #448]
+    1318:	91005a81 	add	x1, x20, #0x16
+    131c:	39405283 	ldrb	w3, [x20, #20]
+    1320:	39074003 	strb	w3, [x0, #464]
+    1324:	f940f800 	ldr	x0, [x0, #496]
+    1328:	94000000 	bl	0 <memcpy>
+    132c:	394002e2 	ldrb	w2, [x23]
+    1330:	910822a0 	add	x0, x21, #0x208
+    1334:	390746a2 	strb	w2, [x21, #465]
+    1338:	11005f01 	add	w1, w24, #0x17
+    133c:	f900eea0 	str	x0, [x21, #472]
+    1340:	8b010281 	add	x1, x20, x1
+    1344:	92401f62 	and	x2, x27, #0xff
+    1348:	94000000 	bl	0 <memcpy>
+    134c:	38764a81 	ldrb	w1, [x20, w22, uxtw]
+    1350:	9100a2a0 	add	x0, x21, #0x28
+    1354:	350020a1 	cbnz	w1, 1768 <uvc_probe+0xbe0>
+    1358:	39400e82 	ldrb	w2, [x20, #3]
+    135c:	90000001 	adrp	x1, 0 <uvc_stream_delete>
+    1360:	91000021 	add	x1, x1, #0x0
+[31m    1364:	94000000 	bl	0 <sprintf>[0m
+    1368:	140000ec 	b	1718 <uvc_probe+0xb90>
+    136c:	90000000 	adrp	x0, 0 <uvc_stream_delete>
+--
+    15dc:	52800016 	mov	w22, #0x0                   	// #0
+    15e0:	52800017 	mov	w23, #0x0                   	// #0
+    15e4:	39400e81 	ldrb	w1, [x20, #3]
+    15e8:	52800022 	mov	w2, #0x1                   	// #1
+    15ec:	97fffc2d 	bl	6a0 <uvc_alloc_entity>
+    15f0:	aa0003f5 	mov	x21, x0
+    15f4:	b40065c0 	cbz	x0, 22ac <uvc_probe+0x1724>
+    15f8:	79404c00 	ldrh	w0, [x0, #38]
+    15fc:	9100a2b8 	add	x24, x21, #0x28
+    1600:	12003800 	and	w0, w0, #0x7fff
+    1604:	7108041f 	cmp	w0, #0x201
+    1608:	540051a0 	b.eq	203c <uvc_probe+0x14b4>  // b.none
+    160c:	7108081f 	cmp	w0, #0x202
+    1610:	540055e0 	b.eq	20cc <uvc_probe+0x1544>  // b.none
+    1614:	39401e81 	ldrb	w1, [x20, #7]
+    1618:	35004501 	cbnz	w1, 1eb8 <uvc_probe+0x1330>
+    161c:	39400e82 	ldrb	w2, [x20, #3]
+    1620:	aa1803e0 	mov	x0, x24
+    1624:	90000001 	adrp	x1, 0 <uvc_stream_delete>
+    1628:	91000021 	add	x1, x1, #0x0
+[31m    162c:	94000000 	bl	0 <sprintf>[0m
+    1630:	1400003a 	b	1718 <uvc_probe+0xb90>
+    1634:	7100135f 	cmp	w26, #0x4
+--
+    16c4:	78405281 	ldurh	w1, [x20, #5]
+    16c8:	790382a1 	strh	w1, [x21, #448]
+    16cc:	91002281 	add	x1, x20, #0x8
+    16d0:	39401e83 	ldrb	w3, [x20, #7]
+    16d4:	39070aa3 	strb	w3, [x21, #450]
+    16d8:	f900e6a0 	str	x0, [x21, #456]
+    16dc:	94000000 	bl	0 <memcpy>
+    16e0:	79470260 	ldrh	w0, [x19, #896]
+    16e4:	71043c1f 	cmp	w0, #0x10f
+    16e8:	54000089 	b.ls	16f8 <uvc_probe+0xb70>  // b.plast
+    16ec:	110026c0 	add	w0, w22, #0x9
+    16f0:	38604a80 	ldrb	w0, [x20, w0, uxtw]
+    16f4:	390742a0 	strb	w0, [x21, #464]
+    16f8:	110022d6 	add	w22, w22, #0x8
+    16fc:	9100a2a0 	add	x0, x21, #0x28
+    1700:	38764a81 	ldrb	w1, [x20, w22, uxtw]
+    1704:	35000321 	cbnz	w1, 1768 <uvc_probe+0xbe0>
+    1708:	39400e82 	ldrb	w2, [x20, #3]
+    170c:	90000001 	adrp	x1, 0 <uvc_stream_delete>
+    1710:	91000021 	add	x1, x1, #0x0
+[31m    1714:	94000000 	bl	0 <sprintf>[0m
+    1718:	f9403fe1 	ldr	x1, [sp, #120]
+    171c:	f8590020 	ldur	x0, [x1, #-112]
+--
+    179c:	11001ac2 	add	w2, w22, #0x6
+    17a0:	6b1a005f 	cmp	w2, w26
+    17a4:	54fff4c8 	b.hi	163c <uvc_probe+0xab4>  // b.pmore
+    17a8:	39400e81 	ldrb	w1, [x20, #3]
+    17ac:	110006c2 	add	w2, w22, #0x1
+    17b0:	52800003 	mov	w3, #0x0                   	// #0
+    17b4:	97fffbbb 	bl	6a0 <uvc_alloc_entity>
+    17b8:	aa0003f5 	mov	x21, x0
+    17bc:	b4005780 	cbz	x0, 22ac <uvc_probe+0x1724>
+    17c0:	f940f800 	ldr	x0, [x0, #496]
+    17c4:	92401ec2 	and	x2, x22, #0xff
+    17c8:	110016d6 	add	w22, w22, #0x5
+    17cc:	91001681 	add	x1, x20, #0x5
+    17d0:	94000000 	bl	0 <memcpy>
+    17d4:	38764a81 	ldrb	w1, [x20, w22, uxtw]
+    17d8:	9100a2a0 	add	x0, x21, #0x28
+    17dc:	35fffc61 	cbnz	w1, 1768 <uvc_probe+0xbe0>
+    17e0:	39400e82 	ldrb	w2, [x20, #3]
+    17e4:	90000001 	adrp	x1, 0 <uvc_stream_delete>
+    17e8:	91000021 	add	x1, x1, #0x0
+[31m    17ec:	94000000 	bl	0 <sprintf>[0m
+    17f0:	17ffffca 	b	1718 <uvc_probe+0xb90>
+    17f4:	aa1303e0 	mov	x0, x19
+--
+    1d64:	91000000 	add	x0, x0, #0x0
+    1d68:	94000000 	bl	0 <printk>
+    1d6c:	17fffc0f 	b	da8 <uvc_probe+0x220>
+    1d70:	b9400320 	ldr	w0, [x25]
+    1d74:	aa1803f6 	mov	x22, x24
+    1d78:	aa1703f3 	mov	x19, x23
+    1d7c:	a94e6bfb 	ldp	x27, x26, [sp, #224]
+    1d80:	f9407bf8 	ldr	x24, [sp, #240]
+    1d84:	360f9d60 	tbz	w0, #1, 1130 <uvc_probe+0x5a8>
+    1d88:	f94002e1 	ldr	x1, [x23]
+    1d8c:	f9407fe0 	ldr	x0, [sp, #248]
+    1d90:	b9400021 	ldr	w1, [x1]
+    1d94:	39400802 	ldrb	w2, [x0, #2]
+    1d98:	90000000 	adrp	x0, 0 <uvc_stream_delete>
+    1d9c:	91000000 	add	x0, x0, #0x0
+    1da0:	94000000 	bl	0 <printk>
+    1da4:	17fffce3 	b	1130 <uvc_probe+0x5a8>
+    1da8:	39400e82 	ldrb	w2, [x20, #3]
+    1dac:	90000001 	adrp	x1, 0 <uvc_stream_delete>
+    1db0:	91000021 	add	x1, x1, #0x0
+[31m    1db4:	94000000 	bl	0 <sprintf>[0m
+    1db8:	17fffe58 	b	1718 <uvc_probe+0xb90>
+    1dbc:	71003b5f 	cmp	w26, #0xe
+--
+    2034:	0b160042 	add	w2, w2, w22
+    2038:	17ffff66 	b	1dd0 <uvc_probe+0x1248>
+    203c:	910822a0 	add	x0, x21, #0x208
+    2040:	39071ab7 	strb	w23, [x21, #454]
+    2044:	f900e6a0 	str	x0, [x21, #456]
+    2048:	91003e81 	add	x1, x20, #0xf
+    204c:	92401ee2 	and	x2, x23, #0xff
+    2050:	79401283 	ldrh	w3, [x20, #8]
+    2054:	790382a3 	strh	w3, [x21, #448]
+    2058:	79401683 	ldrh	w3, [x20, #10]
+    205c:	790386a3 	strh	w3, [x21, #450]
+    2060:	79401a83 	ldrh	w3, [x20, #12]
+    2064:	79038aa3 	strh	w3, [x21, #452]
+    2068:	94000000 	bl	0 <memcpy>
+    206c:	39401e81 	ldrb	w1, [x20, #7]
+    2070:	35fff241 	cbnz	w1, 1eb8 <uvc_probe+0x1330>
+    2074:	39400e82 	ldrb	w2, [x20, #3]
+    2078:	aa1803e0 	mov	x0, x24
+    207c:	90000001 	adrp	x1, 0 <uvc_stream_delete>
+    2080:	91000021 	add	x1, x1, #0x0
+[31m    2084:	94000000 	bl	0 <sprintf>[0m
+    2088:	17fffda4 	b	1718 <uvc_probe+0xb90>
+    208c:	2a1b03f4 	mov	w20, w27
+--
+    20e8:	91002681 	add	x1, x20, #0x9
+    20ec:	f900eebb 	str	x27, [x21, #472]
+    20f0:	94000000 	bl	0 <memcpy>
+    20f4:	11002ae1 	add	w1, w23, #0xa
+    20f8:	aa1b03e0 	mov	x0, x27
+    20fc:	8b010281 	add	x1, x20, x1
+    2100:	92401ec2 	and	x2, x22, #0xff
+    2104:	94000000 	bl	0 <memcpy>
+    2108:	39401e81 	ldrb	w1, [x20, #7]
+    210c:	35ffed61 	cbnz	w1, 1eb8 <uvc_probe+0x1330>
+    2110:	79404ea0 	ldrh	w0, [x21, #38]
+    2114:	39400e82 	ldrb	w2, [x20, #3]
+    2118:	12003800 	and	w0, w0, #0x7fff
+    211c:	7108041f 	cmp	w0, #0x201
+    2120:	54fffac0 	b.eq	2078 <uvc_probe+0x14f0>  // b.none
+    2124:	7108081f 	cmp	w0, #0x202
+    2128:	54ffa7c1 	b.ne	1620 <uvc_probe+0xa98>  // b.any
+    212c:	aa1803e0 	mov	x0, x24
+    2130:	90000001 	adrp	x1, 0 <uvc_stream_delete>
+    2134:	91000021 	add	x1, x1, #0x0
+[31m    2138:	94000000 	bl	0 <sprintf>[0m
+    213c:	17fffd77 	b	1718 <uvc_probe+0xb90>
+    2140:	71000c9f 	cmp	w4, #0x3
+--
+ 228:	eb0002ff 	cmp	x23, x0
+ 22c:	54000300 	b.eq	28c <uvc_print_terms+0xb0>  // b.none
+ 230:	79404e60 	ldrh	w0, [x19, #38]
+ 234:	12110002 	and	w2, w0, #0x8000
+ 238:	72181c1f 	tst	w0, #0xff00
+ 23c:	54000220 	b.eq	280 <uvc_print_terms+0xa4>  // b.none
+ 240:	aa1803e1 	mov	x1, x24
+ 244:	6b19005f 	cmp	w2, w25
+ 248:	540001c1 	b.ne	280 <uvc_print_terms+0xa4>  // b.any
+ 24c:	34000056 	cbz	w22, 254 <uvc_print_terms+0x78>
+ 250:	7800169a 	strh	w26, [x20], #1
+ 254:	110006d6 	add	w22, w22, #0x1
+ 258:	aa1403e0 	mov	x0, x20
+ 25c:	71000edf 	cmp	w22, #0x3
+ 260:	540000a9 	b.ls	274 <uvc_print_terms+0x98>  // b.plast
+ 264:	5285c5c0 	mov	w0, #0x2e2e                	// #11822
+ 268:	72a005c0 	movk	w0, #0x2e, lsl #16
+ 26c:	b8003680 	str	w0, [x20], #3
+ 270:	14000007 	b	28c <uvc_print_terms+0xb0>
+ 274:	39409262 	ldrb	w2, [x19, #36]
+[31m 278:	94000000 	bl	0 <sprintf>[0m
+ 27c:	8b20c294 	add	x20, x20, w0, sxtw
+ 280:	f9400a73 	ldr	x19, [x19, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m8[0m times [0;33muvcvideo.ko[0m
+

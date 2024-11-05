@@ -1,0 +1,1314 @@
+[[0;33m*[0m] Binary protection state of [0;33mbridge.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m59) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m85) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m996) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mbridge.ko[0m
+
+    9654:	a9017bfd 	stp	x29, x30, [sp, #16]
+    9658:	910043fd 	add	x29, sp, #0x10
+    965c:	a90253f3 	stp	x19, x20, [sp, #32]
+    9660:	aa0103f3 	mov	x19, x1
+    9664:	aa0003f4 	mov	x20, x0
+    9668:	aa1e03e0 	mov	x0, x30
+    966c:	94000000 	bl	0 <_mcount>
+    9670:	39401667 	ldrb	w7, [x19, #5]
+    9674:	aa1403e0 	mov	x0, x20
+    9678:	39401266 	ldrb	w6, [x19, #4]
+    967c:	90000001 	adrp	x1, 0 <br_device_event>
+    9680:	39400e65 	ldrb	w5, [x19, #3]
+    9684:	91000021 	add	x1, x1, #0x0
+    9688:	39400a64 	ldrb	w4, [x19, #2]
+    968c:	39400663 	ldrb	w3, [x19, #1]
+    9690:	39400262 	ldrb	w2, [x19]
+    9694:	39401e68 	ldrb	w8, [x19, #7]
+    9698:	39401a69 	ldrb	w9, [x19, #6]
+    969c:	b90003e9 	str	w9, [sp]
+    96a0:	b9000be8 	str	w8, [sp, #8]
+[31m    96a4:	94000000 	bl	0 <sprintf>[0m
+    96a8:	d2800240 	mov	x0, #0x12                  	// #18
+    96ac:	a9417bfd 	ldp	x29, x30, [sp, #16]
+--
+    ce68:	d65f03c0 	ret
+    ce6c:	d2800001 	mov	x1, #0x0                   	// #0
+    ce70:	17fffffa 	b	ce58 <store_backup_port+0x50>
+    ce74:	12800020 	mov	w0, #0xfffffffe            	// #-2
+    ce78:	17fffffa 	b	ce60 <store_backup_port+0x58>
+    ce7c:	d503201f 	nop
+
+000000000000ce80 <show_isolated>:
+    ce80:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ce84:	910003fd 	mov	x29, sp
+    ce88:	a90153f3 	stp	x19, x20, [sp, #16]
+    ce8c:	aa0003f4 	mov	x20, x0
+    ce90:	aa0103f3 	mov	x19, x1
+    ce94:	aa1e03e0 	mov	x0, x30
+    ce98:	94000000 	bl	0 <_mcount>
+    ce9c:	f9401282 	ldr	x2, [x20, #32]
+    cea0:	aa1303e0 	mov	x0, x19
+    cea4:	90000001 	adrp	x1, 0 <br_device_event>
+    cea8:	91000021 	add	x1, x1, #0x0
+    ceac:	53104042 	ubfx	w2, w2, #16, #1
+[31m    ceb0:	94000000 	bl	0 <sprintf>[0m
+    ceb4:	d2800040 	mov	x0, #0x2                   	// #2
+    ceb8:	a94153f3 	ldp	x19, x20, [sp, #16]
+    cebc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    cec0:	d65f03c0 	ret
+    cec4:	d503201f 	nop
+
+000000000000cec8 <show_neigh_suppress>:
+    cec8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    cecc:	910003fd 	mov	x29, sp
+    ced0:	a90153f3 	stp	x19, x20, [sp, #16]
+    ced4:	aa0003f4 	mov	x20, x0
+    ced8:	aa0103f3 	mov	x19, x1
+    cedc:	aa1e03e0 	mov	x0, x30
+    cee0:	94000000 	bl	0 <_mcount>
+    cee4:	f9401282 	ldr	x2, [x20, #32]
+    cee8:	aa1303e0 	mov	x0, x19
+    ceec:	90000001 	adrp	x1, 0 <br_device_event>
+    cef0:	91000021 	add	x1, x1, #0x0
+    cef4:	530f3c42 	ubfx	w2, w2, #15, #1
+[31m    cef8:	94000000 	bl	0 <sprintf>[0m
+    cefc:	d2800040 	mov	x0, #0x2                   	// #2
+    cf00:	a94153f3 	ldp	x19, x20, [sp, #16]
+    cf04:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    cf08:	d65f03c0 	ret
+    cf0c:	d503201f 	nop
+
+000000000000cf10 <show_group_fwd_mask>:
+    cf10:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    cf14:	910003fd 	mov	x29, sp
+    cf18:	a90153f3 	stp	x19, x20, [sp, #16]
+    cf1c:	aa0003f4 	mov	x20, x0
+    cf20:	aa0103f3 	mov	x19, x1
+    cf24:	aa1e03e0 	mov	x0, x30
+    cf28:	94000000 	bl	0 <_mcount>
+    cf2c:	7943e282 	ldrh	w2, [x20, #496]
+    cf30:	aa1303e0 	mov	x0, x19
+    cf34:	90000001 	adrp	x1, 0 <br_device_event>
+    cf38:	91000021 	add	x1, x1, #0x0
+[31m    cf3c:	94000000 	bl	0 <sprintf>[0m
+    cf40:	93407c00 	sxtw	x0, w0
+    cf44:	a94153f3 	ldp	x19, x20, [sp, #16]
+    cf48:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    cf4c:	d65f03c0 	ret
+
+000000000000cf50 <show_broadcast_flood>:
+    cf50:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    cf54:	910003fd 	mov	x29, sp
+    cf58:	a90153f3 	stp	x19, x20, [sp, #16]
+    cf5c:	aa0003f4 	mov	x20, x0
+    cf60:	aa0103f3 	mov	x19, x1
+    cf64:	aa1e03e0 	mov	x0, x30
+    cf68:	94000000 	bl	0 <_mcount>
+    cf6c:	f9401282 	ldr	x2, [x20, #32]
+    cf70:	aa1303e0 	mov	x0, x19
+    cf74:	90000001 	adrp	x1, 0 <br_device_event>
+    cf78:	91000021 	add	x1, x1, #0x0
+    cf7c:	530e3842 	ubfx	w2, w2, #14, #1
+[31m    cf80:	94000000 	bl	0 <sprintf>[0m
+    cf84:	d2800040 	mov	x0, #0x2                   	// #2
+    cf88:	a94153f3 	ldp	x19, x20, [sp, #16]
+    cf8c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    cf90:	d65f03c0 	ret
+    cf94:	d503201f 	nop
+
+000000000000cf98 <show_multicast_flood>:
+    cf98:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    cf9c:	910003fd 	mov	x29, sp
+    cfa0:	a90153f3 	stp	x19, x20, [sp, #16]
+    cfa4:	aa0003f4 	mov	x20, x0
+    cfa8:	aa0103f3 	mov	x19, x1
+    cfac:	aa1e03e0 	mov	x0, x30
+    cfb0:	94000000 	bl	0 <_mcount>
+    cfb4:	f9401282 	ldr	x2, [x20, #32]
+    cfb8:	aa1303e0 	mov	x0, x19
+    cfbc:	90000001 	adrp	x1, 0 <br_device_event>
+    cfc0:	91000021 	add	x1, x1, #0x0
+    cfc4:	530b2c42 	ubfx	w2, w2, #11, #1
+[31m    cfc8:	94000000 	bl	0 <sprintf>[0m
+    cfcc:	d2800040 	mov	x0, #0x2                   	// #2
+    cfd0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    cfd4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    cfd8:	d65f03c0 	ret
+    cfdc:	d503201f 	nop
+
+000000000000cfe0 <show_proxyarp_wifi>:
+    cfe0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    cfe4:	910003fd 	mov	x29, sp
+    cfe8:	a90153f3 	stp	x19, x20, [sp, #16]
+    cfec:	aa0003f4 	mov	x20, x0
+    cff0:	aa0103f3 	mov	x19, x1
+    cff4:	aa1e03e0 	mov	x0, x30
+    cff8:	94000000 	bl	0 <_mcount>
+    cffc:	f9401282 	ldr	x2, [x20, #32]
+    d000:	aa1303e0 	mov	x0, x19
+    d004:	90000001 	adrp	x1, 0 <br_device_event>
+    d008:	91000021 	add	x1, x1, #0x0
+    d00c:	530a2842 	ubfx	w2, w2, #10, #1
+[31m    d010:	94000000 	bl	0 <sprintf>[0m
+    d014:	d2800040 	mov	x0, #0x2                   	// #2
+    d018:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d01c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d020:	d65f03c0 	ret
+    d024:	d503201f 	nop
+
+000000000000d028 <show_proxyarp>:
+    d028:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d02c:	910003fd 	mov	x29, sp
+    d030:	a90153f3 	stp	x19, x20, [sp, #16]
+    d034:	aa0003f4 	mov	x20, x0
+    d038:	aa0103f3 	mov	x19, x1
+    d03c:	aa1e03e0 	mov	x0, x30
+    d040:	94000000 	bl	0 <_mcount>
+    d044:	f9401282 	ldr	x2, [x20, #32]
+    d048:	aa1303e0 	mov	x0, x19
+    d04c:	90000001 	adrp	x1, 0 <br_device_event>
+    d050:	91000021 	add	x1, x1, #0x0
+    d054:	53082042 	ubfx	w2, w2, #8, #1
+[31m    d058:	94000000 	bl	0 <sprintf>[0m
+    d05c:	d2800040 	mov	x0, #0x2                   	// #2
+    d060:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d064:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d068:	d65f03c0 	ret
+    d06c:	d503201f 	nop
+
+000000000000d070 <show_multicast_to_unicast>:
+    d070:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d074:	910003fd 	mov	x29, sp
+    d078:	a90153f3 	stp	x19, x20, [sp, #16]
+    d07c:	aa0003f4 	mov	x20, x0
+    d080:	aa0103f3 	mov	x19, x1
+    d084:	aa1e03e0 	mov	x0, x30
+    d088:	94000000 	bl	0 <_mcount>
+    d08c:	f9401282 	ldr	x2, [x20, #32]
+    d090:	aa1303e0 	mov	x0, x19
+    d094:	90000001 	adrp	x1, 0 <br_device_event>
+    d098:	91000021 	add	x1, x1, #0x0
+    d09c:	530c3042 	ubfx	w2, w2, #12, #1
+[31m    d0a0:	94000000 	bl	0 <sprintf>[0m
+    d0a4:	d2800040 	mov	x0, #0x2                   	// #2
+    d0a8:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d0ac:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d0b0:	d65f03c0 	ret
+    d0b4:	d503201f 	nop
+
+000000000000d0b8 <show_multicast_fast_leave>:
+    d0b8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d0bc:	910003fd 	mov	x29, sp
+    d0c0:	a90153f3 	stp	x19, x20, [sp, #16]
+    d0c4:	aa0003f4 	mov	x20, x0
+    d0c8:	aa0103f3 	mov	x19, x1
+    d0cc:	aa1e03e0 	mov	x0, x30
+    d0d0:	94000000 	bl	0 <_mcount>
+    d0d4:	f9401282 	ldr	x2, [x20, #32]
+    d0d8:	aa1303e0 	mov	x0, x19
+    d0dc:	90000001 	adrp	x1, 0 <br_device_event>
+    d0e0:	91000021 	add	x1, x1, #0x0
+    d0e4:	53030c42 	ubfx	w2, w2, #3, #1
+[31m    d0e8:	94000000 	bl	0 <sprintf>[0m
+    d0ec:	d2800040 	mov	x0, #0x2                   	// #2
+    d0f0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d0f4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d0f8:	d65f03c0 	ret
+    d0fc:	d503201f 	nop
+
+000000000000d100 <show_multicast_router>:
+    d100:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d104:	910003fd 	mov	x29, sp
+    d108:	a90153f3 	stp	x19, x20, [sp, #16]
+    d10c:	aa0003f4 	mov	x20, x0
+    d110:	aa0103f3 	mov	x19, x1
+    d114:	aa1e03e0 	mov	x0, x30
+    d118:	94000000 	bl	0 <_mcount>
+    d11c:	39462282 	ldrb	w2, [x20, #392]
+    d120:	aa1303e0 	mov	x0, x19
+    d124:	90000001 	adrp	x1, 0 <br_device_event>
+    d128:	91000021 	add	x1, x1, #0x0
+[31m    d12c:	94000000 	bl	0 <sprintf>[0m
+    d130:	93407c00 	sxtw	x0, w0
+    d134:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d138:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d13c:	d65f03c0 	ret
+
+000000000000d140 <show_unicast_flood>:
+    d140:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d144:	910003fd 	mov	x29, sp
+    d148:	a90153f3 	stp	x19, x20, [sp, #16]
+    d14c:	aa0003f4 	mov	x20, x0
+    d150:	aa0103f3 	mov	x19, x1
+    d154:	aa1e03e0 	mov	x0, x30
+    d158:	94000000 	bl	0 <_mcount>
+    d15c:	f9401282 	ldr	x2, [x20, #32]
+    d160:	aa1303e0 	mov	x0, x19
+    d164:	90000001 	adrp	x1, 0 <br_device_event>
+    d168:	91000021 	add	x1, x1, #0x0
+    d16c:	53061842 	ubfx	w2, w2, #6, #1
+[31m    d170:	94000000 	bl	0 <sprintf>[0m
+    d174:	d2800040 	mov	x0, #0x2                   	// #2
+    d178:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d17c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d180:	d65f03c0 	ret
+    d184:	d503201f 	nop
+
+000000000000d188 <show_learning>:
+    d188:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d18c:	910003fd 	mov	x29, sp
+    d190:	a90153f3 	stp	x19, x20, [sp, #16]
+    d194:	aa0003f4 	mov	x20, x0
+    d198:	aa0103f3 	mov	x19, x1
+    d19c:	aa1e03e0 	mov	x0, x30
+    d1a0:	94000000 	bl	0 <_mcount>
+    d1a4:	f9401282 	ldr	x2, [x20, #32]
+    d1a8:	aa1303e0 	mov	x0, x19
+    d1ac:	90000001 	adrp	x1, 0 <br_device_event>
+    d1b0:	91000021 	add	x1, x1, #0x0
+    d1b4:	53051442 	ubfx	w2, w2, #5, #1
+[31m    d1b8:	94000000 	bl	0 <sprintf>[0m
+    d1bc:	d2800040 	mov	x0, #0x2                   	// #2
+    d1c0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d1c4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d1c8:	d65f03c0 	ret
+    d1cc:	d503201f 	nop
+
+000000000000d1d0 <show_root_block>:
+    d1d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d1d4:	910003fd 	mov	x29, sp
+    d1d8:	a90153f3 	stp	x19, x20, [sp, #16]
+    d1dc:	aa0003f4 	mov	x20, x0
+    d1e0:	aa0103f3 	mov	x19, x1
+    d1e4:	aa1e03e0 	mov	x0, x30
+    d1e8:	94000000 	bl	0 <_mcount>
+    d1ec:	f9401282 	ldr	x2, [x20, #32]
+    d1f0:	aa1303e0 	mov	x0, x19
+    d1f4:	90000001 	adrp	x1, 0 <br_device_event>
+    d1f8:	91000021 	add	x1, x1, #0x0
+    d1fc:	53020842 	ubfx	w2, w2, #2, #1
+[31m    d200:	94000000 	bl	0 <sprintf>[0m
+    d204:	d2800040 	mov	x0, #0x2                   	// #2
+    d208:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d20c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d210:	d65f03c0 	ret
+    d214:	d503201f 	nop
+
+000000000000d218 <show_bpdu_guard>:
+    d218:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d21c:	910003fd 	mov	x29, sp
+    d220:	a90153f3 	stp	x19, x20, [sp, #16]
+    d224:	aa0003f4 	mov	x20, x0
+    d228:	aa0103f3 	mov	x19, x1
+    d22c:	aa1e03e0 	mov	x0, x30
+    d230:	94000000 	bl	0 <_mcount>
+    d234:	f9401282 	ldr	x2, [x20, #32]
+    d238:	aa1303e0 	mov	x0, x19
+    d23c:	90000001 	adrp	x1, 0 <br_device_event>
+    d240:	91000021 	add	x1, x1, #0x0
+    d244:	53010442 	ubfx	w2, w2, #1, #1
+[31m    d248:	94000000 	bl	0 <sprintf>[0m
+    d24c:	d2800040 	mov	x0, #0x2                   	// #2
+    d250:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d254:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d258:	d65f03c0 	ret
+    d25c:	d503201f 	nop
+
+000000000000d260 <show_hairpin_mode>:
+    d260:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d264:	910003fd 	mov	x29, sp
+    d268:	a90153f3 	stp	x19, x20, [sp, #16]
+    d26c:	aa0003f4 	mov	x20, x0
+    d270:	aa0103f3 	mov	x19, x1
+    d274:	aa1e03e0 	mov	x0, x30
+    d278:	94000000 	bl	0 <_mcount>
+    d27c:	f9401282 	ldr	x2, [x20, #32]
+    d280:	aa1303e0 	mov	x0, x19
+    d284:	90000001 	adrp	x1, 0 <br_device_event>
+    d288:	91000021 	add	x1, x1, #0x0
+    d28c:	12000042 	and	w2, w2, #0x1
+[31m    d290:	94000000 	bl	0 <sprintf>[0m
+    d294:	d2800040 	mov	x0, #0x2                   	// #2
+    d298:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d29c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d2a0:	d65f03c0 	ret
+    d2a4:	d503201f 	nop
+
+000000000000d2a8 <show_config_pending>:
+    d2a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d2ac:	910003fd 	mov	x29, sp
+    d2b0:	a90153f3 	stp	x19, x20, [sp, #16]
+    d2b4:	aa0003f4 	mov	x20, x0
+    d2b8:	aa0103f3 	mov	x19, x1
+    d2bc:	aa1e03e0 	mov	x0, x30
+    d2c0:	94000000 	bl	0 <_mcount>
+    d2c4:	3940d682 	ldrb	w2, [x20, #53]
+    d2c8:	aa1303e0 	mov	x0, x19
+    d2cc:	90000001 	adrp	x1, 0 <br_device_event>
+    d2d0:	91000021 	add	x1, x1, #0x0
+[31m    d2d4:	94000000 	bl	0 <sprintf>[0m
+    d2d8:	93407c00 	sxtw	x0, w0
+    d2dc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d2e0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d2e4:	d65f03c0 	ret
+
+000000000000d2e8 <show_change_ack>:
+    d2e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d2ec:	910003fd 	mov	x29, sp
+    d2f0:	a90153f3 	stp	x19, x20, [sp, #16]
+    d2f4:	aa0003f4 	mov	x20, x0
+    d2f8:	aa0103f3 	mov	x19, x1
+    d2fc:	aa1e03e0 	mov	x0, x30
+    d300:	94000000 	bl	0 <_mcount>
+    d304:	3940d282 	ldrb	w2, [x20, #52]
+    d308:	aa1303e0 	mov	x0, x19
+    d30c:	90000001 	adrp	x1, 0 <br_device_event>
+    d310:	91000021 	add	x1, x1, #0x0
+[31m    d314:	94000000 	bl	0 <sprintf>[0m
+    d318:	93407c00 	sxtw	x0, w0
+    d31c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d320:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d324:	d65f03c0 	ret
+
+000000000000d328 <show_port_state>:
+    d328:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d32c:	910003fd 	mov	x29, sp
+    d330:	a90153f3 	stp	x19, x20, [sp, #16]
+    d334:	aa0003f4 	mov	x20, x0
+    d338:	aa0103f3 	mov	x19, x1
+    d33c:	aa1e03e0 	mov	x0, x30
+    d340:	94000000 	bl	0 <_mcount>
+    d344:	3940c682 	ldrb	w2, [x20, #49]
+    d348:	aa1303e0 	mov	x0, x19
+    d34c:	90000001 	adrp	x1, 0 <br_device_event>
+    d350:	91000021 	add	x1, x1, #0x0
+[31m    d354:	94000000 	bl	0 <sprintf>[0m
+    d358:	93407c00 	sxtw	x0, w0
+    d35c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d360:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d364:	d65f03c0 	ret
+
+000000000000d368 <show_designated_cost>:
+    d368:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d36c:	910003fd 	mov	x29, sp
+    d370:	a90153f3 	stp	x19, x20, [sp, #16]
+    d374:	aa0003f4 	mov	x20, x0
+    d378:	aa0103f3 	mov	x19, x1
+    d37c:	aa1e03e0 	mov	x0, x30
+    d380:	94000000 	bl	0 <_mcount>
+    d384:	b9405282 	ldr	w2, [x20, #80]
+    d388:	aa1303e0 	mov	x0, x19
+    d38c:	90000001 	adrp	x1, 0 <br_device_event>
+    d390:	91000021 	add	x1, x1, #0x0
+[31m    d394:	94000000 	bl	0 <sprintf>[0m
+    d398:	93407c00 	sxtw	x0, w0
+    d39c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d3a0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d3a4:	d65f03c0 	ret
+
+000000000000d3a8 <show_designated_port>:
+    d3a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d3ac:	910003fd 	mov	x29, sp
+    d3b0:	a90153f3 	stp	x19, x20, [sp, #16]
+    d3b4:	aa0003f4 	mov	x20, x0
+    d3b8:	aa0103f3 	mov	x19, x1
+    d3bc:	aa1e03e0 	mov	x0, x30
+    d3c0:	94000000 	bl	0 <_mcount>
+    d3c4:	79407282 	ldrh	w2, [x20, #56]
+    d3c8:	aa1303e0 	mov	x0, x19
+    d3cc:	90000001 	adrp	x1, 0 <br_device_event>
+    d3d0:	91000021 	add	x1, x1, #0x0
+[31m    d3d4:	94000000 	bl	0 <sprintf>[0m
+    d3d8:	93407c00 	sxtw	x0, w0
+    d3dc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d3e0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d3e4:	d65f03c0 	ret
+
+000000000000d3e8 <show_port_no>:
+    d3e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d3ec:	910003fd 	mov	x29, sp
+    d3f0:	a90153f3 	stp	x19, x20, [sp, #16]
+    d3f4:	aa0003f4 	mov	x20, x0
+    d3f8:	aa0103f3 	mov	x19, x1
+    d3fc:	aa1e03e0 	mov	x0, x30
+    d400:	94000000 	bl	0 <_mcount>
+    d404:	79406682 	ldrh	w2, [x20, #50]
+    d408:	aa1303e0 	mov	x0, x19
+    d40c:	90000001 	adrp	x1, 0 <br_device_event>
+    d410:	91000021 	add	x1, x1, #0x0
+[31m    d414:	94000000 	bl	0 <sprintf>[0m
+    d418:	93407c00 	sxtw	x0, w0
+    d41c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d420:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d424:	d65f03c0 	ret
+
+000000000000d428 <show_port_id>:
+    d428:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d42c:	910003fd 	mov	x29, sp
+    d430:	a90153f3 	stp	x19, x20, [sp, #16]
+    d434:	aa0003f4 	mov	x20, x0
+    d438:	aa0103f3 	mov	x19, x1
+    d43c:	aa1e03e0 	mov	x0, x30
+    d440:	94000000 	bl	0 <_mcount>
+    d444:	79406e82 	ldrh	w2, [x20, #54]
+    d448:	aa1303e0 	mov	x0, x19
+    d44c:	90000001 	adrp	x1, 0 <br_device_event>
+    d450:	91000021 	add	x1, x1, #0x0
+[31m    d454:	94000000 	bl	0 <sprintf>[0m
+    d458:	93407c00 	sxtw	x0, w0
+    d45c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d460:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d464:	d65f03c0 	ret
+
+000000000000d468 <show_priority>:
+    d468:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d46c:	910003fd 	mov	x29, sp
+    d470:	a90153f3 	stp	x19, x20, [sp, #16]
+    d474:	aa0003f4 	mov	x20, x0
+    d478:	aa0103f3 	mov	x19, x1
+    d47c:	aa1e03e0 	mov	x0, x30
+    d480:	94000000 	bl	0 <_mcount>
+    d484:	3940c282 	ldrb	w2, [x20, #48]
+    d488:	aa1303e0 	mov	x0, x19
+    d48c:	90000001 	adrp	x1, 0 <br_device_event>
+    d490:	91000021 	add	x1, x1, #0x0
+[31m    d494:	94000000 	bl	0 <sprintf>[0m
+    d498:	93407c00 	sxtw	x0, w0
+    d49c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d4a0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d4a4:	d65f03c0 	ret
+
+000000000000d4a8 <show_path_cost>:
+    d4a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d4ac:	910003fd 	mov	x29, sp
+    d4b0:	a90153f3 	stp	x19, x20, [sp, #16]
+    d4b4:	aa0003f4 	mov	x20, x0
+    d4b8:	aa0103f3 	mov	x19, x1
+    d4bc:	aa1e03e0 	mov	x0, x30
+    d4c0:	94000000 	bl	0 <_mcount>
+    d4c4:	b9404e82 	ldr	w2, [x20, #76]
+    d4c8:	aa1303e0 	mov	x0, x19
+    d4cc:	90000001 	adrp	x1, 0 <br_device_event>
+    d4d0:	91000021 	add	x1, x1, #0x0
+[31m    d4d4:	94000000 	bl	0 <sprintf>[0m
+    d4d8:	93407c00 	sxtw	x0, w0
+    d4dc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d4e0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    d4e4:	d65f03c0 	ret
+
+000000000000d4e8 <show_backup_port>:
+    d4e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    d4ec:	910003fd 	mov	x29, sp
+    d4f0:	a90153f3 	stp	x19, x20, [sp, #16]
+    d4f4:	aa0003f3 	mov	x19, x0
+    d4f8:	aa1e03e0 	mov	x0, x30
+    d4fc:	aa0103f4 	mov	x20, x1
+    d500:	94000000 	bl	0 <_mcount>
+    d504:	94000000 	bl	0 <__rcu_read_lock>
+    d508:	f9401660 	ldr	x0, [x19, #40]
+    d50c:	d2800013 	mov	x19, #0x0                   	// #0
+    d510:	b40000e0 	cbz	x0, d52c <show_backup_port+0x44>
+    d514:	f9400402 	ldr	x2, [x0, #8]
+    d518:	90000001 	adrp	x1, 0 <br_device_event>
+    d51c:	aa1403e0 	mov	x0, x20
+    d520:	91000021 	add	x1, x1, #0x0
+[31m    d524:	94000000 	bl	0 <sprintf>[0m
+    d528:	93407c13 	sxtw	x19, w0
+    d52c:	94000000 	bl	0 <__rcu_read_unlock>
+--
+    da1c:	52800000 	mov	w0, #0x0                   	// #0
+    da20:	f9400bf3 	ldr	x19, [sp, #16]
+    da24:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    da28:	d65f03c0 	ret
+    da2c:	d503201f 	nop
+
+000000000000da30 <show_hold_timer>:
+    da30:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    da34:	910003fd 	mov	x29, sp
+    da38:	a90153f3 	stp	x19, x20, [sp, #16]
+    da3c:	aa0103f3 	mov	x19, x1
+    da40:	aa0003f4 	mov	x20, x0
+    da44:	aa1e03e0 	mov	x0, x30
+    da48:	94000000 	bl	0 <_mcount>
+    da4c:	91022280 	add	x0, x20, #0x88
+    da50:	94000000 	bl	9b30 <br_timer_value>
+    da54:	90000001 	adrp	x1, 0 <br_device_event>
+    da58:	aa0003e2 	mov	x2, x0
+    da5c:	91000021 	add	x1, x1, #0x0
+    da60:	aa1303e0 	mov	x0, x19
+[31m    da64:	94000000 	bl	0 <sprintf>[0m
+    da68:	93407c00 	sxtw	x0, w0
+    da6c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    da70:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    da74:	d65f03c0 	ret
+
+000000000000da78 <show_forward_delay_timer>:
+    da78:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    da7c:	910003fd 	mov	x29, sp
+    da80:	a90153f3 	stp	x19, x20, [sp, #16]
+    da84:	aa0103f3 	mov	x19, x1
+    da88:	aa0003f4 	mov	x20, x0
+    da8c:	aa1e03e0 	mov	x0, x30
+    da90:	94000000 	bl	0 <_mcount>
+    da94:	91018280 	add	x0, x20, #0x60
+    da98:	94000000 	bl	9b30 <br_timer_value>
+    da9c:	90000001 	adrp	x1, 0 <br_device_event>
+    daa0:	aa0003e2 	mov	x2, x0
+    daa4:	91000021 	add	x1, x1, #0x0
+    daa8:	aa1303e0 	mov	x0, x19
+[31m    daac:	94000000 	bl	0 <sprintf>[0m
+    dab0:	93407c00 	sxtw	x0, w0
+    dab4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    dab8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    dabc:	d65f03c0 	ret
+
+000000000000dac0 <show_message_age_timer>:
+    dac0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    dac4:	910003fd 	mov	x29, sp
+    dac8:	a90153f3 	stp	x19, x20, [sp, #16]
+    dacc:	aa0103f3 	mov	x19, x1
+    dad0:	aa0003f4 	mov	x20, x0
+    dad4:	aa1e03e0 	mov	x0, x30
+    dad8:	94000000 	bl	0 <_mcount>
+    dadc:	9102c280 	add	x0, x20, #0xb0
+    dae0:	94000000 	bl	9b30 <br_timer_value>
+    dae4:	90000001 	adrp	x1, 0 <br_device_event>
+    dae8:	aa0003e2 	mov	x2, x0
+    daec:	91000021 	add	x1, x1, #0x0
+    daf0:	aa1303e0 	mov	x0, x19
+[31m    daf4:	94000000 	bl	0 <sprintf>[0m
+    daf8:	93407c00 	sxtw	x0, w0
+    dafc:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    e0f8:	52800101 	mov	w1, #0x8                   	// #8
+    e0fc:	94000000 	bl	3e0 <br_opt_toggle>
+    e100:	52800000 	mov	w0, #0x0                   	// #0
+    e104:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e108:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e10c:	d65f03c0 	ret
+
+000000000000e110 <nf_call_arptables_show>:
+    e110:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e114:	910003fd 	mov	x29, sp
+    e118:	a90153f3 	stp	x19, x20, [sp, #16]
+    e11c:	aa0003f4 	mov	x20, x0
+    e120:	aa0203f3 	mov	x19, x2
+    e124:	aa1e03e0 	mov	x0, x30
+    e128:	94000000 	bl	0 <_mcount>
+    e12c:	f941d682 	ldr	x2, [x20, #936]
+    e130:	aa1303e0 	mov	x0, x19
+    e134:	90000001 	adrp	x1, 0 <br_device_event>
+    e138:	91000021 	add	x1, x1, #0x0
+    e13c:	53041042 	ubfx	w2, w2, #4, #1
+[31m    e140:	94000000 	bl	0 <sprintf>[0m
+    e144:	d2800040 	mov	x0, #0x2                   	// #2
+    e148:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e14c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e150:	d65f03c0 	ret
+    e154:	d503201f 	nop
+
+000000000000e158 <nf_call_ip6tables_show>:
+    e158:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e15c:	910003fd 	mov	x29, sp
+    e160:	a90153f3 	stp	x19, x20, [sp, #16]
+    e164:	aa0003f4 	mov	x20, x0
+    e168:	aa0203f3 	mov	x19, x2
+    e16c:	aa1e03e0 	mov	x0, x30
+    e170:	94000000 	bl	0 <_mcount>
+    e174:	f941d682 	ldr	x2, [x20, #936]
+    e178:	aa1303e0 	mov	x0, x19
+    e17c:	90000001 	adrp	x1, 0 <br_device_event>
+    e180:	91000021 	add	x1, x1, #0x0
+    e184:	53030c42 	ubfx	w2, w2, #3, #1
+[31m    e188:	94000000 	bl	0 <sprintf>[0m
+    e18c:	d2800040 	mov	x0, #0x2                   	// #2
+    e190:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e194:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e198:	d65f03c0 	ret
+    e19c:	d503201f 	nop
+
+000000000000e1a0 <nf_call_iptables_show>:
+    e1a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e1a4:	910003fd 	mov	x29, sp
+    e1a8:	a90153f3 	stp	x19, x20, [sp, #16]
+    e1ac:	aa0003f4 	mov	x20, x0
+    e1b0:	aa0203f3 	mov	x19, x2
+    e1b4:	aa1e03e0 	mov	x0, x30
+    e1b8:	94000000 	bl	0 <_mcount>
+    e1bc:	f941d682 	ldr	x2, [x20, #936]
+    e1c0:	aa1303e0 	mov	x0, x19
+    e1c4:	90000001 	adrp	x1, 0 <br_device_event>
+    e1c8:	91000021 	add	x1, x1, #0x0
+    e1cc:	53020842 	ubfx	w2, w2, #2, #1
+[31m    e1d0:	94000000 	bl	0 <sprintf>[0m
+    e1d4:	d2800040 	mov	x0, #0x2                   	// #2
+    e1d8:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e1dc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e1e0:	d65f03c0 	ret
+    e1e4:	d503201f 	nop
+
+000000000000e1e8 <multicast_mld_version_show>:
+    e1e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e1ec:	910003fd 	mov	x29, sp
+    e1f0:	a90153f3 	stp	x19, x20, [sp, #16]
+    e1f4:	aa0003f4 	mov	x20, x0
+    e1f8:	aa0203f3 	mov	x19, x2
+    e1fc:	aa1e03e0 	mov	x0, x30
+    e200:	94000000 	bl	0 <_mcount>
+    e204:	39565a82 	ldrb	w2, [x20, #1430]
+    e208:	aa1303e0 	mov	x0, x19
+    e20c:	90000001 	adrp	x1, 0 <br_device_event>
+    e210:	91000021 	add	x1, x1, #0x0
+[31m    e214:	94000000 	bl	0 <sprintf>[0m
+    e218:	93407c00 	sxtw	x0, w0
+    e21c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e220:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e224:	d65f03c0 	ret
+
+000000000000e228 <multicast_igmp_version_show>:
+    e228:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e22c:	910003fd 	mov	x29, sp
+    e230:	a90153f3 	stp	x19, x20, [sp, #16]
+    e234:	aa0003f4 	mov	x20, x0
+    e238:	aa0203f3 	mov	x19, x2
+    e23c:	aa1e03e0 	mov	x0, x30
+    e240:	94000000 	bl	0 <_mcount>
+    e244:	39565282 	ldrb	w2, [x20, #1428]
+    e248:	aa1303e0 	mov	x0, x19
+    e24c:	90000001 	adrp	x1, 0 <br_device_event>
+    e250:	91000021 	add	x1, x1, #0x0
+[31m    e254:	94000000 	bl	0 <sprintf>[0m
+    e258:	93407c00 	sxtw	x0, w0
+    e25c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e260:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e264:	d65f03c0 	ret
+
+000000000000e268 <multicast_stats_enabled_show>:
+    e268:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e26c:	910003fd 	mov	x29, sp
+    e270:	a90153f3 	stp	x19, x20, [sp, #16]
+    e274:	aa0003f4 	mov	x20, x0
+    e278:	aa0203f3 	mov	x19, x2
+    e27c:	aa1e03e0 	mov	x0, x30
+    e280:	94000000 	bl	0 <_mcount>
+    e284:	f941d682 	ldr	x2, [x20, #936]
+    e288:	aa1303e0 	mov	x0, x19
+    e28c:	90000001 	adrp	x1, 0 <br_device_event>
+    e290:	91000021 	add	x1, x1, #0x0
+    e294:	53092442 	ubfx	w2, w2, #9, #1
+[31m    e298:	94000000 	bl	0 <sprintf>[0m
+    e29c:	d2800040 	mov	x0, #0x2                   	// #2
+    e2a0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e2a4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e2a8:	d65f03c0 	ret
+    e2ac:	d503201f 	nop
+
+000000000000e2b0 <multicast_startup_query_count_show>:
+    e2b0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e2b4:	910003fd 	mov	x29, sp
+    e2b8:	a90153f3 	stp	x19, x20, [sp, #16]
+    e2bc:	aa0003f4 	mov	x20, x0
+    e2c0:	aa0203f3 	mov	x19, x2
+    e2c4:	aa1e03e0 	mov	x0, x30
+    e2c8:	94000000 	bl	0 <_mcount>
+    e2cc:	b9459282 	ldr	w2, [x20, #1424]
+    e2d0:	aa1303e0 	mov	x0, x19
+    e2d4:	90000001 	adrp	x1, 0 <br_device_event>
+    e2d8:	91000021 	add	x1, x1, #0x0
+[31m    e2dc:	94000000 	bl	0 <sprintf>[0m
+    e2e0:	93407c00 	sxtw	x0, w0
+    e2e4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e2e8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e2ec:	d65f03c0 	ret
+
+000000000000e2f0 <multicast_last_member_count_show>:
+    e2f0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e2f4:	910003fd 	mov	x29, sp
+    e2f8:	a90153f3 	stp	x19, x20, [sp, #16]
+    e2fc:	aa0003f4 	mov	x20, x0
+    e300:	aa0203f3 	mov	x19, x2
+    e304:	aa1e03e0 	mov	x0, x30
+    e308:	94000000 	bl	0 <_mcount>
+    e30c:	b9458e82 	ldr	w2, [x20, #1420]
+    e310:	aa1303e0 	mov	x0, x19
+    e314:	90000001 	adrp	x1, 0 <br_device_event>
+    e318:	91000021 	add	x1, x1, #0x0
+[31m    e31c:	94000000 	bl	0 <sprintf>[0m
+    e320:	93407c00 	sxtw	x0, w0
+    e324:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e328:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e32c:	d65f03c0 	ret
+
+000000000000e330 <hash_max_show>:
+    e330:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e334:	910003fd 	mov	x29, sp
+    e338:	a90153f3 	stp	x19, x20, [sp, #16]
+    e33c:	aa0003f4 	mov	x20, x0
+    e340:	aa0203f3 	mov	x19, x2
+    e344:	aa1e03e0 	mov	x0, x30
+    e348:	94000000 	bl	0 <_mcount>
+    e34c:	b9458a82 	ldr	w2, [x20, #1416]
+    e350:	aa1303e0 	mov	x0, x19
+    e354:	90000001 	adrp	x1, 0 <br_device_event>
+    e358:	91000021 	add	x1, x1, #0x0
+[31m    e35c:	94000000 	bl	0 <sprintf>[0m
+    e360:	93407c00 	sxtw	x0, w0
+    e364:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e368:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e36c:	d65f03c0 	ret
+
+000000000000e370 <hash_elasticity_show>:
+    e370:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e374:	910003fd 	mov	x29, sp
+    e378:	f9000bf3 	str	x19, [sp, #16]
+    e37c:	aa1e03e0 	mov	x0, x30
+    e380:	aa0203f3 	mov	x19, x2
+    e384:	94000000 	bl	0 <_mcount>
+    e388:	aa1303e0 	mov	x0, x19
+    e38c:	52800202 	mov	w2, #0x10                  	// #16
+    e390:	90000001 	adrp	x1, 0 <br_device_event>
+    e394:	91000021 	add	x1, x1, #0x0
+[31m    e398:	94000000 	bl	0 <sprintf>[0m
+    e39c:	d2800060 	mov	x0, #0x3                   	// #3
+    e3a0:	f9400bf3 	ldr	x19, [sp, #16]
+    e3a4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e3a8:	d65f03c0 	ret
+    e3ac:	d503201f 	nop
+
+000000000000e3b0 <multicast_query_use_ifaddr_show>:
+    e3b0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e3b4:	910003fd 	mov	x29, sp
+    e3b8:	a90153f3 	stp	x19, x20, [sp, #16]
+    e3bc:	aa0003f4 	mov	x20, x0
+    e3c0:	aa0203f3 	mov	x19, x2
+    e3c4:	aa1e03e0 	mov	x0, x30
+    e3c8:	94000000 	bl	0 <_mcount>
+    e3cc:	f941d682 	ldr	x2, [x20, #936]
+    e3d0:	aa1303e0 	mov	x0, x19
+    e3d4:	90000001 	adrp	x1, 0 <br_device_event>
+    e3d8:	91000021 	add	x1, x1, #0x0
+    e3dc:	53082042 	ubfx	w2, w2, #8, #1
+[31m    e3e0:	94000000 	bl	0 <sprintf>[0m
+    e3e4:	d2800040 	mov	x0, #0x2                   	// #2
+    e3e8:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e3ec:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e3f0:	d65f03c0 	ret
+    e3f4:	d503201f 	nop
+
+000000000000e3f8 <multicast_querier_show>:
+    e3f8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e3fc:	910003fd 	mov	x29, sp
+    e400:	a90153f3 	stp	x19, x20, [sp, #16]
+    e404:	aa0003f4 	mov	x20, x0
+    e408:	aa0203f3 	mov	x19, x2
+    e40c:	aa1e03e0 	mov	x0, x30
+    e410:	94000000 	bl	0 <_mcount>
+    e414:	f941d682 	ldr	x2, [x20, #936]
+    e418:	aa1303e0 	mov	x0, x19
+    e41c:	90000001 	adrp	x1, 0 <br_device_event>
+    e420:	91000021 	add	x1, x1, #0x0
+    e424:	53071c42 	ubfx	w2, w2, #7, #1
+[31m    e428:	94000000 	bl	0 <sprintf>[0m
+    e42c:	d2800040 	mov	x0, #0x2                   	// #2
+    e430:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e434:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e438:	d65f03c0 	ret
+    e43c:	d503201f 	nop
+
+000000000000e440 <multicast_snooping_show>:
+    e440:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e444:	910003fd 	mov	x29, sp
+    e448:	a90153f3 	stp	x19, x20, [sp, #16]
+    e44c:	aa0003f4 	mov	x20, x0
+    e450:	aa0203f3 	mov	x19, x2
+    e454:	aa1e03e0 	mov	x0, x30
+    e458:	94000000 	bl	0 <_mcount>
+    e45c:	f941d682 	ldr	x2, [x20, #936]
+    e460:	aa1303e0 	mov	x0, x19
+    e464:	90000001 	adrp	x1, 0 <br_device_event>
+    e468:	91000021 	add	x1, x1, #0x0
+    e46c:	53061842 	ubfx	w2, w2, #6, #1
+[31m    e470:	94000000 	bl	0 <sprintf>[0m
+    e474:	d2800040 	mov	x0, #0x2                   	// #2
+    e478:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e47c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e480:	d65f03c0 	ret
+    e484:	d503201f 	nop
+
+000000000000e488 <multicast_router_show>:
+    e488:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e48c:	910003fd 	mov	x29, sp
+    e490:	a90153f3 	stp	x19, x20, [sp, #16]
+    e494:	aa0003f4 	mov	x20, x0
+    e498:	aa0203f3 	mov	x19, x2
+    e49c:	aa1e03e0 	mov	x0, x30
+    e4a0:	94000000 	bl	0 <_mcount>
+    e4a4:	39565682 	ldrb	w2, [x20, #1429]
+    e4a8:	aa1303e0 	mov	x0, x19
+    e4ac:	90000001 	adrp	x1, 0 <br_device_event>
+    e4b0:	91000021 	add	x1, x1, #0x0
+[31m    e4b4:	94000000 	bl	0 <sprintf>[0m
+    e4b8:	93407c00 	sxtw	x0, w0
+    e4bc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e4c0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e4c4:	d65f03c0 	ret
+
+000000000000e4c8 <group_addr_show>:
+    e4c8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e4cc:	910003fd 	mov	x29, sp
+    e4d0:	a90153f3 	stp	x19, x20, [sp, #16]
+    e4d4:	aa0203f3 	mov	x19, x2
+    e4d8:	aa0003f4 	mov	x20, x0
+    e4dc:	aa1e03e0 	mov	x0, x30
+    e4e0:	94000000 	bl	0 <_mcount>
+    e4e4:	9115f282 	add	x2, x20, #0x57c
+    e4e8:	aa1303e0 	mov	x0, x19
+    e4ec:	90000001 	adrp	x1, 0 <br_device_event>
+    e4f0:	91000021 	add	x1, x1, #0x0
+[31m    e4f4:	94000000 	bl	0 <sprintf>[0m
+    e4f8:	93407c00 	sxtw	x0, w0
+    e4fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e500:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e504:	d65f03c0 	ret
+
+000000000000e508 <topology_change_detected_show>:
+    e508:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e50c:	910003fd 	mov	x29, sp
+    e510:	a90153f3 	stp	x19, x20, [sp, #16]
+    e514:	aa0003f4 	mov	x20, x0
+    e518:	aa0203f3 	mov	x19, x2
+    e51c:	aa1e03e0 	mov	x0, x30
+    e520:	94000000 	bl	0 <_mcount>
+    e524:	3954d682 	ldrb	w2, [x20, #1333]
+    e528:	aa1303e0 	mov	x0, x19
+    e52c:	90000001 	adrp	x1, 0 <br_device_event>
+    e530:	91000021 	add	x1, x1, #0x0
+[31m    e534:	94000000 	bl	0 <sprintf>[0m
+    e538:	93407c00 	sxtw	x0, w0
+    e53c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e540:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e544:	d65f03c0 	ret
+
+000000000000e548 <topology_change_show>:
+    e548:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e54c:	910003fd 	mov	x29, sp
+    e550:	a90153f3 	stp	x19, x20, [sp, #16]
+    e554:	aa0003f4 	mov	x20, x0
+    e558:	aa0203f3 	mov	x19, x2
+    e55c:	aa1e03e0 	mov	x0, x30
+    e560:	94000000 	bl	0 <_mcount>
+    e564:	3954d282 	ldrb	w2, [x20, #1332]
+    e568:	aa1303e0 	mov	x0, x19
+    e56c:	90000001 	adrp	x1, 0 <br_device_event>
+    e570:	91000021 	add	x1, x1, #0x0
+[31m    e574:	94000000 	bl	0 <sprintf>[0m
+    e578:	93407c00 	sxtw	x0, w0
+    e57c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e580:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e584:	d65f03c0 	ret
+
+000000000000e588 <root_port_show>:
+    e588:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e58c:	910003fd 	mov	x29, sp
+    e590:	a90153f3 	stp	x19, x20, [sp, #16]
+    e594:	aa0003f4 	mov	x20, x0
+    e598:	aa0203f3 	mov	x19, x2
+    e59c:	aa1e03e0 	mov	x0, x30
+    e5a0:	94000000 	bl	0 <_mcount>
+    e5a4:	794a6e82 	ldrh	w2, [x20, #1334]
+    e5a8:	aa1303e0 	mov	x0, x19
+    e5ac:	90000001 	adrp	x1, 0 <br_device_event>
+    e5b0:	91000021 	add	x1, x1, #0x0
+[31m    e5b4:	94000000 	bl	0 <sprintf>[0m
+    e5b8:	93407c00 	sxtw	x0, w0
+    e5bc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e5c0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e5c4:	d65f03c0 	ret
+
+000000000000e5c8 <root_path_cost_show>:
+    e5c8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e5cc:	910003fd 	mov	x29, sp
+    e5d0:	a90153f3 	stp	x19, x20, [sp, #16]
+    e5d4:	aa0003f4 	mov	x20, x0
+    e5d8:	aa0203f3 	mov	x19, x2
+    e5dc:	aa1e03e0 	mov	x0, x30
+    e5e0:	94000000 	bl	0 <_mcount>
+    e5e4:	b9457a82 	ldr	w2, [x20, #1400]
+    e5e8:	aa1303e0 	mov	x0, x19
+    e5ec:	90000001 	adrp	x1, 0 <br_device_event>
+    e5f0:	91000021 	add	x1, x1, #0x0
+[31m    e5f4:	94000000 	bl	0 <sprintf>[0m
+    e5f8:	93407c00 	sxtw	x0, w0
+    e5fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e600:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e604:	d65f03c0 	ret
+
+000000000000e608 <priority_show>:
+    e608:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e60c:	910003fd 	mov	x29, sp
+    e610:	a90153f3 	stp	x19, x20, [sp, #16]
+    e614:	aa0003f4 	mov	x20, x0
+    e618:	aa0203f3 	mov	x19, x2
+    e61c:	aa1e03e0 	mov	x0, x30
+    e620:	94000000 	bl	0 <_mcount>
+    e624:	794a5a83 	ldrh	w3, [x20, #1324]
+    e628:	aa1303e0 	mov	x0, x19
+    e62c:	90000001 	adrp	x1, 0 <br_device_event>
+    e630:	91000021 	add	x1, x1, #0x0
+    e634:	5ac00462 	rev16	w2, w3
+    e638:	12003c42 	and	w2, w2, #0xffff
+[31m    e63c:	94000000 	bl	0 <sprintf>[0m
+    e640:	93407c00 	sxtw	x0, w0
+    e644:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e648:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e64c:	d65f03c0 	ret
+
+000000000000e650 <group_fwd_mask_show>:
+    e650:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e654:	910003fd 	mov	x29, sp
+    e658:	a90153f3 	stp	x19, x20, [sp, #16]
+    e65c:	aa0003f4 	mov	x20, x0
+    e660:	aa0203f3 	mov	x19, x2
+    e664:	aa1e03e0 	mov	x0, x30
+    e668:	94000000 	bl	0 <_mcount>
+    e66c:	794a4282 	ldrh	w2, [x20, #1312]
+    e670:	aa1303e0 	mov	x0, x19
+    e674:	90000001 	adrp	x1, 0 <br_device_event>
+    e678:	91000021 	add	x1, x1, #0x0
+[31m    e67c:	94000000 	bl	0 <sprintf>[0m
+    e680:	93407c00 	sxtw	x0, w0
+    e684:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e688:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e68c:	d65f03c0 	ret
+
+000000000000e690 <stp_state_show>:
+    e690:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e694:	910003fd 	mov	x29, sp
+    e698:	a90153f3 	stp	x19, x20, [sp, #16]
+    e69c:	aa0003f4 	mov	x20, x0
+    e6a0:	aa0203f3 	mov	x19, x2
+    e6a4:	aa1e03e0 	mov	x0, x30
+    e6a8:	94000000 	bl	0 <_mcount>
+    e6ac:	b9458682 	ldr	w2, [x20, #1412]
+    e6b0:	aa1303e0 	mov	x0, x19
+    e6b4:	90000001 	adrp	x1, 0 <br_device_event>
+    e6b8:	91000021 	add	x1, x1, #0x0
+[31m    e6bc:	94000000 	bl	0 <sprintf>[0m
+    e6c0:	93407c00 	sxtw	x0, w0
+    e6c4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    e83c:	52800000 	mov	w0, #0x0                   	// #0
+    e840:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e844:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e848:	d65f03c0 	ret
+    e84c:	d503201f 	nop
+
+000000000000e850 <multicast_startup_query_interval_show>:
+    e850:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e854:	910003fd 	mov	x29, sp
+    e858:	a90153f3 	stp	x19, x20, [sp, #16]
+    e85c:	aa0003f4 	mov	x20, x0
+    e860:	aa0203f3 	mov	x19, x2
+    e864:	aa1e03e0 	mov	x0, x30
+    e868:	94000000 	bl	0 <_mcount>
+    e86c:	f942e680 	ldr	x0, [x20, #1480]
+    e870:	94000000 	bl	0 <jiffies_to_clock_t>
+    e874:	aa0003e2 	mov	x2, x0
+    e878:	90000001 	adrp	x1, 0 <br_device_event>
+    e87c:	aa1303e0 	mov	x0, x19
+    e880:	91000021 	add	x1, x1, #0x0
+[31m    e884:	94000000 	bl	0 <sprintf>[0m
+    e888:	93407c00 	sxtw	x0, w0
+    e88c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e890:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e894:	d65f03c0 	ret
+
+000000000000e898 <multicast_query_response_interval_show>:
+    e898:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e89c:	910003fd 	mov	x29, sp
+    e8a0:	a90153f3 	stp	x19, x20, [sp, #16]
+    e8a4:	aa0003f4 	mov	x20, x0
+    e8a8:	aa0203f3 	mov	x19, x2
+    e8ac:	aa1e03e0 	mov	x0, x30
+    e8b0:	94000000 	bl	0 <_mcount>
+    e8b4:	f942e280 	ldr	x0, [x20, #1472]
+    e8b8:	94000000 	bl	0 <jiffies_to_clock_t>
+    e8bc:	aa0003e2 	mov	x2, x0
+    e8c0:	90000001 	adrp	x1, 0 <br_device_event>
+    e8c4:	aa1303e0 	mov	x0, x19
+    e8c8:	91000021 	add	x1, x1, #0x0
+[31m    e8cc:	94000000 	bl	0 <sprintf>[0m
+    e8d0:	93407c00 	sxtw	x0, w0
+    e8d4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e8d8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e8dc:	d65f03c0 	ret
+
+000000000000e8e0 <multicast_query_interval_show>:
+    e8e0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e8e4:	910003fd 	mov	x29, sp
+    e8e8:	a90153f3 	stp	x19, x20, [sp, #16]
+    e8ec:	aa0003f4 	mov	x20, x0
+    e8f0:	aa0203f3 	mov	x19, x2
+    e8f4:	aa1e03e0 	mov	x0, x30
+    e8f8:	94000000 	bl	0 <_mcount>
+    e8fc:	f942de80 	ldr	x0, [x20, #1464]
+    e900:	94000000 	bl	0 <jiffies_to_clock_t>
+    e904:	aa0003e2 	mov	x2, x0
+    e908:	90000001 	adrp	x1, 0 <br_device_event>
+    e90c:	aa1303e0 	mov	x0, x19
+    e910:	91000021 	add	x1, x1, #0x0
+[31m    e914:	94000000 	bl	0 <sprintf>[0m
+    e918:	93407c00 	sxtw	x0, w0
+    e91c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e920:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e924:	d65f03c0 	ret
+
+000000000000e928 <multicast_querier_interval_show>:
+    e928:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e92c:	910003fd 	mov	x29, sp
+    e930:	a90153f3 	stp	x19, x20, [sp, #16]
+    e934:	aa0003f4 	mov	x20, x0
+    e938:	aa0203f3 	mov	x19, x2
+    e93c:	aa1e03e0 	mov	x0, x30
+    e940:	94000000 	bl	0 <_mcount>
+    e944:	f942da80 	ldr	x0, [x20, #1456]
+    e948:	94000000 	bl	0 <jiffies_to_clock_t>
+    e94c:	aa0003e2 	mov	x2, x0
+    e950:	90000001 	adrp	x1, 0 <br_device_event>
+    e954:	aa1303e0 	mov	x0, x19
+    e958:	91000021 	add	x1, x1, #0x0
+[31m    e95c:	94000000 	bl	0 <sprintf>[0m
+    e960:	93407c00 	sxtw	x0, w0
+    e964:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e968:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e96c:	d65f03c0 	ret
+
+000000000000e970 <multicast_membership_interval_show>:
+    e970:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e974:	910003fd 	mov	x29, sp
+    e978:	a90153f3 	stp	x19, x20, [sp, #16]
+    e97c:	aa0003f4 	mov	x20, x0
+    e980:	aa0203f3 	mov	x19, x2
+    e984:	aa1e03e0 	mov	x0, x30
+    e988:	94000000 	bl	0 <_mcount>
+    e98c:	f942d680 	ldr	x0, [x20, #1448]
+    e990:	94000000 	bl	0 <jiffies_to_clock_t>
+    e994:	aa0003e2 	mov	x2, x0
+    e998:	90000001 	adrp	x1, 0 <br_device_event>
+    e99c:	aa1303e0 	mov	x0, x19
+    e9a0:	91000021 	add	x1, x1, #0x0
+[31m    e9a4:	94000000 	bl	0 <sprintf>[0m
+    e9a8:	93407c00 	sxtw	x0, w0
+    e9ac:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e9b0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e9b4:	d65f03c0 	ret
+
+000000000000e9b8 <multicast_last_member_interval_show>:
+    e9b8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    e9bc:	910003fd 	mov	x29, sp
+    e9c0:	a90153f3 	stp	x19, x20, [sp, #16]
+    e9c4:	aa0003f4 	mov	x20, x0
+    e9c8:	aa0203f3 	mov	x19, x2
+    e9cc:	aa1e03e0 	mov	x0, x30
+    e9d0:	94000000 	bl	0 <_mcount>
+    e9d4:	f942d280 	ldr	x0, [x20, #1440]
+    e9d8:	94000000 	bl	0 <jiffies_to_clock_t>
+    e9dc:	aa0003e2 	mov	x2, x0
+    e9e0:	90000001 	adrp	x1, 0 <br_device_event>
+    e9e4:	aa1303e0 	mov	x0, x19
+    e9e8:	91000021 	add	x1, x1, #0x0
+[31m    e9ec:	94000000 	bl	0 <sprintf>[0m
+    e9f0:	93407c00 	sxtw	x0, w0
+    e9f4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e9f8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    e9fc:	d65f03c0 	ret
+
+000000000000ea00 <ageing_time_show>:
+    ea00:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ea04:	910003fd 	mov	x29, sp
+    ea08:	a90153f3 	stp	x19, x20, [sp, #16]
+    ea0c:	aa0003f4 	mov	x20, x0
+    ea10:	aa0203f3 	mov	x19, x2
+    ea14:	aa1e03e0 	mov	x0, x30
+    ea18:	94000000 	bl	0 <_mcount>
+    ea1c:	f942aa80 	ldr	x0, [x20, #1360]
+    ea20:	94000000 	bl	0 <jiffies_to_clock_t>
+    ea24:	aa0003e2 	mov	x2, x0
+    ea28:	90000001 	adrp	x1, 0 <br_device_event>
+    ea2c:	aa1303e0 	mov	x0, x19
+    ea30:	91000021 	add	x1, x1, #0x0
+[31m    ea34:	94000000 	bl	0 <sprintf>[0m
+    ea38:	93407c00 	sxtw	x0, w0
+    ea3c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    ea40:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    ea44:	d65f03c0 	ret
+
+000000000000ea48 <max_age_show>:
+    ea48:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ea4c:	910003fd 	mov	x29, sp
+    ea50:	a90153f3 	stp	x19, x20, [sp, #16]
+    ea54:	aa0003f4 	mov	x20, x0
+    ea58:	aa0203f3 	mov	x19, x2
+    ea5c:	aa1e03e0 	mov	x0, x30
+    ea60:	94000000 	bl	0 <_mcount>
+    ea64:	f9429e80 	ldr	x0, [x20, #1336]
+    ea68:	94000000 	bl	0 <jiffies_to_clock_t>
+    ea6c:	aa0003e2 	mov	x2, x0
+    ea70:	90000001 	adrp	x1, 0 <br_device_event>
+    ea74:	aa1303e0 	mov	x0, x19
+    ea78:	91000021 	add	x1, x1, #0x0
+[31m    ea7c:	94000000 	bl	0 <sprintf>[0m
+    ea80:	93407c00 	sxtw	x0, w0
+    ea84:	a94153f3 	ldp	x19, x20, [sp, #16]
+    ea88:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    ea8c:	d65f03c0 	ret
+
+000000000000ea90 <hello_time_show>:
+    ea90:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ea94:	910003fd 	mov	x29, sp
+    ea98:	a90153f3 	stp	x19, x20, [sp, #16]
+    ea9c:	aa0003f4 	mov	x20, x0
+    eaa0:	aa0203f3 	mov	x19, x2
+    eaa4:	aa1e03e0 	mov	x0, x30
+    eaa8:	94000000 	bl	0 <_mcount>
+    eaac:	f942a280 	ldr	x0, [x20, #1344]
+    eab0:	94000000 	bl	0 <jiffies_to_clock_t>
+    eab4:	aa0003e2 	mov	x2, x0
+    eab8:	90000001 	adrp	x1, 0 <br_device_event>
+    eabc:	aa1303e0 	mov	x0, x19
+    eac0:	91000021 	add	x1, x1, #0x0
+[31m    eac4:	94000000 	bl	0 <sprintf>[0m
+    eac8:	93407c00 	sxtw	x0, w0
+    eacc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    ead0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    ead4:	d65f03c0 	ret
+
+000000000000ead8 <forward_delay_show>:
+    ead8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    eadc:	910003fd 	mov	x29, sp
+    eae0:	a90153f3 	stp	x19, x20, [sp, #16]
+    eae4:	aa0003f4 	mov	x20, x0
+    eae8:	aa0203f3 	mov	x19, x2
+    eaec:	aa1e03e0 	mov	x0, x30
+    eaf0:	94000000 	bl	0 <_mcount>
+    eaf4:	f942a680 	ldr	x0, [x20, #1352]
+    eaf8:	94000000 	bl	0 <jiffies_to_clock_t>
+    eafc:	aa0003e2 	mov	x2, x0
+    eb00:	90000001 	adrp	x1, 0 <br_device_event>
+    eb04:	aa1303e0 	mov	x0, x19
+    eb08:	91000021 	add	x1, x1, #0x0
+[31m    eb0c:	94000000 	bl	0 <sprintf>[0m
+    eb10:	93407c00 	sxtw	x0, w0
+    eb14:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    eb50:	94000000 	bl	4a8 <br_boolopt_toggle>
+    eb54:	a94153f3 	ldp	x19, x20, [sp, #16]
+    eb58:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    eb5c:	d65f03c0 	ret
+
+000000000000eb60 <no_linklocal_learn_show>:
+    eb60:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    eb64:	910003fd 	mov	x29, sp
+    eb68:	a90153f3 	stp	x19, x20, [sp, #16]
+    eb6c:	aa0203f3 	mov	x19, x2
+    eb70:	aa0003f4 	mov	x20, x0
+    eb74:	aa1e03e0 	mov	x0, x30
+    eb78:	94000000 	bl	0 <_mcount>
+    eb7c:	910e0280 	add	x0, x20, #0x380
+    eb80:	52800001 	mov	w1, #0x0                   	// #0
+    eb84:	94000000 	bl	360 <br_boolopt_get>
+    eb88:	2a0003e2 	mov	w2, w0
+    eb8c:	90000001 	adrp	x1, 0 <br_device_event>
+    eb90:	aa1303e0 	mov	x0, x19
+    eb94:	91000021 	add	x1, x1, #0x0
+[31m    eb98:	94000000 	bl	0 <sprintf>[0m
+    eb9c:	93407c00 	sxtw	x0, w0
+    eba0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    ebcc:	94000000 	bl	2af8 <br_fdb_flush>
+    ebd0:	52800000 	mov	w0, #0x0                   	// #0
+    ebd4:	f9400bf3 	ldr	x19, [sp, #16]
+    ebd8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    ebdc:	d65f03c0 	ret
+
+000000000000ebe0 <gc_timer_show>:
+    ebe0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ebe4:	910003fd 	mov	x29, sp
+    ebe8:	a90153f3 	stp	x19, x20, [sp, #16]
+    ebec:	aa0203f3 	mov	x19, x2
+    ebf0:	aa0003f4 	mov	x20, x0
+    ebf4:	aa1e03e0 	mov	x0, x30
+    ebf8:	94000000 	bl	0 <_mcount>
+    ebfc:	9120c280 	add	x0, x20, #0x830
+    ec00:	94000000 	bl	9b30 <br_timer_value>
+    ec04:	90000001 	adrp	x1, 0 <br_device_event>
+    ec08:	aa0003e2 	mov	x2, x0
+    ec0c:	91000021 	add	x1, x1, #0x0
+    ec10:	aa1303e0 	mov	x0, x19
+[31m    ec14:	94000000 	bl	0 <sprintf>[0m
+    ec18:	93407c00 	sxtw	x0, w0
+    ec1c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    ec20:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    ec24:	d65f03c0 	ret
+
+000000000000ec28 <topology_change_timer_show>:
+    ec28:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ec2c:	910003fd 	mov	x29, sp
+    ec30:	a90153f3 	stp	x19, x20, [sp, #16]
+    ec34:	aa0203f3 	mov	x19, x2
+    ec38:	aa0003f4 	mov	x20, x0
+    ec3c:	aa1e03e0 	mov	x0, x30
+    ec40:	94000000 	bl	0 <_mcount>
+    ec44:	911fa280 	add	x0, x20, #0x7e8
+    ec48:	94000000 	bl	9b30 <br_timer_value>
+    ec4c:	90000001 	adrp	x1, 0 <br_device_event>
+    ec50:	aa0003e2 	mov	x2, x0
+    ec54:	91000021 	add	x1, x1, #0x0
+    ec58:	aa1303e0 	mov	x0, x19
+[31m    ec5c:	94000000 	bl	0 <sprintf>[0m
+    ec60:	93407c00 	sxtw	x0, w0
+    ec64:	a94153f3 	ldp	x19, x20, [sp, #16]
+    ec68:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    ec6c:	d65f03c0 	ret
+
+000000000000ec70 <tcn_timer_show>:
+    ec70:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ec74:	910003fd 	mov	x29, sp
+    ec78:	a90153f3 	stp	x19, x20, [sp, #16]
+    ec7c:	aa0203f3 	mov	x19, x2
+    ec80:	aa0003f4 	mov	x20, x0
+    ec84:	aa1e03e0 	mov	x0, x30
+    ec88:	94000000 	bl	0 <_mcount>
+    ec8c:	911f0280 	add	x0, x20, #0x7c0
+    ec90:	94000000 	bl	9b30 <br_timer_value>
+    ec94:	90000001 	adrp	x1, 0 <br_device_event>
+    ec98:	aa0003e2 	mov	x2, x0
+    ec9c:	91000021 	add	x1, x1, #0x0
+    eca0:	aa1303e0 	mov	x0, x19
+[31m    eca4:	94000000 	bl	0 <sprintf>[0m
+    eca8:	93407c00 	sxtw	x0, w0
+    ecac:	a94153f3 	ldp	x19, x20, [sp, #16]
+    ecb0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    ecb4:	d65f03c0 	ret
+
+000000000000ecb8 <hello_timer_show>:
+    ecb8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    ecbc:	910003fd 	mov	x29, sp
+    ecc0:	a90153f3 	stp	x19, x20, [sp, #16]
+    ecc4:	aa0203f3 	mov	x19, x2
+    ecc8:	aa0003f4 	mov	x20, x0
+    eccc:	aa1e03e0 	mov	x0, x30
+    ecd0:	94000000 	bl	0 <_mcount>
+    ecd4:	911e6280 	add	x0, x20, #0x798
+    ecd8:	94000000 	bl	9b30 <br_timer_value>
+    ecdc:	90000001 	adrp	x1, 0 <br_device_event>
+    ece0:	aa0003e2 	mov	x2, x0
+    ece4:	91000021 	add	x1, x1, #0x0
+    ece8:	aa1303e0 	mov	x0, x19
+[31m    ecec:	94000000 	bl	0 <sprintf>[0m
+    ecf0:	93407c00 	sxtw	x0, w0
+    ecf4:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m66[0m times [0;33mbridge.ko[0m
+

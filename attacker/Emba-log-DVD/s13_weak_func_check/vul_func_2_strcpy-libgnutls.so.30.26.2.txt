@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibgnutls.so.30.26.2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibgnutls.so.30.26.2[0m
+
+  134270:	a94363f7 	ldp	x23, x24, [sp, #48]
+  134274:	a8c67bfd 	ldp	x29, x30, [sp], #96
+  134278:	d65f03c0 	ret
+  13427c:	12113400 	and	w0, w0, #0x1fff8000
+  134280:	12044c00 	and	w0, w0, #0xf000ffff
+  134284:	35ffeea0 	cbnz	w0, 134058 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf368>
+  134288:	f9402a60 	ldr	x0, [x19, #80]
+  13428c:	b5ffee60 	cbnz	x0, 134058 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf368>
+  134290:	528000a0 	mov	w0, #0x5                   	// #5
+  134294:	17fffff0 	b	134254 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf564>
+  134298:	f9403273 	ldr	x19, [x19, #96]
+  13429c:	aa1303e0 	mov	x0, x19
+  1342a0:	97fbf2e0 	bl	30e20 <strlen@plt>
+  1342a4:	11000400 	add	w0, w0, #0x1
+  1342a8:	b9000300 	str	w0, [x24]
+  1342ac:	6b17001f 	cmp	w0, w23
+  1342b0:	5400070c 	b.gt	134390 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf6a0>
+  1342b4:	b40006b5 	cbz	x21, 134388 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf698>
+  1342b8:	aa1303e1 	mov	x1, x19
+  1342bc:	aa1503e0 	mov	x0, x21
+[31m  1342c0:	97fbfcc4 	bl	335d0 <strcpy@plt>[0m
+  1342c4:	52800000 	mov	w0, #0x0                   	// #0
+  1342c8:	17ffffe3 	b	134254 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf564>
+--
+  1343bc:	f9402a60 	ldr	x0, [x19, #80]
+  1343c0:	aa1803e5 	mov	x5, x24
+  1343c4:	2a1703e4 	mov	w4, w23
+  1343c8:	aa1503e3 	mov	x3, x21
+  1343cc:	910143e2 	add	x2, sp, #0x50
+  1343d0:	b90053e6 	str	w6, [sp, #80]
+  1343d4:	97ffe947 	bl	12e8f0 <gnutls_group_get_name@@GNUTLS_3_6_0+0x9c00>
+  1343d8:	17ffff9f 	b	134254 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf564>
+  1343dc:	f9402a76 	ldr	x22, [x19, #80]
+  1343e0:	36780040 	tbz	w0, #15, 1343e8 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf6f8>
+  1343e4:	b4000916 	cbz	x22, 134504 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf814>
+  1343e8:	aa1603e0 	mov	x0, x22
+  1343ec:	97fbf28d 	bl	30e20 <strlen@plt>
+  1343f0:	11000400 	add	w0, w0, #0x1
+  1343f4:	b9000300 	str	w0, [x24]
+  1343f8:	6b17001f 	cmp	w0, w23
+  1343fc:	54fffcac 	b.gt	134390 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf6a0>
+  134400:	b4fffc55 	cbz	x21, 134388 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf698>
+  134404:	aa1603e1 	mov	x1, x22
+  134408:	aa1503e0 	mov	x0, x21
+[31m  13440c:	97fbfc71 	bl	335d0 <strcpy@plt>[0m
+  134410:	52800000 	mov	w0, #0x0                   	// #0
+  134414:	17ffff90 	b	134254 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf564>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mlibgnutls.so.30.26.2[0m
+

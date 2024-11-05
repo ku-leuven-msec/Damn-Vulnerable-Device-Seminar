@@ -1,0 +1,27 @@
+[[0;34m+[0m] [0;36m[1mCheck SSH[0m
+[1m=================================================================[0m
+
+[0;34m==>[0m [0;36mSearch ssh files[0m
+-----------------------------------------------------------------
+[[0;32m+[0m][0;32m Found 2 ssh configuration files:[0m
+    [0;33m/log/firmware/firmware/etc/ssh/sshd_config (-rw-r--r-- root root)[0m
+[[0;33m*[0m] Testing sshd configuration file with sshdcc
+[[0;33m*[0m] 
+[[0;32m+[0m][0;32m (1) [WARNING] root login with password is enabled[0m
+[[0;33m*[0m]     #> LINE 32: PermitRootLogin yes
+[[0;33m*[0m]     Why?
+[[0;33m*[0m] 
+[[0;32m+[0m][0;32m (2) [WARNING] empty passwords are allowed globally[0m
+[[0;33m*[0m]     #> LINE 58: PermitEmptyPasswords yes
+[[0;33m*[0m]     Please use Match blocks to allow password-less logins for specific accounts
+[[0;33m*[0m]     only rather than globally.
+[[0;33m*[0m] 
+    [0;33m/log/firmware/firmware/home/client/.ssh/authorized_keys (-rw------- root root)[0m
+
+[0;34m==>[0m [0;36mCheck squid[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No possible squid executable found
+[[0;31m-[0m] No squid configuration found
+
+[*] Statistics:2
+[[0;33m*[0m] Sun Nov 14 07:33:13 EST 2021 - S85_ssh_check finished

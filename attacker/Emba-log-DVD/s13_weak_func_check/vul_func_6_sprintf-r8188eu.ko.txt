@@ -1,0 +1,143 @@
+[[0;33m*[0m] Binary protection state of [0;33mr8188eu.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1549) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mr8188eu.ko[0m
+
+   39764:	91400680 	add	x0, x20, #0x1, lsl #12
+   39768:	39610805 	ldrb	w5, [x0, #2114]
+   3976c:	39610c06 	ldrb	w6, [x0, #2115]
+   39770:	17ffffb7 	b	3964c <translate_scan+0x43c>
+   39774:	aa1703f9 	mov	x25, x23
+   39778:	d28e6e40 	mov	x0, #0x7372                	// #29554
+   3977c:	f2abedc0 	movk	x0, #0x5f6e, lsl #16
+   39780:	9000001b 	adrp	x27, 0 <rtw_ht_operation_update.part.0>
+   39784:	f2ccad20 	movk	x0, #0x6569, lsl #32
+   39788:	910827fc 	add	x28, sp, #0x209
+   3978c:	9100037b 	add	x27, x27, #0x0
+   39790:	f2e007a0 	movk	x0, #0x3d, lsl #48
+   39794:	5280001a 	mov	w26, #0x0                   	// #0
+   39798:	f8007720 	str	x0, [x25], #7
+   3979c:	d503201f 	nop
+   397a0:	38401782 	ldrb	w2, [x28], #1
+   397a4:	aa1903e0 	mov	x0, x25
+   397a8:	aa1b03e1 	mov	x1, x27
+   397ac:	1100075a 	add	w26, w26, #0x1
+   397b0:	91000b39 	add	x25, x25, #0x2
+[31m   397b4:	94000000 	bl	0 <sprintf>[0m
+   397b8:	79415be0 	ldrh	w0, [sp, #172]
+   397bc:	6b1a001f 	cmp	w0, w26
+--
+   39824:	790183e5 	strh	w5, [sp, #192]
+   39828:	94000000 	bl	0 <iwe_stream_add_point>
+   3982c:	aa0003f8 	mov	x24, x0
+   39830:	17ffff57 	b	3958c <translate_scan+0x37c>
+   39834:	aa1703f9 	mov	x25, x23
+   39838:	d28e0ee0 	mov	x0, #0x7077                	// #28791
+   3983c:	f2abec20 	movk	x0, #0x5f61, lsl #16
+   39840:	9000001b 	adrp	x27, 0 <rtw_ht_operation_update.part.0>
+   39844:	f2ccad20 	movk	x0, #0x6569, lsl #32
+   39848:	91042bfc 	add	x28, sp, #0x10a
+   3984c:	9100037b 	add	x27, x27, #0x0
+   39850:	f2e007a0 	movk	x0, #0x3d, lsl #48
+   39854:	5280001a 	mov	w26, #0x0                   	// #0
+   39858:	f8007720 	str	x0, [x25], #7
+   3985c:	d503201f 	nop
+   39860:	38401782 	ldrb	w2, [x28], #1
+   39864:	aa1903e0 	mov	x0, x25
+   39868:	aa1b03e1 	mov	x1, x27
+   3986c:	1100075a 	add	w26, w26, #0x1
+   39870:	91000b39 	add	x25, x25, #0x2
+[31m   39874:	94000000 	bl	0 <sprintf>[0m
+   39878:	79414fe0 	ldrh	w0, [sp, #166]
+   3987c:	6b1a001f 	cmp	w0, w26
+--
+   3c280:	94000000 	bl	0 <memset>
+   3c284:	90000000 	adrp	x0, 0 <rtw_ht_operation_update.part.0>
+   3c288:	91000000 	add	x0, x0, #0x0
+   3c28c:	52802001 	mov	w1, #0x100                 	// #256
+   3c290:	9000001a 	adrp	x26, 0 <rtw_ht_operation_update.part.0>
+   3c294:	91004af3 	add	x19, x23, #0x12
+   3c298:	9100035a 	add	x26, x26, #0x0
+   3c29c:	a9400c02 	ldp	x2, x3, [x0]
+   3c2a0:	a9000ee2 	stp	x2, x3, [x23]
+   3c2a4:	b840f000 	ldur	w0, [x0, #15]
+   3c2a8:	b800f2e0 	stur	w0, [x23, #15]
+   3c2ac:	52800014 	mov	w20, #0x0                   	// #0
+   3c2b0:	394006b9 	ldrb	w25, [x21, #1]
+   3c2b4:	11000b39 	add	w25, w25, #0x2
+   3c2b8:	6b01033f 	cmp	w25, w1
+   3c2bc:	1a819339 	csel	w25, w25, w1, ls  // ls = plast
+   3c2c0:	92401e82 	and	x2, x20, #0xff
+   3c2c4:	aa1303e0 	mov	x0, x19
+   3c2c8:	aa1a03e1 	mov	x1, x26
+   3c2cc:	38626aa2 	ldrb	w2, [x21, x2]
+[31m   3c2d0:	94000000 	bl	0 <sprintf>[0m
+   3c2d4:	11000683 	add	w3, w20, #0x1
+   3c2d8:	aa1303e2 	mov	x2, x19
+--
+  3c:	91000000 	add	x0, x0, #0x0
+  40:	d5384102 	mrs	x2, sp_el0
+  44:	7100047f 	cmp	w3, #0x1
+  48:	f9428c43 	ldr	x3, [x2, #1304]
+  4c:	f9006fe3 	str	x3, [sp, #216]
+  50:	d2800003 	mov	x3, #0x0                   	// #0
+  54:	90000001 	adrp	x1, 0 <dump_chip_info>
+  58:	90000002 	adrp	x2, 0 <dump_chip_info>
+  5c:	a9401404 	ldp	x4, x5, [x0]
+  60:	91000021 	add	x1, x1, #0x0
+  64:	f9400803 	ldr	x3, [x0, #16]
+  68:	f90037e3 	str	x3, [sp, #104]
+  6c:	f8417003 	ldur	x3, [x0, #23]
+  70:	91000042 	add	x2, x2, #0x0
+  74:	9a810042 	csel	x2, x2, x1, eq  // eq = none
+  78:	aa1703e1 	mov	x1, x23
+  7c:	91007a80 	add	x0, x20, #0x1e
+  80:	a90597e4 	stp	x4, x5, [sp, #88]
+  84:	d5384116 	mrs	x22, sp_el0
+  88:	f806f3e3 	stur	x3, [sp, #111]
+[31m  8c:	94000000 	bl	0 <sprintf>[0m
+  90:	b9404be1 	ldr	w1, [sp, #72]
+  94:	90000003 	adrp	x3, 0 <dump_chip_info>
+  98:	91000063 	add	x3, x3, #0x0
+  9c:	2a0003f3 	mov	w19, w0
+  a0:	7100003f 	cmp	w1, #0x0
+  a4:	90000002 	adrp	x2, 0 <dump_chip_info>
+  a8:	91000042 	add	x2, x2, #0x0
+  ac:	11007a73 	add	w19, w19, #0x1e
+  b0:	9a830042 	csel	x2, x2, x3, eq  // eq = none
+  b4:	11007800 	add	w0, w0, #0x1e
+  b8:	8b000280 	add	x0, x20, x0
+  bc:	aa1703e1 	mov	x1, x23
+[31m  c0:	94000000 	bl	0 <sprintf>[0m
+  c4:	0b130002 	add	w2, w0, w19
+  c8:	0b130013 	add	w19, w0, w19
+--
+ 100:	b8003002 	stur	w2, [x0, #3]
+ 104:	14000015 	b	158 <dump_chip_info+0x158>
+ 108:	71000abf 	cmp	w21, #0x2
+ 10c:	54000081 	b.ne	11c <dump_chip_info+0x11c>  // b.any
+ 110:	90000003 	adrp	x3, 0 <dump_chip_info>
+ 114:	91000063 	add	x3, x3, #0x0
+ 118:	17fffff6 	b	f0 <dump_chip_info+0xf0>
+ 11c:	71000ebf 	cmp	w21, #0x3
+ 120:	54000081 	b.ne	130 <dump_chip_info+0x130>  // b.any
+ 124:	90000003 	adrp	x3, 0 <dump_chip_info>
+ 128:	91000063 	add	x3, x3, #0x0
+ 12c:	17fffff1 	b	f0 <dump_chip_info+0xf0>
+ 130:	710012bf 	cmp	w21, #0x4
+ 134:	54000081 	b.ne	144 <dump_chip_info+0x144>  // b.any
+ 138:	90000003 	adrp	x3, 0 <dump_chip_info>
+ 13c:	91000063 	add	x3, x3, #0x0
+ 140:	17ffffec 	b	f0 <dump_chip_info+0xf0>
+ 144:	90000001 	adrp	x1, 0 <dump_chip_info>
+ 148:	91000021 	add	x1, x1, #0x0
+ 14c:	2a1503e2 	mov	w2, w21
+[31m 150:	94000000 	bl	0 <sprintf>[0m
+ 154:	0b130001 	add	w1, w0, w19
+ 158:	90000000 	adrp	x0, 0 <dump_chip_info>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m6[0m times [0;33mr8188eu.ko[0m
+

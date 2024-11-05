@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m767) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msnd.ko[0m
+
+    1094:	aa1303e2 	mov	x2, x19
+    1098:	910123f4 	add	x20, sp, #0x48
+    109c:	90000018 	adrp	x24, 0 <snd_lookup_minor_data>
+    10a0:	aa1403e0 	mov	x0, x20
+    10a4:	91000318 	add	x24, x24, #0x0
+    10a8:	94000000 	bl	0 <memcpy>
+    10ac:	aa1803e0 	mov	x0, x24
+    10b0:	38336a9f 	strb	wzr, [x20, x19]
+    10b4:	94000000 	bl	0 <mutex_lock>
+    10b8:	aa1403e0 	mov	x0, x20
+    10bc:	94000000 	bl	8d60 <snd_info_check_reserved_words>
+    10c0:	34000360 	cbz	w0, 112c <card_id_store_attr+0x11c>
+    10c4:	aa1403e1 	mov	x1, x20
+    10c8:	d2800000 	mov	x0, #0x0                   	// #0
+    10cc:	97ffffa5 	bl	f60 <card_id_ok.part.0>
+    10d0:	72001c1f 	tst	w0, #0xff
+    10d4:	540002c0 	b.eq	112c <card_id_store_attr+0x11c>  // b.none
+    10d8:	aa1403e1 	mov	x1, x20
+    10dc:	d114a2b5 	sub	x21, x21, #0x528
+    10e0:	910012a0 	add	x0, x21, #0x4
+[31m    10e4:	94000000 	bl	0 <strcpy>[0m
+    10e8:	aa1503e0 	mov	x0, x21
+    10ec:	94000000 	bl	8f58 <snd_info_card_id_change>
+--
+    3be8:	a9440680 	ldp	x0, x1, [x20, #64]
+    3bec:	a90306a0 	stp	x0, x1, [x21, #48]
+    3bf0:	6b18027f 	cmp	w19, w24
+    3bf4:	b9403ea0 	ldr	w0, [x21, #60]
+    3bf8:	0b160042 	add	w2, w2, w22
+    3bfc:	1a989273 	csel	w19, w19, w24, ls  // ls = plast
+    3c00:	b90002a2 	str	w2, [x21]
+    3c04:	0b160016 	add	w22, w0, w22
+    3c08:	b9003eb6 	str	w22, [x21, #60]
+    3c0c:	b90056b3 	str	w19, [x21, #84]
+    3c10:	f9409ef4 	ldr	x20, [x23, #312]
+    3c14:	340000f3 	cbz	w19, 3c30 <snd_ctl_elem_user_enum_info+0xd0>
+    3c18:	aa1403e0 	mov	x0, x20
+    3c1c:	94000000 	bl	0 <strlen>
+    3c20:	91000400 	add	x0, x0, #0x1
+    3c24:	71000673 	subs	w19, w19, #0x1
+    3c28:	8b000294 	add	x20, x20, x0
+    3c2c:	54ffff61 	b.ne	3c18 <snd_ctl_elem_user_enum_info+0xb8>  // b.any
+    3c30:	aa1403e1 	mov	x1, x20
+    3c34:	910162a0 	add	x0, x21, #0x58
+[31m    3c38:	94000000 	bl	0 <strcpy>[0m
+    3c3c:	52800000 	mov	w0, #0x0                   	// #0
+    3c40:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33msnd.ko[0m
+

@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m767) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd.ko[0m
+
+    1790:	54000460 	b.eq	181c <snd_card_set_id_no_lock+0x174>  // b.none
+    1794:	aa1403e0 	mov	x0, x20
+    1798:	90000016 	adrp	x22, 0 <snd_lookup_minor_data>
+    179c:	94000000 	bl	0 <strlen>
+    17a0:	910002d6 	add	x22, x22, #0x0
+    17a4:	2a0003f5 	mov	w21, w0
+    17a8:	8b20c298 	add	x24, x20, w0, sxtw
+    17ac:	52800013 	mov	w19, #0x0                   	// #0
+    17b0:	aa1403e0 	mov	x0, x20
+    17b4:	94000000 	bl	8d60 <snd_info_check_reserved_words>
+    17b8:	340000c0 	cbz	w0, 17d0 <snd_card_set_id_no_lock+0x128>
+    17bc:	aa1403e1 	mov	x1, x20
+    17c0:	aa1703e0 	mov	x0, x23
+    17c4:	97fffde7 	bl	f60 <card_id_ok.part.0>
+    17c8:	72001c1f 	tst	w0, #0xff
+    17cc:	540004e1 	b.ne	1868 <snd_card_set_id_no_lock+0x1c0>  // b.any
+    17d0:	11000673 	add	w19, w19, #0x1
+    17d4:	aa1603e1 	mov	x1, x22
+    17d8:	2a1303e2 	mov	w2, w19
+    17dc:	91014fe0 	add	x0, sp, #0x53
+[31m    17e0:	94000000 	bl	0 <sprintf>[0m
+    17e4:	91014fe0 	add	x0, sp, #0x53
+    17e8:	94000000 	bl	0 <strlen>
+--
+    8dcc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    8dd0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    8dd4:	d65f03c0 	ret
+
+0000000000008dd8 <snd_info_card_create>:
+    8dd8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+    8ddc:	910003fd 	mov	x29, sp
+    8de0:	a90153f3 	stp	x19, x20, [sp, #16]
+    8de4:	d5384114 	mrs	x20, sp_el0
+    8de8:	aa0003f3 	mov	x19, x0
+    8dec:	aa1e03e0 	mov	x0, x30
+    8df0:	94000000 	bl	0 <_mcount>
+    8df4:	f9428e81 	ldr	x1, [x20, #1304]
+    8df8:	f90017e1 	str	x1, [sp, #40]
+    8dfc:	d2800001 	mov	x1, #0x0                   	// #0
+    8e00:	b40003f3 	cbz	x19, 8e7c <snd_info_card_create+0xa4>
+    8e04:	b9400262 	ldr	w2, [x19]
+    8e08:	910083e0 	add	x0, sp, #0x20
+    8e0c:	90000001 	adrp	x1, 0 <snd_lookup_minor_data>
+    8e10:	91000021 	add	x1, x1, #0x0
+[31m    8e14:	94000000 	bl	0 <sprintf>[0m
+    8e18:	910083e1 	add	x1, sp, #0x20
+    8e1c:	f940c660 	ldr	x0, [x19, #392]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33msnd.ko[0m
+

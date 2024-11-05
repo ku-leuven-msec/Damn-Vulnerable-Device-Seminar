@@ -1,0 +1,352 @@
+[[0;33m*[0m] Binary protection state of [0;33mcifs.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m2871) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mcifs.ko[0m
+
+    a474:	f9402bfb 	ldr	x27, [sp, #80]
+    a478:	911462b5 	add	x21, x21, #0x518
+    a47c:	f9404fe1 	ldr	x1, [sp, #152]
+    a480:	f94002a0 	ldr	x0, [x21]
+    a484:	ca000020 	eor	x0, x1, x0
+    a488:	b5000300 	cbnz	x0, a4e8 <CIFSSMBRenameOpenFile+0x1d0>
+    a48c:	2a1403e0 	mov	w0, w20
+    a490:	a94153f3 	ldp	x19, x20, [sp, #16]
+    a494:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    a498:	a94363f7 	ldp	x23, x24, [sp, #48]
+    a49c:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    a4a0:	a8ca7bfd 	ldp	x29, x30, [sp], #160
+    a4a4:	d65f03c0 	ret
+    a4a8:	9116a262 	add	x2, x19, #0x5a8
+    a4ac:	140011f9 	b	ec90 <CIFSSMBSetEA+0x558>
+    a4b0:	17ffffef 	b	a46c <CIFSSMBRenameOpenFile+0x154>
+    a4b4:	79404682 	ldrh	w2, [x20, #34]
+    a4b8:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+    a4bc:	91000021 	add	x1, x1, #0x0
+    a4c0:	9101ebe0 	add	x0, sp, #0x7a
+[31m    a4c4:	94000000 	bl	0 <sprintf>[0m
+    a4c8:	9101ebe1 	add	x1, sp, #0x7a
+    a4cc:	2a1a03e4 	mov	w4, w26
+--
+   17228:	a94363f7 	ldp	x23, x24, [sp, #48]
+   1722c:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   17230:	a8cd7bfd 	ldp	x29, x30, [sp], #208
+   17234:	d65f03c0 	ret
+   17238:	f9400273 	ldr	x19, [x19]
+   1723c:	eb19027f 	cmp	x19, x25
+   17240:	54fff9a1 	b.ne	17174 <cifs_get_smb_ses+0x64>  // b.any
+   17244:	aa1703e0 	mov	x0, x23
+   17248:	94000000 	bl	0 <_raw_spin_unlock>
+   1724c:	94000000 	bl	2edc0 <sesInfoAlloc>
+   17250:	aa0003f3 	mov	x19, x0
+   17254:	b4003580 	cbz	x0, 17904 <cifs_get_smb_ses+0x7f4>
+   17258:	f9002676 	str	x22, [x19, #72]
+   1725c:	91023000 	add	x0, x0, #0x8c
+   17260:	7940c2c1 	ldrh	w1, [x22, #96]
+   17264:	7100283f 	cmp	w1, #0xa
+   17268:	540011a0 	b.eq	1749c <cifs_get_smb_ses+0x38c>  // b.none
+   1726c:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   17270:	910192c2 	add	x2, x22, #0x64
+   17274:	91000021 	add	x1, x1, #0x0
+[31m   17278:	94000000 	bl	0 <sprintf>[0m
+   1727c:	f94002a0 	ldr	x0, [x21]
+   17280:	b40000a0 	cbz	x0, 17294 <cifs_get_smb_ses+0x184>
+--
+   17458:	2a1403e1 	mov	w1, w20
+   1745c:	d63f0060 	blr	x3
+   17460:	f8418ea3 	ldr	x3, [x21, #24]!
+   17464:	b5ffff63 	cbnz	x3, 17450 <cifs_get_smb_ses+0x340>
+   17468:	d5384101 	mrs	x1, sp_el0
+   1746c:	f9400820 	ldr	x0, [x1, #16]
+   17470:	d1000400 	sub	x0, x0, #0x1
+   17474:	b9001020 	str	w0, [x1, #16]
+   17478:	b50001c0 	cbnz	x0, 174b0 <cifs_get_smb_ses+0x3a0>
+   1747c:	94000000 	bl	0 <preempt_schedule_notrace>
+   17480:	17ffff62 	b	17208 <cifs_get_smb_ses+0xf8>
+   17484:	aa1903e0 	mov	x0, x25
+   17488:	17ffff59 	b	171ec <cifs_get_smb_ses+0xdc>
+   1748c:	f9400820 	ldr	x0, [x1, #16]
+   17490:	b5ffe620 	cbnz	x0, 17154 <cifs_get_smb_ses+0x44>
+   17494:	94000000 	bl	0 <preempt_schedule_notrace>
+   17498:	17ffff2f 	b	17154 <cifs_get_smb_ses+0x44>
+   1749c:	9101a2c2 	add	x2, x22, #0x68
+   174a0:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   174a4:	91000021 	add	x1, x1, #0x0
+[31m   174a8:	94000000 	bl	0 <sprintf>[0m
+   174ac:	17ffff74 	b	1727c <cifs_get_smb_ses+0x16c>
+   174b0:	f9400820 	ldr	x0, [x1, #16]
+--
+   197f4:	17ffff61 	b	19578 <cifs_sb_tlink+0x190>
+   197f8:	910082e2 	add	x2, x23, #0x20
+   197fc:	14000157 	b	19d58 <cifs_sb_tlink+0x970>
+   19800:	17ffff41 	b	19504 <cifs_sb_tlink+0x11c>
+   19804:	9100c2e2 	add	x2, x23, #0x30
+   19808:	1400015a 	b	19d70 <cifs_sb_tlink+0x988>
+   1980c:	17ffff45 	b	19520 <cifs_sb_tlink+0x138>
+   19810:	1400015e 	b	19d88 <cifs_sb_tlink+0x9a0>
+   19814:	17fffff4 	b	197e4 <cifs_sb_tlink+0x3fc>
+   19818:	aa1703e1 	mov	x1, x23
+   1981c:	aa1503e0 	mov	x0, x21
+   19820:	97ffdea0 	bl	112a0 <tlink_rb_insert>
+   19824:	aa1703f3 	mov	x19, x23
+   19828:	aa1903e0 	mov	x0, x25
+   1982c:	94000000 	bl	0 <_raw_spin_unlock>
+   19830:	17ffff76 	b	19608 <cifs_sb_tlink+0x220>
+   19834:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   19838:	9101a2a2 	add	x2, x21, #0x68
+   1983c:	91000021 	add	x1, x1, #0x0
+   19840:	a90573fb 	stp	x27, x28, [sp, #80]
+[31m   19844:	94000000 	bl	0 <sprintf>[0m
+   19848:	90000003 	adrp	x3, 0 <perf_trace_smb3_rw_err_class>
+   1984c:	9000001c 	adrp	x28, 0 <key_type_logon>
+--
+   199d8:	aa1403e1 	mov	x1, x20
+   199dc:	d2800002 	mov	x2, #0x0                   	// #0
+   199e0:	52800000 	mov	w0, #0x0                   	// #0
+   199e4:	94000000 	bl	148b8 <reset_cifs_unix_caps>
+   199e8:	17ffff5b 	b	19754 <cifs_sb_tlink+0x36c>
+   199ec:	d2800040 	mov	x0, #0x2                   	// #2
+   199f0:	140000ec 	b	19da0 <cifs_sb_tlink+0x9b8>
+   199f4:	17ffff63 	b	19780 <cifs_sb_tlink+0x398>
+   199f8:	140000f0 	b	19db8 <cifs_sb_tlink+0x9d0>
+   199fc:	17ffff00 	b	195fc <cifs_sb_tlink+0x214>
+   19a00:	aa1303e0 	mov	x0, x19
+   19a04:	92803ff3 	mov	x19, #0xfffffffffffffe00    	// #-512
+   19a08:	94000000 	bl	14458 <cifs_put_tlink>
+   19a0c:	a94363f7 	ldp	x23, x24, [sp, #48]
+   19a10:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   19a14:	17fffe8d 	b	19448 <cifs_sb_tlink+0x60>
+   19a18:	910192a2 	add	x2, x21, #0x64
+   19a1c:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   19a20:	91000021 	add	x1, x1, #0x0
+   19a24:	a90573fb 	stp	x27, x28, [sp, #80]
+[31m   19a28:	94000000 	bl	0 <sprintf>[0m
+   19a2c:	17ffff87 	b	19848 <cifs_sb_tlink+0x460>
+   19a30:	aa1b03e0 	mov	x0, x27
+--
+   19a64:	94000000 	bl	0 <key_put>
+   19a68:	aa1803e0 	mov	x0, x24
+   19a6c:	94000000 	bl	0 <kfree>
+   19a70:	a94573fb 	ldp	x27, x28, [sp, #80]
+   19a74:	34fff774 	cbz	w20, 19960 <cifs_sb_tlink+0x578>
+   19a78:	17ffff37 	b	19754 <cifs_sb_tlink+0x36c>
+   19a7c:	aa1503e0 	mov	x0, x21
+   19a80:	94000000 	bl	13638 <cifs_put_smb_ses>
+   19a84:	17ffff34 	b	19754 <cifs_sb_tlink+0x36c>
+   19a88:	aa0003f4 	mov	x20, x0
+   19a8c:	52800001 	mov	w1, #0x0                   	// #0
+   19a90:	f9402720 	ldr	x0, [x25, #72]
+   19a94:	f9402400 	ldr	x0, [x0, #72]
+   19a98:	94000000 	bl	134f8 <cifs_put_tcp_session>
+   19a9c:	17ffff2e 	b	19754 <cifs_sb_tlink+0x36c>
+   19aa0:	f9407682 	ldr	x2, [x20, #232]
+   19aa4:	b40001e2 	cbz	x2, 19ae0 <cifs_sb_tlink+0x6f8>
+   19aa8:	aa1803e0 	mov	x0, x24
+   19aac:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   19ab0:	91000021 	add	x1, x1, #0x0
+[31m   19ab4:	94000000 	bl	0 <sprintf>[0m
+   19ab8:	aa1803e1 	mov	x1, x24
+   19abc:	aa1b03e3 	mov	x3, x27
+--
+   569cc:	6b00003f 	cmp	w1, w0
+   569d0:	54001380 	b.eq	56c40 <sid_to_id+0x328>  // b.none
+   569d4:	d503201f 	nop
+   569d8:	52800160 	mov	w0, #0xb                   	// #11
+   569dc:	52819801 	mov	w1, #0xcc0                 	// #3264
+   569e0:	1b007c40 	mul	w0, w2, w0
+   569e4:	11006000 	add	w0, w0, #0x18
+   569e8:	93407c00 	sxtw	x0, w0
+   569ec:	94000000 	bl	0 <__kmalloc>
+   569f0:	aa0003f9 	mov	x25, x0
+   569f4:	b4001600 	cbz	x0, 56cb4 <sid_to_id+0x39c>
+   569f8:	710006bf 	cmp	w21, #0x1
+   569fc:	52800de2 	mov	w2, #0x6f                  	// #111
+   56a00:	52800ce0 	mov	w0, #0x67                  	// #103
+   56a04:	1a800042 	csel	w2, w2, w0, eq  // eq = none
+   56a08:	f9002bfb 	str	x27, [sp, #80]
+   56a0c:	39400263 	ldrb	w3, [x19]
+   56a10:	aa1903e0 	mov	x0, x25
+   56a14:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   56a18:	91000021 	add	x1, x1, #0x0
+[31m   56a1c:	94000000 	bl	0 <sprintf>[0m
+   56a20:	8b20c334 	add	x20, x25, w0, sxtw
+   56a24:	39400a63 	ldrb	w3, [x19, #2]
+   56a28:	b2407fe4 	mov	x4, #0xffffffff            	// #4294967295
+   56a2c:	39400e61 	ldrb	w1, [x19, #3]
+   56a30:	b9400662 	ldr	w2, [x19, #4]
+   56a34:	d3503c63 	lsl	x3, x3, #48
+   56a38:	aa018061 	orr	x1, x3, x1, lsl #32
+   56a3c:	5ac00842 	rev	w2, w2
+   56a40:	aa020022 	orr	x2, x1, x2
+   56a44:	eb04005f 	cmp	x2, x4
+   56a48:	54000a28 	b.hi	56b8c <sid_to_id+0x274>  // b.pmore
+   56a4c:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   56a50:	aa1403e0 	mov	x0, x20
+   56a54:	91000021 	add	x1, x1, #0x0
+[31m   56a58:	94000000 	bl	0 <sprintf>[0m
+   56a5c:	39400661 	ldrb	w1, [x19, #1]
+   56a60:	9000001b 	adrp	x27, 0 <perf_trace_smb3_rw_err_class>
+   56a64:	8b20c294 	add	x20, x20, w0, sxtw
+   56a68:	9100037b 	add	x27, x27, #0x0
+   56a6c:	5280001a 	mov	w26, #0x0                   	// #0
+   56a70:	34000181 	cbz	w1, 56aa0 <sid_to_id+0x188>
+   56a74:	d503201f 	nop
+   56a78:	8b3aca62 	add	x2, x19, w26, sxtw #2
+   56a7c:	aa1b03e1 	mov	x1, x27
+   56a80:	aa1403e0 	mov	x0, x20
+   56a84:	1100075a 	add	w26, w26, #0x1
+   56a88:	b9400842 	ldr	w2, [x2, #8]
+[31m   56a8c:	94000000 	bl	0 <sprintf>[0m
+   56a90:	8b20c294 	add	x20, x20, w0, sxtw
+   56a94:	39400661 	ldrb	w1, [x19, #1]
+--
+   56b48:	d65f03c0 	ret
+   56b4c:	b40000b3 	cbz	x19, 56b60 <sid_to_id+0x248>
+   56b50:	7100081f 	cmp	w0, #0x2
+   56b54:	540009e0 	b.eq	56c90 <sid_to_id+0x378>  // b.none
+   56b58:	71000c1f 	cmp	w0, #0x3
+   56b5c:	54000680 	b.eq	56c2c <sid_to_id+0x314>  // b.none
+   56b60:	52800162 	mov	w2, #0xb                   	// #11
+   56b64:	52819801 	mov	w1, #0xcc0                 	// #3264
+   56b68:	1b027c00 	mul	w0, w0, w2
+   56b6c:	11006000 	add	w0, w0, #0x18
+   56b70:	93407c00 	sxtw	x0, w0
+   56b74:	94000000 	bl	0 <__kmalloc>
+   56b78:	aa0003f9 	mov	x25, x0
+   56b7c:	b40009c0 	cbz	x0, 56cb4 <sid_to_id+0x39c>
+   56b80:	52800de2 	mov	w2, #0x6f                  	// #111
+   56b84:	f9002bfb 	str	x27, [sp, #80]
+   56b88:	17ffffa1 	b	56a0c <sid_to_id+0xf4>
+   56b8c:	aa1403e0 	mov	x0, x20
+   56b90:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   56b94:	91000021 	add	x1, x1, #0x0
+[31m   56b98:	94000000 	bl	0 <sprintf>[0m
+   56b9c:	17ffffb0 	b	56a5c <sid_to_id+0x144>
+   56ba0:	b9002ad8 	str	w24, [x22, #40]
+--
+   5940c:	f9402ab7 	ldr	x23, [x21, #80]
+   59410:	aa1703e0 	mov	x0, x23
+   59414:	94000000 	bl	0 <strlen>
+   59418:	f9407281 	ldr	x1, [x20, #224]
+   5941c:	aa0003f3 	mov	x19, x0
+   59420:	91020400 	add	x0, x0, #0x81
+   59424:	b40000a1 	cbz	x1, 59438 <cifs_get_spnego_key+0x50>
+   59428:	91021e73 	add	x19, x19, #0x87
+   5942c:	aa0103e0 	mov	x0, x1
+   59430:	94000000 	bl	0 <strlen>
+   59434:	8b000260 	add	x0, x19, x0
+   59438:	5281b801 	mov	w1, #0xdc0                 	// #3520
+   5943c:	92800176 	mov	x22, #0xfffffffffffffff4    	// #-12
+   59440:	94000000 	bl	0 <__kmalloc>
+   59444:	aa0003f3 	mov	x19, x0
+   59448:	b40001e0 	cbz	x0, 59484 <cifs_get_spnego_key+0x9c>
+   5944c:	aa1703e3 	mov	x3, x23
+   59450:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   59454:	91000021 	add	x1, x1, #0x0
+   59458:	52800042 	mov	w2, #0x2                   	// #2
+[31m   5945c:	94000000 	bl	0 <sprintf>[0m
+   59460:	aa1303e0 	mov	x0, x19
+   59464:	94000000 	bl	0 <strlen>
+   59468:	8b000260 	add	x0, x19, x0
+   5946c:	7940c2a1 	ldrh	w1, [x21, #96]
+   59470:	7100083f 	cmp	w1, #0x2
+   59474:	54000be0 	b.eq	595f0 <cifs_get_spnego_key+0x208>  // b.none
+   59478:	7100283f 	cmp	w1, #0xa
+   5947c:	928002b6 	mov	x22, #0xffffffffffffffea    	// #-22
+   59480:	54000120 	b.eq	594a4 <cifs_get_spnego_key+0xbc>  // b.none
+   59484:	aa1303e0 	mov	x0, x19
+   59488:	94000000 	bl	0 <kfree>
+   5948c:	aa1603e0 	mov	x0, x22
+   59490:	a94153f3 	ldp	x19, x20, [sp, #16]
+   59494:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   59498:	a94363f7 	ldp	x23, x24, [sp, #48]
+   5949c:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   594a0:	d65f03c0 	ret
+   594a4:	9101a2a2 	add	x2, x21, #0x68
+   594a8:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   594ac:	91000021 	add	x1, x1, #0x0
+[31m   594b0:	94000000 	bl	0 <sprintf>[0m
+   594b4:	aa1303e0 	mov	x0, x19
+   594b8:	94000000 	bl	0 <strlen>
+--
+   594d4:	90000000 	adrp	x0, 0 <perf_trace_smb3_rw_err_class>
+   594d8:	91000000 	add	x0, x0, #0x0
+   594dc:	90000017 	adrp	x23, 0 <perf_trace_smb3_rw_err_class>
+   594e0:	910002f7 	add	x23, x23, #0x0
+   594e4:	f9400001 	ldr	x1, [x0]
+   594e8:	f8366a61 	str	x1, [x19, x22]
+   594ec:	b9400800 	ldr	w0, [x0, #8]
+   594f0:	b9000b00 	str	w0, [x24, #8]
+   594f4:	aa1303e0 	mov	x0, x19
+   594f8:	94000000 	bl	0 <strlen>
+   594fc:	b9408281 	ldr	w1, [x20, #128]
+   59500:	90000015 	adrp	x21, 0 <init_user_ns>
+   59504:	910002b5 	add	x21, x21, #0x0
+   59508:	8b000276 	add	x22, x19, x0
+   5950c:	aa1503e0 	mov	x0, x21
+   59510:	94000000 	bl	0 <from_kuid_munged>
+   59514:	2a0003e2 	mov	w2, w0
+   59518:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   5951c:	91000021 	add	x1, x1, #0x0
+   59520:	aa1603e0 	mov	x0, x22
+[31m   59524:	94000000 	bl	0 <sprintf>[0m
+   59528:	aa1303e0 	mov	x0, x19
+   5952c:	94000000 	bl	0 <strlen>
+   59530:	aa0003e2 	mov	x2, x0
+   59534:	b9408681 	ldr	w1, [x20, #132]
+   59538:	aa1503e0 	mov	x0, x21
+   5953c:	8b020275 	add	x21, x19, x2
+   59540:	94000000 	bl	0 <from_kuid_munged>
+   59544:	2a0003e2 	mov	w2, w0
+   59548:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   5954c:	aa1503e0 	mov	x0, x21
+   59550:	91000021 	add	x1, x1, #0x0
+[31m   59554:	94000000 	bl	0 <sprintf>[0m
+   59558:	f9407294 	ldr	x20, [x20, #224]
+   5955c:	b4000114 	cbz	x20, 5957c <cifs_get_spnego_key+0x194>
+   59560:	aa1303e0 	mov	x0, x19
+   59564:	94000000 	bl	0 <strlen>
+   59568:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   5956c:	aa1403e2 	mov	x2, x20
+   59570:	8b000260 	add	x0, x19, x0
+   59574:	91000021 	add	x1, x1, #0x0
+[31m   59578:	94000000 	bl	0 <sprintf>[0m
+   5957c:	aa1303e0 	mov	x0, x19
+   59580:	94000000 	bl	0 <strlen>
+   59584:	d5384102 	mrs	x2, sp_el0
+   59588:	b9451042 	ldr	w2, [x2, #1296]
+   5958c:	8b000260 	add	x0, x19, x0
+   59590:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   59594:	91000021 	add	x1, x1, #0x0
+[31m   59598:	94000000 	bl	0 <sprintf>[0m
+   5959c:	90000000 	adrp	x0, 0 <perf_trace_smb3_rw_err_class>
+   595a0:	f9400000 	ldr	x0, [x0]
+--
+   595ac:	aa1303e1 	mov	x1, x19
+   595b0:	90000003 	adrp	x3, 0 <perf_trace_smb3_rw_err_class>
+   595b4:	91000063 	add	x3, x3, #0x0
+   595b8:	d2800002 	mov	x2, #0x0                   	// #0
+   595bc:	9100a2e0 	add	x0, x23, #0x28
+   595c0:	94000000 	bl	0 <request_key_tag>
+   595c4:	aa0003f6 	mov	x22, x0
+   595c8:	aa1403e0 	mov	x0, x20
+   595cc:	94000000 	bl	0 <revert_creds>
+   595d0:	aa1303e0 	mov	x0, x19
+   595d4:	94000000 	bl	0 <kfree>
+   595d8:	aa1603e0 	mov	x0, x22
+   595dc:	a94153f3 	ldp	x19, x20, [sp, #16]
+   595e0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   595e4:	a94363f7 	ldp	x23, x24, [sp, #48]
+   595e8:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   595ec:	d65f03c0 	ret
+   595f0:	910192a2 	add	x2, x21, #0x64
+   595f4:	90000001 	adrp	x1, 0 <perf_trace_smb3_rw_err_class>
+   595f8:	91000021 	add	x1, x1, #0x0
+[31m   595fc:	94000000 	bl	0 <sprintf>[0m
+   59600:	aa1303e0 	mov	x0, x19
+   59604:	94000000 	bl	0 <strlen>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m17[0m times [0;33mcifs.ko[0m
+

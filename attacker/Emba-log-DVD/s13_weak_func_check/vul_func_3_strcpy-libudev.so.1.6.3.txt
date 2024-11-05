@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibudev.so.1.6.3[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibudev.so.1.6.3[0m
+
+    d5dc:	b4001083 	cbz	x3, d7ec <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0x32c>
+    d5e0:	aa0103f4 	mov	x20, x1
+    d5e4:	aa0203f5 	mov	x21, x2
+    d5e8:	b4000e61 	cbz	x1, d7b4 <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0x2f4>
+    d5ec:	aa0103e0 	mov	x0, x1
+    d5f0:	97ffdcbc 	bl	48e0 <strlen@plt>
+    d5f4:	2a0003f3 	mov	w19, w0
+    d5f8:	aa1503e0 	mov	x0, x21
+    d5fc:	97ffdcb9 	bl	48e0 <strlen@plt>
+    d600:	0b000260 	add	w0, w19, w0
+    d604:	aa1403e1 	mov	x1, x20
+    d608:	11000400 	add	w0, w0, #0x1
+    d60c:	93407c00 	sxtw	x0, w0
+    d610:	91003c00 	add	x0, x0, #0xf
+    d614:	927cec00 	and	x0, x0, #0xfffffffffffffff0
+    d618:	cb2063ff 	sub	sp, sp, x0
+    d61c:	910003f8 	mov	x24, sp
+    d620:	aa1803e0 	mov	x0, x24
+    d624:	97ffdcf7 	bl	4a00 <stpcpy@plt>
+    d628:	aa1503e1 	mov	x1, x21
+[31m    d62c:	97ffde4d 	bl	4f60 <strcpy@plt>[0m
+    d630:	aa1803e0 	mov	x0, x24
+    d634:	97ffdcd7 	bl	4990 <opendir@plt>
+--
+   16570:	b4000714 	cbz	x20, 16650 <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0x9190>
+   16574:	97fff33f 	bl	13270 <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0x5db0>
+   16578:	7100181f 	cmp	w0, #0x6
+   1657c:	540003ec 	b.gt	165f8 <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0x9138>
+   16580:	aa1303e0 	mov	x0, x19
+   16584:	97ffb8d7 	bl	48e0 <strlen@plt>
+   16588:	11002c02 	add	w2, w0, #0xb
+   1658c:	f0000023 	adrp	x3, 1d000 <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0xfb40>
+   16590:	91160063 	add	x3, x3, #0x580
+   16594:	aa1303e1 	mov	x1, x19
+   16598:	93407c42 	sxtw	x2, w2
+   1659c:	91003c42 	add	x2, x2, #0xf
+   165a0:	927cec42 	and	x2, x2, #0xfffffffffffffff0
+   165a4:	79401064 	ldrh	w4, [x3, #8]
+   165a8:	cb2263ff 	sub	sp, sp, x2
+   165ac:	910003f3 	mov	x19, sp
+   165b0:	f9400062 	ldr	x2, [x3]
+   165b4:	91002a60 	add	x0, x19, #0xa
+   165b8:	f9000262 	str	x2, [x19]
+   165bc:	79001264 	strh	w4, [x19, #8]
+[31m   165c0:	97ffba68 	bl	4f60 <strcpy@plt>[0m
+   165c4:	aa1403e1 	mov	x1, x20
+   165c8:	aa1303e0 	mov	x0, x19
+--
+   166a0:	f9001fa1 	str	x1, [x29, #56]
+   166a4:	d2800001 	mov	x1, #0x0                   	// #0
+   166a8:	b4000400 	cbz	x0, 16728 <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0x9268>
+   166ac:	b4000515 	cbz	x21, 1674c <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0x928c>
+   166b0:	aa0003f4 	mov	x20, x0
+   166b4:	97ffb88b 	bl	48e0 <strlen@plt>
+   166b8:	11002c02 	add	w2, w0, #0xb
+   166bc:	f0000020 	adrp	x0, 1d000 <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0xfb40>
+   166c0:	91160000 	add	x0, x0, #0x580
+   166c4:	aa1403e1 	mov	x1, x20
+   166c8:	93407c42 	sxtw	x2, w2
+   166cc:	91003c42 	add	x2, x2, #0xf
+   166d0:	927cec42 	and	x2, x2, #0xfffffffffffffff0
+   166d4:	79401003 	ldrh	w3, [x0, #8]
+   166d8:	cb2263ff 	sub	sp, sp, x2
+   166dc:	910003f4 	mov	x20, sp
+   166e0:	f9400002 	ldr	x2, [x0]
+   166e4:	91002a80 	add	x0, x20, #0xa
+   166e8:	f9000282 	str	x2, [x20]
+   166ec:	79001283 	strh	w3, [x20, #8]
+[31m   166f0:	97ffba1c 	bl	4f60 <strcpy@plt>[0m
+   166f4:	aa1503e1 	mov	x1, x21
+   166f8:	d2800002 	mov	x2, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mlibudev.so.1.6.3[0m
+

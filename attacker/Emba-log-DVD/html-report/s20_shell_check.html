@@ -1,0 +1,183 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./index.html"><img class="inherit" src="./style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./index.html">&laquo; Back to main</a>
+<a class="modul" href="#check_scripts_(shellchecker)" title="#check_scripts_(shellchecker)" >Check scripts (shellchecker)</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="blue">+</span>] </span><span class="cyan"><span class="bold">Check scripts (shellchecker)</span></pre>
+<pre><span class="bold"><hr class="double" /></span></pre>
+<a class="reference" href="./s20_shell_check/shellchecker_check_daemon.sh.html" title="./s20_shell_check/shellchecker_check_daemon.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">6 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/opt/dvd/services/http/check_daemon.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_keymap.sh.html" title="./s20_shell_check/shellchecker_keymap.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">3 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/etc/init.d/keymap.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_ocaml-find-provides.sh.html" title="./s20_shell_check/shellchecker_ocaml-find-provides.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">5 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/usr/lib/rpm/ocaml-find-provides.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_rpm2cpio.sh.html" title="./s20_shell_check/shellchecker_rpm2cpio.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">6 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_libtooldeps.sh.html" title="./s20_shell_check/shellchecker_libtooldeps.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">3 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/usr/lib/rpm/libtooldeps.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_pkgconfigdeps.sh.html" title="./s20_shell_check/shellchecker_pkgconfigdeps.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">2 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_checkroot.sh.html" title="./s20_shell_check/shellchecker_checkroot.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">2 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/etc/init.d/checkroot.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_read-only-rootfs-hook.sh.html" title="./s20_shell_check/shellchecker_read-only-rootfs-hook.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">5 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/etc/init.d/read-only-rootfs-hook.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_modutils.sh.html" title="./s20_shell_check/shellchecker_modutils.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">4 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/etc/init.d/modutils.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_hostname.sh.html" title="./s20_shell_check/shellchecker_hostname.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">5 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/etc/init.d/hostname.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_find-lang.sh.html" title="./s20_shell_check/shellchecker_find-lang.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">14 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/usr/lib/rpm/find-lang.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_populate-volatile.sh.html" title="./s20_shell_check/shellchecker_populate-volatile.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">11 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/etc/init.d/populate-volatile.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_populate-extfs.sh.html" title="./s20_shell_check/shellchecker_populate-extfs.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">9 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/sbin/populate-extfs.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_ocaml-find-requires.sh.html" title="./s20_shell_check/shellchecker_ocaml-find-requires.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">6 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/usr/lib/rpm/ocaml-find-requires.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_mountnfs.sh.html" title="./s20_shell_check/shellchecker_mountnfs.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">2 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/etc/init.d/mountnfs.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_setup.sh.html" title="./s20_shell_check/shellchecker_setup.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">11 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/home/root/setup.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_find-debuginfo.sh.html" title="./s20_shell_check/shellchecker_find-debuginfo.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">11 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/usr/lib/rpm/find-debuginfo.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_check_daemon.sh.html" title="./s20_shell_check/shellchecker_check_daemon.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">3 issues</span><span class="green"> in script (</span><span class="red">common linux file: no</span><span class="green">):</span> /log/firmware/firmware/opt/dvd/services/coap/check_daemon.sh (-rwxr-xr-x root root)</span></pre></a>
+<a class="reference" href="./s20_shell_check/shellchecker_config.sh.html" title="./s20_shell_check/shellchecker_config.sh.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="red">25 issues</span><span class="green"> in script (</span><span class="cyan">common linux file: yes</span><span class="green">):</span> /log/firmware/firmware/usr/lib/perl5/config.sh (-rwxr-xr-x root root)</span></pre></a>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">133 issues</span><span class="green"> in </span><span class="orange">30</span><span class="green"> shell scripts:</span></pre>
+<pre></span></pre>
+<br />
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2004: $/${} is unnecessary on arithmetic variables.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2006: Use $(...) notation instead of legacy backticked `...`.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2009: Consider using pgrep instead of grepping ps output.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2013: To read lines rather than words, pipe/redirect to a 'while read' loop.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2015: Note that A &amp;&amp; B || C is not if-then-else. C may run when A is true.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2016: Expressions don't expand in single quotes, use double quotes for that.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2086: Double quote to prevent globbing and word splitting.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2129: Consider using { cmd1; cmd2; } &gt;&gt; file instead of individual redirects.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2143: Use grep -q instead of comparing output with [ -n .. ].</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2181: Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="green">SC2236: Use -n instead of ! -z.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2010: Don't use ls | grep. Use a glob or a for loop with a condition to allow non-alphanumeric filenames.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2034: cc appears unused. Verify use (or export if used externally).</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2044: For loops over find output are fragile. Use find -exec or a while read loop.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2045: Iterating over ls output is fragile. Use globs.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2046: Quote this to prevent word splitting.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2048: Use "$&commat;" (with quotes) to prevent whitespace problems.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2155: Declare and assign separately to avoid masking return values.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC2166: Prefer [ p ] &amp;&amp; [ q ] as [ p -a q ] is not well defined.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC3014: In POSIX sh, == in place of = is undefined.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC3037: In POSIX sh, echo flags are undefined.</span></span></pre>
+<pre>    </span>[</span><span class="green">+</span>]</span><span class="green"> <span class="orange">SC3043: In POSIX sh, 'local' is undefined.</span></span></pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<a href="./s21_python_check.html" title="./s21_python_check.html" ><div id="buttonBack" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+<a href="./s15_bootloader_check.html" title="./s15_bootloader_check.html" ><div id="buttonForward" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div> </a>
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

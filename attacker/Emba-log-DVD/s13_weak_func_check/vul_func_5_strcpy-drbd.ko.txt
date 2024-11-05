@@ -1,0 +1,111 @@
+[[0;33m*[0m] Binary protection state of [0;33mdrbd.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1194) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mdrbd.ko[0m
+
+   10658:	b4ffea5c 	cbz	x28, 103a0 <receive_SyncParam+0x328>
+   1065c:	f9404320 	ldr	x0, [x25, #128]
+   10660:	9101c000 	add	x0, x0, #0x70
+   10664:	c89ffc1c 	stlr	x28, [x0]
+   10668:	aa1903e0 	mov	x0, x25
+   1066c:	97fff161 	bl	cbf0 <put_ldev>
+   10670:	17ffff4c 	b	103a0 <receive_SyncParam+0x328>
+   10674:	f90033ff 	str	xzr, [sp, #96]
+   10678:	17fffeee 	b	10230 <receive_SyncParam+0x1b8>
+   1067c:	f94033e0 	ldr	x0, [sp, #96]
+   10680:	aa0000c0 	orr	x0, x6, x0
+   10684:	17ffffce 	b	105bc <receive_SyncParam+0x544>
+   10688:	d280001a 	mov	x26, #0x0                   	// #0
+   1068c:	d2800006 	mov	x6, #0x0                   	// #0
+   10690:	f90033ff 	str	xzr, [sp, #96]
+   10694:	17ffffa8 	b	10534 <receive_SyncParam+0x4bc>
+   10698:	d2800013 	mov	x19, #0x0                   	// #0
+   1069c:	17ffff18 	b	102fc <receive_SyncParam+0x284>
+   106a0:	aa1303e1 	mov	x1, x19
+   106a4:	91033300 	add	x0, x24, #0xcc
+[31m   106a8:	94000000 	bl	0 <strcpy>[0m
+   106ac:	aa1303e0 	mov	x0, x19
+   106b0:	94000000 	bl	0 <strlen>
+--
+   10704:	97fff13b 	bl	cbf0 <put_ldev>
+   10708:	f9400ae0 	ldr	x0, [x23, #16]
+   1070c:	91024000 	add	x0, x0, #0x90
+   10710:	94000000 	bl	0 <mutex_unlock>
+   10714:	f9405321 	ldr	x1, [x25, #160]
+   10718:	90000002 	adrp	x2, 0 <bm_store_page_idx.isra.0.part.0>
+   1071c:	90000000 	adrp	x0, 0 <bm_store_page_idx.isra.0.part.0>
+   10720:	91000042 	add	x2, x2, #0x0
+   10724:	91000000 	add	x0, x0, #0x0
+   10728:	9101c021 	add	x1, x1, #0x70
+   1072c:	94000000 	bl	0 <dev_printk>
+   10730:	12800160 	mov	w0, #0xfffffff4            	// #-12
+   10734:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   10738:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   1073c:	a94573fb 	ldp	x27, x28, [sp, #80]
+   10740:	17fffe7c 	b	10130 <receive_SyncParam+0xb8>
+   10744:	910112b5 	add	x21, x21, #0x44
+   10748:	91044300 	add	x0, x24, #0x110
+   1074c:	aa1503e1 	mov	x1, x21
+   10750:	f90033e6 	str	x6, [sp, #96]
+[31m   10754:	94000000 	bl	0 <strcpy>[0m
+   10758:	aa1503e0 	mov	x0, x21
+   1075c:	94000000 	bl	0 <strlen>
+--
+   1e190:	91076262 	add	x2, x19, #0x1d8
+   1e194:	aa1303e0 	mov	x0, x19
+   1e198:	52800007 	mov	w7, #0x0                   	// #0
+   1e19c:	d2800006 	mov	x6, #0x0                   	// #0
+   1e1a0:	52800001 	mov	w1, #0x0                   	// #0
+   1e1a4:	97fffe8b 	bl	1dbd0 <__send_command.isra.0>
+   1e1a8:	f9401bf7 	ldr	x23, [sp, #48]
+   1e1ac:	a94153f3 	ldp	x19, x20, [sp, #16]
+   1e1b0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   1e1b4:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   1e1b8:	d65f03c0 	ret
+   1e1bc:	b9422a60 	ldr	w0, [x19, #552]
+   1e1c0:	71016c1f 	cmp	w0, #0x5b
+   1e1c4:	5400016d 	b.le	1e1f0 <__drbd_send_protocol+0x148>
+   1e1c8:	910222a0 	add	x0, x21, #0x88
+   1e1cc:	94000000 	bl	0 <strlen>
+   1e1d0:	11006417 	add	w23, w0, #0x19
+   1e1d4:	17ffffd0 	b	1e114 <__drbd_send_protocol+0x6c>
+   1e1d8:	910222a1 	add	x1, x21, #0x88
+   1e1dc:	91006280 	add	x0, x20, #0x18
+[31m   1e1e0:	94000000 	bl	0 <strcpy>[0m
+   1e1e4:	17ffffe7 	b	1e180 <__drbd_send_protocol+0xd8>
+   1e1e8:	12800080 	mov	w0, #0xfffffffb            	// #-5
+--
+   1e430:	71017edf 	cmp	w22, #0x5f
+   1e434:	52801098 	mov	w24, #0x84                  	// #132
+   1e438:	52801280 	mov	w0, #0x94                  	// #148
+   1e43c:	52800479 	mov	w25, #0x23                  	// #35
+   1e440:	1a80b318 	csel	w24, w24, w0, lt  // lt = tstop
+   1e444:	17ffffc0 	b	1e344 <drbd_send_sync_param+0x5c>
+   1e448:	97fffa12 	bl	1cc90 <put_ldev>
+   1e44c:	d2ac8000 	mov	x0, #0x64000000            	// #1677721600
+   1e450:	d2a28001 	mov	x1, #0x14000000            	// #335544320
+   1e454:	f2c02000 	movk	x0, #0x100, lsl #32
+   1e458:	52bf4002 	mov	w2, #0xfa000000            	// #-100663296
+   1e45c:	f2e14001 	movk	x1, #0xa00, lsl #48
+   1e460:	f2e01200 	movk	x0, #0x90, lsl #48
+   1e464:	b9000282 	str	w2, [x20]
+   1e468:	71015edf 	cmp	w22, #0x57
+   1e46c:	f8084281 	stur	x1, [x20, #132]
+   1e470:	f808c280 	stur	x0, [x20, #140]
+   1e474:	54fffbed 	b.le	1e3f0 <drbd_send_sync_param+0x108>
+   1e478:	aa1303e0 	mov	x0, x19
+   1e47c:	91033341 	add	x1, x26, #0xcc
+[31m   1e480:	94000000 	bl	0 <strcpy>[0m
+   1e484:	710162df 	cmp	w22, #0x58
+   1e488:	54fffb40 	b.eq	1e3f0 <drbd_send_sync_param+0x108>  // b.none
+   1e48c:	91044341 	add	x1, x26, #0x110
+   1e490:	91011280 	add	x0, x20, #0x44
+[31m   1e494:	94000000 	bl	0 <strcpy>[0m
+   1e498:	17ffffd6 	b	1e3f0 <drbd_send_sync_param+0x108>
+   1e49c:	91079004 	add	x4, x0, #0x1e4
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mdrbd.ko[0m
+

@@ -1,0 +1,99 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-pcm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m817) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-pcm.ko[0m
+
+     230:	f9403fe0 	ldr	x0, [sp, #120]
+     234:	d280671c 	mov	x28, #0x338                 	// #824
+     238:	90000019 	adrp	x25, 0 <kmalloc_caches>
+     23c:	9000001a 	adrp	x26, 0 <snd_pcm_format_name>
+     240:	91000339 	add	x25, x25, #0x0
+     244:	9100035a 	add	x26, x26, #0x0
+     248:	9b1c5000 	madd	x0, x0, x28, x20
+     24c:	52800013 	mov	w19, #0x0                   	// #0
+     250:	d280001c 	mov	x28, #0x0                   	// #0
+     254:	f90037e0 	str	x0, [sp, #104]
+     258:	1400004d 	b	38c <snd_pcm_new_stream+0x284>
+     25c:	f9009abc 	str	x28, [x21, #304]
+     260:	395dc280 	ldrb	w0, [x20, #1904]
+     264:	350007a0 	cbnz	w0, 358 <snd_pcm_new_stream+0x250>
+     268:	b9401b82 	ldr	w2, [x28, #24]
+     26c:	910223e0 	add	x0, sp, #0x88
+     270:	f9400384 	ldr	x4, [x28]
+     274:	90000001 	adrp	x1, 0 <snd_pcm_format_name>
+     278:	91000021 	add	x1, x1, #0x0
+     27c:	f940009b 	ldr	x27, [x4]
+[31m     280:	94000000 	bl	0 <sprintf>[0m
+     284:	f9400782 	ldr	x2, [x28, #8]
+     288:	aa1b03e0 	mov	x0, x27
+--
+     370:	9105c384 	add	x4, x28, #0x170
+     374:	a9138384 	stp	x4, x0, [x28, #312]
+     378:	6b13031f 	cmp	w24, w19
+     37c:	f900bf81 	str	x1, [x28, #376]
+     380:	f9000001 	str	x1, [x0]
+     384:	b901979f 	str	wzr, [x28, #404]
+     388:	540002a0 	b.eq	3dc <snd_pcm_new_stream+0x2d4>  // b.none
+     38c:	f9402720 	ldr	x0, [x25, #72]
+     390:	aa1c03f5 	mov	x21, x28
+     394:	d2803d02 	mov	x2, #0x1e8                 	// #488
+     398:	5281b801 	mov	w1, #0xdc0                 	// #3520
+     39c:	94000000 	bl	0 <kmem_cache_alloc_trace>
+     3a0:	aa0003fc 	mov	x28, x0
+     3a4:	b4000760 	cbz	x0, 490 <snd_pcm_new_stream+0x388>
+     3a8:	a9005b94 	stp	x20, x22, [x28]
+     3ac:	2a1303e2 	mov	w2, w19
+     3b0:	aa1a03e1 	mov	x1, x26
+     3b4:	b9001b93 	str	w19, [x28, #24]
+     3b8:	91007000 	add	x0, x0, #0x1c
+     3bc:	b9003f97 	str	w23, [x28, #60]
+[31m     3c0:	94000000 	bl	0 <sprintf>[0m
+     3c4:	b2407fe0 	mov	x0, #0xffffffff            	// #4294967295
+     3c8:	f9006780 	str	x0, [x28, #200]
+     3cc:	b5fff495 	cbnz	x21, 25c <snd_pcm_new_stream+0x154>
+     3d0:	f94037e0 	ldr	x0, [sp, #104]
+     3d4:	f900681c 	str	x28, [x0, #208]
+     3d8:	17ffffa2 	b	260 <snd_pcm_new_stream+0x158>
+     3dc:	a9446bf9 	ldp	x25, x26, [sp, #64]
+     3e0:	17ffff6a 	b	188 <snd_pcm_new_stream+0x80>
+     3e4:	f940627a 	ldr	x26, [x19, #192]
+     3e8:	910223e0 	add	x0, sp, #0x88
+     3ec:	b940ba63 	ldr	w3, [x19, #184]
+     3f0:	90000001 	adrp	x1, 0 <snd_pcm_format_name>
+     3f4:	91000021 	add	x1, x1, #0x0
+     3f8:	b9401b42 	ldr	w2, [x26, #24]
+     3fc:	7100007f 	cmp	w3, #0x0
+     400:	1a950323 	csel	w3, w25, w21, eq  // eq = none
+[31m     404:	94000000 	bl	0 <sprintf>[0m
+     408:	910223e1 	add	x1, sp, #0x88
+     40c:	f9400340 	ldr	x0, [x26]
+--
+   1078c:	b94000c6 	ldr	w6, [x6]
+   10790:	331f78e4 	bfi	w4, w7, #1, #31
+   10794:	290797e6 	stp	w6, w5, [sp, #60]
+   10798:	b90047e4 	str	w4, [sp, #68]
+   1079c:	f9400000 	ldr	x0, [x0]
+   107a0:	94000000 	bl	0 <snd_timer_new>
+   107a4:	37f804c0 	tbnz	w0, #31, 1083c <snd_pcm_timer_init+0x104>
+   107a8:	b9403e60 	ldr	w0, [x19, #60]
+   107ac:	90000001 	adrp	x1, 0 <snd_pcm_format_name>
+   107b0:	294793e3 	ldp	w3, w4, [sp, #60]
+   107b4:	7100041f 	cmp	w0, #0x1
+   107b8:	b94047e5 	ldr	w5, [sp, #68]
+   107bc:	91000021 	add	x1, x1, #0x0
+   107c0:	f94017e0 	ldr	x0, [sp, #40]
+   107c4:	90000002 	adrp	x2, 0 <snd_pcm_format_name>
+   107c8:	91000042 	add	x2, x2, #0x0
+   107cc:	9a810042 	csel	x2, x2, x1, eq  // eq = none
+   107d0:	91018000 	add	x0, x0, #0x60
+   107d4:	90000001 	adrp	x1, 0 <snd_pcm_format_name>
+   107d8:	91000021 	add	x1, x1, #0x0
+[31m   107dc:	94000000 	bl	0 <sprintf>[0m
+   107e0:	90000000 	adrp	x0, 0 <snd_pcm_format_name>
+   107e4:	91000000 	add	x0, x0, #0x0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33msnd-pcm.ko[0m
+

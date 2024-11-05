@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibnpth.so.0.1.2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mlibnpth.so.0.1.2[0m
+
+    2160:	97fffeb0 	bl	1c20 <pthread_cond_timedwait@plt+0x190>
+    2164:	2a1303e0 	mov	w0, w19
+    2168:	97fffdc2 	bl	1870 <sleep@plt>
+    216c:	2a0003f3 	mov	w19, w0
+    2170:	97fffe88 	bl	1b90 <pthread_cond_timedwait@plt+0x100>
+    2174:	2a1303e0 	mov	w0, w19
+    2178:	f9400bf3 	ldr	x19, [sp, #16]
+    217c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    2180:	d65f03c0 	ret
+    2184:	d503201f 	nop
+    2188:	d503201f 	nop
+    218c:	d503201f 	nop
+
+[31m0000000000002190 <npth_system@@NPTH_1.0>:[0m
+    2190:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    2194:	910003fd 	mov	x29, sp
+    2198:	f9000bf3 	str	x19, [sp, #16]
+    219c:	aa0003f3 	mov	x19, x0
+    21a0:	97fffea0 	bl	1c20 <pthread_cond_timedwait@plt+0x190>
+    21a4:	aa1303e0 	mov	x0, x19
+[31m    21a8:	97fffdc2 	bl	18b0 <system@plt>[0m
+    21ac:	2a0003f3 	mov	w19, w0
+    21b0:	97fffe78 	bl	1b90 <pthread_cond_timedwait@plt+0x100>
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m1[0m times [0;33mlibnpth.so.0.1.2[0m
+

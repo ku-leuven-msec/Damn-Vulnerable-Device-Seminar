@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33me4defrag[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33me4defrag[0m
+
+[31m    3b1c:	97fff6a1 	bl	15a0 <mmap@plt>[0m
+    3b20:	f9003be0 	str	x0, [sp, #112]
+    3b24:	b100041f 	cmn	x0, #0x1
+    3b28:	540031e0 	b.eq	4164 <ioctl@plt+0x2a94>  // b.none
+    3b2c:	f94037e9 	ldr	x9, [sp, #104]
+    3b30:	d2800021 	mov	x1, #0x1                   	// #1
+    3b34:	8b1b0136 	add	x22, x9, x27
+    3b38:	d10006d6 	sub	x22, x22, #0x1
+    3b3c:	9ac90ed6 	sdiv	x22, x22, x9
+    3b40:	92407ec0 	and	x0, x22, #0xffffffff
+    3b44:	f90037e0 	str	x0, [sp, #104]
+    3b48:	97fff656 	bl	14a0 <calloc@plt>
+    3b4c:	f9003fe0 	str	x0, [sp, #120]
+    3b50:	f9403be3 	ldr	x3, [sp, #112]
+    3b54:	b4004fa0 	cbz	x0, 4548 <ioctl@plt+0x2e78>
+    3b58:	f9403fe2 	ldr	x2, [sp, #120]
+    3b5c:	aa1b03e1 	mov	x1, x27
+    3b60:	aa0303e0 	mov	x0, x3
+    3b64:	f9003be3 	str	x3, [sp, #112]
+    3b68:	97fff64a 	bl	1490 <mincore@plt>
+    3b6c:	3100041f 	cmn	w0, #0x1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33me4defrag[0m
+

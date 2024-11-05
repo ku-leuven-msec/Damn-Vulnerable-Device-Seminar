@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mgpgparsemail[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mgpgparsemail[0m
+
+    2458:	d0000001 	adrp	x1, 4000 <ferror@plt+0x2c80>
+    245c:	91166022 	add	x2, x1, #0x598
+    2460:	17ffff4c 	b	2190 <ferror@plt+0xe10>
+    2464:	aa1703e0 	mov	x0, x23
+    2468:	a9046bf9 	stp	x25, x26, [sp, #64]
+    246c:	97fffb15 	bl	10c0 <strlen@plt>
+    2470:	f9402bfa 	ldr	x26, [sp, #80]
+    2474:	aa0003f9 	mov	x25, x0
+    2478:	aa1a03e0 	mov	x0, x26
+    247c:	97fffb11 	bl	10c0 <strlen@plt>
+    2480:	8b000320 	add	x0, x25, x0
+    2484:	91000800 	add	x0, x0, #0x2
+    2488:	97fffb46 	bl	11a0 <malloc@plt>
+    248c:	aa0003f9 	mov	x25, x0
+    2490:	b4001580 	cbz	x0, 2740 <ferror@plt+0x13c0>
+    2494:	aa1703e1 	mov	x1, x23
+    2498:	97fffb2e 	bl	1150 <stpcpy@plt>
+    249c:	528005e2 	mov	w2, #0x2f                  	// #47
+    24a0:	38001402 	strb	w2, [x0], #1
+    24a4:	aa1a03e1 	mov	x1, x26
+[31m    24a8:	97fffb9a 	bl	1310 <strcpy@plt>[0m
+    24ac:	f9401697 	ldr	x23, [x20, #40]
+    24b0:	b4001377 	cbz	x23, 271c <ferror@plt+0x139c>
+--
+    3f80:	91370000 	add	x0, x0, #0xdc0
+    3f84:	52803be2 	mov	w2, #0x1df                 	// #479
+    3f88:	f90023f9 	str	x25, [sp, #64]
+    3f8c:	97fff4e9 	bl	1330 <__assert_fail@plt>
+    3f90:	aa1403e0 	mov	x0, x20
+    3f94:	b0000001 	adrp	x1, 4000 <ferror@plt+0x2c80>
+    3f98:	52800002 	mov	w2, #0x0                   	// #0
+    3f9c:	9137e021 	add	x1, x1, #0xdf8
+    3fa0:	97fffe68 	bl	3940 <ferror@plt+0x25c0>
+    3fa4:	aa0003f6 	mov	x22, x0
+    3fa8:	b4fffc20 	cbz	x0, 3f2c <ferror@plt+0x2bac>
+    3fac:	f9401677 	ldr	x23, [x19, #40]
+    3fb0:	f94012e1 	ldr	x1, [x23, #32]
+    3fb4:	b50011c1 	cbnz	x1, 41ec <ferror@plt+0x2e6c>
+    3fb8:	97fff442 	bl	10c0 <strlen@plt>
+    3fbc:	91000400 	add	x0, x0, #0x1
+    3fc0:	97fff478 	bl	11a0 <malloc@plt>
+    3fc4:	f90012e0 	str	x0, [x23, #32]
+    3fc8:	b4fffb20 	cbz	x0, 3f2c <ferror@plt+0x2bac>
+    3fcc:	aa1603e1 	mov	x1, x22
+[31m    3fd0:	97fff4d0 	bl	1310 <strcpy@plt>[0m
+    3fd4:	f94012e0 	ldr	x0, [x23, #32]
+    3fd8:	f9001a60 	str	x0, [x19, #48]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mgpgparsemail[0m
+

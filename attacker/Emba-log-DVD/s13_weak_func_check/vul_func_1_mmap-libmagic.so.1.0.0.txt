@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibmagic.so.1.0.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibmagic.so.1.0.0[0m
+
+[31m    8f70:	97ffea64 	bl	3900 <mmap@plt>[0m
+    8f74:	f9000360 	str	x0, [x27]
+    8f78:	b100041f 	cmn	x0, #0x1
+    8f7c:	54001380 	b.eq	91ec <magic_getparam@@Base+0x48cc>  // b.none
+    8f80:	2a1a03e0 	mov	w0, w26
+    8f84:	97ffea17 	bl	37e0 <close@plt>
+    8f88:	aa1703e2 	mov	x2, x23
+    8f8c:	aa1b03e1 	mov	x1, x27
+    8f90:	aa1303e0 	mov	x0, x19
+    8f94:	97ffef0f 	bl	4bd0 <magic_getparam@@Base+0x2b0>
+    8f98:	350010c0 	cbnz	w0, 91b0 <magic_getparam@@Base+0x4890>
+    8f9c:	f9400360 	ldr	x0, [x27]
+    8fa0:	52800022 	mov	w2, #0x1                   	// #1
+    8fa4:	f94057e1 	ldr	x1, [sp, #168]
+    8fa8:	97ffeaee 	bl	3b60 <mprotect@plt>
+    8fac:	3100041f 	cmn	w0, #0x1
+    8fb0:	54001300 	b.eq	9210 <magic_getparam@@Base+0x48f0>  // b.none
+    8fb4:	aa1703e0 	mov	x0, x23
+    8fb8:	97ffea66 	bl	3950 <free@plt>
+    8fbc:	f9400260 	ldr	x0, [x19]
+    8fc0:	aa1b03e1 	mov	x1, x27
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibmagic.so.1.0.0[0m
+

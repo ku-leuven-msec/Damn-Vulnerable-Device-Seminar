@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mmke2fs.e2fsprogs[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mmke2fs.e2fsprogs[0m
+
+    a618:	f90073e0 	str	x0, [sp, #224]
+    a61c:	17fffe4d 	b	9f50 <ext2fs_open_file@plt+0x4550>
+    a620:	910382a0 	add	x0, x21, #0xe0
+    a624:	52800021 	mov	w1, #0x1                   	// #1
+    a628:	b9046801 	str	w1, [x0, #1128]
+    a62c:	17fffe49 	b	9f50 <ext2fs_open_file@plt+0x4550>
+    a630:	f9478f00 	ldr	x0, [x24, #3864]
+    a634:	1100075c 	add	w28, w26, #0x1
+    a638:	f9400000 	ldr	x0, [x0]
+    a63c:	97ffe98d 	bl	4c70 <strlen@plt>
+    a640:	8b3cc001 	add	x1, x0, w28, sxtw
+    a644:	f94077e0 	ldr	x0, [sp, #232]
+    a648:	97ffeb02 	bl	5250 <realloc@plt>
+    a64c:	b4010940 	cbz	x0, c774 <ext2fs_open_file@plt+0x6d74>
+    a650:	f90077e0 	str	x0, [sp, #232]
+    a654:	350018ba 	cbnz	w26, a968 <ext2fs_open_file@plt+0x4f68>
+    a658:	3900001f 	strb	wzr, [x0]
+    a65c:	f9478f1a 	ldr	x26, [x24, #3864]
+    a660:	f94077e0 	ldr	x0, [sp, #232]
+    a664:	f9400341 	ldr	x1, [x26]
+[31m    a668:	97ffeaa6 	bl	5100 <strcat@plt>[0m
+    a66c:	f9400340 	ldr	x0, [x26]
+    a670:	97ffe980 	bl	4c70 <strlen@plt>
+--
+    a920:	f9400064 	ldr	x4, [x3]
+    a924:	f90047e4 	str	x4, [sp, #136]
+    a928:	97ffebb2 	bl	57f0 <dcgettext@plt>
+    a92c:	aa0003e2 	mov	x2, x0
+    a930:	f94047e4 	ldr	x4, [sp, #136]
+    a934:	2a1c03e3 	mov	w3, w28
+    a938:	52800021 	mov	w1, #0x1                   	// #1
+    a93c:	aa0403e0 	mov	x0, x4
+    a940:	97ffeab8 	bl	5420 <__fprintf_chk@plt>
+    a944:	130a7f80 	asr	w0, w28, #10
+    a948:	93407c00 	sxtw	x0, w0
+    a94c:	d341fc00 	lsr	x0, x0, #1
+    a950:	52800001 	mov	w1, #0x0                   	// #0
+    a954:	d503201f 	nop
+    a958:	11000421 	add	w1, w1, #0x1
+    a95c:	d341fc00 	lsr	x0, x0, #1
+    a960:	b5ffffc0 	cbnz	x0, a958 <ext2fs_open_file@plt+0x4f58>
+    a964:	17ffff1e 	b	a5dc <ext2fs_open_file@plt+0x4bdc>
+    a968:	b0000061 	adrp	x1, 17000 <ext2fs_open_file@plt+0x11600>
+    a96c:	91390021 	add	x1, x1, #0xe40
+[31m    a970:	97ffe9e4 	bl	5100 <strcat@plt>[0m
+    a974:	17ffff3a 	b	a65c <ext2fs_open_file@plt+0x4c5c>
+    a978:	3400897b 	cbz	w27, baa4 <ext2fs_open_file@plt+0x60a4>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m2[0m times [0;33mmke2fs.e2fsprogs[0m
+

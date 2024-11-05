@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mopenssl[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mopenssl[0m
+
+   4110c:	aa0003f4 	mov	x20, x0
+   41110:	b40003d3 	cbz	x19, 41188 <ASN1_generate_nconf@plt+0xe638>
+   41114:	f90023f9 	str	x25, [sp, #64]
+   41118:	11000419 	add	w25, w0, #0x1
+   4111c:	aa1303e0 	mov	x0, x19
+   41120:	97ffc53c 	bl	32610 <strlen@plt>
+   41124:	b94002e1 	ldr	w1, [x23]
+   41128:	aa0003f8 	mov	x24, x0
+   4112c:	7100001f 	cmp	w0, #0x0
+   41130:	5400024d 	b.le	41178 <ASN1_generate_nconf@plt+0xe628>
+   41134:	11000800 	add	w0, w0, #0x2
+   41138:	0b190000 	add	w0, w0, w25
+   4113c:	6b01001f 	cmp	w0, w1
+   41140:	540003ac 	b.gt	411b4 <ASN1_generate_nconf@plt+0xe664>
+   41144:	8b38c273 	add	x19, x19, w24, sxtw
+   41148:	52840580 	mov	w0, #0x202c                	// #8236
+   4114c:	78002660 	strh	w0, [x19], #2
+   41150:	f94023f9 	ldr	x25, [sp, #64]
+   41154:	aa1503e1 	mov	x1, x21
+   41158:	aa1303e0 	mov	x0, x19
+[31m   4115c:	97ffc49d 	bl	323d0 <strcpy@plt>[0m
+   41160:	52800020 	mov	w0, #0x1                   	// #1
+   41164:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   74ed8:	b0000217 	adrp	x23, b5000 <ASN1_generate_nconf@plt+0x824b0>
+   74edc:	f9470f20 	ldr	x0, [x25, #3608]
+   74ee0:	eb00039f 	cmp	x28, x0
+   74ee4:	540007c1 	b.ne	74fdc <ASN1_generate_nconf@plt+0x4248c>  // b.any
+   74ee8:	b000021b 	adrp	x27, b5000 <ASN1_generate_nconf@plt+0x824b0>
+   74eec:	9101c3f5 	add	x21, sp, #0x70
+   74ef0:	91000ea0 	add	x0, x21, #0x3
+   74ef4:	900000f8 	adrp	x24, 90000 <ASN1_generate_nconf@plt+0x5d4b0>
+   74ef8:	91104318 	add	x24, x24, #0x410
+   74efc:	f90037e0 	str	x0, [sp, #104]
+   74f00:	f947cf7b 	ldr	x27, [x27, #3992]
+   74f04:	1400001b 	b	74f70 <ASN1_generate_nconf@plt+0x42420>
+   74f08:	f94037e0 	ldr	x0, [sp, #104]
+   74f0c:	aa0003fc 	mov	x28, x0
+   74f10:	52800400 	mov	w0, #0x20                  	// #32
+   74f14:	38001780 	strb	w0, [x28], #1
+   74f18:	b9400e80 	ldr	w0, [x20, #12]
+   74f1c:	97fffae1 	bl	73aa0 <ASN1_generate_nconf@plt+0x40f50>
+   74f20:	aa0003e1 	mov	x1, x0
+   74f24:	aa1c03e0 	mov	x0, x28
+[31m   74f28:	97fef52a 	bl	323d0 <strcpy@plt>[0m
+   74f2c:	97fef5b9 	bl	32610 <strlen@plt>
+   74f30:	8b000380 	add	x0, x28, x0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mopenssl[0m
+

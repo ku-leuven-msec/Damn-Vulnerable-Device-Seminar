@@ -1,0 +1,35 @@
+[[0;33m*[0m] Binary protection state of [0;33msctp.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1489) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m53) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msctp.ko[0m
+
+   26f0c:	35000460 	cbnz	w0, 26f98 <sctp_inet_listen+0x200>
+   26f10:	b9023e76 	str	w22, [x19, #572]
+   26f14:	aa1503e0 	mov	x0, x21
+   26f18:	94000000 	bl	2da20 <sctp_hash_endpoint>
+   26f1c:	2a0003f7 	mov	w23, w0
+   26f20:	17ffffb7 	b	26dfc <sctp_inet_listen+0x64>
+   26f24:	39544260 	ldrb	w0, [x19, #1296]
+   26f28:	52800017 	mov	w23, #0x0                   	// #0
+   26f2c:	360ff680 	tbz	w0, #1, 26dfc <sctp_inet_listen+0x64>
+   26f30:	17ffffd5 	b	26e84 <sctp_inet_listen+0xec>
+   26f34:	aa1303e0 	mov	x0, x19
+   26f38:	12800157 	mov	w23, #0xfffffff5            	// #-11
+   26f3c:	97fffb5d 	bl	25cb0 <sctp_autobind>
+   26f40:	34fffe80 	cbz	w0, 26f10 <sctp_inet_listen+0x178>
+   26f44:	17ffffae 	b	26dfc <sctp_inet_listen+0x64>
+   26f48:	f941ee62 	ldr	x2, [x19, #984]
+   26f4c:	b4fffbc2 	cbz	x2, 26ec4 <sctp_inet_listen+0x12c>
+   26f50:	9101a3e0 	add	x0, sp, #0x68
+   26f54:	90000001 	adrp	x1, 0 <sctp_sm_lookup_event>
+   26f58:	91000021 	add	x1, x1, #0x0
+[31m   26f5c:	94000000 	bl	0 <sprintf>[0m
+   26f60:	52800002 	mov	w2, #0x0                   	// #0
+   26f64:	9101a3e0 	add	x0, sp, #0x68
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33msctp.ko[0m
+

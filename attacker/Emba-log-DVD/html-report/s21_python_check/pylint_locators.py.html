@@ -1,0 +1,255 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module pip._vendor.distlib.locators</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1:0: C0302: Too many lines in module (1300/1000) (too-many-lines)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:64:4: R0913: Too many arguments (6/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:64:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:86:0: R0205: Class 'Locator' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:128:16: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:193:8: C0103: Variable name "t" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:215:12: C0103: Variable name "s1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:216:12: C0103: Variable name "s2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:225:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:231:4: R0914: Too many local variables (24/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:247:8: C0103: Variable name "m" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:275:19: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:275:12: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:284:20: C0103: Variable name "t" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:277:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:275:12: W0612: Unused variable 'e' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:231:4: R0912: Too many branches (20/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:305:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:338:12: C0103: Variable name "md" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:341:12: C0103: Variable name "md" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:365:8: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:388:23: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:390:20: W0107: Unnecessary pass statement (unnecessary-pass)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:401:12: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:402:12: C0103: Variable name "sd" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:351:4: R0912: Too many branches (13/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:149:8: W0201: Attribute '_scheme' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:423:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:436:12: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:440:12: E0237: Assigning to attribute 'name' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:441:12: E0237: Assigning to attribute 'version' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:442:12: E0237: Assigning to attribute 'license' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:443:12: E0237: Assigning to attribute 'keywords' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:444:12: E0237: Assigning to attribute 'summary' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:448:16: E0237: Assigning to attribute 'source_url' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:465:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:474:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:522:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:480:12: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:481:12: C0103: Variable name "md" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:483:12: E0237: Assigning to attribute 'name' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:484:12: E0237: Assigning to attribute 'version' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:485:12: E0237: Assigning to attribute 'license' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:486:12: E0237: Assigning to attribute 'keywords' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:487:12: E0237: Assigning to attribute 'summary' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:503:16: E0237: Assigning to attribute 'name' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:504:16: E0237: Assigning to attribute 'version' not defined in class slots (assigning-non-slot)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:522:8: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:490:12: W0612: Unused variable 'urls' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:528:0: R0205: Class 'Page' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:551:8: C0103: Variable name "m" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:572:12: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:564:8: W0612: Unused variable 'clean' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:528:0: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:586:0: R0902: Too many instance attributes (14/7) (too-many-instance-attributes)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:610:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:635:12: C0103: Variable name "t" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:634:12: W0612: Unused variable 'i' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:647:12: C0103: Variable name "t" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:649:12: C0103: Variable name "t" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:753:19: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:753:12: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:736:8: R1702: Too many nested blocks (8/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:762:4: R0914: Too many local variables (18/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:815:23: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:799:24: C0103: Variable name "m" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:808:16: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:775:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:811:16: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:815:16: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:762:4: R0912: Too many branches (15/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:762:4: R0915: Too many statements (51/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:633:8: W0201: Attribute '_threads' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:651:8: W0201: Attribute '_threads' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:656:12: W0201: Attribute 'result' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:657:12: W0201: Attribute 'project_name' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:851:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:857:39: W0613: Unused argument 'parent' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:868:16: C0103: Variable name "fn" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:870:20: C0103: Variable name "fn" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:867:18: W0612: Unused variable 'dirs' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:887:16: C0103: Variable name "fn" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:889:20: C0103: Variable name "fn" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:886:18: W0612: Unused variable 'dirs' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:927:16: C0103: Variable name "md" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:938:0: W0223: Method 'get_distribution_names' is abstract in class 'Locator' but is not overridden (abstract-method)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:949:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:984:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:987:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1001:12: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1008:20: C0103: Variable name "df" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1010:31: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1015:20: C0103: Variable name "dd" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1000:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1000:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:998:4: R0912: Too many branches (14/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:992:8: W0201: Attribute '_scheme' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1066:0: R0205: Class 'DependencyFinder' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1089:12: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1104:12: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1107:12: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1173:12: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1186:16: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1192:4: R0914: Too many local variables (24/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1258:20: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1262:16: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1275:24: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1275:27: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1283:20: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1192:4: R0912: Too many branches (24/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1192:4: R0915: Too many statements (66/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1218:8: W0201: Attribute 'provided' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1219:8: W0201: Attribute 'dists' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1220:8: W0201: Attribute 'dists_by_name' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/distlib/locators.py:1221:8: W0201: Attribute 'reqts' defined outside __init__ (attribute-defined-outside-init)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 7.75/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

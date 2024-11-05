@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibgnutls.so.30.26.2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibgnutls.so.30.26.2[0m
+
+  134108:	f9403273 	ldr	x19, [x19, #96]
+  13410c:	b4001e73 	cbz	x19, 1344d8 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf7e8>
+  134110:	a9046bf9 	stp	x25, x26, [sp, #64]
+  134114:	528005da 	mov	w26, #0x2e                  	// #46
+  134118:	14000003 	b	134124 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf434>
+  13411c:	f9403673 	ldr	x19, [x19, #104]
+  134120:	b4001db3 	cbz	x19, 1344d4 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf7e4>
+  134124:	39412260 	ldrb	w0, [x19, #72]
+  134128:	7100041f 	cmp	w0, #0x1
+  13412c:	54ffff81 	b.ne	13411c <gnutls_group_get_name@@GNUTLS_3_6_0+0xf42c>  // b.any
+  134130:	f9402a79 	ldr	x25, [x19, #80]
+  134134:	aa1903e0 	mov	x0, x25
+  134138:	97fbf33a 	bl	30e20 <strlen@plt>
+  13413c:	0b0002d6 	add	w22, w22, w0
+  134140:	b9000316 	str	w22, [x24]
+  134144:	6b1702df 	cmp	w22, w23
+  134148:	54001d4c 	b.gt	1344f0 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf800>
+  13414c:	b40000b5 	cbz	x21, 134160 <gnutls_group_get_name@@GNUTLS_3_6_0+0xf470>
+  134150:	aa1903e1 	mov	x1, x25
+  134154:	aa1503e0 	mov	x0, x21
+[31m  134158:	97fbf752 	bl	31ea0 <strcat@plt>[0m
+  13415c:	b9400316 	ldr	w22, [x24]
+  134160:	f9403660 	ldr	x0, [x19, #104]
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mlibgnutls.so.30.26.2[0m
+

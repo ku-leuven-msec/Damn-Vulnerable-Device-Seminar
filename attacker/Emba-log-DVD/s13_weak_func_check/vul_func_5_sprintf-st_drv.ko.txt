@@ -1,0 +1,118 @@
+[[0;33m*[0m] Binary protection state of [0;33mst_drv.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m190) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mst_drv.ko[0m
+
+    12c0:	91014260 	add	x0, x19, #0x50
+    12c4:	94000000 	bl	0 <memcpy>
+    12c8:	a9087e7f 	stp	xzr, xzr, [x19, #128]
+    12cc:	f9004a7f 	str	xzr, [x19, #144]
+    12d0:	17ffffe2 	b	1258 <validate_firmware_response+0x38>
+    12d4:	d503201f 	nop
+
+00000000000012d8 <show_flow_cntrl>:
+    12d8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    12dc:	910003fd 	mov	x29, sp
+    12e0:	a90153f3 	stp	x19, x20, [sp, #16]
+    12e4:	aa0003f4 	mov	x20, x0
+    12e8:	aa0203f3 	mov	x19, x2
+    12ec:	aa1e03e0 	mov	x0, x30
+    12f0:	94000000 	bl	0 <_mcount>
+    12f4:	f9403e82 	ldr	x2, [x20, #120]
+    12f8:	aa1303e0 	mov	x0, x19
+    12fc:	90000001 	adrp	x1, 0 <st_tty_receive>
+    1300:	91000021 	add	x1, x1, #0x0
+    1304:	b940cc42 	ldr	w2, [x2, #204]
+[31m    1308:	94000000 	bl	0 <sprintf>[0m
+    130c:	93407c00 	sxtw	x0, w0
+    1310:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1314:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    1318:	d65f03c0 	ret
+    131c:	d503201f 	nop
+
+0000000000001320 <show_baud_rate>:
+    1320:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    1324:	910003fd 	mov	x29, sp
+    1328:	a90153f3 	stp	x19, x20, [sp, #16]
+    132c:	aa0003f4 	mov	x20, x0
+    1330:	aa0203f3 	mov	x19, x2
+    1334:	aa1e03e0 	mov	x0, x30
+    1338:	94000000 	bl	0 <_mcount>
+    133c:	f9403e82 	ldr	x2, [x20, #120]
+    1340:	aa1303e0 	mov	x0, x19
+    1344:	90000001 	adrp	x1, 0 <st_tty_receive>
+    1348:	91000021 	add	x1, x1, #0x0
+    134c:	b940d042 	ldr	w2, [x2, #208]
+[31m    1350:	94000000 	bl	0 <sprintf>[0m
+    1354:	93407c00 	sxtw	x0, w0
+    1358:	a94153f3 	ldp	x19, x20, [sp, #16]
+    135c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    1360:	d65f03c0 	ret
+    1364:	d503201f 	nop
+
+0000000000001368 <show_dev_name>:
+    1368:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    136c:	910003fd 	mov	x29, sp
+    1370:	a90153f3 	stp	x19, x20, [sp, #16]
+    1374:	aa0003f4 	mov	x20, x0
+    1378:	aa0203f3 	mov	x19, x2
+    137c:	aa1e03e0 	mov	x0, x30
+    1380:	94000000 	bl	0 <_mcount>
+    1384:	f9403e82 	ldr	x2, [x20, #120]
+    1388:	aa1303e0 	mov	x0, x19
+    138c:	90000001 	adrp	x1, 0 <st_tty_receive>
+    1390:	91000021 	add	x1, x1, #0x0
+    1394:	9102a442 	add	x2, x2, #0xa9
+[31m    1398:	94000000 	bl	0 <sprintf>[0m
+    139c:	93407c00 	sxtw	x0, w0
+    13a0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    13a4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    13a8:	d65f03c0 	ret
+    13ac:	d503201f 	nop
+
+00000000000013b0 <show_install>:
+    13b0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    13b4:	910003fd 	mov	x29, sp
+    13b8:	a90153f3 	stp	x19, x20, [sp, #16]
+    13bc:	aa0003f4 	mov	x20, x0
+    13c0:	aa0203f3 	mov	x19, x2
+    13c4:	aa1e03e0 	mov	x0, x30
+    13c8:	94000000 	bl	0 <_mcount>
+    13cc:	f9403e82 	ldr	x2, [x20, #120]
+    13d0:	aa1303e0 	mov	x0, x19
+    13d4:	90000001 	adrp	x1, 0 <st_tty_receive>
+    13d8:	91000021 	add	x1, x1, #0x0
+    13dc:	3942a042 	ldrb	w2, [x2, #168]
+[31m    13e0:	94000000 	bl	0 <sprintf>[0m
+    13e4:	93407c00 	sxtw	x0, w0
+    13e8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+ 3f8:	90000000 	adrp	x0, 0 <st_reg_complete>
+ 3fc:	91000000 	add	x0, x0, #0x0
+ 400:	94000000 	bl	0 <printk>
+ 404:	14000022 	b	48c <st_kim_start+0x220>
+ 408:	39417660 	ldrb	w0, [x19, #93]
+ 40c:	39417261 	ldrb	w1, [x19, #92]
+ 410:	b900127f 	str	wzr, [x19, #16]
+ 414:	2a002020 	orr	w0, w1, w0, lsl #8
+ 418:	12003c17 	and	w23, w0, #0xffff
+ 41c:	12001815 	and	w21, w0, #0x7f
+ 420:	d34a3816 	ubfx	x22, x0, #10, #5
+ 424:	d3472414 	ubfx	x20, x0, #7, #3
+ 428:	36780040 	tbz	w0, #15, 430 <st_kim_start+0x1c4>
+ 42c:	321d0294 	orr	w20, w20, #0x8
+ 430:	2a1603e2 	mov	w2, w22
+ 434:	2a1503e4 	mov	w4, w21
+ 438:	2a1403e3 	mov	w3, w20
+ 43c:	910243e0 	add	x0, sp, #0x90
+ 440:	90000001 	adrp	x1, 0 <st_reg_complete>
+ 444:	91000021 	add	x1, x1, #0x0
+[31m 448:	94000000 	bl	0 <sprintf>[0m
+ 44c:	79014277 	strh	w23, [x19, #160]
+ 450:	79014676 	strh	w22, [x19, #162]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m5[0m times [0;33mst_drv.ko[0m
+

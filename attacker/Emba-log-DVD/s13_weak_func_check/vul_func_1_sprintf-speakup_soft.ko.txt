@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mspeakup_soft.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m116) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mspeakup_soft.ko[0m
+
+ 4a0:	910223e1 	add	x1, sp, #0x88
+ 4a4:	aa1703e0 	mov	x0, x23
+ 4a8:	94000000 	bl	0 <finish_wait>
+ 4ac:	f9402ed7 	ldr	x23, [x22, #88]
+ 4b0:	a90b7f7f 	stp	xzr, xzr, [x27, #176]
+ 4b4:	a9017f3f 	stp	xzr, xzr, [x25, #16]
+ 4b8:	f900133f 	str	xzr, [x25, #32]
+ 4bc:	b94002e1 	ldr	w1, [x23]
+ 4c0:	7100a43f 	cmp	w1, #0x29
+ 4c4:	540000a1 	b.ne	4d8 <softsynthx_read.isra.0+0x150>  // b.any
+ 4c8:	1400000f 	b	504 <softsynthx_read.isra.0+0x17c>
+ 4cc:	b8430ee1 	ldr	w1, [x23, #48]!
+ 4d0:	7100a43f 	cmp	w1, #0x29
+ 4d4:	54000180 	b.eq	504 <softsynthx_read.isra.0+0x17c>  // b.none
+ 4d8:	51009021 	sub	w1, w1, #0x24
+ 4dc:	71000c3f 	cmp	w1, #0x3
+ 4e0:	54ffff69 	b.ls	4cc <softsynthx_read.isra.0+0x144>  // b.plast
+ 4e4:	b9402ae2 	ldr	w2, [x23, #40]
+ 4e8:	aa1903e0 	mov	x0, x25
+ 4ec:	f94006e1 	ldr	x1, [x23, #8]
+[31m 4f0:	94000000 	bl	0 <sprintf>[0m
+ 4f4:	8b20c339 	add	x25, x25, w0, sxtw
+ 4f8:	b8430ee1 	ldr	w1, [x23, #48]!
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mspeakup_soft.ko[0m
+

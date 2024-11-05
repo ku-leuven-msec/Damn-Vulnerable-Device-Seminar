@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibext2fs.so.2.4[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibext2fs.so.2.4[0m
+
+[31m   38530:	97ff5edc 	bl	100a0 <mmap@plt>[0m
+   38534:	f9000660 	str	x0, [x19, #8]
+   38538:	b100041f 	cmn	x0, #0x1
+   3853c:	540000c0 	b.eq	38554 <ext2fs_is_fast_symlink@@Base+0x2bd4>  // b.none
+   38540:	b9401660 	ldr	w0, [x19, #20]
+   38544:	b9015660 	str	w0, [x19, #340]
+   38548:	a94153f3 	ldp	x19, x20, [sp, #16]
+   3854c:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   38550:	d65f03c0 	ret
+   38554:	f9408e74 	ldr	x20, [x19, #280]
+   38558:	f90013f5 	str	x21, [sp, #32]
+   3855c:	f900067f 	str	xzr, [x19, #8]
+   38560:	b901567f 	str	wzr, [x19, #340]
+   38564:	97ff6137 	bl	10a40 <__errno_location@plt>
+   38568:	b9400000 	ldr	w0, [x0]
+   3856c:	b9401675 	ldr	w21, [x19, #20]
+   38570:	97ff5e28 	bl	fe10 <strerror@plt>
+   38574:	aa0003e4 	mov	x4, x0
+   38578:	2a1503e3 	mov	w3, w21
+   3857c:	aa1303e0 	mov	x0, x19
+   38580:	52800041 	mov	w1, #0x2                   	// #2
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibext2fs.so.2.4[0m
+

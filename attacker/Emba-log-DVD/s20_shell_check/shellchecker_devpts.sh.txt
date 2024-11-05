@@ -1,0 +1,17 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/devpts.sh line 11:[0m
+[0m. /etc/default/devpts[0m
+[32m  ^-----------------^ SC1091: Not following: /etc/default/devpts was not specified as input (see shellcheck -x).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/devpts.sh line 26:[0m
+[0m		mount -t devpts devpts /dev/pts -ogid=${TTYGRP},mode=${TTYMODE}[0m
+[32m                                                      ^-------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                                                     ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		mount -t devpts devpts /dev/pts -ogid="${TTYGRP}",mode="${TTYMODE}"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC1091 -- Not following: /etc/default/devpt...
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...

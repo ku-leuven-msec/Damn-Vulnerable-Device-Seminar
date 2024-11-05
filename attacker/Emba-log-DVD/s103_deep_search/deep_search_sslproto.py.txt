@@ -1,0 +1,173 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/asyncio/sslproto.py[0m
+4:    import ssl.
+6:    ssl = None.
+17:r('Server side SSL needs a valid .
+17:SSLContext').
+19: side may pass ssl=True to use a .
+20: that case the sslcontext passed .
+23:    sslcontext = ssl.c.
+25:        sslcontext.check_h.
+26:    return sslcontext.
+29: States of an _SSLPipe..
+36:class _SSLPipe(object):.
+37:    """An SSL "Pipe"..
+39:    An SSL pipe allows yo.
+39:nicate with an SSL/TLS protocol i.
+44:    An SSL pipe can be in.
+46:s encrypted to SSL record level d.
+46:ice versa. The SSL record.
+47:t level in the SSL protocol suite.
+50:    An SslPipe initially .
+50:mode. To start SSL, call.
+51:). To shutdown SSL again, call un.
+58: specifies the ssl.SSLContext to .
+65:        the _ssl module support.
+71:lf._incoming = ssl.MemoryBIO().
+72:lf._outgoing = ssl.MemoryBIO().
+73:        self._sslobj = None.
+74:    self._need_ssldata = False.
+80:        """The SSL context passed.
+84:    def ssl_object(self):.
+85:""The internal ssl.SSLObject inst.
+89:  return self._sslobj.
+92:    def need_ssldata(self):.
+95:urn self._need_ssldata.
+107:  """Start the SSL handshake..
+109:turn a list of ssldata. A ssldata.
+117:        self._sslobj = self._con.
+123:        ssldata, appdata =.
+123: self.feed_ssldata(b'', only_.
+125:        return ssldata.
+128:  """Start the SSL shutdown seque.
+130:turn a list of ssldata. A ssldata.
+143:        ssldata, appdata =.
+143: self.feed_ssldata(b'').
+145:        return ssldata.
+150: will raise an SSL_ERROR_EOF exce.
+154:        ssldata, appdata =.
+154: self.feed_ssldata(b'').
+157:    def feed_ssldata(self, data.
+158:       """Feed SSL record level d.
+161:be used to get ssldata for a hand.
+164:     Return a (ssldata, appdata) .
+164:tuple. The ssldata element is.
+165:ers containing SSL data that need.
+165: to the remote SSL..
+169: indicating an SSL "close_notify".
+180:    self._need_ssldata = False.
+184:        ssldata = [].
+189:         self._sslobj.do_handshak.
+194:       return (ssldata, appdata).
+198:read data from SSL until close_no.
+200: chunk = self._sslobj.read(self.m.
+207:         self._sslobj.unwrap().
+208:         self._sslobj = None.
+216:       except (ssl.SSLError, ssl..
+219:               ssl.SSL_ERROR_WANT.
+219:_READ, ssl.SSL_ERROR_WANT_WRI.
+220:               ssl.SSL_ERROR_SYSC.
+224:    self._need_ssldata = (exc_err.
+224:no == ssl.SSL_ERROR_WANT_REA.
+229:            ssldata.append(sel.
+230:       return (ssldata, appdata).
+235:    Return an (ssldata, offset) t.
+235:uple. The ssldata element is.
+237:        remote SSL instance. The .
+242:This is an OpenSSL requirement. A.
+243:, because the _ssl module.
+245:rypted data in ssldata..
+251:               ssldata = [data[of.
+253:               ssldata = [].
+254:       return (ssldata, len(data).
+256:        ssldata = [].
+259:    self._need_ssldata = False.
+262:ffset += self._sslobj.write(view[.
+263:        except ssl.SSLError as ex.
+269: = exc.errno = ssl.SSL_ERROR_WANT.
+270:_errno not in (ssl.SSL_ERROR_WANT.
+271:               ssl.SSL_ERROR_WANT.
+272:               ssl.SSL_ERROR_SYSC.
+274:    self._need_ssldata = (exc_err.
+274:no == ssl.SSL_ERROR_WANT_REA.
+278:               ssldata.append(sel.
+279: or self._need_ssldata:.
+281:       return (ssldata, offset).
+284:class _SSLProtocolTranspo.
+289:__(self, loop, ssl_protocol):.
+291:        # SSLProtocol instan.
+292:        self._ssl_protocol = ssl.
+297:  return self._ssl_protocol._get_.
+300:        self._ssl_protocol._set_.
+303:  return self._ssl_protocol._app_.
+317:        self._ssl_protocol._star.
+325:    tr = self._ssl_protocol._tran.
+327: RuntimeError('SSL transport has .
+336:        self._ssl_protocol._tran.
+344:        self._ssl_protocol._tran.
+365:        self._ssl_protocol._tran.
+369:  return self._ssl_protocol._tran.
+374:  return self._ssl_protocol._tran.
+387:        self._ssl_protocol._writ.
+400:        self._ssl_protocol._abor.
+404:class SSLProtocol(protoc.
+405:    """SSL protocol..
+407:lementation of SSL on top of a so.
+408:fers which are ssl.MemoryBIO obje.
+411: app_protocol, sslcontext, waiter.
+414:               ssl_handshake_time.
+415:        if ssl is None:.
+416:eError('stdlib ssl module not ava.
+418:        if ssl_handshake_time.
+419:            ssl_handshake_time.
+419:ut = constants.SSL_HANDSHAKE_TIME.
+420:        elif ssl_handshake_time.
+422:             f"ssl_handshake_time.
+423:        f"got {ssl_handshake_time.
+425:        if not sslcontext:.
+426:            sslcontext = _crea.
+434:        self._sslcontext = sslco.
+435:        # SSL-specific extra.
+437:._extra = dict(sslcontext=sslcont.
+446:p_transport = _SSLProtocolTranspo.
+447:        # _SSLPipe instance (.
+448:        self._sslpipe = None.
+455:        self._ssl_handshake_time.
+455:out = ssl_handshake_time.
+475:     Start the SSL handshake..
+478:        self._sslpipe = _SSLPipe.
+478:(self._sslcontext,.
+494:urred while in SSL handshake..
+505:        self._sslpipe = None.
+520:lled when some SSL data is receiv.
+524:      if self._sslpipe is None:.
+525:sport closing, sslpipe is destroy.
+529:            ssldata, appdata =.
+529: self._sslpipe.feed_sslda.
+533:atal_error(e, 'SSL error in data .
+536:  for chunk in ssldata:.
+551:led to receive SSL data').
+575:ect when using ssl').
+603:bug("%r starts SSL handshake", se.
+609:        # the SSL handshake.
+612:ll_later(self._ssl_handshake_time.
+619:             f"SSL handshake is t.
+620:      f"{self._ssl_handshake_time.
+629:        sslobj = self._ssl.
+629:pipe.ssl_object.
+634:    peercert = sslobj.getpeercert.
+638:sinstance(exc, ssl.CertificateErr.
+639:        msg = 'SSL handshake fail.
+641:        msg = 'SSL handshake fail.
+647:ger.debug("%r: SSL handshake took.
+651:        cipher=sslobj.cipher(),.
+652:   compression=sslobj.compression.
+653:               ssl_object=sslobj,.
+668: None or self._sslpipe is None:.
+675:               ssldata, offset = .
+675:self._sslpipe.feed_appda.
+677:               ssldata = self._ss.
+681:               ssldata = self._ss.
+684:  for chunk in ssldata:.
+691:  assert self._sslpipe.need_sslda.
+707:Fatal error on SSL transport').
+724:        self._sslpipe = None.

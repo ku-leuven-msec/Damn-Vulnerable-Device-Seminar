@@ -1,0 +1,113 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibcrypto.so.1.1[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibcrypto.so.1.1[0m
+
+   977d0:	a94153f3 	ldp	x19, x20, [sp, #16]
+   977d4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   977d8:	a94363f7 	ldp	x23, x24, [sp, #48]
+   977dc:	a8cd7bfd 	ldp	x29, x30, [sp], #208
+   977e0:	d65f03c0 	ret
+   977e4:	aa1503e0 	mov	x0, x21
+   977e8:	f90023f9 	str	x25, [sp, #64]
+   977ec:	97ff78c5 	bl	75b00 <strlen@plt>
+   977f0:	aa0003f9 	mov	x25, x0
+   977f4:	aa1803e0 	mov	x0, x24
+   977f8:	97ff78c2 	bl	75b00 <strlen@plt>
+   977fc:	8b000320 	add	x0, x25, x0
+   97800:	d0000974 	adrp	x20, 1c5000 <ERR_load_X509V3_strings@@OPENSSL_1_1_0+0x7490>
+   97804:	91000800 	add	x0, x0, #0x2
+   97808:	9121c281 	add	x1, x20, #0x870
+   9780c:	52801fe2 	mov	w2, #0xff                  	// #255
+   97810:	9402c5ac 	bl	148ec0 <CRYPTO_zalloc@@OPENSSL_1_1_0>
+   97814:	f90002e0 	str	x0, [x23]
+   97818:	b4000460 	cbz	x0, 978a4 <BIO_accept@@OPENSSL_1_1_0+0x1b4>
+   9781c:	aa1503e1 	mov	x1, x21
+[31m   97820:	97ff7a68 	bl	761c0 <strcpy@plt>[0m
+   97824:	f94002f9 	ldr	x25, [x23]
+   97828:	aa1903e0 	mov	x0, x25
+--
+   dac08:	a90153f3 	stp	x19, x20, [sp, #16]
+   dac0c:	aa0103f3 	mov	x19, x1
+   dac10:	a9025bf5 	stp	x21, x22, [sp, #32]
+   dac14:	aa0003f6 	mov	x22, x0
+   dac18:	aa0103e0 	mov	x0, x1
+   dac1c:	97fe6bb9 	bl	75b00 <strlen@plt>
+   dac20:	aa0003f4 	mov	x20, x0
+   dac24:	528005e1 	mov	w1, #0x2f                  	// #47
+   dac28:	aa1303e0 	mov	x0, x19
+   dac2c:	97fe6d3d 	bl	76120 <strchr@plt>
+   dac30:	b4000200 	cbz	x0, dac70 <DSA_do_verify@@OPENSSL_1_1_0+0xd0>
+   dac34:	11000695 	add	w21, w20, #0x1
+   dac38:	52802162 	mov	w2, #0x10b                 	// #267
+   dac3c:	93407ea0 	sxtw	x0, w21
+   dac40:	900007d5 	adrp	x21, 1d2000 <ERR_load_X509V3_strings@@OPENSSL_1_1_0+0x14490>
+   dac44:	913ee2a1 	add	x1, x21, #0xfb8
+   dac48:	9401b846 	bl	148d60 <CRYPTO_malloc@@OPENSSL_1_1_0>
+   dac4c:	aa0003f4 	mov	x20, x0
+   dac50:	b4000480 	cbz	x0, dace0 <DSA_do_verify@@OPENSSL_1_1_0+0x140>
+   dac54:	aa1303e1 	mov	x1, x19
+[31m   dac58:	97fe6d5a 	bl	761c0 <strcpy@plt>[0m
+   dac5c:	aa1403e0 	mov	x0, x20
+   dac60:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   db140:	aa0003f3 	mov	x19, x0
+   db144:	2a1303f7 	mov	w23, w19
+   db148:	aa1403e0 	mov	x0, x20
+   db14c:	97fe6a6d 	bl	75b00 <strlen@plt>
+   db150:	0b130000 	add	w0, w0, w19
+   db154:	340000b3 	cbz	w19, db168 <DSA_do_verify@@OPENSSL_1_1_0+0x5c8>
+   db158:	8b33c2a1 	add	x1, x21, w19, sxtw
+   db15c:	385ff021 	ldurb	w1, [x1, #-1]
+   db160:	7100bc3f 	cmp	w1, #0x2f
+   db164:	54000500 	b.eq	db204 <DSA_do_verify@@OPENSSL_1_1_0+0x664>  // b.none
+   db168:	11000800 	add	w0, w0, #0x2
+   db16c:	f00007b6 	adrp	x22, 1d2000 <ERR_load_X509V3_strings@@OPENSSL_1_1_0+0x14490>
+   db170:	913ee2d6 	add	x22, x22, #0xfb8
+   db174:	52801e22 	mov	w2, #0xf1                  	// #241
+   db178:	93407c00 	sxtw	x0, w0
+   db17c:	aa1603e1 	mov	x1, x22
+   db180:	9401b6f8 	bl	148d60 <CRYPTO_malloc@@OPENSSL_1_1_0>
+   db184:	aa0003f3 	mov	x19, x0
+   db188:	b4000740 	cbz	x0, db270 <DSA_do_verify@@OPENSSL_1_1_0+0x6d0>
+   db18c:	aa1503e1 	mov	x1, x21
+[31m   db190:	97fe6c0c 	bl	761c0 <strcpy@plt>[0m
+   db194:	93407ee0 	sxtw	x0, w23
+   db198:	528005e1 	mov	w1, #0x2f                  	// #47
+   db19c:	3837ca61 	strb	w1, [x19, w23, sxtw]
+   db1a0:	91000400 	add	x0, x0, #0x1
+   db1a4:	aa1403e1 	mov	x1, x20
+   db1a8:	8b000260 	add	x0, x19, x0
+[31m   db1ac:	97fe6c05 	bl	761c0 <strcpy@plt>[0m
+   db1b0:	aa1303e0 	mov	x0, x19
+   db1b4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+  14fc48:	d503201f 	nop
+  14fc4c:	d503201f 	nop
+
+000000000014fc50 <CRYPTO_strdup@@OPENSSL_1_1_0>:
+  14fc50:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+  14fc54:	910003fd 	mov	x29, sp
+  14fc58:	a90153f3 	stp	x19, x20, [sp, #16]
+  14fc5c:	b4000300 	cbz	x0, 14fcbc <CRYPTO_strdup@@OPENSSL_1_1_0+0x6c>
+  14fc60:	aa0103f3 	mov	x19, x1
+  14fc64:	aa0003f4 	mov	x20, x0
+  14fc68:	f90013f5 	str	x21, [sp, #32]
+  14fc6c:	2a0203f5 	mov	w21, w2
+  14fc70:	97fc97a4 	bl	75b00 <strlen@plt>
+  14fc74:	91000400 	add	x0, x0, #0x1
+  14fc78:	aa1303e1 	mov	x1, x19
+  14fc7c:	2a1503e2 	mov	w2, w21
+  14fc80:	97ffe438 	bl	148d60 <CRYPTO_malloc@@OPENSSL_1_1_0>
+  14fc84:	aa0003f3 	mov	x19, x0
+  14fc88:	b4000100 	cbz	x0, 14fca8 <CRYPTO_strdup@@OPENSSL_1_1_0+0x58>
+  14fc8c:	aa1403e1 	mov	x1, x20
+[31m  14fc90:	97fc994c 	bl	761c0 <strcpy@plt>[0m
+  14fc94:	aa1303e0 	mov	x0, x19
+  14fc98:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mlibcrypto.so.1.1[0m
+

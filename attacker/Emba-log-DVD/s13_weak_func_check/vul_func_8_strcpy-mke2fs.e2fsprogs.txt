@@ -1,0 +1,189 @@
+[[0;33m*[0m] Binary protection state of [0;33mmke2fs.e2fsprogs[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mmke2fs.e2fsprogs[0m
+
+    8684:	937d7c21 	sbfiz	x1, x1, #3, #32
+    8688:	97fff2f2 	bl	5250 <realloc@plt>
+    868c:	b4000380 	cbz	x0, 86fc <ext2fs_open_file@plt+0x2cfc>
+    8690:	a90363f7 	stp	x23, x24, [sp, #48]
+    8694:	b9400a74 	ldr	w20, [x19, #8]
+    8698:	f9000260 	str	x0, [x19]
+    869c:	14000002 	b	86a4 <ext2fs_open_file@plt+0x2ca4>
+    86a0:	a90363f7 	stp	x23, x24, [sp, #48]
+    86a4:	aa1503e0 	mov	x0, x21
+    86a8:	97fff172 	bl	4c70 <strlen@plt>
+    86ac:	93407e97 	sxtw	x23, w20
+    86b0:	f9400276 	ldr	x22, [x19]
+    86b4:	91000400 	add	x0, x0, #0x1
+    86b8:	97fff252 	bl	5000 <malloc@plt>
+    86bc:	937d7e98 	sbfiz	x24, x20, #3, #32
+    86c0:	f8377ac0 	str	x0, [x22, x23, lsl #3]
+    86c4:	b40001a0 	cbz	x0, 86f8 <ext2fs_open_file@plt+0x2cf8>
+    86c8:	8b1802d6 	add	x22, x22, x24
+    86cc:	aa1503e1 	mov	x1, x21
+    86d0:	11000694 	add	w20, w20, #0x1
+[31m    86d4:	97fff3ff 	bl	56d0 <strcpy@plt>[0m
+    86d8:	a94363f7 	ldp	x23, x24, [sp, #48]
+    86dc:	b9000a74 	str	w20, [x19, #8]
+--
+    9dc0:	a90dffff 	stp	xzr, xzr, [sp, #216]
+    9dc4:	f90077ff 	str	xzr, [sp, #232]
+    9dc8:	b400c7c0 	cbz	x0, b6c0 <ext2fs_open_file@plt+0x5cc0>
+    9dcc:	aa0003f6 	mov	x22, x0
+    9dd0:	97ffeba8 	bl	4c70 <strlen@plt>
+    9dd4:	11003000 	add	w0, w0, #0xc
+    9dd8:	93407c00 	sxtw	x0, w0
+    9ddc:	97ffec89 	bl	5000 <malloc@plt>
+    9de0:	aa0003f5 	mov	x21, x0
+    9de4:	b4010e80 	cbz	x0, bfb4 <ext2fs_open_file@plt+0x65b4>
+    9de8:	f0000062 	adrp	x2, 18000 <ext2fs_open_file@plt+0x12600>
+    9dec:	913e2042 	add	x2, x2, #0xf88
+    9df0:	52800740 	mov	w0, #0x3a                  	// #58
+    9df4:	39002aa0 	strb	w0, [x21, #10]
+    9df8:	aa1603e1 	mov	x1, x22
+    9dfc:	91002ea0 	add	x0, x21, #0xb
+    9e00:	f9400043 	ldr	x3, [x2]
+    9e04:	f90002a3 	str	x3, [x21]
+    9e08:	79401042 	ldrh	w2, [x2, #8]
+    9e0c:	790012a2 	strh	w2, [x21, #8]
+[31m    9e10:	97ffee30 	bl	56d0 <strcpy@plt>[0m
+    9e14:	aa1503e0 	mov	x0, x21
+    9e18:	97ffed26 	bl	52b0 <putenv@plt>
+--
+    a404:	f9478f18 	ldr	x24, [x24, #3864]
+    a408:	aa0003e2 	mov	x2, x0
+    a40c:	d2800001 	mov	x1, #0x0                   	// #0
+    a410:	aa1303e0 	mov	x0, x19
+    a414:	f9400303 	ldr	x3, [x24]
+    a418:	97ffeb22 	bl	50a0 <com_err@plt>
+    a41c:	52800020 	mov	w0, #0x1                   	// #1
+    a420:	97ffea20 	bl	4ca0 <exit@plt>
+    a424:	f9478f02 	ldr	x2, [x24, #3864]
+    a428:	910382bc 	add	x28, x21, #0xe0
+    a42c:	f90047e2 	str	x2, [sp, #136]
+    a430:	f9400040 	ldr	x0, [x2]
+    a434:	97ffea0f 	bl	4c70 <strlen@plt>
+    a438:	91000401 	add	x1, x0, #0x1
+    a43c:	f9422380 	ldr	x0, [x28, #1088]
+    a440:	97ffeb84 	bl	5250 <realloc@plt>
+    a444:	f9022380 	str	x0, [x28, #1088]
+    a448:	f94047e2 	ldr	x2, [sp, #136]
+    a44c:	b4011d40 	cbz	x0, c7f4 <ext2fs_open_file@plt+0x6df4>
+    a450:	f9400041 	ldr	x1, [x2]
+[31m    a454:	97ffec9f 	bl	56d0 <strcpy@plt>[0m
+    a458:	17fffebe 	b	9f50 <ext2fs_open_file@plt+0x4550>
+    a45c:	b0000120 	adrp	x0, 2f000 <ext2fs_open_file@plt+0x29600>
+--
+   12600:	d65f03c0 	ret
+   12604:	394006a0 	ldrb	w0, [x21, #1]
+   12608:	7100bc1f 	cmp	w0, #0x2f
+   1260c:	54fffc81 	b.ne	1259c <ext2fs_open_file@plt+0xcb9c>  // b.any
+   12610:	b0000040 	adrp	x0, 1b000 <ext2fs_open_file@plt+0x15600>
+   12614:	910d2000 	add	x0, x0, #0x348
+   12618:	97ffccaa 	bl	58c0 <getenv@plt>
+   1261c:	f90027e0 	str	x0, [sp, #72]
+   12620:	b40002a0 	cbz	x0, 12674 <ext2fs_open_file@plt+0xcc74>
+   12624:	97ffc993 	bl	4c70 <strlen@plt>
+   12628:	aa0003f8 	mov	x24, x0
+   1262c:	0b0002c0 	add	w0, w22, w0
+   12630:	97ffca74 	bl	5000 <malloc@plt>
+   12634:	aa0003f4 	mov	x20, x0
+   12638:	b4000260 	cbz	x0, 12684 <ext2fs_open_file@plt+0xcc84>
+   1263c:	f94027e1 	ldr	x1, [sp, #72]
+   12640:	aa1803e2 	mov	x2, x24
+   12644:	97ffc96f 	bl	4c00 <memcpy@plt>
+   12648:	910006a1 	add	x1, x21, #0x1
+   1264c:	8b180280 	add	x0, x20, x24
+[31m   12650:	97ffcc20 	bl	56d0 <strcpy@plt>[0m
+   12654:	17ffffda 	b	125bc <ext2fs_open_file@plt+0xcbbc>
+   12658:	aa1303e0 	mov	x0, x19
+--
+   132e4:	f9001fe5 	str	x5, [sp, #56]
+   132e8:	d2800005 	mov	x5, #0x0                   	// #0
+   132ec:	b40003a0 	cbz	x0, 13360 <ext2fs_open_file@plt+0xd960>
+   132f0:	9100c3e4 	add	x4, sp, #0x30
+   132f4:	97ffffbb 	bl	131e0 <ext2fs_open_file@plt+0xd7e0>
+   132f8:	d293ffc1 	mov	x1, #0x9ffe                	// #40958
+   132fc:	f2aaa6a1 	movk	x1, #0x5535, lsl #16
+   13300:	8b010001 	add	x1, x0, x1
+   13304:	f100043f 	cmp	x1, #0x1
+   13308:	540002c9 	b.ls	13360 <ext2fs_open_file@plt+0xd960>  // b.plast
+   1330c:	b5000180 	cbnz	x0, 1333c <ext2fs_open_file@plt+0xd93c>
+   13310:	f9401bf3 	ldr	x19, [sp, #48]
+   13314:	b40002b3 	cbz	x19, 13368 <ext2fs_open_file@plt+0xd968>
+   13318:	aa1303e0 	mov	x0, x19
+   1331c:	97ffc655 	bl	4c70 <strlen@plt>
+   13320:	91000400 	add	x0, x0, #0x1
+   13324:	97ffc737 	bl	5000 <malloc@plt>
+   13328:	f90002a0 	str	x0, [x21]
+   1332c:	b4000260 	cbz	x0, 13378 <ext2fs_open_file@plt+0xd978>
+   13330:	aa1303e1 	mov	x1, x19
+[31m   13334:	97ffc8e7 	bl	56d0 <strcpy@plt>[0m
+   13338:	d2800000 	mov	x0, #0x0                   	// #0
+   1333c:	f947c294 	ldr	x20, [x20, #3968]
+--
+   1381c:	f9400064 	ldr	x4, [x3]
+   13820:	f9002fe4 	str	x4, [sp, #88]
+   13824:	d2800004 	mov	x4, #0x0                   	// #0
+   13828:	aa0203f6 	mov	x22, x2
+   1382c:	910123e1 	add	x1, sp, #0x48
+   13830:	910143e2 	add	x2, sp, #0x50
+   13834:	97fffd8b 	bl	12e60 <ext2fs_open_file@plt+0xd460>
+   13838:	aa0003f3 	mov	x19, x0
+   1383c:	b5000320 	cbnz	x0, 138a0 <ext2fs_open_file@plt+0xdea0>
+   13840:	f9001bf7 	str	x23, [sp, #48]
+   13844:	b4000175 	cbz	x21, 13870 <ext2fs_open_file@plt+0xde70>
+   13848:	f94027f7 	ldr	x23, [sp, #72]
+   1384c:	b40003f7 	cbz	x23, 138c8 <ext2fs_open_file@plt+0xdec8>
+   13850:	aa1703e0 	mov	x0, x23
+   13854:	97ffc507 	bl	4c70 <strlen@plt>
+   13858:	91000400 	add	x0, x0, #0x1
+   1385c:	97ffc5e9 	bl	5000 <malloc@plt>
+   13860:	f90002a0 	str	x0, [x21]
+   13864:	b4000460 	cbz	x0, 138f0 <ext2fs_open_file@plt+0xdef0>
+   13868:	aa1703e1 	mov	x1, x23
+[31m   1386c:	97ffc799 	bl	56d0 <strcpy@plt>[0m
+   13870:	b4000396 	cbz	x22, 138e0 <ext2fs_open_file@plt+0xdee0>
+   13874:	f9402bf7 	ldr	x23, [sp, #80]
+   13878:	b40002f7 	cbz	x23, 138d4 <ext2fs_open_file@plt+0xded4>
+   1387c:	aa1703e0 	mov	x0, x23
+   13880:	97ffc4fc 	bl	4c70 <strlen@plt>
+   13884:	91000400 	add	x0, x0, #0x1
+   13888:	97ffc5de 	bl	5000 <malloc@plt>
+   1388c:	f90002c0 	str	x0, [x22]
+   13890:	b4000360 	cbz	x0, 138fc <ext2fs_open_file@plt+0xdefc>
+   13894:	aa1703e1 	mov	x1, x23
+[31m   13898:	97ffc78e 	bl	56d0 <strcpy@plt>[0m
+   1389c:	f9401bf7 	ldr	x23, [sp, #48]
+   138a0:	f947c294 	ldr	x20, [x20, #3968]
+--
+   13b0c:	910f4021 	add	x1, x1, #0x3d0
+   13b10:	aa1b03e0 	mov	x0, x27
+   13b14:	97ffc647 	bl	5430 <strcmp@plt>
+   13b18:	34000260 	cbz	w0, 13b64 <ext2fs_open_file@plt+0xe164>
+   13b1c:	90000041 	adrp	x1, 1b000 <ext2fs_open_file@plt+0x15600>
+   13b20:	910f6021 	add	x1, x1, #0x3d8
+   13b24:	aa1b03e0 	mov	x0, x27
+   13b28:	97ffc642 	bl	5430 <strcmp@plt>
+   13b2c:	340001c0 	cbz	w0, 13b64 <ext2fs_open_file@plt+0xe164>
+   13b30:	f94037e0 	ldr	x0, [sp, #104]
+   13b34:	b40001c0 	cbz	x0, 13b6c <ext2fs_open_file@plt+0xe16c>
+   13b38:	aa1b03e0 	mov	x0, x27
+   13b3c:	97ffc44d 	bl	4c70 <strlen@plt>
+   13b40:	91000400 	add	x0, x0, #0x1
+   13b44:	97ffc52f 	bl	5000 <malloc@plt>
+   13b48:	f94037e2 	ldr	x2, [sp, #104]
+   13b4c:	f9000040 	str	x0, [x2]
+   13b50:	b40000e0 	cbz	x0, 13b6c <ext2fs_open_file@plt+0xe16c>
+   13b54:	aa1b03e1 	mov	x1, x27
+   13b58:	528002d5 	mov	w21, #0x16                  	// #22
+[31m   13b5c:	97ffc6dd 	bl	56d0 <strcpy@plt>[0m
+   13b60:	17ffffb7 	b	13a3c <ext2fs_open_file@plt+0xe03c>
+   13b64:	321e0273 	orr	w19, w19, #0x4
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m8[0m times [0;33mmke2fs.e2fsprogs[0m
+

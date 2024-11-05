@@ -1,0 +1,66 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/opt/dvd/services/telnet/telnetsrvlib/test.py[0m
+8:TELNET_IP_BINDING = '.
+12:ription='Run a telnet server.').
+19:TELNET_PORT_BINDING =.
+24:VERPROTOCOL = 'telnet'.
+28:een version of telnetsrv..
+30:    from telnetsrv.green impor.
+30:t TelnetHandler, comman.
+33:let version of telnetsrv..
+35:    from telnetsrv.evtlet impo.
+35:rt TelnetHandler, comman.
+43:    from telnetsrv.threaded im.
+43:port TelnetHandler, comman.
+46:    if not TELNET_IP_BINDING:.
+47:        TELNET_IP_BINDING = '.
+51:# The TelnetHandler instanc.
+78:# Subclass TelnetHandler to add .
+81:class TestTelnetHandler(TelnetH.
+92:elf, username, password):.
+93:e the username/password.'''.
+134:        TelnetHandler.writeer.
+200:    @command('passwd').
+201:ef command_set_password(self, params):.
+202:        '''[<password>].
+203: set a console password..
+204: set a console password..
+208:            password = params[0].
+210:            password = self.readlin.
+210:e(prompt="New Password: ", echo=False.
+212:      # If the password was a paramete.
+214:history[-1] = 'passwd'.
+216:        password2 = self.readli.
+216:pt="Retype New Password: ", echo=False.
+217:        if password == password2:.
+218:ing to set new password, but not reall.
+220:lf.writeerror('Passwords don\'t match..
+268:        from telnetsrv.paramiko_ss.
+273:            telnet_handler = Test.
+273:TelnetHandler.
+280: Handler = TestTelnetHandler.
+284:.StreamServer((TELNET_IP_BINDING, TE.
+302:            (TELNET_IP_BINDING, TE.
+308:        class TelnetServer(SocketSe.
+311:      server = TelnetServer((TELNET_.
+311:IP_BINDING, TELNET_PORT_BINDING),.
+314:ERVERPROTOCOL, TELNET_PORT_BINDING) .
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/test.py[0m
+278:        script root (`SCRIPT_NAME`.
+306:A ``(username, password)`` tuple.
+421:me": auth[0], "password": auth[1]}.
+505:t: str, script_root: str) -> str:.
+506:, host, script_root, "", "")).rstr.
+511:     port, and root path..
+513:t, self.script_root).
+520:        script_root = "".
+522:netloc, script_root, qs, anchor = .
+525:   self.script_root = script_root..
+769:de(self.script_root),.
+984:        root_parts = builde.
+984:r.script_root.split("/").
+986:th_parts[: len(root_parts)] == roo.
+987:rip the script root from the path..
+988:builder.script_root) :].
+990:der the script root, so use the.
+991:r the previous root..
+993:builder.script_root = "".

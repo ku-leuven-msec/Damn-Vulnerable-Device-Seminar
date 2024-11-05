@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibresolv-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibresolv-2.31.so[0m
+
+    b650:	a9b97bfd 	stp	x29, x30, [sp, #-112]!
+    b654:	910003fd 	mov	x29, sp
+    b658:	a90153f3 	stp	x19, x20, [sp, #16]
+    b65c:	aa0303f3 	mov	x19, x3
+    b660:	12001c23 	and	w3, w1, #0xff
+    b664:	a9025bf5 	stp	x21, x22, [sp, #32]
+    b668:	9100e3f6 	add	x22, sp, #0x38
+    b66c:	aa0203f5 	mov	x21, x2
+    b670:	90000021 	adrp	x1, f000 <res_gethostbyname@GLIBC_2.17+0x2d0>
+    b674:	9129a021 	add	x1, x1, #0xa68
+    b678:	2a0003e2 	mov	w2, w0
+    b67c:	aa1603e0 	mov	x0, x22
+    b680:	97ffe160 	bl	3c00 <sprintf@plt>
+    b684:	93407c14 	sxtw	x20, w0
+    b688:	f9400261 	ldr	x1, [x19]
+    b68c:	91000680 	add	x0, x20, #0x1
+    b690:	eb01001f 	cmp	x0, x1
+    b694:	540001e8 	b.hi	b6d0 <ns_put32@@GLIBC_2.17+0x90>  // b.pmore
+    b698:	f94002a0 	ldr	x0, [x21]
+    b69c:	aa1603e1 	mov	x1, x22
+[31m    b6a0:	97ffe1f4 	bl	3e70 <strcpy@plt>[0m
+    b6a4:	f94002a2 	ldr	x2, [x21]
+    b6a8:	52800000 	mov	w0, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mlibresolv-2.31.so[0m
+

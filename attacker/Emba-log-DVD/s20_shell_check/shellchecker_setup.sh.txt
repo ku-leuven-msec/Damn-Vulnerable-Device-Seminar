@@ -1,0 +1,183 @@
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 2:[0m
+[0mDEBUG_SETUP=1[0m
+[33m^---------^ SC2034: DEBUG_SETUP appears unused. Verify use (or export if used externally).[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 5:[0m
+[0m  printf "$BBlue$1$NC\n"[0m
+[32m         ^-------------^ SC2059: Don't use variables in the printf format string. Use printf '..%s..' "$foo".[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 8:[0m
+[0m  printf "$RED$1$NC\n"[0m
+[32m         ^-----------^ SC2059: Don't use variables in the printf format string. Use printf '..%s..' "$foo".[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 12:[0m
+[0m  M=`wget -O - -o  /dev/null http://worldtimeapi.org/api/timezone/Europe/Brussels | sed -E "s|,|\n|g" | grep 'utc_datetime'| cut -d ':' -f2-`[0m
+[32m    ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+  M=$(wget -O - -o  /dev/null http://worldtimeapi.org/api/timezone/Europe/Brussels | sed -E "s|,|\n|g" | grep 'utc_datetime'| cut -d ':' -f2-)
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 13:[0m
+[0m  D=`echo $M | cut -d "T" -f1`[0m
+[32m    ^------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m          ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  D=$(echo "$M" | cut -d "T" -f1)
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 14:[0m
+[0m  T=`echo $M | cut -d "T" -f2- | cut -d "." -f1`[0m
+[32m    ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m          ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  T=$(echo "$M" | cut -d "T" -f2- | cut -d "." -f1)
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 15:[0m
+[0m  date -s "${D:1} $T" [0m
+[33m           ^----^ SC3057: In POSIX sh, string indexing is undefined.[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 26:[0m
+[0m  local ip=`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`[0m
+[33m  ^------^ SC3043: In POSIX sh, 'local' is undefined.[0m
+[33m        ^-- SC2155: Declare and assign separately to avoid masking return values.[0m
+[32m           ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+  local ip=$(ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://')
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 28:[0m
+[0m    ip=`ifconfig eth0 2>/dev/null|awk '/inet / {print $2}'|sed 's/addr://'`[0m
+[32m       ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+    ip=$(ifconfig eth0 2>/dev/null|awk '/inet / {print $2}'|sed 's/addr://')
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 30:[0m
+[0m  echo $ip[0m
+[32m       ^-^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  echo "$ip"
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 50:[0m
+[0m  useradd -p '$6$vOsShJfzJ$nspR/.gahnFFRBL9hrTkWCwr8fCjhkIaEyABvCCpCVL6p1G3dZVEhvmbcOg2Bh1OG.a9ZmKkzwo2V5ZDOin73/' client[0m
+[32m             ^-- SC2016: Expressions don't expand in single quotes, use double quotes for that.[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 54:[0m
+[0m  useradd -p '$6$dY5hO/6B48/9D.66$QHHDlmdkw.CHtzQg.W/e7s8SnGJaJgwVYwKzLu1vB6ZTeKBb2BXj1xc7wJJUl7nFgUXy6AHf/6z63yOPuXBT7/' manager[0m
+[32m             ^-- SC2016: Expressions don't expand in single quotes, use double quotes for that.[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 94:[0m
+[0m    service=`basename $1`[0m
+[32m            ^-----------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                      ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+    service=$(basename "$1")
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 99:[0m
+[0m    if [[ $1 == *"coap"* ]]; then[0m
+[33m       ^------------------^ SC3010: In POSIX sh, [[ ]] is undefined.[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 104:[0m
+[0m    monitor_service $service $usr[0m
+[32m                    ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+    monitor_service "$service" $usr
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 111:[0m
+[0m  cp -r $TOOL_PATH/services/* $SERVICE_PATH/[0m
+[32m        ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  cp -r "$TOOL_PATH"/services/* $SERVICE_PATH/
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 123:[0m
+[0m  cd "$TMP_PATH"[0m
+[33m  ^------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+
+[1mDid you mean: [0m
+  cd "$TMP_PATH" || exit
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 150:[0m
+[0m  mv $TOOL_PATH/credentials/root.cer /etc/credentials/[0m
+[32m     ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  mv "$TOOL_PATH"/credentials/root.cer /etc/credentials/
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 151:[0m
+[0m  mv $TOOL_PATH/credentials/clients.pem /etc/credentials/[0m
+[32m     ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  mv "$TOOL_PATH"/credentials/clients.pem /etc/credentials/
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 158:[0m
+[0m  cd /etc/credentials[0m
+[33m  ^-----------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+
+[1mDid you mean: [0m
+  cd /etc/credentials || exit
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 159:[0m
+[0m  $TOOL_PATH/certificate_generation/setup_server.sh "$current_ip" "$(hostname)"[0m
+[32m  ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  "$TOOL_PATH"/certificate_generation/setup_server.sh "$current_ip" "$(hostname)"
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 160:[0m
+[0m  cd -[0m
+[33m  ^--^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.[0m
+[32m  ^--^ SC2103: Use a ( subshell ) to avoid having to cd back.[0m
+
+[1mDid you mean: [0m
+  cd - || exit
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 168:[0m
+[0m  echo 'root:$6$WQBiS3eMvOMsmsDy$nebw3AB8weP3mqP/1qqcJsN/Xh.CW5S2hsSHMVSxdH5sqEMdJZzzDfmcoBeZeNNh43JqXSquoRES3D4bgxKBy.' |chpasswd -e[0m
+[32m       ^-- SC2016: Expressions don't expand in single quotes, use double quotes for that.[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 172:[0m
+[0m  read HOSTNAME[0m
+[32m  ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/home/root/setup.sh line 178:[0m
+[0m  hostname $HOSTNAME[0m
+[32m           ^-------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+  hostname "$HOSTNAME"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- DEBUG_SETUP appears unused. Verif...
+  https://www.shellcheck.net/wiki/SC2155 -- Declare and assign separately to ...
+  https://www.shellcheck.net/wiki/SC2164 -- Use 'cd ... || exit' or 'cd ... |...

@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mopenvt.kbd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mopenvt.kbd[0m
+
+    185c:	1ac02820 	asr	w0, w1, w0
+    1860:	37004ba0 	tbnz	w0, #0, 21d4 <setlocale@plt+0xb24>
+    1864:	b9407be0 	ldr	w0, [sp, #120]
+    1868:	35001a00 	cbnz	w0, 1ba8 <setlocale@plt+0x4f8>
+    186c:	d000009a 	adrp	x26, 13000 <setlocale@plt+0x11950>
+    1870:	f947eb40 	ldr	x0, [x26, #4048]
+    1874:	b9400000 	ldr	w0, [x0]
+    1878:	6b13001f 	cmp	w0, w19
+    187c:	5400126a 	b.ge	1ac8 <setlocale@plt+0x418>  // b.tcont
+    1880:	f860daa0 	ldr	x0, [x21, w0, sxtw #3]
+    1884:	d2800017 	mov	x23, #0x0                   	// #0
+    1888:	97fffec6 	bl	13a0 <strlen@plt>
+    188c:	91000800 	add	x0, x0, #0x2
+    1890:	940003fc 	bl	2880 <setlocale@plt+0x11d0>
+    1894:	aa0003f6 	mov	x22, x0
+    1898:	350027d8 	cbnz	w24, 1d90 <setlocale@plt+0x6e0>
+    189c:	3900001f 	strb	wzr, [x0]
+    18a0:	b40027f7 	cbz	x23, 1d9c <setlocale@plt+0x6ec>
+    18a4:	aa1703e1 	mov	x1, x23
+    18a8:	aa1603e0 	mov	x0, x22
+[31m    18ac:	97fffef1 	bl	1470 <strcat@plt>[0m
+    18b0:	340014d8 	cbz	w24, 1b48 <setlocale@plt+0x498>
+    18b4:	f947eb40 	ldr	x0, [x26, #4048]
+--
+    1d5c:	37fffde0 	tbnz	w0, #31, 1d18 <setlocale@plt+0x668>
+    1d60:	b90093fa 	str	w26, [sp, #144]
+    1d64:	17fffeec 	b	1914 <setlocale@plt+0x264>
+    1d68:	528000a2 	mov	w2, #0x5                   	// #5
+    1d6c:	b0000001 	adrp	x1, 2000 <setlocale@plt+0x950>
+    1d70:	d2800000 	mov	x0, #0x0                   	// #0
+    1d74:	913c2021 	add	x1, x1, #0xf08
+    1d78:	97fffe2a 	bl	1620 <dcgettext@plt>
+    1d7c:	aa0003e1 	mov	x1, x0
+    1d80:	aa1303e2 	mov	x2, x19
+    1d84:	52800000 	mov	w0, #0x0                   	// #0
+    1d88:	940001f6 	bl	2560 <setlocale@plt+0xeb0>
+    1d8c:	17fffee4 	b	191c <setlocale@plt+0x26c>
+    1d90:	528005a0 	mov	w0, #0x2d                  	// #45
+    1d94:	790002c0 	strh	w0, [x22]
+    1d98:	b5ffd877 	cbnz	x23, 18a4 <setlocale@plt+0x1f4>
+    1d9c:	f947eb41 	ldr	x1, [x26, #4048]
+    1da0:	aa1603e0 	mov	x0, x22
+    1da4:	b9800021 	ldrsw	x1, [x1]
+    1da8:	f8617aa1 	ldr	x1, [x21, x1, lsl #3]
+[31m    1dac:	97fffdb1 	bl	1470 <strcat@plt>[0m
+    1db0:	17fffec0 	b	18b0 <setlocale@plt+0x200>
+    1db4:	97fffe23 	bl	1640 <__errno_location@plt>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m2[0m times [0;33mopenvt.kbd[0m
+

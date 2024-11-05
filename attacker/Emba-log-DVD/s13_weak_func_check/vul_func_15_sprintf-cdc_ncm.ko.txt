@@ -1,0 +1,323 @@
+[[0;33m*[0m] Binary protection state of [0;33mcdc_ncm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m76) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m250) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mcdc_ncm.ko[0m
+
+     3d8:	1a931021 	csel	w1, w1, w19, ne  // ne = any
+     3dc:	97ffff75 	bl	1b0 <cdc_ncm_set_dgram_size>
+     3e0:	52800000 	mov	w0, #0x0                   	// #0
+     3e4:	a94153f3 	ldp	x19, x20, [sp, #16]
+     3e8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     3ec:	d65f03c0 	ret
+
+00000000000003f0 <cdc_ncm_show_wNtbOutMaxDatagrams>:
+     3f0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     3f4:	910003fd 	mov	x29, sp
+     3f8:	a90153f3 	stp	x19, x20, [sp, #16]
+     3fc:	aa0003f4 	mov	x20, x0
+     400:	aa0203f3 	mov	x19, x2
+     404:	aa1e03e0 	mov	x0, x30
+     408:	94000000 	bl	0 <_mcount>
+     40c:	f9422682 	ldr	x2, [x20, #1096]
+     410:	aa1303e0 	mov	x0, x19
+     414:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     418:	91000021 	add	x1, x1, #0x0
+     41c:	79403442 	ldrh	w2, [x2, #26]
+[31m     420:	94000000 	bl	0 <sprintf>[0m
+     424:	93407c00 	sxtw	x0, w0
+     428:	a94153f3 	ldp	x19, x20, [sp, #16]
+     42c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     430:	d65f03c0 	ret
+     434:	d503201f 	nop
+
+0000000000000438 <cdc_ncm_show_wNdpOutAlignment>:
+     438:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     43c:	910003fd 	mov	x29, sp
+     440:	a90153f3 	stp	x19, x20, [sp, #16]
+     444:	aa0003f4 	mov	x20, x0
+     448:	aa0203f3 	mov	x19, x2
+     44c:	aa1e03e0 	mov	x0, x30
+     450:	94000000 	bl	0 <_mcount>
+     454:	f9422682 	ldr	x2, [x20, #1096]
+     458:	aa1303e0 	mov	x0, x19
+     45c:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     460:	91000021 	add	x1, x1, #0x0
+     464:	79403042 	ldrh	w2, [x2, #24]
+[31m     468:	94000000 	bl	0 <sprintf>[0m
+     46c:	93407c00 	sxtw	x0, w0
+     470:	a94153f3 	ldp	x19, x20, [sp, #16]
+     474:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     478:	d65f03c0 	ret
+     47c:	d503201f 	nop
+
+0000000000000480 <cdc_ncm_show_wNdpOutPayloadRemainder>:
+     480:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     484:	910003fd 	mov	x29, sp
+     488:	a90153f3 	stp	x19, x20, [sp, #16]
+     48c:	aa0003f4 	mov	x20, x0
+     490:	aa0203f3 	mov	x19, x2
+     494:	aa1e03e0 	mov	x0, x30
+     498:	94000000 	bl	0 <_mcount>
+     49c:	f9422682 	ldr	x2, [x20, #1096]
+     4a0:	aa1303e0 	mov	x0, x19
+     4a4:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     4a8:	91000021 	add	x1, x1, #0x0
+     4ac:	79402c42 	ldrh	w2, [x2, #22]
+[31m     4b0:	94000000 	bl	0 <sprintf>[0m
+     4b4:	93407c00 	sxtw	x0, w0
+     4b8:	a94153f3 	ldp	x19, x20, [sp, #16]
+     4bc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     4c0:	d65f03c0 	ret
+     4c4:	d503201f 	nop
+
+00000000000004c8 <cdc_ncm_show_wNdpOutDivisor>:
+     4c8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     4cc:	910003fd 	mov	x29, sp
+     4d0:	a90153f3 	stp	x19, x20, [sp, #16]
+     4d4:	aa0003f4 	mov	x20, x0
+     4d8:	aa0203f3 	mov	x19, x2
+     4dc:	aa1e03e0 	mov	x0, x30
+     4e0:	94000000 	bl	0 <_mcount>
+     4e4:	f9422682 	ldr	x2, [x20, #1096]
+     4e8:	aa1303e0 	mov	x0, x19
+     4ec:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     4f0:	91000021 	add	x1, x1, #0x0
+     4f4:	79402842 	ldrh	w2, [x2, #20]
+[31m     4f8:	94000000 	bl	0 <sprintf>[0m
+     4fc:	93407c00 	sxtw	x0, w0
+     500:	a94153f3 	ldp	x19, x20, [sp, #16]
+     504:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     508:	d65f03c0 	ret
+     50c:	d503201f 	nop
+
+0000000000000510 <cdc_ncm_show_dwNtbOutMaxSize>:
+     510:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     514:	910003fd 	mov	x29, sp
+     518:	a90153f3 	stp	x19, x20, [sp, #16]
+     51c:	aa0003f4 	mov	x20, x0
+     520:	aa0203f3 	mov	x19, x2
+     524:	aa1e03e0 	mov	x0, x30
+     528:	94000000 	bl	0 <_mcount>
+     52c:	f9422682 	ldr	x2, [x20, #1096]
+     530:	aa1303e0 	mov	x0, x19
+     534:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     538:	91000021 	add	x1, x1, #0x0
+     53c:	b9401042 	ldr	w2, [x2, #16]
+[31m     540:	94000000 	bl	0 <sprintf>[0m
+     544:	93407c00 	sxtw	x0, w0
+     548:	a94153f3 	ldp	x19, x20, [sp, #16]
+     54c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     550:	d65f03c0 	ret
+     554:	d503201f 	nop
+
+0000000000000558 <cdc_ncm_show_wNdpInAlignment>:
+     558:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     55c:	910003fd 	mov	x29, sp
+     560:	a90153f3 	stp	x19, x20, [sp, #16]
+     564:	aa0003f4 	mov	x20, x0
+     568:	aa0203f3 	mov	x19, x2
+     56c:	aa1e03e0 	mov	x0, x30
+     570:	94000000 	bl	0 <_mcount>
+     574:	f9422682 	ldr	x2, [x20, #1096]
+     578:	aa1303e0 	mov	x0, x19
+     57c:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     580:	91000021 	add	x1, x1, #0x0
+     584:	79401842 	ldrh	w2, [x2, #12]
+[31m     588:	94000000 	bl	0 <sprintf>[0m
+     58c:	93407c00 	sxtw	x0, w0
+     590:	a94153f3 	ldp	x19, x20, [sp, #16]
+     594:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     598:	d65f03c0 	ret
+     59c:	d503201f 	nop
+
+00000000000005a0 <cdc_ncm_show_wNdpInPayloadRemainder>:
+     5a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     5a4:	910003fd 	mov	x29, sp
+     5a8:	a90153f3 	stp	x19, x20, [sp, #16]
+     5ac:	aa0003f4 	mov	x20, x0
+     5b0:	aa0203f3 	mov	x19, x2
+     5b4:	aa1e03e0 	mov	x0, x30
+     5b8:	94000000 	bl	0 <_mcount>
+     5bc:	f9422682 	ldr	x2, [x20, #1096]
+     5c0:	aa1303e0 	mov	x0, x19
+     5c4:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     5c8:	91000021 	add	x1, x1, #0x0
+     5cc:	79401442 	ldrh	w2, [x2, #10]
+[31m     5d0:	94000000 	bl	0 <sprintf>[0m
+     5d4:	93407c00 	sxtw	x0, w0
+     5d8:	a94153f3 	ldp	x19, x20, [sp, #16]
+     5dc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     5e0:	d65f03c0 	ret
+     5e4:	d503201f 	nop
+
+00000000000005e8 <cdc_ncm_show_wNdpInDivisor>:
+     5e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     5ec:	910003fd 	mov	x29, sp
+     5f0:	a90153f3 	stp	x19, x20, [sp, #16]
+     5f4:	aa0003f4 	mov	x20, x0
+     5f8:	aa0203f3 	mov	x19, x2
+     5fc:	aa1e03e0 	mov	x0, x30
+     600:	94000000 	bl	0 <_mcount>
+     604:	f9422682 	ldr	x2, [x20, #1096]
+     608:	aa1303e0 	mov	x0, x19
+     60c:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     610:	91000021 	add	x1, x1, #0x0
+     614:	79401042 	ldrh	w2, [x2, #8]
+[31m     618:	94000000 	bl	0 <sprintf>[0m
+     61c:	93407c00 	sxtw	x0, w0
+     620:	a94153f3 	ldp	x19, x20, [sp, #16]
+     624:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     628:	d65f03c0 	ret
+     62c:	d503201f 	nop
+
+0000000000000630 <cdc_ncm_show_dwNtbInMaxSize>:
+     630:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     634:	910003fd 	mov	x29, sp
+     638:	a90153f3 	stp	x19, x20, [sp, #16]
+     63c:	aa0003f4 	mov	x20, x0
+     640:	aa0203f3 	mov	x19, x2
+     644:	aa1e03e0 	mov	x0, x30
+     648:	94000000 	bl	0 <_mcount>
+     64c:	f9422682 	ldr	x2, [x20, #1096]
+     650:	aa1303e0 	mov	x0, x19
+     654:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     658:	91000021 	add	x1, x1, #0x0
+     65c:	b9400442 	ldr	w2, [x2, #4]
+[31m     660:	94000000 	bl	0 <sprintf>[0m
+     664:	93407c00 	sxtw	x0, w0
+     668:	a94153f3 	ldp	x19, x20, [sp, #16]
+     66c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     670:	d65f03c0 	ret
+     674:	d503201f 	nop
+
+0000000000000678 <cdc_ncm_show_bmNtbFormatsSupported>:
+     678:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     67c:	910003fd 	mov	x29, sp
+     680:	a90153f3 	stp	x19, x20, [sp, #16]
+     684:	aa0003f4 	mov	x20, x0
+     688:	aa0203f3 	mov	x19, x2
+     68c:	aa1e03e0 	mov	x0, x30
+     690:	94000000 	bl	0 <_mcount>
+     694:	f9422682 	ldr	x2, [x20, #1096]
+     698:	aa1303e0 	mov	x0, x19
+     69c:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     6a0:	91000021 	add	x1, x1, #0x0
+     6a4:	79400442 	ldrh	w2, [x2, #2]
+[31m     6a8:	94000000 	bl	0 <sprintf>[0m
+     6ac:	d28000e0 	mov	x0, #0x7                   	// #7
+     6b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     6b8:	d65f03c0 	ret
+     6bc:	d503201f 	nop
+
+00000000000006c0 <cdc_ncm_show_tx_timer_usecs>:
+     6c0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     6c4:	910003fd 	mov	x29, sp
+     6c8:	a90153f3 	stp	x19, x20, [sp, #16]
+     6cc:	aa0003f4 	mov	x20, x0
+     6d0:	aa0203f3 	mov	x19, x2
+     6d4:	aa1e03e0 	mov	x0, x30
+     6d8:	94000000 	bl	0 <_mcount>
+     6dc:	f9422682 	ldr	x2, [x20, #1096]
+     6e0:	5289ba63 	mov	w3, #0x4dd3                	// #19923
+     6e4:	72a20c43 	movk	w3, #0x1062, lsl #16
+     6e8:	aa1303e0 	mov	x0, x19
+     6ec:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     6f0:	91000021 	add	x1, x1, #0x0
+     6f4:	b940d842 	ldr	w2, [x2, #216]
+     6f8:	9ba37c42 	umull	x2, w2, w3
+     6fc:	d366fc42 	lsr	x2, x2, #38
+[31m     700:	94000000 	bl	0 <sprintf>[0m
+     704:	93407c00 	sxtw	x0, w0
+     708:	a94153f3 	ldp	x19, x20, [sp, #16]
+     70c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     710:	d65f03c0 	ret
+     714:	d503201f 	nop
+
+0000000000000718 <cdc_ncm_show_tx_max>:
+     718:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     71c:	910003fd 	mov	x29, sp
+     720:	a90153f3 	stp	x19, x20, [sp, #16]
+     724:	aa0003f4 	mov	x20, x0
+     728:	aa0203f3 	mov	x19, x2
+     72c:	aa1e03e0 	mov	x0, x30
+     730:	94000000 	bl	0 <_mcount>
+     734:	f9422682 	ldr	x2, [x20, #1096]
+     738:	aa1303e0 	mov	x0, x19
+     73c:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     740:	91000021 	add	x1, x1, #0x0
+     744:	b940f442 	ldr	w2, [x2, #244]
+[31m     748:	94000000 	bl	0 <sprintf>[0m
+     74c:	93407c00 	sxtw	x0, w0
+     750:	a94153f3 	ldp	x19, x20, [sp, #16]
+     754:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     758:	d65f03c0 	ret
+     75c:	d503201f 	nop
+
+0000000000000760 <cdc_ncm_show_rx_max>:
+     760:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     764:	910003fd 	mov	x29, sp
+     768:	a90153f3 	stp	x19, x20, [sp, #16]
+     76c:	aa0003f4 	mov	x20, x0
+     770:	aa0203f3 	mov	x19, x2
+     774:	aa1e03e0 	mov	x0, x30
+     778:	94000000 	bl	0 <_mcount>
+     77c:	f9422682 	ldr	x2, [x20, #1096]
+     780:	aa1303e0 	mov	x0, x19
+     784:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     788:	91000021 	add	x1, x1, #0x0
+     78c:	b940f042 	ldr	w2, [x2, #240]
+[31m     790:	94000000 	bl	0 <sprintf>[0m
+     794:	93407c00 	sxtw	x0, w0
+     798:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     7a0:	d65f03c0 	ret
+     7a4:	d503201f 	nop
+
+00000000000007a8 <ndp_to_end_show>:
+     7a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     7ac:	910003fd 	mov	x29, sp
+     7b0:	a90153f3 	stp	x19, x20, [sp, #16]
+     7b4:	aa0003f4 	mov	x20, x0
+     7b8:	aa0203f3 	mov	x19, x2
+     7bc:	aa1e03e0 	mov	x0, x30
+     7c0:	94000000 	bl	0 <_mcount>
+     7c4:	f9422684 	ldr	x4, [x20, #1096]
+     7c8:	52800b23 	mov	w3, #0x59                  	// #89
+     7cc:	aa1303e0 	mov	x0, x19
+     7d0:	528009c2 	mov	w2, #0x4e                  	// #78
+     7d4:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     7d8:	91000021 	add	x1, x1, #0x0
+     7dc:	b940d484 	ldr	w4, [x4, #212]
+     7e0:	f27f009f 	tst	x4, #0x2
+     7e4:	1a821062 	csel	w2, w3, w2, ne  // ne = any
+[31m     7e8:	94000000 	bl	0 <sprintf>[0m
+     7ec:	d2800040 	mov	x0, #0x2                   	// #2
+     7f0:	a94153f3 	ldp	x19, x20, [sp, #16]
+     7f4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     7f8:	d65f03c0 	ret
+     7fc:	d503201f 	nop
+
+0000000000000800 <cdc_ncm_show_min_tx_pkt>:
+     800:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     804:	910003fd 	mov	x29, sp
+     808:	a90153f3 	stp	x19, x20, [sp, #16]
+     80c:	aa0003f4 	mov	x20, x0
+     810:	aa0203f3 	mov	x19, x2
+     814:	aa1e03e0 	mov	x0, x30
+     818:	94000000 	bl	0 <_mcount>
+     81c:	f9422682 	ldr	x2, [x20, #1096]
+     820:	aa1303e0 	mov	x0, x19
+     824:	90000001 	adrp	x1, 0 <cdc_ncm_get_sset_count>
+     828:	91000021 	add	x1, x1, #0x0
+     82c:	79422842 	ldrh	w2, [x2, #276]
+[31m     830:	94000000 	bl	0 <sprintf>[0m
+     834:	93407c00 	sxtw	x0, w0
+     838:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m15[0m times [0;33mcdc_ncm.ko[0m
+

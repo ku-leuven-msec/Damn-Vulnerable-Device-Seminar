@@ -1,0 +1,71 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/imaplib.py[0m
+18:# IMAP4_SSL contributed by.
+30:    import ssl.
+31:    HAVE_SSL = True.
+33:    HAVE_SSL = False.
+43:IMAP4_SSL_PORT = 993.
+76:      'GETQUOTAROOT': ('AUTH', 'SE.
+151: However, the 'password' argument to t.
+560:getquota(self, root):.
+561:"Get the quota root's resource usa.
+565:ance>.getquota(root).
+567:nd('GETQUOTA', root).
+571:   def getquotaroot(self, mailbox).
+572: list of quota roots for the named.
+574:  (typ, [[QUOTAROOT responses...],.
+574:tance>.getquotaroot(mailbox).
+576:mmand('GETQUOTAROOT', mailbox).
+578:     typ, quotaroot = self._untagg.
+578:yp, dat, 'QUOTAROOT').
+579:urn typ, [quotaroot, quota].
+594:in(self, user, password):.
+595:sing plaintext password..
+597:e>.login(user, password).
+599:        NB: 'password' will be quote.
+601:r, self._quote(password)).
+608:d5(self, user, password):.
+611:cram_md5(user, password).
+613:elf.user, self.password = user, passwo.
+620:        pwd = (self.passwo.
+620:sinstance(self.password, str).
+621:     else self.password).
+622: " + hmac.HMAC(pwd, challenge, 'm.
+693: an authorised administrator to pro.
+777:setquota(self, root, limits):.
+778:"Set the quota root's resource lim.
+780:ance>.setquota(root, limits).
+782:nd('SETQUOTA', root, limits).
+800:starttls(self, ssl_context=None):.
+802:   if not HAVE_SSL:.
+803:se self.error('SSL support missin.
+808:rate a default SSL context if non.
+809:        if ssl_context is Non.
+810:            ssl_context = ssl..
+813:   self.sock = ssl_context.wrap_s.
+1258:if HAVE_SSL:.
+1260:   class IMAP4_SSL(IMAP4):.
+1262:ent class over SSL connection.
+1264:te with: IMAP4_SSL([host[, port[,.
+1264:e[, certfile[, ssl_context]]]]]).
+1267:standard IMAP4 SSL port);.
+1268: contains your private key (default: None.
+1270:               ssl_context - a SS.
+1271:           and private key (default: None.
+1272:      Note: if ssl_context is pro.
+1279:'', port=IMAP4_SSL_PORT, keyfile=.
+1280:certfile=None, ssl_context=None):.
+1281:            if ssl_context is not.
+1282:se ValueError("ssl_context and ke.
+1284:            if ssl_context is not.
+1285:se ValueError("ssl_context and ce.
+1290:       "custom ssl_context instea.
+1293:            if ssl_context is Non.
+1294:               ssl_context = ssl..
+1296:          self.ssl_context = ssl_.
+1301:   return self.ssl_context.wrap_s.
+1304:'', port=IMAP4_SSL_PORT):.
+1306:standard IMAP4 SSL port)..
+1312:.append("IMAP4_SSL").
+1545:    PASSWD = getpass.getp.
+1545:ass("IMAP password for %s on %s: .
+1549:login', (USER, PASSWD)),.

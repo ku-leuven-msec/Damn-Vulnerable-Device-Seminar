@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mbccmd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mbccmd[0m
+
+[31m    e69c:	97ffe0c5 	bl	69b0 <mmap@plt>[0m
+    e6a0:	aa0003f9 	mov	x25, x0
+    e6a4:	f90037f9 	str	x25, [sp, #104]
+    e6a8:	d1000400 	sub	x0, x0, #0x1
+    e6ac:	b1000c1f 	cmn	x0, #0x3
+    e6b0:	b0000098 	adrp	x24, 1f000 <ioctl@plt+0x18510>
+    e6b4:	54000c68 	b.hi	e840 <ioctl@plt+0x7d50>  // b.pmore
+    e6b8:	9130e318 	add	x24, x24, #0xc38
+    e6bc:	9101c3f6 	add	x22, sp, #0x70
+    e6c0:	a90573fb 	stp	x27, x28, [sp, #80]
+    e6c4:	9103e3fb 	add	x27, sp, #0xf8
+    e6c8:	39400320 	ldrb	w0, [x25]
+    e6cc:	7100341f 	cmp	w0, #0xd
+    e6d0:	7a4a1804 	ccmp	w0, #0xa, #0x4, ne  // ne = any
+    e6d4:	54000320 	b.eq	e738 <ioctl@plt+0x7c48>  // b.none
+    e6d8:	aa1803e1 	mov	x1, x24
+    e6dc:	aa1903e0 	mov	x0, x25
+    e6e0:	97ffe068 	bl	6880 <strpbrk@plt>
+    e6e4:	aa0003f4 	mov	x20, x0
+    e6e8:	b40009e0 	cbz	x0, e824 <ioctl@plt+0x7d34>
+    e6ec:	cb19001c 	sub	x28, x0, x25
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mbccmd[0m
+

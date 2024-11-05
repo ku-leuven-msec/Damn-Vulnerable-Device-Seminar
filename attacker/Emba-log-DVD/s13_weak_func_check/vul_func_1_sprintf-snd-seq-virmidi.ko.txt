@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-seq-virmidi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m100) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-seq-virmidi.ko[0m
+
+ 834:	aa0003f5 	mov	x21, x0
+ 838:	b4000820 	cbz	x0, 93c <snd_virmidi_dev_register+0x1a4>
+ 83c:	a9400ec0 	ldp	x0, x3, [x22]
+ 840:	90000002 	adrp	x2, 0 <snd_virmidi_input_trigger>
+ 844:	b94016c5 	ldr	w5, [x22, #20]
+ 848:	91000042 	add	x2, x2, #0x0
+ 84c:	2a0503e1 	mov	w1, w5
+ 850:	b9400004 	ldr	w4, [x0]
+ 854:	91018063 	add	x3, x3, #0x60
+ 858:	94000000 	bl	0 <snd_seq_create_kernel_client>
+ 85c:	2a0003f4 	mov	w20, w0
+ 860:	37f805a0 	tbnz	w0, #31, 914 <snd_virmidi_dev_register+0x17c>
+ 864:	aa1503e0 	mov	x0, x21
+ 868:	b9001ad4 	str	w20, [x22, #24]
+ 86c:	90000001 	adrp	x1, 0 <snd_virmidi_input_trigger>
+ 870:	91000021 	add	x1, x1, #0x0
+ 874:	38002414 	strb	w20, [x0], #2
+ 878:	f94002c2 	ldr	x2, [x22]
+ 87c:	b94016c3 	ldr	w3, [x22, #20]
+ 880:	b9400042 	ldr	w2, [x2]
+[31m 884:	94000000 	bl	0 <sprintf>[0m
+ 888:	9100e3ea 	add	x10, sp, #0x38
+ 88c:	b94046a3 	ldr	w3, [x21, #68]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33msnd-seq-virmidi.ko[0m
+

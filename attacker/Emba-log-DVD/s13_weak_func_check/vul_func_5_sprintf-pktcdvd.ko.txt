@@ -1,0 +1,102 @@
+[[0;33m*[0m] Binary protection state of [0;33mpktcdvd.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m274) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mpktcdvd.ko[0m
+
+      94:	52800014 	mov	w20, #0x0                   	// #0
+      98:	aa1e03e0 	mov	x0, x30
+      9c:	aa0203f5 	mov	x21, x2
+      a0:	94000000 	bl	0 <_mcount>
+      a4:	aa1703e0 	mov	x0, x23
+      a8:	94000000 	bl	0 <mutex_lock>
+      ac:	d503201f 	nop
+      b0:	f9400263 	ldr	x3, [x19]
+      b4:	8b34c2a0 	add	x0, x21, w20, sxtw
+      b8:	aa1803e1 	mov	x1, x24
+      bc:	91002273 	add	x19, x19, #0x8
+      c0:	aa0303e2 	mov	x2, x3
+      c4:	b4000143 	cbz	x3, ec <device_map_show+0x84>
+      c8:	f840c445 	ldr	x5, [x2], #12
+      cc:	b9400863 	ldr	w3, [x3, #8]
+      d0:	b94000a5 	ldr	w5, [x5]
+      d4:	12004c64 	and	w4, w3, #0xfffff
+      d8:	53147c63 	lsr	w3, w3, #20
+      dc:	12004ca6 	and	w6, w5, #0xfffff
+      e0:	53147ca5 	lsr	w5, w5, #20
+[31m      e4:	94000000 	bl	0 <sprintf>[0m
+      e8:	0b000294 	add	w20, w20, w0
+      ec:	eb1302df 	cmp	x22, x19
+--
+     6bc:	91000021 	add	x1, x1, #0x0
+     6c0:	94000000 	bl	0 <strcmp>
+     6c4:	340006a0 	cbz	w0, 798 <kobj_pkt_show+0x188>
+     6c8:	aa1403e0 	mov	x0, x20
+     6cc:	90000001 	adrp	x1, 0 <pkt_check_events>
+     6d0:	91000021 	add	x1, x1, #0x0
+     6d4:	94000000 	bl	0 <strcmp>
+     6d8:	2a0003e1 	mov	w1, w0
+     6dc:	d2800000 	mov	x0, #0x0                   	// #0
+     6e0:	35000281 	cbnz	w1, 730 <kobj_pkt_show+0x120>
+     6e4:	91038274 	add	x20, x19, #0xe0
+     6e8:	aa1403e0 	mov	x0, x20
+     6ec:	94000000 	bl	0 <_raw_spin_lock>
+     6f0:	b9419e73 	ldr	w19, [x19, #412]
+     6f4:	aa1403e0 	mov	x0, x20
+     6f8:	94000000 	bl	0 <_raw_spin_unlock>
+     6fc:	2a1303e2 	mov	w2, w19
+     700:	aa1503e0 	mov	x0, x21
+     704:	90000001 	adrp	x1, 0 <pkt_check_events>
+     708:	91000021 	add	x1, x1, #0x0
+[31m     70c:	94000000 	bl	0 <sprintf>[0m
+     710:	93407c00 	sxtw	x0, w0
+     714:	14000007 	b	730 <kobj_pkt_show+0x120>
+     718:	f9401e62 	ldr	x2, [x19, #56]
+     71c:	aa1503e0 	mov	x0, x21
+     720:	90000001 	adrp	x1, 0 <pkt_check_events>
+     724:	91000021 	add	x1, x1, #0x0
+[31m     728:	94000000 	bl	0 <sprintf>[0m
+     72c:	93407c00 	sxtw	x0, w0
+     730:	a94153f3 	ldp	x19, x20, [sp, #16]
+     734:	f94013f5 	ldr	x21, [sp, #32]
+     738:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     73c:	d65f03c0 	ret
+     740:	f9401a62 	ldr	x2, [x19, #48]
+     744:	17fffff6 	b	71c <kobj_pkt_show+0x10c>
+     748:	f9402662 	ldr	x2, [x19, #72]
+     74c:	aa1503e0 	mov	x0, x21
+     750:	d341fc42 	lsr	x2, x2, #1
+     754:	90000001 	adrp	x1, 0 <pkt_check_events>
+     758:	91000021 	add	x1, x1, #0x0
+[31m     75c:	94000000 	bl	0 <sprintf>[0m
+     760:	93407c00 	sxtw	x0, w0
+     764:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     b2c:	94000000 	bl	0 <mempool_init>
+     b30:	2a0003f4 	mov	w20, w0
+     b34:	35000b60 	cbnz	w0, ca0 <pkt_setup_dev+0x240>
+     b38:	91024304 	add	x4, x24, #0x90
+     b3c:	91028303 	add	x3, x24, #0xa0
+     b40:	91003316 	add	x22, x24, #0xc
+     b44:	f9004b04 	str	x4, [x24, #144]
+     b48:	2a1b03e2 	mov	w2, w27
+     b4c:	aa1603e0 	mov	x0, x22
+     b50:	91018274 	add	x20, x19, #0x60
+     b54:	90000001 	adrp	x1, 0 <pkt_check_events>
+     b58:	91000021 	add	x1, x1, #0x0
+     b5c:	f9004f04 	str	x4, [x24, #152]
+     b60:	f9005303 	str	x3, [x24, #160]
+     b64:	f9005703 	str	x3, [x24, #168]
+     b68:	b900b31f 	str	wzr, [x24, #176]
+     b6c:	b900e31f 	str	wzr, [x24, #224]
+     b70:	b9015b1f 	str	wzr, [x24, #344]
+     b74:	a9167f1f 	stp	xzr, xzr, [x24, #352]
+     b78:	a9177f1f 	stp	xzr, xzr, [x24, #368]
+[31m     b7c:	94000000 	bl	0 <sprintf>[0m
+     b80:	aa1403e2 	mov	x2, x20
+     b84:	91032300 	add	x0, x24, #0xc8
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m5[0m times [0;33mpktcdvd.ko[0m
+

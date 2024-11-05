@@ -1,0 +1,78 @@
+[[0;33m*[0m] Binary protection state of [0;33mrfcomm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m374) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrfcomm.ko[0m
+
+    5560:	91000000 	add	x0, x0, #0x0
+    5564:	94000000 	bl	0 <bt_err>
+    5568:	12804040 	mov	w0, #0xfffffdfd            	// #-515
+    556c:	f9400bf3 	ldr	x19, [sp, #16]
+    5570:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5574:	d65f03c0 	ret
+
+0000000000005578 <show_channel>:
+    5578:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    557c:	910003fd 	mov	x29, sp
+    5580:	a90153f3 	stp	x19, x20, [sp, #16]
+    5584:	aa0003f4 	mov	x20, x0
+    5588:	aa0203f3 	mov	x19, x2
+    558c:	aa1e03e0 	mov	x0, x30
+    5590:	94000000 	bl	0 <_mcount>
+    5594:	f9403e82 	ldr	x2, [x20, #120]
+    5598:	aa1303e0 	mov	x0, x19
+    559c:	90000001 	adrp	x1, 0 <rfcomm_l2state_change>
+    55a0:	91000021 	add	x1, x1, #0x0
+    55a4:	39469042 	ldrb	w2, [x2, #420]
+[31m    55a8:	94000000 	bl	0 <sprintf>[0m
+    55ac:	93407c00 	sxtw	x0, w0
+    55b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    55b4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    55b8:	d65f03c0 	ret
+    55bc:	d503201f 	nop
+
+00000000000055c0 <show_address>:
+    55c0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    55c4:	910003fd 	mov	x29, sp
+    55c8:	a90153f3 	stp	x19, x20, [sp, #16]
+    55cc:	aa0003f4 	mov	x20, x0
+    55d0:	aa0203f3 	mov	x19, x2
+    55d4:	aa1e03e0 	mov	x0, x30
+    55d8:	94000000 	bl	0 <_mcount>
+    55dc:	f9403e82 	ldr	x2, [x20, #120]
+    55e0:	aa1303e0 	mov	x0, x19
+    55e4:	90000001 	adrp	x1, 0 <rfcomm_l2state_change>
+    55e8:	91000021 	add	x1, x1, #0x0
+    55ec:	91067842 	add	x2, x2, #0x19e
+[31m    55f0:	94000000 	bl	0 <sprintf>[0m
+    55f4:	93407c00 	sxtw	x0, w0
+    55f8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    6b10:	fa01001f 	sbcs	xzr, x0, x1
+    6b14:	9a9f87e0 	cset	x0, ls  // ls = plast
+    6b18:	b5001960 	cbnz	x0, 6e44 <rfcomm_dev_ioctl+0x924>
+    6b1c:	aa1a03e0 	mov	x0, x26
+    6b20:	2a1403f3 	mov	w19, w20
+    6b24:	94000000 	bl	0 <kfree>
+    6b28:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    6b2c:	a94573fb 	ldp	x27, x28, [sp, #80]
+    6b30:	34ffe154 	cbz	w20, 6758 <rfcomm_dev_ioctl+0x238>
+    6b34:	d503201f 	nop
+    6b38:	128001b3 	mov	w19, #0xfffffff2            	// #-14
+    6b3c:	17ffff07 	b	6758 <rfcomm_dev_ioctl+0x238>
+    6b40:	aa0103f4 	mov	x20, x1
+    6b44:	d503201f 	nop
+    6b48:	7103fc5f 	cmp	w2, #0xff
+    6b4c:	540013c8 	b.hi	6dc4 <rfcomm_dev_ioctl+0x8a4>  // b.pmore
+    6b50:	a9046bf9 	stp	x25, x26, [sp, #64]
+    6b54:	9105c260 	add	x0, x19, #0x170
+    6b58:	90000001 	adrp	x1, 0 <rfcomm_l2state_change>
+    6b5c:	91000021 	add	x1, x1, #0x0
+[31m    6b60:	94000000 	bl	0 <sprintf>[0m
+    6b64:	9107227a 	add	x26, x19, #0x1c8
+    6b68:	f9400283 	ldr	x3, [x20]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mrfcomm.ko[0m
+

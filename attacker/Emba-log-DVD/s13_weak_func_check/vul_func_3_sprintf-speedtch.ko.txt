@@ -1,0 +1,55 @@
+[[0;33m*[0m] Binary protection state of [0;33mspeedtch.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m160) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mspeedtch.ko[0m
+
+     c4c:	aa0103f3 	mov	x19, x1
+     c50:	aa0303f6 	mov	x22, x3
+     c54:	2a0203f5 	mov	w21, w2
+     c58:	aa0003f7 	mov	x23, x0
+     c5c:	aa1e03e0 	mov	x0, x30
+     c60:	94000000 	bl	0 <_mcount>
+     c64:	d5384118 	mrs	x24, sp_el0
+     c68:	f9403a60 	ldr	x0, [x19, #112]
+     c6c:	f9428f03 	ldr	x3, [x24, #1304]
+     c70:	f9002fe3 	str	x3, [sp, #88]
+     c74:	d2800003 	mov	x3, #0x0                   	// #0
+     c78:	2a1503e2 	mov	w2, w21
+     c7c:	9100c273 	add	x19, x19, #0x30
+     c80:	90000001 	adrp	x1, 0 <speedtch_pre_reset>
+     c84:	91000021 	add	x1, x1, #0x0
+     c88:	7945c814 	ldrh	w20, [x0, #740]
+     c8c:	910103e0 	add	x0, sp, #0x40
+     c90:	12001e84 	and	w4, w20, #0xff
+     c94:	53087e94 	lsr	w20, w20, #8
+     c98:	2a1403e3 	mov	w3, w20
+[31m     c9c:	94000000 	bl	0 <sprintf>[0m
+     ca0:	aa1303e2 	mov	x2, x19
+     ca4:	910103e1 	add	x1, sp, #0x40
+     ca8:	aa1603e0 	mov	x0, x22
+     cac:	94000000 	bl	0 <request_firmware>
+     cb0:	34000540 	cbz	w0, d58 <speedtch_find_firmware.isra.0+0x120>
+     cb4:	2a1403e3 	mov	w3, w20
+     cb8:	2a1503e2 	mov	w2, w21
+     cbc:	910103e0 	add	x0, sp, #0x40
+     cc0:	90000001 	adrp	x1, 0 <speedtch_pre_reset>
+     cc4:	91000021 	add	x1, x1, #0x0
+[31m     cc8:	94000000 	bl	0 <sprintf>[0m
+     ccc:	aa1303e2 	mov	x2, x19
+     cd0:	910103e1 	add	x1, sp, #0x40
+     cd4:	aa1603e0 	mov	x0, x22
+     cd8:	94000000 	bl	0 <request_firmware>
+     cdc:	340003e0 	cbz	w0, d58 <speedtch_find_firmware.isra.0+0x120>
+     ce0:	2a1503e2 	mov	w2, w21
+     ce4:	910103e0 	add	x0, sp, #0x40
+     ce8:	90000001 	adrp	x1, 0 <speedtch_pre_reset>
+     cec:	91000021 	add	x1, x1, #0x0
+[31m     cf0:	94000000 	bl	0 <sprintf>[0m
+     cf4:	910103e1 	add	x1, sp, #0x40
+     cf8:	aa1303e2 	mov	x2, x19
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mspeedtch.ko[0m
+

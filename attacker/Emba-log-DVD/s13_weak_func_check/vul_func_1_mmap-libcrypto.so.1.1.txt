@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibcrypto.so.1.1[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibcrypto.so.1.1[0m
+
+[31m  149a84:	97fcb173 	bl	76050 <mmap@plt>[0m
+  149a88:	f902cea0 	str	x0, [x21, #1432]
+  149a8c:	b100041f 	cmn	x0, #0x1
+  149a90:	54000600 	b.eq	149b50 <CRYPTO_secure_malloc_init@@OPENSSL_1_1_0+0x240>  // b.none
+  149a94:	f9401e82 	ldr	x2, [x20, #56]
+  149a98:	8b130000 	add	x0, x0, x19
+  149a9c:	52800001 	mov	w1, #0x0                   	// #0
+  149aa0:	f9000a80 	str	x0, [x20, #16]
+  149aa4:	52800058 	mov	w24, #0x2                   	// #2
+  149aa8:	97fffd92 	bl	1490f0 <CRYPTO_mem_ctrl@@OPENSSL_1_1_0+0x80>
+  149aac:	f9400a81 	ldr	x1, [x20, #16]
+  149ab0:	f9401280 	ldr	x0, [x20, #32]
+  149ab4:	97fffdcb 	bl	1491e0 <CRYPTO_mem_ctrl@@OPENSSL_1_1_0+0x170>
+  149ab8:	f942cea0 	ldr	x0, [x21, #1432]
+  149abc:	aa1303e1 	mov	x1, x19
+  149ac0:	52800002 	mov	w2, #0x0                   	// #0
+  149ac4:	97fcb21f 	bl	76340 <mprotect@plt>
+  149ac8:	531f7c16 	lsr	w22, w0, #31
+  149acc:	f9400e81 	ldr	x1, [x20, #24]
+  149ad0:	cb1303e3 	neg	x3, x19
+  149ad4:	f942cea2 	ldr	x2, [x21, #1432]
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibcrypto.so.1.1[0m
+

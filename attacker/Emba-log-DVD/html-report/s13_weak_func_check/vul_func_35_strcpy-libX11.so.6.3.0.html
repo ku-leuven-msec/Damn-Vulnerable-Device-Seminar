@@ -1,0 +1,899 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libX11.so.6.3.0</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="green">Full RELRO   </span>   <span class="green">Canary found   </span>   <span class="green">NX enabled </span>   <span class="orange">DSO          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="green">No Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> tear down of </span><span class="orange">libX11.so.6.3.0</span></pre>
+<br />
+<pre>   2473c:	eb02029f 	cmp	x20, x2</pre>
+<pre>   24740:	54fff9e4 	b.mi	2467c &lt;_XF86LoadQueryLocaleFont&commat;&commat;Base+0x7c&gt;  // b.first</pre>
+<pre>   24744:	cb020339 	sub	x25, x25, x2</pre>
+<pre>   24748:	aa1c03e1 	mov	x1, x28</pre>
+<pre>   2474c:	8b190260 	add	x0, x19, x25</pre>
+<pre>   24750:	97ffe438 	bl	1d830 &lt;_XlcNCompareISOLatin1&commat;plt&gt;</pre>
+<pre>   24754:	35fff940 	cbnz	w0, 2467c &lt;_XF86LoadQueryLocaleFont&commat;&commat;Base+0x7c&gt;</pre>
+<pre>   24758:	9100077b 	add	x27, x27, #0x1</pre>
+<pre>   2475c:	aa1b03e0 	mov	x0, x27</pre>
+<pre>   24760:	97ffdb58 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   24764:	8b000340 	add	x0, x26, x0</pre>
+<pre>   24768:	f103f81f 	cmp	x0, #0xfe</pre>
+<pre>   2476c:	54fff888 	b.hi	2467c &lt;_XF86LoadQueryLocaleFont&commat;&commat;Base+0x7c&gt;  // b.pmore</pre>
+<pre>   24770:	d2802002 	mov	x2, #0x100                 	// #256</pre>
+<pre>   24774:	9101a3e0 	add	x0, sp, #0x68</pre>
+<pre>   24778:	aa1303e1 	mov	x1, x19</pre>
+<pre>   2477c:	aa0003f3 	mov	x19, x0</pre>
+<pre><span class="red">   24780:	97ffde44 	bl	1c090 &lt;__strcpy_chk&commat;plt&gt</span></span></pre>
+<pre>   24784:	aa1b03e1 	mov	x1, x27</pre>
+<pre>   24788:	8b1a0260 	add	x0, x19, x26</pre>
+<pre><span class="red">   2478c:	97ffe2d5 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   24790:	aa1303e1 	mov	x1, x19</pre>
+<pre>   24794:	aa1603e0 	mov	x0, x22</pre>
+<pre>--</pre>
+<pre>   25908:	aa1c03f8 	mov	x24, x28</pre>
+<pre>   2590c:	52800014 	mov	w20, #0x0                   	// #0</pre>
+<pre>   25910:	f8408700 	ldr	x0, [x24], #8</pre>
+<pre>   25914:	b90067e1 	str	w1, [sp, #100]</pre>
+<pre>   25918:	11000694 	add	w20, w20, #0x1</pre>
+<pre>   2591c:	97ffd6e9 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   25920:	0b000294 	add	w20, w20, w0</pre>
+<pre>   25924:	b94067e1 	ldr	w1, [sp, #100]</pre>
+<pre>   25928:	71000421 	subs	w1, w1, #0x1</pre>
+<pre>   2592c:	54ffff21 	b.ne	25910 &lt;XCreateFontSet&commat;&commat;Base+0xb0&gt;  // b.any</pre>
+<pre>   25930:	7100029f 	cmp	w20, #0x0</pre>
+<pre>   25934:	d2800018 	mov	x24, #0x0                   	// #0</pre>
+<pre>   25938:	1a9f1694 	csinc	w20, w20, wzr, ne  // ne = any</pre>
+<pre>   2593c:	93407e80 	sxtw	x0, w20</pre>
+<pre>   25940:	97ffd95c 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   25944:	aa0003f4 	mov	x20, x0</pre>
+<pre>   25948:	b4000840 	cbz	x0, 25a50 &lt;XCreateFontSet&commat;&commat;Base+0x1f0&gt;</pre>
+<pre>   2594c:	d503201f 	nop</pre>
+<pre>   25950:	f8787b81 	ldr	x1, [x28, x24, lsl #3]</pre>
+<pre>   25954:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">   25958:	97ffde62 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   2595c:	f8387b74 	str	x20, [x27, x24, lsl #3]</pre>
+<pre>   25960:	aa1403e0 	mov	x0, x20</pre>
+<pre>--</pre>
+<pre>   278cc:	2a1303e0 	mov	w0, w19</pre>
+<pre>   278d0:	a9427bfd 	ldp	x29, x30, [sp, #32]</pre>
+<pre>   278d4:	a94353f3 	ldp	x19, x20, [sp, #48]</pre>
+<pre>   278d8:	a9445bf5 	ldp	x21, x22, [sp, #64]</pre>
+<pre>   278dc:	910283ff 	add	sp, sp, #0xa0</pre>
+<pre>   278e0:	d65f03c0 	ret</pre>
+<pre>   278e4:	aa1603e0 	mov	x0, x22</pre>
+<pre>   278e8:	a90563f7 	stp	x23, x24, [sp, #80]</pre>
+<pre>   278ec:	d2800038 	mov	x24, #0x1                   	// #1</pre>
+<pre>   278f0:	f90033f9 	str	x25, [sp, #96]</pre>
+<pre>   278f4:	97ffcef3 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   278f8:	aa0003f7 	mov	x23, x0</pre>
+<pre>   278fc:	31000400 	adds	w0, w0, #0x1</pre>
+<pre>   27900:	93407c00 	sxtw	x0, w0</pre>
+<pre>   27904:	9a981000 	csel	x0, x0, x24, ne  // ne = any</pre>
+<pre>   27908:	97ffd16a 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   2790c:	f90002a0 	str	x0, [x21]</pre>
+<pre>   27910:	aa0003f9 	mov	x25, x0</pre>
+<pre>   27914:	b40002c0 	cbz	x0, 2796c &lt;XGetClassHint&commat;&commat;Base+0x14c&gt;</pre>
+<pre>   27918:	aa1603e1 	mov	x1, x22</pre>
+<pre><span class="red">   2791c:	97ffd671 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   27920:	f94043e2 	ldr	x2, [sp, #128]</pre>
+<pre>   27924:	510006e0 	sub	w0, w23, #0x1</pre>
+<pre>   27928:	93407ee1 	sxtw	x1, w23</pre>
+<pre>   2792c:	93407c00 	sxtw	x0, w0</pre>
+<pre>   27930:	eb37c05f 	cmp	x2, w23, sxtw</pre>
+<pre>   27934:	9a810001 	csel	x1, x0, x1, eq  // eq = none</pre>
+<pre>   27938:	91000421 	add	x1, x1, #0x1</pre>
+<pre>   2793c:	8b0102d7 	add	x23, x22, x1</pre>
+<pre>   27940:	aa1703e0 	mov	x0, x23</pre>
+<pre>   27944:	97ffcedf 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   27948:	31000400 	adds	w0, w0, #0x1</pre>
+<pre>   2794c:	93407c00 	sxtw	x0, w0</pre>
+<pre>   27950:	9a981000 	csel	x0, x0, x24, ne  // ne = any</pre>
+<pre>   27954:	97ffd157 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   27958:	f90006a0 	str	x0, [x21, #8]</pre>
+<pre>   2795c:	b4000180 	cbz	x0, 2798c &lt;XGetClassHint&commat;&commat;Base+0x16c&gt;</pre>
+<pre>   27960:	aa1703e1 	mov	x1, x23</pre>
+<pre>   27964:	2a1803f3 	mov	w19, w24</pre>
+<pre><span class="red">   27968:	97ffd65e 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   2796c:	aa1603e0 	mov	x0, x22</pre>
+<pre>   27970:	97ffd504 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   2d430:	14000004 	b	2d440 &lt;_XUpdateAtomCache&commat;&commat;Base+0xc0&gt;</pre>
+<pre>   2d434:	93407e80 	sxtw	x0, w20</pre>
+<pre>   2d438:	f8607860 	ldr	x0, [x3, x0, lsl #3]</pre>
+<pre>   2d43c:	b40000e0 	cbz	x0, 2d458 &lt;_XUpdateAtomCache&commat;&commat;Base+0xd8&gt;</pre>
+<pre>   2d440:	0b020294 	add	w20, w20, w2</pre>
+<pre>   2d444:	12001694 	and	w20, w20, #0x3f</pre>
+<pre>   2d448:	6b01029f 	cmp	w20, w1</pre>
+<pre>   2d44c:	54ffff41 	b.ne	2d434 &lt;_XUpdateAtomCache&commat;&commat;Base+0xb4&gt;  // b.any</pre>
+<pre>   2d450:	14000002 	b	2d458 &lt;_XUpdateAtomCache&commat;&commat;Base+0xd8&gt;</pre>
+<pre>   2d454:	93407e65 	sxtw	x5, w19</pre>
+<pre>   2d458:	b10044bf 	cmn	x5, #0x11</pre>
+<pre>   2d45c:	d2800020 	mov	x0, #0x1                   	// #1</pre>
+<pre>   2d460:	54000040 	b.eq	2d468 &lt;_XUpdateAtomCache&commat;&commat;Base+0xe8&gt;  // b.none</pre>
+<pre>   2d464:	910044a0 	add	x0, x5, #0x11</pre>
+<pre>   2d468:	97ffba92 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   2d46c:	aa0003f3 	mov	x19, x0</pre>
+<pre>   2d470:	b4000160 	cbz	x0, 2d49c &lt;_XUpdateAtomCache&commat;&commat;Base+0x11c&gt;</pre>
+<pre>   2d474:	a9005677 	stp	x23, x21, [x19]</pre>
+<pre>   2d478:	aa1803e1 	mov	x1, x24</pre>
+<pre>   2d47c:	91004000 	add	x0, x0, #0x10</pre>
+<pre><span class="red">   2d480:	97ffbf98 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   2d484:	93407e94 	sxtw	x20, w20</pre>
+<pre>   2d488:	f944c6c1 	ldr	x1, [x22, #2440]</pre>
+<pre>--</pre>
+<pre>   3c5b0:	aa0203f3 	mov	x19, x2</pre>
+<pre>   3c5b4:	aa0203f4 	mov	x20, x2</pre>
+<pre>   3c5b8:	8b234f18 	add	x24, x24, w3, uxtw #3</pre>
+<pre>   3c5bc:	d2800019 	mov	x25, #0x0                   	// #0</pre>
+<pre>   3c5c0:	f9400280 	ldr	x0, [x20]</pre>
+<pre>   3c5c4:	d2800022 	mov	x2, #0x1                   	// #1</pre>
+<pre>   3c5c8:	91002294 	add	x20, x20, #0x8</pre>
+<pre>   3c5cc:	b4000060 	cbz	x0, 3c5d8 &lt;XSetCommand&commat;&commat;Base+0x58&gt;</pre>
+<pre>   3c5d0:	97ff7bbc 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   3c5d4:	91000402 	add	x2, x0, #0x1</pre>
+<pre>   3c5d8:	8b020339 	add	x25, x25, x2</pre>
+<pre>   3c5dc:	eb18029f 	cmp	x20, x24</pre>
+<pre>   3c5e0:	54ffff01 	b.ne	3c5c0 &lt;XSetCommand&commat;&commat;Base+0x40&gt;  // b.any</pre>
+<pre>   3c5e4:	f100033f 	cmp	x25, #0x0</pre>
+<pre>   3c5e8:	9a9f1720 	csinc	x0, x25, xzr, ne  // ne = any</pre>
+<pre>   3c5ec:	97ff7e31 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   3c5f0:	aa0003fa 	mov	x26, x0</pre>
+<pre>   3c5f4:	aa0003f4 	mov	x20, x0</pre>
+<pre>   3c5f8:	b5000140 	cbnz	x0, 3c620 &lt;XSetCommand&commat;&commat;Base+0xa0&gt;</pre>
+<pre>   3c5fc:	1400002b 	b	3c6a8 &lt;XSetCommand&commat;&commat;Base+0x128&gt;</pre>
+<pre><span class="red">   3c600:	97ff8338 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   3c604:	91002273 	add	x19, x19, #0x8</pre>
+<pre>   3c608:	aa1503e0 	mov	x0, x21</pre>
+<pre>--</pre>
+<pre>   3c874:	11000a67 	add	w7, w19, #0x2</pre>
+<pre>   3c878:	aa1703e1 	mov	x1, x23</pre>
+<pre>   3c87c:	0b1500e7 	add	w7, w7, w21</pre>
+<pre>   3c880:	aa1403e6 	mov	x6, x20</pre>
+<pre>   3c884:	52800005 	mov	w5, #0x0                   	// #0</pre>
+<pre>   3c888:	52800104 	mov	w4, #0x8                   	// #8</pre>
+<pre>   3c88c:	d28003e3 	mov	x3, #0x1f                  	// #31</pre>
+<pre>   3c890:	d2800862 	mov	x2, #0x43                  	// #67</pre>
+<pre>   3c894:	aa1603e0 	mov	x0, x22</pre>
+<pre>   3c898:	97ff810e 	bl	1ccd0 &lt;XChangeProperty&commat;plt&gt;</pre>
+<pre>   3c89c:	aa1403e0 	mov	x0, x20</pre>
+<pre>   3c8a0:	97ff8138 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>   3c8a4:	52800020 	mov	w0, #0x1                   	// #1</pre>
+<pre>   3c8a8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   3c8ac:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   3c8b0:	a94363f7 	ldp	x23, x24, [sp, #48]</pre>
+<pre>   3c8b4:	a9446bf9 	ldp	x25, x26, [sp, #64]</pre>
+<pre>   3c8b8:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>   3c8bc:	d65f03c0 	ret</pre>
+<pre>   3c8c0:	aa1903e1 	mov	x1, x25</pre>
+<pre><span class="red">   3c8c4:	97ff8287 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   3c8c8:	91000660 	add	x0, x19, #0x1</pre>
+<pre>   3c8cc:	8b000280 	add	x0, x20, x0</pre>
+<pre>   3c8d0:	b4fffd15 	cbz	x21, 3c870 &lt;XSetClassHint&commat;&commat;Base+0x70&gt;</pre>
+<pre>   3c8d4:	aa1803e1 	mov	x1, x24</pre>
+<pre><span class="red">   3c8d8:	97ff8282 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   3c8dc:	17ffffe6 	b	3c874 &lt;XSetClassHint&commat;&commat;Base+0x74&gt;</pre>
+<pre>   3c8e0:	d280005a 	mov	x26, #0x2                   	// #2</pre>
+<pre>--</pre>
+<pre>   3e06c:	d503201f 	nop</pre>
+<pre>   3e070:	f9400260 	ldr	x0, [x19]</pre>
+<pre>   3e074:	52800021 	mov	w1, #0x1                   	// #1</pre>
+<pre>   3e078:	91002273 	add	x19, x19, #0x8</pre>
+<pre>   3e07c:	b4000060 	cbz	x0, 3e088 &lt;XStringListToTextProperty&commat;&commat;Base+0x58&gt;</pre>
+<pre>   3e080:	97ff7510 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   3e084:	11000401 	add	w1, w0, #0x1</pre>
+<pre>   3e088:	0b0102b5 	add	w21, w21, w1</pre>
+<pre>   3e08c:	eb16027f 	cmp	x19, x22</pre>
+<pre>   3e090:	54ffff01 	b.ne	3e070 &lt;XStringListToTextProperty&commat;&commat;Base+0x40&gt;  // b.any</pre>
+<pre>   3e094:	340003d5 	cbz	w21, 3e10c &lt;XStringListToTextProperty&commat;&commat;Base+0xdc&gt;</pre>
+<pre>   3e098:	2a1503e0 	mov	w0, w21</pre>
+<pre>   3e09c:	510006b5 	sub	w21, w21, #0x1</pre>
+<pre>   3e0a0:	97ff7784 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   3e0a4:	aa0003f9 	mov	x25, x0</pre>
+<pre>   3e0a8:	aa0003f3 	mov	x19, x0</pre>
+<pre>   3e0ac:	b5000180 	cbnz	x0, 3e0dc &lt;XStringListToTextProperty&commat;&commat;Base+0xac&gt;</pre>
+<pre>   3e0b0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   3e0b4:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>   3e0b8:	14000022 	b	3e140 &lt;XStringListToTextProperty&commat;&commat;Base+0x110&gt;</pre>
+<pre><span class="red">   3e0bc:	97ff7c89 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   3e0c0:	91002294 	add	x20, x20, #0x8</pre>
+<pre>   3e0c4:	aa1803e0 	mov	x0, x24</pre>
+<pre>--</pre>
+<pre>   5208c:	0b000021 	add	w1, w1, w0</pre>
+<pre>   52090:	11000421 	add	w1, w1, #0x1</pre>
+<pre>   52094:	6b02003f 	cmp	w1, w2</pre>
+<pre>   52098:	540000cb 	b.lt	520b0 &lt;_XlcResetConverter&commat;&commat;Base+0x8f0&gt;  // b.tstop</pre>
+<pre>   5209c:	11000681 	add	w1, w20, #0x1</pre>
+<pre>   520a0:	0b000020 	add	w0, w1, w0</pre>
+<pre>   520a4:	97fffe13 	bl	518f0 &lt;_XlcResetConverter&commat;&commat;Base+0x130&gt;</pre>
+<pre>   520a8:	34000580 	cbz	w0, 52158 &lt;_XlcResetConverter&commat;&commat;Base+0x998&gt;</pre>
+<pre>   520ac:	b9422b63 	ldr	w3, [x27, #552]</pre>
+<pre>   520b0:	913b435b 	add	x27, x26, #0xed0</pre>
+<pre>   520b4:	aa1903e2 	mov	x2, x25</pre>
+<pre>   520b8:	aa1603e1 	mov	x1, x22</pre>
+<pre>   520bc:	f9411b60 	ldr	x0, [x27, #560]</pre>
+<pre>   520c0:	8b23c000 	add	x0, x0, w3, sxtw</pre>
+<pre>   520c4:	97ff2de3 	bl	1d850 &lt;strncpy&commat;plt&gt;</pre>
+<pre>   520c8:	b9422b60 	ldr	w0, [x27, #552]</pre>
+<pre>   520cc:	aa1503e1 	mov	x1, x21</pre>
+<pre>   520d0:	f9411b62 	ldr	x2, [x27, #560]</pre>
+<pre>   520d4:	0b000280 	add	w0, w20, w0</pre>
+<pre>   520d8:	8b20c040 	add	x0, x2, w0, sxtw</pre>
+<pre><span class="red">   520dc:	97ff2c81 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   520e0:	aa1503e0 	mov	x0, x21</pre>
+<pre>   520e4:	97ff24f7 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   525e4:	54fffc00 	b.eq	52564 &lt;_XlcResetConverter&commat;&commat;Base+0xda4&gt;  // b.none</pre>
+<pre>   525e8:	aa1603e0 	mov	x0, x22</pre>
+<pre>   525ec:	52800014 	mov	w20, #0x0                   	// #0</pre>
+<pre>   525f0:	97ff29e4 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>   525f4:	17ffffdd 	b	52568 &lt;_XlcResetConverter&commat;&commat;Base+0xda8&gt;</pre>
+<pre>   525f8:	51000800 	sub	w0, w0, #0x2</pre>
+<pre>   525fc:	7100041f 	cmp	w0, #0x1</pre>
+<pre>   52600:	54fffee8 	b.hi	525dc &lt;_XlcResetConverter&commat;&commat;Base+0xe1c&gt;  // b.pmore</pre>
+<pre>   52604:	aa1603e0 	mov	x0, x22</pre>
+<pre>   52608:	97ff23ae 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   5260c:	b9422b02 	ldr	w2, [x24, #552]</pre>
+<pre>   52610:	b9422f03 	ldr	w3, [x24, #556]</pre>
+<pre>   52614:	0b000041 	add	w1, w2, w0</pre>
+<pre>   52618:	11000421 	add	w1, w1, #0x1</pre>
+<pre>   5261c:	6b03003f 	cmp	w1, w3</pre>
+<pre>   52620:	5400072a 	b.ge	52704 &lt;_XlcResetConverter&commat;&commat;Base+0xf44&gt;  // b.tcont</pre>
+<pre>   52624:	913b42f5 	add	x21, x23, #0xed0</pre>
+<pre>   52628:	aa1603e1 	mov	x1, x22</pre>
+<pre>   5262c:	f9411aa0 	ldr	x0, [x21, #560]</pre>
+<pre>   52630:	8b22c000 	add	x0, x0, w2, sxtw</pre>
+<pre><span class="red">   52634:	97ff2b2b 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   52638:	aa1603e0 	mov	x0, x22</pre>
+<pre>   5263c:	97ff23a1 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   52998:	14000034 	b	52a68 &lt;_XlcResetConverter&commat;&commat;Base+0x12a8&gt;</pre>
+<pre>   5299c:	aa1403e1 	mov	x1, x20</pre>
+<pre>   529a0:	910223fb 	add	x27, sp, #0x88</pre>
+<pre>   529a4:	d2810002 	mov	x2, #0x800                 	// #2048</pre>
+<pre>   529a8:	aa1b03e0 	mov	x0, x27</pre>
+<pre><span class="red">   529ac:	97ff25b9 	bl	1c090 &lt;__strcpy_chk&commat;plt&gt</span></span></pre>
+<pre>   529b0:	aa1403e0 	mov	x0, x20</pre>
+<pre>   529b4:	97ff22c3 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   529b8:	8b000374 	add	x20, x27, x0</pre>
+<pre>   529bc:	34000237 	cbz	w23, 52a00 &lt;_XlcResetConverter&commat;&commat;Base+0x1240&gt;</pre>
+<pre>   529c0:	510006f7 	sub	w23, w23, #0x1</pre>
+<pre>   529c4:	91002380 	add	x0, x28, #0x8</pre>
+<pre>   529c8:	8b374c17 	add	x23, x0, w23, uxtw #3</pre>
+<pre>   529cc:	d503201f 	nop</pre>
+<pre>   529d0:	f9400f1c 	ldr	x28, [x24, #24]</pre>
+<pre>   529d4:	528005c0 	mov	w0, #0x2e                  	// #46</pre>
+<pre>   529d8:	38001680 	strb	w0, [x20], #1</pre>
+<pre>   529dc:	91002318 	add	x24, x24, #0x8</pre>
+<pre>   529e0:	aa1c03e1 	mov	x1, x28</pre>
+<pre>   529e4:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">   529e8:	97ff2a3e 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   529ec:	aa1c03e0 	mov	x0, x28</pre>
+<pre>   529f0:	97ff22b4 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   53924:	aa1c03e0 	mov	x0, x28</pre>
+<pre>   53928:	97ff1ee6 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   5392c:	aa0003f3 	mov	x19, x0</pre>
+<pre>   53930:	7100041f 	cmp	w0, #0x1</pre>
+<pre>   53934:	54000720 	b.eq	53a18 &lt;_XlcResolveLocaleName&commat;&commat;Base+0x1e8&gt;  // b.none</pre>
+<pre>   53938:	3100041f 	cmn	w0, #0x1</pre>
+<pre>   5393c:	d2800021 	mov	x1, #0x1                   	// #1</pre>
+<pre>   53940:	54000080 	b.eq	53950 &lt;_XlcResolveLocaleName&commat;&commat;Base+0x120&gt;  // b.none</pre>
+<pre>   53944:	11000661 	add	w1, w19, #0x1</pre>
+<pre>   53948:	0b010021 	add	w1, w1, w1</pre>
+<pre>   5394c:	93407c21 	sxtw	x1, w1</pre>
+<pre>   53950:	aa1c03e0 	mov	x0, x28</pre>
+<pre>   53954:	97ff230b 	bl	1c580 &lt;realloc&commat;plt&gt;</pre>
+<pre>   53958:	aa0003e1 	mov	x1, x0</pre>
+<pre>   5395c:	b4000880 	cbz	x0, 53a6c &lt;_XlcResolveLocaleName&commat;&commat;Base+0x23c&gt;</pre>
+<pre>   53960:	93407e73 	sxtw	x19, w19</pre>
+<pre>   53964:	f9000301 	str	x1, [x24]</pre>
+<pre>   53968:	91000673 	add	x19, x19, #0x1</pre>
+<pre>   5396c:	8b130002 	add	x2, x0, x19</pre>
+<pre>   53970:	aa0203e0 	mov	x0, x2</pre>
+<pre><span class="red">   53974:	97ff265b 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   53978:	f9000700 	str	x0, [x24, #8]</pre>
+<pre>   5397c:	52800be1 	mov	w1, #0x5f                  	// #95</pre>
+<pre>--</pre>
+<pre>   53d44:	17ffffbe 	b	53c3c &lt;_XlcLocaleDirName&commat;&commat;Base+0x17c&gt;</pre>
+<pre>   53d48:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   53d4c:	a94363f7 	ldp	x23, x24, [sp, #48]</pre>
+<pre>   53d50:	d280001c 	mov	x28, #0x0                   	// #0</pre>
+<pre>   53d54:	f9403fe0 	ldr	x0, [sp, #120]</pre>
+<pre>   53d58:	97ff240a 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>   53d5c:	f9403be1 	ldr	x1, [sp, #112]</pre>
+<pre>   53d60:	aa1a03e6 	mov	x6, x26</pre>
+<pre>   53d64:	f94047e5 	ldr	x5, [sp, #136]</pre>
+<pre>   53d68:	910a4324 	add	x4, x25, #0x290</pre>
+<pre>   53d6c:	aa1b03e0 	mov	x0, x27</pre>
+<pre>   53d70:	92800003 	mov	x3, #0xffffffffffffffff    	// #-1</pre>
+<pre>   53d74:	52800022 	mov	w2, #0x1                   	// #1</pre>
+<pre>   53d78:	97ff200a 	bl	1bda0 &lt;__snprintf_chk&commat;plt&gt;</pre>
+<pre>   53d7c:	17ffffcb 	b	53ca8 &lt;_XlcLocaleDirName&commat;&commat;Base+0x1e8&gt;</pre>
+<pre>   53d80:	f9400660 	ldr	x0, [x19, #8]</pre>
+<pre>   53d84:	eb14001f 	cmp	x0, x20</pre>
+<pre>   53d88:	54ffece8 	b.hi	53b24 &lt;_XlcLocaleDirName&commat;&commat;Base+0x64&gt;  // b.pmore</pre>
+<pre>   53d8c:	f9400a61 	ldr	x1, [x19, #16]</pre>
+<pre>   53d90:	aa1b03e0 	mov	x0, x27</pre>
+<pre><span class="red">   53d94:	97ff2553 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   53d98:	17ffffdb 	b	53d04 &lt;_XlcLocaleDirName&commat;&commat;Base+0x244&gt;</pre>
+<pre>   53d9c:	f00002f9 	adrp	x25, b2000 &lt;_XkeyTable&commat;&commat;Base+0xd130&gt;</pre>
+<pre>--</pre>
+<pre>   54170:	54ffea41 	b.ne	53eb8 &lt;_XlcLocaleLibDirName&commat;&commat;Base+0x98&gt;  // b.any</pre>
+<pre>   54174:	aa1303e0 	mov	x0, x19</pre>
+<pre>   54178:	910a63f4 	add	x20, sp, #0x298</pre>
+<pre>   5417c:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>   54180:	97ff1cd0 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   54184:	aa1303e1 	mov	x1, x19</pre>
+<pre>   54188:	aa0003f5 	mov	x21, x0</pre>
+<pre>   5418c:	d2820002 	mov	x2, #0x1000                	// #4096</pre>
+<pre>   54190:	aa1403e0 	mov	x0, x20</pre>
+<pre>   54194:	97ff25af 	bl	1d850 &lt;strncpy&commat;plt&gt;</pre>
+<pre>   54198:	713ffebf 	cmp	w21, #0xfff</pre>
+<pre>   5419c:	540000ac 	b.gt	541b0 &lt;_XlcLocaleLibDirName&commat;&commat;Base+0x390&gt;</pre>
+<pre>   541a0:	52800740 	mov	w0, #0x3a                  	// #58</pre>
+<pre>   541a4:	3835ca80 	strb	w0, [x20, w21, sxtw]</pre>
+<pre>   541a8:	110006a0 	add	w0, w21, #0x1</pre>
+<pre>   541ac:	540004e1 	b.ne	54248 &lt;_XlcLocaleLibDirName&commat;&commat;Base+0x428&gt;  // b.any</pre>
+<pre>   541b0:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   541b4:	17ffff47 	b	53ed0 &lt;_XlcLocaleLibDirName&commat;&commat;Base+0xb0&gt;</pre>
+<pre>   541b8:	f9401661 	ldr	x1, [x19, #40]</pre>
+<pre>   541bc:	aa1a03e0 	mov	x0, x26</pre>
+<pre><span class="red">   541c0:	97ff2448 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   541c4:	17ffffb8 	b	540a4 &lt;_XlcLocaleLibDirName&commat;&commat;Base+0x284&gt;</pre>
+<pre>   541c8:	d00002e0 	adrp	x0, b2000 &lt;_XkeyTable&commat;&commat;Base+0xd130&gt;</pre>
+<pre>--</pre>
+<pre>   56650:	aa0003f5 	mov	x21, x0</pre>
+<pre>   56654:	b40008e0 	cbz	x0, 56770 &lt;_XlcDeInitLoader&commat;&commat;Base+0x500&gt;</pre>
+<pre>   56658:	7100029f 	cmp	w20, #0x0</pre>
+<pre>   5665c:	1a971294 	csel	w20, w20, w23, ne  // ne = any</pre>
+<pre>   56660:	93407e80 	sxtw	x0, w20</pre>
+<pre>   56664:	97ff1613 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   56668:	f90002a0 	str	x0, [x21]</pre>
+<pre>   5666c:	aa0003f4 	mov	x20, x0</pre>
+<pre>   56670:	b40007c0 	cbz	x0, 56768 &lt;_XlcDeInitLoader&commat;&commat;Base+0x4f8&gt;</pre>
+<pre>   56674:	f94047e0 	ldr	x0, [sp, #136]</pre>
+<pre>   56678:	f9000015 	str	x21, [x0]</pre>
+<pre>   5667c:	b9400260 	ldr	w0, [x19]</pre>
+<pre>   56680:	7100001f 	cmp	w0, #0x0</pre>
+<pre>   56684:	54fff96d 	b.le	565b0 &lt;_XlcDeInitLoader&commat;&commat;Base+0x340&gt;</pre>
+<pre>   56688:	51000417 	sub	w23, w0, #0x1</pre>
+<pre>   5668c:	910006f7 	add	x23, x23, #0x1</pre>
+<pre>   56690:	f94043f3 	ldr	x19, [sp, #128]</pre>
+<pre>   56694:	8b170eb7 	add	x23, x21, x23, lsl #3</pre>
+<pre>   56698:	aa1303e1 	mov	x1, x19</pre>
+<pre>   5669c:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">   566a0:	97ff1b10 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   566a4:	f80086b4 	str	x20, [x21], #8</pre>
+<pre>   566a8:	aa1403e0 	mov	x0, x20</pre>
+<pre>--</pre>
+<pre>   57d38:	f9404be0 	ldr	x0, [sp, #144]</pre>
+<pre>   57d3c:	52800002 	mov	w2, #0x0                   	// #0</pre>
+<pre>   57d40:	f9400401 	ldr	x1, [x0, #8]</pre>
+<pre>   57d44:	f94053e0 	ldr	x0, [sp, #160]</pre>
+<pre>   57d48:	f9401821 	ldr	x1, [x1, #48]</pre>
+<pre>   57d4c:	97ff13b5 	bl	1cc20 &lt;XInternAtom&commat;plt&gt;</pre>
+<pre>   57d50:	f90037e0 	str	x0, [sp, #104]</pre>
+<pre>   57d54:	b00002c3 	adrp	x3, b0000 &lt;_XkeyTable&commat;&commat;Base+0xb130&gt;</pre>
+<pre>   57d58:	91136063 	add	x3, x3, #0x4d8</pre>
+<pre>   57d5c:	35ffe7d8 	cbnz	w24, 57a54 &lt;_Xmbstoutf8&commat;&commat;Base+0x134&gt;</pre>
+<pre>   57d60:	294f07f6 	ldp	w22, w1, [sp, #120]</pre>
+<pre>   57d64:	f94043e0 	ldr	x0, [sp, #128]</pre>
+<pre>   57d68:	f90063e0 	str	x0, [sp, #192]</pre>
+<pre>   57d6c:	710002df 	cmp	w22, #0x0</pre>
+<pre>   57d70:	7a40c824 	ccmp	w1, #0x0, #0x4, gt</pre>
+<pre>   57d74:	5400070d 	b.le	57e54 &lt;_Xmbstoutf8&commat;&commat;Base+0x534&gt;</pre>
+<pre>   57d78:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>   57d7c:	d2800014 	mov	x20, #0x0                   	// #0</pre>
+<pre>   57d80:	f94047f5 	ldr	x21, [sp, #136]</pre>
+<pre>   57d84:	1400000f 	b	57dc0 &lt;_Xmbstoutf8&commat;&commat;Base+0x4a0&gt;</pre>
+<pre><span class="red">   57d88:	97ff1556 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   57d8c:	f8747aa0 	ldr	x0, [x21, x20, lsl #3]</pre>
+<pre>   57d90:	b4000220 	cbz	x0, 57dd4 &lt;_Xmbstoutf8&commat;&commat;Base+0x4b4&gt;</pre>
+<pre>--</pre>
+<pre>   5e380:	aa1403e0 	mov	x0, x20</pre>
+<pre>   5e384:	97fef44f 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   5e388:	aa0003f6 	mov	x22, x0</pre>
+<pre>   5e38c:	11000415 	add	w21, w0, #0x1</pre>
+<pre>   5e390:	b4000093 	cbz	x19, 5e3a0 &lt;_XlcDefaultMapModifiers&commat;&commat;Base+0x60&gt;</pre>
+<pre>   5e394:	aa1303e0 	mov	x0, x19</pre>
+<pre>   5e398:	97fef44a 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   5e39c:	0b0002b5 	add	w21, w21, w0</pre>
+<pre>   5e3a0:	710002bf 	cmp	w21, #0x0</pre>
+<pre>   5e3a4:	1a9f16b5 	csinc	w21, w21, wzr, ne  // ne = any</pre>
+<pre>   5e3a8:	93407ea0 	sxtw	x0, w21</pre>
+<pre>   5e3ac:	97fef6c1 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   5e3b0:	aa0003f5 	mov	x21, x0</pre>
+<pre>   5e3b4:	b40001a0 	cbz	x0, 5e3e8 &lt;_XlcDefaultMapModifiers&commat;&commat;Base+0xa8&gt;</pre>
+<pre>   5e3b8:	aa1403e1 	mov	x1, x20</pre>
+<pre>   5e3bc:	910006c2 	add	x2, x22, #0x1</pre>
+<pre>   5e3c0:	97fef3e0 	bl	1b340 &lt</span>emcpy&commat;plt&gt;</pre>
+<pre>   5e3c4:	b4000093 	cbz	x19, 5e3d4 &lt;_XlcDefaultMapModifiers&commat;&commat;Base+0x94&gt;</pre>
+<pre>   5e3c8:	aa1303e1 	mov	x1, x19</pre>
+<pre>   5e3cc:	8b1602a0 	add	x0, x21, x22</pre>
+<pre><span class="red">   5e3d0:	97fefbc4 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   5e3d4:	aa1503e0 	mov	x0, x21</pre>
+<pre>   5e3d8:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>   67bb8:	a90363f7 	stp	x23, x24, [sp, #48]</pre>
+<pre>   67bbc:	120006d7 	and	w23, w22, #0x3</pre>
+<pre>   67bc0:	5a8046f7 	csneg	w23, w23, w0, mi  // mi = first</pre>
+<pre>   67bc4:	110022c2 	add	w2, w22, #0x8</pre>
+<pre>   67bc8:	4b1703e3 	neg	w3, w23</pre>
+<pre>   67bcc:	12000463 	and	w3, w3, #0x3</pre>
+<pre>   67bd0:	2b020062 	adds	w2, w3, w2</pre>
+<pre>   67bd4:	1a9f1442 	csinc	w2, w2, wzr, ne  // ne = any</pre>
+<pre>   67bd8:	93407c40 	sxtw	x0, w2</pre>
+<pre>   67bdc:	97fed0b5 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   67be0:	aa0003f8 	mov	x24, x0</pre>
+<pre>   67be4:	b40015e0 	cbz	x0, 67ea0 &lt;_XimExtension&commat;&commat;Base+0x350&gt;</pre>
+<pre>   67be8:	7941a262 	ldrh	w2, [x19, #208]</pre>
+<pre>   67bec:	12003f39 	and	w25, w25, #0xffff</pre>
+<pre>   67bf0:	79000b02 	strh	w2, [x24, #4]</pre>
+<pre>   67bf4:	aa1b03e1 	mov	x1, x27</pre>
+<pre>   67bf8:	79000f19 	strh	w25, [x24, #6]</pre>
+<pre>   67bfc:	91002400 	add	x0, x0, #0x9</pre>
+<pre>   67c00:	3900231a 	strb	w26, [x24, #8]</pre>
+<pre>   67c04:	4b1703f7 	neg	w23, w23</pre>
+<pre><span class="red">   67c08:	97fed5b6 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   67c0c:	720006f7 	ands	w23, w23, #0x3</pre>
+<pre>   67c10:	54000160 	b.eq	67c3c &lt;_XimExtension&commat;&commat;Base+0xec&gt;  // b.none</pre>
+<pre>--</pre>
+<pre>   68194:	b4000075 	cbz	x21, 681a0 &lt;_XimExtension&commat;&commat;Base+0x650&gt;</pre>
+<pre>   68198:	394002a0 	ldrb	w0, [x21]</pre>
+<pre>   6819c:	35000140 	cbnz	w0, 681c4 &lt;_XimExtension&commat;&commat;Base+0x674&gt;</pre>
+<pre>   681a0:	f9472673 	ldr	x19, [x19, #3656]</pre>
+<pre>   681a4:	f94027e1 	ldr	x1, [sp, #72]</pre>
+<pre>   681a8:	f9400260 	ldr	x0, [x19]</pre>
+<pre>   681ac:	ca000020 	eor	x0, x1, x0</pre>
+<pre>   681b0:	b5000280 	cbnz	x0, 68200 &lt;_XimExtension&commat;&commat;Base+0x6b0&gt;</pre>
+<pre>   681b4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   681b8:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>   681bc:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>   681c0:	d65f03c0 	ret</pre>
+<pre>   681c4:	aa1403e0 	mov	x0, x20</pre>
+<pre>   681c8:	97feccbe 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   681cc:	aa0003e2 	mov	x2, x0</pre>
+<pre>   681d0:	528005c3 	mov	w3, #0x2e                  	// #46</pre>
+<pre>   681d4:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   681d8:	aa1503e1 	mov	x1, x21</pre>
+<pre>   681dc:	8b000280 	add	x0, x20, x0</pre>
+<pre>   681e0:	38226a83 	strb	w3, [x20, x2]</pre>
+<pre><span class="red">   681e4:	97fed43f 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   681e8:	17ffffee 	b	681a0 &lt;_XimExtension&commat;&commat;Base+0x650&gt;</pre>
+<pre>   681ec:	52800be2 	mov	w2, #0x5f                  	// #95</pre>
+<pre>   681f0:	39000002 	strb	w2, [x0]</pre>
+<pre>   681f4:	91000400 	add	x0, x0, #0x1</pre>
+<pre><span class="red">   681f8:	97fed43a 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   681fc:	17ffffe5 	b	68190 &lt;_XimExtension&commat;&commat;Base+0x640&gt;</pre>
+<pre>   68200:	97fed120 	bl	1c680 &lt;__stack_chk_fail&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   6a020:	d28d2b00 	mov	x0, #0x6958                	// #26968</pre>
+<pre>   6a024:	f2a86da0 	movk	x0, #0x436d, lsl #16</pre>
+<pre>   6a028:	b9403b86 	ldr	w6, [x28, #56]</pre>
+<pre>   6a02c:	1b035943 	madd	w3, w10, w3, w22</pre>
+<pre>   6a030:	b941136b 	ldr	w11, [x27, #272]</pre>
+<pre>   6a034:	aa1903e1 	mov	x1, x25</pre>
+<pre>   6a038:	f2c00080 	movk	x0, #0x4, lsl #32</pre>
+<pre>   6a03c:	f90002a0 	str	x0, [x21]</pre>
+<pre>   6a040:	aa0403e0 	mov	x0, x4</pre>
+<pre>   6a044:	0b070862 	add	w2, w3, w7, lsl #2</pre>
+<pre>   6a048:	29010ab6 	stp	w22, w2, [x21, #8]</pre>
+<pre>   6a04c:	0b020122 	add	w2, w9, w2</pre>
+<pre>   6a050:	b90016a2 	str	w2, [x21, #20]</pre>
+<pre>   6a054:	0b0200c2 	add	w2, w6, w2</pre>
+<pre>   6a058:	b90012a3 	str	w3, [x21, #16]</pre>
+<pre>   6a05c:	b9001aa2 	str	w2, [x21, #24]</pre>
+<pre>   6a060:	2903aaab 	stp	w11, w10, [x21, #28]</pre>
+<pre>   6a064:	29049ea9 	stp	w9, w7, [x21, #36]</pre>
+<pre>   6a068:	b9002ea6 	str	w6, [x21, #44]</pre>
+<pre>   6a06c:	f9003be4 	str	x4, [sp, #112]</pre>
+<pre><span class="red">   6a070:	97fecc9c 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   6a074:	aa1903e0 	mov	x0, x25</pre>
+<pre>   6a078:	97fec512 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   6a07c:	f9403be4 	ldr	x4, [sp, #112]</pre>
+<pre>   6a080:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   6a084:	aa1803e1 	mov	x1, x24</pre>
+<pre>   6a088:	8b000080 	add	x0, x4, x0</pre>
+<pre><span class="red">   6a08c:	97fecc95 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   6a090:	aa1703e0 	mov	x0, x23</pre>
+<pre>   6a094:	52803002 	mov	w2, #0x180                 	// #384</pre>
+<pre>--</pre>
+<pre>   6a244:	9100a000 	add	x0, x0, #0x28</pre>
+<pre>   6a248:	b9007be1 	str	w1, [sp, #120]</pre>
+<pre>   6a24c:	97fecdcd 	bl	1d980 &lt;getenv&commat;plt&gt;</pre>
+<pre>   6a250:	aa0003f5 	mov	x21, x0</pre>
+<pre>   6a254:	b40003e0 	cbz	x0, 6a2d0 &lt;_XimLocalOpenIM&commat;&commat;Base+0x640&gt;</pre>
+<pre>   6a258:	f90037ff 	str	xzr, [sp, #104]</pre>
+<pre>   6a25c:	b90073ff 	str	wzr, [sp, #112]</pre>
+<pre>   6a260:	17ffff21 	b	69ee4 &lt;_XimLocalOpenIM&commat;&commat;Base+0x254&gt;</pre>
+<pre>   6a264:	2a1803e0 	mov	w0, w24</pre>
+<pre>   6a268:	97fec912 	bl	1c6b0 &lt;close&commat;plt&gt;</pre>
+<pre>   6a26c:	aa1503e0 	mov	x0, x21</pre>
+<pre>   6a270:	97fecac4 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>   6a274:	17ffffbc 	b	6a164 &lt;_XimLocalOpenIM&commat;&commat;Base+0x4d4&gt;</pre>
+<pre>   6a278:	31002f20 	adds	w0, w25, #0xb</pre>
+<pre>   6a27c:	93407c00 	sxtw	x0, w0</pre>
+<pre>   6a280:	9a9f1400 	csinc	x0, x0, xzr, ne  // ne = any</pre>
+<pre>   6a284:	97fec70b 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   6a288:	aa0003f5 	mov	x21, x0</pre>
+<pre>   6a28c:	b4000240 	cbz	x0, 6a2d4 &lt;_XimLocalOpenIM&commat;&commat;Base+0x644&gt;</pre>
+<pre>   6a290:	aa1703e1 	mov	x1, x23</pre>
+<pre><span class="red">   6a294:	97fecc13 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   6a298:	f0000542 	adrp	x2, 115000 &lt;_XkeyTable&commat;&commat;Base+0x70130&gt;</pre>
+<pre>   6a29c:	9100e042 	add	x2, x2, #0x38</pre>
+<pre>--</pre>
+<pre>   6b96c:	d503201f 	nop</pre>
+<pre>   6b970:	34001776 	cbz	w22, 6bc5c &lt;_XimLcctstoutf8&commat;&commat;Base+0xc1c&gt;</pre>
+<pre>   6b974:	1e6202c0 	scvtf	d0, w22</pre>
+<pre>   6b978:	1e680800 	fmul	d0, d0, d8</pre>
+<pre>   6b97c:	1e780016 	fcvtzs	w22, d0</pre>
+<pre>   6b980:	710002df 	cmp	w22, #0x0</pre>
+<pre>   6b984:	93407ec1 	sxtw	x1, w22</pre>
+<pre>   6b988:	9a9c1021 	csel	x1, x1, x28, ne  // ne = any</pre>
+<pre>   6b98c:	97fec2fd 	bl	1c580 &lt;realloc&commat;plt&gt;</pre>
+<pre>   6b990:	b4ffdf80 	cbz	x0, 6b580 &lt;_XimLcctstoutf8&commat;&commat;Base+0x540&gt;</pre>
+<pre>   6b994:	b9402b38 	ldr	w24, [x25, #40]</pre>
+<pre>   6b998:	f9000720 	str	x0, [x25, #8]</pre>
+<pre>   6b99c:	b9002f36 	str	w22, [x25, #44]</pre>
+<pre>   6b9a0:	0b1802e1 	add	w1, w23, w24</pre>
+<pre>   6b9a4:	6b0102df 	cmp	w22, w1</pre>
+<pre>   6b9a8:	54fffe4b 	b.lt	6b970 &lt;_XimLcctstoutf8&commat;&commat;Base+0x930&gt;  // b.tstop</pre>
+<pre>   6b9ac:	b9002b21 	str	w1, [x25, #40]</pre>
+<pre>   6b9b0:	8b38c000 	add	x0, x0, w24, sxtw</pre>
+<pre>   6b9b4:	aa1303e1 	mov	x1, x19</pre>
+<pre>   6b9b8:	f9003be0 	str	x0, [sp, #112]</pre>
+<pre><span class="red">   6b9bc:	97fec649 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   6b9c0:	aa1503e2 	mov	x2, x21</pre>
+<pre>   6b9c4:	aa1303e1 	mov	x1, x19</pre>
+<pre>--</pre>
+<pre>   6becc:	aa1a03e0 	mov	x0, x26</pre>
+<pre>   6bed0:	97fec3ac 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>   6bed4:	b4ffb576 	cbz	x22, 6b580 &lt;_XimLcctstoutf8&commat;&commat;Base+0x540&gt;</pre>
+<pre>   6bed8:	f9404be1 	ldr	x1, [sp, #144]</pre>
+<pre>   6bedc:	2a1903e2 	mov	w2, w25</pre>
+<pre>   6bee0:	aa1603e0 	mov	x0, x22</pre>
+<pre>   6bee4:	97fffd4f 	bl	6b420 &lt;_XimLcctstoutf8&commat;&commat;Base+0x3e0&gt;</pre>
+<pre>   6bee8:	aa1603e0 	mov	x0, x22</pre>
+<pre>   6beec:	97febfc1 	bl	1bdf0 &lt;fclose&commat;plt&gt;</pre>
+<pre>   6bef0:	17fffd78 	b	6b4d0 &lt;_XimLcctstoutf8&commat;&commat;Base+0x490&gt;</pre>
+<pre>   6bef4:	7101305f 	cmp	w2, #0x4c</pre>
+<pre>   6bef8:	54000580 	b.eq	6bfa8 &lt;_XimLcctstoutf8&commat;&commat;Base+0xf68&gt;  // b.none</pre>
+<pre>   6befc:	540001e8 	b.hi	6bf38 &lt;_XimLcctstoutf8&commat;&commat;Base+0xef8&gt;  // b.pmore</pre>
+<pre>   6bf00:	7100945f 	cmp	w2, #0x25</pre>
+<pre>   6bf04:	540004a0 	b.eq	6bf98 &lt;_XimLcctstoutf8&commat;&commat;Base+0xf58&gt;  // b.none</pre>
+<pre>   6bf08:	7101205f 	cmp	w2, #0x48</pre>
+<pre>   6bf0c:	54000101 	b.ne	6bf2c &lt;_XimLcctstoutf8&commat;&commat;Base+0xeec&gt;  // b.any</pre>
+<pre>   6bf10:	b40000f8 	cbz	x24, 6bf2c &lt;_XimLcctstoutf8&commat;&commat;Base+0xeec&gt;</pre>
+<pre>   6bf14:	aa1803e1 	mov	x1, x24</pre>
+<pre>   6bf18:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">   6bf1c:	97fec4f1 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   6bf20:	aa1803e0 	mov	x0, x24</pre>
+<pre>   6bf24:	97febd67 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   6bf28:	8b0002d6 	add	x22, x22, x0</pre>
+<pre>   6bf2c:	39400b61 	ldrb	w1, [x27, #2]</pre>
+<pre>   6bf30:	91000b7b 	add	x27, x27, #0x2</pre>
+<pre>   6bf34:	17ffffdd 	b	6bea8 &lt;_XimLcctstoutf8&commat;&commat;Base+0xe68&gt;</pre>
+<pre>   6bf38:	71014c5f 	cmp	w2, #0x53</pre>
+<pre>   6bf3c:	54ffff81 	b.ne	6bf2c &lt;_XimLcctstoutf8&commat;&commat;Base+0xeec&gt;  // b.any</pre>
+<pre>   6bf40:	aa1c03e1 	mov	x1, x28</pre>
+<pre>   6bf44:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">   6bf48:	97fec4e6 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   6bf4c:	aa1c03e0 	mov	x0, x28</pre>
+<pre>   6bf50:	97febd5c 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   6bf64:	f9003fe0 	str	x0, [sp, #120]</pre>
+<pre>   6bf68:	b4ffb0c0 	cbz	x0, 6b580 &lt;_XimLcctstoutf8&commat;&commat;Base+0x540&gt;</pre>
+<pre>   6bf6c:	aa1503e2 	mov	x2, x21</pre>
+<pre>   6bf70:	aa1303e1 	mov	x1, x19</pre>
+<pre>   6bf74:	aa1403e0 	mov	x0, x20</pre>
+<pre>   6bf78:	97fffc52 	bl	6b0c0 &lt;_XimLcctstoutf8&commat;&commat;Base+0x80&gt;</pre>
+<pre>   6bf7c:	17fffe98 	b	6b9dc &lt;_XimLcctstoutf8&commat;&commat;Base+0x99c&gt;</pre>
+<pre>   6bf80:	aa1a03e0 	mov	x0, x26</pre>
+<pre>   6bf84:	97fec67f 	bl	1d980 &lt;getenv&commat;plt&gt;</pre>
+<pre>   6bf88:	aa0003f8 	mov	x24, x0</pre>
+<pre>   6bf8c:	b5fff0a0 	cbnz	x0, 6bda0 &lt;_XimLcctstoutf8&commat;&commat;Base+0xd60&gt;</pre>
+<pre>   6bf90:	91000ad6 	add	x22, x22, #0x2</pre>
+<pre>   6bf94:	17ffff75 	b	6bd68 &lt;_XimLcctstoutf8&commat;&commat;Base+0xd28&gt;</pre>
+<pre>   6bf98:	aa1603e0 	mov	x0, x22</pre>
+<pre>   6bf9c:	38001401 	strb	w1, [x0], #1</pre>
+<pre>   6bfa0:	aa0003f6 	mov	x22, x0</pre>
+<pre>   6bfa4:	17ffffe2 	b	6bf2c &lt;_XimLcctstoutf8&commat;&commat;Base+0xeec&gt;</pre>
+<pre>   6bfa8:	b4fffc37 	cbz	x23, 6bf2c &lt;_XimLcctstoutf8&commat;&commat;Base+0xeec&gt;</pre>
+<pre>   6bfac:	aa1703e1 	mov	x1, x23</pre>
+<pre>   6bfb0:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">   6bfb4:	97fec4cb 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   6bfb8:	aa1703e0 	mov	x0, x23</pre>
+<pre>   6bfbc:	97febd41 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   74a38:	cb160260 	sub	x0, x19, x22</pre>
+<pre>   74a3c:	1101f407 	add	w7, w0, #0x7d</pre>
+<pre>   74a40:	71000800 	subs	w0, w0, #0x2</pre>
+<pre>   74a44:	1a8040e7 	csel	w7, w7, w0, mi  // mi = first</pre>
+<pre>   74a48:	6b0003e5 	negs	w5, w0</pre>
+<pre>   74a4c:	120018a5 	and	w5, w5, #0x7f</pre>
+<pre>   74a50:	12001800 	and	w0, w0, #0x7f</pre>
+<pre>   74a54:	5a854400 	csneg	w0, w0, w5, mi  // mi = first</pre>
+<pre>   74a58:	13077ce7 	asr	w7, w7, #7</pre>
+<pre>   74a5c:	51020000 	sub	w0, w0, #0x80</pre>
+<pre>   74a60:	510200e5 	sub	w5, w7, #0x80</pre>
+<pre>   74a64:	390002c5 	strb	w5, [x22]</pre>
+<pre>   74a68:	390006c0 	strb	w0, [x22, #1]</pre>
+<pre>   74a6c:	b9400340 	ldr	w0, [x26]</pre>
+<pre>   74a70:	6b00005f 	cmp	w2, w0</pre>
+<pre>   74a74:	540011ca 	b.ge	74cac &lt;_XlcDefaultLoader&commat;&commat;Base+0x155c&gt;  // b.tcont</pre>
+<pre>   74a78:	d2800016 	mov	x22, #0x0                   	// #0</pre>
+<pre>   74a7c:	aa1303e0 	mov	x0, x19</pre>
+<pre>   74a80:	b9007be2 	str	w2, [sp, #120]</pre>
+<pre>   74a84:	f90043e6 	str	x6, [sp, #128]</pre>
+<pre><span class="red">   74a88:	97fea216 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   74a8c:	f94043e6 	ldr	x6, [sp, #128]</pre>
+<pre>   74a90:	b94067e0 	ldr	w0, [sp, #100]</pre>
+<pre>--</pre>
+<pre>   78c80:	97fe8c8c 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   78c84:	aa0003f6 	mov	x22, x0</pre>
+<pre>   78c88:	b4000940 	cbz	x0, 78db0 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x470&gt;</pre>
+<pre>   78c8c:	b9006af9 	str	w25, [x23, #104]</pre>
+<pre>   78c90:	f9003af3 	str	x19, [x23, #112]</pre>
+<pre>   78c94:	14000004 	b	78ca4 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x364&gt;</pre>
+<pre>   78c98:	9101c294 	add	x20, x20, #0x70</pre>
+<pre>   78c9c:	eb1402bf 	cmp	x21, x20</pre>
+<pre>   78ca0:	540002c0 	b.eq	78cf8 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x3b8&gt;  // b.none</pre>
+<pre>   78ca4:	f9401681 	ldr	x1, [x20, #40]</pre>
+<pre>   78ca8:	b5ffff81 	cbnz	x1, 78c98 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x358&gt;</pre>
+<pre>   78cac:	f9401a80 	ldr	x0, [x20, #48]</pre>
+<pre>   78cb0:	b5ffff40 	cbnz	x0, 78c98 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x358&gt;</pre>
+<pre>   78cb4:	b9401280 	ldr	w0, [x20, #16]</pre>
+<pre>   78cb8:	7100001f 	cmp	w0, #0x0</pre>
+<pre>   78cbc:	5400048d 	b.le	78d4c &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x40c&gt;</pre>
+<pre>   78cc0:	f9400e80 	ldr	x0, [x20, #24]</pre>
+<pre>   78cc4:	b4000440 	cbz	x0, 78d4c &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x40c&gt;</pre>
+<pre>   78cc8:	f9400001 	ldr	x1, [x0]</pre>
+<pre>   78ccc:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">   78cd0:	97fe9184 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   78cd4:	f8008676 	str	x22, [x19], #8</pre>
+<pre>   78cd8:	aa1603e0 	mov	x0, x22</pre>
+<pre>--</pre>
+<pre>   78d28:	f9400660 	ldr	x0, [x19, #8]</pre>
+<pre>   78d2c:	b40002a0 	cbz	x0, 78d80 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x440&gt;</pre>
+<pre>   78d30:	f9400000 	ldr	x0, [x0]</pre>
+<pre>   78d34:	110006d6 	add	w22, w22, #0x1</pre>
+<pre>   78d38:	11000739 	add	w25, w25, #0x1</pre>
+<pre>   78d3c:	f9400800 	ldr	x0, [x0, #16]</pre>
+<pre>   78d40:	97fe89e0 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   78d44:	0b0002d6 	add	w22, w22, w0</pre>
+<pre>   78d48:	17ffffc2 	b	78c50 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x310&gt;</pre>
+<pre>   78d4c:	b9404280 	ldr	w0, [x20, #64]</pre>
+<pre>   78d50:	7100001f 	cmp	w0, #0x0</pre>
+<pre>   78d54:	5400006d 	b.le	78d60 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x420&gt;</pre>
+<pre>   78d58:	f9402680 	ldr	x0, [x20, #72]</pre>
+<pre>   78d5c:	b5fffb60 	cbnz	x0, 78cc8 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x388&gt;</pre>
+<pre>   78d60:	f9400680 	ldr	x0, [x20, #8]</pre>
+<pre>   78d64:	b4000140 	cbz	x0, 78d8c &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x44c&gt;</pre>
+<pre>   78d68:	f9400001 	ldr	x1, [x0]</pre>
+<pre>   78d6c:	52800018 	mov	w24, #0x0                   	// #0</pre>
+<pre>   78d70:	aa1603e0 	mov	x0, x22</pre>
+<pre>   78d74:	f9400821 	ldr	x1, [x1, #16]</pre>
+<pre><span class="red">   78d78:	97fe915a 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   78d7c:	17ffffd6 	b	78cd4 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x394&gt;</pre>
+<pre>   78d80:	110006d6 	add	w22, w22, #0x1</pre>
+<pre>--</pre>
+<pre>   7987c:	54fff96c 	b.gt	797a8 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xe68&gt;</pre>
+<pre>   79880:	3100067f 	cmn	w19, #0x1</pre>
+<pre>   79884:	540004e0 	b.eq	79920 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xfe0&gt;  // b.none</pre>
+<pre>   79888:	11000660 	add	w0, w19, #0x1</pre>
+<pre>   7988c:	93407c00 	sxtw	x0, w0</pre>
+<pre>   79890:	97fe8988 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   79894:	aa0003f5 	mov	x21, x0</pre>
+<pre>   79898:	b4fff880 	cbz	x0, 797a8 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xe68&gt;</pre>
+<pre>   7989c:	528005ba 	mov	w26, #0x2d                  	// #45</pre>
+<pre>   798a0:	3900001f 	strb	wzr, [x0]</pre>
+<pre>   798a4:	f94002d3 	ldr	x19, [x22]</pre>
+<pre>   798a8:	b4000193 	cbz	x19, 798d8 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xf98&gt;</pre>
+<pre>   798ac:	aa1503e0 	mov	x0, x21</pre>
+<pre>   798b0:	97fe8704 	bl	1b4c0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   798b4:	aa0003e2 	mov	x2, x0</pre>
+<pre>   798b8:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   798bc:	910022d6 	add	x22, x22, #0x8</pre>
+<pre>   798c0:	aa1303e1 	mov	x1, x19</pre>
+<pre>   798c4:	8b0002a0 	add	x0, x21, x0</pre>
+<pre>   798c8:	38226aba 	strb	w26, [x21, x2]</pre>
+<pre><span class="red">   798cc:	97fe8e85 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   798d0:	eb1602ff 	cmp	x23, x22</pre>
+<pre>   798d4:	54fffe81 	b.ne	798a4 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xf64&gt;  // b.any</pre>
+<pre>   798d8:	aa1803e0 	mov	x0, x24</pre>
+<pre>   798dc:	97fe8d29 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>   798e0:	f9400e80 	ldr	x0, [x20, #24]</pre>
+<pre>   798e4:	52800033 	mov	w19, #0x1                   	// #1</pre>
+<pre>   798e8:	97fe8d26 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>   798ec:	a94573fb 	ldp	x27, x28, [sp, #80]</pre>
+<pre>   798f0:	f9000e95 	str	x21, [x20, #24]</pre>
+<pre>   798f4:	17ffff1b 	b	79560 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xc20&gt;</pre>
+<pre>   798f8:	aa1803e0 	mov	x0, x24</pre>
+<pre>   798fc:	97fe8d21 	bl	1cd80 &lt;free&commat;plt&gt;</pre>
+<pre>   79900:	17ffffad 	b	797b4 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xe74&gt;</pre>
+<pre>   79904:	71016c3f 	cmp	w1, #0x5b</pre>
+<pre>   79908:	54ffff81 	b.ne	798f8 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xfb8&gt;  // b.any</pre>
+<pre>   7990c:	aa1303e1 	mov	x1, x19</pre>
+<pre>   79910:	aa1803e0 	mov	x0, x24</pre>
+<pre>   79914:	aa1803f5 	mov	x21, x24</pre>
+<pre><span class="red">   79918:	97fe8e72 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   7991c:	17fffff1 	b	798e0 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xfa0&gt;</pre>
+<pre>   79920:	d2800020 	mov	x0, #0x1                   	// #1</pre>
+<pre>   79924:	17ffffdb 	b	79890 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xf50&gt;</pre>
+<pre>   79928:	a90573fb 	stp	x27, x28, [sp, #80]</pre>
+<pre>   7992c:	97fe8b55 	bl	1c680 &lt;__stack_chk_fail&commat;plt&gt;</pre>
+<pre>   79930:	71002edf 	cmp	w22, #0xb</pre>
+<pre>   79934:	54ffe8ec 	b.gt	79650 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xd10&gt;</pre>
+<pre>   79938:	f9404be0 	ldr	x0, [sp, #144]</pre>
+<pre>   7993c:	f103f41f 	cmp	x0, #0xfd</pre>
+<pre>   79940:	54fff46c 	b.gt	797cc &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0xe8c&gt;</pre>
+<pre>   79944:	f94047e2 	ldr	x2, [sp, #136]</pre>
+<pre>   79948:	5285a540 	mov	w0, #0x2d2a                	// #11562</pre>
+<pre>   7994c:	f9400281 	ldr	x1, [x20]</pre>
+<pre>   79950:	78001040 	sturh	w0, [x2, #1]</pre>
+<pre>   79954:	91000c40 	add	x0, x2, #0x3</pre>
+<pre><span class="red">   79958:	97fe8e62 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   7995c:	f9400760 	ldr	x0, [x27, #8]</pre>
+<pre>   79960:	aa1c03e1 	mov	x1, x28</pre>
+<pre>--</pre>
+<pre>   7a378:	f90033e0 	str	x0, [sp, #96]</pre>
+<pre>   7a37c:	b4ffebc0 	cbz	x0, 7a0f4 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x17b4&gt;</pre>
+<pre>   7a380:	aa1903e0 	mov	x0, x25</pre>
+<pre>   7a384:	97fe86cb 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   7a388:	aa0003f9 	mov	x25, x0</pre>
+<pre>   7a38c:	f94033e3 	ldr	x3, [sp, #96]</pre>
+<pre>   7a390:	b4001e00 	cbz	x0, 7a750 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x1e10&gt;</pre>
+<pre>   7a394:	7100039f 	cmp	w28, #0x0</pre>
+<pre>   7a398:	1a9f179c 	csinc	w28, w28, wzr, ne  // ne = any</pre>
+<pre>   7a39c:	93407f80 	sxtw	x0, w28</pre>
+<pre>   7a3a0:	97fe86c4 	bl	1beb0 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>   7a3a4:	aa0003fc 	mov	x28, x0</pre>
+<pre>   7a3a8:	f94033e3 	ldr	x3, [sp, #96]</pre>
+<pre>   7a3ac:	b4001d20 	cbz	x0, 7a750 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x1e10&gt;</pre>
+<pre>   7a3b0:	b9003a7a 	str	w26, [x19, #56]</pre>
+<pre>   7a3b4:	a9046663 	stp	x3, x25, [x19, #64]</pre>
+<pre>   7a3b8:	b90063ff 	str	wzr, [sp, #96]</pre>
+<pre>   7a3bc:	14000015 	b	7a410 &lt;_Xutf8DefaultDrawImageString&commat;&commat;Base+0x1ad0&gt;</pre>
+<pre>   7a3c0:	f9000060 	str	x0, [x3]</pre>
+<pre>   7a3c4:	aa1c03e0 	mov	x0, x28</pre>
+<pre><span class="red">   7a3c8:	97fe8bc6 	bl	1d2e0 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   7a3cc:	f90037fa 	str	x26, [sp, #104]</pre>
+<pre>   7a3d0:	b94063e1 	ldr	w1, [sp, #96]</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> used </span><span class="orange">35</span> times </span><span class="orange">libX11.so.6.3.0</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

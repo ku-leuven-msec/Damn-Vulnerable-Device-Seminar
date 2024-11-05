@@ -1,0 +1,54 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibX11.so.6.3.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibX11.so.6.3.0[0m
+
+[31m   695ac:	97fecd6d 	bl	1cb60 <mmap@plt>[0m
+   695b0:	d1000401 	sub	x1, x0, #0x1
+   695b4:	b1000c3f 	cmn	x1, #0x3
+   695b8:	54000ae8 	b.hi	69714 <_XimLocalSetIMValues@@Base+0x434>  // b.pmore
+   695bc:	f9400321 	ldr	x1, [x25]
+   695c0:	f100bc3f 	cmp	x1, #0x2f
+   695c4:	54000869 	b.ls	696d0 <_XimLocalSetIMValues@@Base+0x3f0>  // b.plast
+   695c8:	b9400002 	ldr	w2, [x0]
+   695cc:	528d2b01 	mov	w1, #0x6958                	// #26968
+   695d0:	72a86da1 	movk	w1, #0x436d, lsl #16
+   695d4:	6b01005f 	cmp	w2, w1
+   695d8:	540007c1 	b.ne	696d0 <_XimLocalSetIMValues@@Base+0x3f0>  // b.any
+   695dc:	b9400401 	ldr	w1, [x0, #4]
+   695e0:	7100103f 	cmp	w1, #0x4
+   695e4:	d2800601 	mov	x1, #0x30                  	// #48
+   695e8:	540005a1 	b.ne	6969c <_XimLocalSetIMValues@@Base+0x3bc>  // b.any
+   695ec:	97fecf15 	bl	1d240 <munmap@plt>
+   695f0:	f94726f7 	ldr	x23, [x23, #3656]
+   695f4:	f940c7e1 	ldr	x1, [sp, #392]
+   695f8:	f94002e0 	ldr	x0, [x23]
+   695fc:	ca000020 	eor	x0, x1, x0
+--
+[31m   69818:	97feccd2 	bl	1cb60 <mmap@plt>[0m
+   6981c:	aa0003f3 	mov	x19, x0
+   69820:	d1000400 	sub	x0, x0, #0x1
+   69824:	b1000c1f 	cmn	x0, #0x3
+   69828:	540009e8 	b.hi	69964 <_XimLocalSetIMValues@@Base+0x684>  // b.pmore
+   6982c:	b9400261 	ldr	w1, [x19]
+   69830:	528d2b00 	mov	w0, #0x6958                	// #26968
+   69834:	72a86da0 	movk	w0, #0x436d, lsl #16
+   69838:	6b00003f 	cmp	w1, w0
+   6983c:	f94037e6 	ldr	x6, [sp, #104]
+   69840:	54000c61 	b.ne	699cc <_XimLocalSetIMValues@@Base+0x6ec>  // b.any
+   69844:	b9400660 	ldr	w0, [x19, #4]
+   69848:	7100101f 	cmp	w0, #0x4
+   6984c:	54000d01 	b.ne	699ec <_XimLocalSetIMValues@@Base+0x70c>  // b.any
+   69850:	b9401a60 	ldr	w0, [x19, #24]
+   69854:	6b00033f 	cmp	w25, w0
+   69858:	540005c1 	b.ne	69910 <_XimLocalSetIMValues@@Base+0x630>  // b.any
+   6985c:	1100075a 	add	w26, w26, #0x1
+   69860:	1100079c 	add	w28, w28, #0x1
+   69864:	93407f5a 	sxtw	x26, w26
+   69868:	93407f9c 	sxtw	x28, w28
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m2[0m times [0;33mlibX11.so.6.3.0[0m
+

@@ -1,0 +1,18 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/dnf/cli/commands/upgrade.py[0m
+1:# upgrade.py.
+2:# Upgrade CLI command..
+35:class UpgradeCommand(command.
+39:   aliases = ('upgrade', 'update', 'u.
+40:  summary = _('upgrade a package or p.
+44:=_('Package to upgrade'),.
+52:ing run by the root user..
+58:       demands.root_user = True.
+62:        self.upgrade_minimal = None.
+67:e.sack.query().upgrades().
+72:= "eq" if self.upgrade_minimal else ".
+86:     self.base.upgrade_all().
+89:ges marked for upgrade.')).
+95: = module_base.upgrade(self.opts.grp_.
+107:f.base.package_upgrade(pkg).
+118:     self.base.upgrade(pkg_spec).
+128:base.env_group_upgrade(self.skipped_g.

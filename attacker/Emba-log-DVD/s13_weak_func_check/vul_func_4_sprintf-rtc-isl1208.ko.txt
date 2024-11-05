@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mrtc-isl1208.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m140) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrtc-isl1208.ko[0m
+
+     384:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     388:	d65f03c0 	ret
+     38c:	d503201f 	nop
+
+0000000000000390 <isl1208_sysfs_show_dtrim>:
+     390:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     394:	910003fd 	mov	x29, sp
+     398:	a90153f3 	stp	x19, x20, [sp, #16]
+     39c:	aa0003f3 	mov	x19, x0
+     3a0:	aa0203f4 	mov	x20, x2
+     3a4:	aa1e03e0 	mov	x0, x30
+     3a8:	94000000 	bl	0 <_mcount>
+     3ac:	f9402260 	ldr	x0, [x19, #64]
+     3b0:	d1008000 	sub	x0, x0, #0x20
+     3b4:	97ffff13 	bl	0 <isl1208_i2c_get_dtr>
+     3b8:	37f800c0 	tbnz	w0, #31, 3d0 <isl1208_sysfs_show_dtrim+0x40>
+     3bc:	51019002 	sub	w2, w0, #0x64
+     3c0:	90000001 	adrp	x1, 0 <isl1208_i2c_get_dtr>
+     3c4:	aa1403e0 	mov	x0, x20
+     3c8:	91000021 	add	x1, x1, #0x0
+[31m     3cc:	94000000 	bl	0 <sprintf>[0m
+     3d0:	93407c00 	sxtw	x0, w0
+     3d4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     3e8:	a90153f3 	stp	x19, x20, [sp, #16]
+     3ec:	aa0003f3 	mov	x19, x0
+     3f0:	aa0203f4 	mov	x20, x2
+     3f4:	aa1e03e0 	mov	x0, x30
+     3f8:	94000000 	bl	0 <_mcount>
+     3fc:	f9402260 	ldr	x0, [x19, #64]
+     400:	52800141 	mov	w1, #0xa                   	// #10
+     404:	d1008000 	sub	x0, x0, #0x20
+     408:	94000000 	bl	0 <i2c_smbus_read_byte_data>
+     40c:	37f80200 	tbnz	w0, #31, 44c <isl1208_sysfs_show_atrim+0x6c>
+     410:	12001400 	and	w0, w0, #0x3f
+     414:	52800323 	mov	w3, #0x19                  	// #25
+     418:	521b0001 	eor	w1, w0, #0x20
+     41c:	aa1403e0 	mov	x0, x20
+     420:	11004822 	add	w2, w1, #0x12
+     424:	90000001 	adrp	x1, 0 <isl1208_i2c_get_dtr>
+     428:	12000444 	and	w4, w2, #0x3
+     42c:	91000021 	add	x1, x1, #0x0
+     430:	53027c42 	lsr	w2, w2, #2
+     434:	1b037c83 	mul	w3, w4, w3
+[31m     438:	94000000 	bl	0 <sprintf>[0m
+     43c:	93407c00 	sxtw	x0, w0
+     440:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     548:	94000000 	bl	0 <__stack_chk_fail>
+     54c:	d503201f 	nop
+
+0000000000000550 <isl1208_sysfs_show_usr>:
+     550:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     554:	910003fd 	mov	x29, sp
+     558:	a90153f3 	stp	x19, x20, [sp, #16]
+     55c:	aa0003f3 	mov	x19, x0
+     560:	aa0203f4 	mov	x20, x2
+     564:	aa1e03e0 	mov	x0, x30
+     568:	94000000 	bl	0 <_mcount>
+     56c:	f9402260 	ldr	x0, [x19, #64]
+     570:	d1008000 	sub	x0, x0, #0x20
+     574:	97ffffdb 	bl	4e0 <isl1208_i2c_get_usr>
+     578:	2a0003e2 	mov	w2, w0
+     57c:	93407c00 	sxtw	x0, w0
+     580:	37f800c2 	tbnz	w2, #31, 598 <isl1208_sysfs_show_usr+0x48>
+     584:	aa1403e0 	mov	x0, x20
+     588:	90000001 	adrp	x1, 0 <isl1208_i2c_get_dtr>
+     58c:	91000021 	add	x1, x1, #0x0
+[31m     590:	94000000 	bl	0 <sprintf>[0m
+     594:	93407c00 	sxtw	x0, w0
+     598:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     a64:	3941dbe1 	ldrb	w1, [sp, #118]
+     a68:	b9005be0 	str	w0, [sp, #88]
+     a6c:	12001020 	and	w0, w1, #0x1f
+     a70:	94000000 	bl	0 <_bcd2bin>
+     a74:	2a0003e1 	mov	w1, w0
+     a78:	3941dfe0 	ldrb	w0, [sp, #119]
+     a7c:	51000421 	sub	w1, w1, #0x1
+     a80:	b9005fe1 	str	w1, [sp, #92]
+     a84:	94000000 	bl	0 <_bcd2bin>
+     a88:	11019001 	add	w1, w0, #0x64
+     a8c:	910133e0 	add	x0, sp, #0x4c
+     a90:	b90063e1 	str	w1, [sp, #96]
+     a94:	94000000 	bl	0 <rtc_valid_tm>
+     a98:	35000100 	cbnz	w0, ab8 <timestamp0_show+0x140>
+     a9c:	910133e0 	add	x0, sp, #0x4c
+     aa0:	94000000 	bl	0 <rtc_tm_to_time64>
+     aa4:	90000001 	adrp	x1, 0 <isl1208_i2c_get_dtr>
+     aa8:	aa0003e2 	mov	x2, x0
+     aac:	91000021 	add	x1, x1, #0x0
+     ab0:	aa1703e0 	mov	x0, x23
+[31m     ab4:	94000000 	bl	0 <sprintf>[0m
+     ab8:	93407c13 	sxtw	x19, w0
+     abc:	17ffffca 	b	9e4 <timestamp0_show+0x6c>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33mrtc-isl1208.ko[0m
+

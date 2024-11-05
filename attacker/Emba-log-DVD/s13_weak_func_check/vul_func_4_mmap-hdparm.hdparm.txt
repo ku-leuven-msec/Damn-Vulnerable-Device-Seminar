@@ -1,0 +1,98 @@
+[[0;33m*[0m] Binary protection state of [0;33mhdparm.hdparm[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mhdparm.hdparm[0m
+
+[31m    6b54:	97fff2df 	bl	36d0 <mmap@plt>[0m
+    6b58:	aa0003f3 	mov	x19, x0
+    6b5c:	aa0003e1 	mov	x1, x0
+    6b60:	91480002 	add	x2, x0, #0x200, lsl #12
+    6b64:	b100041f 	cmn	x0, #0x1
+    6b68:	54000380 	b.eq	6bd8 <ioctl@plt+0x3328>  // b.none
+    6b6c:	d503201f 	nop
+    6b70:	3900003f 	strb	wzr, [x1]
+    6b74:	91400421 	add	x1, x1, #0x1, lsl #12
+    6b78:	eb02003f 	cmp	x1, x2
+    6b7c:	54ffffa1 	b.ne	6b70 <ioctl@plt+0x32c0>  // b.any
+    6b80:	aa1303e0 	mov	x0, x19
+    6b84:	d2a00401 	mov	x1, #0x200000              	// #2097152
+    6b88:	97fff31a 	bl	37f0 <mlock@plt>
+    6b8c:	3100041f 	cmn	w0, #0x1
+    6b90:	54000140 	b.eq	6bb8 <ioctl@plt+0x3308>  // b.none
+    6b94:	52800060 	mov	w0, #0x3                   	// #3
+    6b98:	97fff2d6 	bl	36f0 <mlockall@plt>
+    6b9c:	97fff2e1 	bl	3720 <sync@plt>
+    6ba0:	52800060 	mov	w0, #0x3                   	// #3
+    6ba4:	97fff27f 	bl	35a0 <sleep@plt>
+--
+[31m    70f8:	97fff176 	bl	36d0 <mmap@plt>[0m
+    70fc:	aa0003fa 	mov	x26, x0
+    7100:	97fff1d0 	bl	3840 <__errno_location@plt>
+    7104:	a90573fb 	stp	x27, x28, [sp, #80]
+    7108:	b100075f 	cmn	x26, #0x1
+    710c:	6d0627e8 	stp	d8, d9, [sp, #96]
+    7110:	aa0003f5 	mov	x21, x0
+    7114:	fd003bea 	str	d10, [sp, #112]
+    7118:	54024ba0 	b.eq	ba8c <ioctl@plt+0x81dc>  // b.none
+    711c:	f9404be2 	ldr	x2, [sp, #144]
+    7120:	52800001 	mov	w1, #0x0                   	// #0
+    7124:	aa1a03e0 	mov	x0, x26
+    7128:	d0000078 	adrp	x24, 15000 <ioctl@plt+0x11750>
+    712c:	912e8318 	add	x24, x24, #0xba0
+    7130:	9103e3f9 	add	x25, sp, #0xf8
+    7134:	97fff113 	bl	3580 <memset@plt>
+    7138:	910363fb 	add	x27, sp, #0xd8
+    713c:	f0000120 	adrp	x0, 2e000 <ioctl@plt+0x2a750>
+    7140:	53037ee1 	lsr	w1, w23, #3
+    7144:	52800017 	mov	w23, #0x0                   	// #0
+    7148:	b90083ff 	str	wzr, [sp, #128]
+--
+[31m    7db8:	97ffee46 	bl	36d0 <mmap@plt>[0m
+    7dbc:	6d0627e8 	stp	d8, d9, [sp, #96]
+    7dc0:	aa0003f7 	mov	x23, x0
+    7dc4:	fd003bea 	str	d10, [sp, #112]
+    7dc8:	b100041f 	cmn	x0, #0x1
+    7dcc:	54013960 	b.eq	a4f8 <ioctl@plt+0x6c48>  // b.none
+    7dd0:	710002bf 	cmp	w21, #0x0
+    7dd4:	d2800002 	mov	x2, #0x0                   	// #0
+    7dd8:	d2800004 	mov	x4, #0x0                   	// #0
+    7ddc:	5400012d 	b.le	7e00 <ioctl@plt+0x4550>
+    7de0:	f9400681 	ldr	x1, [x20, #8]
+    7de4:	f8410685 	ldr	x5, [x20], #16
+    7de8:	8b010084 	add	x4, x4, x1
+    7dec:	aa01c0a1 	orr	x1, x5, x1, lsl #48
+    7df0:	f8227ae1 	str	x1, [x23, x2, lsl #3]
+    7df4:	91000442 	add	x2, x2, #0x1
+    7df8:	6b0202bf 	cmp	w21, w2
+    7dfc:	54ffff2c 	b.gt	7de0 <ioctl@plt+0x4530>
+    7e00:	2a1503e2 	mov	w2, w21
+    7e04:	aa1603e1 	mov	x1, x22
+    7e08:	2a1303e0 	mov	w0, w19
+--
+[31m   121fc:	97ffc535 	bl	36d0 <mmap@plt>[0m
+   12200:	aa0003fa 	mov	x26, x0
+   12204:	b100041f 	cmn	x0, #0x1
+   12208:	540028c0 	b.eq	12720 <ioctl@plt+0xee70>  // b.none
+   1220c:	900000e0 	adrp	x0, 2e000 <ioctl@plt+0x2a750>
+   12210:	79414ee1 	ldrh	w1, [x23, #166]
+   12214:	f947d000 	ldr	x0, [x0, #4000]
+   12218:	f9400000 	ldr	x0, [x0]
+   1221c:	36001761 	tbz	w1, #0, 12508 <ioctl@plt+0xec58>
+   12220:	79415ae1 	ldrh	w1, [x23, #172]
+   12224:	12000022 	and	w2, w1, #0x1
+   12228:	36001701 	tbz	w1, #0, 12508 <ioctl@plt+0xec58>
+   1222c:	34001914 	cbz	w20, 1254c <ioctl@plt+0xec9c>
+   12230:	7100c29f 	cmp	w20, #0x30
+   12234:	7a431a84 	ccmp	w20, #0x3, #0x4, ne  // ne = any
+   12238:	54000060 	b.eq	12244 <ioctl@plt+0xe994>  // b.none
+   1223c:	71003a9f 	cmp	w20, #0xe
+   12240:	54002861 	b.ne	1274c <ioctl@plt+0xee9c>  // b.any
+   12244:	7943aae5 	ldrh	w5, [x23, #468]
+   12248:	529fffa1 	mov	w1, #0xfffd                	// #65533
+   1224c:	7943aee6 	ldrh	w6, [x23, #470]
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m4[0m times [0;33mhdparm.hdparm[0m
+

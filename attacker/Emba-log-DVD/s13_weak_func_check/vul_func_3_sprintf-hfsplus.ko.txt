@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mhfsplus.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m491) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mhfsplus.ko[0m
+
+    587c:	94000000 	bl	0 <drop_nlink>
+    5880:	f9402260 	ldr	x0, [x19, #64]
+    5884:	eb00035f 	cmp	x26, x0
+    5888:	54000560 	b.eq	5934 <hfsplus_unlink+0x1d4>  // b.none
+    588c:	b9404a60 	ldr	w0, [x19, #72]
+    5890:	34fffba0 	cbz	w0, 5804 <hfsplus_unlink+0xa4>
+    5894:	b940b6e0 	ldr	w0, [x23, #180]
+    5898:	51000400 	sub	w0, w0, #0x1
+    589c:	b900b6e0 	str	w0, [x23, #180]
+    58a0:	aa1303e0 	mov	x0, x19
+    58a4:	94000000 	bl	0 <current_time>
+    58a8:	a9078660 	stp	x0, x1, [x19, #120]
+    58ac:	aa1303e0 	mov	x0, x19
+    58b0:	528000e1 	mov	w1, #0x7                   	// #7
+    58b4:	94000000 	bl	0 <__mark_inode_dirty>
+    58b8:	17ffffe2 	b	5840 <hfsplus_unlink+0xe0>
+    58bc:	9101a3e0 	add	x0, sp, #0x68
+    58c0:	90000001 	adrp	x1, 0 <hfsplus_statfs>
+    58c4:	91000021 	add	x1, x1, #0x0
+    58c8:	f90033e0 	str	x0, [sp, #96]
+[31m    58cc:	94000000 	bl	0 <sprintf>[0m
+    58d0:	2a0003e5 	mov	w5, w0
+    58d4:	b9404260 	ldr	w0, [x19, #64]
+--
+    5a98:	f9402261 	ldr	x1, [x19, #64]
+    5a9c:	b9407ac0 	ldr	w0, [x22, #120]
+    5aa0:	eb00003f 	cmp	x1, x0
+    5aa4:	54000581 	b.ne	5b54 <hfsplus_link+0x134>  // b.any
+    5aa8:	90000017 	adrp	x23, 0 <hfsplus_statfs>
+    5aac:	910082d9 	add	x25, x22, #0x20
+    5ab0:	910002f7 	add	x23, x23, #0x0
+    5ab4:	910223f4 	add	x20, sp, #0x88
+    5ab8:	14000003 	b	5ac4 <hfsplus_link+0xa4>
+    5abc:	3100441f 	cmn	w0, #0x11
+    5ac0:	54000601 	b.ne	5b80 <hfsplus_link+0x160>  // b.any
+    5ac4:	9101d3e0 	add	x0, sp, #0x74
+    5ac8:	52800081 	mov	w1, #0x4                   	// #4
+    5acc:	94000000 	bl	0 <get_random_bytes>
+    5ad0:	b94077e2 	ldr	w2, [sp, #116]
+    5ad4:	aa1703e1 	mov	x1, x23
+    5ad8:	aa1403e0 	mov	x0, x20
+    5adc:	12007442 	and	w2, w2, #0x3fffffff
+    5ae0:	b90077e2 	str	w2, [sp, #116]
+    5ae4:	f90043f4 	str	x20, [sp, #128]
+[31m    5ae8:	94000000 	bl	0 <sprintf>[0m
+    5aec:	2a0003e5 	mov	w5, w0
+    5af0:	b9404260 	ldr	w0, [x19, #64]
+--
+    5d58:	f941db60 	ldr	x0, [x27, #944]
+    5d5c:	f9402400 	ldr	x0, [x0, #72]
+    5d60:	b4000480 	cbz	x0, 5df0 <hfsplus_lookup+0x1c0>
+    5d64:	b85c0000 	ldur	w0, [x0, #-64]
+    5d68:	b940bfe2 	ldr	w2, [sp, #188]
+    5d6c:	6b00005f 	cmp	w2, w0
+    5d70:	540000c0 	b.eq	5d88 <hfsplus_lookup+0x158>  // b.none
+    5d74:	f9403760 	ldr	x0, [x27, #104]
+    5d78:	f9401800 	ldr	x0, [x0, #48]
+    5d7c:	b85c0000 	ldur	w0, [x0, #-64]
+    5d80:	6b00005f 	cmp	w2, w0
+    5d84:	54000361 	b.ne	5df0 <hfsplus_lookup+0x1c0>  // b.any
+    5d88:	f9403e60 	ldr	x0, [x19, #120]
+    5d8c:	b50008a0 	cbnz	x0, 5ea0 <hfsplus_lookup+0x270>
+    5d90:	b940dff4 	ldr	w20, [sp, #220]
+    5d94:	aa1703e0 	mov	x0, x23
+    5d98:	f9003e61 	str	x1, [x19, #120]
+    5d9c:	aa1803e1 	mov	x1, x24
+    5da0:	5ac00a94 	rev	w20, w20
+    5da4:	2a1403e2 	mov	w2, w20
+[31m    5da8:	94000000 	bl	0 <sprintf>[0m
+    5dac:	f941db62 	ldr	x2, [x27, #944]
+    5db0:	2a0003e4 	mov	w4, w0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mhfsplus.ko[0m
+

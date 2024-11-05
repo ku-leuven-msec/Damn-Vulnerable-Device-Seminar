@@ -1,0 +1,84 @@
+[[0;33m*[0m] Binary protection state of [0;33mip_vs.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m744) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mip_vs.ko[0m
+
+ 338:	d2800000 	mov	x0, #0x0                   	// #0
+ 33c:	910123f3 	add	x19, sp, #0x48
+ 340:	aa1403e0 	mov	x0, x20
+ 344:	390123ff 	strb	wzr, [sp, #72]
+ 348:	90000017 	adrp	x23, d10 <ip_vs_protocol_udp>
+ 34c:	39012bff 	strb	wzr, [sp, #74]
+ 350:	97ffffd9 	bl	2b4 <register_ip_vs_protocol>
+ 354:	aa1303e0 	mov	x0, x19
+ 358:	94000000 	bl	0 <strlen>
+ 35c:	90000002 	adrp	x2, 0 <ip_vs_conn_init>
+ 360:	91000042 	add	x2, x2, #0x0
+ 364:	8b000263 	add	x3, x19, x0
+ 368:	91000804 	add	x4, x0, #0x2
+ 36c:	f9400681 	ldr	x1, [x20, #8]
+ 370:	910002f7 	add	x23, x23, #0x0
+ 374:	79400055 	ldrh	w21, [x2]
+ 378:	39400854 	ldrb	w20, [x2, #2]
+ 37c:	78206a75 	strh	w21, [x19, x0]
+ 380:	8b040260 	add	x0, x19, x4
+ 384:	39000874 	strb	w20, [x3, #2]
+[31m 388:	94000000 	bl	0 <strcpy>[0m
+ 38c:	aa1703e0 	mov	x0, x23
+ 390:	97ffffc9 	bl	2b4 <register_ip_vs_protocol>
+ 394:	aa1303e0 	mov	x0, x19
+ 398:	94000000 	bl	0 <strlen>
+ 39c:	8b000262 	add	x2, x19, x0
+ 3a0:	91000803 	add	x3, x0, #0x2
+ 3a4:	f94006e1 	ldr	x1, [x23, #8]
+ 3a8:	78206a75 	strh	w21, [x19, x0]
+ 3ac:	39000854 	strb	w20, [x2, #2]
+ 3b0:	8b030260 	add	x0, x19, x3
+ 3b4:	90000017 	adrp	x23, ed8 <ip_vs_protocol_sctp>
+ 3b8:	910002f7 	add	x23, x23, #0x0
+[31m 3bc:	94000000 	bl	0 <strcpy>[0m
+ 3c0:	aa1703e0 	mov	x0, x23
+ 3c4:	97ffffbc 	bl	2b4 <register_ip_vs_protocol>
+ 3c8:	aa1303e0 	mov	x0, x19
+ 3cc:	94000000 	bl	0 <strlen>
+ 3d0:	8b000262 	add	x2, x19, x0
+ 3d4:	91000803 	add	x3, x0, #0x2
+ 3d8:	f94006e1 	ldr	x1, [x23, #8]
+ 3dc:	78206a75 	strh	w21, [x19, x0]
+ 3e0:	39000854 	strb	w20, [x2, #2]
+ 3e4:	8b030260 	add	x0, x19, x3
+ 3e8:	90000017 	adrp	x23, e40 <ip_vs_protocol_ah>
+ 3ec:	910002f7 	add	x23, x23, #0x0
+[31m 3f0:	94000000 	bl	0 <strcpy>[0m
+ 3f4:	aa1703e0 	mov	x0, x23
+ 3f8:	97ffffaf 	bl	2b4 <register_ip_vs_protocol>
+ 3fc:	aa1303e0 	mov	x0, x19
+ 400:	94000000 	bl	0 <strlen>
+ 404:	8b000262 	add	x2, x19, x0
+ 408:	91000803 	add	x3, x0, #0x2
+ 40c:	f94006e1 	ldr	x1, [x23, #8]
+ 410:	78206a75 	strh	w21, [x19, x0]
+ 414:	39000854 	strb	w20, [x2, #2]
+ 418:	8b030260 	add	x0, x19, x3
+ 41c:	90000017 	adrp	x23, da8 <ip_vs_protocol_esp>
+ 420:	910002f7 	add	x23, x23, #0x0
+[31m 424:	94000000 	bl	0 <strcpy>[0m
+ 428:	aa1703e0 	mov	x0, x23
+ 42c:	97ffffa2 	bl	2b4 <register_ip_vs_protocol>
+ 430:	aa1303e0 	mov	x0, x19
+ 434:	94000000 	bl	0 <strlen>
+ 438:	8b000262 	add	x2, x19, x0
+ 43c:	91000803 	add	x3, x0, #0x2
+ 440:	f94006e1 	ldr	x1, [x23, #8]
+ 444:	78206a75 	strh	w21, [x19, x0]
+ 448:	39000854 	strb	w20, [x2, #2]
+ 44c:	8b030260 	add	x0, x19, x3
+[31m 450:	94000000 	bl	0 <strcpy>[0m
+ 454:	91000a61 	add	x1, x19, #0x2
+ 458:	90000000 	adrp	x0, 0 <ip_vs_conn_init>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mip_vs.ko[0m
+

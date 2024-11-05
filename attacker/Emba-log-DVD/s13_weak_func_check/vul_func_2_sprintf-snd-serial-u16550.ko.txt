@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-serial-u16550.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m179) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-serial-u16550.ko[0m
+
+      a8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+      ac:	d65f03c0 	ret
+
+00000000000000b0 <snd_uart16550_substreams>:
+      b0:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+      b4:	910003fd 	mov	x29, sp
+      b8:	a90153f3 	stp	x19, x20, [sp, #16]
+      bc:	aa0003f4 	mov	x20, x0
+      c0:	aa1e03e0 	mov	x0, x30
+      c4:	94000000 	bl	0 <_mcount>
+      c8:	f8408e93 	ldr	x19, [x20, #8]!
+      cc:	eb14027f 	cmp	x19, x20
+      d0:	540001a0 	b.eq	104 <snd_uart16550_substreams+0x54>  // b.none
+      d4:	f90013f5 	str	x21, [sp, #32]
+      d8:	90000015 	adrp	x21, 0 <snd_uart16550_input_trigger>
+      dc:	910002b5 	add	x21, x21, #0x0
+      e0:	b9401662 	ldr	w2, [x19, #20]
+      e4:	9100e260 	add	x0, x19, #0x38
+      e8:	aa1503e1 	mov	x1, x21
+      ec:	11000442 	add	w2, w2, #0x1
+[31m      f0:	94000000 	bl	0 <sprintf>[0m
+      f4:	f9400273 	ldr	x19, [x19]
+      f8:	eb14027f 	cmp	x19, x20
+--
+     788:	f9003023 	str	x3, [x1, #96]
+     78c:	b9006822 	str	w2, [x1, #104]
+     790:	91030020 	add	x0, x1, #0xc0
+     794:	97fffe47 	bl	b0 <snd_uart16550_substreams>
+     798:	f94043e0 	ldr	x0, [sp, #128]
+     79c:	91036000 	add	x0, x0, #0xd8
+     7a0:	97fffe44 	bl	b0 <snd_uart16550_substreams>
+     7a4:	a9478fe0 	ldp	x0, x3, [sp, #120]
+     7a8:	528000e2 	mov	w2, #0x7                   	// #7
+     7ac:	90000001 	adrp	x1, 0 <snd_uart16550_input_trigger>
+     7b0:	91000021 	add	x1, x1, #0x0
+     7b4:	b9001c62 	str	w2, [x3, #28]
+     7b8:	91009002 	add	x2, x0, #0x24
+     7bc:	f9007874 	str	x20, [x3, #240]
+     7c0:	91011000 	add	x0, x0, #0x44
+     7c4:	f9000683 	str	x3, [x20, #8]
+     7c8:	b9814286 	ldrsw	x6, [x20, #320]
+     7cc:	b9411a85 	ldr	w5, [x20, #280]
+     7d0:	f9409284 	ldr	x4, [x20, #288]
+     7d4:	f8667a63 	ldr	x3, [x19, x6, lsl #3]
+[31m     7d8:	94000000 	bl	0 <sprintf>[0m
+     7dc:	f9403fe0 	ldr	x0, [sp, #120]
+     7e0:	94000000 	bl	0 <snd_card_register>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33msnd-serial-u16550.ko[0m
+

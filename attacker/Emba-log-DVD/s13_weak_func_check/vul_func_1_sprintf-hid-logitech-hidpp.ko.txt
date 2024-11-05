@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mhid-logitech-hidpp.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m259) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mhid-logitech-hidpp.ko[0m
+
+    29a4:	52800622 	mov	w2, #0x31                  	// #49
+    29a8:	b8217802 	str	w2, [x0, x1, lsl #2]
+    29ac:	2a0303e1 	mov	w1, w3
+    29b0:	1400002d 	b	2a64 <hidpp_initialize_battery+0x1ac>
+    29b4:	1400002c 	b	2a64 <hidpp_initialize_battery+0x1ac>
+    29b8:	90000003 	adrp	x3, 0 <hidpp_input_mapping>
+    29bc:	52800022 	mov	w2, #0x1                   	// #1
+    29c0:	91000064 	add	x4, x3, #0x0
+    29c4:	b8e20085 	ldaddal	w2, w5, [x4]
+    29c8:	0b050042 	add	w2, w2, w5
+    29cc:	90000003 	adrp	x3, 0 <hidpp_input_mapping>
+    29d0:	91000063 	add	x3, x3, #0x0
+    29d4:	51000442 	sub	w2, w2, #0x1
+    29d8:	a90e8660 	stp	x0, x1, [x19, #232]
+    29dc:	9104c276 	add	x22, x19, #0x130
+    29e0:	f9007e63 	str	x3, [x19, #248]
+    29e4:	93407c42 	sxtw	x2, w2
+    29e8:	aa1603e0 	mov	x0, x22
+    29ec:	90000001 	adrp	x1, 0 <hidpp_input_mapping>
+    29f0:	91000021 	add	x1, x1, #0x0
+[31m    29f4:	94000000 	bl	0 <sprintf>[0m
+    29f8:	52800020 	mov	w0, #0x1                   	// #1
+    29fc:	b900d260 	str	w0, [x19, #208]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mhid-logitech-hidpp.ko[0m
+

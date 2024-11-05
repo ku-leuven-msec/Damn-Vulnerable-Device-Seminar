@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mmmap.cpython-38-aarch64-linux-gnu.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mmmap.cpython-38-aarch64-linux-gnu.so[0m
+
+[31m    1fe8:	97ffff56 	bl	1d40 <mmap64@plt>[0m
+    1fec:	f9000a60 	str	x0, [x19, #16]
+    1ff0:	b100041f 	cmn	x0, #0x1
+    1ff4:	54000a00 	b.eq	2134 <PyMem_Malloc@plt+0x3e4>  // b.none
+    1ff8:	b94057e0 	ldr	w0, [sp, #84]
+    1ffc:	b9004260 	str	w0, [x19, #64]
+    2000:	17ffffca 	b	1f28 <PyMem_Malloc@plt+0x1d8>
+    2004:	7100049f 	cmp	w4, #0x1
+    2008:	54000601 	b.ne	20c8 <PyMem_Malloc@plt+0x378>  // b.any
+    200c:	b90053e4 	str	w4, [sp, #80]
+    2010:	17ffffd8 	b	1f70 <PyMem_Malloc@plt+0x220>
+    2014:	d2800013 	mov	x19, #0x0                   	// #0
+    2018:	17ffffc4 	b	1f28 <PyMem_Malloc@plt+0x1d8>
+    201c:	b94053e0 	ldr	w0, [sp, #80]
+    2020:	12000401 	and	w1, w0, #0x3
+    2024:	71000c3f 	cmp	w1, #0x3
+    2028:	54fffa40 	b.eq	1f70 <PyMem_Malloc@plt+0x220>  // b.none
+    202c:	360807e0 	tbz	w0, #1, 2128 <PyMem_Malloc@plt+0x3d8>
+    2030:	52800040 	mov	w0, #0x2                   	// #2
+    2034:	2a0003e4 	mov	w4, w0
+    2038:	b90057e0 	str	w0, [sp, #84]
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mmmap.cpython-38-aarch64-linux-gnu.so[0m
+

@@ -1,0 +1,65 @@
+[[0;33m*[0m] Binary protection state of [0;33mraid1.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m226) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mraid1.ko[0m
+
+    2390:	90000004 	adrp	x4, 0 <raid1_size>
+    2394:	91000084 	add	x4, x4, #0x0
+    2398:	91000381 	add	x1, x28, #0x0
+    239c:	52800019 	mov	w25, #0x0                   	// #0
+    23a0:	5280001c 	mov	w28, #0x0                   	// #0
+    23a4:	f90037e1 	str	x1, [sp, #104]
+    23a8:	937b7f21 	sbfiz	x1, x25, #5, #32
+    23ac:	f8616817 	ldr	x23, [x0, x1]
+    23b0:	b4000737 	cbz	x23, 2494 <raid1_reshape+0x2fc>
+    23b4:	b940dee2 	ldr	w2, [x23, #220]
+    23b8:	6b1c005f 	cmp	w2, w28
+    23bc:	54000620 	b.eq	2480 <raid1_reshape+0x2e8>  // b.none
+    23c0:	f9405ee0 	ldr	x0, [x23, #184]
+    23c4:	375001a0 	tbnz	w0, #10, 23f8 <raid1_reshape+0x260>
+    23c8:	f9405ee0 	ldr	x0, [x23, #184]
+    23cc:	37600160 	tbnz	w0, #12, 23f8 <raid1_reshape+0x260>
+    23d0:	f9404300 	ldr	x0, [x24, #128]
+    23d4:	b4000120 	cbz	x0, 23f8 <raid1_reshape+0x260>
+    23d8:	aa0403e1 	mov	x1, x4
+    23dc:	910413e0 	add	x0, sp, #0x104
+[31m    23e0:	94000000 	bl	0 <sprintf>[0m
+    23e4:	910413e1 	add	x1, sp, #0x104
+    23e8:	91014300 	add	x0, x24, #0x50
+    23ec:	94000000 	bl	0 <sysfs_remove_link>
+    23f0:	90000000 	adrp	x0, 0 <raid1_size>
+    23f4:	91000004 	add	x4, x0, #0x0
+    23f8:	f9405ee0 	ldr	x0, [x23, #184]
+    23fc:	b900defc 	str	w28, [x23, #220]
+    2400:	375001c0 	tbnz	w0, #10, 2438 <raid1_reshape+0x2a0>
+    2404:	f9405ee0 	ldr	x0, [x23, #184]
+    2408:	37600180 	tbnz	w0, #12, 2438 <raid1_reshape+0x2a0>
+    240c:	f9404300 	ldr	x0, [x24, #128]
+    2410:	b4000140 	cbz	x0, 2438 <raid1_reshape+0x2a0>
+    2414:	2a1c03e2 	mov	w2, w28
+    2418:	aa0403e1 	mov	x1, x4
+    241c:	910413e0 	add	x0, sp, #0x104
+[31m    2420:	94000000 	bl	0 <sprintf>[0m
+    2424:	91014300 	add	x0, x24, #0x50
+    2428:	910413e1 	add	x1, sp, #0x104
+    242c:	94000000 	bl	0 <sysfs_remove_link>
+    2430:	90000000 	adrp	x0, 0 <raid1_size>
+    2434:	91000004 	add	x4, x0, #0x0
+    2438:	f9405ee0 	ldr	x0, [x23, #184]
+    243c:	37500220 	tbnz	w0, #10, 2480 <raid1_reshape+0x2e8>
+    2440:	f9405ee0 	ldr	x0, [x23, #184]
+    2444:	376001e0 	tbnz	w0, #12, 2480 <raid1_reshape+0x2e8>
+    2448:	f9404300 	ldr	x0, [x24, #128]
+    244c:	b40001a0 	cbz	x0, 2480 <raid1_reshape+0x2e8>
+    2450:	b940dee2 	ldr	w2, [x23, #220]
+    2454:	aa0403e1 	mov	x1, x4
+    2458:	910413e0 	add	x0, sp, #0x104
+[31m    245c:	94000000 	bl	0 <sprintf>[0m
+    2460:	910413e2 	add	x2, sp, #0x104
+    2464:	9101e2e1 	add	x1, x23, #0x78
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mraid1.ko[0m
+

@@ -1,0 +1,71 @@
+[[0;33m*[0m] Binary protection state of [0;33mvideodev.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1558) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mvideodev.ko[0m
+
+     574:	9100c021 	add	x1, x1, #0x30
+     578:	90000000 	adrp	x0, 0 <video_device_release_empty>
+     57c:	91000000 	add	x0, x0, #0x0
+     580:	94000000 	bl	0 <printk>
+     584:	17ffffe7 	b	520 <v4l2_read+0x70>
+     588:	f940de82 	ldr	x2, [x20, #440]
+     58c:	17fffff7 	b	568 <v4l2_read+0xb8>
+
+0000000000000590 <index_show>:
+     590:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     594:	910003fd 	mov	x29, sp
+     598:	a90153f3 	stp	x19, x20, [sp, #16]
+     59c:	aa0003f4 	mov	x20, x0
+     5a0:	aa0203f3 	mov	x19, x2
+     5a4:	aa1e03e0 	mov	x0, x30
+     5a8:	94000000 	bl	0 <_mcount>
+     5ac:	b9434282 	ldr	w2, [x20, #832]
+     5b0:	aa1303e0 	mov	x0, x19
+     5b4:	90000001 	adrp	x1, 0 <video_device_release_empty>
+     5b8:	91000021 	add	x1, x1, #0x0
+[31m     5bc:	94000000 	bl	0 <sprintf>[0m
+     5c0:	93407c00 	sxtw	x0, w0
+     5c4:	a94153f3 	ldp	x19, x20, [sp, #16]
+     5c8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     5cc:	d65f03c0 	ret
+
+00000000000005d0 <dev_debug_show>:
+     5d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     5d4:	910003fd 	mov	x29, sp
+     5d8:	a90153f3 	stp	x19, x20, [sp, #16]
+     5dc:	aa0003f4 	mov	x20, x0
+     5e0:	aa0203f3 	mov	x19, x2
+     5e4:	aa1e03e0 	mov	x0, x30
+     5e8:	94000000 	bl	0 <_mcount>
+     5ec:	b9435a82 	ldr	w2, [x20, #856]
+     5f0:	aa1303e0 	mov	x0, x19
+     5f4:	90000001 	adrp	x1, 0 <video_device_release_empty>
+     5f8:	91000021 	add	x1, x1, #0x0
+[31m     5fc:	94000000 	bl	0 <sprintf>[0m
+     600:	93407c00 	sxtw	x0, w0
+     604:	a94153f3 	ldp	x19, x20, [sp, #16]
+     608:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     60c:	d65f03c0 	ret
+
+0000000000000610 <name_show>:
+     610:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     614:	910003fd 	mov	x29, sp
+     618:	a90153f3 	stp	x19, x20, [sp, #16]
+     61c:	aa0203f3 	mov	x19, x2
+     620:	aa0003f4 	mov	x20, x0
+     624:	aa1e03e0 	mov	x0, x30
+     628:	94000000 	bl	0 <_mcount>
+     62c:	910c2283 	add	x3, x20, #0x308
+     630:	aa1303e0 	mov	x0, x19
+     634:	52800402 	mov	w2, #0x20                  	// #32
+     638:	90000001 	adrp	x1, 0 <video_device_release_empty>
+     63c:	91000021 	add	x1, x1, #0x0
+[31m     640:	94000000 	bl	0 <sprintf>[0m
+     644:	93407c00 	sxtw	x0, w0
+     648:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mvideodev.ko[0m
+

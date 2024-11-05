@@ -1,0 +1,92 @@
+[[0;33m*[0m] Binary protection state of [0;33m_corecffi.abi3.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1202) Symbols
+[33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m489) Symbols
+
+
+[[0;33m*[0m] Function [0;33mfprintf[0m tear down of [0;33m_corecffi.abi3.so[0m
+
+   17dc4:	7100041f 	cmp	w0, #0x1
+   17dc8:	54000a40 	b.eq	17f10 <uv__print_handles+0x1cc>  // b.none
+   17dcc:	7100081f 	cmp	w0, #0x2
+   17dd0:	54000a61 	b.ne	17f1c <uv__print_handles+0x1d8>  // b.any
+   17dd4:	f0000085 	adrp	x5, 2a000 <xdigits_u.0+0x40>
+   17dd8:	913000a5 	add	x5, x5, #0xc00
+   17ddc:	b9403a60 	ldr	w0, [x19, #56]
+   17de0:	d27c0003 	eor	x3, x0, #0x10
+   17de4:	d3441063 	ubfx	x3, x3, #4, #1
+   17de8:	d27e0002 	eor	x2, x0, #0x4
+   17dec:	d3420842 	ubfx	x2, x2, #2, #1
+   17df0:	91326321 	add	x1, x25, #0xc98
+   17df4:	d27d0000 	eor	x0, x0, #0x8
+   17df8:	d3430c00 	ubfx	x0, x0, #3, #1
+   17dfc:	3863cb04 	ldrb	w4, [x24, w3, sxtw]
+   17e00:	3862cae3 	ldrb	w3, [x23, w2, sxtw]
+   17e04:	3860c822 	ldrb	w2, [x1, w0, sxtw]
+   17e08:	f0000081 	adrp	x1, 2a000 <xdigits_u.0+0x40>
+   17e0c:	9131c021 	add	x1, x1, #0xc70
+   17e10:	aa1603e0 	mov	x0, x22
+[[0;33m*[0m] Binary protection state of [0;33m_corecffi.abi3.so[0m
+[31m   17e14:	97ffd813 	bl	de60 <fprintf@plt>[0m
+
+   17e18:	f9400273 	ldr	x19, [x19]
+   17e1c:	eb14027f 	cmp	x19, x20
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+--
+  [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1202) Symbols
+   21f70:	97ffaf4c 	bl	dca0 <__errno_location@plt>
+   21f74:	b9400000 	ldr	w0, [x0]
+[33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m489) Symbols
+   21f78:	7100101f 	cmp	w0, #0x4
+
+   21f7c:	54fffee0 	b.eq	21f58 <uv__read+0xb8>  // b.none
+
+   21f80:	140000b5 	b	22254 <uv__read+0x3b4>
+   21f84:	b4000620 	cbz	x0, 22048 <uv__read+0x1a8>
+   21f88:	f940effb 	ldr	x27, [sp, #472]
+[[0;33m*[0m] Function [0;33mfprintf[0m tear down of [0;33m_corecffi.abi3.so[0m
+   21f8c:	f940e3e0 	ldr	x0, [sp, #448]
+
+   21f90:	f1003c1f 	cmp	x0, #0xf
+    5c2c:	aa0103f3 	mov	x19, x1
+   21f94:	54001169 	b.ls	221c0 <uv__read+0x320>  // b.plast
+    5c30:	2a0203f4 	mov	w20, w2
+   21f98:	a90363f7 	stp	x23, x24, [sp, #48]
+   21f9c:	f940dff7 	ldr	x23, [sp, #440]
+    5c34:	f9400835 	ldr	x21, [x1, #16]
+   21fa0:	b4000cf7 	cbz	x23, 2213c <uv__read+0x29c>
+    5c38:	2a0203e1 	mov	w1, w2
+   21fa4:	b9400ee2 	ldr	w2, [x23, #12]
+    5c3c:	aa1503e0 	mov	x0, x21
+   21fa8:	7100045f 	cmp	w2, #0x1
+    5c40:	97fffea0 	bl	56c0 <python_callback>
+   21fac:	54000560 	b.eq	22058 <uv__read+0x1b8>  // b.none
+    5c44:	7100041f 	cmp	w0, #0x1
+    5c48:	540002c0 	b.eq	5ca0 <_gevent_generic_callback+0x84>  // b.none
+   21fb0:	f9403be1 	ldr	x1, [sp, #112]
+   21fb4:	d0000160 	adrp	x0, 4f000 <_cffi_globals+0x138>
+    5c4c:	7100081f 	cmp	w0, #0x2
+   21fb8:	f947d000 	ldr	x0, [x0, #4000]
+    5c50:	54000200 	b.eq	5c90 <_gevent_generic_callback+0x74>  // b.none
+   21fbc:	f9400000 	ldr	x0, [x0]
+    5c54:	3100041f 	cmn	w0, #0x1
+[31m   21fc0:	97ffafa8 	bl	de60 <fprintf@plt>[0m
+    5c58:	54000160 	b.eq	5c84 <_gevent_generic_callback+0x68>  // b.none
+   21fc4:	f94002e0 	ldr	x0, [x23]
+    5c5c:	aa1503e4 	mov	x4, x21
+    5c60:	aa1303e3 	mov	x3, x19
+   21fc8:	f1003c1f 	cmp	x0, #0xf
+    5c64:	2a0003e2 	mov	w2, w0
+
+    5c68:	f0000041 	adrp	x1, 10000 <ev_fork_start+0x4>
+    5c6c:	9131e021 	add	x1, x1, #0xc78
+    5c70:	d0000140 	adrp	x0, 2f000 <_cffi_globals+0x1f0>
+    5c74:	f947d400 	ldr	x0, [x0, #4008]
+[[0;33m*[0m] Function [0;33mfprintf[0m used [0;33m2[0m times [0;33m_corecffi.abi3.so[0m
+    5c78:	f9400000 	ldr	x0, [x0]
+
+[31m    5c7c:	97fffe0d 	bl	54b0 <fprintf@plt>[0m
+    5c80:	14000004 	b	5c90 <_gevent_generic_callback+0x74>
+    5c84:	2a1403e1 	mov	w1, w20
+--

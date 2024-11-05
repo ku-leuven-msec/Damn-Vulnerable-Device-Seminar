@@ -1,0 +1,39 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/telnetlib.py[0m
+1:r"""TELNET client class..
+3:ed on RFC 854: TELNET Protocol Speci.
+8:>>> from telnetlib import Teln.
+9:>>> tn = Telnet('www.python.or.
+20:ible to pass a Telnet object to a se.
+41:__all__ = ["Telnet"].
+46:# Telnet protocol defau.
+47:TELNET_PORT = 23.
+49:# Telnet protocol chara.
+70:# Telnet protocol optio.
+71:come from arpa/telnet.h.
+113:rg/assignments/telnet-options.
+119: bytes([43]) # Telnet Remote Serial .
+121: bytes([45]) # Telnet Suppress Local.
+122: bytes([46]) # Telnet Start TLS.
+136:    _TelnetSelector = sele.
+138:    _TelnetSelector = sele.
+141:class Telnet:.
+143:    """Telnet interface clas.
+145:onnection to a telnet.
+188:   Each time a telnet option is read.
+190:      callback(telnet socket, comman.
+192: afterwards by telnetlib..
+224:o the standard telnet port (23)..
+230:        port = TELNET_PORT.
+234:    sys.audit("telnetlib.Telnet.open.
+249:        print('Telnet(%s,%s):' % (se.
+290:    sys.audit("telnetlib.Telnet.writ.
+312:        with _TelnetSelector() as s.
+405:aise EOFError('telnet connection clo.
+421:h receipt of a telnet option.""".
+533:        with _TelnetSelector() as s.
+538:es a very dumb telnet client.""".
+542:        with _TelnetSelector() as s.
+617:        with _TelnetSelector() as s.
+650:st program for telnetlib..
+652: Usage: python telnetlib.py [-d] ....
+671:    with Telnet() as tn:.

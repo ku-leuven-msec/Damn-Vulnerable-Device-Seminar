@@ -1,0 +1,205 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s103_deep_search.html" title="./../s103_deep_search.html" >&laquo; Back to s103_deep_search</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/serving.py</span></pre>
+<pre>37:    import ssl.</pre>
+<pre>40:    class _SslDummy:.</pre>
+<pre>42: RuntimeError("SSL support unavai.</pre>
+<pre>44:    ssl = _SslDummy()  # type.</pre>
+<pre>72:_TSSLContextArg = t..</pre>
+<pre>73:    t.Union["ssl.SSLContext", t.</pre>
+<pre>170:if self.server.ssl_context is Non.</pre>
+<pre>237:      environ["SSL_CLIENT_CERT"] .</pre>
+<pre>237:= ssl.DER_cert_to_PE.</pre>
+<pre>239:            # SSL handshake hasn.</pre>
+<pre>240: "Cannot fetch SSL peer certifica.</pre>
+<pre>346:if self.server.ssl_context is not.</pre>
+<pre>346: None and is_ssl_error(e):.</pre>
+<pre>347:elf.log_error("SSL error occurred.</pre>
+<pre>460:generate_adhoc_ssl_pair(.</pre>
+<pre>506:def make_ssl_devcert(.</pre>
+<pre>509: """Creates an SSL key for develo.</pre>
+<pre>529:generate_adhoc_ssl_pair(cn=cn).</pre>
+<pre>542:TraditionalOpenSSL,.</pre>
+<pre>550:generate_adhoc_ssl_context() -&gt; ".</pre>
+<pre>550:ssl.SSLContext":.</pre>
+<pre>551:rates an adhoc SSL context for th.</pre>
+<pre>555:generate_adhoc_ssl_pair().</pre>
+<pre>569:TraditionalOpenSSL,.</pre>
+<pre>576:    ctx = load_ssl_context(cert_f.</pre>
+<pre>580:def load_ssl_context(.</pre>
+<pre>582:) -&gt; "ssl.SSLContext":.</pre>
+<pre>583:    """Loads SSL context from c.</pre>
+<pre>583:ert/private key files and opti.</pre>
+<pre>585:    :py:class:`ssl.SSLContext`..</pre>
+<pre>588:e: Path of the private key to use. If not.</pre>
+<pre>590:from the :mod:`ssl` module..</pre>
+<pre>591:ults to :data:`ssl.PROTOCOL_TLS_S.</pre>
+<pre>594:    protocol = ssl.PROTOCOL_TLS_S.</pre>
+<pre>596:    ctx = ssl.SSLContext(protoco.</pre>
+<pre>601:def is_ssl_error(error: t.</pre>
+<pre>602:ent one) is an SSL error.""".</pre>
+<pre>605:nstance(error, ssl.SSLError).</pre>
+<pre>667:        ssl_context: t.Opt.</pre>
+<pre>667:ional[_TSSLContextArg] = N.</pre>
+<pre>702:        if ssl_context is not.</pre>
+<pre>703: if isinstance(ssl_context, tuple.</pre>
+<pre>704:               ssl_context = load.</pre>
+<pre>704:_ssl_context(*ssl_context).</pre>
+<pre>705:            if ssl_context == "ad.</pre>
+<pre>706:               ssl_context = gene.</pre>
+<pre>706:rate_adhoc_ssl_context().</pre>
+<pre>708: self.socket = ssl_context.wrap_s.</pre>
+<pre>709:          self.ssl_context: t.Opt.</pre>
+<pre>709:ional["ssl.SSLContext"] = ssl.</pre>
+<pre>711:          self.ssl_context = None.</pre>
+<pre>754:        ssl_context: t.Opt.</pre>
+<pre>754:ional[_TSSLContextArg] = N.</pre>
+<pre>760:hrough_errors, ssl_context, fd.</pre>
+<pre>773:    ssl_context: t.Opt.</pre>
+<pre>773:ional[_TSSLContextArg] = N.</pre>
+<pre>783:hrough_errors, ssl_context, fd=fd.</pre>
+<pre>793:            ssl_context,.</pre>
+<pre>798:hrough_errors, ssl_context, fd=fd.</pre>
+<pre>827:    ssl_context: t.Opt.</pre>
+<pre>827:ional[_TSSLContextArg] = N.</pre>
+<pre>844:   support for SSL was added..</pre>
+<pre>847:ally loading a SSL context from c.</pre>
+<pre>848:      file and private key..</pre>
+<pre>898:    :param ssl_context: an SS.</pre>
+<pre>899:       :class:`ssl.SSLContext`, a.</pre>
+<pre>902:    to disable SSL (which is the .</pre>
+<pre>940:     "http" if ssl_context is Non.</pre>
+<pre>958:            ssl_context,.</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

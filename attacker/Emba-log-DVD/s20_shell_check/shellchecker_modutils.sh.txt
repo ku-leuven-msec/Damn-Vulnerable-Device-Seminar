@@ -1,0 +1,53 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/modutils.sh line 19:[0m
+[0mif [ ! -f /lib/modules/`uname -r`/modules.dep ]; then[0m
+[33m                       ^--------^ SC2046: Quote this to prevent word splitting.[0m
+[32m                       ^--------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+if [ ! -f /lib/modules/$(uname -r)/modules.dep ]; then
+
+
+[1mIn /log/firmware/firmware/etc/init.d/modutils.sh line 29:[0m
+[0m	(cat $file; echo; ) |[0m
+[32m             ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	(cat "$file"; echo; ) |
+
+
+[1mIn /log/firmware/firmware/etc/init.d/modutils.sh line 30:[0m
+[0m	while read module args[0m
+[32m              ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/modutils.sh line 35:[0m
+[0m		[ -n "$(echo $loaded_modules | grep " $module ")" ] && continue[0m
+[32m                  ^-- SC2143: Use grep -q instead of comparing output with [ -n .. ].[0m
+[32m                             ^-------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		[ -n "$(echo "$loaded_modules" | grep " $module ")" ] && continue
+
+
+[1mIn /log/firmware/firmware/etc/init.d/modutils.sh line 36:[0m
+[0m		[ "$VERBOSE" != no ] && echo -n "$module "[0m
+[33m                                             ^-- SC3037: In POSIX sh, echo flags are undefined.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/modutils.sh line 42:[0m
+[0m[ "$VERBOSE" != no ] && echo -n "Loading modules: "[0m
+[33m                             ^-- SC3037: In POSIX sh, echo flags are undefined.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/modutils.sh line 48:[0m
+[0m	process_file $f[0m
+[32m                     ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	process_file "$f"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2046 -- Quote this to prevent word splitt...
+  https://www.shellcheck.net/wiki/SC3037 -- In POSIX sh, echo flags are undef...
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...

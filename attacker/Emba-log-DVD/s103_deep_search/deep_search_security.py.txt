@@ -1,0 +1,30 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/security.py[0m
+139:tr, salt: str, password: str) -> t.Tup.
+140:   """Internal password hash helper.  .
+141:ted and salted passwords.  In case sal.
+141:ted passwords are used.
+145:        return password, method.
+148:    password = password.encode("utf-8".
+162:2_hmac(method, password, salt, iterati.
+167:hmac.new(salt, password, method).hexdi.
+169:ib.new(method, password).hexdigest(), .
+172:def generate_password_hash(.
+173:    password: str, method: .
+175:    """Hash a password with the given.
+177:t :func:`check_password_hash` can chec.
+183:erate unsalted passwords but it is pos.
+184:orce plaintext passwords..
+185:ly to salt the password..
+193:    :param password: the password .
+200:(method, salt, password).
+204:def check_password_hash(pwhash: s.
+204:tr, password: str) -> bool:.
+205:    """Check a password against a give.
+205:ted and hashed password value..
+206:nsalted legacy passwords this method s.
+207:    plain text passwords, md5 and sha1.
+209: `True` if the password matched, `Fals.
+212:func:`generate_password_hash`..
+213:    :param password: the plaintext.
+213: password to compare aga.
+219:(method, salt, password)[0], hashval).

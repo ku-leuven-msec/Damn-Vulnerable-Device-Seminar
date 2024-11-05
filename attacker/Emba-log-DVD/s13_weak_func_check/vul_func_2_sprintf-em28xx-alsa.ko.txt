@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mem28xx-alsa.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m154) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mem28xx-alsa.ko[0m
+
+  c4:	94000000 	bl	0 <_mcount>
+  c8:	52800043 	mov	w3, #0x2                   	// #2
+  cc:	d5384100 	mrs	x0, sp_el0
+  d0:	f9428c01 	ldr	x1, [x0, #1304]
+  d4:	f90077e1 	str	x1, [sp, #232]
+  d8:	d2800001 	mov	x1, #0x0                   	// #0
+  dc:	9102f3fb 	add	x27, sp, #0xbc
+  e0:	a906ffff 	stp	xzr, xzr, [sp, #104]
+  e4:	aa1703e2 	mov	x2, x23
+  e8:	aa1b03e0 	mov	x0, x27
+  ec:	a907ffff 	stp	xzr, xzr, [sp, #120]
+  f0:	90000001 	adrp	x1, 0 <em28xx_audio_free_urb>
+  f4:	91000021 	add	x1, x1, #0x0
+  f8:	b9006be3 	str	w3, [sp, #104]
+  fc:	aa1903f5 	mov	x21, x25
+ 100:	f9003ffb 	str	x27, [sp, #120]
+ 104:	d5384118 	mrs	x24, sp_el0
+ 108:	a908ffff 	stp	xzr, xzr, [sp, #136]
+ 10c:	a909ffff 	stp	xzr, xzr, [sp, #152]
+ 110:	a90ae7ff 	stp	xzr, x25, [sp, #168]
+[31m 114:	94000000 	bl	0 <sprintf>[0m
+ 118:	90000003 	adrp	x3, 0 <em28xx_audio_free_urb>
+ 11c:	90000002 	adrp	x2, 0 <em28xx_audio_free_urb>
+--
+ 174:	90000000 	adrp	x0, 0 <em28xx_audio_free_urb>
+ 178:	91000042 	add	x2, x2, #0x0
+ 17c:	91000000 	add	x0, x0, #0x0
+ 180:	2a1903e5 	mov	w5, w25
+ 184:	aa1b03e4 	mov	x4, x27
+ 188:	91026283 	add	x3, x20, #0x98
+ 18c:	9100c021 	add	x1, x1, #0x30
+ 190:	94000000 	bl	0 <dev_printk>
+ 194:	52800043 	mov	w3, #0x2                   	// #2
+ 198:	a906ffff 	stp	xzr, xzr, [sp, #104]
+ 19c:	aa1703e2 	mov	x2, x23
+ 1a0:	a907ffff 	stp	xzr, xzr, [sp, #120]
+ 1a4:	aa1b03e0 	mov	x0, x27
+ 1a8:	90000001 	adrp	x1, 0 <em28xx_audio_free_urb>
+ 1ac:	91000021 	add	x1, x1, #0x0
+ 1b0:	b9006be3 	str	w3, [sp, #104]
+ 1b4:	f9003ffb 	str	x27, [sp, #120]
+ 1b8:	a908ffff 	stp	xzr, xzr, [sp, #136]
+ 1bc:	a909ffff 	stp	xzr, xzr, [sp, #152]
+ 1c0:	a90ae7ff 	stp	xzr, x25, [sp, #168]
+[31m 1c4:	94000000 	bl	0 <sprintf>[0m
+ 1c8:	9102a282 	add	x2, x20, #0xa8
+ 1cc:	90000004 	adrp	x4, 0 <em28xx_audio_free_urb>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mem28xx-alsa.ko[0m
+

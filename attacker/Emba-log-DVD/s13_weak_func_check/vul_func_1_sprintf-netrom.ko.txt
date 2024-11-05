@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mnetrom.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m360) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mnetrom.ko[0m
+
+  a4:	9100035a 	add	x26, x26, #0x0
+  a8:	91000339 	add	x25, x25, #0x0
+  ac:	1400000c 	b	dc <init_module+0xdc>
+  b0:	90000001 	adrp	x1, 0 <init_module>
+  b4:	91000021 	add	x1, x1, #0x0
+  b8:	9103a021 	add	x1, x1, #0xe8
+  bc:	90000000 	adrp	x0, 0 <init_module>
+  c0:	12800173 	mov	w19, #0xfffffff4            	// #-12
+  c4:	91000000 	add	x0, x0, #0x0
+  c8:	94000000 	bl	0 <printk>
+  cc:	14000070 	b	28c <init_module+0x28c>
+  d0:	f9400ee0 	ldr	x0, [x23, #24]
+  d4:	110006b5 	add	w21, w21, #0x1
+  d8:	f83b7816 	str	x22, [x0, x27, lsl #3]
+  dc:	b941c280 	ldr	w0, [x20, #448]
+  e0:	6b15001f 	cmp	w0, w21
+  e4:	5400030d 	b.le	144 <init_module+0x144>
+  e8:	2a1503e2 	mov	w2, w21
+  ec:	aa1a03e1 	mov	x1, x26
+  f0:	9101a3e0 	add	x0, sp, #0x68
+[31m  f4:	94000000 	bl	0 <sprintf>[0m
+  f8:	52800025 	mov	w5, #0x1                   	// #1
+  fc:	aa1903e3 	mov	x3, x25
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mnetrom.ko[0m
+

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mmd-mod.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m917) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mmd-mod.ko[0m
+
+    8df4:	f9418e60 	ldr	x0, [x19, #792]
+    8df8:	94000000 	bl	0 <blk_queue_make_request>
+    8dfc:	f9418e60 	ldr	x0, [x19, #792]
+    8e00:	91100000 	add	x0, x0, #0x400
+    8e04:	94000000 	bl	0 <blk_set_stacking_limits>
+    8e08:	52800020 	mov	w0, #0x1                   	// #1
+    8e0c:	12800001 	mov	w1, #0xffffffff            	// #-1
+    8e10:	1ad82000 	lsl	w0, w0, w24
+    8e14:	94000000 	bl	0 <__alloc_disk_node>
+    8e18:	aa0003f4 	mov	x20, x0
+    8e1c:	b4000d40 	cbz	x0, 8fc4 <md_alloc+0x2c4>
+    8e20:	b9401261 	ldr	w1, [x19, #16]
+    8e24:	12004f22 	and	w2, w25, #0xfffff
+    8e28:	91003000 	add	x0, x0, #0xc
+    8e2c:	1ad82442 	lsr	w2, w2, w24
+    8e30:	53147c21 	lsr	w1, w1, #20
+    8e34:	1ad82058 	lsl	w24, w2, w24
+    8e38:	29006281 	stp	w1, w24, [x20]
+    8e3c:	b4000735 	cbz	x21, 8f20 <md_alloc+0x220>
+    8e40:	aa1503e1 	mov	x1, x21
+[31m    8e44:	94000000 	bl	0 <strcpy>[0m
+    8e48:	90000000 	adrp	x0, 0 <md_find_rdev_nr_rcu>
+    8e4c:	91000000 	add	x0, x0, #0x0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mmd-mod.ko[0m
+

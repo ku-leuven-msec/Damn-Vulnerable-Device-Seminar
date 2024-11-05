@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mgit-checkout[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mgit-checkout[0m
+
+[31m  1a9138:	97f9c93e 	bl	1b630 <mmap64@plt>[0m
+  1a913c:	f100027f 	cmp	x19, #0x0
+  1a9140:	ba410800 	ccmn	x0, #0x1, #0x0, eq  // eq = none
+  1a9144:	9a9f1000 	csel	x0, x0, xzr, ne  // ne = any
+  1a9148:	a94153f3 	ldp	x19, x20, [sp, #16]
+  1a914c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+  1a9150:	a8c57bfd 	ldp	x29, x30, [sp], #80
+  1a9154:	d65f03c0 	ret
+  1a9158:	90000560 	adrp	x0, 255000 <error@@Base+0x75cc0>
+  1a915c:	d2800001 	mov	x1, #0x0                   	// #0
+  1a9160:	911d0000 	add	x0, x0, #0x740
+  1a9164:	29078fe2 	stp	w2, w3, [sp, #60]
+  1a9168:	b90047e4 	str	w4, [sp, #68]
+  1a916c:	f90027e5 	str	x5, [sp, #72]
+  1a9170:	97fce55c 	bl	e26e0 <ferror@plt+0xc6fd0>
+  1a9174:	29478fe2 	ldp	w2, w3, [sp, #60]
+  1a9178:	aa0003e6 	mov	x6, x0
+  1a917c:	b94047e4 	ldr	w4, [sp, #68]
+  1a9180:	f94027e5 	ldr	x5, [sp, #72]
+  1a9184:	b5000080 	cbnz	x0, 1a9194 <ferror@plt+0x18da84>
+  1a9188:	92800000 	mov	x0, #0xffffffffffffffff    	// #-1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mgit-checkout[0m
+

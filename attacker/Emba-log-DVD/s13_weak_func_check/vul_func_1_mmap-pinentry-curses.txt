@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mpinentry-curses[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mpinentry-curses[0m
+
+[31m    b644:	97ffde9f 	bl	30c0 <mmap@plt>[0m
+    b648:	f9000ea0 	str	x0, [x21, #24]
+    b64c:	b100041f 	cmn	x0, #0x1
+    b650:	54000880 	b.eq	b760 <ferror@plt+0x83a0>  // b.none
+    b654:	52800020 	mov	w0, #0x1                   	// #1
+    b658:	b9000ea0 	str	w0, [x21, #12]
+    b65c:	b90022a0 	str	w0, [x21, #32]
+    b660:	9109c296 	add	x22, x20, #0x270
+    b664:	b9400ec0 	ldr	w0, [x22, #12]
+    b668:	34000580 	cbz	w0, b718 <ferror@plt+0x8358>
+    b66c:	f9400ed5 	ldr	x21, [x22, #24]
+    b670:	d0000000 	adrp	x0, d000 <ferror@plt+0x9c40>
+    b674:	91072000 	add	x0, x0, #0x1c8
+    b678:	97ffddde 	bl	2df0 <cap_from_text@plt>
+    b67c:	97ffde39 	bl	2f60 <cap_set_proc@plt>
+    b680:	aa1303e1 	mov	x1, x19
+    b684:	aa1503e0 	mov	x0, x21
+    b688:	97ffdefa 	bl	3270 <mlock@plt>
+    b68c:	2a0003f3 	mov	w19, w0
+    b690:	34000540 	cbz	w0, b738 <ferror@plt+0x8378>
+    b694:	97ffdf27 	bl	3330 <__errno_location@plt>
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mpinentry-curses[0m
+

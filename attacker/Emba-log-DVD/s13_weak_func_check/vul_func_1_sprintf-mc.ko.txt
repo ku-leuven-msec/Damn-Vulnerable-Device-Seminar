@@ -1,0 +1,37 @@
+[[0;33m*[0m] Binary protection state of [0;33mmc.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m125) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m160) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m169) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m446) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mmc.ko[0m
+
+     4fc:	9104e260 	add	x0, x19, #0x138
+     500:	94000000 	bl	2510 <media_graph_walk_cleanup>
+     504:	f9400bf3 	ldr	x19, [sp, #16]
+     508:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     50c:	d65f03c0 	ret
+
+0000000000000510 <show_model>:
+     510:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     514:	910003fd 	mov	x29, sp
+     518:	a90153f3 	stp	x19, x20, [sp, #16]
+     51c:	aa0003f4 	mov	x20, x0
+     520:	aa0203f3 	mov	x19, x2
+     524:	aa1e03e0 	mov	x0, x30
+     528:	94000000 	bl	0 <_mcount>
+     52c:	f85f0283 	ldur	x3, [x20, #-16]
+     530:	aa1303e0 	mov	x0, x19
+     534:	52800402 	mov	w2, #0x20                  	// #32
+     538:	90000001 	adrp	x1, 0 <media_device_open>
+     53c:	91004063 	add	x3, x3, #0x10
+     540:	91000021 	add	x1, x1, #0x0
+[31m     544:	94000000 	bl	0 <sprintf>[0m
+     548:	93407c00 	sxtw	x0, w0
+     54c:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mmc.ko[0m
+

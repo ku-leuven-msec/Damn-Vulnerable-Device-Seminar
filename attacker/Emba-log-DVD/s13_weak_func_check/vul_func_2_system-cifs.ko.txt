@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mcifs.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m2871) Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mcifs.ko[0m
+
+0000000000012bd8 <cifs_demultiplex_thread>:
+   12bd8:	a9b27bfd 	stp	x29, x30, [sp, #-224]!
+   12bdc:	910003fd 	mov	x29, sp
+   12be0:	a90153f3 	stp	x19, x20, [sp, #16]
+   12be4:	a9025bf5 	stp	x21, x22, [sp, #32]
+   12be8:	a90363f7 	stp	x23, x24, [sp, #48]
+   12bec:	a9046bf9 	stp	x25, x26, [sp, #64]
+   12bf0:	a90573fb 	stp	x27, x28, [sp, #80]
+   12bf4:	aa0003f3 	mov	x19, x0
+   12bf8:	aa1e03e0 	mov	x0, x30
+   12bfc:	94000000 	bl	0 <_mcount>
+   12c00:	d5384102 	mrs	x2, sp_el0
+   12c04:	b9402c40 	ldr	w0, [x2, #44]
+   12c08:	d5384101 	mrs	x1, sp_el0
+   12c0c:	f9428c23 	ldr	x3, [x1, #1304]
+   12c10:	f9006fe3 	str	x3, [sp, #216]
+   12c14:	d2800003 	mov	x3, #0x0                   	// #0
+   12c18:	90000015 	adrp	x21, 68 <perf_trace_smb3_rw_err_class+0x68>
+   12c1c:	32150000 	orr	w0, w0, #0x800
+   12c20:	b9002c40 	str	w0, [x2, #44]
+[31m   12c24:	97fff657 	bl	10580 <system_uses_lse_atomics>[0m
+   12c28:	72001c1f 	tst	w0, #0xff
+   12c2c:	54001cc0 	b.eq	12fc4 <cifs_demultiplex_thread+0x3ec>  // b.none
+--
+   12ecc:	f9402681 	ldr	x1, [x20, #72]
+   12ed0:	f9000694 	str	x20, [x20, #8]
+   12ed4:	d63f0020 	blr	x1
+   12ed8:	aa1403e0 	mov	x0, x20
+   12edc:	94000000 	bl	32380 <cifs_mid_q_entry_release>
+   12ee0:	aa1603f4 	mov	x20, x22
+   12ee4:	eb1702df 	cmp	x22, x23
+   12ee8:	f94002d6 	ldr	x22, [x22]
+   12eec:	54fffe61 	b.ne	12eb8 <cifs_demultiplex_thread+0x2e0>  // b.any
+   12ef0:	52800fa0 	mov	w0, #0x7d                  	// #125
+   12ef4:	94000000 	bl	0 <msleep>
+   12ef8:	f940ce60 	ldr	x0, [x19, #408]
+   12efc:	eb00031f 	cmp	x24, x0
+   12f00:	54000060 	b.eq	12f0c <cifs_demultiplex_thread+0x334>  // b.none
+   12f04:	52967600 	mov	w0, #0xb3b0                	// #46000
+   12f08:	94000000 	bl	0 <msleep>
+   12f0c:	f9402a60 	ldr	x0, [x19, #80]
+   12f10:	94000000 	bl	0 <kfree>
+   12f14:	aa1303e0 	mov	x0, x19
+   12f18:	94000000 	bl	0 <kfree>
+[31m   12f1c:	97fff599 	bl	10580 <system_uses_lse_atomics>[0m
+   12f20:	72001c1f 	tst	w0, #0xff
+   12f24:	54000480 	b.eq	12fb4 <cifs_demultiplex_thread+0x3dc>  // b.none
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m2[0m times [0;33mcifs.ko[0m
+

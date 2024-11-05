@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mbaycom_ser_hdx.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m106) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mbaycom_ser_hdx.ko[0m
+
+  28:	aa1e03e0 	mov	x0, x30
+  2c:	9000001b 	adrp	x27, 0 <init_module>
+  30:	94000000 	bl	0 <_mcount>
+  34:	9000001a 	adrp	x26, 0 <init_module>
+  38:	f9428f21 	ldr	x1, [x25, #1304]
+  3c:	f90047e1 	str	x1, [sp, #136]
+  40:	d2800001 	mov	x1, #0x0                   	// #0
+  44:	91008277 	add	x23, x19, #0x20
+  48:	9100c276 	add	x22, x19, #0x30
+  4c:	9100037b 	add	x27, x27, #0x0
+  50:	9100035a 	add	x26, x26, #0x0
+  54:	d2800014 	mov	x20, #0x0                   	// #0
+  58:	5280003c 	mov	w28, #0x1                   	// #1
+  5c:	90000018 	adrp	x24, 0 <init_module>
+  60:	91000318 	add	x24, x24, #0x0
+  64:	9100e300 	add	x0, x24, #0x38
+  68:	94000000 	bl	0 <printk>
+  6c:	2a1403e2 	mov	w2, w20
+  70:	aa1b03e1 	mov	x1, x27
+  74:	9101e3e0 	add	x0, sp, #0x78
+[31m  78:	94000000 	bl	0 <sprintf>[0m
+  7c:	f9400260 	ldr	x0, [x19]
+  80:	2a1403e6 	mov	w6, w20
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mbaycom_ser_hdx.ko[0m
+

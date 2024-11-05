@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mipt_CLUSTERIP.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m134) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mipt_CLUSTERIP.ko[0m
+
+     e08:	94000000 	bl	0 <__rcu_read_unlock>
+     e0c:	39404300 	ldrb	w0, [x24, #16]
+     e10:	340016c0 	cbz	w0, 10e8 <clusterip_tg_check+0x468>
+     e14:	90000000 	adrp	x0, 0 <kmalloc_caches>
+     e18:	d2800e02 	mov	x2, #0x70                  	// #112
+     e1c:	52816401 	mov	w1, #0xb20                 	// #2848
+     e20:	f9400000 	ldr	x0, [x0]
+     e24:	94000000 	bl	0 <kmem_cache_alloc_trace>
+     e28:	aa0003f7 	mov	x23, x0
+     e2c:	b40014a0 	cbz	x0, 10c0 <clusterip_tg_check+0x440>
+     e30:	aa1a03e1 	mov	x1, x26
+     e34:	aa1503e0 	mov	x0, x21
+     e38:	94000000 	bl	0 <dev_get_by_name>
+     e3c:	aa0003f8 	mov	x24, x0
+     e40:	b4001600 	cbz	x0, 1100 <clusterip_tg_check+0x480>
+     e44:	f9002bfb 	str	x27, [sp, #80]
+     e48:	aa0003e1 	mov	x1, x0
+     e4c:	b9410800 	ldr	w0, [x0, #264]
+     e50:	b90026e0 	str	w0, [x23, #36]
+     e54:	910182e0 	add	x0, x23, #0x60
+[31m     e58:	94000000 	bl	0 <strcpy>[0m
+     e5c:	b9400720 	ldr	w0, [x25, #4]
+     e60:	910072e1 	add	x1, x23, #0x1c
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mipt_CLUSTERIP.ko[0m
+

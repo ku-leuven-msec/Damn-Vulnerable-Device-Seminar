@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-seq-midi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m108) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msnd-seq-midi.ko[0m
+
+ 918:	a9067f9f 	stp	xzr, xzr, [x28, #96]
+ 91c:	a9077f9f 	stp	xzr, xzr, [x28, #112]
+ 920:	a9087f9f 	stp	xzr, xzr, [x28, #128]
+ 924:	a9097f9f 	stp	xzr, xzr, [x28, #144]
+ 928:	f900539f 	str	xzr, [x28, #160]
+ 92c:	b94002a7 	ldr	w7, [x21]
+ 930:	39000387 	strb	w7, [x28]
+ 934:	39000783 	strb	w3, [x28, #1]
+ 938:	b9006b84 	str	w4, [x28, #104]
+ 93c:	94000000 	bl	0 <memset>
+ 940:	29004e97 	stp	w23, w19, [x20]
+ 944:	6b18027f 	cmp	w19, w24
+ 948:	aa1403e1 	mov	x1, x20
+ 94c:	1a9f37e2 	cset	w2, cs  // cs = hs, nlast
+ 950:	b9000a82 	str	w2, [x20, #8]
+ 954:	aa1603e0 	mov	x0, x22
+ 958:	94000000 	bl	0 <snd_rawmidi_info_select>
+ 95c:	37f80080 	tbnz	w0, #31, 96c <snd_seq_midisynth_probe+0x2ec>
+ 960:	91029281 	add	x1, x20, #0xa4
+ 964:	91000b80 	add	x0, x28, #0x2
+[31m 968:	94000000 	bl	0 <strcpy>[0m
+ 96c:	39400b80 	ldrb	w0, [x28, #2]
+ 970:	350001c0 	cbnz	w0, 9a8 <snd_seq_midisynth_probe+0x328>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33msnd-seq-midi.ko[0m
+

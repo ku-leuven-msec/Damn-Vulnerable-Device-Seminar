@@ -1,0 +1,349 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libtirpc.so.3.0.0</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="green">Full RELRO   </span>   <span class="green">Canary found   </span>   <span class="green">NX enabled </span>   <span class="orange">DSO          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="green">No Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> tear down of </span><span class="orange">libtirpc.so.3.0.0</span></pre>
+<br />
+<pre>    cd1c:	aa1303e1 	mov	x1, x19</pre>
+<pre>    cd20:	f947ac00 	ldr	x0, [x0, #3928]</pre>
+<pre>    cd24:	b9400000 	ldr	w0, [x0]</pre>
+<pre>    cd28:	97ffeb96 	bl	7b80 &lt;pthread_setspecific&commat;plt&gt;</pre>
+<pre>    cd2c:	b900027f 	str	wzr, [x19]</pre>
+<pre>    cd30:	f900067f 	str	xzr, [x19, #8]</pre>
+<pre>    cd34:	b40002b4 	cbz	x20, cd88 &lt;rpc_call&commat;&commat;TIRPC_0.3.0+0x2f8&gt;</pre>
+<pre>    cd38:	39400281 	ldrb	w1, [x20]</pre>
+<pre>    cd3c:	d0000080 	adrp	x0, 1e000 &lt;netname2host&commat;&commat;TIRPC_0.3.2+0x1a0&gt;</pre>
+<pre>    cd40:	912a0000 	add	x0, x0, #0xa80</pre>
+<pre>    cd44:	7100003f 	cmp	w1, #0x0</pre>
+<pre>    cd48:	9a940014 	csel	x20, x0, x20, eq  // eq = none</pre>
+<pre>    cd4c:	17ffff77 	b	cb28 &lt;rpc_call&commat;&commat;TIRPC_0.3.0+0x98&gt;</pre>
+<pre>    cd50:	910006c2 	add	x2, x22, #0x1</pre>
+<pre>    cd54:	d2800803 	mov	x3, #0x40                  	// #64</pre>
+<pre>    cd58:	aa1503e1 	mov	x1, x21</pre>
+<pre>    cd5c:	91007260 	add	x0, x19, #0x1c</pre>
+<pre>    cd60:	97ffe990 	bl	73a0 &lt;__memcpy_chk&commat;plt&gt;</pre>
+<pre>    cd64:	aa1403e1 	mov	x1, x20</pre>
+<pre>    cd68:	91017260 	add	x0, x19, #0x5c</pre>
+<pre><span class="red">    cd6c:	97ffebc5 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    cd70:	52800020 	mov	w0, #0x1                   	// #1</pre>
+<pre>    cd74:	b9000260 	str	w0, [x19]</pre>
+<pre>--</pre>
+<pre>    eb44:	b4fffe80 	cbz	x0, eb14 &lt;getnetconfigent&commat;&commat;TIRPC_0.3.0+0x184&gt;</pre>
+<pre>    eb48:	d2801100 	mov	x0, #0x88                  	// #136</pre>
+<pre>    eb4c:	97ffe24d 	bl	7480 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>    eb50:	aa0003f3 	mov	x19, x0</pre>
+<pre>    eb54:	b4001060 	cbz	x0, ed60 &lt;getnetconfigent&commat;&commat;TIRPC_0.3.0+0x3d0&gt;</pre>
+<pre>    eb58:	aa1403e1 	mov	x1, x20</pre>
+<pre>    eb5c:	d2801102 	mov	x2, #0x88                  	// #136</pre>
+<pre>    eb60:	a9046bf9 	stp	x25, x26, [sp, #64]</pre>
+<pre>    eb64:	97ffe15b 	bl	70d0 &lt</span>emcpy&commat;plt&gt;</pre>
+<pre>    eb68:	d2807d02 	mov	x2, #0x3e8                 	// #1000</pre>
+<pre>    eb6c:	f9400281 	ldr	x1, [x20]</pre>
+<pre>    eb70:	aa1703e0 	mov	x0, x23</pre>
+<pre><span class="red">    eb74:	97ffe263 	bl	7500 &lt;__strcpy_chk&commat;plt&gt</span></span></pre>
+<pre>    eb78:	f9000260 	str	x0, [x19]</pre>
+<pre>    eb7c:	aa1703e0 	mov	x0, x23</pre>
+<pre>    eb80:	97ffe184 	bl	7190 &lt;strlen&commat;plt&gt;</pre>
+<pre>    eb84:	91000415 	add	x21, x0, #0x1</pre>
+<pre>    eb88:	f9400e81 	ldr	x1, [x20, #24]</pre>
+<pre>    eb8c:	8b1502f5 	add	x21, x23, x21</pre>
+<pre>    eb90:	aa1503e0 	mov	x0, x21</pre>
+<pre><span class="red">    eb94:	97ffe43b 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    eb98:	f9000e60 	str	x0, [x19, #24]</pre>
+<pre>    eb9c:	aa1503e0 	mov	x0, x21</pre>
+<pre>    eba0:	97ffe17c 	bl	7190 &lt;strlen&commat;plt&gt;</pre>
+<pre>    eba4:	91000400 	add	x0, x0, #0x1</pre>
+<pre>    eba8:	f9401281 	ldr	x1, [x20, #32]</pre>
+<pre>    ebac:	8b0002b5 	add	x21, x21, x0</pre>
+<pre>    ebb0:	aa1503e0 	mov	x0, x21</pre>
+<pre><span class="red">    ebb4:	97ffe433 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    ebb8:	f9001260 	str	x0, [x19, #32]</pre>
+<pre>    ebbc:	aa1503e0 	mov	x0, x21</pre>
+<pre>    ebc0:	97ffe174 	bl	7190 &lt;strlen&commat;plt&gt;</pre>
+<pre>    ebc4:	91000400 	add	x0, x0, #0x1</pre>
+<pre>    ebc8:	f9401681 	ldr	x1, [x20, #40]</pre>
+<pre>    ebcc:	8b0002b5 	add	x21, x21, x0</pre>
+<pre>    ebd0:	aa1503e0 	mov	x0, x21</pre>
+<pre><span class="red">    ebd4:	97ffe42b 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    ebd8:	f9001660 	str	x0, [x19, #40]</pre>
+<pre>    ebdc:	f9401a79 	ldr	x25, [x19, #48]</pre>
+<pre>    ebe0:	91000720 	add	x0, x25, #0x1</pre>
+<pre>    ebe4:	d37df000 	lsl	x0, x0, #3</pre>
+<pre>    ebe8:	97ffe226 	bl	7480 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>    ebec:	f9001e60 	str	x0, [x19, #56]</pre>
+<pre>    ebf0:	aa0003f8 	mov	x24, x0</pre>
+<pre>    ebf4:	b4000bc0 	cbz	x0, ed6c &lt;getnetconfigent&commat;&commat;TIRPC_0.3.0+0x3dc&gt;</pre>
+<pre>    ebf8:	52800017 	mov	w23, #0x0                   	// #0</pre>
+<pre>    ebfc:	d280001a 	mov	x26, #0x0                   	// #0</pre>
+<pre>    ec00:	b40001f9 	cbz	x25, ec3c &lt;getnetconfigent&commat;&commat;TIRPC_0.3.0+0x2ac&gt;</pre>
+<pre>    ec04:	d503201f 	nop</pre>
+<pre>    ec08:	aa1503e0 	mov	x0, x21</pre>
+<pre>    ec0c:	97ffe161 	bl	7190 &lt;strlen&commat;plt&gt;</pre>
+<pre>    ec10:	f9401e81 	ldr	x1, [x20, #56]</pre>
+<pre>    ec14:	91000400 	add	x0, x0, #0x1</pre>
+<pre>    ec18:	8b0002b5 	add	x21, x21, x0</pre>
+<pre>    ec1c:	110006f7 	add	w23, w23, #0x1</pre>
+<pre>    ec20:	aa1503e0 	mov	x0, x21</pre>
+<pre>    ec24:	f87a7821 	ldr	x1, [x1, x26, lsl #3]</pre>
+<pre><span class="red">    ec28:	97ffe416 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    ec2c:	f83a7b00 	str	x0, [x24, x26, lsl #3]</pre>
+<pre>    ec30:	eb37433f 	cmp	x25, w23, uxtw</pre>
+<pre>--</pre>
+<pre>    eed8:	f90013f5 	str	x21, [sp, #32]</pre>
+<pre>    eedc:	529e01a0 	mov	w0, #0xf00d                	// #61453</pre>
+<pre>    eee0:	b9000260 	str	w0, [x19]</pre>
+<pre>    eee4:	90000080 	adrp	x0, 1e000 &lt;netname2host&commat;&commat;TIRPC_0.3.2+0x1a0&gt;</pre>
+<pre>    eee8:	9136c000 	add	x0, x0, #0xdb0</pre>
+<pre>    eeec:	f900127f 	str	xzr, [x19, #32]</pre>
+<pre>    eef0:	97ffe420 	bl	7f70 &lt;getenv&commat;plt&gt;</pre>
+<pre>    eef4:	aa0003f4 	mov	x20, x0</pre>
+<pre>    eef8:	b4000260 	cbz	x0, ef44 &lt;setnetpath&commat;&commat;TIRPC_0.3.0+0x94&gt;</pre>
+<pre>    eefc:	f9400660 	ldr	x0, [x19, #8]</pre>
+<pre>    ef00:	97ffe2a4 	bl	7990 &lt;endnetconfig&commat;plt&gt;</pre>
+<pre>    ef04:	f900067f 	str	xzr, [x19, #8]</pre>
+<pre>    ef08:	aa1403e0 	mov	x0, x20</pre>
+<pre>    ef0c:	97ffe0a1 	bl	7190 &lt;strlen&commat;plt&gt;</pre>
+<pre>    ef10:	91000400 	add	x0, x0, #0x1</pre>
+<pre>    ef14:	97ffe15b 	bl	7480 &lt</span>alloc&commat;plt&gt;</pre>
+<pre>    ef18:	f9000a60 	str	x0, [x19, #16]</pre>
+<pre>    ef1c:	aa0003f5 	mov	x21, x0</pre>
+<pre>    ef20:	b40002a0 	cbz	x0, ef74 &lt;setnetpath&commat;&commat;TIRPC_0.3.0+0xc4&gt;</pre>
+<pre>    ef24:	aa1403e1 	mov	x1, x20</pre>
+<pre><span class="red">    ef28:	97ffe356 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    ef2c:	f9000e75 	str	x21, [x19, #24]</pre>
+<pre>    ef30:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>--</pre>
+<pre>000000000000f030 &lt;_get_next_token&commat;&commat;TIRPC_0.3.0&gt;:</pre>
+<pre>    f030:	a9be7bfd 	stp	x29, x30, [sp, #-32]!</pre>
+<pre>    f034:	910003fd 	mov	x29, sp</pre>
+<pre>    f038:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    f03c:	aa0003f4 	mov	x20, x0</pre>
+<pre>    f040:	2a0103f3 	mov	w19, w1</pre>
+<pre>    f044:	1400000f 	b	f080 &lt;_get_next_token&commat;&commat;TIRPC_0.3.0+0x50&gt;</pre>
+<pre>    f048:	eb00029f 	cmp	x20, x0</pre>
+<pre>    f04c:	54000302 	b.cs	f0ac &lt;_get_next_token&commat;&commat;TIRPC_0.3.0+0x7c&gt;  // b.hs, b.nlast</pre>
+<pre>    f050:	385ff004 	ldurb	w4, [x0, #-1]</pre>
+<pre>    f054:	aa0003e1 	mov	x1, x0</pre>
+<pre>    f058:	d1000400 	sub	x0, x0, #0x1</pre>
+<pre>    f05c:	7101709f 	cmp	w4, #0x5c</pre>
+<pre>    f060:	54000261 	b.ne	f0ac &lt;_get_next_token&commat;&commat;TIRPC_0.3.0+0x7c&gt;  // b.any</pre>
+<pre>    f064:	eb03005f 	cmp	x2, x3</pre>
+<pre>    f068:	54000229 	b.ls	f0ac &lt;_get_next_token&commat;&commat;TIRPC_0.3.0+0x7c&gt;  // b.plast</pre>
+<pre>    f06c:	385fe043 	ldurb	w3, [x2, #-2]</pre>
+<pre>    f070:	7101707f 	cmp	w3, #0x5c</pre>
+<pre>    f074:	540001c0 	b.eq	f0ac &lt;_get_next_token&commat;&commat;TIRPC_0.3.0+0x7c&gt;  // b.none</pre>
+<pre>    f078:	aa0203f4 	mov	x20, x2</pre>
+<pre><span class="red">    f07c:	97ffe301 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    f080:	2a1303e1 	mov	w1, w19</pre>
+<pre>    f084:	aa1403e0 	mov	x0, x20</pre>
+<pre>    f088:	97ffe2ba 	bl	7b70 &lt;strchr&commat;plt&gt;</pre>
+<pre>    f08c:	aa0003e2 	mov	x2, x0</pre>
+<pre>    f090:	91000683 	add	x3, x20, #0x1</pre>
+<pre>    f094:	b5fffda0 	cbnz	x0, f048 &lt;_get_next_token&commat;&commat;TIRPC_0.3.0+0x18&gt;</pre>
+<pre>    f098:	d2800013 	mov	x19, #0x0                   	// #0</pre>
+<pre>    f09c:	aa1303e0 	mov	x0, x19</pre>
+<pre>    f0a0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>    f0a4:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>    f0a8:	d65f03c0 	ret</pre>
+<pre>    f0ac:	aa0203f3 	mov	x19, x2</pre>
+<pre>    f0b0:	3800167f 	strb	wzr, [x19], #1</pre>
+<pre>    f0b4:	1400000a 	b	f0dc &lt;_get_next_token&commat;&commat;TIRPC_0.3.0+0xac&gt;</pre>
+<pre>    f0b8:	39400401 	ldrb	w1, [x0, #1]</pre>
+<pre>    f0bc:	91000414 	add	x20, x0, #0x1</pre>
+<pre>    f0c0:	7101703f 	cmp	w1, #0x5c</pre>
+<pre>    f0c4:	54000081 	b.ne	f0d4 &lt;_get_next_token&commat;&commat;TIRPC_0.3.0+0xa4&gt;  // b.any</pre>
+<pre>    f0c8:	91000801 	add	x1, x0, #0x2</pre>
+<pre>    f0cc:	aa1403e0 	mov	x0, x20</pre>
+<pre>    f0d0:	aa0103f4 	mov	x20, x1</pre>
+<pre>    f0d4:	aa1403e1 	mov	x1, x20</pre>
+<pre><span class="red">    f0d8:	97ffe2ea 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>    f0dc:	aa1403e0 	mov	x0, x20</pre>
+<pre>    f0e0:	52800b81 	mov	w1, #0x5c                  	// #92</pre>
+<pre>--</pre>
+<pre>   1d5cc:	b5000080 	cbnz	x0, 1d5dc &lt;getpublicandprivatekey&commat;&commat;TIRPC_0.3.2+0xbc&gt;</pre>
+<pre>   1d5d0:	1400003a 	b	1d6b8 &lt;getpublicandprivatekey&commat;&commat;TIRPC_0.3.2+0x198&gt;</pre>
+<pre>   1d5d4:	39400000 	ldrb	w0, [x0]</pre>
+<pre>   1d5d8:	35000160 	cbnz	w0, 1d604 &lt;getpublicandprivatekey&commat;&commat;TIRPC_0.3.2+0xe4&gt;</pre>
+<pre>   1d5dc:	aa1403e1 	mov	x1, x20</pre>
+<pre>   1d5e0:	aa1303e0 	mov	x0, x19</pre>
+<pre>   1d5e4:	97ffa8e3 	bl	7970 &lt;strsep&commat;plt&gt;</pre>
+<pre>   1d5e8:	aa0003fc 	mov	x28, x0</pre>
+<pre>   1d5ec:	b5ffff40 	cbnz	x0, 1d5d4 &lt;getpublicandprivatekey&commat;&commat;TIRPC_0.3.2+0xb4&gt;</pre>
+<pre>   1d5f0:	f0000002 	adrp	x2, 20000 &lt;rtime&commat;&commat;TIRPC_0.3.2+0x1f90&gt;</pre>
+<pre>   1d5f4:	aa1703e4 	mov	x4, x23</pre>
+<pre>   1d5f8:	91044042 	add	x2, x2, #0x110</pre>
+<pre>   1d5fc:	b00000c0 	adrp	x0, 36000 &lt;rtime&commat;&commat;TIRPC_0.3.2+0x17f90&gt;</pre>
+<pre>   1d600:	14000032 	b	1d6c8 &lt;getpublicandprivatekey&commat;&commat;TIRPC_0.3.2+0x1a8&gt;</pre>
+<pre>   1d604:	aa1503e0 	mov	x0, x21</pre>
+<pre>   1d608:	aa1903e1 	mov	x1, x25</pre>
+<pre>   1d60c:	97ffa8e9 	bl	79b0 &lt;strcmp&commat;plt&gt;</pre>
+<pre>   1d610:	35fffc00 	cbnz	w0, 1d590 &lt;getpublicandprivatekey&commat;&commat;TIRPC_0.3.2+0x70&gt;</pre>
+<pre>   1d614:	f94037e0 	ldr	x0, [sp, #104]</pre>
+<pre>   1d618:	aa1c03e1 	mov	x1, x28</pre>
+<pre><span class="red">   1d61c:	97ffa999 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   1d620:	aa1603e0 	mov	x0, x22</pre>
+<pre>   1d624:	97ffa773 	bl	73f0 &lt;fclose&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   1da8c:	b5000080 	cbnz	x0, 1da9c &lt;getnetname&commat;&commat;TIRPC_0.3.2+0x10c&gt;</pre>
+<pre>   1da90:	1400003a 	b	1db78 &lt;getnetname&commat;&commat;TIRPC_0.3.2+0x1e8&gt;</pre>
+<pre>   1da94:	39400000 	ldrb	w0, [x0]</pre>
+<pre>   1da98:	35000160 	cbnz	w0, 1dac4 &lt;getnetname&commat;&commat;TIRPC_0.3.2+0x134&gt;</pre>
+<pre>   1da9c:	aa1403e1 	mov	x1, x20</pre>
+<pre>   1daa0:	aa1303e0 	mov	x0, x19</pre>
+<pre>   1daa4:	97ffa7b3 	bl	7970 &lt;strsep&commat;plt&gt;</pre>
+<pre>   1daa8:	aa0003fc 	mov	x28, x0</pre>
+<pre>   1daac:	b5ffff40 	cbnz	x0, 1da94 &lt;getnetname&commat;&commat;TIRPC_0.3.2+0x104&gt;</pre>
+<pre>   1dab0:	f0000002 	adrp	x2, 20000 &lt;rtime&commat;&commat;TIRPC_0.3.2+0x1f90&gt;</pre>
+<pre>   1dab4:	aa1703e4 	mov	x4, x23</pre>
+<pre>   1dab8:	91044042 	add	x2, x2, #0x110</pre>
+<pre>   1dabc:	b00000c0 	adrp	x0, 36000 &lt;rtime&commat;&commat;TIRPC_0.3.2+0x17f90&gt;</pre>
+<pre>   1dac0:	14000032 	b	1db88 &lt;getnetname&commat;&commat;TIRPC_0.3.2+0x1f8&gt;</pre>
+<pre>   1dac4:	aa1503e0 	mov	x0, x21</pre>
+<pre>   1dac8:	aa1903e1 	mov	x1, x25</pre>
+<pre>   1dacc:	97ffa7b9 	bl	79b0 &lt;strcmp&commat;plt&gt;</pre>
+<pre>   1dad0:	35fffc00 	cbnz	w0, 1da50 &lt;getnetname&commat;&commat;TIRPC_0.3.2+0xc0&gt;</pre>
+<pre>   1dad4:	f94037e0 	ldr	x0, [sp, #104]</pre>
+<pre>   1dad8:	aa1c03e1 	mov	x1, x28</pre>
+<pre><span class="red">   1dadc:	97ffa869 	bl	7c80 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   1dae0:	aa1603e0 	mov	x0, x22</pre>
+<pre>   1dae4:	97ffa643 	bl	73f0 &lt;fclose&commat;plt&gt;</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> used </span><span class="orange">10</span> times </span><span class="orange">libtirpc.so.3.0.0</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

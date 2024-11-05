@@ -1,0 +1,216 @@
+[[0;33m*[0m] Binary protection state of [0;33mnf_nat_sip.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m94) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mnf_nat_sip.ko[0m
+
+     49c:	94000000 	bl	0 <ct_sip_get_sdp_header>
+     4a0:	7100001f 	cmp	w0, #0x0
+     4a4:	540003ad 	b.le	518 <mangle_content_len+0xe8>
+     4a8:	f9400281 	ldr	x1, [x20]
+     4ac:	aa1603e0 	mov	x0, x22
+     4b0:	b94002ba 	ldr	w26, [x21]
+     4b4:	9101b3e6 	add	x6, sp, #0x6c
+     4b8:	b9406bf6 	ldr	w22, [sp, #104]
+     4bc:	9101a3e5 	add	x5, sp, #0x68
+     4c0:	2a1a03e3 	mov	w3, w26
+     4c4:	528000e4 	mov	w4, #0x7                   	// #7
+     4c8:	52800002 	mov	w2, #0x0                   	// #0
+     4cc:	94000000 	bl	0 <ct_sip_get_header>
+     4d0:	7100001f 	cmp	w0, #0x0
+     4d4:	5400022d 	b.le	518 <mangle_content_len+0xe8>
+     4d8:	4b160342 	sub	w2, w26, w22
+     4dc:	9101cbe0 	add	x0, sp, #0x72
+     4e0:	11000842 	add	w2, w2, #0x2
+     4e4:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+     4e8:	91000021 	add	x1, x1, #0x0
+[31m     4ec:	94000000 	bl	0 <sprintf>[0m
+     4f0:	294d1be5 	ldp	w5, w6, [sp, #104]
+     4f4:	b90003e0 	str	w0, [sp]
+--
+     568:	a9056bf9 	stp	x25, x26, [sp, #80]
+     56c:	f90033fb 	str	x27, [sp, #96]
+     570:	d5384113 	mrs	x19, sp_el0
+     574:	12003cfb 	and	w27, w7, #0xffff
+     578:	2a0103f5 	mov	w21, w1
+     57c:	2a0203f6 	mov	w22, w2
+     580:	aa0303f7 	mov	x23, x3
+     584:	aa0403f8 	mov	x24, x4
+     588:	2a0503f9 	mov	w25, w5
+     58c:	2a0603fa 	mov	w26, w6
+     590:	aa0003f4 	mov	x20, x0
+     594:	aa1e03e0 	mov	x0, x30
+     598:	94000000 	bl	0 <_mcount>
+     59c:	f9428e61 	ldr	x1, [x19, #1304]
+     5a0:	f9003fe1 	str	x1, [sp, #120]
+     5a4:	d2800001 	mov	x1, #0x0                   	// #0
+     5a8:	2a1b03e2 	mov	w2, w27
+     5ac:	9101cbe0 	add	x0, sp, #0x72
+     5b0:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+     5b4:	91000021 	add	x1, x1, #0x0
+[31m     5b8:	94000000 	bl	0 <sprintf>[0m
+     5bc:	b90003e0 	str	w0, [sp]
+     5c0:	2a1a03e6 	mov	w6, w26
+--
+
+[31m0000000000000950 <sip_sprintf_addr>:[0m
+     950:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     954:	910003fd 	mov	x29, sp
+     958:	a90153f3 	stp	x19, x20, [sp, #16]
+     95c:	a9025bf5 	stp	x21, x22, [sp, #32]
+     960:	aa0003f3 	mov	x19, x0
+     964:	aa0103f4 	mov	x20, x1
+     968:	aa1e03e0 	mov	x0, x30
+     96c:	aa0203f5 	mov	x21, x2
+     970:	12001c76 	and	w22, w3, #0xff
+     974:	94000000 	bl	0 <_mcount>
+     978:	79406660 	ldrh	w0, [x19, #50]
+     97c:	aa1503e2 	mov	x2, x21
+     980:	7100081f 	cmp	w0, #0x2
+     984:	aa1403e0 	mov	x0, x20
+[31m     988:	54000200 	b.eq	9c8 <sip_sprintf_addr+0x78>  // b.none[0m
+[31m     98c:	35000116 	cbnz	w22, 9ac <sip_sprintf_addr+0x5c>[0m
+     990:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+     994:	91000021 	add	x1, x1, #0x0
+[31m     998:	94000000 	bl	0 <sprintf>[0m
+     99c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     9a0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     9a4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     9a8:	d65f03c0 	ret
+     9ac:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+     9b0:	91000021 	add	x1, x1, #0x0
+[31m     9b4:	94000000 	bl	0 <sprintf>[0m
+     9b8:	a94153f3 	ldp	x19, x20, [sp, #16]
+     9bc:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     9c0:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     9c4:	d65f03c0 	ret
+     9c8:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+     9cc:	91000021 	add	x1, x1, #0x0
+[31m     9d0:	94000000 	bl	0 <sprintf>[0m
+     9d4:	a94153f3 	ldp	x19, x20, [sp, #16]
+     9d8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+--
+     d84:	a90784c0 	stp	x0, x1, [x6, #120]
+     d88:	34000542 	cbz	w2, e30 <map_addr+0x210>
+     d8c:	f847c3e1 	ldur	x1, [sp, #124]
+     d90:	f84843e0 	ldur	x0, [sp, #132]
+     d94:	ca010063 	eor	x3, x3, x1
+     d98:	ca0000a5 	eor	x5, x5, x0
+     d9c:	aa050063 	orr	x3, x3, x5
+     da0:	f100007f 	cmp	x3, #0x0
+     da4:	7a5c0040 	ccmp	w2, w28, #0x0, eq  // eq = none
+     da8:	54fffc20 	b.eq	d2c <map_addr+0x10c>  // b.none
+     dac:	79406500 	ldrh	w0, [x8, #50]
+     db0:	5ac00443 	rev16	w3, w2
+     db4:	91023ffb 	add	x27, sp, #0x8f
+     db8:	12003c63 	and	w3, w3, #0xffff
+     dbc:	7100081f 	cmp	w0, #0x2
+     dc0:	aa1b03e0 	mov	x0, x27
+     dc4:	540003a0 	b.eq	e38 <map_addr+0x218>  // b.none
+     dc8:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+     dcc:	9101f3e2 	add	x2, sp, #0x7c
+     dd0:	91000021 	add	x1, x1, #0x0
+[31m     dd4:	94000000 	bl	0 <sprintf>[0m
+     dd8:	b90003e0 	str	w0, [sp]
+     ddc:	aa1b03e7 	mov	x7, x27
+--
+     df4:	2a1303e1 	mov	w1, w19
+     df8:	aa1a03e0 	mov	x0, x26
+     dfc:	97fffcff 	bl	1f8 <mangle_packet>
+     e00:	17ffffcc 	b	d30 <map_addr+0x110>
+     e04:	7100083f 	cmp	w1, #0x2
+     e08:	910013e4 	add	x4, sp, #0x4
+     e0c:	9a9f87e1 	cset	x1, ls  // ls = plast
+     e10:	d37df020 	lsl	x0, x1, #3
+     e14:	cb010000 	sub	x0, x0, x1
+     e18:	8b000d00 	add	x0, x8, x0, lsl #3
+     e1c:	9100d001 	add	x1, x0, #0x34
+     e20:	79408802 	ldrh	w2, [x0, #68]
+     e24:	a9400420 	ldp	x0, x1, [x1]
+     e28:	a9078480 	stp	x0, x1, [x4, #120]
+     e2c:	17ffffd8 	b	d8c <map_addr+0x16c>
+     e30:	79406082 	ldrh	w2, [x4, #48]
+     e34:	17ffffd6 	b	d8c <map_addr+0x16c>
+     e38:	9101f3e2 	add	x2, sp, #0x7c
+     e3c:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+     e40:	91000021 	add	x1, x1, #0x0
+[31m     e44:	94000000 	bl	0 <sprintf>[0m
+     e48:	17ffffe4 	b	dd8 <map_addr+0x1b8>
+     e4c:	94000000 	bl	0 <__stack_chk_fail>
+--
+    1540:	8b010ec1 	add	x1, x22, x1, lsl #3
+    1544:	2a020000 	orr	w0, w0, w2
+    1548:	79408821 	ldrh	w1, [x1, #68]
+    154c:	6b00003f 	cmp	w1, w0
+    1550:	54ffe761 	b.ne	123c <nf_nat_sip+0x2fc>  // b.any
+    1554:	b940abe0 	ldr	w0, [sp, #168]
+    1558:	7100081f 	cmp	w0, #0x2
+    155c:	9a9f87e2 	cset	x2, ls  // ls = plast
+    1560:	d37df040 	lsl	x0, x2, #3
+    1564:	cb020000 	sub	x0, x0, x2
+    1568:	8b000ec0 	add	x0, x22, x0, lsl #3
+    156c:	79406000 	ldrh	w0, [x0, #48]
+    1570:	6b01001f 	cmp	w0, w1
+    1574:	54ffe640 	b.eq	123c <nf_nat_sip+0x2fc>  // b.none
+    1578:	53087c02 	lsr	w2, w0, #8
+    157c:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+    1580:	2a002042 	orr	w2, w2, w0, lsl #8
+    1584:	91000021 	add	x1, x1, #0x0
+    1588:	12003c42 	and	w2, w2, #0xffff
+    158c:	91037fe0 	add	x0, sp, #0xdf
+[31m    1590:	94000000 	bl	0 <sprintf>[0m
+    1594:	b90003e0 	str	w0, [sp]
+    1598:	29581be5 	ldp	w5, w6, [sp, #192]
+--
+    17d4:	a9400480 	ldp	x0, x1, [x4]
+    17d8:	a9478883 	ldp	x3, x2, [x4, #120]
+    17dc:	ca030000 	eor	x0, x0, x3
+    17e0:	ca020021 	eor	x1, x1, x2
+    17e4:	aa010000 	orr	x0, x0, x1
+    17e8:	b50000a0 	cbnz	x0, 17fc <nf_nat_sip_expect+0x19c>
+    17ec:	79408ae1 	ldrh	w1, [x23, #68]
+    17f0:	79417ae0 	ldrh	w0, [x23, #188]
+    17f4:	6b00003f 	cmp	w1, w0
+    17f8:	54000300 	b.eq	1858 <nf_nat_sip_expect+0x1f8>  // b.none
+    17fc:	79406680 	ldrh	w0, [x20, #50]
+    1800:	91027fe7 	add	x7, sp, #0x9f
+    1804:	f9003fe7 	str	x7, [sp, #120]
+    1808:	2a1303e3 	mov	w3, w19
+    180c:	7100081f 	cmp	w0, #0x2
+    1810:	aa0703e0 	mov	x0, x7
+    1814:	54000620 	b.eq	18d8 <nf_nat_sip_expect+0x278>  // b.none
+    1818:	910233e2 	add	x2, sp, #0x8c
+    181c:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+    1820:	91000021 	add	x1, x1, #0x0
+[31m    1824:	94000000 	bl	0 <sprintf>[0m
+    1828:	f9403fe7 	ldr	x7, [sp, #120]
+    182c:	b90003e0 	str	w0, [sp]
+--
+    1894:	aa1403e1 	mov	x1, x20
+    1898:	aa1503e0 	mov	x0, x21
+    189c:	90000002 	adrp	x2, 0 <nf_nat_sip_expected>
+    18a0:	52800013 	mov	w19, #0x0                   	// #0
+    18a4:	91000042 	add	x2, x2, #0x0
+    18a8:	94000000 	bl	0 <nf_ct_helper_log>
+    18ac:	17ffffec 	b	185c <nf_nat_sip_expect+0x1fc>
+    18b0:	93407ca1 	sxtw	x1, w5
+    18b4:	910053e3 	add	x3, sp, #0x14
+    18b8:	9100d2e6 	add	x6, x23, #0x34
+    18bc:	d37df020 	lsl	x0, x1, #3
+    18c0:	cb010000 	sub	x0, x0, x1
+    18c4:	8b000e80 	add	x0, x20, x0, lsl #3
+    18c8:	9100d000 	add	x0, x0, #0x34
+    18cc:	a9400400 	ldp	x0, x1, [x0]
+    18d0:	a9078460 	stp	x0, x1, [x3, #120]
+    18d4:	17ffff99 	b	1738 <nf_nat_sip_expect+0xd8>
+    18d8:	910233e2 	add	x2, sp, #0x8c
+    18dc:	90000001 	adrp	x1, 0 <nf_nat_sip_expected>
+    18e0:	91000021 	add	x1, x1, #0x0
+[31m    18e4:	94000000 	bl	0 <sprintf>[0m
+    18e8:	f9403fe7 	ldr	x7, [sp, #120]
+    18ec:	17ffffd0 	b	182c <nf_nat_sip_expect+0x1cc>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m10[0m times [0;33mnf_nat_sip.ko[0m
+

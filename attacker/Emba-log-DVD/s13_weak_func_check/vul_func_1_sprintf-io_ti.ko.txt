@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mio_ti.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m214) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mio_ti.ko[0m
+
+    1090:	aa1303e0 	mov	x0, x19
+    1094:	90000001 	adrp	x1, 0 <edge_write_room>
+    1098:	91000021 	add	x1, x1, #0x0
+    109c:	94000000 	bl	0 <_dev_err>
+    10a0:	17fffff3 	b	106c <uart_mode_store+0x44>
+    10a4:	d503201f 	nop
+
+00000000000010a8 <uart_mode_show>:
+    10a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    10ac:	910003fd 	mov	x29, sp
+    10b0:	a90153f3 	stp	x19, x20, [sp, #16]
+    10b4:	aa0003f4 	mov	x20, x0
+    10b8:	aa0203f3 	mov	x19, x2
+    10bc:	aa1e03e0 	mov	x0, x30
+    10c0:	94000000 	bl	0 <_mcount>
+    10c4:	f9403e82 	ldr	x2, [x20, #120]
+    10c8:	aa1303e0 	mov	x0, x19
+    10cc:	90000001 	adrp	x1, 0 <edge_write_room>
+    10d0:	91000021 	add	x1, x1, #0x0
+    10d4:	3940a042 	ldrb	w2, [x2, #40]
+[31m    10d8:	94000000 	bl	0 <sprintf>[0m
+    10dc:	93407c00 	sxtw	x0, w0
+    10e0:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mio_ti.ko[0m
+

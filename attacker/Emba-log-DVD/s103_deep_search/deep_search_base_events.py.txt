@@ -1,0 +1,83 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/asyncio/base_events.py[0m
+34:    import ssl.
+36:    ssl = None.
+44:from . import sslproto.
+275:tocol_factory, ssl_context, backl.
+276:               ssl_handshake_time.
+283:        self._ssl_context = ssl_.
+284:        self._ssl_handshake_time.
+284:out = ssl_handshake_time.
+315:y, sock, self._ssl_context,.
+316:backlog, self._ssl_handshake_time.
+463:    def _make_ssl_transport(.
+464:ock, protocol, sslcontext, waiter.
+467:            ssl_handshake_time.
+469:     """Create SSL transport.""".
+847: supported for SSL sockets and.
+938:            *, ssl=None, family=0.
+941:            ssl_handshake_time.
+954:t None and not ssl:.
+955:eaningful with ssl').
+957:me is None and ssl:.
+970:   'when using ssl without a host.
+973:        if ssl_handshake_time.
+973:t None and not ssl:.
+975:              'ssl_handshake_time.
+975:eaningful with ssl').
+1051:tocol_factory, ssl, server_hostna.
+1052:            ssl_handshake_time.
+1052:out=ssl_handshake_time.
+1054:nsport because SSL transport clos.
+1055: creates a new SSL socket.
+1062:tocol_factory, ssl,.
+1064:            ssl_handshake_time.
+1070:        if ssl:.
+1071:            sslcontext = None .
+1071:if isinstance(ssl, bool) else ss.
+1072:t = self._make_ssl_transport(.
+1073:ock, protocol, sslcontext, waiter.
+1075:               ssl_handshake_time.
+1075:out=ssl_handshake_time.
+1106:.g. Windows or SSL socket on Unix.
+1163:ort, protocol, sslcontext, *,.
+1166:               ssl_handshake_time.
+1167:        """Upgrade transport to T.
+1172:        if ssl is None:.
+1173:eError('Python ssl module is not .
+1175:not isinstance(sslcontext, ssl.SS.
+1177:             f'sslcontext is expe.
+1177:an instance of ssl.SSLContext, '.
+1178:        f'got {sslcontext!r}').
+1185:        ssl_protocol = ssl.
+1185:proto.SSLProtocol(.
+1186:elf, protocol, sslcontext, waiter.
+1188:            ssl_handshake_time.
+1188:out=ssl_handshake_time.
+1191:early so that "ssl_protocol.data_.
+1192:called before "ssl_protocol.conne.
+1195:t.set_protocol(ssl_protocol).
+1196:self.call_soon(ssl_protocol.conne.
+1207:        return ssl_protocol._app_.
+1383:            ssl=None,.
+1386:            ssl_handshake_time.
+1403: if isinstance(ssl, bool):.
+1404:ise TypeError('ssl argument must .
+1404:be an SSLContext or None.
+1406:        if ssl_handshake_time.
+1406:s not None and ssl is None:.
+1408:              'ssl_handshake_time.
+1408:eaningful with ssl').
+1482:               ssl, backlog, ssl_.
+1495:            *, ssl=None,.
+1496:            ssl_handshake_time.
+1508:        if ssl_handshake_time.
+1508:t None and not ssl:.
+1510:              'ssl_handshake_time.
+1510:eaningful with ssl').
+1513:tocol_factory, ssl, '', server_si.
+1514:            ssl_handshake_time.
+1514:out=ssl_handshake_time.
+1516:nsport because SSL transport clos.
+1517: creates a new SSL socket.
+1594:            # (password) and may be to.
+1627:            # (password) and may be to.

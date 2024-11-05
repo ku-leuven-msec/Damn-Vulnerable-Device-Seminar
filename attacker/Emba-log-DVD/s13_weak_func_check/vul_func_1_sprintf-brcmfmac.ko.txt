@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mbrcmfmac.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1313) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mbrcmfmac.ko[0m
+
+    a920:	f9480b02 	ldr	x2, [x24, #4112]
+    a924:	d2802004 	mov	x4, #0x100                 	// #256
+    a928:	f9480f01 	ldr	x1, [x24, #4120]
+    a92c:	d2802443 	mov	x3, #0x122                 	// #290
+    a930:	f9000441 	str	x1, [x2, #8]
+    a934:	f2fbd5a4 	movk	x4, #0xdead, lsl #48
+    a938:	f2fbd5a3 	movk	x3, #0xdead, lsl #48
+    a93c:	aa1803e0 	mov	x0, x24
+    a940:	f9000022 	str	x2, [x1]
+    a944:	f9080b04 	str	x4, [x24, #4112]
+    a948:	f9080f03 	str	x3, [x24, #4120]
+    a94c:	94000000 	bl	0 <kfree>
+    a950:	17ffffbe 	b	a848 <brcmf_cfg80211_add_iface+0x1d8>
+    a954:	528000a6 	mov	w6, #0x5                   	// #5
+    a958:	2a0303e2 	mov	w2, w3
+    a95c:	910203e0 	add	x0, sp, #0x80
+    a960:	90000001 	adrp	x1, 0 <brcmf_cfg80211_update_proto_addr_mode>
+    a964:	91000021 	add	x1, x1, #0x0
+    a968:	f90037e5 	str	x5, [sp, #104]
+    a96c:	290f1be3 	stp	w3, w6, [sp, #120]
+[31m    a970:	94000000 	bl	0 <sprintf>[0m
+    a974:	52800503 	mov	w3, #0x28                  	// #40
+    a978:	9101e3e2 	add	x2, sp, #0x78
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mbrcmfmac.ko[0m
+

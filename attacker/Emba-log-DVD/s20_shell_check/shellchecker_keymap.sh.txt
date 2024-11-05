@@ -1,0 +1,43 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/keymap.sh line 5:[0m
+[0mKERNEL_MAJMIN=`uname -r | cut -d '.' -f 1,2`[0m
+[32m              ^----------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+KERNEL_MAJMIN=$(uname -r | cut -d '.' -f 1,2)
+
+
+[1mIn /log/firmware/firmware/etc/init.d/keymap.sh line 6:[0m
+[0mif [ -e /etc/keymap-$KERNEL_MAJMIN.map ]; then[0m
+[32m                    ^------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+if [ -e /etc/keymap-"$KERNEL_MAJMIN".map ]; then
+
+
+[1mIn /log/firmware/firmware/etc/init.d/keymap.sh line 7:[0m
+[0m	loadkeys /etc/keymap-$KERNEL_MAJMIN.map[0m
+[32m                             ^------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	loadkeys /etc/keymap-"$KERNEL_MAJMIN".map
+
+
+[1mIn /log/firmware/firmware/etc/init.d/keymap.sh line 10:[0m
+[0mif ( ls "/etc" | grep -q "keymap-extension-${KERNEL_MAJMIN}" )[0m
+[33m     ^-- SC2010: Don't use ls | grep. Use a glob or a for loop with a condition to allow non-alphanumeric filenames.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/keymap.sh line 12:[0m
+[0m	for extension in `ls -1 /etc/keymap-extension-$KERNEL_MAJMIN*` [0m
+[33m                         ^-- SC2045: Iterating over ls output is fragile. Use globs.[0m
+[32m                         ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                                                      ^------------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	for extension in $(ls -1 /etc/keymap-extension-"$KERNEL_MAJMIN"*) 
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2010 -- Don't use ls | grep. Use a glob o...
+  https://www.shellcheck.net/wiki/SC2045 -- Iterating over ls output is fragi...
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...

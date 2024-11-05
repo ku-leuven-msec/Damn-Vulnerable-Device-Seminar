@@ -1,0 +1,52 @@
+[[0;33m*[0m] Binary protection state of [0;33mgameport.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m192) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mgameport.ko[0m
+
+     33c:	a94363f7 	ldp	x23, x24, [sp, #48]
+     340:	a8c47bfd 	ldp	x29, x30, [sp], #64
+     344:	d65f03c0 	ret
+
+0000000000000348 <description_show>:
+     348:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     34c:	910003fd 	mov	x29, sp
+     350:	a90153f3 	stp	x19, x20, [sp, #16]
+     354:	aa0003f4 	mov	x20, x0
+     358:	aa0103f3 	mov	x19, x1
+     35c:	aa1e03e0 	mov	x0, x30
+     360:	94000000 	bl	0 <_mcount>
+     364:	f85e0283 	ldur	x3, [x20, #-32]
+     368:	90000002 	adrp	x2, 0 <gameport_driver_probe>
+     36c:	91000042 	add	x2, x2, #0x0
+     370:	aa1303e0 	mov	x0, x19
+     374:	f100007f 	cmp	x3, #0x0
+     378:	90000001 	adrp	x1, 0 <gameport_driver_probe>
+     37c:	9a830042 	csel	x2, x2, x3, eq  // eq = none
+     380:	91000021 	add	x1, x1, #0x0
+[31m     384:	94000000 	bl	0 <sprintf>[0m
+     388:	93407c00 	sxtw	x0, w0
+     38c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     390:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     394:	d65f03c0 	ret
+
+0000000000000398 <gameport_description_show>:
+     398:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     39c:	910003fd 	mov	x29, sp
+     3a0:	a90153f3 	stp	x19, x20, [sp, #16]
+     3a4:	aa0203f3 	mov	x19, x2
+     3a8:	aa0003f4 	mov	x20, x0
+     3ac:	aa1e03e0 	mov	x0, x30
+     3b0:	94000000 	bl	0 <_mcount>
+     3b4:	d103e282 	sub	x2, x20, #0xf8
+     3b8:	aa1303e0 	mov	x0, x19
+     3bc:	90000001 	adrp	x1, 0 <gameport_driver_probe>
+     3c0:	91000021 	add	x1, x1, #0x0
+[31m     3c4:	94000000 	bl	0 <sprintf>[0m
+     3c8:	93407c00 	sxtw	x0, w0
+     3cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mgameport.ko[0m
+

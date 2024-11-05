@@ -1,0 +1,55 @@
+[[0;33m*[0m] Binary protection state of [0;33mfm_drv.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m270) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mfm_drv.ko[0m
+
+    28c0:	aa1503e0 	mov	x0, x21
+    28c4:	52800044 	mov	w4, #0x2                   	// #2
+    28c8:	d2800003 	mov	x3, #0x0                   	// #0
+    28cc:	52800541 	mov	w1, #0x2a                  	// #42
+    28d0:	94000000 	bl	1d80 <fmc_send_cmd>
+    28d4:	35fff9e0 	cbnz	w0, 2810 <fmc_set_mode+0xf0>
+    28d8:	79407be3 	ldrh	w3, [sp, #60]
+    28dc:	90000002 	adrp	x2, 0 <fm_irq_handle_rds_start>
+    28e0:	79407fe4 	ldrh	w4, [sp, #62]
+    28e4:	91000042 	add	x2, x2, #0x0
+    28e8:	90000013 	adrp	x19, 0 <fm_irq_handle_rds_start>
+    28ec:	91000273 	add	x19, x19, #0x0
+    28f0:	53087c61 	lsr	w1, w3, #8
+    28f4:	53087c80 	lsr	w0, w4, #8
+    28f8:	2a032023 	orr	w3, w1, w3, lsl #8
+    28fc:	2a042004 	orr	w4, w0, w4, lsl #8
+    2900:	12003c63 	and	w3, w3, #0xffff
+    2904:	12003c84 	and	w4, w4, #0xffff
+    2908:	aa1303e1 	mov	x1, x19
+    290c:	91011be0 	add	x0, sp, #0x46
+[31m    2910:	94000000 	bl	0 <sprintf>[0m
+    2914:	aa1503e0 	mov	x0, x21
+    2918:	91011be1 	add	x1, sp, #0x46
+    291c:	97fffd89 	bl	1f40 <fm_download_firmware>
+    2920:	37fff780 	tbnz	w0, #31, 2810 <fmc_set_mode+0xf0>
+    2924:	79407be3 	ldrh	w3, [sp, #60]
+    2928:	71000adf 	cmp	w22, #0x2
+    292c:	79407fe4 	ldrh	w4, [sp, #62]
+    2930:	90000000 	adrp	x0, 0 <fm_irq_handle_rds_start>
+    2934:	90000002 	adrp	x2, 0 <fm_irq_handle_rds_start>
+    2938:	91000000 	add	x0, x0, #0x0
+    293c:	53087c65 	lsr	w5, w3, #8
+    2940:	91000042 	add	x2, x2, #0x0
+    2944:	53087c81 	lsr	w1, w4, #8
+    2948:	2a0320a3 	orr	w3, w5, w3, lsl #8
+    294c:	2a042024 	orr	w4, w1, w4, lsl #8
+    2950:	9a800042 	csel	x2, x2, x0, eq  // eq = none
+    2954:	12003c63 	and	w3, w3, #0xffff
+    2958:	12003c84 	and	w4, w4, #0xffff
+    295c:	aa1303e1 	mov	x1, x19
+    2960:	91011be0 	add	x0, sp, #0x46
+[31m    2964:	94000000 	bl	0 <sprintf>[0m
+    2968:	91011be1 	add	x1, sp, #0x46
+    296c:	aa1503e0 	mov	x0, x21
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mfm_drv.ko[0m
+

@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibglib-2.0.so.0.6200.4[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibglib-2.0.so.0.6200.4[0m
+
+[31m   53030:	97ff246c 	bl	1c1e0 <mmap64@plt>[0m
+   53034:	f9000260 	str	x0, [x19]
+   53038:	b100041f 	cmn	x0, #0x1
+   5303c:	54000800 	b.eq	5313c <g_child_watch_add@@Base+0x21c>  // b.none
+   53040:	f947ca94 	ldr	x20, [x20, #3984]
+   53044:	f94087e1 	ldr	x1, [sp, #264]
+   53048:	f9400280 	ldr	x0, [x20]
+   5304c:	ca000020 	eor	x0, x1, x0
+   53050:	b5000d80 	cbnz	x0, 53200 <g_child_watch_add@@Base+0x2e0>
+   53054:	aa1303e0 	mov	x0, x19
+   53058:	a9417bfd 	ldp	x29, x30, [sp, #16]
+   5305c:	a94253f3 	ldp	x19, x20, [sp, #32]
+   53060:	a9435bf5 	ldp	x21, x22, [sp, #48]
+   53064:	a94463f7 	ldp	x23, x24, [sp, #64]
+   53068:	910443ff 	add	sp, sp, #0x110
+   5306c:	d65f03c0 	ret
+   53070:	b9409be0 	ldr	w0, [sp, #152]
+   53074:	12140c00 	and	w0, w0, #0xf000
+   53078:	7140201f 	cmp	w0, #0x8, lsl #12
+   5307c:	54fffc81 	b.ne	5300c <g_child_watch_add@@Base+0xec>  // b.any
+   53080:	a9007e7f 	stp	xzr, xzr, [x19]
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibglib-2.0.so.0.6200.4[0m
+

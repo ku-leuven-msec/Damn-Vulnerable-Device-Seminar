@@ -1,0 +1,288 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module pickle</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:596:0: C0325: Unnecessary parens after 'not' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1:0: C0302: Too many lines in module (1805/1000) (too-many-lines)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:54:0: C0103: Constant name "format_version" doesn't conform to UPPER_CASE naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:75:4: W0107: Unnecessary pass statement (unnecessary-pass)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:82:4: W0107: Unnecessary pass statement (unnecessary-pass)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:93:4: W0107: Unnecessary pass statement (unnecessary-pass)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:98:4: W0231: __init__ method from base class 'Exception' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:219:12: W0621: Redefining name 'f' from outer scope (line 1803) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:219:12: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:242:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:265:49: W0613: Unused argument 'file_tell' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:271:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:272:12: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:275:16: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:283:12: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:287:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:288:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:301:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:322:18: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:335:16: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:352:0: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:405:0: R0902: Too many instance attributes (10/7) (too-many-instance-attributes)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:454:12: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:474:19: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:489:22: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:513:8: R1705: Unnecessary "elif" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:516:12: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:526:12: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:533:19: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:556:12: W0621: Redefining name 'f' from outer scope (line 1803) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:537:8: E1128: Assigning result of a function call, where the function returns None (assignment-from-none)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:543:8: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:548:8: C0103: Variable name "rv" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:551:12: C0103: Variable name "rv" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:551:17: E1102: reduce is not callable (not-callable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:555:12: C0103: Variable name "t" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:556:12: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:565:16: C0103: Variable name "rv" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:576:20: C0103: Variable name "rv" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:580:24: C0103: Variable name "rv" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:595:8: C0103: Variable name "l" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:533:4: R0912: Too many branches (15/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:603:28: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:603:28: W0613: Unused argument 'obj' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:603:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:616:16: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:619:32: W0621: Redefining name 'args' from outer scope (line 1795) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:620:55: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:619:4: R0913: Too many arguments (8/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:619:4: R0912: Too many branches (19/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:619:4: R0915: Too many statements (58/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:738:24: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:738:24: W0613: Unused argument 'obj' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:742:24: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:749:24: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:768:12: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:780:25: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:787:25: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:795:8: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:800:18: W0212: Access to a protected member _FRAME_SIZE_TARGET of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:807:29: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:814:8: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:815:16: W0212: Access to a protected member _FRAME_SIZE_TARGET of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:822:36: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:826:30: C0103: Variable name "m" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:848:23: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:851:12: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:856:22: W0212: Access to a protected member _FRAME_SIZE_TARGET of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:871:25: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:879:8: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:922:24: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:941:16: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:946:8: C0103: Variable name "it" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:949:12: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:952:20: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:962:24: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:981:19: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:987:8: C0103: Variable name "it" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:990:12: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:993:23: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:998:19: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1006:23: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1017:8: C0103: Variable name "it" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1020:12: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1030:29: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1053:26: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1055:8: W0612: Unused variable 'memo' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1053:4: R0912: Too many branches (19/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1053:4: R0915: Too many statements (51/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1119:24: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1120:8: R1705: Unnecessary "elif" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:405:0: R0904: Too many public methods (24/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1134:0: R0902: Too many instance attributes (15/7) (too-many-instance-attributes)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1221:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1244:12: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1297:8: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1303:8: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1323:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1340:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1348:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1360:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1368:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1376:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1384:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1388:8: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1400:12: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1406:32: C0103: Variable name "m" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1412:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1418:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1423:8: W0622: Redefining built-in 'len' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1472:8: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1482:34: W0621: Redefining name 'args' from outer scope (line 1795) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1488:16: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1503:8: W0621: Redefining name 'args' from outer scope (line 1795) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1509:8: W0621: Redefining name 'args' from outer scope (line 1795) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1511:8: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1517:8: W0621: Redefining name 'args' from outer scope (line 1795) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1519:8: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1533:11: C0123: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1533:36: C0123: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1555:8: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1578:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1585:8: W0621: Redefining name 'args' from outer scope (line 1795) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1649:8: W0622: Redefining built-in 'list' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1675:8: W0622: Redefining built-in 'dict' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1681:8: W0622: Redefining built-in 'dict' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1711:19: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1712:19: C0123: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1717:19: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1194:8: W0201: Attribute '_unframer' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1195:8: W0201: Attribute 'read' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1196:8: W0201: Attribute 'readinto' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1197:8: W0201: Attribute 'readline' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1198:8: W0201: Attribute 'metastack' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1199:8: W0201: Attribute 'stack' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1217:8: W0201: Attribute 'stack' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1723:8: W0201: Attribute 'stack' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1200:8: W0201: Attribute 'append' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1218:8: W0201: Attribute 'append' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1724:8: W0201: Attribute 'append' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1134:0: R0904: Too many public methods (73/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1735:10: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1739:11: W0621: Redefining name 'obj' from outer scope (line 1804) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1740:4: W0621: Redefining name 'f' from outer scope (line 1803) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1740:4: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1752:0: C0103: Argument name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1779:4: C0415: Import outside toplevel (doctest) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/pickle.py:1762:4: C0412: Imports from package _pickle are not grouped (ungrouped-imports)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 8.64/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 40:[0m
+[0melif [ $1 = / ] ; then echo $0: expects non-/ argument for '$1' 1>&2[0m
+[32m       ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                            ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                                           ^--^ SC2016: Expressions don't expand in single quotes, use double quotes for that.[0m
+
+[1mDid you mean: [0m
+elif [ "$1" = / ] ; then echo "$0": expects non-/ argument for '$1' 1>&2
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 41:[0m
+[0melif [ ! -d $1 ] ; then[0m
+[32m            ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+elif [ ! -d "$1" ] ; then
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 42:[0m
+[0m echo $0: $1: no such directory[0m
+[32m      ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m          ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+ echo "$0": "$1": no such directory
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 44:[0m
+[0melse TOP_DIR="`echo $1|sed -e 's:/$::'`"[0m
+[32m              ^-----------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m               ^---------------------^ SC2001: See if you can use ${variable//search/replace} instead.[0m
+[32m                    ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+else TOP_DIR="$(echo "$1"|sed -e 's:/$::')"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 99:[0m
+[0m		if [ $MO_NAME != ${NAMES[$#]}.lang ]; then[0m
+[32m                     ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                 ^----------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		if [ "$MO_NAME" != "${NAMES[$#]}".lang ]; then
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 108:[0m
+[0mif [ -f $MO_NAME ]; then[0m
+[32m        ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+if [ -f "$MO_NAME" ]; then
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 109:[0m
+[0m    rm $MO_NAME[0m
+[32m       ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+    rm "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 112:[0m
+[0mfor NAME in ${NAMES[@]}; do[0m
+[31m            ^---------^ SC2068: Double quote array expansions to avoid re-splitting elements.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 114:[0m
+[0mfind "$TOP_DIR" -type f -o -type l|sed '[0m
+[32m                                   ^-- SC2129: Consider using { cmd1; cmd2; } >> file instead of individual redirects.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 120:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 128:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 141:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 148:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 156:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 158:[0m
+[0mfind $TOP_DIR -type d|sed '[0m
+[32m     ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+find "$TOP_DIR" -type d|sed '
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 169:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 176:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 184:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 186:[0m
+[0mKDE3_HTML=`kde-config --expandvars --install html 2>/dev/null`[0m
+[32m          ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+KDE3_HTML=$(kde-config --expandvars --install html 2>/dev/null)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 187:[0m
+[0mif [ x"$KDE3_HTML" != x -a -d "$TOP_DIR$KDE3_HTML" ]; then[0m
+[33m                        ^-- SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 196:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 199:[0m
+[0mKDE4_HTML=`kde4-config --expandvars --install html 2>/dev/null`[0m
+[32m          ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+KDE4_HTML=$(kde4-config --expandvars --install html 2>/dev/null)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 200:[0m
+[0mif [ x"$KDE4_HTML" != x -a -d "$TOP_DIR$KDE4_HTML" ]; then[0m
+[33m                        ^-- SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 209:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 212:[0m
+[0mKF5_HTML=`kf5-config --expandvars --install html 2>/dev/null`[0m
+[32m         ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+KF5_HTML=$(kf5-config --expandvars --install html 2>/dev/null)
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 213:[0m
+[0mif [ x"$KF5_HTML" != x -a -d "$TOP_DIR$KF5_HTML" ]; then[0m
+[33m                       ^-- SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 222:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 225:[0m
+[0mfind "$TOP_DIR" -type d|sed '[0m
+[32m                        ^-- SC2129: Consider using { cmd1; cmd2; } >> file instead of individual redirects.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 233:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 246:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 254:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 261:[0m
+[0m/^$/d' >> $MO_NAME[0m
+[32m          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/^$/d' >> "$MO_NAME"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/find-lang.sh line 265:[0m
+[0mif ! grep -q / $MO_NAME; then[0m
+[32m               ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+if ! grep -q / "$MO_NAME"; then
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2068 -- Double quote array expansions to ...
+  https://www.shellcheck.net/wiki/SC2166 -- Prefer [ p ] && [ q ] as [ p -a q...
+  https://www.shellcheck.net/wiki/SC2016 -- Expressions don't expand in singl...

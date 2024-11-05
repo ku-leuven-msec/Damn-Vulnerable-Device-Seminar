@@ -1,0 +1,65 @@
+[[0;33m*[0m] Binary protection state of [0;33m9p.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m457) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33m9p.ko[0m
+
+    1ccc:	2a0003e2 	mov	w2, w0
+    1cd0:	aa1503e1 	mov	x1, x21
+    1cd4:	aa1703e3 	mov	x3, x23
+    1cd8:	aa1403e0 	mov	x0, x20
+    1cdc:	97ffffbd 	bl	1bd0 <v9fs_vfs_mkspecial>
+    1ce0:	f94037e2 	ldr	x2, [sp, #104]
+    1ce4:	f9400261 	ldr	x1, [x19]
+    1ce8:	ca010041 	eor	x1, x2, x1
+    1cec:	b50002a1 	cbnz	x1, 1d40 <v9fs_vfs_mknod+0xe8>
+    1cf0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1cf4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    1cf8:	a94363f7 	ldp	x23, x24, [sp, #48]
+    1cfc:	f94023f9 	ldr	x25, [sp, #64]
+    1d00:	a8c77bfd 	ldp	x29, x30, [sp], #112
+    1d04:	d65f03c0 	ret
+    1d08:	aa1703e0 	mov	x0, x23
+    1d0c:	12004f23 	and	w3, w25, #0xfffff
+    1d10:	53147f22 	lsr	w2, w25, #20
+    1d14:	90000001 	adrp	x1, 0 <v9fs_kill_super>
+    1d18:	91000021 	add	x1, x1, #0x0
+[31m    1d1c:	94000000 	bl	0 <sprintf>[0m
+    1d20:	17ffffe7 	b	1cbc <v9fs_vfs_mknod+0x64>
+    1d24:	aa1703e0 	mov	x0, x23
+    1d28:	12004f23 	and	w3, w25, #0xfffff
+    1d2c:	53147f22 	lsr	w2, w25, #20
+    1d30:	90000001 	adrp	x1, 0 <v9fs_kill_super>
+    1d34:	91000021 	add	x1, x1, #0x0
+[31m    1d38:	94000000 	bl	0 <sprintf>[0m
+    1d3c:	17ffffe0 	b	1cbc <v9fs_vfs_mknod+0x64>
+    1d40:	94000000 	bl	0 <__stack_chk_fail>
+--
+    2398:	94000000 	bl	0 <_mcount>
+    239c:	f9428e82 	ldr	x2, [x20, #1304]
+    23a0:	f9002fe2 	str	x2, [sp, #88]
+    23a4:	d2800002 	mov	x2, #0x0                   	// #0
+    23a8:	aa1703e0 	mov	x0, x23
+    23ac:	94000000 	bl	6080 <v9fs_fid_lookup>
+    23b0:	aa0003f3 	mov	x19, x0
+    23b4:	b140041f 	cmn	x0, #0x1, lsl #12
+    23b8:	54000508 	b.hi	2458 <v9fs_vfs_link+0xe8>  // b.pmore
+    23bc:	52800023 	mov	w3, #0x1                   	// #1
+    23c0:	d2800002 	mov	x2, #0x0                   	// #0
+    23c4:	52800001 	mov	w1, #0x0                   	// #0
+    23c8:	94000000 	bl	0 <p9_client_walk>
+    23cc:	aa0003f3 	mov	x19, x0
+    23d0:	b140041f 	cmn	x0, #0x1, lsl #12
+    23d4:	54000428 	b.hi	2458 <v9fs_vfs_link+0xe8>  // b.pmore
+    23d8:	b9400a62 	ldr	w2, [x19, #8]
+    23dc:	91012fe0 	add	x0, sp, #0x4b
+    23e0:	90000001 	adrp	x1, 0 <v9fs_kill_super>
+    23e4:	91000021 	add	x1, x1, #0x0
+[31m    23e8:	94000000 	bl	0 <sprintf>[0m
+    23ec:	91012fe3 	add	x3, sp, #0x4b
+    23f0:	aa1503e1 	mov	x1, x21
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33m9p.ko[0m
+

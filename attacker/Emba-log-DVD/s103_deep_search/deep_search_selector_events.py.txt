@@ -1,0 +1,45 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/asyncio/selector_events.py[0m
+17:    import ssl.
+19:    ssl = None.
+26:from . import sslproto.
+43:def _check_ssl_socket(sock):.
+44:    if ssl is not None an.
+44:instance(sock, ssl.SSLSocket):.
+45:not be of type SSLSocket").
+69:    def _make_ssl_transport(.
+70:ock, protocol, sslcontext, waiter.
+73:            ssl_handshake_time.
+73:out=constants.SSL_HANDSHAKE_TIME.
+74:        ssl_protocol = ssl.
+74:proto.SSLProtocol(.
+75:elf, protocol, sslcontext, waiter.
+77:               ssl_handshake_time.
+77:out=ssl_handshake_time.
+78:self, rawsock, ssl_protocol,.
+80:        return ssl_protocol._app_.
+146:               sslcontext=None, s.
+147:               ssl_handshake_time.
+147:out=constants.SSL_HANDSHAKE_TIME.
+149:factory, sock, sslcontext, server.
+150:               ssl_handshake_time.
+154:            sslcontext=None, s.
+155:            ssl_handshake_time.
+155:out=constants.SSL_HANDSHAKE_TIME.
+185:factory, sock, sslcontext, server.
+186:      backlog, ssl_handshake_time.
+192:, conn, extra, sslcontext, server.
+193:               ssl_handshake_time.
+198:            sslcontext=None, s.
+199:            ssl_handshake_time.
+199:out=constants.SSL_HANDSHAKE_TIME.
+205:            if sslcontext:.
+206:t = self._make_ssl_transport(.
+207:onn, protocol, sslcontext, waiter.
+209:               ssl_handshake_time.
+209:out=ssl_handshake_time.
+356:        _check_ssl_socket(sock).
+395:        _check_ssl_socket(sock).
+435:        _check_ssl_socket(sock).
+483:        _check_ssl_socket(sock).
+545:        _check_ssl_socket(sock).
+611: (see _SelectorSslTransport which.

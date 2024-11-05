@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33malsactl[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33malsactl[0m
+
+[31m    beec:	97ffe719 	bl	5b50 <mmap@plt>[0m
+    bef0:	f90002c0 	str	x0, [x22]
+    bef4:	b100041f 	cmn	x0, #0x1
+    bef8:	54000240 	b.eq	bf40 <snd_ctl_event_elem_get_device@plt+0x5900>  // b.none
+    befc:	f9403fe0 	ldr	x0, [sp, #120]
+    bf00:	f90002e0 	str	x0, [x23]
+    bf04:	2a1303e0 	mov	w0, w19
+    bf08:	97ffe966 	bl	64a0 <close@plt>
+    bf0c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    bf10:	52800000 	mov	w0, #0x0                   	// #0
+    bf14:	f947b2b5 	ldr	x21, [x21, #3936]
+    bf18:	f94067e2 	ldr	x2, [sp, #200]
+    bf1c:	f94002a1 	ldr	x1, [x21]
+    bf20:	ca010041 	eor	x1, x2, x1
+    bf24:	b5000181 	cbnz	x1, bf54 <snd_ctl_event_elem_get_device@plt+0x5914>
+    bf28:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    bf2c:	f9401bf7 	ldr	x23, [sp, #48]
+    bf30:	a8cd7bfd 	ldp	x29, x30, [sp], #208
+    bf34:	d65f03c0 	ret
+    bf38:	12800000 	mov	w0, #0xffffffff            	// #-1
+    bf3c:	17fffff6 	b	bf14 <snd_ctl_event_elem_get_device@plt+0x58d4>
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33malsactl[0m
+

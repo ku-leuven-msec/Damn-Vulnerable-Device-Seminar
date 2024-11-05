@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mjfs.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m801) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mjfs.ko[0m
+
+   21f64:	94000000 	bl	0 <_mcount>
+   21f68:	f9400280 	ldr	x0, [x20]
+   21f6c:	b4000460 	cbz	x0, 21ff8 <jfs_initxattrs+0xb8>
+   21f70:	90000016 	adrp	x22, 0 <jfs_get_dquots>
+   21f74:	910002d6 	add	x22, x22, #0x0
+   21f78:	14000003 	b	21f84 <jfs_initxattrs+0x44>
+   21f7c:	f8418e80 	ldr	x0, [x20, #24]!
+   21f80:	b4000300 	cbz	x0, 21fe0 <jfs_initxattrs+0xa0>
+   21f84:	94000000 	bl	0 <strlen>
+   21f88:	91002800 	add	x0, x0, #0xa
+   21f8c:	52818801 	mov	w1, #0xc40                 	// #3136
+   21f90:	94000000 	bl	0 <__kmalloc>
+   21f94:	aa0003f3 	mov	x19, x0
+   21f98:	b4000340 	cbz	x0, 22000 <jfs_initxattrs+0xc0>
+   21f9c:	f94002c2 	ldr	x2, [x22]
+   21fa0:	f9000262 	str	x2, [x19]
+   21fa4:	794012c2 	ldrh	w2, [x22, #8]
+   21fa8:	91002400 	add	x0, x0, #0x9
+   21fac:	f9400281 	ldr	x1, [x20]
+   21fb0:	79001262 	strh	w2, [x19, #8]
+[31m   21fb4:	94000000 	bl	0 <strcpy>[0m
+   21fb8:	a9409283 	ldp	x3, x4, [x20, #8]
+   21fbc:	aa1303e2 	mov	x2, x19
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mjfs.ko[0m
+

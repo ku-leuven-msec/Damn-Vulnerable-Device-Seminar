@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33musbsevseg.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m96) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33musbsevseg.ko[0m
+
+ 1cc:	910002b5 	add	x21, x21, #0x0
+ 1d0:	910002f7 	add	x23, x23, #0x0
+ 1d4:	910002d6 	add	x22, x22, #0x0
+ 1d8:	aa1e03e0 	mov	x0, x30
+ 1dc:	d2800014 	mov	x20, #0x0                   	// #0
+ 1e0:	94000000 	bl	0 <_mcount>
+ 1e4:	52800418 	mov	w24, #0x20                  	// #32
+ 1e8:	f9403f39 	ldr	x25, [x25, #120]
+ 1ec:	3900027f 	strb	wzr, [x19]
+ 1f0:	aa1303e0 	mov	x0, x19
+ 1f4:	94000000 	bl	0 <strlen>
+ 1f8:	39406f22 	ldrb	w2, [x25, #27]
+ 1fc:	aa0003e1 	mov	x1, x0
+ 200:	91000400 	add	x0, x0, #0x1
+ 204:	8b010263 	add	x3, x19, x1
+ 208:	8b000260 	add	x0, x19, x0
+ 20c:	6b14005f 	cmp	w2, w20
+ 210:	540002c0 	b.eq	268 <textmode_show+0xc8>  // b.none
+ 214:	78216a78 	strh	w24, [x19, x1]
+ 218:	f8747aa1 	ldr	x1, [x21, x20, lsl #3]
+[31m 21c:	94000000 	bl	0 <strcpy>[0m
+ 220:	aa1303e0 	mov	x0, x19
+ 224:	94000000 	bl	0 <strlen>
+--
+ 234:	54fffde1 	b.ne	1f0 <textmode_show+0x50>  // b.any
+ 238:	aa1303e0 	mov	x0, x19
+ 23c:	94000000 	bl	0 <strlen>
+ 240:	aa0003e1 	mov	x1, x0
+ 244:	52800142 	mov	w2, #0xa                   	// #10
+ 248:	91000400 	add	x0, x0, #0x1
+ 24c:	78216a62 	strh	w2, [x19, x1]
+ 250:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 254:	a9425bf5 	ldp	x21, x22, [sp, #32]
+ 258:	a94363f7 	ldp	x23, x24, [sp, #48]
+ 25c:	f94023f9 	ldr	x25, [sp, #64]
+ 260:	a8c57bfd 	ldp	x29, x30, [sp], #80
+ 264:	d65f03c0 	ret
+ 268:	794002e2 	ldrh	w2, [x23]
+ 26c:	91000820 	add	x0, x1, #0x2
+ 270:	78216a62 	strh	w2, [x19, x1]
+ 274:	8b000260 	add	x0, x19, x0
+ 278:	39400ae1 	ldrb	w1, [x23, #2]
+ 27c:	39000861 	strb	w1, [x3, #2]
+ 280:	f8747aa1 	ldr	x1, [x21, x20, lsl #3]
+[31m 284:	94000000 	bl	0 <strcpy>[0m
+ 288:	aa1303e0 	mov	x0, x19
+ 28c:	94000000 	bl	0 <strlen>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33musbsevseg.ko[0m
+

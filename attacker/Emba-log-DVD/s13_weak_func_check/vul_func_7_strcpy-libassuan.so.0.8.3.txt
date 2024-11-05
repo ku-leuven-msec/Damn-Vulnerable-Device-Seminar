@@ -1,0 +1,176 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibassuan.so.0.8.3[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibassuan.so.0.8.3[0m
+
+    85a0:	b40005a0 	cbz	x0, 8654 <assuan_set_okay_line@@LIBASSUAN_1.0+0xb4>
+    85a4:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+    85a8:	910003fd 	mov	x29, sp
+    85ac:	a90153f3 	stp	x19, x20, [sp, #16]
+    85b0:	aa0103f4 	mov	x20, x1
+    85b4:	aa0003f3 	mov	x19, x0
+    85b8:	b4000301 	cbz	x1, 8618 <assuan_set_okay_line@@LIBASSUAN_1.0+0x78>
+    85bc:	aa0103e0 	mov	x0, x1
+    85c0:	f90013f5 	str	x21, [sp, #32]
+    85c4:	97ffeb93 	bl	3410 <strlen@plt>
+    85c8:	aa0003e1 	mov	x1, x0
+    85cc:	91001021 	add	x1, x1, #0x4
+    85d0:	aa1303e0 	mov	x0, x19
+    85d4:	97fff027 	bl	4670 <assuan_get_peercred@@LIBASSUAN_1.0+0x90>
+    85d8:	aa0003f5 	mov	x21, x0
+    85dc:	b40002c0 	cbz	x0, 8634 <assuan_set_okay_line@@LIBASSUAN_1.0+0x94>
+    85e0:	528969e2 	mov	w2, #0x4b4f                	// #19279
+    85e4:	72a00402 	movk	w2, #0x20, lsl #16
+    85e8:	b8003402 	str	w2, [x0], #3
+    85ec:	aa1403e1 	mov	x1, x20
+[31m    85f0:	97ffeca4 	bl	3880 <strcpy@plt>[0m
+    85f4:	f940a261 	ldr	x1, [x19, #320]
+    85f8:	aa1303e0 	mov	x0, x19
+--
+    8748:	b40007d3 	cbz	x19, 8840 <assuan_write_status@@LIBASSUAN_1.0+0x1d0>
+    874c:	b9400274 	ldr	w20, [x19]
+    8750:	528020a0 	mov	w0, #0x105                 	// #261
+    8754:	53081a94 	ubfiz	w20, w20, #24, #7
+    8758:	2a000294 	orr	w20, w20, w0
+    875c:	17fffff1 	b	8720 <assuan_write_status@@LIBASSUAN_1.0+0xb0>
+    8760:	aa1303e0 	mov	x0, x19
+    8764:	97ffefc3 	bl	4670 <assuan_get_peercred@@LIBASSUAN_1.0+0x90>
+    8768:	aa0003f7 	mov	x23, x0
+    876c:	b4000640 	cbz	x0, 8834 <assuan_write_status@@LIBASSUAN_1.0+0x1c4>
+    8770:	52840a62 	mov	w2, #0x2053                	// #8275
+    8774:	78002402 	strh	w2, [x0], #2
+    8778:	aa1403e1 	mov	x1, x20
+    877c:	97ffeb59 	bl	34e0 <stpcpy@plt>
+    8780:	394002c1 	ldrb	w1, [x22]
+    8784:	340000c1 	cbz	w1, 879c <assuan_write_status@@LIBASSUAN_1.0+0x12c>
+    8788:	52800401 	mov	w1, #0x20                  	// #32
+    878c:	39000001 	strb	w1, [x0]
+    8790:	aa1603e1 	mov	x1, x22
+    8794:	91000400 	add	x0, x0, #0x1
+[31m    8798:	97ffec3a 	bl	3880 <strcpy@plt>[0m
+    879c:	aa1703e1 	mov	x1, x23
+    87a0:	aa1303e0 	mov	x0, x19
+--
+    881c:	aa1603e1 	mov	x1, x22
+    8820:	8b000320 	add	x0, x25, x0
+    8824:	d2801fa3 	mov	x3, #0xfd                  	// #253
+    8828:	cb170063 	sub	x3, x3, x23
+    882c:	97ffeb35 	bl	3500 <__memcpy_chk@plt>
+    8830:	17ffffb6 	b	8708 <assuan_write_status@@LIBASSUAN_1.0+0x98>
+    8834:	52800014 	mov	w20, #0x0                   	// #0
+    8838:	a94363f7 	ldp	x23, x24, [sp, #48]
+    883c:	17ffffb9 	b	8720 <assuan_write_status@@LIBASSUAN_1.0+0xb0>
+    8840:	528020b4 	mov	w20, #0x105                 	// #261
+    8844:	72a1e014 	movk	w20, #0xf00, lsl #16
+    8848:	17ffffb6 	b	8720 <assuan_write_status@@LIBASSUAN_1.0+0xb0>
+    884c:	aa1303e0 	mov	x0, x19
+    8850:	97ffef88 	bl	4670 <assuan_get_peercred@@LIBASSUAN_1.0+0x90>
+    8854:	aa0003f7 	mov	x23, x0
+    8858:	b4fffee0 	cbz	x0, 8834 <assuan_write_status@@LIBASSUAN_1.0+0x1c4>
+    885c:	aa1703e0 	mov	x0, x23
+    8860:	52840a62 	mov	w2, #0x2053                	// #8275
+    8864:	aa1403e1 	mov	x1, x20
+    8868:	78002402 	strh	w2, [x0], #2
+[31m    886c:	97ffec05 	bl	3880 <strcpy@plt>[0m
+    8870:	17ffffcb 	b	879c <assuan_write_status@@LIBASSUAN_1.0+0x12c>
+    8874:	a90363f7 	stp	x23, x24, [sp, #48]
+--
+    9348:	910003fd 	mov	x29, sp
+    934c:	a90153f3 	stp	x19, x20, [sp, #16]
+    9350:	aa0103f4 	mov	x20, x1
+    9354:	aa0003f3 	mov	x19, x0
+    9358:	b4000341 	cbz	x1, 93c0 <assuan_set_hello_line@@LIBASSUAN_1.0+0x80>
+    935c:	aa0103e0 	mov	x0, x1
+    9360:	f90013f5 	str	x21, [sp, #32]
+    9364:	97ffe82b 	bl	3410 <strlen@plt>
+    9368:	aa0003e1 	mov	x1, x0
+    936c:	91001021 	add	x1, x1, #0x4
+    9370:	aa1303e0 	mov	x0, x19
+    9374:	97ffecbf 	bl	4670 <assuan_get_peercred@@LIBASSUAN_1.0+0x90>
+    9378:	aa0003f5 	mov	x21, x0
+    937c:	b4000440 	cbz	x0, 9404 <assuan_set_hello_line@@LIBASSUAN_1.0+0xc4>
+    9380:	aa1403e0 	mov	x0, x20
+    9384:	52800141 	mov	w1, #0xa                   	// #10
+    9388:	97ffe922 	bl	3810 <strchr@plt>
+    938c:	b4000280 	cbz	x0, 93dc <assuan_set_hello_line@@LIBASSUAN_1.0+0x9c>
+    9390:	aa1403e1 	mov	x1, x20
+    9394:	aa1503e0 	mov	x0, x21
+[31m    9398:	97ffe93a 	bl	3880 <strcpy@plt>[0m
+    939c:	f9409e61 	ldr	x1, [x19, #312]
+    93a0:	aa1303e0 	mov	x0, x19
+    93a4:	97ffecdb 	bl	4710 <assuan_get_peercred@@LIBASSUAN_1.0+0x130>
+    93a8:	f9009e75 	str	x21, [x19, #312]
+    93ac:	f94013f5 	ldr	x21, [sp, #32]
+    93b0:	52800000 	mov	w0, #0x0                   	// #0
+    93b4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    93b8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    93bc:	d65f03c0 	ret
+    93c0:	f9409c01 	ldr	x1, [x0, #312]
+    93c4:	97ffecd3 	bl	4710 <assuan_get_peercred@@LIBASSUAN_1.0+0x130>
+    93c8:	f9009e7f 	str	xzr, [x19, #312]
+    93cc:	52800000 	mov	w0, #0x0                   	// #0
+    93d0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    93d4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    93d8:	d65f03c0 	ret
+    93dc:	aa1503e0 	mov	x0, x21
+    93e0:	528969e2 	mov	w2, #0x4b4f                	// #19279
+    93e4:	72a00402 	movk	w2, #0x20, lsl #16
+    93e8:	aa1403e1 	mov	x1, x20
+    93ec:	b8003402 	str	w2, [x0], #3
+[31m    93f0:	97ffe924 	bl	3880 <strcpy@plt>[0m
+    93f4:	17ffffea 	b	939c <assuan_set_hello_line@@LIBASSUAN_1.0+0x5c>
+    93f8:	528020a0 	mov	w0, #0x105                 	// #261
+--
+    ab4c:	aa1303e0 	mov	x0, x19
+    ab50:	911e0021 	add	x1, x1, #0x780
+    ab54:	d2800122 	mov	x2, #0x9                   	// #9
+    ab58:	97ffe29e 	bl	35d0 <strncmp@plt>
+    ab5c:	35000700 	cbnz	w0, ac3c <assuan_socket_connect@@LIBASSUAN_1.0+0x17c>
+    ab60:	39402660 	ldrb	w0, [x19, #9]
+    ab64:	340006c0 	cbz	w0, ac3c <assuan_socket_connect@@LIBASSUAN_1.0+0x17c>
+    ab68:	91002679 	add	x25, x19, #0x9
+    ab6c:	aa1903e0 	mov	x0, x25
+    ab70:	97ffe228 	bl	3410 <strlen@plt>
+    ab74:	aa0003e1 	mov	x1, x0
+    ab78:	aa1403e0 	mov	x0, x20
+    ab7c:	91000421 	add	x1, x1, #0x1
+    ab80:	97ffe6bc 	bl	4670 <assuan_get_peercred@@LIBASSUAN_1.0+0x90>
+    ab84:	aa0003fc 	mov	x28, x0
+    ab88:	b40021c0 	cbz	x0, afc0 <assuan_socket_connect@@LIBASSUAN_1.0+0x500>
+    ab8c:	39402661 	ldrb	w1, [x19, #9]
+    ab90:	71016c3f 	cmp	w1, #0x5b
+    ab94:	54000f40 	b.eq	ad7c <assuan_socket_connect@@LIBASSUAN_1.0+0x2bc>  // b.none
+    ab98:	aa1903e1 	mov	x1, x25
+[31m    ab9c:	97ffe339 	bl	3880 <strcpy@plt>[0m
+    aba0:	aa1c03e0 	mov	x0, x28
+    aba4:	52800741 	mov	w1, #0x3a                  	// #58
+--
+    ad30:	2a130013 	orr	w19, w0, w19
+    ad34:	f947eeb5 	ldr	x21, [x21, #4056]
+    ad38:	f9408fe1 	ldr	x1, [sp, #280]
+    ad3c:	f94002a0 	ldr	x0, [x21]
+    ad40:	ca000020 	eor	x0, x1, x0
+    ad44:	b50014a0 	cbnz	x0, afd8 <assuan_socket_connect@@LIBASSUAN_1.0+0x518>
+    ad48:	2a1303e0 	mov	w0, w19
+    ad4c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    ad50:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    ad54:	a8d27bfd 	ldp	x29, x30, [sp], #288
+    ad58:	d65f03c0 	ret
+    ad5c:	b9400280 	ldr	w0, [x20]
+    ad60:	528020b3 	mov	w19, #0x105                 	// #261
+    ad64:	53081800 	ubfiz	w0, w0, #24, #7
+    ad68:	2a130013 	orr	w19, w0, w19
+    ad6c:	a94363f7 	ldp	x23, x24, [sp, #48]
+    ad70:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    ad74:	a94573fb 	ldp	x27, x28, [sp, #80]
+    ad78:	17ffffef 	b	ad34 <assuan_socket_connect@@LIBASSUAN_1.0+0x274>
+    ad7c:	91002a61 	add	x1, x19, #0xa
+[31m    ad80:	97ffe2c0 	bl	3880 <strcpy@plt>[0m
+    ad84:	aa1c03e0 	mov	x0, x28
+    ad88:	52800ba1 	mov	w1, #0x5d                  	// #93
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m7[0m times [0;33mlibassuan.so.0.8.3[0m
+

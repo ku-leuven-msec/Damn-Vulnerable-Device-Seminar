@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mofonod[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mofonod[0m
+
+   a3b80:	a94153f3 	ldp	x19, x20, [sp, #16]
+   a3b84:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   a3b88:	f9401bf7 	ldr	x23, [sp, #48]
+   a3b8c:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   a3b90:	d65f03c0 	ret
+   a3b94:	aa0003f6 	mov	x22, x0
+   a3b98:	528005c1 	mov	w1, #0x2e                  	// #46
+   a3b9c:	97fe4bcd 	bl	36ad0 <strchr@plt>
+   a3ba0:	b5fffe20 	cbnz	x0, a3b64 <g_markup_error_quark@plt+0x6c9f4>
+   a3ba4:	71001e7f 	cmp	w19, #0x7
+   a3ba8:	54fffea1 	b.ne	a3b7c <g_markup_error_quark@plt+0x6ca0c>  // b.any
+   a3bac:	cb1502d3 	sub	x19, x22, x21
+   a3bb0:	aa1403e0 	mov	x0, x20
+   a3bb4:	8b130294 	add	x20, x20, x19
+   a3bb8:	aa1303e2 	mov	x2, x19
+   a3bbc:	aa1503e1 	mov	x1, x21
+   a3bc0:	97fe46fc 	bl	357b0 <memcpy@plt>
+   a3bc4:	aa1603e1 	mov	x1, x22
+   a3bc8:	aa1703e0 	mov	x0, x23
+   a3bcc:	381ff29f 	sturb	wzr, [x20, #-1]
+[31m   a3bd0:	97fe4ca4 	bl	36e60 <strcpy@plt>[0m
+   a3bd4:	52800000 	mov	w0, #0x0                   	// #0
+   a3bd8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   a3c40:	a94153f3 	ldp	x19, x20, [sp, #16]
+   a3c44:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   a3c48:	f9401bf7 	ldr	x23, [sp, #48]
+   a3c4c:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   a3c50:	d65f03c0 	ret
+   a3c54:	aa0003f6 	mov	x22, x0
+   a3c58:	528005c1 	mov	w1, #0x2e                  	// #46
+   a3c5c:	97fe4b9d 	bl	36ad0 <strchr@plt>
+   a3c60:	b5fffe20 	cbnz	x0, a3c24 <g_markup_error_quark@plt+0x6cab4>
+   a3c64:	71007e7f 	cmp	w19, #0x1f
+   a3c68:	54fffea1 	b.ne	a3c3c <g_markup_error_quark@plt+0x6cacc>  // b.any
+   a3c6c:	cb1502d3 	sub	x19, x22, x21
+   a3c70:	aa1403e0 	mov	x0, x20
+   a3c74:	8b130294 	add	x20, x20, x19
+   a3c78:	aa1303e2 	mov	x2, x19
+   a3c7c:	aa1503e1 	mov	x1, x21
+   a3c80:	97fe46cc 	bl	357b0 <memcpy@plt>
+   a3c84:	aa1603e1 	mov	x1, x22
+   a3c88:	aa1703e0 	mov	x0, x23
+   a3c8c:	381ff29f 	sturb	wzr, [x20, #-1]
+[31m   a3c90:	97fe4c74 	bl	36e60 <strcpy@plt>[0m
+   a3c94:	52800000 	mov	w0, #0x0                   	// #0
+   a3c98:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   a6948:	aa0003f3 	mov	x19, x0
+   a694c:	52800021 	mov	w1, #0x1                   	// #1
+   a6950:	aa1603e0 	mov	x0, x22
+   a6954:	b9000261 	str	w1, [x19]
+   a6958:	a900e277 	stp	x23, x24, [x19, #8]
+   a695c:	97fe4191 	bl	36fa0 <strlen@plt>
+   a6960:	91002800 	add	x0, x0, #0xa
+   a6964:	97fe40cb 	bl	36c90 <g_try_malloc@plt>
+   a6968:	aa0003f4 	mov	x20, x0
+   a696c:	f0000ae1 	adrp	x1, 205000 <g_dbus_client_set_proxy_handlers@@Base+0xa5070>
+   a6970:	b94f4021 	ldr	w1, [x1, #3904]
+   a6974:	37000541 	tbnz	w1, #0, a6a1c <g_markup_error_quark@plt+0x6f8ac>
+   a6978:	b40002b4 	cbz	x20, a69cc <g_markup_error_quark@plt+0x6f85c>
+   a697c:	aa1403e0 	mov	x0, x20
+   a6980:	d28a8822 	mov	x2, #0x5441                	// #21569
+   a6984:	f2a86562 	movk	x2, #0x432b, lsl #16
+   a6988:	aa1603e1 	mov	x1, x22
+   a698c:	f2c9ea02 	movk	x2, #0x4f50, lsl #32
+   a6990:	f2e1aa62 	movk	x2, #0xd53, lsl #48
+   a6994:	f8008402 	str	x2, [x0], #8
+[31m   a6998:	97fe4132 	bl	36e60 <strcpy@plt>[0m
+   a699c:	b0000aa5 	adrp	x5, 1fb000 <g_dbus_client_set_proxy_handlers@@Base+0x9b070>
+   a69a0:	d0000aa2 	adrp	x2, 1fc000 <g_dbus_client_set_proxy_handlers@@Base+0x9c070>
+--
+  150430:	aa1a03e1 	mov	x1, x26
+  150434:	97fb9aff 	bl	37030 <g_str_equal@plt>
+  150438:	34000200 	cbz	w0, 150478 <ofono_location_reporting_get_data@@Base+0xe78>
+  15043c:	aa1803e0 	mov	x0, x24
+  150440:	97fb98bc 	bl	36730 <dbus_message_new_method_return@plt>
+  150444:	aa0003f3 	mov	x19, x0
+  150448:	a9446bf9 	ldp	x25, x26, [sp, #64]
+  15044c:	17ffff6a 	b	1501f4 <ofono_location_reporting_get_data@@Base+0xbf4>
+  150450:	aa1803e0 	mov	x0, x24
+  150454:	97feb6df 	bl	fdfd0 <ofono_call_init@@Base+0x790>
+  150458:	aa0003f3 	mov	x19, x0
+  15045c:	a9446bf9 	ldp	x25, x26, [sp, #64]
+  150460:	17ffff65 	b	1501f4 <ofono_location_reporting_get_data@@Base+0xbf4>
+  150464:	aa1803e0 	mov	x0, x24
+  150468:	97feb852 	bl	fe5b0 <ofono_dbus_signal_dict_property_changed@@Base+0xe0>
+  15046c:	aa0003f3 	mov	x19, x0
+  150470:	a9446bf9 	ldp	x25, x26, [sp, #64]
+  150474:	17ffff60 	b	1501f4 <ofono_location_reporting_get_data@@Base+0xbf4>
+  150478:	f9403be1 	ldr	x1, [sp, #112]
+  15047c:	aa1a03e0 	mov	x0, x26
+[31m  150480:	97fb9a78 	bl	36e60 <strcpy@plt>[0m
+  150484:	aa1803e1 	mov	x1, x24
+  150488:	52800002 	mov	w2, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m4[0m times [0;33mofonod[0m
+

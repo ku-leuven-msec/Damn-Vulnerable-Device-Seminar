@@ -1,0 +1,75 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 11:[0m
+[0m. /etc/default/rcS[0m
+[32m  ^--------------^ SC1091: Not following: /etc/default/rcS was not specified as input (see shellcheck -x).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 17:[0m
+[0mtest "$SULOGIN" = yes && sulogin -t 30 $CONSOLE[0m
+[32m                                       ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+test "$SULOGIN" = yes && sulogin -t 30 "$CONSOLE"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 28:[0m
+[0mwhile read fs mnt type opts dump pass junk <&9[0m
+[32m      ^--^ SC2162: read without -r will mangle backslashes.[0m
+[33m                            ^--^ SC2034: dump appears unused. Verify use (or export if used externally).[0m
+[33m                                      ^--^ SC2034: junk appears unused. Verify use (or export if used externally).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 42:[0m
+[0m			test "$type" = swap && swap_on_md=yes[0m
+[33m                                               ^--------^ SC2034: swap_on_md appears unused. Verify use (or export if used externally).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 45:[0m
+[0m	test "$type" = devfs && devfs="$fs"[0m
+[33m                                ^---^ SC2034: devfs appears unused. Verify use (or export if used externally).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 47:[0m
+[0m	rootopts="$opts"[0m
+[33m        ^------^ SC2034: rootopts appears unused. Verify use (or export if used externally).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 58:[0m
+[0mif [ "$rootmode" = "ro" -a "$ROOTFS_READ_ONLY" = "no" ] || \[0m
+[33m                        ^-- SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 59:[0m
+[0m	[ "$rootmode" = "rw" -a "$ROOTFS_READ_ONLY" = "yes" ]; then[0m
+[33m                             ^-- SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 103:[0m
+[0m    test `uname -m` = s390 && spinner="" # This should go away[0m
+[33m         ^--------^ SC2046: Quote this to prevent word splitting.[0m
+[32m         ^--------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+
+[1mDid you mean: [0m
+    test $(uname -m) = s390 && spinner="" # This should go away
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 105:[0m
+[0m    fsck $spinner $force $fix /[0m
+[32m         ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                  ^----^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+    fsck "$spinner" "$force" $fix /
+
+
+[1mIn /log/firmware/firmware/etc/init.d/checkroot.sh line 127:[0m
+[0m      /sbin/sulogin $CONSOLE[0m
+[32m                    ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+      /sbin/sulogin "$CONSOLE"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- devfs appears unused. Verify use ...
+  https://www.shellcheck.net/wiki/SC2046 -- Quote this to prevent word splitt...
+  https://www.shellcheck.net/wiki/SC2166 -- Prefer [ p ] && [ q ] as [ p -a q...

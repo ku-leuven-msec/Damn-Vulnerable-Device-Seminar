@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mpasswd.shadow[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mpasswd.shadow[0m
+
+    4be8:	39400820 	ldrb	w0, [x1, #2]
+    4bec:	f90013f5 	str	x21, [sp, #32]
+    4bf0:	350004c0 	cbnz	w0, 4c88 <ferror@plt+0x15e8>
+    4bf4:	91026280 	add	x0, x20, #0x98
+    4bf8:	39442001 	ldrb	w1, [x0, #264]
+    4bfc:	39442400 	ldrb	w0, [x0, #265]
+    4c00:	34000281 	cbz	w1, 4c50 <ferror@plt+0x15b0>
+    4c04:	3900027f 	strb	wzr, [x19]
+    4c08:	34000300 	cbz	w0, 4c68 <ferror@plt+0x15c8>
+    4c0c:	91026294 	add	x20, x20, #0x98
+    4c10:	39442a80 	ldrb	w0, [x20, #266]
+    4c14:	34000420 	cbz	w0, 4c98 <ferror@plt+0x15f8>
+    4c18:	aa1303e0 	mov	x0, x19
+    4c1c:	97fff8c5 	bl	2f30 <strlen@plt>
+    4c20:	91000800 	add	x0, x0, #0x2
+    4c24:	940009d3 	bl	7370 <ferror@plt+0x3cd0>
+    4c28:	52800422 	mov	w2, #0x21                  	// #33
+    4c2c:	aa0003f5 	mov	x21, x0
+    4c30:	38001402 	strb	w2, [x0], #1
+    4c34:	aa1303e1 	mov	x1, x19
+[31m    4c38:	97fffa2e 	bl	34f0 <strcpy@plt>[0m
+    4c3c:	aa1503e0 	mov	x0, x21
+    4c40:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    628c:	aa1503e0 	mov	x0, x21
+    6290:	97fff440 	bl	3390 <strcmp@plt>
+    6294:	340008e0 	cbz	w0, 63b0 <ferror@plt+0x2d10>
+    6298:	aa1503e0 	mov	x0, x21
+    629c:	a90363f7 	stp	x23, x24, [sp, #48]
+    62a0:	94000454 	bl	73f0 <ferror@plt+0x3d50>
+    62a4:	97ffffdf 	bl	6220 <ferror@plt+0x2b80>
+    62a8:	aa0003f3 	mov	x19, x0
+    62ac:	aa1403e0 	mov	x0, x20
+    62b0:	94000450 	bl	73f0 <ferror@plt+0x3d50>
+    62b4:	97ffffdb 	bl	6220 <ferror@plt+0x2b80>
+    62b8:	aa0003f6 	mov	x22, x0
+    62bc:	97fff31d 	bl	2f30 <strlen@plt>
+    62c0:	d37ff800 	lsl	x0, x0, #1
+    62c4:	91000400 	add	x0, x0, #0x1
+    62c8:	9400042a 	bl	7370 <ferror@plt+0x3cd0>
+    62cc:	aa1603e1 	mov	x1, x22
+    62d0:	aa0003f8 	mov	x24, x0
+    62d4:	97fff36b 	bl	3080 <stpcpy@plt>
+    62d8:	aa1603e1 	mov	x1, x22
+[31m    62dc:	97fff485 	bl	34f0 <strcpy@plt>[0m
+    62e0:	aa1303e0 	mov	x0, x19
+    62e4:	97fff313 	bl	2f30 <strlen@plt>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mpasswd.shadow[0m
+

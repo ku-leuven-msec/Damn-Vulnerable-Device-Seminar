@@ -1,0 +1,396 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module libdnf.conf</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:52:0: C0325: Unnecessary parens after 'if' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:54:0: C0325: Unnecessary parens after 'if' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:61:0: C0325: Unnecessary parens after 'if' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:75:0: C0325: Unnecessary parens after 'if' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1924:33: C0303: Trailing whitespace (trailing-whitespace)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1925:0: C0325: Unnecessary parens after 'not' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1930:0: C0325: Unnecessary parens after 'not' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1:0: C0302: Too many lines in module (2057/1000) (too-many-lines)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2057:0: C0305: Trailing newlines (trailing-newlines)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:10:8: C0415: Import outside toplevel (importlib) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:21:8: C0415: Import outside toplevel (os.path.dirname) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:22:8: C0415: Import outside toplevel (imp) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:23:8: C0103: Variable name "fp" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:25:12: C0103: Variable name "fp" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:27:12: C0415: Import outside toplevel (_conf) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:42:4: C0103: Class name "_swig_property" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:51:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:86:11: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:93:7: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:92:4: C0103: Constant name "_newclass" doesn't conform to UPPER_CASE naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:94:4: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:96:4: C0103: Constant name "_newclass" doesn't conform to UPPER_CASE naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:98:0: R0205: Class 'SwigPyIterator' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:113:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:116:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:119:4: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:122:4: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:137:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:146:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:149:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:152:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:162:0: C0413: Import "import libdnf.common_types" should be placed at the top of the module (wrong-import-position)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:163:0: R0205: Class 'Option' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:185:4: C0103: Method name "getPriority" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:191:4: C0103: Method name "getValueString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:212:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:216:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:225:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:231:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:234:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:237:4: C0103: Method name "toString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:243:4: C0103: Method name "getTrueValues" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:246:4: C0103: Method name "getFalseValues" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:215:12: E0203: Access to member 'this' before its definition line 217 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:267:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:271:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:280:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:286:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:289:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:270:12: E0203: Access to member 'this' before its definition line 272 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:310:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:314:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:323:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:329:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:332:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:335:4: C0103: Method name "toString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:313:12: E0203: Access to member 'this' before its definition line 315 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:356:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:360:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:369:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:375:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:378:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:381:4: C0103: Method name "toString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:359:12: E0203: Access to member 'this' before its definition line 361 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:402:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:406:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:415:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:421:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:424:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:427:4: C0103: Method name "toString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:405:12: E0203: Access to member 'this' before its definition line 407 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:448:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:452:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:461:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:467:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:470:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:473:4: C0103: Method name "toString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:451:12: E0203: Access to member 'this' before its definition line 453 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:494:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:498:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:507:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:513:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:516:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:519:4: C0103: Method name "toString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:497:12: E0203: Access to member 'this' before its definition line 499 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:540:4: W0231: __init__ method from base class 'OptionNumberInt32' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:544:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:571:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:575:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:587:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:590:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:593:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:574:12: E0203: Access to member 'this' before its definition line 576 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:614:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:618:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:627:4: C0103: Method name "fromString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:633:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:636:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:639:4: C0103: Method name "toString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:617:12: E0203: Access to member 'this' before its definition line 619 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:660:4: W0231: __init__ method from base class 'OptionString' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:664:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:691:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:695:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:707:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:710:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:694:12: E0203: Access to member 'this' before its definition line 696 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:734:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:738:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:750:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:753:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:737:12: E0203: Access to member 'this' before its definition line 739 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:777:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:781:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:793:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:796:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:780:12: E0203: Access to member 'this' before its definition line 782 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:820:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:824:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:836:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:839:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:823:12: E0203: Access to member 'this' before its definition line 825 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:863:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:867:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:879:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:882:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:866:12: E0203: Access to member 'this' before its definition line 868 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:906:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:910:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:922:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:925:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:909:12: E0203: Access to member 'this' before its definition line 911 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:949:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:953:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:965:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:968:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:952:12: E0203: Access to member 'this' before its definition line 954 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:992:4: W0231: __init__ method from base class 'Option' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:996:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1008:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1011:4: C0103: Method name "getDefaultValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:995:12: E0203: Access to member 'this' before its definition line 997 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1024:0: R0205: Class 'VectorString' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1066:4: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1075:4: C0103: Argument name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1106:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1109:4: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1118:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1118:4: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1127:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1105:12: E0203: Access to member 'this' before its definition line 1107 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1024:0: R0904: Too many public methods (22/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1139:0: C0103: Function name "VectorString__str__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1143:0: C0103: Function name "VectorString__eq__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1147:0: C0103: Function name "VectorString__ne__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1151:0: C0103: Function name "VectorString__lt__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1155:0: C0103: Function name "VectorString__le__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1159:0: C0103: Function name "VectorString__gt__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1163:0: C0103: Function name "VectorString__ge__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1167:0: C0103: Function name "VectorString__iadd__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1172:0: C0103: Function name "VectorString__imul__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1180:0: C0103: Function name "VectorString__mul__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1186:0: C0103: Function name "VectorString__rmul__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1190:0: C0103: Function name "VectorString__add__" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1196:0: C0103: Function name "VectorString__append" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1200:0: C0103: Function name "VectorString__copy" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1204:0: C0103: Function name "VectorString__count" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1208:0: C0103: Function name "VectorString__extend" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1213:0: C0103: Function name "VectorString__index" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1218:0: C0103: Function name "VectorString__insert" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1225:0: C0103: Function name "VectorString__remove" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1232:0: C0103: Function name "VectorString__sort" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1232:0: W0613: Unused argument 'args' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1232:0: W0613: Unused argument 'kwargs' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1239:0: C0103: Function name "VectorString__reverse" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1239:0: W0613: Unused argument 'args' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1239:0: W0613: Unused argument 'kwargs' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1246:0: R0205: Class 'OptionBinds' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1253:4: C0103: Argument name "id" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1253:18: W0622: Redefining built-in 'id' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1256:4: C0103: Method name "at" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1265:4: C0103: Argument name "id" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1265:26: W0622: Redefining built-in 'id' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1278:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1277:12: E0203: Access to member 'this' before its definition line 1279 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1285:0: C0103: Class name "OptionBinds_Item" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1285:0: R0205: Class 'OptionBinds_Item' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1295:4: C0103: Method name "getPriority" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1298:4: C0103: Method name "newString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1301:4: C0103: Method name "getValueString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1304:4: C0103: Method name "getAddValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1311:0: R0205: Class 'Config' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1318:4: C0103: Method name "optBinds" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1325:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1324:12: E0203: Access to member 'this' before its definition line 1326 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1311:0: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1343:4: W0231: __init__ method from base class 'Config' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1347:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1332:0: R0904: Too many public methods (95/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1652:4: W0231: __init__ method from base class 'Config' is not called (super-init-not-called)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1656:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1659:4: C0103: Method name "getMasterConfig" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1639:0: R0904: Too many public methods (43/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1790:0: R0205: Class 'OptionBindsIterator' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1801:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1800:12: E0203: Access to member 'this' before its definition line 1802 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1825:0: R0205: Class 'ConfigParser' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1836:4: C0103: Method name "setSubstitutions" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1839:4: C0103: Method name "getSubstitutions" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1842:4: C0103: Argument name "filePath" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1848:4: C0103: Method name "addSection" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1851:4: C0103: Method name "hasSection" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1854:4: C0103: Method name "hasOption" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1857:4: C0103: Method name "setValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1860:4: C0103: Method name "removeSection" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1863:4: C0103: Method name "removeOption" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1866:4: C0103: Method name "addCommentLine" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1869:4: C0103: Method name "getValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1872:4: C0103: Method name "getSubstitutedValue" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1875:4: C0103: Method name "getHeader" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1878:4: C0103: Method name "getData" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1881:4: C0103: Method name "readString" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1888:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1887:12: E0203: Access to member 'this' before its definition line 1889 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1895:0: C0103: Function name "ConfigParser_substitute" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1899:0: R0205: Class 'PairStringOptionBindsItem' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1910:15: W0703: Catching too general exception Exception (broad-except)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1922:4: E0102: method already defined line 1904 (function-redefined)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1925:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1909:12: E0203: Access to member 'this' before its definition line 1911 (access-member-before-definition)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1942:0: C0103: Function name "ConfigParser__newRead" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1943:4: C0103: Variable name "parsedFNames" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1945:11: R1701: Consider merging these isinstance calls to isinstance(filenames, (str, unicode)) (consider-merging-isinstance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1955:8: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1956:12: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1961:0: C0103: Function name "ConfigParser__read_string" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1964:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1965:8: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1969:0: C0103: Function name "ConfigParser__add_section" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1978:0: C0103: Function name "ConfigParser__get" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1980:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1984:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1985:8: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1990:0: C0103: Function name "ConfigParser__getint" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:1995:0: C0103: Function name "ConfigParser__getfloat" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2000:0: C0103: Function name "ConfigParser__getboolean" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2001:4: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2005:8: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2009:0: C0103: Function name "ConfigParser__items" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2012:4: C0103: Variable name "sectObj" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2022:0: C0103: Function name "ConfigParser__set" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2031:0: C0103: Function name "ConfigParser__remove_option" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2038:0: C0103: Function name "ConfigParser__options" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2041:4: C0103: Variable name "sectObj" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:2046:0: C0103: Function name "ConfigParser__sections" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/libdnf/conf.py:162:0: W0611: Unused import libdnf.common_types (unused-import)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 7.76/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

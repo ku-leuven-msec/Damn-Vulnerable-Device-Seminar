@@ -1,0 +1,73 @@
+[[0;33m*[0m] Binary protection state of [0;33m_ctypes.cpython-38-aarch64-linux-gnu.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33m_ctypes.cpython-38-aarch64-linux-gnu.so[0m
+
+    c574:	910003fd 	mov	x29, sp
+    c578:	a90153f3 	stp	x19, x20, [sp, #16]
+    c57c:	b40004a1 	cbz	x1, c610 <_ctypes_alloc_format_string@@Base+0xa0>
+    c580:	aa0103f4 	mov	x20, x1
+    c584:	f90013f5 	str	x21, [sp, #32]
+    c588:	aa0003f5 	mov	x21, x0
+    c58c:	aa0103e0 	mov	x0, x1
+    c590:	97ffe9ec 	bl	6d40 <strlen@plt>
+    c594:	91000413 	add	x19, x0, #0x1
+    c598:	b4000235 	cbz	x21, c5dc <_ctypes_alloc_format_string@@Base+0x6c>
+    c59c:	aa1503e0 	mov	x0, x21
+    c5a0:	97ffe9e8 	bl	6d40 <strlen@plt>
+    c5a4:	8b130000 	add	x0, x0, x19
+    c5a8:	97ffec86 	bl	77c0 <PyMem_Malloc@plt>
+    c5ac:	aa0003f3 	mov	x19, x0
+    c5b0:	b4000220 	cbz	x0, c5f4 <_ctypes_alloc_format_string@@Base+0x84>
+    c5b4:	aa1503e1 	mov	x1, x21
+    c5b8:	97ffebe2 	bl	7540 <strcpy@plt>
+    c5bc:	aa1403e1 	mov	x1, x20
+    c5c0:	aa1303e0 	mov	x0, x19
+[31m    c5c4:	97ffeaaf 	bl	7080 <strcat@plt>[0m
+    c5c8:	f94013f5 	ldr	x21, [sp, #32]
+    c5cc:	aa1303e0 	mov	x0, x19
+--
+    d710:	510006ba 	sub	w26, w21, #0x1
+    d714:	a90573fb 	stp	x27, x28, [sp, #80]
+    d718:	97ffe58a 	bl	6d40 <strlen@plt>
+    d71c:	52800501 	mov	w1, #0x28                  	// #40
+    d720:	d000005c 	adrp	x28, 17000 <PyCField_FromDesc@@Base+0x1230>
+    d724:	910ce39c 	add	x28, x28, #0x338
+    d728:	d000005b 	adrp	x27, 17000 <PyCField_FromDesc@@Base+0x1230>
+    d72c:	910cc37b 	add	x27, x27, #0x330
+    d730:	aa1a03f5 	mov	x21, x26
+    d734:	9101a3f6 	add	x22, sp, #0x68
+    d738:	d2800013 	mov	x19, #0x0                   	// #0
+    d73c:	78206a81 	strh	w1, [x20, x0]
+    d740:	1400000d 	b	d774 <_ctypes_alloc_format_string_with_shape@@Base+0x124>
+    d744:	aa1b03e3 	mov	x3, x27
+    d748:	d2800402 	mov	x2, #0x20                  	// #32
+    d74c:	52800021 	mov	w1, #0x1                   	// #1
+    d750:	aa1603e0 	mov	x0, x22
+    d754:	97ffe583 	bl	6d60 <__sprintf_chk@plt>
+    d758:	aa1603e1 	mov	x1, x22
+    d75c:	aa1403e0 	mov	x0, x20
+[31m    d760:	97ffe648 	bl	7080 <strcat@plt>[0m
+    d764:	91000660 	add	x0, x19, #0x1
+    d768:	eb1a027f 	cmp	x19, x26
+    d76c:	54000200 	b.eq	d7ac <_ctypes_alloc_format_string_with_shape@@Base+0x15c>  // b.none
+    d770:	aa0003f3 	mov	x19, x0
+    d774:	6b1302bf 	cmp	w21, w19
+    d778:	f8737ae4 	ldr	x4, [x23, x19, lsl #3]
+    d77c:	54fffe4c 	b.gt	d744 <_ctypes_alloc_format_string_with_shape@@Base+0xf4>
+    d780:	aa1c03e3 	mov	x3, x28
+    d784:	d2800402 	mov	x2, #0x20                  	// #32
+    d788:	52800021 	mov	w1, #0x1                   	// #1
+    d78c:	aa1603e0 	mov	x0, x22
+    d790:	97ffe574 	bl	6d60 <__sprintf_chk@plt>
+    d794:	aa1603e1 	mov	x1, x22
+    d798:	aa1403e0 	mov	x0, x20
+[31m    d79c:	97ffe639 	bl	7080 <strcat@plt>[0m
+    d7a0:	91000660 	add	x0, x19, #0x1
+    d7a4:	eb1a027f 	cmp	x19, x26
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m3[0m times [0;33m_ctypes.cpython-38-aarch64-linux-gnu.so[0m
+

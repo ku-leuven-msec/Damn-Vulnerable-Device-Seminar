@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33marp_tables.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m177) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33marp_tables.ko[0m
+
+    22f0:	a9087c1f 	stp	xzr, xzr, [x0, #128]
+    22f4:	a9097c1f 	stp	xzr, xzr, [x0, #144]
+    22f8:	910213e0 	add	x0, sp, #0x84
+    22fc:	a90a7c5f 	stp	xzr, xzr, [x2, #160]
+    2300:	a90b7c5f 	stp	xzr, xzr, [x2, #176]
+    2304:	b900c7ff 	str	wzr, [sp, #196]
+    2308:	b9401282 	ldr	w2, [x20, #16]
+    230c:	b900a7e2 	str	w2, [sp, #164]
+    2310:	f840c082 	ldur	x2, [x4, #12]
+    2314:	f90057e2 	str	x2, [sp, #168]
+    2318:	b9401482 	ldr	w2, [x4, #20]
+    231c:	b900b3e2 	str	w2, [sp, #176]
+    2320:	f9401082 	ldr	x2, [x4, #32]
+    2324:	f80b43e2 	stur	x2, [sp, #180]
+    2328:	b9402882 	ldr	w2, [x4, #40]
+    232c:	b900bfe2 	str	w2, [sp, #188]
+    2330:	b9400482 	ldr	w2, [x4, #4]
+    2334:	b900c3e2 	str	w2, [sp, #192]
+    2338:	b9400082 	ldr	w2, [x4]
+    233c:	b900c7e2 	str	w2, [sp, #196]
+[31m    2340:	94000000 	bl	0 <strcpy>[0m
+    2344:	b98002e2 	ldrsw	x2, [x23]
+    2348:	f101105f 	cmp	x2, #0x44
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33marp_tables.ko[0m
+

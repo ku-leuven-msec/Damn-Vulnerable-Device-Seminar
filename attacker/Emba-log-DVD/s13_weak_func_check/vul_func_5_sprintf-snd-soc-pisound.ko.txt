@@ -1,0 +1,118 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-soc-pisound.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m182) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-soc-pisound.ko[0m
+
+ 3e8:	2a1703e1 	mov	w1, w23
+ 3ec:	90000000 	adrp	x0, 0 <pisnd_output_open>
+ 3f0:	91000000 	add	x0, x0, #0x0
+ 3f4:	94000000 	bl	0 <printk>
+ 3f8:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 3fc:	17ffffed 	b	3b0 <pisnd_card_probe+0x100>
+
+0000000000000400 <pisnd_hw_version_show>:
+ 400:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 404:	910003fd 	mov	x29, sp
+ 408:	f9000bf3 	str	x19, [sp, #16]
+ 40c:	aa1e03e0 	mov	x0, x30
+ 410:	aa0203f3 	mov	x19, x2
+ 414:	94000000 	bl	0 <_mcount>
+ 418:	90000001 	adrp	x1, 0 <pisnd_output_open>
+ 41c:	91000021 	add	x1, x1, #0x0
+ 420:	9101c022 	add	x2, x1, #0x70
+ 424:	aa1303e0 	mov	x0, x19
+ 428:	90000001 	adrp	x1, 0 <pisnd_output_open>
+ 42c:	91000021 	add	x1, x1, #0x0
+[31m 430:	94000000 	bl	0 <sprintf>[0m
+ 434:	93407c00 	sxtw	x0, w0
+ 438:	f9400bf3 	ldr	x19, [sp, #16]
+ 43c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 440:	d65f03c0 	ret
+ 444:	d503201f 	nop
+
+0000000000000448 <pisnd_fw_version_show>:
+ 448:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 44c:	910003fd 	mov	x29, sp
+ 450:	f9000bf3 	str	x19, [sp, #16]
+ 454:	aa1e03e0 	mov	x0, x30
+ 458:	aa0203f3 	mov	x19, x2
+ 45c:	94000000 	bl	0 <_mcount>
+ 460:	90000001 	adrp	x1, 0 <pisnd_output_open>
+ 464:	91000021 	add	x1, x1, #0x0
+ 468:	9101e022 	add	x2, x1, #0x78
+ 46c:	aa1303e0 	mov	x0, x19
+ 470:	90000001 	adrp	x1, 0 <pisnd_output_open>
+ 474:	91000021 	add	x1, x1, #0x0
+[31m 478:	94000000 	bl	0 <sprintf>[0m
+ 47c:	93407c00 	sxtw	x0, w0
+ 480:	f9400bf3 	ldr	x19, [sp, #16]
+ 484:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 488:	d65f03c0 	ret
+ 48c:	d503201f 	nop
+
+0000000000000490 <pisnd_id_show>:
+ 490:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 494:	910003fd 	mov	x29, sp
+ 498:	f9000bf3 	str	x19, [sp, #16]
+ 49c:	aa1e03e0 	mov	x0, x30
+ 4a0:	aa0203f3 	mov	x19, x2
+ 4a4:	94000000 	bl	0 <_mcount>
+ 4a8:	90000001 	adrp	x1, 0 <pisnd_output_open>
+ 4ac:	91000021 	add	x1, x1, #0x0
+ 4b0:	91020022 	add	x2, x1, #0x80
+ 4b4:	aa1303e0 	mov	x0, x19
+ 4b8:	90000001 	adrp	x1, 0 <pisnd_output_open>
+ 4bc:	91000021 	add	x1, x1, #0x0
+[31m 4c0:	94000000 	bl	0 <sprintf>[0m
+ 4c4:	93407c00 	sxtw	x0, w0
+ 4c8:	f9400bf3 	ldr	x19, [sp, #16]
+ 4cc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 4d0:	d65f03c0 	ret
+ 4d4:	d503201f 	nop
+
+00000000000004d8 <pisnd_serial_show>:
+ 4d8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 4dc:	910003fd 	mov	x29, sp
+ 4e0:	f9000bf3 	str	x19, [sp, #16]
+ 4e4:	aa1e03e0 	mov	x0, x30
+ 4e8:	aa0203f3 	mov	x19, x2
+ 4ec:	94000000 	bl	0 <_mcount>
+ 4f0:	90000001 	adrp	x1, 0 <pisnd_output_open>
+ 4f4:	91000021 	add	x1, x1, #0x0
+ 4f8:	9100c022 	add	x2, x1, #0x30
+ 4fc:	aa1303e0 	mov	x0, x19
+ 500:	90000001 	adrp	x1, 0 <pisnd_output_open>
+ 504:	91000021 	add	x1, x1, #0x0
+[31m 508:	94000000 	bl	0 <sprintf>[0m
+ 50c:	93407c00 	sxtw	x0, w0
+ 510:	f9400bf3 	ldr	x19, [sp, #16]
+--
+ 3ec:	f2781c1f 	tst	x0, #0xff00
+ 3f0:	54fffc20 	b.eq	374 <spi_read_info+0x7c>  // b.none
+ 3f4:	38376aa1 	strb	w1, [x21, x23]
+ 3f8:	910006f7 	add	x23, x23, #0x1
+ 3fc:	17fffff6 	b	3d4 <spi_read_info+0xdc>
+ 400:	52800000 	mov	w0, #0x0                   	// #0
+ 404:	14000037 	b	4e0 <spi_read_info+0x1e8>
+ 408:	71000a9f 	cmp	w20, #0x2
+ 40c:	54000241 	b.ne	454 <spi_read_info+0x15c>  // b.any
+ 410:	710032df 	cmp	w22, #0xc
+ 414:	54fffb0c 	b.gt	374 <spi_read_info+0x7c>
+ 418:	91020277 	add	x23, x19, #0x80
+ 41c:	d2800018 	mov	x24, #0x0                   	// #0
+ 420:	6b3802df 	cmp	w22, w24, uxtb
+ 424:	54000109 	b.ls	444 <spi_read_info+0x14c>  // b.plast
+ 428:	38786aa2 	ldrb	w2, [x21, x24]
+ 42c:	aa1703e0 	mov	x0, x23
+ 430:	91000718 	add	x24, x24, #0x1
+ 434:	91000af7 	add	x23, x23, #0x2
+ 438:	aa1a03e1 	mov	x1, x26
+[31m 43c:	94000000 	bl	0 <sprintf>[0m
+ 440:	17fffff8 	b	420 <spi_read_info+0x128>
+ 444:	390002ff 	strb	wzr, [x23]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m5[0m times [0;33msnd-soc-pisound.ko[0m
+

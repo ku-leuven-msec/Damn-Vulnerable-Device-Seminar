@@ -1,0 +1,81 @@
+[[0;34m+[0m] [0;36m[1mCheck users, groups and authentication[0m
+[1m=================================================================[0m
+
+[0;34m==>[0m [0;36mUsers with UID zero (0)[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Searching accounts with UID 0
+[[0;32m+[0m][0;32m Found administrator account/s with UID 0 in /log/firmware/firmware/etc/passwd (-rw-r--r-- root root)[0m
+    [0;33mAdministrator account: root:0[0m
+
+[0;34m==>[0m [0;36mNon-unique accounts[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Searching non-unique accounts
+[[0;31m-[0m] All accounts found in /log/firmware/firmware/etc/passwd (-rw-r--r-- root root) are unique
+
+[0;34m==>[0m [0;36mUnique group IDs[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Searching non-unique group ID's
+[[0;31m-[0m] All group ID's found in /log/firmware/firmware/etc/group (-rw-r--r-- root root) are unique
+
+[0;34m==>[0m [0;36mUnique group name[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Searching non-unique group names
+[[0;31m-[0m] All group names found in /log/firmware/firmware/etc/group (-rw-r--r-- root root) are unique
+
+[0;34m==>[0m [0;36mQuery user accounts[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Reading system users
+[[0;33m*[0m] Found minimal user id specified: 1000
+[[0;33m*[0m] Linux real users output (ID = 0, or 1000+, but not 65534):
+[[0;32m+[0m][0;32m Query system user[0m
+    [0;33mroot,0[0m
+    [0;33mclient,1000[0m
+    [0;33mmanager,1001[0m
+
+[0;34m==>[0m [0;36mQuery NIS and NIS+ authentication support[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Check nsswitch.conf
+[[0;32m+[0m][0;32m /log/firmware/firmware/etc/nsswitch.conf (-rw-r--r-- root root) exist[0m
+[[0;31m-[0m] NIS/NIS+ authentication not enabled
+
+[0;34m==>[0m [0;36mScan and test sudoers files[0m
+-----------------------------------------------------------------
+    [0;33m/log/firmware/firmware/etc/sudoers (-r--r----- root root)[0m
+[[0;33m*[0m] Testing sudoers file with sudo-parse.pl:
+[[0;32m+[0m][0;32m E: client:/usr/bin/less matches .*/less.*[0m
+[[0;32m+[0m][0;32m E: root:ALL matches .*ALL.*[0m
+
+[0;34m==>[0m [0;36mOwnership and permissions for sudo configuration files[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Checking drop-in directory (/log/firmware/firmware/etc/sudoers.d (drwxr-x--- root root))
+[[0;33m*[0m] /log/firmware/firmware/etc/sudoers.d (drwxr-x--- root root): Found permissions: drwxr-x--- and owner UID GID: 0:0
+[[0;31m-[0m] /log/firmware/firmware/etc/sudoers.d (drwxr-x--- root root) permissions OK
+[[0;31m-[0m] /log/firmware/firmware/etc/sudoers.d (drwxr-x--- root root) ownership OK
+[[0;33m*[0m] /log/firmware/firmware/etc/sudoers (-r--r----- root root): Found permissions: -r--r----- and owner UID GID: 0:0
+[[0;32m+[0m][0;32m /log/firmware/firmware/etc/sudoers (-r--r----- root root) permissions possibly unsafe[0m
+[[0;31m-[0m] /log/firmware/firmware/etc/sudoers (-r--r----- root root) ownership OK
+
+[0;34m==>[0m [0;36mSearch for PAM password strength testing libraries[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Searching PAM password testing modules (cracklib, passwdqc, pwquality)
+[[0;31m-[0m] pam_cracklib.so not found
+[[0;31m-[0m] pam_passwdqc.so not found
+[[0;31m-[0m] pam_pwquality.so not found
+[[0;31m-[0m] No PAM modules for password strength testing found
+
+[0;34m==>[0m [0;36mScan PAM configuration file[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] /etc/pam.conf not available
+
+[0;34m==>[0m [0;36mSearching PAM configurations and LDAP support in PAM files[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] /etc/pam.d not available
+
+[0;34m==>[0m [0;36mSearching available PAM files[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Found 1 possible interesting file/s and/or directory/ies for PAM:
+    /log/firmware/firmware/usr/lib (drwxr-xr-x root root)
+[[0;31m-[0m] Nothing interesting found
+
+[*] Statistics:3
+[[0;33m*[0m] Sun Nov 14 07:27:00 EST 2021 - S50_authentication_check finished

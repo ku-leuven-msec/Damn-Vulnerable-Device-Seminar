@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msulogin.util-linux[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msulogin.util-linux[0m
+
+    413c:	b5000620 	cbnz	x0, 4200 <ferror@plt+0x1840>
+    4140:	2a1503e0 	mov	w0, w21
+    4144:	a94153f3 	ldp	x19, x20, [sp, #16]
+    4148:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    414c:	a94363f7 	ldp	x23, x24, [sp, #48]
+    4150:	a8c57bfd 	ldp	x29, x30, [sp], #80
+    4154:	d65f03c0 	ret
+    4158:	f94023f3 	ldr	x19, [sp, #64]
+    415c:	d2800fe4 	mov	x4, #0x7f                  	// #127
+    4160:	f9400682 	ldr	x2, [x20, #8]
+    4164:	f2c002a4 	movk	x4, #0x15, lsl #32
+    4168:	d2800243 	mov	x3, #0x12                  	// #18
+    416c:	a9000a74 	stp	x20, x2, [x19]
+    4170:	91020260 	add	x0, x19, #0x80
+    4174:	f9000693 	str	x19, [x20, #8]
+    4178:	aa1703e1 	mov	x1, x23
+    417c:	a9030e64 	stp	x4, x3, [x19, #48]
+    4180:	b900427f 	str	wzr, [x19, #64]
+    4184:	f9000053 	str	x19, [x2]
+    4188:	f9000a60 	str	x0, [x19, #16]
+[31m    418c:	97fff9a1 	bl	2810 <strcpy@plt>[0m
+    4190:	b2607fe1 	mov	x1, #0xffffffff00000000    	// #-4294967296
+    4194:	a901867f 	stp	xzr, x1, [x19, #24]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33msulogin.util-linux[0m
+

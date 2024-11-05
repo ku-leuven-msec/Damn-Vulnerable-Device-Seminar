@@ -1,0 +1,545 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibiscsi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m432) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mlibiscsi.ko[0m
+
+    1e24:	51001261 	sub	w1, w19, #0x4
+    1e28:	7101083f 	cmp	w1, #0x42
+    1e2c:	f9408e82 	ldr	x2, [x20, #280]
+    1e30:	540000c9 	b.ls	1e48 <iscsi_session_get_param+0x48>  // b.plast
+    1e34:	128004a0 	mov	w0, #0xffffffda            	// #-38
+    1e38:	a94153f3 	ldp	x19, x20, [sp, #16]
+    1e3c:	f94013f5 	ldr	x21, [sp, #32]
+    1e40:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    1e44:	d65f03c0 	ret
+    1e48:	90000000 	adrp	x0, 0 <iscsi_itt_to_task>
+    1e4c:	91000000 	add	x0, x0, #0x0
+    1e50:	78615800 	ldrh	w0, [x0, w1, uxtw #1]
+    1e54:	10000061 	adr	x1, 1e60 <iscsi_session_get_param+0x60>
+    1e58:	8b20a820 	add	x0, x1, w0, sxth #2
+    1e5c:	d61f0000 	br	x0
+    1e60:	f9406c42 	ldr	x2, [x2, #216]
+    1e64:	b4001d42 	cbz	x2, 220c <iscsi_session_get_param+0x40c>
+    1e68:	aa1503e0 	mov	x0, x21
+    1e6c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1e70:	91000021 	add	x1, x1, #0x0
+[31m    1e74:	94000000 	bl	0 <sprintf>[0m
+    1e78:	17fffff0 	b	1e38 <iscsi_session_get_param+0x38>
+    1e7c:	7941c042 	ldrh	w2, [x2, #224]
+    1e80:	aa1503e0 	mov	x0, x21
+    1e84:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1e88:	91000021 	add	x1, x1, #0x0
+[31m    1e8c:	94000000 	bl	0 <sprintf>[0m
+    1e90:	17ffffea 	b	1e38 <iscsi_session_get_param+0x38>
+    1e94:	7941c442 	ldrh	w2, [x2, #226]
+    1e98:	aa1503e0 	mov	x0, x21
+    1e9c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1ea0:	91000021 	add	x1, x1, #0x0
+[31m    1ea4:	94000000 	bl	0 <sprintf>[0m
+    1ea8:	17ffffe4 	b	1e38 <iscsi_session_get_param+0x38>
+    1eac:	7941c842 	ldrh	w2, [x2, #228]
+    1eb0:	aa1503e0 	mov	x0, x21
+    1eb4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1eb8:	91000021 	add	x1, x1, #0x0
+[31m    1ebc:	94000000 	bl	0 <sprintf>[0m
+    1ec0:	17ffffde 	b	1e38 <iscsi_session_get_param+0x38>
+    1ec4:	b9405c42 	ldr	w2, [x2, #92]
+    1ec8:	aa1503e0 	mov	x0, x21
+    1ecc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1ed0:	91000021 	add	x1, x1, #0x0
+[31m    1ed4:	94000000 	bl	0 <sprintf>[0m
+    1ed8:	17ffffd8 	b	1e38 <iscsi_session_get_param+0x38>
+    1edc:	b9405842 	ldr	w2, [x2, #88]
+    1ee0:	aa1503e0 	mov	x0, x21
+    1ee4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1ee8:	91000021 	add	x1, x1, #0x0
+[31m    1eec:	94000000 	bl	0 <sprintf>[0m
+    1ef0:	17ffffd2 	b	1e38 <iscsi_session_get_param+0x38>
+    1ef4:	3943ac42 	ldrb	w2, [x2, #235]
+    1ef8:	aa1503e0 	mov	x0, x21
+    1efc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1f00:	91000021 	add	x1, x1, #0x0
+[31m    1f04:	94000000 	bl	0 <sprintf>[0m
+    1f08:	17ffffcc 	b	1e38 <iscsi_session_get_param+0x38>
+    1f0c:	3943a842 	ldrb	w2, [x2, #234]
+    1f10:	aa1503e0 	mov	x0, x21
+    1f14:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1f18:	91000021 	add	x1, x1, #0x0
+[31m    1f1c:	94000000 	bl	0 <sprintf>[0m
+    1f20:	17ffffc6 	b	1e38 <iscsi_session_get_param+0x38>
+    1f24:	3943a442 	ldrb	w2, [x2, #233]
+    1f28:	aa1503e0 	mov	x0, x21
+    1f2c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1f30:	91000021 	add	x1, x1, #0x0
+[31m    1f34:	94000000 	bl	0 <sprintf>[0m
+    1f38:	17ffffc0 	b	1e38 <iscsi_session_get_param+0x38>
+    1f3c:	3943a042 	ldrb	w2, [x2, #232]
+    1f40:	aa1503e0 	mov	x0, x21
+    1f44:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1f48:	91000021 	add	x1, x1, #0x0
+[31m    1f4c:	94000000 	bl	0 <sprintf>[0m
+    1f50:	17ffffba 	b	1e38 <iscsi_session_get_param+0x38>
+    1f54:	f9406842 	ldr	x2, [x2, #208]
+    1f58:	aa1503e0 	mov	x0, x21
+    1f5c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1f60:	91000021 	add	x1, x1, #0x0
+[31m    1f64:	94000000 	bl	0 <sprintf>[0m
+    1f68:	17ffffb4 	b	1e38 <iscsi_session_get_param+0x38>
+    1f6c:	39439c42 	ldrb	w2, [x2, #231]
+    1f70:	aa1503e0 	mov	x0, x21
+    1f74:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1f78:	91000021 	add	x1, x1, #0x0
+[31m    1f7c:	94000000 	bl	0 <sprintf>[0m
+    1f80:	17ffffae 	b	1e38 <iscsi_session_get_param+0x38>
+    1f84:	39439842 	ldrb	w2, [x2, #230]
+    1f88:	aa1503e0 	mov	x0, x21
+    1f8c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1f90:	91000021 	add	x1, x1, #0x0
+[31m    1f94:	94000000 	bl	0 <sprintf>[0m
+    1f98:	17ffffa8 	b	1e38 <iscsi_session_get_param+0x38>
+    1f9c:	f9406442 	ldr	x2, [x2, #200]
+    1fa0:	aa1503e0 	mov	x0, x21
+    1fa4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1fa8:	91000021 	add	x1, x1, #0x0
+[31m    1fac:	94000000 	bl	0 <sprintf>[0m
+    1fb0:	17ffffa2 	b	1e38 <iscsi_session_get_param+0x38>
+    1fb4:	f9406042 	ldr	x2, [x2, #192]
+    1fb8:	aa1503e0 	mov	x0, x21
+    1fbc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1fc0:	91000021 	add	x1, x1, #0x0
+[31m    1fc4:	94000000 	bl	0 <sprintf>[0m
+    1fc8:	17ffff9c 	b	1e38 <iscsi_session_get_param+0x38>
+    1fcc:	f9405c42 	ldr	x2, [x2, #184]
+    1fd0:	aa1503e0 	mov	x0, x21
+    1fd4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1fd8:	91000021 	add	x1, x1, #0x0
+[31m    1fdc:	94000000 	bl	0 <sprintf>[0m
+    1fe0:	17ffff96 	b	1e38 <iscsi_session_get_param+0x38>
+    1fe4:	f9405042 	ldr	x2, [x2, #160]
+    1fe8:	aa1503e0 	mov	x0, x21
+    1fec:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    1ff0:	91000021 	add	x1, x1, #0x0
+[31m    1ff4:	94000000 	bl	0 <sprintf>[0m
+    1ff8:	17ffff90 	b	1e38 <iscsi_session_get_param+0x38>
+    1ffc:	b9404042 	ldr	w2, [x2, #64]
+    2000:	aa1503e0 	mov	x0, x21
+    2004:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2008:	91000021 	add	x1, x1, #0x0
+[31m    200c:	94000000 	bl	0 <sprintf>[0m
+    2010:	17ffff8a 	b	1e38 <iscsi_session_get_param+0x38>
+    2014:	f9405842 	ldr	x2, [x2, #176]
+    2018:	aa1503e0 	mov	x0, x21
+    201c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2020:	91000021 	add	x1, x1, #0x0
+[31m    2024:	94000000 	bl	0 <sprintf>[0m
+    2028:	17ffff84 	b	1e38 <iscsi_session_get_param+0x38>
+    202c:	3943c447 	ldrb	w7, [x2, #241]
+    2030:	aa1503e0 	mov	x0, x21
+    2034:	3943c046 	ldrb	w6, [x2, #240]
+    2038:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    203c:	3943bc45 	ldrb	w5, [x2, #239]
+    2040:	91000021 	add	x1, x1, #0x0
+    2044:	3943b844 	ldrb	w4, [x2, #238]
+    2048:	3943b443 	ldrb	w3, [x2, #237]
+    204c:	3943b042 	ldrb	w2, [x2, #236]
+[31m    2050:	94000000 	bl	0 <sprintf>[0m
+    2054:	528001a0 	mov	w0, #0xd                   	// #13
+    2058:	17ffff78 	b	1e38 <iscsi_session_get_param+0x38>
+    205c:	f9405442 	ldr	x2, [x2, #168]
+    2060:	aa1503e0 	mov	x0, x21
+    2064:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2068:	91000021 	add	x1, x1, #0x0
+[31m    206c:	94000000 	bl	0 <sprintf>[0m
+    2070:	17ffff72 	b	1e38 <iscsi_session_get_param+0x38>
+    2074:	b9403c42 	ldr	w2, [x2, #60]
+    2078:	aa1503e0 	mov	x0, x21
+    207c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2080:	91000021 	add	x1, x1, #0x0
+[31m    2084:	94000000 	bl	0 <sprintf>[0m
+    2088:	17ffff6c 	b	1e38 <iscsi_session_get_param+0x38>
+    208c:	b9403842 	ldr	w2, [x2, #56]
+    2090:	aa1503e0 	mov	x0, x21
+    2094:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2098:	91000021 	add	x1, x1, #0x0
+[31m    209c:	94000000 	bl	0 <sprintf>[0m
+    20a0:	17ffff66 	b	1e38 <iscsi_session_get_param+0x38>
+    20a4:	b9406c42 	ldr	w2, [x2, #108]
+    20a8:	aa1503e0 	mov	x0, x21
+    20ac:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    20b0:	91000021 	add	x1, x1, #0x0
+[31m    20b4:	94000000 	bl	0 <sprintf>[0m
+    20b8:	17ffff60 	b	1e38 <iscsi_session_get_param+0x38>
+    20bc:	f9404842 	ldr	x2, [x2, #144]
+    20c0:	aa1503e0 	mov	x0, x21
+    20c4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    20c8:	91000021 	add	x1, x1, #0x0
+[31m    20cc:	94000000 	bl	0 <sprintf>[0m
+    20d0:	17ffff5a 	b	1e38 <iscsi_session_get_param+0x38>
+    20d4:	f9404442 	ldr	x2, [x2, #136]
+    20d8:	aa1503e0 	mov	x0, x21
+    20dc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    20e0:	91000021 	add	x1, x1, #0x0
+[31m    20e4:	94000000 	bl	0 <sprintf>[0m
+    20e8:	17ffff54 	b	1e38 <iscsi_session_get_param+0x38>
+    20ec:	f9404042 	ldr	x2, [x2, #128]
+    20f0:	aa1503e0 	mov	x0, x21
+    20f4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    20f8:	91000021 	add	x1, x1, #0x0
+[31m    20fc:	94000000 	bl	0 <sprintf>[0m
+    2100:	17ffff4e 	b	1e38 <iscsi_session_get_param+0x38>
+    2104:	f9403c42 	ldr	x2, [x2, #120]
+    2108:	aa1503e0 	mov	x0, x21
+    210c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2110:	91000021 	add	x1, x1, #0x0
+[31m    2114:	94000000 	bl	0 <sprintf>[0m
+    2118:	17ffff48 	b	1e38 <iscsi_session_get_param+0x38>
+    211c:	b9407042 	ldr	w2, [x2, #112]
+    2120:	aa1503e0 	mov	x0, x21
+    2124:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2128:	91000021 	add	x1, x1, #0x0
+[31m    212c:	94000000 	bl	0 <sprintf>[0m
+    2130:	17ffff42 	b	1e38 <iscsi_session_get_param+0x38>
+    2134:	f9404c42 	ldr	x2, [x2, #152]
+    2138:	aa1503e0 	mov	x0, x21
+    213c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2140:	91000021 	add	x1, x1, #0x0
+[31m    2144:	94000000 	bl	0 <sprintf>[0m
+    2148:	17ffff3c 	b	1e38 <iscsi_session_get_param+0x38>
+    214c:	b9406842 	ldr	w2, [x2, #104]
+    2150:	aa1503e0 	mov	x0, x21
+    2154:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2158:	91000021 	add	x1, x1, #0x0
+[31m    215c:	94000000 	bl	0 <sprintf>[0m
+    2160:	17ffff36 	b	1e38 <iscsi_session_get_param+0x38>
+    2164:	b9406442 	ldr	w2, [x2, #100]
+    2168:	aa1503e0 	mov	x0, x21
+    216c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2170:	91000021 	add	x1, x1, #0x0
+[31m    2174:	94000000 	bl	0 <sprintf>[0m
+    2178:	17ffff30 	b	1e38 <iscsi_session_get_param+0x38>
+    217c:	b9406042 	ldr	w2, [x2, #96]
+    2180:	aa1503e0 	mov	x0, x21
+    2184:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2188:	91000021 	add	x1, x1, #0x0
+[31m    218c:	94000000 	bl	0 <sprintf>[0m
+    2190:	17ffff2a 	b	1e38 <iscsi_session_get_param+0x38>
+    2194:	b9405442 	ldr	w2, [x2, #84]
+    2198:	aa1503e0 	mov	x0, x21
+    219c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    21a0:	91000021 	add	x1, x1, #0x0
+[31m    21a4:	94000000 	bl	0 <sprintf>[0m
+    21a8:	17ffff24 	b	1e38 <iscsi_session_get_param+0x38>
+    21ac:	b9405042 	ldr	w2, [x2, #80]
+    21b0:	aa1503e0 	mov	x0, x21
+    21b4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    21b8:	91000021 	add	x1, x1, #0x0
+[31m    21bc:	94000000 	bl	0 <sprintf>[0m
+    21c0:	17ffff1e 	b	1e38 <iscsi_session_get_param+0x38>
+    21c4:	b9404c42 	ldr	w2, [x2, #76]
+    21c8:	aa1503e0 	mov	x0, x21
+    21cc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    21d0:	91000021 	add	x1, x1, #0x0
+[31m    21d4:	94000000 	bl	0 <sprintf>[0m
+    21d8:	17ffff18 	b	1e38 <iscsi_session_get_param+0x38>
+    21dc:	79409042 	ldrh	w2, [x2, #72]
+    21e0:	aa1503e0 	mov	x0, x21
+    21e4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    21e8:	91000021 	add	x1, x1, #0x0
+[31m    21ec:	94000000 	bl	0 <sprintf>[0m
+    21f0:	17ffff12 	b	1e38 <iscsi_session_get_param+0x38>
+    21f4:	b9404442 	ldr	w2, [x2, #68]
+    21f8:	aa1503e0 	mov	x0, x21
+    21fc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2200:	91000021 	add	x1, x1, #0x0
+[31m    2204:	94000000 	bl	0 <sprintf>[0m
+    2208:	17ffff0c 	b	1e38 <iscsi_session_get_param+0x38>
+    220c:	52800141 	mov	w1, #0xa                   	// #10
+--
+    2240:	94000000 	bl	0 <_mcount>
+    2244:	79400280 	ldrh	w0, [x20]
+    2248:	7100081f 	cmp	w0, #0x2
+    224c:	540003a0 	b.eq	22c0 <iscsi_conn_get_addr_param+0xa0>  // b.none
+    2250:	7100281f 	cmp	w0, #0xa
+    2254:	540002c1 	b.ne	22ac <iscsi_conn_get_addr_param+0x8c>  // b.any
+    2258:	7100567f 	cmp	w19, #0x15
+    225c:	54000500 	b.eq	22fc <iscsi_conn_get_addr_param+0xdc>  // b.none
+    2260:	54000228 	b.hi	22a4 <iscsi_conn_get_addr_param+0x84>  // b.pmore
+    2264:	71000e7f 	cmp	w19, #0x3
+    2268:	540004a0 	b.eq	22fc <iscsi_conn_get_addr_param+0xdc>  // b.none
+    226c:	7100527f 	cmp	w19, #0x14
+    2270:	540001e1 	b.ne	22ac <iscsi_conn_get_addr_param+0x8c>  // b.any
+    2274:	79400682 	ldrh	w2, [x20, #2]
+    2278:	aa1503e0 	mov	x0, x21
+    227c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2280:	91000021 	add	x1, x1, #0x0
+    2284:	53087c43 	lsr	w3, w2, #8
+    2288:	2a022062 	orr	w2, w3, w2, lsl #8
+    228c:	12003c42 	and	w2, w2, #0xffff
+[31m    2290:	94000000 	bl	0 <sprintf>[0m
+    2294:	a94153f3 	ldp	x19, x20, [sp, #16]
+    2298:	f94013f5 	ldr	x21, [sp, #32]
+    229c:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    22a0:	d65f03c0 	ret
+    22a4:	7100da7f 	cmp	w19, #0x36
+    22a8:	54fffe60 	b.eq	2274 <iscsi_conn_get_addr_param+0x54>  // b.none
+    22ac:	128002a0 	mov	w0, #0xffffffea            	// #-22
+    22b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    22b4:	f94013f5 	ldr	x21, [sp, #32]
+    22b8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    22bc:	d65f03c0 	ret
+    22c0:	7100567f 	cmp	w19, #0x15
+    22c4:	54000080 	b.eq	22d4 <iscsi_conn_get_addr_param+0xb4>  // b.none
+    22c8:	54fffee8 	b.hi	22a4 <iscsi_conn_get_addr_param+0x84>  // b.pmore
+    22cc:	71000e7f 	cmp	w19, #0x3
+    22d0:	54fffce1 	b.ne	226c <iscsi_conn_get_addr_param+0x4c>  // b.any
+    22d4:	b4000154 	cbz	x20, 22fc <iscsi_conn_get_addr_param+0xdc>
+    22d8:	91001282 	add	x2, x20, #0x4
+    22dc:	aa1503e0 	mov	x0, x21
+    22e0:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    22e4:	91000021 	add	x1, x1, #0x0
+[31m    22e8:	94000000 	bl	0 <sprintf>[0m
+    22ec:	a94153f3 	ldp	x19, x20, [sp, #16]
+    22f0:	f94013f5 	ldr	x21, [sp, #32]
+    22f4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    22f8:	d65f03c0 	ret
+    22fc:	91002282 	add	x2, x20, #0x8
+    2300:	aa1503e0 	mov	x0, x21
+    2304:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2308:	91000021 	add	x1, x1, #0x0
+[31m    230c:	94000000 	bl	0 <sprintf>[0m
+    2310:	17ffffe8 	b	22b0 <iscsi_conn_get_addr_param+0x90>
+    2314:	d503201f 	nop
+--
+    2334:	aa0203f5 	mov	x21, x2
+    2338:	94000000 	bl	0 <_mcount>
+    233c:	71011e7f 	cmp	w19, #0x47
+    2340:	f9400a81 	ldr	x1, [x20, #16]
+    2344:	540000c9 	b.ls	235c <iscsi_conn_get_param+0x44>  // b.plast
+    2348:	128004a0 	mov	w0, #0xffffffda            	// #-38
+    234c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    2350:	f94013f5 	ldr	x21, [sp, #32]
+    2354:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    2358:	d65f03c0 	ret
+    235c:	90000000 	adrp	x0, 0 <iscsi_itt_to_task>
+    2360:	91000000 	add	x0, x0, #0x0
+    2364:	78735800 	ldrh	w0, [x0, w19, uxtw #1]
+    2368:	10000062 	adr	x2, 2374 <iscsi_conn_get_param+0x5c>
+    236c:	8b20a840 	add	x0, x2, w0, sxth #2
+    2370:	d61f0000 	br	x0
+    2374:	f940d822 	ldr	x2, [x1, #432]
+    2378:	aa1503e0 	mov	x0, x21
+    237c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2380:	91000021 	add	x1, x1, #0x0
+[31m    2384:	94000000 	bl	0 <sprintf>[0m
+    2388:	17fffff1 	b	234c <iscsi_conn_get_param+0x34>
+    238c:	3946a422 	ldrb	w2, [x1, #425]
+    2390:	aa1503e0 	mov	x0, x21
+    2394:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2398:	91000021 	add	x1, x1, #0x0
+[31m    239c:	94000000 	bl	0 <sprintf>[0m
+    23a0:	17ffffeb 	b	234c <iscsi_conn_get_param+0x34>
+    23a4:	3946a022 	ldrb	w2, [x1, #424]
+    23a8:	aa1503e0 	mov	x0, x21
+    23ac:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    23b0:	91000021 	add	x1, x1, #0x0
+[31m    23b4:	94000000 	bl	0 <sprintf>[0m
+    23b8:	17ffffe5 	b	234c <iscsi_conn_get_param+0x34>
+    23bc:	39469c22 	ldrb	w2, [x1, #423]
+    23c0:	aa1503e0 	mov	x0, x21
+    23c4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    23c8:	91000021 	add	x1, x1, #0x0
+[31m    23cc:	94000000 	bl	0 <sprintf>[0m
+    23d0:	17ffffdf 	b	234c <iscsi_conn_get_param+0x34>
+    23d4:	39469822 	ldrb	w2, [x1, #422]
+    23d8:	aa1503e0 	mov	x0, x21
+    23dc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    23e0:	91000021 	add	x1, x1, #0x0
+[31m    23e4:	94000000 	bl	0 <sprintf>[0m
+    23e8:	17ffffd9 	b	234c <iscsi_conn_get_param+0x34>
+    23ec:	39469422 	ldrb	w2, [x1, #421]
+    23f0:	aa1503e0 	mov	x0, x21
+    23f4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    23f8:	91000021 	add	x1, x1, #0x0
+[31m    23fc:	94000000 	bl	0 <sprintf>[0m
+    2400:	17ffffd3 	b	234c <iscsi_conn_get_param+0x34>
+    2404:	b9419822 	ldr	w2, [x1, #408]
+    2408:	aa1503e0 	mov	x0, x21
+    240c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2410:	91000021 	add	x1, x1, #0x0
+[31m    2414:	94000000 	bl	0 <sprintf>[0m
+    2418:	17ffffcd 	b	234c <iscsi_conn_get_param+0x34>
+    241c:	b9419422 	ldr	w2, [x1, #404]
+    2420:	aa1503e0 	mov	x0, x21
+    2424:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2428:	91000021 	add	x1, x1, #0x0
+[31m    242c:	94000000 	bl	0 <sprintf>[0m
+    2430:	17ffffc7 	b	234c <iscsi_conn_get_param+0x34>
+    2434:	39469022 	ldrb	w2, [x1, #420]
+    2438:	aa1503e0 	mov	x0, x21
+    243c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2440:	91000021 	add	x1, x1, #0x0
+[31m    2444:	94000000 	bl	0 <sprintf>[0m
+    2448:	17ffffc1 	b	234c <iscsi_conn_get_param+0x34>
+    244c:	39468c22 	ldrb	w2, [x1, #419]
+    2450:	aa1503e0 	mov	x0, x21
+    2454:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2458:	91000021 	add	x1, x1, #0x0
+[31m    245c:	94000000 	bl	0 <sprintf>[0m
+    2460:	17ffffbb 	b	234c <iscsi_conn_get_param+0x34>
+    2464:	39468422 	ldrb	w2, [x1, #417]
+    2468:	aa1503e0 	mov	x0, x21
+    246c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2470:	91000021 	add	x1, x1, #0x0
+[31m    2474:	94000000 	bl	0 <sprintf>[0m
+    2478:	17ffffb5 	b	234c <iscsi_conn_get_param+0x34>
+    247c:	39468822 	ldrb	w2, [x1, #418]
+    2480:	aa1503e0 	mov	x0, x21
+    2484:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2488:	91000021 	add	x1, x1, #0x0
+[31m    248c:	94000000 	bl	0 <sprintf>[0m
+    2490:	17ffffaf 	b	234c <iscsi_conn_get_param+0x34>
+    2494:	39468022 	ldrb	w2, [x1, #416]
+    2498:	aa1503e0 	mov	x0, x21
+    249c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    24a0:	91000021 	add	x1, x1, #0x0
+[31m    24a4:	94000000 	bl	0 <sprintf>[0m
+    24a8:	17ffffa9 	b	234c <iscsi_conn_get_param+0x34>
+    24ac:	79433c22 	ldrh	w2, [x1, #414]
+    24b0:	aa1503e0 	mov	x0, x21
+    24b4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    24b8:	91000021 	add	x1, x1, #0x0
+[31m    24bc:	94000000 	bl	0 <sprintf>[0m
+    24c0:	17ffffa3 	b	234c <iscsi_conn_get_param+0x34>
+    24c4:	79433822 	ldrh	w2, [x1, #412]
+    24c8:	aa1503e0 	mov	x0, x21
+    24cc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    24d0:	91000021 	add	x1, x1, #0x0
+[31m    24d4:	94000000 	bl	0 <sprintf>[0m
+    24d8:	17ffff9d 	b	234c <iscsi_conn_get_param+0x34>
+    24dc:	b9406c22 	ldr	w2, [x1, #108]
+    24e0:	aa1503e0 	mov	x0, x21
+    24e4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    24e8:	91000021 	add	x1, x1, #0x0
+[31m    24ec:	94000000 	bl	0 <sprintf>[0m
+    24f0:	17ffff97 	b	234c <iscsi_conn_get_param+0x34>
+    24f4:	b9419022 	ldr	w2, [x1, #400]
+    24f8:	aa1503e0 	mov	x0, x21
+    24fc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2500:	91000021 	add	x1, x1, #0x0
+[31m    2504:	94000000 	bl	0 <sprintf>[0m
+    2508:	17ffff91 	b	234c <iscsi_conn_get_param+0x34>
+    250c:	b9405c22 	ldr	w2, [x1, #92]
+    2510:	aa1503e0 	mov	x0, x21
+    2514:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2518:	91000021 	add	x1, x1, #0x0
+[31m    251c:	94000000 	bl	0 <sprintf>[0m
+    2520:	17ffff8b 	b	234c <iscsi_conn_get_param+0x34>
+    2524:	b9405822 	ldr	w2, [x1, #88]
+    2528:	aa1503e0 	mov	x0, x21
+    252c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2530:	91000021 	add	x1, x1, #0x0
+[31m    2534:	94000000 	bl	0 <sprintf>[0m
+    2538:	17ffff85 	b	234c <iscsi_conn_get_param+0x34>
+    253c:	b9418422 	ldr	w2, [x1, #388]
+    2540:	aa1503e0 	mov	x0, x21
+    2544:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2548:	91000021 	add	x1, x1, #0x0
+[31m    254c:	94000000 	bl	0 <sprintf>[0m
+    2550:	17ffff7f 	b	234c <iscsi_conn_get_param+0x34>
+    2554:	f940c422 	ldr	x2, [x1, #392]
+    2558:	aa1503e0 	mov	x0, x21
+    255c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2560:	91000021 	add	x1, x1, #0x0
+[31m    2564:	94000000 	bl	0 <sprintf>[0m
+    2568:	17ffff79 	b	234c <iscsi_conn_get_param+0x34>
+    256c:	b9406822 	ldr	w2, [x1, #104]
+    2570:	aa1503e0 	mov	x0, x21
+    2574:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2578:	91000021 	add	x1, x1, #0x0
+[31m    257c:	94000000 	bl	0 <sprintf>[0m
+    2580:	17ffff73 	b	234c <iscsi_conn_get_param+0x34>
+    2584:	b9418022 	ldr	w2, [x1, #384]
+    2588:	aa1503e0 	mov	x0, x21
+    258c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2590:	91000021 	add	x1, x1, #0x0
+[31m    2594:	94000000 	bl	0 <sprintf>[0m
+    2598:	17ffff6d 	b	234c <iscsi_conn_get_param+0x34>
+    259c:	b9417c22 	ldr	w2, [x1, #380]
+    25a0:	aa1503e0 	mov	x0, x21
+    25a4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    25a8:	91000021 	add	x1, x1, #0x0
+[31m    25ac:	94000000 	bl	0 <sprintf>[0m
+    25b0:	17ffff67 	b	234c <iscsi_conn_get_param+0x34>
+    25b4:	b9417822 	ldr	w2, [x1, #376]
+    25b8:	aa1503e0 	mov	x0, x21
+    25bc:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    25c0:	91000021 	add	x1, x1, #0x0
+[31m    25c4:	94000000 	bl	0 <sprintf>[0m
+    25c8:	17ffff61 	b	234c <iscsi_conn_get_param+0x34>
+    25cc:	b9417422 	ldr	w2, [x1, #372]
+    25d0:	aa1503e0 	mov	x0, x21
+    25d4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    25d8:	91000021 	add	x1, x1, #0x0
+[31m    25dc:	94000000 	bl	0 <sprintf>[0m
+    25e0:	17ffff5b 	b	234c <iscsi_conn_get_param+0x34>
+    25e4:	b9417022 	ldr	w2, [x1, #368]
+    25e8:	aa1503e0 	mov	x0, x21
+    25ec:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    25f0:	91000021 	add	x1, x1, #0x0
+[31m    25f4:	94000000 	bl	0 <sprintf>[0m
+    25f8:	17ffff55 	b	234c <iscsi_conn_get_param+0x34>
+    25fc:	b9416c22 	ldr	w2, [x1, #364]
+    2600:	aa1503e0 	mov	x0, x21
+    2604:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    2608:	91000021 	add	x1, x1, #0x0
+[31m    260c:	94000000 	bl	0 <sprintf>[0m
+    2610:	17ffff4f 	b	234c <iscsi_conn_get_param+0x34>
+    2614:	d503201f 	nop
+--
+    3c7c:	f90013f5 	str	x21, [sp, #32]
+    3c80:	2a0103f3 	mov	w19, w1
+    3c84:	aa0003f5 	mov	x21, x0
+    3c88:	aa0203f4 	mov	x20, x2
+    3c8c:	aa1e03e0 	mov	x0, x30
+    3c90:	94000000 	bl	0 <_mcount>
+    3c94:	7100067f 	cmp	w19, #0x1
+    3c98:	54000120 	b.eq	3cbc <iscsi_host_get_param+0x4c>  // b.none
+    3c9c:	71000a7f 	cmp	w19, #0x2
+    3ca0:	54000320 	b.eq	3d04 <iscsi_host_get_param+0x94>  // b.none
+    3ca4:	128004a0 	mov	w0, #0xffffffda            	// #-38
+    3ca8:	340001d3 	cbz	w19, 3ce0 <iscsi_host_get_param+0x70>
+    3cac:	a94153f3 	ldp	x19, x20, [sp, #16]
+    3cb0:	f94013f5 	ldr	x21, [sp, #32]
+    3cb4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    3cb8:	d65f03c0 	ret
+    3cbc:	f943e6a2 	ldr	x2, [x21, #1992]
+    3cc0:	aa1403e0 	mov	x0, x20
+    3cc4:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    3cc8:	91000021 	add	x1, x1, #0x0
+[31m    3ccc:	94000000 	bl	0 <sprintf>[0m
+    3cd0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    3cd4:	f94013f5 	ldr	x21, [sp, #32]
+    3cd8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    3cdc:	d65f03c0 	ret
+    3ce0:	f943eaa2 	ldr	x2, [x21, #2000]
+    3ce4:	aa1403e0 	mov	x0, x20
+    3ce8:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    3cec:	91000021 	add	x1, x1, #0x0
+[31m    3cf0:	94000000 	bl	0 <sprintf>[0m
+    3cf4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    3cf8:	f94013f5 	ldr	x21, [sp, #32]
+    3cfc:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    3d00:	d65f03c0 	ret
+    3d04:	f943eea2 	ldr	x2, [x21, #2008]
+    3d08:	aa1403e0 	mov	x0, x20
+    3d0c:	90000001 	adrp	x1, 0 <iscsi_itt_to_task>
+    3d10:	91000021 	add	x1, x1, #0x0
+[31m    3d14:	94000000 	bl	0 <sprintf>[0m
+    3d18:	a94153f3 	ldp	x19, x20, [sp, #16]
+    3d1c:	f94013f5 	ldr	x21, [sp, #32]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m72[0m times [0;33mlibiscsi.ko[0m
+

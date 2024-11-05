@@ -1,0 +1,154 @@
+[[0;33m*[0m] Binary protection state of [0;33mcifs.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m2871) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mcifs.ko[0m
+
+    1dcc:	121d7273 	and	w19, w19, #0xfffffff8
+    1dd0:	910203a1 	add	x1, x29, #0x80
+    1dd4:	51001273 	sub	w19, w19, #0x4
+    1dd8:	2a1303e0 	mov	w0, w19
+    1ddc:	94000000 	bl	0 <perf_trace_buf_alloc>
+    1de0:	aa0003e4 	mov	x4, x0
+    1de4:	b4000320 	cbz	x0, 1e48 <perf_trace_smb3_inf_compound_enter_class+0x110>
+    1de8:	f94043a2 	ldr	x2, [x29, #128]
+    1dec:	910003e5 	mov	x5, sp
+    1df0:	d28000a3 	mov	x3, #0x5                   	// #5
+    1df4:	aa1403e1 	mov	x1, x20
+    1df8:	91007000 	add	x0, x0, #0x1c
+    1dfc:	f900745d 	str	x29, [x2, #232]
+    1e00:	a90fec45 	stp	x5, x27, [x2, #248]
+    1e04:	f9008443 	str	x3, [x2, #264]
+    1e08:	f94037a2 	ldr	x2, [x29, #104]
+    1e0c:	2901649a 	stp	w26, w25, [x4, #8]
+    1e10:	f9000882 	str	x2, [x4, #16]
+    1e14:	b9001897 	str	w23, [x4, #24]
+    1e18:	f90037a4 	str	x4, [x29, #104]
+[31m    1e1c:	94000000 	bl	0 <strcpy>[0m
+    1e20:	b9407fa2 	ldr	w2, [x29, #124]
+    1e24:	aa1c03e6 	mov	x6, x28
+--
+    1f30:	121d7273 	and	w19, w19, #0xfffffff8
+    1f34:	910203a1 	add	x1, x29, #0x80
+    1f38:	51001273 	sub	w19, w19, #0x4
+    1f3c:	2a1303e0 	mov	w0, w19
+    1f40:	94000000 	bl	0 <perf_trace_buf_alloc>
+    1f44:	aa0003e4 	mov	x4, x0
+    1f48:	b4000360 	cbz	x0, 1fb4 <perf_trace_smb3_tcon_class+0x11c>
+    1f4c:	f94043a2 	ldr	x2, [x29, #128]
+    1f50:	910003e5 	mov	x5, sp
+    1f54:	d28000a3 	mov	x3, #0x5                   	// #5
+    1f58:	aa1403e1 	mov	x1, x20
+    1f5c:	91008000 	add	x0, x0, #0x20
+    1f60:	f900745d 	str	x29, [x2, #232]
+    1f64:	a90fec45 	stp	x5, x27, [x2, #248]
+    1f68:	f9008443 	str	x3, [x2, #264]
+    1f6c:	f94037a2 	ldr	x2, [x29, #104]
+    1f70:	2901649a 	stp	w26, w25, [x4, #8]
+    1f74:	f9000882 	str	x2, [x4, #16]
+    1f78:	b9001897 	str	w23, [x4, #24]
+    1f7c:	f90037a4 	str	x4, [x29, #104]
+[31m    1f80:	94000000 	bl	0 <strcpy>[0m
+    1f84:	f94037a4 	ldr	x4, [x29, #104]
+    1f88:	aa1c03e6 	mov	x6, x28
+--
+    204c:	3730031a 	tbnz	w26, #6, 20ac <trace_event_raw_event_smb3_tcon_class+0xac>
+    2050:	3748063a 	tbnz	w26, #9, 2114 <trace_event_raw_event_smb3_tcon_class+0x114>
+    2054:	b4000433 	cbz	x19, 20d8 <trace_event_raw_event_smb3_tcon_class+0xd8>
+    2058:	aa1303e0 	mov	x0, x19
+    205c:	94000000 	bl	0 <strlen>
+    2060:	11000400 	add	w0, w0, #0x1
+    2064:	aa1403e1 	mov	x1, x20
+    2068:	53103c1a 	lsl	w26, w0, #16
+    206c:	93407c00 	sxtw	x0, w0
+    2070:	91008002 	add	x2, x0, #0x20
+    2074:	321b035a 	orr	w26, w26, #0x20
+    2078:	910163e0 	add	x0, sp, #0x58
+    207c:	94000000 	bl	0 <trace_event_buffer_reserve>
+    2080:	aa0003f4 	mov	x20, x0
+    2084:	b4000140 	cbz	x0, 20ac <trace_event_raw_event_smb3_tcon_class+0xac>
+    2088:	29015e98 	stp	w24, w23, [x20, #8]
+    208c:	aa1303e1 	mov	x1, x19
+    2090:	f9000a96 	str	x22, [x20, #16]
+    2094:	91008000 	add	x0, x0, #0x20
+    2098:	b9001a9a 	str	w26, [x20, #24]
+[31m    209c:	94000000 	bl	0 <strcpy>[0m
+    20a0:	b9001e99 	str	w25, [x20, #28]
+    20a4:	910163e0 	add	x0, sp, #0x58
+--
+    35a0:	373002f9 	tbnz	w25, #6, 35fc <trace_event_raw_event_smb3_inf_compound_enter_class+0xa4>
+    35a4:	37480619 	tbnz	w25, #9, 3664 <trace_event_raw_event_smb3_inf_compound_enter_class+0x10c>
+    35a8:	b4000413 	cbz	x19, 3628 <trace_event_raw_event_smb3_inf_compound_enter_class+0xd0>
+    35ac:	aa1303e0 	mov	x0, x19
+    35b0:	94000000 	bl	0 <strlen>
+    35b4:	11000400 	add	w0, w0, #0x1
+    35b8:	aa1503e1 	mov	x1, x21
+    35bc:	53103c19 	lsl	w25, w0, #16
+    35c0:	93407c00 	sxtw	x0, w0
+    35c4:	91008002 	add	x2, x0, #0x20
+    35c8:	321e0b39 	orr	w25, w25, #0x1c
+    35cc:	910163e0 	add	x0, sp, #0x58
+    35d0:	94000000 	bl	0 <trace_event_buffer_reserve>
+    35d4:	aa0003e4 	mov	x4, x0
+    35d8:	b4000120 	cbz	x0, 35fc <trace_event_raw_event_smb3_inf_compound_enter_class+0xa4>
+    35dc:	aa1303e1 	mov	x1, x19
+    35e0:	29015c98 	stp	w24, w23, [x4, #8]
+    35e4:	f9000896 	str	x22, [x4, #16]
+    35e8:	91007000 	add	x0, x0, #0x1c
+    35ec:	b9001899 	str	w25, [x4, #24]
+[31m    35f0:	94000000 	bl	0 <strcpy>[0m
+    35f4:	910163e0 	add	x0, sp, #0x58
+    35f8:	94000000 	bl	0 <trace_event_buffer_commit>
+--
+   16b68:	f9402680 	ldr	x0, [x20, #72]
+   16b6c:	3947e800 	ldrb	w0, [x0, #506]
+   16b70:	34000080 	cbz	w0, 16b80 <CIFSTCon+0xc8>
+   16b74:	79401e60 	ldrh	w0, [x19, #14]
+   16b78:	321e0000 	orr	w0, w0, #0x4
+   16b7c:	79001e60 	strh	w0, [x19, #14]
+   16b80:	b9408a80 	ldr	w0, [x20, #136]
+   16b84:	363000a0 	tbz	w0, #6, 16b98 <CIFSTCon+0xe0>
+   16b88:	79401e60 	ldrh	w0, [x19, #14]
+   16b8c:	32120000 	orr	w0, w0, #0x4000
+   16b90:	79001e60 	strh	w0, [x19, #14]
+   16b94:	b9408a80 	ldr	w0, [x20, #136]
+   16b98:	366000a0 	tbz	w0, #12, 16bac <CIFSTCon+0xf4>
+   16b9c:	79401e60 	ldrh	w0, [x19, #14]
+   16ba0:	32140000 	orr	w0, w0, #0x1000
+   16ba4:	79001e60 	strh	w0, [x19, #14]
+   16ba8:	b9408a80 	ldr	w0, [x20, #136]
+   16bac:	37100f00 	tbnz	w0, #2, 16d8c <CIFSTCon+0x2d4>
+   16bb0:	aa1703e1 	mov	x1, x23
+   16bb4:	aa1b03e0 	mov	x0, x27
+[31m   16bb8:	94000000 	bl	0 <strcpy>[0m
+   16bbc:	aa1703e0 	mov	x0, x23
+   16bc0:	94000000 	bl	0 <strlen>
+--
+   39934:	f94002c1 	ldr	x1, [x22]
+   39938:	b40000e1 	cbz	x1, 39954 <ascii_ssetup_strings.isra.0+0x6c>
+   3993c:	aa1303e0 	mov	x0, x19
+   39940:	d2802002 	mov	x2, #0x100                 	// #256
+   39944:	94000000 	bl	0 <strscpy>
+   39948:	37f80440 	tbnz	w0, #31, 399d0 <ascii_ssetup_strings.isra.0+0xe8>
+   3994c:	93407c00 	sxtw	x0, w0
+   39950:	8b000273 	add	x19, x19, x0
+   39954:	aa1303e2 	mov	x2, x19
+   39958:	90000003 	adrp	x3, 0 <perf_trace_smb3_rw_err_class>
+   3995c:	91000063 	add	x3, x3, #0x0
+   39960:	90000016 	adrp	x22, 0 <init_uts_ns>
+   39964:	910002c1 	add	x1, x22, #0x0
+   39968:	91003e74 	add	x20, x19, #0xf
+   3996c:	3800145f 	strb	wzr, [x2], #1
+   39970:	aa1403e0 	mov	x0, x20
+   39974:	f9400064 	ldr	x4, [x3]
+   39978:	f8001264 	stur	x4, [x19, #1]
+   3997c:	f8407063 	ldur	x3, [x3, #7]
+   39980:	f8007043 	stur	x3, [x2, #7]
+[31m   39984:	94000000 	bl	0 <strcpy>[0m
+   39988:	910002c0 	add	x0, x22, #0x0
+   3998c:	94000000 	bl	0 <strlen>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m6[0m times [0;33mcifs.ko[0m
+

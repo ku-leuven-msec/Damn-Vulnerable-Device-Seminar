@@ -1,0 +1,45 @@
+[[0;33m*[0m] Binary protection state of [0;33mspeakup.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m763) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mspeakup.ko[0m
+
+    a6a4:	2a0203f3 	mov	w19, w2
+    a6a8:	aa0003f5 	mov	x21, x0
+    a6ac:	aa1e03e0 	mov	x0, x30
+    a6b0:	94000000 	bl	0 <_mcount>
+    a6b4:	f9400e82 	ldr	x2, [x20, #24]
+    a6b8:	b4000442 	cbz	x2, a740 <spk_set_string_var+0xb0>
+    a6bc:	71003e7f 	cmp	w19, #0xf
+    a6c0:	5400034c 	b.gt	a728 <spk_set_string_var+0x98>
+    a6c4:	35000113 	cbnz	w19, a6e4 <spk_set_string_var+0x54>
+    a6c8:	f9400441 	ldr	x1, [x2, #8]
+    a6cc:	b5000201 	cbnz	x1, a70c <spk_set_string_var+0x7c>
+    a6d0:	2a1303e0 	mov	w0, w19
+    a6d4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    a6d8:	f94013f5 	ldr	x21, [sp, #32]
+    a6dc:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    a6e0:	d65f03c0 	ret
+    a6e4:	f9400a80 	ldr	x0, [x20, #16]
+    a6e8:	b4000200 	cbz	x0, a728 <spk_set_string_var+0x98>
+    a6ec:	aa1503e1 	mov	x1, x21
+    a6f0:	52800013 	mov	w19, #0x0                   	// #0
+[31m    a6f4:	94000000 	bl	0 <strcpy>[0m
+    a6f8:	2a1303e0 	mov	w0, w19
+    a6fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    a700:	f94013f5 	ldr	x21, [sp, #32]
+    a704:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    a708:	d65f03c0 	ret
+    a70c:	f9400a80 	ldr	x0, [x20, #16]
+    a710:	b4000100 	cbz	x0, a730 <spk_set_string_var+0xa0>
+    a714:	eb01001f 	cmp	x0, x1
+    a718:	12800a93 	mov	w19, #0xffffffab            	// #-85
+    a71c:	54fffda0 	b.eq	a6d0 <spk_set_string_var+0x40>  // b.none
+[31m    a720:	94000000 	bl	0 <strcpy>[0m
+    a724:	17fffff5 	b	a6f8 <spk_set_string_var+0x68>
+    a728:	128000d3 	mov	w19, #0xfffffff9            	// #-7
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mspeakup.ko[0m
+

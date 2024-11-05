@@ -1,0 +1,63 @@
+[[0;34m+[0m] [0;36m[1mCheck bootloader and system startup[0m
+[1m=================================================================[0m
+
+[0;34m==>[0m [0;36mScan for device tree blobs[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No device tree blobs found
+
+[0;34m==>[0m [0;36mScan for bootloader[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No Syslinux configuration file found
+[[0;31m-[0m] No Grub configuration file found
+[[0;31m-[0m] No Grub configuration file found
+[[0;31m-[0m] No Grub configuration check
+[[0;31m-[0m] No FreeBSD or DragonFly bootloader files found
+[[0;31m-[0m] No LILO configuration file found
+[[0;31m-[0m] No SILO configuration file found
+[[0;31m-[0m] No YABOOT configuration file found
+[[0;31m-[0m] No OpenBSD/bootstrap files found
+[[0;31m-[0m] No OpenBSD configuration file found
+[[0;31m-[0m] No bootloader found
+
+[0;34m==>[0m [0;36mScan for startup files[0m
+-----------------------------------------------------------------
+[[0;32m+[0m][0;32m Found 33 startup files:[0m
+    [0;33m/log/firmware/firmware/etc/avahi/services/sftp-ssh.service (-rw-r--r-- root root)[0m
+    [0;33m/log/firmware/firmware/etc/avahi/services/ssh.service (-rw-r--r-- root root)[0m
+    [0;33m/log/firmware/firmware/etc/default/rcS (-rw-r--r-- root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/alsa-state (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/banner.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/bootlogd (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/bootmisc.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/checkroot.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/devpts.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/dmesg.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/hostname.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/keymap.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/modutils.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/mountall.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/populate-volatile.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/psplash.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/rcS (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/read-only-rootfs-hook.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/sysfs.sh (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/udev (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/init.d/urandom (-rwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/inittab (-rw-r--r-- root root)[0m
+    [0;33m/log/firmware/firmware/etc/rc0.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/rc1.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/rc2.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/rc3.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/rc4.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/rc5.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/rc6.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/etc/rcS.d (drwxr-xr-x root root)[0m
+    [0;33m/log/firmware/firmware/usr/lib/systemd/user/dbus.service (-rw-r--r-- root root)[0m
+    [0;33m/log/firmware/firmware/usr/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service (-rw-r--r-- root root)[0m
+
+[0;34m==>[0m [0;36mCheck default run level[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Check runlevel in /log/firmware/firmware/etc/inittab (-rw-r--r-- root root)
+[[0;32m+[0m][0;32m Found default run level: [0;33m5[0m[0m
+[[0;33m*[0m] Sun Nov 14 06:54:33 EST 2021 - S15_bootloader_check finished

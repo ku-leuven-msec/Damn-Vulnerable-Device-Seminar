@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mdirmngr[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mdirmngr[0m
+
+   174c0:	91000401 	add	x1, x0, #0x1
+   174c4:	8b010273 	add	x19, x19, x1
+   174c8:	aa1603e0 	mov	x0, x22
+   174cc:	97ffcfe5 	bl	b460 <gcry_free@plt>
+   174d0:	f9409be0 	ldr	x0, [sp, #304]
+   174d4:	2a1503e1 	mov	w1, w21
+   174d8:	97ffce16 	bl	ad30 <ksba_name_enum@plt>
+   174dc:	aa0003fc 	mov	x28, x0
+   174e0:	b5fffe00 	cbnz	x0, 174a0 <gpgrt_snprintf@plt+0xb830>
+   174e4:	91000660 	add	x0, x19, #0x1
+   174e8:	f94047f5 	ldr	x21, [sp, #136]
+   174ec:	97ffce49 	bl	ae10 <gcry_malloc@plt>
+   174f0:	aa0003f3 	mov	x19, x0
+   174f4:	b40022e0 	cbz	x0, 17950 <gpgrt_snprintf@plt+0xbce0>
+   174f8:	3900001f 	strb	wzr, [x0]
+   174fc:	14000008 	b	1751c <gpgrt_snprintf@plt+0xb8ac>
+   17500:	f10002df 	cmp	x22, #0x0
+   17504:	aa1303e0 	mov	x0, x19
+   17508:	9a960381 	csel	x1, x28, x22, eq  // eq = none
+   1750c:	1100077b 	add	w27, w27, #0x1
+[31m   17510:	97ffcc44 	bl	a620 <strcat@plt>[0m
+   17514:	aa1603e0 	mov	x0, x22
+   17518:	97ffcfd2 	bl	b460 <gcry_free@plt>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mdirmngr[0m
+

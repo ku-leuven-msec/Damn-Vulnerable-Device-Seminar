@@ -1,0 +1,88 @@
+[[0;33m*[0m] Binary protection state of [0;33mhfsplus.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m491) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mhfsplus.ko[0m
+
+    d324:	a9025bf5 	stp	x21, x22, [sp, #32]
+    d328:	a90363f7 	stp	x23, x24, [sp, #48]
+    d32c:	a9046bf9 	stp	x25, x26, [sp, #64]
+    d330:	aa0103f9 	mov	x25, x1
+    d334:	aa0203f5 	mov	x21, x2
+    d338:	aa0303f6 	mov	x22, x3
+    d33c:	2a0403f7 	mov	w23, w4
+    d340:	aa0503fa 	mov	x26, x5
+    d344:	aa0603f8 	mov	x24, x6
+    d348:	aa0003f4 	mov	x20, x0
+    d34c:	aa1e03e0 	mov	x0, x30
+    d350:	94000000 	bl	0 <_mcount>
+    d354:	90000000 	adrp	x0, 0 <kmalloc_caches>
+    d358:	d2805f62 	mov	x2, #0x2fb                 	// #763
+    d35c:	52819801 	mov	w1, #0xcc0                 	// #3264
+    d360:	f9400000 	ldr	x0, [x0]
+    d364:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    d368:	aa0003f3 	mov	x19, x0
+    d36c:	b40002c0 	cbz	x0, d3c4 <hfsplus_setxattr+0xac>
+    d370:	aa1a03e1 	mov	x1, x26
+[31m    d374:	94000000 	bl	0 <strcpy>[0m
+    d378:	aa1903e1 	mov	x1, x25
+    d37c:	8b180260 	add	x0, x19, x24
+[31m    d380:	94000000 	bl	0 <strcpy>[0m
+    d384:	2a1703e4 	mov	w4, w23
+    d388:	aa1603e3 	mov	x3, x22
+--
+    d698:	a90153f3 	stp	x19, x20, [sp, #16]
+    d69c:	a9025bf5 	stp	x21, x22, [sp, #32]
+    d6a0:	a90363f7 	stp	x23, x24, [sp, #48]
+    d6a4:	f90023f9 	str	x25, [sp, #64]
+    d6a8:	aa0103f8 	mov	x24, x1
+    d6ac:	aa0203f5 	mov	x21, x2
+    d6b0:	aa0303f6 	mov	x22, x3
+    d6b4:	aa0403f9 	mov	x25, x4
+    d6b8:	aa0503f7 	mov	x23, x5
+    d6bc:	aa0003f4 	mov	x20, x0
+    d6c0:	aa1e03e0 	mov	x0, x30
+    d6c4:	94000000 	bl	0 <_mcount>
+    d6c8:	90000000 	adrp	x0, 0 <kmalloc_caches>
+    d6cc:	d2805f62 	mov	x2, #0x2fb                 	// #763
+    d6d0:	52819801 	mov	w1, #0xcc0                 	// #3264
+    d6d4:	f9400000 	ldr	x0, [x0]
+    d6d8:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    d6dc:	aa0003f3 	mov	x19, x0
+    d6e0:	b40002c0 	cbz	x0, d738 <hfsplus_getxattr+0xa8>
+    d6e4:	aa1903e1 	mov	x1, x25
+[31m    d6e8:	94000000 	bl	0 <strcpy>[0m
+    d6ec:	aa1803e1 	mov	x1, x24
+    d6f0:	8b170260 	add	x0, x19, x23
+[31m    d6f4:	94000000 	bl	0 <strcpy>[0m
+    d6f8:	aa1303e1 	mov	x1, x19
+    d6fc:	aa1603e3 	mov	x3, x22
+--
+    dce0:	52819801 	mov	w1, #0xcc0                 	// #3264
+    dce4:	f9400000 	ldr	x0, [x0]
+    dce8:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    dcec:	aa0003f4 	mov	x20, x0
+    dcf0:	b4000520 	cbz	x0, dd94 <hfsplus_initxattrs+0xdc>
+    dcf4:	f9400261 	ldr	x1, [x19]
+    dcf8:	b40003a1 	cbz	x1, dd6c <hfsplus_initxattrs+0xb4>
+    dcfc:	a90363f7 	stp	x23, x24, [sp, #48]
+    dd00:	90000017 	adrp	x23, 0 <hfsplus_statfs>
+    dd04:	91002418 	add	x24, x0, #0x9
+    dd08:	910002f7 	add	x23, x23, #0x0
+    dd0c:	d503201f 	nop
+    dd10:	39400021 	ldrb	w1, [x1]
+    dd14:	aa1803e0 	mov	x0, x24
+    dd18:	34000241 	cbz	w1, dd60 <hfsplus_initxattrs+0xa8>
+    dd1c:	f94002e2 	ldr	x2, [x23]
+    dd20:	f9400261 	ldr	x1, [x19]
+    dd24:	f9000282 	str	x2, [x20]
+    dd28:	794012e2 	ldrh	w2, [x23, #8]
+    dd2c:	79001282 	strh	w2, [x20, #8]
+[31m    dd30:	94000000 	bl	0 <strcpy>[0m
+    dd34:	f9400260 	ldr	x0, [x19]
+    dd38:	94000000 	bl	0 <strlen>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mhfsplus.ko[0m
+

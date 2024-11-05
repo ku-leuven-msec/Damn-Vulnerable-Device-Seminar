@@ -1,0 +1,342 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s103_deep_search.html" title="./../s103_deep_search.html" >&laquo; Back to s103_deep_search</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/lib-dynload/_ssl.cpython-38-aarch64-linux-gnu.so</span></pre>
+<pre>15:urredBIO_freeSSL_SESSION_get_ti.</pre>
+<pre>15:meoutSSL_SESSION_get_ti.</pre>
+<pre>15:meSSL_SESSION_get_ti.</pre>
+<pre>15:_lifetime_hintSSL_SESSION_get_id.</pre>
+<pre>15:FromSize_ti2d_SSL_SESSIONPyMem_.</pre>
+<pre>15:Mallocd2i_SSL_SESSIONPyMem_.</pre>
+<pre>15:PyErr_NoMemorySSL_CTX_ctrl_PyAr.</pre>
+<pre>15:g_Parse_SizeTSSL_CTX_get0_param.</pre>
+<pre>15:ARAM_get_flagsSSL_CTX_get_option.</pre>
+<pre>15:sSSL_CTX_clear_opti.</pre>
+<pre>15:onsSSL_CTX_set_option.</pre>
+<pre>15:sSSL_CTX_get_num_ti.</pre>
+<pre>15:ILState_EnsureSSL_get_ex_dataPy.</pre>
+<pre>15:eThreadmemsetSSL_CIPHER_get_nam.</pre>
+<pre>15:eSSL_CIPHER_get_ver.</pre>
+<pre>15:sionSSL_CIPHER_get_id.</pre>
+<pre>15:SSL_CIPHER_descrip.</pre>
+<pre>15:tionstrlenSSL_CIPHER_get_bit.</pre>
+<pre>15:sSSL_CIPHER_is_aead.</pre>
+<pre>15:SSL_CIPHER_get_cip.</pre>
+<pre>15:her_nidSSL_CIPHER_get_dig.</pre>
+<pre>15:est_nidSSL_CIPHER_get_kx_.</pre>
+<pre>15:nidSSL_CIPHER_get_aut.</pre>
+<pre>15:zeTOBJ_nid2lnSSL_select_next_pr.</pre>
+<pre>15:ect_GC_UnTrackSSL_SESSION_freeP.</pre>
+<pre>15:Weakref_NewRefSSL_freePyObject_.</pre>
+<pre>15:n_error_stringSSL_get_verify_res.</pre>
+<pre>15:et_ext_d2iOPENSSL_sk_numPyList_.</pre>
+<pre>15:NewOPENSSL_sk_valueOBJ_o.</pre>
+<pre>15:lePyTuple_NewSSL_get_servername.</pre>
+<pre>15:TBIO_free_allSSL_CTX_freeSSL_g.</pre>
+<pre>15:AttributeErrorSSL_SESSION_has_ti.</pre>
+<pre>15:lisecondspollSSL_get_current_co.</pre>
+<pre>15:ecodeFSDefaultSSL_get0_alpn_sele.</pre>
+<pre>15:ctedSSL_is_init_finish.</pre>
+<pre>15:edSSL_get_versionst.</pre>
+<pre>15:UnpackKeywordsSSL_session_reused.</pre>
+<pre>15:SSL_get_finishedP.</pre>
+<pre>15:yErr_FormatSSL_get_peer_finis.</pre>
+<pre>15:hedSSL_CTX_get_verify.</pre>
+<pre>15:_modeSSL_CTX_set_cipher.</pre>
+<pre>15:RR_clear_errorSSL_CTX_get_verify.</pre>
+<pre>15:_callbackSSL_CTX_set_verify.</pre>
+<pre>15:_OverflowErrorSSL_CTX_set_num_ti.</pre>
+<pre>15:cketsSSL_CTX_get_cert_s.</pre>
+<pre>15:heck_camemcpySSL_CTX_set_alpn_p.</pre>
+<pre>15:rotosSSL_CTX_set_alpn_s.</pre>
+<pre>15:F8CRYPTO_freeSSL_set_sessionX5.</pre>
+<pre>15:_NAME_freeOPENSSL_sk_pop_freeCR.</pre>
+<pre>15:TLSv1_2_methodSSL_CTX_newOpenSS.</pre>
+<pre>15:L_version_numSSL_CTX_set_sessio.</pre>
+<pre>15:n_id_contextSSL_CTX_set_post_h.</pre>
+<pre>15:2objBIO_writeSSL_verify_client_.</pre>
+<pre>15:shakei2d_X509SSL_CTX_set_defaul.</pre>
+<pre>15:IO_new_mem_bufSSL_CTX_get_defaul.</pre>
+<pre>15:t_passwd_cbSSL_CTX_get_defaul.</pre>
+<pre>15:t_passwd_cb_userdataPE.</pre>
+<pre>15:ed2i_X509_bioSSL_CTX_load_verif.</pre>
+<pre>15:_AsASCIIStringSSL_get_peer_certi.</pre>
+<pre>15:ficateSSL_get_SSL_CTXBIO_s_file.</pre>
+<pre>15:PyBytes_ResizeSSL_set_SSL_CTX_P.</pre>
+<pre>15:hainExceptionsSSL_get_rbioSSL_g.</pre>
+<pre>15:MonotonicClockSSL_writePyErr_Ch.</pre>
+<pre>15:eckSignalsSSL_get_errorSSL_.</pre>
+<pre>15:current_cipherSSL_get_ciphersPy.</pre>
+<pre>15:Callable_CheckSSL_CTX_callback_c.</pre>
+<pre>15:trlSSL_CTX_set_msg_ca.</pre>
+<pre>15:llbackSSL_CTX_set_keylog.</pre>
+<pre>15:ew_fpBIO_putsSSL_newSSL_CTX_se.</pre>
+<pre>15:t_default_passwd_cbSSL_CTX_set.</pre>
+<pre>15:_default_passwd_cb_userdataSS.</pre>
+<pre>15:ate_chain_fileSSL_CTX_use_Privat.</pre>
+<pre>15:eKey_fileSSL_CTX_check_priv.</pre>
+<pre>15:_PyObject_NewSSL_set_ex_dataSS.</pre>
+<pre>15:L_set_fdSSL_ctrla2i_IPADD.</pre>
+<pre>15:ET_STRING_freeSSL_set_accept_sta.</pre>
+<pre>15:teSSL_set_connect_st.</pre>
+<pre>15:ateSSL_set_post_hands.</pre>
+<pre>15:uthBIO_up_refSSL_set_bioSSL_ge.</pre>
+<pre>15:t_verify_modeSSL_get_verify_cal.</pre>
+<pre>15:lbackSSL_set_verifySSL.</pre>
+<pre>15:ect_MakeTpCallSSL_pendingSSL_do.</pre>
+<pre>15:_handshakeSSL_shutdownSSL_s.</pre>
+<pre>15:rseTuple_SizeTSSL_readSSL_get_s.</pre>
+<pre>15:utdownPyInit__sslPyType_ReadyP.</pre>
+<pre>15:ct_SetItemOpenSSL_versionlibssl.</pre>
+<pre>15:GLIBC_2.17OPENSSL_1_1_0OPENSSL_.</pre>
+<pre>179:n requires OpenSSL 1.0.1 or later.</pre>
+<pre>180:: %S] %s: %S (_ssl.c:%d)[%S:.</pre>
+<pre>180: %S] %s (_ssl.c:%d)[%S] %s .</pre>
+<pre>180:(_ssl.c:%d)%s (.</pre>
+<pre>180:_ssl.c:%d)iN.</pre>
+<pre>180:3.8.2/Modules/_ssl.cunknown.</pre>
+<pre>180:urn value from SSL_CTX_get_verify.</pre>
+<pre>180:-negativeSSLContext is not .</pre>
+<pre>180:bytesNNNNpassword cannot be long.</pre>
+<pre>180:le to allocate password bufferNs.</pre>
+<pre>180:Value is not a SSLSession.S.</pre>
+<pre>180:to a different SSLContext..</pre>
+<pre>180:or server-side SSLSocket.Canno.</pre>
+<pre>180:utionPoints_SSLContextint.</pre>
+<pre>180:alue must be a SSLContextInvali.</pre>
+<pre>180: codeTLS/SSL connection has.</pre>
+<pre>180:failure in the SSL library occurr.</pre>
+<pre>180:nerated by OpenSSL / Python.</pre>
+<pre>181:tem pathpassword should be a st.</pre>
+<pre>181:wrap_socketpassword callback must .</pre>
+<pre>181:urn a string_ssl.c:1091: The ha.</pre>
+<pre>181:on timed out_ssl.c:1095: Underl.</pre>
+<pre>181: been closed._ssl.c:1099: Underl.</pre>
+<pre>181:*:read_ssl._SSLSocket.rea.</pre>
+<pre>181:APIOOssl.SSLCertVerific.</pre>
+<pre>181:ationErrorssl.SSLZeroReturnE.</pre>
+<pre>181:rrorssl.SSLWantReadError.</pre>
+<pre>181:ssl.SSLWantWriteError.</pre>
+<pre>181:ssl.SSLSyscallError.</pre>
+<pre>181:ssl.SSLEOFErrorSSLErr.</pre>
+<pre>181:orSSLCertVerificatio.</pre>
+<pre>181:nErrorSSLZeroReturnError.</pre>
+<pre>181:SSLWantReadError.</pre>
+<pre>181:SSLWantWriteError.</pre>
+<pre>181:SSLSyscallErrorSS.</pre>
+<pre>181:LEOFError_SSLSocketSSL.</pre>
+<pre>181:CIPHERSSSL_ERROR_ZERO_RET.</pre>
+<pre>181:URNSSL_ERROR_WANT_REA.</pre>
+<pre>181:DSSL_ERROR_WANT_WRI.</pre>
+<pre>181:TESSL_ERROR_WANT_X50.</pre>
+<pre>181:9_LOOKUPSSL_ERROR_SYSCALL.</pre>
+<pre>181:SSL_ERROR_SSLSS.</pre>
+<pre>181:_WANT_CONNECTSSL_ERROR_EOFSS.</pre>
+<pre>181:TITYPROTOCOL_SSLv23PROTOCOL_TL.</pre>
+<pre>181:OP_ALLOP_NO_SSLv2OP_NO_SS.</pre>
+<pre>181:UPPORTEDPROTO_SSLv3PROTO_TL.</pre>
+<pre>181:LPNHAS_SSLv2HAS_SS.</pre>
+<pre>181:namesOPENSSL_VERSION_NUMBER.</pre>
+<pre>181:IIIIIOPENSSL_VERSION_INFO.</pre>
+<pre>181:OPENSSL_VERSION_OPENS.</pre>
+<pre>181:keyfilepasswordload_ce.</pre>
+<pre>181:braryreason_ssl_test_decod.</pre>
+<pre>181:ession_reusedssl.SSLError_s.</pre>
+<pre>181:sl.Session_ssl.MemoryBIO_ss.</pre>
+<pre>181:l._SSLSocket_ssl._SSLContext.</pre>
+<pre>181:BERBAD_PASSWORD_READBAD.</pre>
+<pre>181:OBLEMS_GETTING_PASSWORDPUBLIC_K.</pre>
+<pre>181:ISTBAD_SSL_FILETYPE.</pre>
+<pre>181:BAD_SSL_SESSION_ID_LEN.</pre>
+<pre>181:RESTARTSNON_SSLV2_INITIAL_PACK.</pre>
+<pre>181:BACKNULL_SSL_CTXNULL_SS.</pre>
+<pre>181:ECTION_PROFILESSL23_DOING_SESSIO.</pre>
+<pre>181:N_ID_REUSESSL2_CONNECTION_ID.</pre>
+<pre>181:_TOO_LONGSSL3_EXT_INVALID_E.</pre>
+<pre>181:CPOINTFORMATSSL3_EXT_INVALID_S.</pre>
+<pre>181:ERVERNAMESSL3_EXT_INVALID_S.</pre>
+<pre>181:ME_TYPESSL3_SESSION_ID_TO.</pre>
+<pre>181:O_LONGSSL3_SESSION_ID_TO.</pre>
+<pre>181:O_SHORTSSLV3_ALERT_BAD_CE.</pre>
+<pre>181:RTIFICATESSLV3_ALERT_BAD_RE.</pre>
+<pre>181:CORD_MACSSLV3_ALERT_CERTIF.</pre>
+<pre>181:ICATE_EXPIREDSSLV3_ALERT_CERTIF.</pre>
+<pre>181:ICATE_REVOKEDSSLV3_ALERT_CERTIF.</pre>
+<pre>181:ICATE_UNKNOWNSSLV3_ALERT_DECOMP.</pre>
+<pre>181:_FAILURESSLV3_ALERT_HANDSH.</pre>
+<pre>181:AKE_FAILURESSLV3_ALERT_ILLEGA.</pre>
+<pre>181:L_PARAMETERSSLV3_ALERT_NO_CER.</pre>
+<pre>181:TIFICATESSLV3_ALERT_UNEXPE.</pre>
+<pre>181:CTED_MESSAGESSLV3_ALERT_UNSUPP.</pre>
+<pre>181:ERTIFICATESSL_CTX_HAS_NO_DEF.</pre>
+<pre>181:AULT_SSL_VERSIONS.</pre>
+<pre>181:HAKE_FAILURESSL_LIBRARY_HAS_NO.</pre>
+<pre>181:_CIPHERSSSL_NEGATIVE_LENGT.</pre>
+<pre>181:HSSL_SESSION_ID_CAL.</pre>
+<pre>181:LBACK_FAILEDSSL_SESSION_ID_CON.</pre>
+<pre>181:FLICTSSL_SESSION_ID_CON.</pre>
+<pre>181:TEXT_TOO_LONGSSL_SESSION_ID_HAS.</pre>
+<pre>181:_BAD_LENGTHSSL_SESSION_ID_IS_.</pre>
+<pre>181:UNABLE_TO_FIND_SSL_METHODU.</pre>
+<pre>181:NABLE_TO_LOAD_SSL2_MD5_ROUTINES.</pre>
+<pre>181:UNABLE_TO_LOAD_SSL3_MD5_ROUTINES.</pre>
+<pre>181:UNABLE_TO_LOAD_SSL3_SHA1_ROUTINES.</pre>
+<pre>181:UNKNOWN_SSL_VERSIONUN.</pre>
+<pre>181:UNSUPPORTED_SSL_VERSIONUNSUPP.</pre>
+<pre>181:_TYPEWRONG_SSL_VERSION.</pre>
+<pre>181:EPEMSSLX509.</pre>
+<pre>181:e verified.SSL/TLS session cl.</pre>
+<pre>181:.Non-blocking SSL socket needs t.</pre>
+<pre>182:Non-blocking SSL socket needs t.</pre>
+<pre>183:hen attempting SSL operation..</pre>
+<pre>183:SSL/TLS connection.</pre>
+<pre>183:ion module for SSL socket operati.</pre>
+<pre>184:rovided by the SSL/TLS client in .</pre>
+<pre>187:with the SSLSocket, the ser.</pre>
+<pre>187:tring, and the SSLContext object..</pre>
+<pre>189:Get / set SSLSession.The P.</pre>
+<pre>190:iated with the SSLSocket. This is.</pre>
+<pre>192:on the SSLContext to chan.</pre>
+<pre>193:SSLSocket before t.</pre>
+<pre>194:ccurred in the SSL implementation.</pre>
+<pre>206:at are used by SSLContext's set_d.</pre>
+<pre>211:s 1 if the OpenSSL PRNG has been .</pre>
+<pre>214:using the ssl() function..</pre>
+<pre>226:g into the OpenSSL PRNG state..</pre>
+<pre>288: keyfile=None, password=None).</pre>
+<pre>316:Does the SSL shutdown hands.</pre>
+<pre>317:bytes from the SSL socket.pendin.</pre>
+<pre>323:ect b into the SSL object..</pre>
+<pre>549:_ssl.cpython-38-aar.</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

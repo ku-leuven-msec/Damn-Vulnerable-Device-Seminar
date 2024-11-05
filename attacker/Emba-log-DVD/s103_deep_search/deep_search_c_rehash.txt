@@ -1,0 +1,24 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/bin/c_rehash[0m
+4:le from ../openssl-1.1.1f/tools/c.
+5:9-2018 The OpenSSL Project Author.
+7: under the OpenSSL license (the ".
+10:ttps://www.openssl.org/source/lic.
+15:ir = "/usr/lib/ssl-1.1";.
+19:my $openssl = $ENV{OPENSSL.
+19:} || "openssl";.
+20:my $pwd;.
+57:.$pwd=Cwd::getcwd();.
+59:.$pwd=`pwd`;.
+60:.chomp($pwd);.
+64:path_delim = ($pwd =~ /^[a-z]\:/i.
+67:if (! -x $openssl) {.
+70:f (-x "$_/$openssl") {.
+72:...$openssl = "$_/$openssl.
+77: skipped ('openssl' program not a.
+84:} elsif ($ENV{SSL_CERT_DIR}) {.
+85:h_delim/, $ENV{SSL_CERT_DIR};.
+92:.$openssl="$pwd/$openssl" if (.
+92:!-x $openssl);.
+93:.chdir $pwd;.
+166:rint) = `"$openssl" x509 $x509has.
+207:rint) = `"$openssl" crl $crlhash .

@@ -1,0 +1,20 @@
+CVE	: CVE-2021-36976
+DATE	: 2021-07-20 07:15:00
+CVSS	: 4.3
+libarchive 3.4.1 through 3.5.1 has a use-after-free in copy_string (called from do_uncompress_block and process_block).
+
+References:
+-----------
+https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=32375
+https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libarchive/OSV-2021-557.yaml
+
+Vulnerable Configs:
+-------------------
+cpe:2.3:a:libarchive:libarchive:3.4.1:*:*:*:*:*:*:*
+cpe:2.3:a:libarchive:libarchive:3.4.2:*:*:*:*:*:*:*
+cpe:2.3:a:libarchive:libarchive:3.4.3:*:*:*:*:*:*:*
+cpe:2.3:a:libarchive:libarchive:3.5.0:*:*:*:*:*:*:*
+cpe:2.3:a:libarchive:libarchive:3.5.1:*:*:*:*:*:*:*
+
+
+

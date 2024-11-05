@@ -1,0 +1,46 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-mpu401.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m109) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-mpu401.ko[0m
+
+  c0:	52800004 	mov	w4, #0x0                   	// #0
+  c4:	94000000 	bl	0 <snd_card_new>
+  c8:	2a0003f3 	mov	w19, w0
+  cc:	37f80600 	tbnz	w0, #31, 18c <snd_mpu401_probe+0x15c>
+  d0:	90000004 	adrp	x4, 0 <snd_mpu401_remove>
+  d4:	91000084 	add	x4, x4, #0x0
+  d8:	f94023e3 	ldr	x3, [sp, #64]
+  dc:	90000001 	adrp	x1, 0 <snd_mpu401_remove>
+  e0:	f9400086 	ldr	x6, [x4]
+  e4:	91009062 	add	x2, x3, #0x24
+  e8:	f8014066 	stur	x6, [x3, #20]
+  ec:	91011060 	add	x0, x3, #0x44
+  f0:	f8405084 	ldur	x4, [x4, #5]
+  f4:	f8019064 	stur	x4, [x3, #25]
+  f8:	91000021 	add	x1, x1, #0x0
+  fc:	f8414064 	ldur	x4, [x3, #20]
+ 100:	f8024064 	stur	x4, [x3, #36]
+ 104:	f8419063 	ldur	x3, [x3, #25]
+ 108:	f8005043 	stur	x3, [x2, #5]
+ 10c:	f8757a83 	ldr	x3, [x20, x21, lsl #3]
+[31m 110:	94000000 	bl	0 <sprintf>[0m
+ 114:	91010280 	add	x0, x20, #0x40
+ 118:	f94023f3 	ldr	x19, [sp, #64]
+ 11c:	b8757818 	ldr	w24, [x0, x21, lsl #2]
+ 120:	91011273 	add	x19, x19, #0x44
+ 124:	aa1303e0 	mov	x0, x19
+ 128:	37f80498 	tbnz	w24, #31, 1b8 <snd_mpu401_probe+0x188>
+ 12c:	94000000 	bl	0 <strlen>
+ 130:	8b000260 	add	x0, x19, x0
+ 134:	90000001 	adrp	x1, 0 <snd_mpu401_remove>
+ 138:	2a1803e2 	mov	w2, w24
+ 13c:	91000021 	add	x1, x1, #0x0
+[31m 140:	94000000 	bl	0 <sprintf>[0m
+ 144:	91010281 	add	x1, x20, #0x40
+ 148:	d2800006 	mov	x6, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33msnd-mpu401.ko[0m
+

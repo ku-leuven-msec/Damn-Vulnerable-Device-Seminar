@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33musblcd.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m120) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33musblcd.ko[0m
+
+ 868:	f9400402 	ldr	x2, [x0, #8]
+ 86c:	ea22003f 	bics	xzr, x1, x2
+ 870:	9a9f0260 	csel	x0, x19, xzr, eq  // eq = none
+ 874:	d503229f 	csdb
+ 878:	d2800342 	mov	x2, #0x1a                  	// #26
+ 87c:	9100ebe1 	add	x1, sp, #0x3a
+ 880:	94000000 	bl	0 <__arch_copy_to_user>
+ 884:	d503201f 	nop
+ 888:	b5fffe40 	cbnz	x0, 850 <lcd_ioctl+0xc8>
+ 88c:	d2800000 	mov	x0, #0x0                   	// #0
+ 890:	17ffffd2 	b	7d8 <lcd_ioctl+0x50>
+ 894:	f9400002 	ldr	x2, [x0]
+ 898:	90000001 	adrp	x1, 0 <lcd_resume>
+ 89c:	91000021 	add	x1, x1, #0x0
+ 8a0:	9100ebe0 	add	x0, sp, #0x3a
+ 8a4:	79470842 	ldrh	w2, [x2, #900]
+ 8a8:	12000c45 	and	w5, w2, #0xf
+ 8ac:	d3482c43 	ubfx	x3, x2, #8, #4
+ 8b0:	d3441c44 	ubfx	x4, x2, #4, #4
+ 8b4:	530c7c42 	lsr	w2, w2, #12
+[31m 8b8:	94000000 	bl	0 <sprintf>[0m
+ 8bc:	9100ebe0 	add	x0, sp, #0x3a
+ 8c0:	94000000 	bl	0 <strlen>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33musblcd.ko[0m
+

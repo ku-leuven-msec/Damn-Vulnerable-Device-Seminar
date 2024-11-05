@@ -1,0 +1,90 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibasound.so.2.0.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibasound.so.2.0.0[0m
+
+[31m   67010:	97ff1ba4 	bl	2dea0 <mmap@plt>[0m
+   67014:	d1000401 	sub	x1, x0, #0x1
+   67018:	b1000c3f 	cmn	x1, #0x3
+   6701c:	54001348 	b.hi	67284 <snd_pcm_query_chmaps_from_hw@@ALSA_0.9+0x924>  // b.pmore
+   67020:	f9000e80 	str	x0, [x20, #24]
+   67024:	3900a29f 	strb	wzr, [x20, #40]
+   67028:	d2800200 	mov	x0, #0x10                  	// #16
+   6702c:	97ff401d 	bl	370a0 <snd_config_search_hooks@@ALSA_0.9+0x1e0>
+   67030:	b9400684 	ldr	w4, [x20, #4]
+   67034:	aa0003e1 	mov	x1, x0
+   67038:	d2b02005 	mov	x5, #0x81000000            	// #2164260864
+   6703c:	52800023 	mov	w3, #0x1                   	// #1
+   67040:	52800062 	mov	w2, #0x3                   	// #3
+   67044:	d2800000 	mov	x0, #0x0                   	// #0
+[31m   67048:	97ff1b96 	bl	2dea0 <mmap@plt>[0m
+   6704c:	aa0003f8 	mov	x24, x0
+   67050:	d1000400 	sub	x0, x0, #0x1
+   67054:	b1000c1f 	cmn	x0, #0x3
+   67058:	54001128 	b.hi	6727c <snd_pcm_query_chmaps_from_hw@@ALSA_0.9+0x91c>  // b.pmore
+   6705c:	52800000 	mov	w0, #0x0                   	// #0
+   67060:	f9400e9b 	ldr	x27, [x20, #24]
+   67064:	17ffff9b 	b	66ed0 <snd_pcm_query_chmaps_from_hw@@ALSA_0.9+0x570>
+   67068:	52800023 	mov	w3, #0x1                   	// #1
+   6706c:	d2882041 	mov	x1, #0x4102                	// #16642
+   67070:	f2a80081 	movk	x1, #0x4004, lsl #16
+   67074:	9101e3e2 	add	x2, sp, #0x78
+   67078:	2a1303e0 	mov	w0, w19
+   6707c:	b9007be3 	str	w3, [sp, #120]
+   67080:	97ff2038 	bl	2f160 <ioctl@plt>
+   67084:	36ffec00 	tbz	w0, #31, 66e04 <snd_pcm_query_chmaps_from_hw@@ALSA_0.9+0x4a4>
+   67088:	97ff1f36 	bl	2ed60 <__errno_location@plt>
+   6708c:	b940001a 	ldr	w26, [x0]
+   67090:	90000501 	adrp	x1, 107000 <sigemptyset@GLIBC_2.17>
+   67094:	f00002c2 	adrp	x2, c2000 <snd_use_case_parse_selem_id@@ALSA_0.9+0x9e70>
+   67098:	9121a042 	add	x2, x2, #0x868
+--
+[31m   69534:	97ff125b 	bl	2dea0 <mmap@plt>[0m
+   69538:	b100041f 	cmn	x0, #0x1
+[31m   6953c:	54fff581 	b.ne	693ec <snd_pcm_mmap@@ALSA_0.9+0x28c>  // b.any[0m
+   69540:	d00004e0 	adrp	x0, 107000 <sigemptyset@GLIBC_2.17>
+   69544:	f947dc00 	ldr	x0, [x0, #4024]
+   69548:	f9400014 	ldr	x20, [x0]
+   6954c:	97ff1605 	bl	2ed60 <__errno_location@plt>
+   69550:	aa0003f3 	mov	x19, x0
+   69554:	d00002c2 	adrp	x2, c3000 <snd_use_case_parse_selem_id@@ALSA_0.9+0xae70>
+   69558:	91014042 	add	x2, x2, #0x50
+   6955c:	b00002c4 	adrp	x4, c2000 <snd_use_case_parse_selem_id@@ALSA_0.9+0x9e70>
+   69560:	b00002c0 	adrp	x0, c2000 <snd_use_case_parse_selem_id@@ALSA_0.9+0x9e70>
+   69564:	91022042 	add	x2, x2, #0x88
+   69568:	b9400263 	ldr	w3, [x19]
+   6956c:	913f0084 	add	x4, x4, #0xfc0
+   69570:	913da000 	add	x0, x0, #0xf68
+   69574:	52802b01 	mov	w1, #0x158                 	// #344
+   69578:	d63f0280 	blr	x20
+   6957c:	b9400273 	ldr	w19, [x19]
+   69580:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   69584:	4b1303f3 	neg	w19, w19
+--
+[31m   7e090:	97febf84 	bl	2dea0 <mmap@plt>[0m
+   7e094:	d1000401 	sub	x1, x0, #0x1
+   7e098:	b1000c3f 	cmn	x1, #0x3
+   7e09c:	54000148 	b.hi	7e0c4 <_snd_pcm_multi_open@@ALSA_0.9+0x10d4>  // b.pmore
+   7e0a0:	f9400a83 	ldr	x3, [x20, #16]
+   7e0a4:	eb1902ff 	cmp	x23, x25
+   7e0a8:	f94037e1 	ldr	x1, [sp, #104]
+   7e0ac:	b9405fe2 	ldr	w2, [sp, #92]
+   7e0b0:	8b010001 	add	x1, x0, x1
+   7e0b4:	aa1503e0 	mov	x0, x21
+   7e0b8:	54fff861 	b.ne	7dfc4 <_snd_pcm_multi_open@@ALSA_0.9+0xfd4>  // b.any
+   7e0bc:	97ff7a11 	bl	5c900 <snd_pcm_slave_conf@@ALSA_0.9+0x6f0>
+   7e0c0:	17ffffc2 	b	7dfc8 <_snd_pcm_multi_open@@ALSA_0.9+0xfd8>
+   7e0c4:	b0000440 	adrp	x0, 107000 <sigemptyset@GLIBC_2.17>
+   7e0c8:	f947dc00 	ldr	x0, [x0, #4024]
+   7e0cc:	f9400015 	ldr	x21, [x0]
+   7e0d0:	97fec324 	bl	2ed60 <__errno_location@plt>
+   7e0d4:	aa0003f4 	mov	x20, x0
+   7e0d8:	d0000222 	adrp	x2, c4000 <snd_use_case_parse_selem_id@@ALSA_0.9+0xbe70>
+   7e0dc:	91130042 	add	x2, x2, #0x4c0
+   7e0e0:	d0000224 	adrp	x4, c4000 <snd_use_case_parse_selem_id@@ALSA_0.9+0xbe70>
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m4[0m times [0;33mlibasound.so.2.0.0[0m
+

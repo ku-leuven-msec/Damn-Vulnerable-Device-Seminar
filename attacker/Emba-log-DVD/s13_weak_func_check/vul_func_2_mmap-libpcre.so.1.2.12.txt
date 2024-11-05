@@ -1,0 +1,54 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibpcre.so.1.2.12[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibpcre.so.1.2.12[0m
+
+[31m   2766c:	97ff6849 	bl	1790 <mmap@plt>[0m
+   27670:	aa0003f8 	mov	x24, x0
+   27674:	b100041f 	cmn	x0, #0x1
+   27678:	54000c40 	b.eq	27800 <pcre_free_substring@@Base+0x4e80>  // b.none
+   2767c:	aa1703e1 	mov	x1, x23
+   27680:	528000e2 	mov	w2, #0x7                   	// #7
+   27684:	97ff6863 	bl	1810 <mprotect@plt>
+   27688:	37f80b60 	tbnz	w0, #31, 277f4 <pcre_free_substring@@Base+0x4e74>
+   2768c:	b4000bb8 	cbz	x24, 27800 <pcre_free_substring@@Base+0x4e80>
+   27690:	910122c1 	add	x1, x22, #0x48
+   27694:	d10042e0 	sub	x0, x23, #0x10
+   27698:	a90573fb 	stp	x27, x28, [sp, #80]
+   2769c:	910102a2 	add	x2, x21, #0x40
+   276a0:	eb02001f 	cmp	x0, x2
+   276a4:	f9402023 	ldr	x3, [x1, #64]
+   276a8:	f900071f 	str	xzr, [x24, #8]
+   276ac:	8b000304 	add	x4, x24, x0
+   276b0:	8b000063 	add	x3, x3, x0
+   276b4:	f9002023 	str	x3, [x1, #64]
+   276b8:	f9401822 	ldr	x2, [x1, #48]
+   276bc:	540007a9 	b.ls	277b0 <pcre_free_substring@@Base+0x4e30>  // b.plast
+--
+[31m   453ac:	97fef0f9 	bl	1790 <mmap@plt>[0m
+   453b0:	b100041f 	cmn	x0, #0x1
+   453b4:	540003e0 	b.eq	45430 <pcre_jit_stack_alloc@@Base+0x120>  // b.none
+   453b8:	8b130013 	add	x19, x0, x19
+   453bc:	a9004eb3 	stp	x19, x19, [x21]
+   453c0:	cb140274 	sub	x20, x19, x20
+   453c4:	a90102b4 	stp	x20, x0, [x21, #16]
+   453c8:	aa1503e0 	mov	x0, x21
+   453cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+   453d0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   453d4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   453d8:	d65f03c0 	ret
+   453dc:	a94153f3 	ldp	x19, x20, [sp, #16]
+   453e0:	d2800015 	mov	x21, #0x0                   	// #0
+   453e4:	aa1503e0 	mov	x0, x21
+   453e8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   453ec:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   453f0:	d65f03c0 	ret
+   453f4:	528003c0 	mov	w0, #0x1e                  	// #30
+   453f8:	97fef102 	bl	1800 <sysconf@plt>
+   453fc:	d281ffe1 	mov	x1, #0xfff                 	// #4095
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m2[0m times [0;33mlibpcre.so.1.2.12[0m
+

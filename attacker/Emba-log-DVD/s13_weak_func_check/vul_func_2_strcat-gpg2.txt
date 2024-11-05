@@ -1,0 +1,48 @@
+[[0;33m*[0m] Binary protection state of [0;33mgpg2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mgpg2[0m
+
+   140c8:	b0000741 	adrp	x1, fd000 <ferror@plt+0xee3a0>
+   140cc:	528006a0 	mov	w0, #0x35                  	// #53
+   140d0:	f9476821 	ldr	x1, [x1, #3792]
+   140d4:	f9400021 	ldr	x1, [x1]
+   140d8:	97ffea32 	bl	e9a0 <gcry_control@plt>
+   140dc:	17fff7e5 	b	12070 <ferror@plt+0x3410>
+   140e0:	d0000540 	adrp	x0, be000 <ferror@plt+0xaf3a0>
+   140e4:	9102a01c 	add	x28, x0, #0xa8
+   140e8:	b9415ffb 	ldr	w27, [sp, #348]
+   140ec:	52800015 	mov	w21, #0x0                   	// #0
+   140f0:	d2800016 	mov	x22, #0x0                   	// #0
+   140f4:	d2800014 	mov	x20, #0x0                   	// #0
+   140f8:	52800039 	mov	w25, #0x1                   	// #1
+   140fc:	f940abf8 	ldr	x24, [sp, #336]
+   14100:	14000007 	b	1411c <ferror@plt+0x54bc>
+   14104:	3900001f 	strb	wzr, [x0]
+   14108:	f8747b01 	ldr	x1, [x24, x20, lsl #3]
+   1410c:	aa1603e0 	mov	x0, x22
+   14110:	91000694 	add	x20, x20, #0x1
+   14114:	52800019 	mov	w25, #0x0                   	// #0
+[31m   14118:	97ffe71e 	bl	dd90 <strcat@plt>[0m
+   1411c:	6b14037f 	cmp	w27, w20
+   14120:	5400056d 	b.le	141cc <ferror@plt+0x556c>
+   14124:	f8747b00 	ldr	x0, [x24, x20, lsl #3]
+   14128:	11000ab5 	add	w21, w21, #0x2
+   1412c:	97ffe5a5 	bl	d7c0 <strlen@plt>
+   14130:	aa0003e1 	mov	x1, x0
+   14134:	0b0102b5 	add	w21, w21, w1
+   14138:	aa1603e0 	mov	x0, x22
+   1413c:	93407ea1 	sxtw	x1, w21
+   14140:	97ffe7b8 	bl	e020 <gcry_xrealloc@plt>
+   14144:	aa0003f6 	mov	x22, x0
+   14148:	35fffdf9 	cbnz	w25, 14104 <ferror@plt+0x54a4>
+   1414c:	aa1c03e1 	mov	x1, x28
+[31m   14150:	97ffe710 	bl	dd90 <strcat@plt>[0m
+   14154:	17ffffed 	b	14108 <ferror@plt+0x54a8>
+   14158:	b9415fe0 	ldr	w0, [sp, #348]
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m2[0m times [0;33mgpg2[0m
+

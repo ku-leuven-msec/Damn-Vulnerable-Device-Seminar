@@ -1,0 +1,44 @@
+[[0;33m*[0m] Binary protection state of [0;33mipv6.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m46) Symbols
+[31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m49) Symbols
+[31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m57) Symbols
+[31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m58) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m136) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m2760) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m47) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m58) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m69) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m73) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m79) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mipv6.ko[0m
+
+   4a6ec:	aa1803f4 	mov	x20, x24
+   4a6f0:	8b38c700 	add	x0, x24, w24, sxtw #1
+   4a6f4:	8b000b00 	add	x0, x24, x0, lsl #2
+   4a6f8:	8b000e60 	add	x0, x19, x0, lsl #3
+   4a6fc:	f9403800 	ldr	x0, [x0, #112]
+   4a700:	b5002d60 	cbnz	x0, 4acac <ip6_mroute_setsockopt+0xa2c>
+   4a704:	39419be0 	ldrb	w0, [sp, #102]
+   4a708:	340020e0 	cbz	w0, 4ab24 <ip6_mroute_setsockopt+0x8a4>
+   4a70c:	7100041f 	cmp	w0, #0x1
+   4a710:	128002b5 	mov	w21, #0xffffffea            	// #-22
+   4a714:	54000d41 	b.ne	4a8bc <ip6_mroute_setsockopt+0x63c>  // b.any
+   4a718:	b94e1660 	ldr	w0, [x19, #3604]
+   4a71c:	36f82c80 	tbz	w0, #31, 4acac <ip6_mroute_setsockopt+0xa2c>
+   4a720:	b9402a62 	ldr	w2, [x19, #40]
+   4a724:	7103f85f 	cmp	w2, #0xfe
+   4a728:	540024e0 	b.eq	4abc4 <ip6_mroute_setsockopt+0x944>  // b.none
+   4a72c:	9103e3f5 	add	x21, sp, #0xf8
+   4a730:	90000001 	adrp	x1, 0 <ipv6_mod_enabled>
+   4a734:	aa1503e0 	mov	x0, x21
+   4a738:	91000021 	add	x1, x1, #0x0
+[31m   4a73c:	94000000 	bl	0 <sprintf>[0m
+   4a740:	aa1503e1 	mov	x1, x21
+   4a744:	52800025 	mov	w5, #0x1                   	// #1
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mipv6.ko[0m
+

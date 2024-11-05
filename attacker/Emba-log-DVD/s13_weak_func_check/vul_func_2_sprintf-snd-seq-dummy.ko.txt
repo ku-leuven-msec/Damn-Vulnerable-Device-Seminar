@@ -1,0 +1,39 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-seq-dummy.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m76) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-seq-dummy.ko[0m
+
+  50:	aa0003f3 	mov	x19, x0
+  54:	b4000720 	cbz	x0, 138 <create_port+0x138>
+  58:	90000003 	adrp	x3, 0 <create_port>
+  5c:	90000014 	adrp	x20, 0 <create_port>
+  60:	910243e0 	add	x0, sp, #0x90
+  64:	aa0303fa 	mov	x26, x3
+  68:	b9400298 	ldr	w24, [x20]
+  6c:	d2801502 	mov	x2, #0xa8                  	// #168
+  70:	39400077 	ldrb	w23, [x3]
+  74:	52800001 	mov	w1, #0x0                   	// #0
+  78:	b9000278 	str	w24, [x19]
+  7c:	29017e77 	stp	w23, wzr, [x19, #8]
+  80:	94000000 	bl	0 <memset>
+  84:	390243f8 	strb	w24, [sp, #144]
+  88:	91024be0 	add	x0, sp, #0x92
+  8c:	340000f7 	cbz	w23, a8 <create_port+0xa8>
+  90:	11010723 	add	w3, w25, #0x41
+  94:	2a1503e2 	mov	w2, w21
+  98:	90000001 	adrp	x1, 0 <create_port>
+  9c:	91000021 	add	x1, x1, #0x0
+[31m  a0:	94000000 	bl	0 <sprintf>[0m
+  a4:	14000005 	b	b8 <create_port+0xb8>
+  a8:	90000001 	adrp	x1, 0 <create_port>
+  ac:	2a1503e2 	mov	w2, w21
+  b0:	91000021 	add	x1, x1, #0x0
+[31m  b4:	94000000 	bl	0 <sprintf>[0m
+  b8:	39400342 	ldrb	w2, [x26]
+  bc:	52800c64 	mov	w4, #0x63                  	// #99
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33msnd-seq-dummy.ko[0m
+

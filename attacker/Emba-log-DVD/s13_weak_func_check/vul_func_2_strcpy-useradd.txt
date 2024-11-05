@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33museradd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33museradd[0m
+
+    6844:	91142339 	add	x25, x25, #0x508
+    6848:	528005f8 	mov	w24, #0x2f                  	// #47
+    684c:	f947c41a 	ldr	x26, [x0, #3976]
+    6850:	1400000a 	b	6878 <ferror@plt+0x1a48>
+    6854:	aa1503e0 	mov	x0, x21
+    6858:	52803da1 	mov	w1, #0x1ed                 	// #493
+    685c:	97fff7d1 	bl	47a0 <chmod@plt>
+    6860:	37f80700 	tbnz	w0, #31, 6940 <ferror@plt+0x1b10>
+    6864:	9124c2e1 	add	x1, x23, #0x930
+    6868:	d2800000 	mov	x0, #0x0                   	// #0
+    686c:	97fff72d 	bl	4520 <strtok@plt>
+    6870:	aa0003f6 	mov	x22, x0
+    6874:	b4fff0c0 	cbz	x0, 668c <ferror@plt+0x185c>
+    6878:	aa1503e0 	mov	x0, x21
+    687c:	97fff731 	bl	4540 <strlen@plt>
+    6880:	aa0003e2 	mov	x2, x0
+    6884:	91000400 	add	x0, x0, #0x1
+    6888:	aa1603e1 	mov	x1, x22
+    688c:	8b0002a0 	add	x0, x21, x0
+    6890:	38226ab8 	strb	w24, [x21, x2]
+[31m    6894:	97fff8ef 	bl	4c50 <strcpy@plt>[0m
+    6898:	aa1503e0 	mov	x0, x21
+    689c:	52800001 	mov	w1, #0x0                   	// #0
+--
+   11a4c:	912502a1 	add	x1, x21, #0x940
+   11a50:	91000403 	add	x3, x0, #0x1
+   11a54:	a9420833 	ldp	x19, x2, [x1, #32]
+   11a58:	eb02007f 	cmp	x3, x2
+   11a5c:	540001a9 	b.ls	11a90 <ferror@plt+0xcc60>  // b.plast
+   11a60:	b40000b3 	cbz	x19, 11a74 <ferror@plt+0xcc44>
+   11a64:	aa1303e0 	mov	x0, x19
+   11a68:	97ffcc2e 	bl	4b20 <free@plt>
+   11a6c:	aa1403e0 	mov	x0, x20
+   11a70:	97ffcab4 	bl	4540 <strlen@plt>
+   11a74:	912502b6 	add	x22, x21, #0x940
+   11a78:	910fa000 	add	x0, x0, #0x3e8
+   11a7c:	f90016c0 	str	x0, [x22, #40]
+   11a80:	97ffcb44 	bl	4790 <malloc@plt>
+   11a84:	f90012c0 	str	x0, [x22, #32]
+   11a88:	aa0003f3 	mov	x19, x0
+   11a8c:	b4000c40 	cbz	x0, 11c14 <ferror@plt+0xcde4>
+   11a90:	aa1403e1 	mov	x1, x20
+   11a94:	aa1303e0 	mov	x0, x19
+   11a98:	a90363f7 	stp	x23, x24, [sp, #48]
+[31m   11a9c:	97ffcc6d 	bl	4c50 <strcpy@plt>[0m
+   11aa0:	aa1303e0 	mov	x0, x19
+   11aa4:	52800141 	mov	w1, #0xa                   	// #10
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33museradd[0m
+

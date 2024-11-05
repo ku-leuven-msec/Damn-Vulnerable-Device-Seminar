@@ -1,0 +1,50 @@
+[[0;33m*[0m] Binary protection state of [0;33mmceusb.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m199) Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mmceusb.ko[0m
+
+  80:	94000000 	bl	0 <usb_kill_urb>
+  84:	52800000 	mov	w0, #0x0                   	// #0
+  88:	f9400bf3 	ldr	x19, [sp, #16]
+  8c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  90:	d65f03c0 	ret
+
+[31m0000000000000094 <system_uses_lse_atomics>:[0m
+[31m  94:	14000004 	b	a4 <system_uses_lse_atomics+0x10>[0m
+[31m  98:	14000003 	b	a4 <system_uses_lse_atomics+0x10>[0m
+  9c:	52800020 	mov	w0, #0x1                   	// #1
+[31m  a0:	14000002 	b	a8 <system_uses_lse_atomics+0x14>[0m
+  a4:	52800000 	mov	w0, #0x0                   	// #0
+  a8:	d65f03c0 	ret
+
+00000000000000ac <arch_atomic64_or>:
+  ac:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  b0:	910003fd 	mov	x29, sp
+  b4:	a90153f3 	stp	x19, x20, [sp, #16]
+  b8:	aa0003f4 	mov	x20, x0
+  bc:	aa0103f3 	mov	x19, x1
+[31m  c0:	97fffff5 	bl	94 <system_uses_lse_atomics>[0m
+  c4:	72001c1f 	tst	w0, #0xff
+  c8:	54000060 	b.eq	d4 <arch_atomic64_or+0x28>  // b.none
+  cc:	f834327f 	stset	x20, [x19]
+  d0:	14000002 	b	d8 <arch_atomic64_or+0x2c>
+  d4:	1400008b 	b	300 <mceusb_defer_kevent+0x54>
+  d8:	a94153f3 	ldp	x19, x20, [sp, #16]
+  dc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  e0:	d65f03c0 	ret
+
+00000000000000e4 <arch_atomic64_andnot>:
+  e4:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  e8:	910003fd 	mov	x29, sp
+  ec:	a90153f3 	stp	x19, x20, [sp, #16]
+  f0:	aa0003f4 	mov	x20, x0
+  f4:	aa0103f3 	mov	x19, x1
+[31m  f8:	97ffffe7 	bl	94 <system_uses_lse_atomics>[0m
+  fc:	72001c1f 	tst	w0, #0xff
+ 100:	54000060 	b.eq	10c <arch_atomic64_andnot+0x28>  // b.none
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m2[0m times [0;33mmceusb.ko[0m
+

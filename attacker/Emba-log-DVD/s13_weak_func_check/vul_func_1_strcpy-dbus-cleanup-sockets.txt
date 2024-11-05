@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mdbus-cleanup-sockets[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mdbus-cleanup-sockets[0m
+
+     f40:	940001b8 	bl	1620 <unlink@plt+0x870>
+     f44:	aa0003f7 	mov	x23, x0
+     f48:	aa1903e0 	mov	x0, x25
+     f4c:	97ffff2d 	bl	c00 <strlen@plt>
+     f50:	aa0003e1 	mov	x1, x0
+     f54:	aa1c03e0 	mov	x0, x28
+     f58:	f90037e1 	str	x1, [sp, #104]
+     f5c:	97ffff29 	bl	c00 <strlen@plt>
+     f60:	f94037e1 	ldr	x1, [sp, #104]
+     f64:	0b000020 	add	w0, w1, w0
+     f68:	11000800 	add	w0, w0, #0x2
+     f6c:	93407c00 	sxtw	x0, w0
+     f70:	940001ac 	bl	1620 <unlink@plt+0x870>
+     f74:	f90002e0 	str	x0, [x23]
+     f78:	aa1903e1 	mov	x1, x25
+     f7c:	97ffff31 	bl	c40 <stpcpy@plt>
+     f80:	aa0003e3 	mov	x3, x0
+     f84:	aa1c03e1 	mov	x1, x28
+     f88:	91000400 	add	x0, x0, #0x1
+     f8c:	3900007b 	strb	w27, [x3]
+[31m     f90:	97ffff7c 	bl	d80 <strcpy@plt>[0m
+     f94:	f90006fa 	str	x26, [x23, #8]
+     f98:	b90012ff 	str	wzr, [x23, #16]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mdbus-cleanup-sockets[0m
+

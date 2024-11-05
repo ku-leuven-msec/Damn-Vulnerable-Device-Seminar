@@ -1,0 +1,34 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/hashlib.py[0m
+73:__block_openssl_constructor = .
+123:def __get_openssl_constructor(na.
+124:in __block_openssl_constructor:.
+128:_hashlib, 'openssl_' + name).
+130: thanks to OpenSSL..
+150:in __block_openssl_constructor:.
+152:        # OpenSSL 1.1.0 comes wi.
+159:ib module (OpenSSL) doesn't suppo.
+162:     # the OpenSSL library prior .
+169:sh = __get_openssl_constructor.
+171:  _hashlib.openssl_md_meth_names).
+177:    # OpenSSL's PKCS5_PBKDF2.
+177:C requires OpenSSL 1.0+ with HMAC.
+183:mac(hash_name, password, salt, iterati.
+184:        """Password based key deri.
+187:        as OpenSSL's PKCS5_PBKDF2.
+187:HMAC for short passwords and much fast.
+188:      for long passwords..
+193:not isinstance(password, (bytes, bytea.
+194:            password = bytes(memory.
+194:view(password)).
+202:        if len(password) > blocksize:.
+203:            password = new(hash_nam.
+203:e, password).digest().
+204:        password = password + b.
+204:locksize - len(password)).
+205:  inner.update(password.translate(_tra.
+206:  outer.update(password.translate(_tra.
+209:_HMAC uses the password as key. We can.
+241:    # OpenSSL's scrypt requi.
+241:res OpenSSL 1.1+.
+248:due to the OpenSSL.
+259:new, __get_openssl_constructor.

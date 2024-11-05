@@ -1,0 +1,36 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/nntplib.py[0m
+74:    import ssl.
+76:    _have_ssl = False.
+78:    _have_ssl = True.
+129:NNTP_SSL_PORT = 563.
+281:if _have_ssl:.
+284:ap a socket in SSL/TLS. Arguments.
+286:    - context: SSL context to use.
+290:rate a default SSL context if non.
+292:     context = ssl._create_stdlib.
+942:lf, user=None, password=None, usenetrc.
+948: # If no login/password was specified .
+958:               password = auth[2].
+966:        if not password:.
+969:hinfo pass ' + password).
+996:    if _have_ssl:.
+999:    - context: SSL context to use.
+1023:RT, user=None, password=None,.
+1030:        - password: password to u.
+1033:g username and password from ~/.netrc .
+1053:lf.login(user, password, usenetrc).
+1067:if _have_ssl:.
+1068:    class NNTP_SSL(_NNTPBase):.
+1070:ost, port=NNTP_SSL_PORT,.
+1071:    user=None, password=None, ssl_cont.
+1075: port and the `ssl_context` argum.
+1075:ent for SSL connections..
+1081:_on(self.sock, ssl_context, host).
+1086:lf.login(user, password, usenetrc).
+1099:_.append("NNTP_SSL").
+1113:NTP_PORT, NNTP_SSL_PORT)).
+1116:ument('-S', '--ssl', action='stor.
+1117:'use NNTP over SSL').
+1121:   if not args.ssl:.
+1127:   port = NNTP_SSL_PORT.
+1128:      s = NNTP_SSL(host=args.serv.

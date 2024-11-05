@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-virmidi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m94) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-virmidi.ko[0m
+
+ 148:	b5000380 	cbnz	x0, 1b8 <snd_virmidi_probe+0x188>
+ 14c:	2a1303e0 	mov	w0, w19
+ 150:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 154:	a9425bf5 	ldp	x21, x22, [sp, #32]
+ 158:	a94363f7 	ldp	x23, x24, [sp, #48]
+ 15c:	a9446bf9 	ldp	x25, x26, [sp, #64]
+ 160:	a94573fb 	ldp	x27, x28, [sp, #80]
+ 164:	a8c87bfd 	ldp	x29, x30, [sp], #128
+ 168:	d65f03c0 	ret
+ 16c:	f94037e3 	ldr	x3, [sp, #104]
+ 170:	d28d2ac4 	mov	x4, #0x6956                	// #26966
+ 174:	f2a9ae44 	movk	x4, #0x4d72, lsl #16
+ 178:	11000722 	add	w2, w25, #0x1
+ 17c:	f2c88924 	movk	x4, #0x4449, lsl #32
+ 180:	91011060 	add	x0, x3, #0x44
+ 184:	f2e00924 	movk	x4, #0x49, lsl #48
+ 188:	f8014064 	stur	x4, [x3, #20]
+ 18c:	f8024064 	stur	x4, [x3, #36]
+ 190:	90000001 	adrp	x1, 0 <snd_virmidi_remove>
+ 194:	91000021 	add	x1, x1, #0x0
+[31m 198:	94000000 	bl	0 <sprintf>[0m
+ 19c:	f94037e0 	ldr	x0, [sp, #104]
+ 1a0:	94000000 	bl	0 <snd_card_register>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33msnd-virmidi.ko[0m
+

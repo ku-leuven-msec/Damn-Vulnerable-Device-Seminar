@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mbnep.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m194) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mbnep.ko[0m
+
+
+
+Disassembly of section .text:
+
+0000000000000000 <__bnep_copy_ci>:
+       0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+       4:	910003fd 	mov	x29, sp
+       8:	a90153f3 	stp	x19, x20, [sp, #16]
+       c:	aa0003f3 	mov	x19, x0
+      10:	aa0103f4 	mov	x20, x1
+      14:	aa1e03e0 	mov	x0, x30
+      18:	94000000 	bl	0 <_mcount>
+      1c:	a9007e7f 	stp	xzr, xzr, [x19]
+      20:	91003a60 	add	x0, x19, #0xe
+      24:	a9017e7f 	stp	xzr, xzr, [x19, #16]
+      28:	b843e281 	ldur	w1, [x20, #62]
+      2c:	b9000a61 	str	w1, [x19, #8]
+      30:	79408681 	ldrh	w1, [x20, #66]
+      34:	79001a61 	strh	w1, [x19, #12]
+      38:	f9406681 	ldr	x1, [x20, #200]
+[31m      3c:	94000000 	bl	0 <strcpy>[0m
+      40:	f9401280 	ldr	x0, [x20, #32]
+      44:	12000000 	and	w0, w0, #0x1
+--
+     e84:	f9000457 	str	x23, [x2, #8]
+     e88:	a9080762 	stp	x2, x1, [x27, #128]
+     e8c:	94000000 	bl	0 <__module_get>
+     e90:	aa1303e4 	mov	x4, x19
+     e94:	aa1703e1 	mov	x1, x23
+     e98:	90000003 	adrp	x3, 0 <__bnep_copy_ci>
+     e9c:	90000000 	adrp	x0, 0 <__bnep_copy_ci>
+     ea0:	91000063 	add	x3, x3, #0x0
+     ea4:	91000000 	add	x0, x0, #0x0
+     ea8:	12800002 	mov	w2, #0xffffffff            	// #-1
+     eac:	94000000 	bl	0 <kthread_create_on_node>
+     eb0:	aa0003f9 	mov	x25, x0
+     eb4:	b140041f 	cmn	x0, #0x1, lsl #12
+     eb8:	540001c8 	b.hi	ef0 <bnep_add_connection+0x2a0>  // b.pmore
+     ebc:	94000000 	bl	0 <wake_up_process>
+     ec0:	f9001af9 	str	x25, [x23, #48]
+     ec4:	aa1803e0 	mov	x0, x24
+     ec8:	94000000 	bl	0 <up_write>
+     ecc:	aa1303e1 	mov	x1, x19
+     ed0:	91002aa0 	add	x0, x21, #0xa
+[31m     ed4:	94000000 	bl	0 <strcpy>[0m
+     ed8:	a94363f7 	ldp	x23, x24, [sp, #48]
+     edc:	a9446bf9 	ldp	x25, x26, [sp, #64]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mbnep.ko[0m
+

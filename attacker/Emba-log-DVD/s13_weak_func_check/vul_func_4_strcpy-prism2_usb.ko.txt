@@ -1,0 +1,92 @@
+[[0;33m*[0m] Binary protection state of [0;33mprism2_usb.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m420) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mprism2_usb.ko[0m
+
+     518:	90000000 	adrp	x0, 0 <kmalloc_caches>
+     51c:	91000000 	add	x0, x0, #0x0
+     520:	f90037e0 	str	x0, [sp, #104]
+     524:	d2808582 	mov	x2, #0x42c                 	// #1068
+     528:	5281b801 	mov	w1, #0xdc0                 	// #3520
+     52c:	f9402c00 	ldr	x0, [x0, #88]
+     530:	94000000 	bl	0 <kmem_cache_alloc_trace>
+     534:	aa0003f7 	mov	x23, x0
+     538:	b50000e0 	cbnz	x0, 554 <prism2_fwapply+0x160>
+     53c:	f9409ea0 	ldr	x0, [x21, #312]
+     540:	90000001 	adrp	x1, 0 <hfa384x_dowmem>
+     544:	52800034 	mov	w20, #0x1                   	// #1
+     548:	91000021 	add	x1, x1, #0x0
+     54c:	94000000 	bl	0 <netdev_err>
+     550:	1400038f 	b	138c <prism2_fwapply+0xf98>
+     554:	d28010a2 	mov	x2, #0x85                  	// #133
+     558:	910022bc 	add	x28, x21, #0x8
+     55c:	f2c00102 	movk	x2, #0x8, lsl #32
+     560:	f8008402 	str	x2, [x0], #8
+     564:	aa1c03e1 	mov	x1, x28
+[31m     568:	94000000 	bl	0 <strcpy>[0m
+     56c:	d28210a3 	mov	x3, #0x1085                	// #4229
+     570:	d28410a2 	mov	x2, #0x2085                	// #8325
+--
+     654:	7107f83f 	cmp	w1, #0x1fe
+     658:	54fffb8d 	b.le	5c8 <prism2_fwapply+0x1d4>
+     65c:	90000000 	adrp	x0, 0 <hfa384x_dowmem>
+     660:	52800036 	mov	w22, #0x1                   	// #1
+     664:	91000000 	add	x0, x0, #0x0
+     668:	94000000 	bl	0 <printk>
+     66c:	14000002 	b	674 <prism2_fwapply+0x280>
+     670:	12800016 	mov	w22, #0xffffffff            	// #-1
+     674:	aa1703e0 	mov	x0, x23
+     678:	94000000 	bl	0 <kfree>
+     67c:	35fff616 	cbnz	w22, 53c <prism2_fwapply+0x148>
+     680:	d2803682 	mov	x2, #0x1b4                 	// #436
+     684:	52800001 	mov	w1, #0x0                   	// #0
+     688:	910253e0 	add	x0, sp, #0x94
+     68c:	94000000 	bl	0 <memset>
+     690:	d2800822 	mov	x2, #0x41                  	// #65
+     694:	aa1c03e1 	mov	x1, x28
+     698:	f2c03682 	movk	x2, #0x1b4, lsl #32
+     69c:	910273e0 	add	x0, sp, #0x9c
+     6a0:	f80943e2 	stur	x2, [sp, #148]
+[31m     6a4:	94000000 	bl	0 <strcpy>[0m
+     6a8:	910253e1 	add	x1, sp, #0x94
+     6ac:	528c28a5 	mov	w5, #0x6145                	// #24901
+--
+     fb0:	94000000 	bl	0 <kmem_cache_alloc_trace>
+     fb4:	aa0003f9 	mov	x25, x0
+     fb8:	f10002ff 	cmp	x23, #0x0
+     fbc:	fa401804 	ccmp	x0, #0x0, #0x4, ne  // ne = any
+     fc0:	540001c1 	b.ne	ff8 <prism2_fwapply+0xc04>  // b.any
+     fc4:	aa1703e0 	mov	x0, x23
+     fc8:	94000000 	bl	0 <kfree>
+     fcc:	aa1903e0 	mov	x0, x25
+     fd0:	94000000 	bl	0 <kfree>
+     fd4:	f9409ea0 	ldr	x0, [x21, #312]
+     fd8:	90000002 	adrp	x2, 0 <hfa384x_dowmem>
+     fdc:	91000042 	add	x2, x2, #0x0
+     fe0:	90000001 	adrp	x1, 0 <hfa384x_dowmem>
+     fe4:	91020042 	add	x2, x2, #0x80
+     fe8:	91000021 	add	x1, x1, #0x0
+     fec:	12800174 	mov	w20, #0xfffffff4            	// #-12
+     ff0:	94000000 	bl	0 <netdev_err>
+     ff4:	140000ab 	b	12a0 <prism2_fwapply+0xeac>
+     ff8:	aa1c03e1 	mov	x1, x28
+     ffc:	910022e0 	add	x0, x23, #0x8
+[31m    1000:	94000000 	bl	0 <strcpy>[0m
+    1004:	d28658a2 	mov	x2, #0x32c5                	// #12997
+    1008:	d28058a3 	mov	x3, #0x2c5                 	// #709
+    100c:	f2c00022 	movk	x2, #0x1, lsl #32
+    1010:	f2c00783 	movk	x3, #0x3c, lsl #32
+    1014:	f2e00082 	movk	x2, #0x4, lsl #48
+    1018:	f90002e3 	str	x3, [x23]
+    101c:	f9001ae2 	str	x2, [x23, #48]
+    1020:	aa1c03e1 	mov	x1, x28
+    1024:	91002320 	add	x0, x25, #0x8
+[31m    1028:	94000000 	bl	0 <strcpy>[0m
+    102c:	b944a745 	ldr	w5, [x26, #1188]
+    1030:	d28860a2 	mov	x2, #0x4305                	// #17157
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m4[0m times [0;33mprism2_usb.ko[0m
+

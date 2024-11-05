@@ -1,0 +1,21 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/psplash.sh line 16:[0m
+[0mread CMDLINE < /proc/cmdline[0m
+[32m^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/psplash.sh line 34:[0m
+[0m	read rotation < /etc/rotation[0m
+[32m        ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/psplash.sh line 37:[0m
+[0m/usr/bin/psplash --angle $rotation &[0m
+[32m                         ^-------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+/usr/bin/psplash --angle "$rotation" &
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...
+  https://www.shellcheck.net/wiki/SC2162 -- read without -r will mangle backs...

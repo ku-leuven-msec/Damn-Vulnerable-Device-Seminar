@@ -1,0 +1,158 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/gevent/_sslgte279.py[0m
+1:er module for _ssl. Written by Bi.
+3:"""SSL wrapper for so.
+5:refer to :mod:`ssl` module manual.
+7:ts cooperative SSL socket wrapper.
+16:import ssl as __ssl__.
+18:_ssl = __ssl__._ssl # pylin.
+31:    'SSLContext',.
+32:    'SSLSocket',.
+42: from Python's ssl.py, except tho.
+44:copy_globals(__ssl__, globals(),.
+45:             # SSLSocket *must* s.
+60:if hasattr(__ssl__, '_fileobjec.
+61: not hasattr(__ssl__._fileobject,.
+63:ject(getattr(__ssl__, '_fileobjec.
+74:orig_SSLContext = __ssl.
+74:__.SSLContext # pylin.
+76:class SSLContext(orig_SS.
+84:        return SSLSocket(sock=soc.
+93:   """Create a SSLContext object .
+102:    context = SSLContext(PROTOCO.
+102:L_SSLv23).
+104:    # SSLv2 considered h.
+105:tions |= OP_NO_SSLv2 # pylint:dis.
+107:    # SSLv3 has problema.
+109:tions |= OP_NO_SSLv3 # pylint:dis.
+111:E attacks (OpenSSL 1.0+).
+112:ns |= getattr(_ssl, "OP_NO_COMPRE.
+121:ns |= getattr(_ssl, "OP_CIPHER_SE.
+124:ns |= getattr(_ssl, "OP_SINGLE_DH.
+125:ns |= getattr(_ssl, "OP_SINGLE_EC.
+135:        # root CA certificate.
+139:tocol=PROTOCOL_SSLv23, cert_reqs=.
+143:   """Create a SSLContext object .
+145:tion to create SSLContext.
+153:    context = SSLContext(protoco.
+154:    # SSLv2 considered h.
+155:tions |= OP_NO_SSLv2 # pylint:dis.
+156:    # SSLv3 has problema.
+158:tions |= OP_NO_SSLv3 # pylint:dis.
+169:    # load CA root certs.
+175:        # root CA certificate.
+187:class SSLSocket(socket):.
+189:    gevent `ssl.SSLSocket <htt.
+189:.org/2/library/ssl.html#ssl-socke.
+195:               ssl_version=PROTOC.
+195:OL_SSLv23, ca_certs=N.
+213:elf._context = SSLContext(ssl_ver.
+226:          self.ssl_version = ssl_.
+239:vers fails the SSL test.
+245:ods defined in SSLSocket..
+274:        self._sslobj = None.
+277:  # create the SSL object.
+279:         self._sslobj = self._con.
+280:rver_hostname, ssl_sock=self).
+300:        self._sslobj.context = c.
+324:  if not self._sslobj:.
+325:d or unwrapped SSL socket.").
+333:  return self._sslobj.read(len, b.
+334:  return self._sslobj.read(len or.
+335:        except SSLWantReadError:.
+338:, timeout_exc=_SSLErrorReadTimeou.
+339:        except SSLWantWriteError:.
+342:# note: using _SSLErrorReadTimeou.
+342:t rather than _SSLErrorWriteTimeo.
+343:, timeout_exc=_SSLErrorReadTimeou.
+344:        except SSLError as ex:.
+345: ex.args[0] == SSL_ERROR_EOF and .
+352:the underlying SSL channel.  Retu.
+357:  if not self._sslobj:.
+358:d or unwrapped SSL socket.").
+361:  return self._sslobj.write(data).
+362:        except SSLError as ex:.
+363: ex.args[0] == SSL_ERROR_WANT_REA.
+366:, timeout_exc=_SSLErrorWriteTimeo.
+367: ex.args[0] == SSL_ERROR_WANT_WRI.
+370:, timeout_exc=_SSLErrorWriteTimeo.
+376:her end of the SSL channel..
+382:  return self._sslobj.peer_certif.
+386:  if not self._sslobj or not _ssl.
+388:  return self._sslobj.selected_np.
+390:   if hasattr(_ssl, 'HAS_ALPN'):.
+394:  if not self._sslobj or not _ssl.
+396:  return self._sslobj.selected_al.
+400:  if not self._sslobj:.
+402:  return self._sslobj.cipher().
+406:  if not self._sslobj:.
+408:  return self._sslobj.compression.
+423:  if not self._sslobj:.
+428:  return self._sslobj.write(data).
+429:        except SSLWantReadError:.
+433:        except SSLWantWriteError:.
+440:      if self._sslobj:.
+462:ython 3 raises SSLWantWriteError..
+463:         raise SSLWantWriteError(.
+464:ut back to the sslerror.
+465:         raise SSLError(*ex.args).
+469:      if self._sslobj:.
+487:      if self._sslobj:.
+497:      if self._sslobj:.
+504:      if self._sslobj:.
+519:      if self._sslobj:.
+520:  return self._sslobj.pending().
+525:        self._sslobj = None.
+530:         self._sslobj = None.
+546:    def _sslobj_shutdown(se.
+549:  return self._sslobj.shutdown().
+550:        except SSLError as ex:.
+551: ex.args[0] == SSL_ERROR_EOF and .
+553: ex.args[0] == SSL_ERROR_WANT_REA.
+557:, timeout_exc=_SSLErrorReadTimeou.
+558: ex.args[0] == SSL_ERROR_WANT_WRI.
+562:, timeout_exc=_SSLErrorWriteTimeo.
+567:  if not self._sslobj:.
+568:ValueError("No SSL wrapper around.
+572:     s = self._sslobj_shutdown().
+577:        self._sslobj = None.
+578:      # match _ssl2; critical to .
+579:       # XXX: _ssl3 returns an SS.
+584:        self._sslobj = None.
+588:"Perform a TLS/SSL handshake.""".
+592:         self._sslobj.do_handshak.
+594:        except SSLWantReadError:.
+597:, timeout_exc=_SSLErrorHandshakeT.
+598:        except SSLWantWriteError:.
+601:, timeout_exc=_SSLErrorHandshakeT.
+615:eady-connected SSLSocket!").
+616:        self._sslobj = self._con.
+616:rver_hostname, ssl_sock=self).
+629:         self._sslobj = None.
+634:        an SSL channel.""".
+639:        an SSL channel.""".
+645:        SSL channel, and t.
+658:works with the SSL connection.  J.
+677:      if self._sslobj is None:.
+679:  return self._sslobj.tls_unique_.
+684:       current SSL channel, or No.
+686:      if self._sslobj is None:.
+688:  return self._sslobj.version().
+690:or not hasattr(SSLSocket, 'timeou.
+694:# socket (when ssl is used with P.
+698:    SSLSocket.timeout .
+703:_SSLErrorReadTimeou.
+703:t = SSLError('The read.
+704:_SSLErrorWriteTimeo.
+704:ut = SSLError('The writ.
+705:_SSLErrorHandshakeT.
+705:imeout = SSLError('The hand.
+709:               ssl_version=PROTOC.
+709:OL_SSLv23, ca_certs=N.
+714:    return SSLSocket(sock=soc.
+716:               ssl_version=ssl_ve.
+721:tificate(addr, ssl_version=PROTOC.
+721:OL_SSLv23, ca_certs=N.
+725:    If 'ssl_version' is sp.
+732:stdlib_context(ssl_version,.
+736:cket(sock)) as sslsock:.
+737:     dercert = sslsock.getpeercer.

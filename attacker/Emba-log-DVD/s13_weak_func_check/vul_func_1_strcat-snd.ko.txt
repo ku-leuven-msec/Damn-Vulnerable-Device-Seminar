@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m767) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33msnd.ko[0m
+
+     cf8:	aa1403e1 	mov	x1, x20
+     cfc:	aa1603e0 	mov	x0, x22
+     d00:	94000000 	bl	0 <strstr>
+     d04:	93407e73 	sxtw	x19, w19
+     d08:	b40000c0 	cbz	x0, d20 <snd_component_add+0x58>
+     d0c:	38736802 	ldrb	w2, [x0, x19]
+     d10:	52801be1 	mov	w1, #0xdf                  	// #223
+     d14:	52800020 	mov	w0, #0x1                   	// #1
+     d18:	6a01005f 	tst	w2, w1
+     d1c:	540001a0 	b.eq	d50 <snd_component_add+0x88>  // b.none
+     d20:	91000a73 	add	x19, x19, #0x2
+     d24:	aa1603e0 	mov	x0, x22
+     d28:	94000000 	bl	0 <strlen>
+     d2c:	8b000273 	add	x19, x19, x0
+     d30:	f102027f 	cmp	x19, #0x80
+     d34:	540001c8 	b.hi	d6c <snd_component_add+0xa4>  // b.pmore
+     d38:	394412a1 	ldrb	w1, [x21, #260]
+     d3c:	35000121 	cbnz	w1, d60 <snd_component_add+0x98>
+     d40:	aa1403e1 	mov	x1, x20
+     d44:	aa1603e0 	mov	x0, x22
+[31m     d48:	94000000 	bl	0 <strcat>[0m
+     d4c:	52800000 	mov	w0, #0x0                   	// #0
+     d50:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33msnd.ko[0m
+

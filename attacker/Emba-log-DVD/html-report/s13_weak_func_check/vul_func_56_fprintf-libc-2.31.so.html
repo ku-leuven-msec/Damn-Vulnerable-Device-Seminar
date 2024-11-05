@@ -1,0 +1,1179 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libc-2.31.so</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="green">Full RELRO   </span>   <span class="green">Canary found   </span>   <span class="green">NX enabled </span>   <span class="orange">DSO          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="green">No Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">fprintf</span> tear down of </span><span class="orange">libc-2.31.so</span></pre>
+<br />
+<pre>   4d1b4:	b40016c0 	cbz	x0, 4d48c &lt;psiginfo&commat;&commat;GLIBC_2.17+0x30c&gt;</pre>
+<pre>   4d1b8:	aa0003f4 	mov	x20, x0</pre>
+<pre>   4d1bc:	b4000076 	cbz	x22, 4d1c8 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x48&gt;</pre>
+<pre>   4d1c0:	394002c1 	ldrb	w1, [x22]</pre>
+<pre>   4d1c4:	35001481 	cbnz	w1, 4d454 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x2d4&gt;</pre>
+<pre>   4d1c8:	b9400276 	ldr	w22, [x19]</pre>
+<pre>   4d1cc:	710102df 	cmp	w22, #0x40</pre>
+<pre>   4d1d0:	54000d88 	b.hi	4d380 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x200&gt;  // b.pmore</pre>
+<pre>   4d1d4:	d00008a0 	adrp	x0, 163000 &lt;h_nerr&commat;&commat;GLIBC_2.17+0x387cc&gt;</pre>
+<pre>   4d1d8:	91302000 	add	x0, x0, #0xc08</pre>
+<pre>   4d1dc:	f876d801 	ldr	x1, [x0, w22, sxtw #3]</pre>
+<pre>   4d1e0:	b4000bc1 	cbz	x1, 4d358 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x1d8&gt;</pre>
+<pre>   4d1e4:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>   4d1e8:	b00006a0 	adrp	x0, 122000 &lt;in6addr_any&commat;&commat;GLIBC_2.17+0x1838&gt;</pre>
+<pre>   4d1ec:	9134a000 	add	x0, x0, #0xd28</pre>
+<pre>   4d1f0:	97ff8d70 	bl	307b0 &lt;__dcgettext&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d1f4:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d1f8:	aa0003e2 	mov	x2, x0</pre>
+<pre>   4d1fc:	91292021 	add	x1, x1, #0xa48</pre>
+<pre>   4d200:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">   4d204:	97fffab3 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d208:	b9400260 	ldr	w0, [x19]</pre>
+<pre>   4d20c:	b9400a62 	ldr	w2, [x19, #8]</pre>
+<pre>--</pre>
+<pre>   4d27c:	54001420 	b.eq	4d500 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x380&gt;  // b.none</pre>
+<pre>   4d280:	3100105f 	cmn	w2, #0x4</pre>
+<pre>   4d284:	54000081 	b.ne	4d294 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x114&gt;  // b.any</pre>
+<pre>   4d288:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d28c:	9120a021 	add	x1, x1, #0x828</pre>
+<pre>   4d290:	14000007 	b	4d2ac &lt;psiginfo&commat;&commat;GLIBC_2.17+0x12c&gt;</pre>
+<pre>   4d294:	3100f05f 	cmn	w2, #0x3c</pre>
+<pre>   4d298:	540011a0 	b.eq	4d4cc &lt;psiginfo&commat;&commat;GLIBC_2.17+0x34c&gt;  // b.none</pre>
+<pre>   4d29c:	3100185f 	cmn	w2, #0x6</pre>
+<pre>   4d2a0:	54000b01 	b.ne	4d400 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x280&gt;  // b.any</pre>
+<pre>   4d2a4:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d2a8:	91234021 	add	x1, x1, #0x8d0</pre>
+<pre>   4d2ac:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>   4d2b0:	b00006a0 	adrp	x0, 122000 &lt;in6addr_any&commat;&commat;GLIBC_2.17+0x1838&gt;</pre>
+<pre>   4d2b4:	9134a000 	add	x0, x0, #0xd28</pre>
+<pre>   4d2b8:	97ff8d3e 	bl	307b0 &lt;__dcgettext&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d2bc:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d2c0:	aa0003e2 	mov	x2, x0</pre>
+<pre>   4d2c4:	9127c021 	add	x1, x1, #0x9f0</pre>
+<pre>   4d2c8:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">   4d2cc:	97fffa81 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d2d0:	b9400260 	ldr	w0, [x19]</pre>
+<pre>   4d2d4:	71002c1f 	cmp	w0, #0xb</pre>
+<pre>   4d2d8:	54000a29 	b.ls	4d41c &lt;psiginfo&commat;&commat;GLIBC_2.17+0x29c&gt;  // b.plast</pre>
+<pre>   4d2dc:	7100441f 	cmp	w0, #0x11</pre>
+<pre>   4d2e0:	54001200 	b.eq	4d520 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x3a0&gt;  // b.none</pre>
+<pre>   4d2e4:	7100741f 	cmp	w0, #0x1d</pre>
+<pre>   4d2e8:	54001720 	b.eq	4d5cc &lt;psiginfo&commat;&commat;GLIBC_2.17+0x44c&gt;  // b.none</pre>
+<pre>   4d2ec:	b9801262 	ldrsw	x2, [x19, #16]</pre>
+<pre>   4d2f0:	aa1403e0 	mov	x0, x20</pre>
+<pre>   4d2f4:	b9401663 	ldr	w3, [x19, #20]</pre>
+<pre>   4d2f8:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d2fc:	91288021 	add	x1, x1, #0xa20</pre>
+<pre><span class="red">   4d300:	97fffa74 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d304:	14000029 	b	4d3a8 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x228&gt;</pre>
+<pre>   4d308:	7100101f 	cmp	w0, #0x4</pre>
+<pre>--</pre>
+<pre>   4d354:	17ffffbc 	b	4d244 &lt;psiginfo&commat;&commat;GLIBC_2.17+0xc4&gt;</pre>
+<pre>   4d358:	97ffa77e 	bl	37150 &lt;__libc_current_sigrtmin&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d35c:	6b0002df 	cmp	w22, w0</pre>
+<pre>   4d360:	5400010b 	b.lt	4d380 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x200&gt;  // b.tstop</pre>
+<pre>   4d364:	b9400276 	ldr	w22, [x19]</pre>
+<pre>   4d368:	f9001bf7 	str	x23, [sp, #48]</pre>
+<pre>   4d36c:	97ffa77d 	bl	37160 &lt;__libc_current_sigrtmax&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d370:	6b0002df 	cmp	w22, w0</pre>
+<pre>   4d374:	54000e4b 	b.lt	4d53c &lt;psiginfo&commat;&commat;GLIBC_2.17+0x3bc&gt;  // b.tstop</pre>
+<pre>   4d378:	f9401bf7 	ldr	x23, [sp, #48]</pre>
+<pre>   4d37c:	d503201f 	nop</pre>
+<pre>   4d380:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>   4d384:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d388:	b00006a0 	adrp	x0, 122000 &lt;in6addr_any&commat;&commat;GLIBC_2.17+0x1838&gt;</pre>
+<pre>   4d38c:	9128c021 	add	x1, x1, #0xa30</pre>
+<pre>   4d390:	9134a000 	add	x0, x0, #0xd28</pre>
+<pre>   4d394:	97ff8d07 	bl	307b0 &lt;__dcgettext&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d398:	aa0003e1 	mov	x1, x0</pre>
+<pre>   4d39c:	b9400262 	ldr	w2, [x19]</pre>
+<pre>   4d3a0:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">   4d3a4:	97fffa4b 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d3a8:	aa1403e0 	mov	x0, x20</pre>
+<pre>   4d3ac:	94005b81 	bl	641b0 &lt;_IO_fclose&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>--</pre>
+<pre>   4d3bc:	aa0003e2 	mov	x2, x0</pre>
+<pre>   4d3c0:	52800040 	mov	w0, #0x2                   	// #2</pre>
+<pre>   4d3c4:	9401e98b 	bl	c79f0 &lt;__write_nocancel&commat;&commat;GLIBC_PRIVATE&gt;</pre>
+<pre>   4d3c8:	a9407bfd 	ldp	x29, x30, [sp]</pre>
+<pre>   4d3cc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   4d3d0:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   4d3d4:	910903ff 	add	sp, sp, #0x240</pre>
+<pre>   4d3d8:	d65f03c0 	ret</pre>
+<pre>   4d3dc:	3100045f 	cmn	w2, #0x1</pre>
+<pre>   4d3e0:	54000440 	b.eq	4d468 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x2e8&gt;  // b.none</pre>
+<pre>   4d3e4:	7100005f 	cmp	w2, #0x0</pre>
+<pre>   4d3e8:	540002cb 	b.lt	4d440 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x2c0&gt;  // b.tstop</pre>
+<pre>   4d3ec:	540011c0 	b.eq	4d624 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x4a4&gt;  // b.none</pre>
+<pre>   4d3f0:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d3f4:	9125c021 	add	x1, x1, #0x970</pre>
+<pre>   4d3f8:	7102005f 	cmp	w2, #0x80</pre>
+<pre>   4d3fc:	54fff580 	b.eq	4d2ac &lt;psiginfo&commat;&commat;GLIBC_2.17+0x12c&gt;  // b.none</pre>
+<pre>   4d400:	aa1403e0 	mov	x0, x20</pre>
+<pre>   4d404:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d408:	9127e021 	add	x1, x1, #0x9f8</pre>
+<pre><span class="red">   4d40c:	97fffa31 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d410:	b9400260 	ldr	w0, [x19]</pre>
+<pre>   4d414:	71002c1f 	cmp	w0, #0xb</pre>
+<pre>   4d418:	54fff628 	b.hi	4d2dc &lt;psiginfo&commat;&commat;GLIBC_2.17+0x15c&gt;  // b.pmore</pre>
+<pre>   4d41c:	d2813201 	mov	x1, #0x990                 	// #2448</pre>
+<pre>   4d420:	9ac02420 	lsr	x0, x1, x0</pre>
+<pre>   4d424:	3607f640 	tbz	w0, #0, 4d2ec &lt;psiginfo&commat;&commat;GLIBC_2.17+0x16c&gt;</pre>
+<pre>   4d428:	f9400a62 	ldr	x2, [x19, #16]</pre>
+<pre>   4d42c:	aa1403e0 	mov	x0, x20</pre>
+<pre>   4d430:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d434:	91280021 	add	x1, x1, #0xa00</pre>
+<pre><span class="red">   4d438:	97fffa26 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d43c:	17ffffdb 	b	4d3a8 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x228&gt;</pre>
+<pre>   4d440:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d444:	9123a021 	add	x1, x1, #0x8e8</pre>
+<pre>   4d448:	3100085f 	cmn	w2, #0x2</pre>
+<pre>   4d44c:	54fff300 	b.eq	4d2ac &lt;psiginfo&commat;&commat;GLIBC_2.17+0x12c&gt;  // b.none</pre>
+<pre>   4d450:	17ffffec 	b	4d400 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x280&gt;</pre>
+<pre>   4d454:	aa1603e2 	mov	x2, x22</pre>
+<pre>   4d458:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d45c:	9126a021 	add	x1, x1, #0x9a8</pre>
+<pre><span class="red">   4d460:	97fffa1c 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d464:	17ffff59 	b	4d1c8 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x48&gt;</pre>
+<pre>   4d468:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>--</pre>
+<pre>   4d4e4:	d2800063 	mov	x3, #0x3                   	// #3</pre>
+<pre>   4d4e8:	910b6021 	add	x1, x1, #0x2d8</pre>
+<pre>   4d4ec:	17ffff56 	b	4d244 &lt;psiginfo&commat;&commat;GLIBC_2.17+0xc4&gt;</pre>
+<pre>   4d4f0:	d00006c3 	adrp	x3, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   4d4f4:	910e2063 	add	x3, x3, #0x388</pre>
+<pre>   4d4f8:	aa0303f6 	mov	x22, x3</pre>
+<pre>   4d4fc:	17ffffe9 	b	4d4a0 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x320&gt;</pre>
+<pre>   4d500:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d504:	9124e021 	add	x1, x1, #0x938</pre>
+<pre>   4d508:	17ffff69 	b	4d2ac &lt;psiginfo&commat;&commat;GLIBC_2.17+0x12c&gt;</pre>
+<pre>   4d50c:	b0000680 	adrp	x0, 11e000 &lt;__libc_freeres&commat;&commat;GLIBC_2.17+0x12e60&gt;</pre>
+<pre>   4d510:	91130000 	add	x0, x0, #0x4c0</pre>
+<pre>   4d514:	91002001 	add	x1, x0, #0x8</pre>
+<pre>   4d518:	d2800043 	mov	x3, #0x2                   	// #2</pre>
+<pre>   4d51c:	17ffff4a 	b	4d244 &lt;psiginfo&commat;&commat;GLIBC_2.17+0xc4&gt;</pre>
+<pre>   4d520:	b9801262 	ldrsw	x2, [x19, #16]</pre>
+<pre>   4d524:	aa1403e0 	mov	x0, x20</pre>
+<pre>   4d528:	29428e64 	ldp	w4, w3, [x19, #20]</pre>
+<pre>   4d52c:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d530:	91282021 	add	x1, x1, #0xa08</pre>
+<pre><span class="red">   4d534:	97fff9e7 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d538:	17ffff9c 	b	4d3a8 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x228&gt;</pre>
+<pre>   4d53c:	b9400276 	ldr	w22, [x19]</pre>
+<pre>   4d540:	97ffa704 	bl	37150 &lt;__libc_current_sigrtmin&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d544:	4b0002d6 	sub	w22, w22, w0</pre>
+<pre>   4d548:	97ffa706 	bl	37160 &lt;__libc_current_sigrtmax&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d54c:	b9400277 	ldr	w23, [x19]</pre>
+<pre>   4d550:	4b170000 	sub	w0, w0, w23</pre>
+<pre>   4d554:	6b0002df 	cmp	w22, w0</pre>
+<pre>   4d558:	540001aa 	b.ge	4d58c &lt;psiginfo&commat;&commat;GLIBC_2.17+0x40c&gt;  // b.tcont</pre>
+<pre>   4d55c:	97ffa6fd 	bl	37150 &lt;__libc_current_sigrtmin&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d560:	6b0002ff 	cmp	w23, w0</pre>
+<pre>   4d564:	54000400 	b.eq	4d5e4 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x464&gt;  // b.none</pre>
+<pre>   4d568:	b9400276 	ldr	w22, [x19]</pre>
+<pre>   4d56c:	97ffa6f9 	bl	37150 &lt;__libc_current_sigrtmin&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d570:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d574:	91270021 	add	x1, x1, #0x9c0</pre>
+<pre>   4d578:	4b0002c2 	sub	w2, w22, w0</pre>
+<pre>   4d57c:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">   4d580:	97fff9d4 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d584:	f9401bf7 	ldr	x23, [sp, #48]</pre>
+<pre>   4d588:	17ffff20 	b	4d208 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x88&gt;</pre>
+<pre>   4d58c:	97ffa6f5 	bl	37160 &lt;__libc_current_sigrtmax&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d590:	6b0002ff 	cmp	w23, w0</pre>
+<pre>   4d594:	54000380 	b.eq	4d604 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x484&gt;  // b.none</pre>
+<pre>   4d598:	97ffa6f2 	bl	37160 &lt;__libc_current_sigrtmax&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   4d59c:	2a0003e3 	mov	w3, w0</pre>
+<pre>   4d5a0:	b9400262 	ldr	w2, [x19]</pre>
+<pre>   4d5a4:	aa1403e0 	mov	x0, x20</pre>
+<pre>   4d5a8:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d5ac:	91278021 	add	x1, x1, #0x9e0</pre>
+<pre>   4d5b0:	4b020062 	sub	w2, w3, w2</pre>
+<pre><span class="red">   4d5b4:	97fff9c7 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d5b8:	f9401bf7 	ldr	x23, [sp, #48]</pre>
+<pre>   4d5bc:	17ffff13 	b	4d208 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x88&gt;</pre>
+<pre>   4d5c0:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d5c4:	9121c021 	add	x1, x1, #0x870</pre>
+<pre>   4d5c8:	17ffff39 	b	4d2ac &lt;psiginfo&commat;&commat;GLIBC_2.17+0x12c&gt;</pre>
+<pre>   4d5cc:	f9400a62 	ldr	x2, [x19, #16]</pre>
+<pre>   4d5d0:	aa1403e0 	mov	x0, x20</pre>
+<pre>   4d5d4:	d00006a1 	adrp	x1, 123000 &lt;_nl_default_dirname&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   4d5d8:	91286021 	add	x1, x1, #0xa18</pre>
+<pre><span class="red">   4d5dc:	97fff9bd 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   4d5e0:	17ffff72 	b	4d3a8 &lt;psiginfo&commat;&commat;GLIBC_2.17+0x228&gt;</pre>
+<pre>   4d5e4:	aa1403e3 	mov	x3, x20</pre>
+<pre>--</pre>
+<pre>   76f6c:	a90353f3 	stp	x19, x20, [sp, #48]</pre>
+<pre>   76f70:	f0000574 	adrp	x20, 125000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x19f8&gt;</pre>
+<pre>   76f74:	910aa294 	add	x20, x20, #0x2a8</pre>
+<pre>   76f78:	aa0003f3 	mov	x19, x0</pre>
+<pre>   76f7c:	9103c3e0 	add	x0, sp, #0xf0</pre>
+<pre>   76f80:	a90563f7 	stp	x23, x24, [sp, #80]</pre>
+<pre>   76f84:	a9066bf9 	stp	x25, x26, [sp, #96]</pre>
+<pre>   76f88:	a908ffff 	stp	xzr, xzr, [sp, #136]</pre>
+<pre>   76f8c:	a909ffff 	stp	xzr, xzr, [sp, #152]</pre>
+<pre>   76f90:	a90affff 	stp	xzr, xzr, [sp, #168]</pre>
+<pre>   76f94:	a90bffff 	stp	xzr, xzr, [sp, #184]</pre>
+<pre>   76f98:	b900cfff 	str	wzr, [sp, #204]</pre>
+<pre>   76f9c:	f9006be0 	str	x0, [sp, #208]</pre>
+<pre>   76fa0:	b940cfe0 	ldr	w0, [sp, #204]</pre>
+<pre>   76fa4:	f0000561 	adrp	x1, 125000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x19f8&gt;</pre>
+<pre>   76fa8:	910a4021 	add	x1, x1, #0x290</pre>
+<pre>   76fac:	2a0003e2 	mov	w2, w0</pre>
+<pre>   76fb0:	11000400 	add	w0, w0, #0x1</pre>
+<pre>   76fb4:	b900cfe0 	str	w0, [sp, #204]</pre>
+<pre>   76fb8:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">   76fbc:	97ff5345 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   76fc0:	52800020 	mov	w0, #0x1                   	// #1</pre>
+<pre>   76fc4:	885ffea1 	ldaxr	w1, [x21]</pre>
+<pre>--</pre>
+<pre>   77178:	f9404fe0 	ldr	x0, [sp, #152]</pre>
+<pre>   7717c:	8b1c0000 	add	x0, x0, x28</pre>
+<pre>   77180:	f9004fe0 	str	x0, [sp, #152]</pre>
+<pre>   77184:	f94053e0 	ldr	x0, [sp, #160]</pre>
+<pre>   77188:	8b1a0000 	add	x0, x0, x26</pre>
+<pre>   7718c:	f90053e0 	str	x0, [sp, #160]</pre>
+<pre>   77190:	14000004 	b	771a0 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x18f0&gt;</pre>
+<pre>   77194:	91008339 	add	x25, x25, #0x20</pre>
+<pre>   77198:	f102271f 	cmp	x24, #0x89</pre>
+<pre>   7719c:	540001c0 	b.eq	771d4 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x1924&gt;  // b.none</pre>
+<pre>   771a0:	f9400f25 	ldr	x5, [x25, #24]</pre>
+<pre>   771a4:	f10000bf 	cmp	x5, #0x0</pre>
+<pre>   771a8:	fa4a1b04 	ccmp	x24, #0xa, #0x4, ne  // ne = any</pre>
+<pre>   771ac:	91000718 	add	x24, x24, #0x1</pre>
+<pre>   771b0:	54ffff20 	b.eq	77194 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x18e4&gt;  // b.none</pre>
+<pre>   771b4:	a9400f22 	ldp	x2, x3, [x25]</pre>
+<pre>   771b8:	aa1403e1 	mov	x1, x20</pre>
+<pre>   771bc:	f9400b24 	ldr	x4, [x25, #16]</pre>
+<pre>   771c0:	aa1303e0 	mov	x0, x19</pre>
+<pre>   771c4:	91008339 	add	x25, x25, #0x20</pre>
+<pre><span class="red">   771c8:	97ff52c2 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   771cc:	f102271f 	cmp	x24, #0x89</pre>
+<pre>   771d0:	54fffe81 	b.ne	771a0 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x18f0&gt;  // b.any</pre>
+<pre>   771d4:	f94127e5 	ldr	x5, [sp, #584]</pre>
+<pre>   771d8:	b5000bc5 	cbnz	x5, 77350 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x1aa0&gt;</pre>
+<pre>   771dc:	f94057e0 	ldr	x0, [sp, #168]</pre>
+<pre>   771e0:	aa1a03e5 	mov	x5, x26</pre>
+<pre>   771e4:	f94446a6 	ldr	x6, [x21, #2184]</pre>
+<pre>   771e8:	aa1c03e4 	mov	x4, x28</pre>
+<pre>   771ec:	f9444aa7 	ldr	x7, [x21, #2192]</pre>
+<pre>   771f0:	8b060000 	add	x0, x0, x6</pre>
+<pre>   771f4:	f90057e0 	str	x0, [sp, #168]</pre>
+<pre>   771f8:	aa1703e3 	mov	x3, x23</pre>
+<pre>   771fc:	f9405be0 	ldr	x0, [sp, #176]</pre>
+<pre>   77200:	aa1603e2 	mov	x2, x22</pre>
+<pre>   77204:	8b070000 	add	x0, x0, x7</pre>
+<pre>   77208:	f9005be0 	str	x0, [sp, #176]</pre>
+<pre>   7720c:	d0000560 	adrp	x0, 125000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x19f8&gt;</pre>
+<pre>   77210:	910c8001 	add	x1, x0, #0x320</pre>
+<pre>   77214:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">   77218:	97ff52ae 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7721c:	d0000760 	adrp	x0, 165000 &lt;h_errlist&commat;&commat;GLIBC_2.17+0xe08&gt;</pre>
+<pre>   77220:	9127e000 	add	x0, x0, #0x9f8</pre>
+<pre>   77224:	eb0002bf 	cmp	x21, x0</pre>
+<pre>   77228:	54000a40 	b.eq	77370 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x1ac0&gt;  // b.none</pre>
+<pre>   7722c:	a94d8fe2 	ldp	x2, x3, [sp, #216]</pre>
+<pre>   77230:	d0000561 	adrp	x1, 125000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x19f8&gt;</pre>
+<pre>   77234:	910f2021 	add	x1, x1, #0x3c8</pre>
+<pre>   77238:	f9405fe0 	ldr	x0, [sp, #184]</pre>
+<pre>   7723c:	f94077e4 	ldr	x4, [sp, #232]</pre>
+<pre>   77240:	8b020000 	add	x0, x0, x2</pre>
+<pre>   77244:	f9005fe0 	str	x0, [sp, #184]</pre>
+<pre>   77248:	f94063e0 	ldr	x0, [sp, #192]</pre>
+<pre>   7724c:	8b030000 	add	x0, x0, x3</pre>
+<pre>   77250:	f90063e0 	str	x0, [sp, #192]</pre>
+<pre>   77254:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">   77258:	97ff529e 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7725c:	aa1303e1 	mov	x1, x19</pre>
+<pre>   77260:	d0000560 	adrp	x0, 125000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x19f8&gt;</pre>
+<pre>--</pre>
+<pre>   77274:	9127e000 	add	x0, x0, #0x9f8</pre>
+<pre>   77278:	eb0002bf 	cmp	x21, x0</pre>
+<pre>   7727c:	54ffe921 	b.ne	76fa0 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x16f0&gt;  // b.any</pre>
+<pre>   77280:	f94057e1 	ldr	x1, [sp, #168]</pre>
+<pre>   77284:	d0000760 	adrp	x0, 165000 &lt;h_errlist&commat;&commat;GLIBC_2.17+0xe08&gt;</pre>
+<pre>   77288:	91026000 	add	x0, x0, #0x98</pre>
+<pre>   7728c:	f90003e1 	str	x1, [sp]</pre>
+<pre>   77290:	f9405be1 	ldr	x1, [sp, #176]</pre>
+<pre>   77294:	f90007e1 	str	x1, [sp, #8]</pre>
+<pre>   77298:	a9488fe2 	ldp	x2, x3, [sp, #136]</pre>
+<pre>   7729c:	d0000561 	adrp	x1, 125000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x19f8&gt;</pre>
+<pre>   772a0:	91124021 	add	x1, x1, #0x490</pre>
+<pre>   772a4:	b9402806 	ldr	w6, [x0, #40]</pre>
+<pre>   772a8:	a94997e4 	ldp	x4, x5, [sp, #152]</pre>
+<pre>   772ac:	f9401c07 	ldr	x7, [x0, #56]</pre>
+<pre>   772b0:	f9405fe0 	ldr	x0, [sp, #184]</pre>
+<pre>   772b4:	f9000be0 	str	x0, [sp, #16]</pre>
+<pre>   772b8:	f94063e0 	ldr	x0, [sp, #192]</pre>
+<pre>   772bc:	f9000fe0 	str	x0, [sp, #24]</pre>
+<pre>   772c0:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">   772c4:	97ff5283 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   772c8:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>   772cc:	d282420c 	mov	x12, #0x1210                	// #4624</pre>
+<pre>--</pre>
+<pre>   77318:	a90d87e0 	stp	x0, x1, [sp, #216]</pre>
+<pre>   7731c:	f90077e2 	str	x2, [sp, #232]</pre>
+<pre>   77320:	885f7ea0 	ldxr	w0, [x21]</pre>
+<pre>   77324:	8801febf 	stlxr	w1, wzr, [x21]</pre>
+<pre>   77328:	35ffffc1 	cbnz	w1, 77320 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x1a70&gt;</pre>
+<pre>   7732c:	7100041f 	cmp	w0, #0x1</pre>
+<pre>   77330:	54fff16d 	b.le	7715c &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x18ac&gt;</pre>
+<pre>   77334:	aa1503e0 	mov	x0, x21</pre>
+<pre>   77338:	d2801021 	mov	x1, #0x81                  	// #129</pre>
+<pre>   7733c:	d2800022 	mov	x2, #0x1                   	// #1</pre>
+<pre>   77340:	d2800003 	mov	x3, #0x0                   	// #0</pre>
+<pre>   77344:	d2800c48 	mov	x8, #0x62                  	// #98</pre>
+<pre>   77348:	d4000001 	svc	#0x0</pre>
+<pre>   7734c:	17ffff84 	b	7715c &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x18ac&gt;</pre>
+<pre>   77350:	f9411be2 	ldr	x2, [sp, #560]</pre>
+<pre>   77354:	aa1303e0 	mov	x0, x19</pre>
+<pre>   77358:	f9411fe3 	ldr	x3, [sp, #568]</pre>
+<pre>   7735c:	d0000561 	adrp	x1, 125000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x19f8&gt;</pre>
+<pre>   77360:	910b8021 	add	x1, x1, #0x2e0</pre>
+<pre>   77364:	f94123e4 	ldr	x4, [sp, #576]</pre>
+<pre><span class="red">   77368:	97ff525a 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7736c:	17ffff9c 	b	771dc &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x192c&gt;</pre>
+<pre>   77370:	f94446a3 	ldr	x3, [x21, #2184]</pre>
+<pre>   77374:	aa1303e0 	mov	x0, x19</pre>
+<pre>   77378:	d0000561 	adrp	x1, 125000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x19f8&gt;</pre>
+<pre>   7737c:	9110e021 	add	x1, x1, #0x438</pre>
+<pre>   77380:	aa0303e2 	mov	x2, x3</pre>
+<pre><span class="red">   77384:	97ff5253 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   77388:	f9405fe1 	ldr	x1, [sp, #184]</pre>
+<pre>   7738c:	f94446a0 	ldr	x0, [x21, #2184]</pre>
+<pre>--</pre>
+<pre>   7b5f0:	b9006fe1 	str	w1, [sp, #108]</pre>
+<pre>   7b5f4:	321f0021 	orr	w1, w1, #0x2</pre>
+<pre>   7b5f8:	b9007401 	str	w1, [x0, #116]</pre>
+<pre>   7b5fc:	d503201f 	nop</pre>
+<pre>   7b600:	52800021 	mov	w1, #0x1                   	// #1</pre>
+<pre>   7b604:	a9007f9f 	stp	xzr, xzr, [x28]</pre>
+<pre>   7b608:	a9017f9f 	stp	xzr, xzr, [x28, #16]</pre>
+<pre>   7b60c:	f900139f 	str	xzr, [x28, #32]</pre>
+<pre>   7b610:	885fff20 	ldaxr	w0, [x25]</pre>
+<pre>   7b614:	35000060 	cbnz	w0, 7b620 &lt</span>alloc_stats&commat;&commat;GLIBC_2.17+0xa0&gt;</pre>
+<pre>   7b618:	88027f21 	stxr	w2, w1, [x25]</pre>
+<pre>   7b61c:	35ffffa2 	cbnz	w2, 7b610 &lt</span>alloc_stats&commat;&commat;GLIBC_2.17+0x90&gt;</pre>
+<pre>   7b620:	7100001f 	cmp	w0, #0x0</pre>
+<pre>   7b624:	540009a1 	b.ne	7b758 &lt</span>alloc_stats&commat;&commat;GLIBC_2.17+0x1d8&gt;  // b.any</pre>
+<pre>   7b628:	aa1c03e1 	mov	x1, x28</pre>
+<pre>   7b62c:	aa1903e0 	mov	x0, x25</pre>
+<pre>   7b630:	97ffe9cc 	bl	75d60 &lt;pthread_attr_setschedparam&commat;&commat;GLIBC_2.17+0x4b0&gt;</pre>
+<pre>   7b634:	f9400280 	ldr	x0, [x20]</pre>
+<pre>   7b638:	2a1303e2 	mov	w2, w19</pre>
+<pre>   7b63c:	aa1703e1 	mov	x1, x23</pre>
+<pre><span class="red">   7b640:	97ff41a4 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7b644:	b9407be2 	ldr	w2, [sp, #120]</pre>
+<pre>   7b648:	aa1b03e1 	mov	x1, x27</pre>
+<pre>   7b64c:	f9400280 	ldr	x0, [x20]</pre>
+<pre><span class="red">   7b650:	97ff41a0 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7b654:	b94097e2 	ldr	w2, [sp, #148]</pre>
+<pre>   7b658:	aa1a03e1 	mov	x1, x26</pre>
+<pre>   7b65c:	f9400280 	ldr	x0, [x20]</pre>
+<pre><span class="red">   7b660:	97ff419c 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7b664:	b9407be1 	ldr	w1, [sp, #120]</pre>
+<pre>   7b668:	b94097e0 	ldr	w0, [sp, #148]</pre>
+<pre>--</pre>
+<pre>   7b684:	540005cc 	b.gt	7b73c &lt</span>alloc_stats&commat;&commat;GLIBC_2.17+0x1bc&gt;</pre>
+<pre>   7b688:	f9443b39 	ldr	x25, [x25, #2160]</pre>
+<pre>   7b68c:	9127e300 	add	x0, x24, #0x9f8</pre>
+<pre>   7b690:	11000673 	add	w19, w19, #0x1</pre>
+<pre>   7b694:	eb00033f 	cmp	x25, x0</pre>
+<pre>   7b698:	54fffb41 	b.ne	7b600 &lt</span>alloc_stats&commat;&commat;GLIBC_2.17+0x80&gt;  // b.any</pre>
+<pre>   7b69c:	b0000740 	adrp	x0, 164000 &lt;sys_sigabbrev&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   7b6a0:	d0000743 	adrp	x3, 165000 &lt;h_errlist&commat;&commat;GLIBC_2.17+0xe08&gt;</pre>
+<pre>   7b6a4:	91026074 	add	x20, x3, #0x98</pre>
+<pre>   7b6a8:	d2800282 	mov	x2, #0x14                  	// #20</pre>
+<pre>   7b6ac:	f946b013 	ldr	x19, [x0, #3424]</pre>
+<pre>   7b6b0:	d2800021 	mov	x1, #0x1                   	// #1</pre>
+<pre>   7b6b4:	f0000540 	adrp	x0, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7b6b8:	9104e000 	add	x0, x0, #0x138</pre>
+<pre>   7b6bc:	f9400263 	ldr	x3, [x19]</pre>
+<pre>   7b6c0:	97ffa808 	bl	656e0 &lt;_IO_fwrite&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   7b6c4:	f9400260 	ldr	x0, [x19]</pre>
+<pre>   7b6c8:	2a1603e2 	mov	w2, w22</pre>
+<pre>   7b6cc:	f0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7b6d0:	9103e021 	add	x1, x1, #0xf8</pre>
+<pre><span class="red">   7b6d4:	97ff417f 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7b6d8:	f9400260 	ldr	x0, [x19]</pre>
+<pre>   7b6dc:	2a1503e2 	mov	w2, w21</pre>
+<pre>   7b6e0:	f0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7b6e4:	91046021 	add	x1, x1, #0x118</pre>
+<pre><span class="red">   7b6e8:	97ff417a 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7b6ec:	b9403282 	ldr	w2, [x20, #48]</pre>
+<pre>   7b6f0:	f0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7b6f4:	91054021 	add	x1, x1, #0x150</pre>
+<pre>   7b6f8:	f9400260 	ldr	x0, [x19]</pre>
+<pre><span class="red">   7b6fc:	97ff4175 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7b700:	f9400260 	ldr	x0, [x19]</pre>
+<pre>   7b704:	f0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7b708:	9105c021 	add	x1, x1, #0x170</pre>
+<pre>   7b70c:	f9402282 	ldr	x2, [x20, #64]</pre>
+<pre><span class="red">   7b710:	97ff4170 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7b714:	f9400260 	ldr	x0, [x19]</pre>
+<pre>   7b718:	b9406fe1 	ldr	w1, [sp, #108]</pre>
+<pre>--</pre>
+<pre>   7c50c:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7c510:	910e4021 	add	x1, x1, #0x390</pre>
+<pre>   7c514:	94000d7b 	bl	7fb00 &lt;__stpcpy&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   7c518:	aa0003e1 	mov	x1, x0</pre>
+<pre>   7c51c:	52800003 	mov	w3, #0x0                   	// #0</pre>
+<pre>   7c520:	52800202 	mov	w2, #0x10                  	// #16</pre>
+<pre>   7c524:	aa1603e0 	mov	x0, x22</pre>
+<pre>   7c528:	97ff2b6e 	bl	472e0 &lt;cuserid&commat;&commat;GLIBC_2.17+0x190&gt;</pre>
+<pre>   7c52c:	52800521 	mov	w1, #0x29                  	// #41</pre>
+<pre>   7c530:	79000001 	strh	w1, [x0]</pre>
+<pre>   7c534:	90000563 	adrp	x3, 128000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x49f8&gt;</pre>
+<pre>   7c538:	913f2063 	add	x3, x3, #0xfc8</pre>
+<pre>   7c53c:	f9400282 	ldr	x2, [x20]</pre>
+<pre>   7c540:	90000760 	adrp	x0, 168000 &lt;__abort_msg&commat;&commat;GLIBC_PRIVATE+0xa98&gt;</pre>
+<pre>   7c544:	f943a400 	ldr	x0, [x0, #1864]</pre>
+<pre>   7c548:	b4000382 	cbz	x2, 7c5b8 &lt</span>probe&commat;&commat;GLIBC_2.17+0x1c8&gt;</pre>
+<pre>   7c54c:	aa1303e5 	mov	x5, x19</pre>
+<pre>   7c550:	aa1503e4 	mov	x4, x21</pre>
+<pre>   7c554:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7c558:	910e8021 	add	x1, x1, #0x3a0</pre>
+<pre><span class="red">   7c55c:	97ff3ddd 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7c560:	910003bf 	mov	sp, x29</pre>
+<pre>   7c564:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>   7c58c:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7c590:	910e6021 	add	x1, x1, #0x398</pre>
+<pre>   7c594:	17ffffe0 	b	7c514 &lt</span>probe&commat;&commat;GLIBC_2.17+0x124&gt;</pre>
+<pre>   7c598:	f9400282 	ldr	x2, [x20]</pre>
+<pre>   7c59c:	f0000555 	adrp	x21, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   7c5a0:	910e22b5 	add	x21, x21, #0x388</pre>
+<pre>   7c5a4:	90000760 	adrp	x0, 168000 &lt;__abort_msg&commat;&commat;GLIBC_PRIVATE+0xa98&gt;</pre>
+<pre>   7c5a8:	f943a400 	ldr	x0, [x0, #1864]</pre>
+<pre>   7c5ac:	90000563 	adrp	x3, 128000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x49f8&gt;</pre>
+<pre>   7c5b0:	913f2063 	add	x3, x3, #0xfc8</pre>
+<pre>   7c5b4:	b5fffcc2 	cbnz	x2, 7c54c &lt</span>probe&commat;&commat;GLIBC_2.17+0x15c&gt;</pre>
+<pre>   7c5b8:	f0000542 	adrp	x2, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   7c5bc:	910e2042 	add	x2, x2, #0x388</pre>
+<pre>   7c5c0:	aa0203e3 	mov	x3, x2</pre>
+<pre>   7c5c4:	17ffffe2 	b	7c54c &lt</span>probe&commat;&commat;GLIBC_2.17+0x15c&gt;</pre>
+<pre>   7c5c8:	90000760 	adrp	x0, 168000 &lt;__abort_msg&commat;&commat;GLIBC_PRIVATE+0xa98&gt;</pre>
+<pre>   7c5cc:	aa1303e2 	mov	x2, x19</pre>
+<pre>   7c5d0:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7c5d4:	910ec021 	add	x1, x1, #0x3b0</pre>
+<pre>   7c5d8:	f943a400 	ldr	x0, [x0, #1864]</pre>
+<pre><span class="red">   7c5dc:	97ff3dbd 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7c5e0:	910003bf 	mov	sp, x29</pre>
+<pre>   7c5e4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>--</pre>
+<pre>   7c6b0:	91240063 	add	x3, x3, #0x900</pre>
+<pre>   7c6b4:	90000002 	adrp	x2, 7c000 &lt</span>check_check_all&commat;&commat;GLIBC_2.17+0x410&gt;</pre>
+<pre>   7c6b8:	91180042 	add	x2, x2, #0x600</pre>
+<pre>   7c6bc:	aa1303e0 	mov	x0, x19</pre>
+<pre>   7c6c0:	f94762d6 	ldr	x22, [x22, #3776]</pre>
+<pre>   7c6c4:	aa1b03e1 	mov	x1, x27</pre>
+<pre>   7c6c8:	f947f6b5 	ldr	x21, [x21, #4072]</pre>
+<pre>   7c6cc:	f90002e5 	str	x5, [x23]</pre>
+<pre>   7c6d0:	f9475a94 	ldr	x20, [x20, #3760]</pre>
+<pre>   7c6d4:	f90002c4 	str	x4, [x22]</pre>
+<pre>   7c6d8:	f90002a3 	str	x3, [x21]</pre>
+<pre>   7c6dc:	911d2353 	add	x19, x26, #0x748</pre>
+<pre>   7c6e0:	91002273 	add	x19, x19, #0x8</pre>
+<pre>   7c6e4:	f9000282 	str	x2, [x20]</pre>
+<pre>   7c6e8:	97ffff6e 	bl	7c4a0 &lt</span>probe&commat;&commat;GLIBC_2.17+0xb0&gt;</pre>
+<pre>   7c6ec:	f943a740 	ldr	x0, [x26, #1864]</pre>
+<pre>   7c6f0:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7c6f4:	aa1803e3 	mov	x3, x24</pre>
+<pre>   7c6f8:	aa1903e2 	mov	x2, x25</pre>
+<pre>   7c6fc:	910ee021 	add	x1, x1, #0x3b8</pre>
+<pre><span class="red">   7c700:	97ff3d74 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7c704:	885f7e60 	ldxr	w0, [x19]</pre>
+<pre>   7c708:	8801fe7f 	stlxr	w1, wzr, [x19]</pre>
+<pre>--</pre>
+<pre>   7c828:	91240063 	add	x3, x3, #0x900</pre>
+<pre>   7c82c:	90000002 	adrp	x2, 7c000 &lt</span>check_check_all&commat;&commat;GLIBC_2.17+0x410&gt;</pre>
+<pre>   7c830:	91180042 	add	x2, x2, #0x600</pre>
+<pre>   7c834:	aa1303e0 	mov	x0, x19</pre>
+<pre>   7c838:	f94762d6 	ldr	x22, [x22, #3776]</pre>
+<pre>   7c83c:	aa1b03e1 	mov	x1, x27</pre>
+<pre>   7c840:	f947f6b5 	ldr	x21, [x21, #4072]</pre>
+<pre>   7c844:	f90002e5 	str	x5, [x23]</pre>
+<pre>   7c848:	f9475a94 	ldr	x20, [x20, #3760]</pre>
+<pre>   7c84c:	f90002c4 	str	x4, [x22]</pre>
+<pre>   7c850:	f90002a3 	str	x3, [x21]</pre>
+<pre>   7c854:	911d2353 	add	x19, x26, #0x748</pre>
+<pre>   7c858:	91002273 	add	x19, x19, #0x8</pre>
+<pre>   7c85c:	f9000282 	str	x2, [x20]</pre>
+<pre>   7c860:	97ffff10 	bl	7c4a0 &lt</span>probe&commat;&commat;GLIBC_2.17+0xb0&gt;</pre>
+<pre>   7c864:	f943a740 	ldr	x0, [x26, #1864]</pre>
+<pre>   7c868:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7c86c:	aa1803e3 	mov	x3, x24</pre>
+<pre>   7c870:	aa1903e2 	mov	x2, x25</pre>
+<pre>   7c874:	910ee021 	add	x1, x1, #0x3b8</pre>
+<pre><span class="red">   7c878:	97ff3d16 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7c87c:	885f7e60 	ldxr	w0, [x19]</pre>
+<pre>   7c880:	8801fe7f 	stlxr	w1, wzr, [x19]</pre>
+<pre>--</pre>
+<pre>   7c9ac:	90000003 	adrp	x3, 7c000 &lt</span>check_check_all&commat;&commat;GLIBC_2.17+0x410&gt;</pre>
+<pre>   7c9b0:	91240063 	add	x3, x3, #0x900</pre>
+<pre>   7c9b4:	90000002 	adrp	x2, 7c000 &lt</span>check_check_all&commat;&commat;GLIBC_2.17+0x410&gt;</pre>
+<pre>   7c9b8:	91180042 	add	x2, x2, #0x600</pre>
+<pre>   7c9bc:	aa1403e0 	mov	x0, x20</pre>
+<pre>   7c9c0:	f947637b 	ldr	x27, [x27, #3776]</pre>
+<pre>   7c9c4:	aa1a03e1 	mov	x1, x26</pre>
+<pre>   7c9c8:	f947f739 	ldr	x25, [x25, #4072]</pre>
+<pre>   7c9cc:	f9000385 	str	x5, [x28]</pre>
+<pre>   7c9d0:	f9475b18 	ldr	x24, [x24, #3760]</pre>
+<pre>   7c9d4:	f9000364 	str	x4, [x27]</pre>
+<pre>   7c9d8:	f9000323 	str	x3, [x25]</pre>
+<pre>   7c9dc:	f9000302 	str	x2, [x24]</pre>
+<pre>   7c9e0:	97fffeb0 	bl	7c4a0 &lt</span>probe&commat;&commat;GLIBC_2.17+0xb0&gt;</pre>
+<pre>   7c9e4:	f943a660 	ldr	x0, [x19, #1864]</pre>
+<pre>   7c9e8:	b4000715 	cbz	x21, 7cac8 &lt</span>probe&commat;&commat;GLIBC_2.17+0x6d8&gt;</pre>
+<pre>   7c9ec:	b40003b6 	cbz	x22, 7ca60 &lt</span>probe&commat;&commat;GLIBC_2.17+0x670&gt;</pre>
+<pre>   7c9f0:	aa1603e2 	mov	x2, x22</pre>
+<pre>   7c9f4:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7c9f8:	910f8021 	add	x1, x1, #0x3e0</pre>
+<pre><span class="red">   7c9fc:	97ff3cb5 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7ca00:	aa1a03e1 	mov	x1, x26</pre>
+<pre>   7ca04:	aa1403e0 	mov	x0, x20</pre>
+<pre>   7ca08:	97fffea6 	bl	7c4a0 &lt</span>probe&commat;&commat;GLIBC_2.17+0xb0&gt;</pre>
+<pre>   7ca0c:	f943a660 	ldr	x0, [x19, #1864]</pre>
+<pre>   7ca10:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7ca14:	aa1703e3 	mov	x3, x23</pre>
+<pre>   7ca18:	aa1503e2 	mov	x2, x21</pre>
+<pre>   7ca1c:	910fa021 	add	x1, x1, #0x3e8</pre>
+<pre><span class="red">   7ca20:	97ff3cac 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7ca24:	911d2273 	add	x19, x19, #0x748</pre>
+<pre>   7ca28:	91002273 	add	x19, x19, #0x8</pre>
+<pre>   7ca2c:	885f7e60 	ldxr	w0, [x19]</pre>
+<pre>   7ca30:	8801fe7f 	stlxr	w1, wzr, [x19]</pre>
+<pre>   7ca34:	35ffffc1 	cbnz	w1, 7ca2c &lt</span>probe&commat;&commat;GLIBC_2.17+0x63c&gt;</pre>
+<pre>   7ca38:	7100041f 	cmp	w0, #0x1</pre>
+<pre>   7ca3c:	540002ac 	b.gt	7ca90 &lt</span>probe&commat;&commat;GLIBC_2.17+0x6a0&gt;</pre>
+<pre>   7ca40:	aa1503e0 	mov	x0, x21</pre>
+<pre>   7ca44:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   7ca48:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   7ca4c:	a94363f7 	ldp	x23, x24, [sp, #48]</pre>
+<pre>   7ca50:	a9446bf9 	ldp	x25, x26, [sp, #64]</pre>
+<pre>   7ca54:	a94573fb 	ldp	x27, x28, [sp, #80]</pre>
+<pre>   7ca58:	a8c87bfd 	ldp	x29, x30, [sp], #128</pre>
+<pre>   7ca5c:	d65f03c0 	ret</pre>
+<pre>   7ca60:	911d2273 	add	x19, x19, #0x748</pre>
+<pre>   7ca64:	aa1703e3 	mov	x3, x23</pre>
+<pre>   7ca68:	91002273 	add	x19, x19, #0x8</pre>
+<pre>   7ca6c:	aa1503e2 	mov	x2, x21</pre>
+<pre>   7ca70:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7ca74:	910ee021 	add	x1, x1, #0x3b8</pre>
+<pre><span class="red">   7ca78:	97ff3c96 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7ca7c:	885f7e60 	ldxr	w0, [x19]</pre>
+<pre>   7ca80:	8801fe7f 	stlxr	w1, wzr, [x19]</pre>
+<pre>--</pre>
+<pre>   7ca8c:	54fffdad 	b.le	7ca40 &lt</span>probe&commat;&commat;GLIBC_2.17+0x650&gt;</pre>
+<pre>   7ca90:	aa1303e0 	mov	x0, x19</pre>
+<pre>   7ca94:	d2801021 	mov	x1, #0x81                  	// #129</pre>
+<pre>   7ca98:	d2800022 	mov	x2, #0x1                   	// #1</pre>
+<pre>   7ca9c:	d2800003 	mov	x3, #0x0                   	// #0</pre>
+<pre>   7caa0:	d2800c48 	mov	x8, #0x62                  	// #98</pre>
+<pre>   7caa4:	d4000001 	svc	#0x0</pre>
+<pre>   7caa8:	aa1503e0 	mov	x0, x21</pre>
+<pre>   7caac:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   7cab0:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   7cab4:	a94363f7 	ldp	x23, x24, [sp, #48]</pre>
+<pre>   7cab8:	a9446bf9 	ldp	x25, x26, [sp, #64]</pre>
+<pre>   7cabc:	a94573fb 	ldp	x27, x28, [sp, #80]</pre>
+<pre>   7cac0:	a8c87bfd 	ldp	x29, x30, [sp], #128</pre>
+<pre>   7cac4:	d65f03c0 	ret</pre>
+<pre>   7cac8:	b40000f7 	cbz	x23, 7cae4 &lt</span>probe&commat;&commat;GLIBC_2.17+0x6f4&gt;</pre>
+<pre>   7cacc:	aa1703e3 	mov	x3, x23</pre>
+<pre>   7cad0:	aa1603e2 	mov	x2, x22</pre>
+<pre>   7cad4:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7cad8:	910f2021 	add	x1, x1, #0x3c8</pre>
+<pre><span class="red">   7cadc:	97ff3c7d 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7cae0:	17ffffd1 	b	7ca24 &lt</span>probe&commat;&commat;GLIBC_2.17+0x634&gt;</pre>
+<pre>   7cae4:	aa1603e2 	mov	x2, x22</pre>
+<pre>   7cae8:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7caec:	910f6021 	add	x1, x1, #0x3d8</pre>
+<pre><span class="red">   7caf0:	97ff3c78 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7caf4:	17ffffcc 	b	7ca24 &lt</span>probe&commat;&commat;GLIBC_2.17+0x634&gt;</pre>
+<pre>   7caf8:	aa1703e1 	mov	x1, x23</pre>
+<pre>--</pre>
+<pre>   7cb14:	a9b97bfd 	stp	x29, x30, [sp, #-112]!</pre>
+<pre>   7cb18:	910003fd 	mov	x29, sp</pre>
+<pre>   7cb1c:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>   7cb20:	aa0103f5 	mov	x21, x1</pre>
+<pre>   7cb24:	910143e1 	add	x1, sp, #0x50</pre>
+<pre>   7cb28:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>   7cb2c:	aa0003f4 	mov	x20, x0</pre>
+<pre>   7cb30:	90000773 	adrp	x19, 168000 &lt;__abort_msg&commat;&commat;GLIBC_PRIVATE+0xa98&gt;</pre>
+<pre>   7cb34:	911d2276 	add	x22, x19, #0x748</pre>
+<pre>   7cb38:	aa1503e0 	mov	x0, x21</pre>
+<pre>   7cb3c:	a90363f7 	stp	x23, x24, [sp, #48]</pre>
+<pre>   7cb40:	f90023f9 	str	x25, [sp, #64]</pre>
+<pre>   7cb44:	97fffe37 	bl	7c420 &lt</span>probe&commat;&commat;GLIBC_2.17+0x30&gt;</pre>
+<pre>   7cb48:	aa0003e1 	mov	x1, x0</pre>
+<pre>   7cb4c:	aa1503e0 	mov	x0, x21</pre>
+<pre>   7cb50:	97fffe54 	bl	7c4a0 &lt</span>probe&commat;&commat;GLIBC_2.17+0xb0&gt;</pre>
+<pre>   7cb54:	f943a660 	ldr	x0, [x19, #1864]</pre>
+<pre>   7cb58:	aa1403e2 	mov	x2, x20</pre>
+<pre>   7cb5c:	d0000541 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   7cb60:	910f6021 	add	x1, x1, #0x3d8</pre>
+<pre><span class="red">   7cb64:	97ff3c5b 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   7cb68:	90000740 	adrp	x0, 164000 &lt;sys_sigabbrev&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   7cb6c:	f946e800 	ldr	x0, [x0, #3536]</pre>
+<pre>--</pre>
+<pre>   a09dc:	7100005f 	cmp	w2, #0x0</pre>
+<pre>   a09e0:	540014e1 	b.ne	a0c7c &lt;putgrent&commat;&commat;GLIBC_2.17+0x32c&gt;  // b.any</pre>
+<pre>   a09e4:	f94046a0 	ldr	x0, [x21, #136]</pre>
+<pre>   a09e8:	f9000413 	str	x19, [x0, #8]</pre>
+<pre>   a09ec:	b9400401 	ldr	w1, [x0, #4]</pre>
+<pre>   a09f0:	11000421 	add	w1, w1, #0x1</pre>
+<pre>   a09f4:	b9000401 	str	w1, [x0, #4]</pre>
+<pre>   a09f8:	a9400682 	ldp	x2, x1, [x20]</pre>
+<pre>   a09fc:	52801fa3 	mov	w3, #0xfd                  	// #253</pre>
+<pre>   a0a00:	39400040 	ldrb	w0, [x2]</pre>
+<pre>   a0a04:	5100ac00 	sub	w0, w0, #0x2b</pre>
+<pre>   a0a08:	6a03001f 	tst	w0, w3</pre>
+<pre>   a0a0c:	54000501 	b.ne	a0aac &lt;putgrent&commat;&commat;GLIBC_2.17+0x15c&gt;  // b.any</pre>
+<pre>   a0a10:	f100003f 	cmp	x1, #0x0</pre>
+<pre>   a0a14:	f0000423 	adrp	x3, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   a0a18:	910e2063 	add	x3, x3, #0x388</pre>
+<pre>   a0a1c:	aa1503e0 	mov	x0, x21</pre>
+<pre>   a0a20:	9a810063 	csel	x3, x3, x1, eq  // eq = none</pre>
+<pre>   a0a24:	d0000421 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   a0a28:	9139a021 	add	x1, x1, #0xe68</pre>
+<pre><span class="red">   a0a2c:	97feaca9 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   a0a30:	37f80e00 	tbnz	w0, #31, a0bf0 &lt;putgrent&commat;&commat;GLIBC_2.17+0x2a0&gt;</pre>
+<pre>   a0a34:	f9400e80 	ldr	x0, [x20, #24]</pre>
+<pre>   a0a38:	b4000500 	cbz	x0, a0ad8 &lt;putgrent&commat;&commat;GLIBC_2.17+0x188&gt;</pre>
+<pre>   a0a3c:	f9400002 	ldr	x2, [x0]</pre>
+<pre>   a0a40:	f9001bf7 	str	x23, [sp, #48]</pre>
+<pre>   a0a44:	d0000401 	adrp	x1, 122000 &lt;in6addr_any&commat;&commat;GLIBC_2.17+0x1838&gt;</pre>
+<pre>   a0a48:	91356021 	add	x1, x1, #0xd58</pre>
+<pre>   a0a4c:	d0000436 	adrp	x22, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   a0a50:	913982d6 	add	x22, x22, #0xe60</pre>
+<pre>   a0a54:	aa0103f7 	mov	x23, x1</pre>
+<pre>   a0a58:	d2800013 	mov	x19, #0x0                   	// #0</pre>
+<pre>   a0a5c:	b50000e2 	cbnz	x2, a0a78 &lt;putgrent&commat;&commat;GLIBC_2.17+0x128&gt;</pre>
+<pre>   a0a60:	1400001d 	b	a0ad4 &lt;putgrent&commat;&commat;GLIBC_2.17+0x184&gt;</pre>
+<pre>   a0a64:	f9400e80 	ldr	x0, [x20, #24]</pre>
+<pre>   a0a68:	f100027f 	cmp	x19, #0x0</pre>
+<pre>   a0a6c:	9a9602e1 	csel	x1, x23, x22, eq  // eq = none</pre>
+<pre>   a0a70:	f8737802 	ldr	x2, [x0, x19, lsl #3]</pre>
+<pre>   a0a74:	b4000302 	cbz	x2, a0ad4 &lt;putgrent&commat;&commat;GLIBC_2.17+0x184&gt;</pre>
+<pre>   a0a78:	91000673 	add	x19, x19, #0x1</pre>
+<pre>   a0a7c:	aa1503e0 	mov	x0, x21</pre>
+<pre><span class="red">   a0a80:	97feac94 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   a0a84:	36ffff00 	tbz	w0, #31, a0a64 &lt;putgrent&commat;&commat;GLIBC_2.17+0x114&gt;</pre>
+<pre>   a0a88:	b94002a0 	ldr	w0, [x21]</pre>
+<pre>   a0a8c:	367805a0 	tbz	w0, #15, a0b40 &lt;putgrent&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   a0a90:	f9401bf7 	ldr	x23, [sp, #48]</pre>
+<pre>   a0a94:	12800004 	mov	w4, #0xffffffff            	// #-1</pre>
+<pre>   a0a98:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   a0a9c:	2a0403e0 	mov	w0, w4</pre>
+<pre>   a0aa0:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   a0aa4:	a8c47bfd 	ldp	x29, x30, [sp], #64</pre>
+<pre>   a0aa8:	d65f03c0 	ret</pre>
+<pre>   a0aac:	b9401284 	ldr	w4, [x20, #16]</pre>
+<pre>   a0ab0:	f100003f 	cmp	x1, #0x0</pre>
+<pre>   a0ab4:	f0000423 	adrp	x3, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   a0ab8:	910e2063 	add	x3, x3, #0x388</pre>
+<pre>   a0abc:	9a810063 	csel	x3, x3, x1, eq  // eq = none</pre>
+<pre>   a0ac0:	aa1503e0 	mov	x0, x21</pre>
+<pre>   a0ac4:	d0000421 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   a0ac8:	9139c021 	add	x1, x1, #0xe70</pre>
+<pre><span class="red">   a0acc:	97feac81 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   a0ad0:	17ffffd8 	b	a0a30 &lt;putgrent&commat;&commat;GLIBC_2.17+0xe0&gt;</pre>
+<pre>   a0ad4:	f9401bf7 	ldr	x23, [sp, #48]</pre>
+<pre>--</pre>
+<pre>   a244c:	a9400e62 	ldp	x2, x3, [x19]</pre>
+<pre>   a2450:	52801fa1 	mov	w1, #0xfd                  	// #253</pre>
+<pre>   a2454:	39400040 	ldrb	w0, [x2]</pre>
+<pre>   a2458:	5100ac00 	sub	w0, w0, #0x2b</pre>
+<pre>   a245c:	6a01001f 	tst	w0, w1</pre>
+<pre>   a2460:	54000320 	b.eq	a24c4 &lt;putpwent&commat;&commat;GLIBC_2.17+0xf4&gt;  // b.none</pre>
+<pre>   a2464:	a9420667 	ldp	x7, x1, [x19, #32]</pre>
+<pre>   a2468:	f100007f 	cmp	x3, #0x0</pre>
+<pre>   a246c:	b0000420 	adrp	x0, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   a2470:	910e2000 	add	x0, x0, #0x388</pre>
+<pre>   a2474:	29421664 	ldp	w4, w5, [x19, #16]</pre>
+<pre>   a2478:	9a830003 	csel	x3, x0, x3, eq  // eq = none</pre>
+<pre>   a247c:	f10000ff 	cmp	x7, #0x0</pre>
+<pre>   a2480:	9a870007 	csel	x7, x0, x7, eq  // eq = none</pre>
+<pre>   a2484:	f100003f 	cmp	x1, #0x0</pre>
+<pre>   a2488:	9a810001 	csel	x1, x0, x1, eq  // eq = none</pre>
+<pre>   a248c:	f90003e1 	str	x1, [sp]</pre>
+<pre>   a2490:	aa1403e0 	mov	x0, x20</pre>
+<pre>   a2494:	90000421 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   a2498:	913b4021 	add	x1, x1, #0xed0</pre>
+<pre><span class="red">   a249c:	97fea60d 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   a24a0:	2a0003f3 	mov	w19, w0</pre>
+<pre>   a24a4:	f9401fe0 	ldr	x0, [sp, #56]</pre>
+<pre>   a24a8:	97fe0596 	bl	23b00 &lt;free&commat;plt&gt;</pre>
+<pre>   a24ac:	7100027f 	cmp	w19, #0x0</pre>
+<pre>   a24b0:	1a9fd260 	csel	w0, w19, wzr, le</pre>
+<pre>   a24b4:	a9417bfd 	ldp	x29, x30, [sp, #16]</pre>
+<pre>   a24b8:	a94253f3 	ldp	x19, x20, [sp, #32]</pre>
+<pre>   a24bc:	910103ff 	add	sp, sp, #0x40</pre>
+<pre>   a24c0:	d65f03c0 	ret</pre>
+<pre>   a24c4:	a9421e65 	ldp	x5, x7, [x19, #32]</pre>
+<pre>   a24c8:	f100007f 	cmp	x3, #0x0</pre>
+<pre>   a24cc:	b0000421 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   a24d0:	910e2021 	add	x1, x1, #0x388</pre>
+<pre>   a24d4:	9a830023 	csel	x3, x1, x3, eq  // eq = none</pre>
+<pre>   a24d8:	aa0603e4 	mov	x4, x6</pre>
+<pre>   a24dc:	aa1403e0 	mov	x0, x20</pre>
+<pre>   a24e0:	f10000bf 	cmp	x5, #0x0</pre>
+<pre>   a24e4:	9a850025 	csel	x5, x1, x5, eq  // eq = none</pre>
+<pre>   a24e8:	f10000ff 	cmp	x7, #0x0</pre>
+<pre>   a24ec:	9a870026 	csel	x6, x1, x7, eq  // eq = none</pre>
+<pre>   a24f0:	90000421 	adrp	x1, 126000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x29f8&gt;</pre>
+<pre>   a24f4:	913ae021 	add	x1, x1, #0xeb8</pre>
+<pre><span class="red">   a24f8:	97fea5f6 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   a24fc:	2a0003f3 	mov	w19, w0</pre>
+<pre>   a2500:	17ffffe9 	b	a24a4 &lt;putpwent&commat;&commat;GLIBC_2.17+0xd4&gt;</pre>
+<pre>--</pre>
+<pre>   ca414:	540006a0 	b.eq	ca4e8 &lt;addmntent&commat;&commat;GLIBC_2.17+0x3b8&gt;  // b.none</pre>
+<pre>   ca418:	7101731f 	cmp	w24, #0x5c</pre>
+<pre>   ca41c:	54000760 	b.eq	ca508 &lt;addmntent&commat;&commat;GLIBC_2.17+0x3d8&gt;  // b.none</pre>
+<pre>   ca420:	38001418 	strb	w24, [x0], #1</pre>
+<pre>   ca424:	384016c1 	ldrb	w1, [x22], #1</pre>
+<pre>   ca428:	340000e1 	cbz	w1, ca444 &lt;addmntent&commat;&commat;GLIBC_2.17+0x314&gt;</pre>
+<pre>   ca42c:	394002d8 	ldrb	w24, [x22]</pre>
+<pre>   ca430:	7100831f 	cmp	w24, #0x20</pre>
+<pre>   ca434:	54fffea1 	b.ne	ca408 &lt;addmntent&commat;&commat;GLIBC_2.17+0x2d8&gt;  // b.any</pre>
+<pre>   ca438:	b8004402 	str	w2, [x0], #4</pre>
+<pre>   ca43c:	384016c1 	ldrb	w1, [x22], #1</pre>
+<pre>   ca440:	35ffff61 	cbnz	w1, ca42c &lt;addmntent&commat;&commat;GLIBC_2.17+0x2fc&gt;</pre>
+<pre>   ca444:	b00002e1 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   ca448:	2a1403e7 	mov	w7, w20</pre>
+<pre>   ca44c:	2a1503e6 	mov	w6, w21</pre>
+<pre>   ca450:	aa1903e4 	mov	x4, x25</pre>
+<pre>   ca454:	aa1a03e3 	mov	x3, x26</pre>
+<pre>   ca458:	aa1703e2 	mov	x2, x23</pre>
+<pre>   ca45c:	aa1303e0 	mov	x0, x19</pre>
+<pre>   ca460:	91296021 	add	x1, x1, #0xa58</pre>
+<pre><span class="red">   ca464:	97fe061b 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   ca468:	37f801a0 	tbnz	w0, #31, ca49c &lt;addmntent&commat;&commat;GLIBC_2.17+0x36c&gt;</pre>
+<pre>   ca46c:	aa1303e0 	mov	x0, x19</pre>
+<pre>--</pre>
+<pre>   cb838:	1ac02820 	asr	w0, w1, w0</pre>
+<pre>   cb83c:	12000017 	and	w23, w0, #0x1</pre>
+<pre>   cb840:	360011c0 	tbz	w0, #0, cba78 &lt;ttyslot&commat;&commat;GLIBC_2.17+0x528&gt;</pre>
+<pre>   cb844:	a90573fb 	stp	x27, x28, [sp, #80]</pre>
+<pre>   cb848:	721d1a7f 	tst	w19, #0x3f8</pre>
+<pre>   cb84c:	54000061 	b.ne	cb858 &lt;ttyslot&commat;&commat;GLIBC_2.17+0x308&gt;  // b.any</pre>
+<pre>   cb850:	b94146a0 	ldr	w0, [x21, #324]</pre>
+<pre>   cb854:	2a000273 	orr	w19, w19, w0</pre>
+<pre>   cb858:	910283e1 	add	x1, sp, #0xa0</pre>
+<pre>   cb85c:	910263e0 	add	x0, sp, #0x98</pre>
+<pre>   cb860:	97fe86f0 	bl	6d420 &lt;open_memstream&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   cb864:	aa0003fc 	mov	x28, x0</pre>
+<pre>   cb868:	b4001c20 	cbz	x0, cbbec &lt;ttyslot&commat;&commat;GLIBC_2.17+0x69c&gt;</pre>
+<pre>   cb86c:	b9400003 	ldr	w3, [x0]</pre>
+<pre>   cb870:	2a1303e2 	mov	w2, w19</pre>
+<pre>   cb874:	900002e1 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   cb878:	9103a3f3 	add	x19, sp, #0xe8</pre>
+<pre>   cb87c:	32110063 	orr	w3, w3, #0x8000</pre>
+<pre>   cb880:	b9000003 	str	w3, [x0]</pre>
+<pre>   cb884:	912c4021 	add	x1, x1, #0xb10</pre>
+<pre><span class="red">   cb888:	97fe0112 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   cb88c:	aa1303e1 	mov	x1, x19</pre>
+<pre>   cb890:	528000a0 	mov	w0, #0x5                   	// #5</pre>
+<pre>--</pre>
+<pre>   cbb94:	97fffe9f 	bl	cb610 &lt;ttyslot&commat;&commat;GLIBC_2.17+0xc0&gt;</pre>
+<pre>   cbb98:	910512a1 	add	x1, x21, #0x144</pre>
+<pre>   cbb9c:	913c0260 	add	x0, x19, #0xf00</pre>
+<pre>   cbba0:	b9400821 	ldr	w1, [x1, #8]</pre>
+<pre>   cbba4:	b9408000 	ldr	w0, [x0, #128]</pre>
+<pre>   cbba8:	7100043f 	cmp	w1, #0x1</pre>
+<pre>   cbbac:	54fff441 	b.ne	cba34 &lt;ttyslot&commat;&commat;GLIBC_2.17+0x4e4&gt;  // b.any</pre>
+<pre>   cbbb0:	17ffff9e 	b	cba28 &lt;ttyslot&commat;&commat;GLIBC_2.17+0x4d8&gt;</pre>
+<pre>   cbbb4:	b00004c0 	adrp	x0, 164000 &lt;sys_sigabbrev&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   cbbb8:	f946d800 	ldr	x0, [x0, #3504]</pre>
+<pre>   cbbbc:	f9400000 	ldr	x0, [x0]</pre>
+<pre>   cbbc0:	f9078260 	str	x0, [x19, #3840]</pre>
+<pre>   cbbc4:	b5ffe9e0 	cbnz	x0, cb900 &lt;ttyslot&commat;&commat;GLIBC_2.17+0x3b0&gt;</pre>
+<pre>   cbbc8:	b9400820 	ldr	w0, [x1, #8]</pre>
+<pre>   cbbcc:	3607ec40 	tbz	w0, #0, cb954 &lt;ttyslot&commat;&commat;GLIBC_2.17+0x404&gt;</pre>
+<pre>   cbbd0:	97ff632c 	bl	a4880 &lt;__getpid&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   cbbd4:	2a0003e2 	mov	w2, w0</pre>
+<pre>   cbbd8:	900002e1 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   cbbdc:	aa1c03e0 	mov	x0, x28</pre>
+<pre>   cbbe0:	912ca021 	add	x1, x1, #0xb28</pre>
+<pre><span class="red">   cbbe4:	97fe003b 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   cbbe8:	17ffff4b 	b	cb914 &lt;ttyslot&commat;&commat;GLIBC_2.17+0x3c4&gt;</pre>
+<pre>   cbbec:	900002e0 	adrp	x0, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>--</pre>
+<pre>   d42cc:	52800021 	mov	w1, #0x1                   	// #1</pre>
+<pre>   d42d0:	885ffc02 	ldaxr	w2, [x0]</pre>
+<pre>   d42d4:	35000062 	cbnz	w2, d42e0 &lt;putspent&commat;&commat;GLIBC_2.17+0x70&gt;</pre>
+<pre>   d42d8:	88037c01 	stxr	w3, w1, [x0]</pre>
+<pre>   d42dc:	35ffffa3 	cbnz	w3, d42d0 &lt;putspent&commat;&commat;GLIBC_2.17+0x60&gt;</pre>
+<pre>   d42e0:	7100005f 	cmp	w2, #0x0</pre>
+<pre>   d42e4:	54001ec1 	b.ne	d46bc &lt;putspent&commat;&commat;GLIBC_2.17+0x44c&gt;  // b.any</pre>
+<pre>   d42e8:	f9404660 	ldr	x0, [x19, #136]</pre>
+<pre>   d42ec:	f9000415 	str	x21, [x0, #8]</pre>
+<pre>   d42f0:	b9400401 	ldr	w1, [x0, #4]</pre>
+<pre>   d42f4:	11000421 	add	w1, w1, #0x1</pre>
+<pre>   d42f8:	b9000401 	str	w1, [x0, #4]</pre>
+<pre>   d42fc:	a9400e82 	ldp	x2, x3, [x20]</pre>
+<pre>   d4300:	f0000280 	adrp	x0, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d4304:	910e2000 	add	x0, x0, #0x388</pre>
+<pre>   d4308:	f0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d430c:	913e6021 	add	x1, x1, #0xf98</pre>
+<pre>   d4310:	f100007f 	cmp	x3, #0x0</pre>
+<pre>   d4314:	9a830003 	csel	x3, x0, x3, eq  // eq = none</pre>
+<pre>   d4318:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">   d431c:	97fdde6d 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d4320:	531f7c15 	lsr	w21, w0, #31</pre>
+<pre>   d4324:	f9400a82 	ldr	x2, [x20, #16]</pre>
+<pre>--</pre>
+<pre>   d43dc:	91000401 	add	x1, x0, #0x1</pre>
+<pre>   d43e0:	f9001661 	str	x1, [x19, #40]</pre>
+<pre>   d43e4:	52800741 	mov	w1, #0x3a                  	// #58</pre>
+<pre>   d43e8:	39000001 	strb	w1, [x0]</pre>
+<pre>   d43ec:	f9401e82 	ldr	x2, [x20, #56]</pre>
+<pre>   d43f0:	b100045f 	cmn	x2, #0x1</pre>
+<pre>   d43f4:	54000b81 	b.ne	d4564 &lt;putspent&commat;&commat;GLIBC_2.17+0x2f4&gt;  // b.any</pre>
+<pre>   d43f8:	a9428660 	ldp	x0, x1, [x19, #40]</pre>
+<pre>   d43fc:	eb01001f 	cmp	x0, x1</pre>
+<pre>   d4400:	54001042 	b.cs	d4608 &lt;putspent&commat;&commat;GLIBC_2.17+0x398&gt;  // b.hs, b.nlast</pre>
+<pre>   d4404:	91000401 	add	x1, x0, #0x1</pre>
+<pre>   d4408:	f9001661 	str	x1, [x19, #40]</pre>
+<pre>   d440c:	52800741 	mov	w1, #0x3a                  	// #58</pre>
+<pre>   d4410:	39000001 	strb	w1, [x0]</pre>
+<pre>   d4414:	f9402282 	ldr	x2, [x20, #64]</pre>
+<pre>   d4418:	b100045f 	cmn	x2, #0x1</pre>
+<pre>   d441c:	540000c0 	b.eq	d4434 &lt;putspent&commat;&commat;GLIBC_2.17+0x1c4&gt;  // b.none</pre>
+<pre>   d4420:	aa1303e0 	mov	x0, x19</pre>
+<pre>   d4424:	f0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d4428:	913ea021 	add	x1, x1, #0xfa8</pre>
+<pre><span class="red">   d442c:	97fdde29 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d4430:	0b407eb5 	add	w21, w21, w0, lsr #31</pre>
+<pre>   d4434:	a9428660 	ldp	x0, x1, [x19, #40]</pre>
+<pre>--</pre>
+<pre>   d4444:	f9001661 	str	x1, [x19, #40]</pre>
+<pre>   d4448:	52800141 	mov	w1, #0xa                   	// #10</pre>
+<pre>   d444c:	39000001 	strb	w1, [x0]</pre>
+<pre>   d4450:	b9400260 	ldr	w0, [x19]</pre>
+<pre>   d4454:	710002bf 	cmp	w21, #0x0</pre>
+<pre>   d4458:	5a9f03e4 	csetm	w4, ne  // ne = any</pre>
+<pre>   d445c:	377800c0 	tbnz	w0, #15, d4474 &lt;putspent&commat;&commat;GLIBC_2.17+0x204&gt;</pre>
+<pre>   d4460:	f9404660 	ldr	x0, [x19, #136]</pre>
+<pre>   d4464:	b9400401 	ldr	w1, [x0, #4]</pre>
+<pre>   d4468:	51000421 	sub	w1, w1, #0x1</pre>
+<pre>   d446c:	b9000401 	str	w1, [x0, #4]</pre>
+<pre>   d4470:	34000ec1 	cbz	w1, d4648 &lt;putspent&commat;&commat;GLIBC_2.17+0x3d8&gt;</pre>
+<pre>   d4474:	f94013f5 	ldr	x21, [sp, #32]</pre>
+<pre>   d4478:	2a0403e0 	mov	w0, w4</pre>
+<pre>   d447c:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   d4480:	a8c37bfd 	ldp	x29, x30, [sp], #48</pre>
+<pre>   d4484:	d65f03c0 	ret</pre>
+<pre>   d4488:	f0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d448c:	aa1303e0 	mov	x0, x19</pre>
+<pre>   d4490:	913e8021 	add	x1, x1, #0xfa0</pre>
+<pre><span class="red">   d4494:	97fdde0f 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d4498:	37f80840 	tbnz	w0, #31, d45a0 &lt;putspent&commat;&commat;GLIBC_2.17+0x330&gt;</pre>
+<pre>   d449c:	f9400a80 	ldr	x0, [x20, #16]</pre>
+<pre>   d44a0:	b100041f 	cmn	x0, #0x1</pre>
+<pre>   d44a4:	54fff460 	b.eq	d4330 &lt;putspent&commat;&commat;GLIBC_2.17+0xc0&gt;  // b.none</pre>
+<pre>   d44a8:	f9400e82 	ldr	x2, [x20, #24]</pre>
+<pre>   d44ac:	b100045f 	cmn	x2, #0x1</pre>
+<pre>   d44b0:	54fff540 	b.eq	d4358 &lt;putspent&commat;&commat;GLIBC_2.17+0xe8&gt;  // b.none</pre>
+<pre>   d44b4:	f0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d44b8:	aa1303e0 	mov	x0, x19</pre>
+<pre>   d44bc:	913e8021 	add	x1, x1, #0xfa0</pre>
+<pre><span class="red">   d44c0:	97fdde04 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d44c4:	37f808e0 	tbnz	w0, #31, d45e0 &lt;putspent&commat;&commat;GLIBC_2.17+0x370&gt;</pre>
+<pre>   d44c8:	f9400e80 	ldr	x0, [x20, #24]</pre>
+<pre>   d44cc:	b100041f 	cmn	x0, #0x1</pre>
+<pre>   d44d0:	54fff440 	b.eq	d4358 &lt;putspent&commat;&commat;GLIBC_2.17+0xe8&gt;  // b.none</pre>
+<pre>   d44d4:	f9401282 	ldr	x2, [x20, #32]</pre>
+<pre>   d44d8:	b100045f 	cmn	x2, #0x1</pre>
+<pre>   d44dc:	54fff520 	b.eq	d4380 &lt;putspent&commat;&commat;GLIBC_2.17+0x110&gt;  // b.none</pre>
+<pre>   d44e0:	f0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d44e4:	aa1303e0 	mov	x0, x19</pre>
+<pre>   d44e8:	913e8021 	add	x1, x1, #0xfa0</pre>
+<pre><span class="red">   d44ec:	97fdddf9 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d44f0:	37f80680 	tbnz	w0, #31, d45c0 &lt;putspent&commat;&commat;GLIBC_2.17+0x350&gt;</pre>
+<pre>   d44f4:	f9401280 	ldr	x0, [x20, #32]</pre>
+<pre>   d44f8:	b100041f 	cmn	x0, #0x1</pre>
+<pre>   d44fc:	54fff420 	b.eq	d4380 &lt;putspent&commat;&commat;GLIBC_2.17+0x110&gt;  // b.none</pre>
+<pre>   d4500:	f9401682 	ldr	x2, [x20, #40]</pre>
+<pre>   d4504:	b100045f 	cmn	x2, #0x1</pre>
+<pre>   d4508:	54fff500 	b.eq	d43a8 &lt;putspent&commat;&commat;GLIBC_2.17+0x138&gt;  // b.none</pre>
+<pre>   d450c:	f0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d4510:	aa1303e0 	mov	x0, x19</pre>
+<pre>   d4514:	913e8021 	add	x1, x1, #0xfa0</pre>
+<pre><span class="red">   d4518:	97fdddee 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d451c:	37f80720 	tbnz	w0, #31, d4600 &lt;putspent&commat;&commat;GLIBC_2.17+0x390&gt;</pre>
+<pre>   d4520:	f9401680 	ldr	x0, [x20, #40]</pre>
+<pre>   d4524:	b100041f 	cmn	x0, #0x1</pre>
+<pre>   d4528:	54fff400 	b.eq	d43a8 &lt;putspent&commat;&commat;GLIBC_2.17+0x138&gt;  // b.none</pre>
+<pre>   d452c:	f9401a82 	ldr	x2, [x20, #48]</pre>
+<pre>   d4530:	b100045f 	cmn	x2, #0x1</pre>
+<pre>   d4534:	54fff4e0 	b.eq	d43d0 &lt;putspent&commat;&commat;GLIBC_2.17+0x160&gt;  // b.none</pre>
+<pre>   d4538:	f0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d453c:	aa1303e0 	mov	x0, x19</pre>
+<pre>   d4540:	913e8021 	add	x1, x1, #0xfa0</pre>
+<pre><span class="red">   d4544:	97fddde3 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d4548:	37f807c0 	tbnz	w0, #31, d4640 &lt;putspent&commat;&commat;GLIBC_2.17+0x3d0&gt;</pre>
+<pre>   d454c:	f9401a80 	ldr	x0, [x20, #48]</pre>
+<pre>   d4550:	b100041f 	cmn	x0, #0x1</pre>
+<pre>   d4554:	54fff3e0 	b.eq	d43d0 &lt;putspent&commat;&commat;GLIBC_2.17+0x160&gt;  // b.none</pre>
+<pre>   d4558:	f9401e82 	ldr	x2, [x20, #56]</pre>
+<pre>   d455c:	b100045f 	cmn	x2, #0x1</pre>
+<pre>   d4560:	54fff4c0 	b.eq	d43f8 &lt;putspent&commat;&commat;GLIBC_2.17+0x188&gt;  // b.none</pre>
+<pre>   d4564:	f0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d4568:	aa1303e0 	mov	x0, x19</pre>
+<pre>   d456c:	913e8021 	add	x1, x1, #0xfa0</pre>
+<pre><span class="red">   d4570:	97fdddd8 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d4574:	37f80560 	tbnz	w0, #31, d4620 &lt;putspent&commat;&commat;GLIBC_2.17+0x3b0&gt;</pre>
+<pre>   d4578:	f9401e80 	ldr	x0, [x20, #56]</pre>
+<pre>--</pre>
+<pre>   d5d20:	52800021 	mov	w1, #0x1                   	// #1</pre>
+<pre>   d5d24:	885ffc02 	ldaxr	w2, [x0]</pre>
+<pre>   d5d28:	35000062 	cbnz	w2, d5d34 &lt;putsgent&commat;&commat;GLIBC_2.17+0x94&gt;</pre>
+<pre>   d5d2c:	88037c01 	stxr	w3, w1, [x0]</pre>
+<pre>   d5d30:	35ffffa3 	cbnz	w3, d5d24 &lt;putsgent&commat;&commat;GLIBC_2.17+0x84&gt;</pre>
+<pre>   d5d34:	7100005f 	cmp	w2, #0x0</pre>
+<pre>   d5d38:	54000f21 	b.ne	d5f1c &lt;putsgent&commat;&commat;GLIBC_2.17+0x27c&gt;  // b.any</pre>
+<pre>   d5d3c:	f9404660 	ldr	x0, [x19, #136]</pre>
+<pre>   d5d40:	f9000414 	str	x20, [x0, #8]</pre>
+<pre>   d5d44:	b9400401 	ldr	w1, [x0, #4]</pre>
+<pre>   d5d48:	11000421 	add	w1, w1, #0x1</pre>
+<pre>   d5d4c:	b9000401 	str	w1, [x0, #4]</pre>
+<pre>   d5d50:	d0000282 	adrp	x2, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d5d54:	910e2055 	add	x21, x2, #0x388</pre>
+<pre>   d5d58:	a9400ee2 	ldp	x2, x3, [x23]</pre>
+<pre>   d5d5c:	aa1303e0 	mov	x0, x19</pre>
+<pre>   d5d60:	d0000281 	adrp	x1, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d5d64:	913e6021 	add	x1, x1, #0xf98</pre>
+<pre>   d5d68:	f100007f 	cmp	x3, #0x0</pre>
+<pre>   d5d6c:	9a8302a3 	csel	x3, x21, x3, eq  // eq = none</pre>
+<pre><span class="red">   d5d70:	97fdd7d8 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d5d74:	531f7c16 	lsr	w22, w0, #31</pre>
+<pre>   d5d78:	f9400af4 	ldr	x20, [x23, #16]</pre>
+<pre>   d5d7c:	b4000254 	cbz	x20, d5dc4 &lt;putsgent&commat;&commat;GLIBC_2.17+0x124&gt;</pre>
+<pre>   d5d80:	f9400283 	ldr	x3, [x20]</pre>
+<pre>   d5d84:	aa1503e2 	mov	x2, x21</pre>
+<pre>   d5d88:	b0000278 	adrp	x24, 122000 &lt;in6addr_any&commat;&commat;GLIBC_2.17+0x1838&gt;</pre>
+<pre>   d5d8c:	91006318 	add	x24, x24, #0x18</pre>
+<pre>   d5d90:	f0000295 	adrp	x21, 128000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x49f8&gt;</pre>
+<pre>   d5d94:	910002b5 	add	x21, x21, #0x0</pre>
+<pre>   d5d98:	b50000a3 	cbnz	x3, d5dac &lt;putsgent&commat;&commat;GLIBC_2.17+0x10c&gt;</pre>
+<pre>   d5d9c:	1400000a 	b	d5dc4 &lt;putsgent&commat;&commat;GLIBC_2.17+0x124&gt;</pre>
+<pre>   d5da0:	f9400283 	ldr	x3, [x20]</pre>
+<pre>   d5da4:	aa1803e2 	mov	x2, x24</pre>
+<pre>   d5da8:	b40000e3 	cbz	x3, d5dc4 &lt;putsgent&commat;&commat;GLIBC_2.17+0x124&gt;</pre>
+<pre>   d5dac:	91002294 	add	x20, x20, #0x8</pre>
+<pre>   d5db0:	aa1503e1 	mov	x1, x21</pre>
+<pre>   d5db4:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">   d5db8:	97fdd7c6 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d5dbc:	36ffff20 	tbz	w0, #31, d5da0 &lt;putsgent&commat;&commat;GLIBC_2.17+0x100&gt;</pre>
+<pre>   d5dc0:	110006d6 	add	w22, w22, #0x1</pre>
+<pre>--</pre>
+<pre>   d5dd4:	f9001661 	str	x1, [x19, #40]</pre>
+<pre>   d5dd8:	52800741 	mov	w1, #0x3a                  	// #58</pre>
+<pre>   d5ddc:	39000001 	strb	w1, [x0]</pre>
+<pre>   d5de0:	f9400ef4 	ldr	x20, [x23, #24]</pre>
+<pre>   d5de4:	b4000274 	cbz	x20, d5e30 &lt;putsgent&commat;&commat;GLIBC_2.17+0x190&gt;</pre>
+<pre>   d5de8:	f9400283 	ldr	x3, [x20]</pre>
+<pre>   d5dec:	d0000282 	adrp	x2, 127000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x39f8&gt;</pre>
+<pre>   d5df0:	910e2042 	add	x2, x2, #0x388</pre>
+<pre>   d5df4:	f0000295 	adrp	x21, 128000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x49f8&gt;</pre>
+<pre>   d5df8:	910002b5 	add	x21, x21, #0x0</pre>
+<pre>   d5dfc:	b0000277 	adrp	x23, 122000 &lt;in6addr_any&commat;&commat;GLIBC_2.17+0x1838&gt;</pre>
+<pre>   d5e00:	910062f7 	add	x23, x23, #0x18</pre>
+<pre>   d5e04:	b50000a3 	cbnz	x3, d5e18 &lt;putsgent&commat;&commat;GLIBC_2.17+0x178&gt;</pre>
+<pre>   d5e08:	1400000a 	b	d5e30 &lt;putsgent&commat;&commat;GLIBC_2.17+0x190&gt;</pre>
+<pre>   d5e0c:	f9400283 	ldr	x3, [x20]</pre>
+<pre>   d5e10:	aa1703e2 	mov	x2, x23</pre>
+<pre>   d5e14:	b40000e3 	cbz	x3, d5e30 &lt;putsgent&commat;&commat;GLIBC_2.17+0x190&gt;</pre>
+<pre>   d5e18:	91002294 	add	x20, x20, #0x8</pre>
+<pre>   d5e1c:	aa1503e1 	mov	x1, x21</pre>
+<pre>   d5e20:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">   d5e24:	97fdd7ab 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   d5e28:	36ffff20 	tbz	w0, #31, d5e0c &lt;putsgent&commat;&commat;GLIBC_2.17+0x16c&gt;</pre>
+<pre>   d5e2c:	110006d6 	add	w22, w22, #0x1</pre>
+<pre>--</pre>
+<pre>   daf04:	aa0203f3 	mov	x19, x2</pre>
+<pre>   daf08:	f9400002 	ldr	x2, [x0]</pre>
+<pre>   daf0c:	b4000162 	cbz	x2, daf38 &lt;argp_error&commat;&commat;GLIBC_2.17+0x5a8&gt;</pre>
+<pre>   daf10:	f9402a60 	ldr	x0, [x19, #80]</pre>
+<pre>   daf14:	aa1303e1 	mov	x1, x19</pre>
+<pre>   daf18:	d63f0040 	blr	x2</pre>
+<pre>   daf1c:	b9401e61 	ldr	w1, [x19, #28]</pre>
+<pre>   daf20:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>   daf24:	36280081 	tbz	w1, #5, daf34 &lt;argp_error&commat;&commat;GLIBC_2.17+0x5a4&gt;</pre>
+<pre>   daf28:	f9400bf3 	ldr	x19, [sp, #16]</pre>
+<pre>   daf2c:	a8c27bfd 	ldp	x29, x30, [sp], #32</pre>
+<pre>   daf30:	d65f03c0 	ret</pre>
+<pre>   daf34:	97fd76fb 	bl	38b20 &lt;exit&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   daf38:	d0000440 	adrp	x0, 164000 &lt;sys_sigabbrev&commat;&commat;GLIBC_2.17+0x1f0&gt;</pre>
+<pre>   daf3c:	f9474c00 	ldr	x0, [x0, #3736]</pre>
+<pre>   daf40:	f9400002 	ldr	x2, [x0]</pre>
+<pre>   daf44:	b40000c2 	cbz	x2, daf5c &lt;argp_error&commat;&commat;GLIBC_2.17+0x5cc&gt;</pre>
+<pre>   daf48:	f9402a60 	ldr	x0, [x19, #80]</pre>
+<pre>   daf4c:	f0000261 	adrp	x1, 129000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x59f8&gt;</pre>
+<pre>   daf50:	9129e021 	add	x1, x1, #0xa78</pre>
+<pre><span class="red">   daf54:	97fdc35f 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   daf58:	17fffff1 	b	daf1c &lt;argp_error&commat;&commat;GLIBC_2.17+0x58c&gt;</pre>
+<pre>   daf5c:	f9400260 	ldr	x0, [x19]</pre>
+<pre>--</pre>
+<pre>   db8f0:	f940d3b3 	ldr	x19, [x29, #416]</pre>
+<pre>   db8f4:	aa1303e1 	mov	x1, x19</pre>
+<pre>   db8f8:	9101c280 	add	x0, x20, #0x70</pre>
+<pre>   db8fc:	52802082 	mov	w2, #0x104                 	// #260</pre>
+<pre>   db900:	528000f5 	mov	w21, #0x7                   	// #7</pre>
+<pre>   db904:	97fffbbb 	bl	da7f0 &lt;argp_state_help&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   db908:	17fffeba 	b	db3f0 &lt;argp_parse&commat;&commat;GLIBC_2.17+0x460&gt;</pre>
+<pre>   db90c:	b94177a0 	ldr	w0, [x29, #372]</pre>
+<pre>   db910:	f940d3b3 	ldr	x19, [x29, #416]</pre>
+<pre>   db914:	370fff00 	tbnz	w0, #1, db8f4 &lt;argp_parse&commat;&commat;GLIBC_2.17+0x964&gt;</pre>
+<pre>   db918:	b4fffef3 	cbz	x19, db8f4 &lt;argp_parse&commat;&commat;GLIBC_2.17+0x964&gt;</pre>
+<pre>   db91c:	f94077a0 	ldr	x0, [x29, #232]</pre>
+<pre>   db920:	528000a2 	mov	w2, #0x5                   	// #5</pre>
+<pre>   db924:	b0000261 	adrp	x1, 128000 &lt;_itoa_lower_digits&commat;&commat;GLIBC_PRIVATE+0x49f8&gt;</pre>
+<pre>   db928:	910ce021 	add	x1, x1, #0x338</pre>
+<pre>   db92c:	f9401800 	ldr	x0, [x0, #48]</pre>
+<pre>   db930:	97fd53a0 	bl	307b0 &lt;__dcgettext&commat;&commat;GLIBC_2.17&gt;</pre>
+<pre>   db934:	aa0003e1 	mov	x1, x0</pre>
+<pre>   db938:	f940cfa2 	ldr	x2, [x29, #408]</pre>
+<pre>   db93c:	aa1303e0 	mov	x0, x19</pre>
+<pre><span class="red">   db940:	97fdc0e4 	bl	4bcd0 &lt;fprintf&commat;&commat;GLIBC_2.17&gt</span></span></pre>
+<pre>   db944:	f940d3b3 	ldr	x19, [x29, #416]</pre>
+<pre>   db948:	17ffffeb 	b	db8f4 &lt;argp_parse&commat;&commat;GLIBC_2.17+0x964&gt;</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">fprintf</span> used </span><span class="orange">56</span> times </span><span class="orange">libc-2.31.so</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

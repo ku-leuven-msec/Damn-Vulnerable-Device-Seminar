@@ -1,0 +1,154 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibasound.so.2.0.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibasound.so.2.0.0[0m
+
+   3b048:	a94363f7 	ldp	x23, x24, [sp, #48]
+   3b04c:	f94023f9 	ldr	x25, [sp, #64]
+   3b050:	a8c87bfd 	ldp	x29, x30, [sp], #128
+   3b054:	d65f03c0 	ret
+   3b058:	aa1303e0 	mov	x0, x19
+   3b05c:	97ffc591 	bl	2c6a0 <strlen@plt>
+   3b060:	d00003e2 	adrp	x2, b9000 <snd_use_case_parse_selem_id@@ALSA_0.9+0xe70>
+   3b064:	913a0042 	add	x2, x2, #0xe80
+   3b068:	91008c00 	add	x0, x0, #0x23
+   3b06c:	528005e4 	mov	w4, #0x2f                  	// #47
+   3b070:	927cec00 	and	x0, x0, #0xfffffffffffffff0
+   3b074:	aa1303e1 	mov	x1, x19
+   3b078:	39404045 	ldrb	w5, [x2, #16]
+   3b07c:	cb2063ff 	sub	sp, sp, x0
+   3b080:	a9400c42 	ldp	x2, x3, [x2]
+   3b084:	910003f6 	mov	x22, sp
+   3b088:	91004ac0 	add	x0, x22, #0x12
+   3b08c:	a9000ec2 	stp	x2, x3, [x22]
+   3b090:	390042c5 	strb	w5, [x22, #16]
+   3b094:	390046c4 	strb	w4, [x22, #17]
+[31m   3b098:	97ffcd56 	bl	2e5f0 <strcpy@plt>[0m
+   3b09c:	2a1503e1 	mov	w1, w21
+   3b0a0:	aa1603e0 	mov	x0, x22
+--
+   3d674:	f9402a7c 	ldr	x28, [x19, #80]
+   3d678:	aa1c03e0 	mov	x0, x28
+   3d67c:	97ffbc09 	bl	2c6a0 <strlen@plt>
+   3d680:	aa0003f7 	mov	x23, x0
+   3d684:	aa1603e0 	mov	x0, x22
+   3d688:	97ffbc06 	bl	2c6a0 <strlen@plt>
+   3d68c:	8b0002f5 	add	x21, x23, x0
+   3d690:	350019ba 	cbnz	w26, 3d9c4 <snd_ctl_convert_from_dB@@ALSA_0.9+0xc64>
+   3d694:	91000ea0 	add	x0, x21, #0x3
+   3d698:	97ffbee6 	bl	2d230 <malloc@plt>
+   3d69c:	aa0003f5 	mov	x21, x0
+   3d6a0:	b4002720 	cbz	x0, 3db84 <snd_ctl_convert_from_dB@@ALSA_0.9+0xe24>
+   3d6a4:	aa1c03e1 	mov	x1, x28
+   3d6a8:	aa1703e2 	mov	x2, x23
+   3d6ac:	97ffbbb5 	bl	2c580 <memcpy@plt>
+   3d6b0:	52840580 	mov	w0, #0x202c                	// #8236
+   3d6b4:	78376aa0 	strh	w0, [x21, x23]
+   3d6b8:	91000ae0 	add	x0, x23, #0x2
+   3d6bc:	aa1603e1 	mov	x1, x22
+   3d6c0:	8b0002a0 	add	x0, x21, x0
+[31m   3d6c4:	97ffc3cb 	bl	2e5f0 <strcpy@plt>[0m
+   3d6c8:	aa1603e0 	mov	x0, x22
+   3d6cc:	97ffc275 	bl	2e0a0 <free@plt>
+--
+   3d7b4:	aa0003f5 	mov	x21, x0
+   3d7b8:	b4000fc0 	cbz	x0, 3d9b0 <snd_ctl_convert_from_dB@@ALSA_0.9+0xc50>
+   3d7bc:	aa1903e2 	mov	x2, x25
+   3d7c0:	aa1703e1 	mov	x1, x23
+   3d7c4:	97ffbb6f 	bl	2c580 <memcpy@plt>
+   3d7c8:	52840580 	mov	w0, #0x202c                	// #8236
+   3d7cc:	78396aa0 	strh	w0, [x21, x25]
+   3d7d0:	91000b20 	add	x0, x25, #0x2
+   3d7d4:	aa1603e1 	mov	x1, x22
+   3d7d8:	8b0002a0 	add	x0, x21, x0
+   3d7dc:	97ffbe05 	bl	2cff0 <stpcpy@plt>
+   3d7e0:	b00003e2 	adrp	x2, ba000 <snd_use_case_parse_selem_id@@ALSA_0.9+0x1e70>
+   3d7e4:	91068042 	add	x2, x2, #0x1a0
+   3d7e8:	aa0003e1 	mov	x1, x0
+   3d7ec:	91001400 	add	x0, x0, #0x5
+   3d7f0:	b9400043 	ldr	w3, [x2]
+   3d7f4:	79400842 	ldrh	w2, [x2, #4]
+   3d7f8:	b9000023 	str	w3, [x1]
+   3d7fc:	79000822 	strh	w2, [x1, #4]
+   3d800:	f94063e1 	ldr	x1, [sp, #192]
+[31m   3d804:	97ffc37b 	bl	2e5f0 <strcpy@plt>[0m
+   3d808:	aa1603e0 	mov	x0, x22
+   3d80c:	97ffc225 	bl	2e0a0 <free@plt>
+--
+   3d9cc:	97ffbb35 	bl	2c6a0 <strlen@plt>
+   3d9d0:	8b0002a0 	add	x0, x21, x0
+   3d9d4:	97ffbe17 	bl	2d230 <malloc@plt>
+   3d9d8:	aa0003f5 	mov	x21, x0
+   3d9dc:	b4000d40 	cbz	x0, 3db84 <snd_ctl_convert_from_dB@@ALSA_0.9+0xe24>
+   3d9e0:	aa1703e2 	mov	x2, x23
+   3d9e4:	aa1c03e1 	mov	x1, x28
+   3d9e8:	97ffbae6 	bl	2c580 <memcpy@plt>
+   3d9ec:	52840580 	mov	w0, #0x202c                	// #8236
+   3d9f0:	78376aa0 	strh	w0, [x21, x23]
+   3d9f4:	91000ae0 	add	x0, x23, #0x2
+   3d9f8:	aa1603e1 	mov	x1, x22
+   3d9fc:	8b0002a0 	add	x0, x21, x0
+   3da00:	97ffbd7c 	bl	2cff0 <stpcpy@plt>
+   3da04:	aa0003e2 	mov	x2, x0
+   3da08:	5285e403 	mov	w3, #0x2f20                	// #12064
+   3da0c:	72a00403 	movk	w3, #0x20, lsl #16
+   3da10:	aa1903e1 	mov	x1, x25
+   3da14:	91000c00 	add	x0, x0, #0x3
+   3da18:	b9000043 	str	w3, [x2]
+[31m   3da1c:	97ffc2f5 	bl	2e5f0 <strcpy@plt>[0m
+   3da20:	17ffff2a 	b	3d6c8 <snd_ctl_convert_from_dB@@ALSA_0.9+0x968>
+   3da24:	d0000641 	adrp	x1, 107000 <sigemptyset@GLIBC_2.17>
+--
+   40d54:	52800018 	mov	w24, #0x0                   	// #0
+   40d58:	f90023f9 	str	x25, [sp, #64]
+   40d5c:	8b140cb4 	add	x20, x5, x20, lsl #3
+   40d60:	f84086a0 	ldr	x0, [x21], #8
+   40d64:	97ffae4f 	bl	2c6a0 <strlen@plt>
+   40d68:	11000400 	add	w0, w0, #0x1
+   40d6c:	eb1402bf 	cmp	x21, x20
+   40d70:	0b000318 	add	w24, w24, w0
+   40d74:	54ffff61 	b.ne	40d60 <snd_ctl_add_enumerated_elem_set@@ALSA_0.9+0x70>  // b.any
+   40d78:	340004f8 	cbz	w24, 40e14 <snd_ctl_add_enumerated_elem_set@@ALSA_0.9+0x124>
+   40d7c:	2a1803e0 	mov	w0, w24
+   40d80:	97ffb12c 	bl	2d230 <malloc@plt>
+   40d84:	aa0003f9 	mov	x25, x0
+   40d88:	b40005e0 	cbz	x0, 40e44 <snd_ctl_add_enumerated_elem_set@@ALSA_0.9+0x154>
+   40d8c:	aa0003f5 	mov	x21, x0
+   40d90:	f9004ec0 	str	x0, [x22, #152]
+   40d94:	b900a2d8 	str	w24, [x22, #160]
+   40d98:	f8408678 	ldr	x24, [x19], #8
+   40d9c:	aa1503e0 	mov	x0, x21
+   40da0:	aa1803e1 	mov	x1, x24
+[31m   40da4:	97ffb613 	bl	2e5f0 <strcpy@plt>[0m
+   40da8:	aa1803e0 	mov	x0, x24
+   40dac:	97ffae3d 	bl	2c6a0 <strlen@plt>
+--
+   80258:	aa0103f6 	mov	x22, x1
+   8025c:	aa0303e0 	mov	x0, x3
+   80260:	a90153f3 	stp	x19, x20, [sp, #16]
+   80264:	a9046bf9 	stp	x25, x26, [sp, #64]
+   80268:	aa0303fa 	mov	x26, x3
+   8026c:	97feb10d 	bl	2c6a0 <strlen@plt>
+   80270:	b9400319 	ldr	w25, [x24]
+   80274:	aa0003f3 	mov	x19, x0
+   80278:	f94002c4 	ldr	x4, [x22]
+   8027c:	0b000339 	add	w25, w25, w0
+   80280:	f94002e0 	ldr	x0, [x23]
+   80284:	11000721 	add	w1, w25, #0x1
+   80288:	cb000094 	sub	x20, x4, x0
+   8028c:	93407c21 	sxtw	x1, w1
+   80290:	97feb594 	bl	2d8e0 <realloc@plt>
+   80294:	b4000220 	cbz	x0, 802d8 <_snd_pcm_shm_open@@ALSA_0.9+0x12d8>
+   80298:	8b34c014 	add	x20, x0, w20, sxtw
+   8029c:	aa0003f5 	mov	x21, x0
+   802a0:	aa1a03e1 	mov	x1, x26
+   802a4:	aa1403e0 	mov	x0, x20
+[31m   802a8:	97feb8d2 	bl	2e5f0 <strcpy@plt>[0m
+   802ac:	b9000319 	str	w25, [x24]
+   802b0:	f90002f5 	str	x21, [x23]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m6[0m times [0;33mlibasound.so.2.0.0[0m
+

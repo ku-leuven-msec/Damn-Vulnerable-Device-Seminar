@@ -1,0 +1,99 @@
+[[0;33m*[0m] Binary protection state of [0;33mati_remote2.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m137) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mati_remote2.ko[0m
+
+
+/log/firmware/firmware/lib/modules/5.4.72-v8/kernel/drivers/input/misc/ati_remote2.ko:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000000000 <ati_remote2_get_channel_mask>:
+       0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+       4:	910003fd 	mov	x29, sp
+       8:	a90153f3 	stp	x19, x20, [sp, #16]
+       c:	aa0103f4 	mov	x20, x1
+      10:	aa0003f3 	mov	x19, x0
+      14:	aa1e03e0 	mov	x0, x30
+      18:	94000000 	bl	0 <_mcount>
+      1c:	f9401282 	ldr	x2, [x20, #32]
+      20:	aa1303e0 	mov	x0, x19
+      24:	90000001 	adrp	x1, 0 <ati_remote2_get_channel_mask>
+      28:	91000021 	add	x1, x1, #0x0
+      2c:	b9400042 	ldr	w2, [x2]
+[31m      30:	94000000 	bl	0 <sprintf>[0m
+      34:	a94153f3 	ldp	x19, x20, [sp, #16]
+      38:	a8c27bfd 	ldp	x29, x30, [sp], #32
+      3c:	d65f03c0 	ret
+
+0000000000000040 <ati_remote2_get_mode_mask>:
+      40:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+      44:	910003fd 	mov	x29, sp
+      48:	a90153f3 	stp	x19, x20, [sp, #16]
+      4c:	aa0103f4 	mov	x20, x1
+      50:	aa0003f3 	mov	x19, x0
+      54:	aa1e03e0 	mov	x0, x30
+      58:	94000000 	bl	0 <_mcount>
+      5c:	f9401282 	ldr	x2, [x20, #32]
+      60:	aa1303e0 	mov	x0, x19
+      64:	90000001 	adrp	x1, 0 <ati_remote2_get_channel_mask>
+      68:	91000021 	add	x1, x1, #0x0
+      6c:	b9400042 	ldr	w2, [x2]
+[31m      70:	94000000 	bl	0 <sprintf>[0m
+      74:	a94153f3 	ldp	x19, x20, [sp, #16]
+      78:	a8c27bfd 	ldp	x29, x30, [sp], #32
+--
+     240:	17fffff4 	b	210 <ati_remote2_store_mode_mask+0x70>
+     244:	94000000 	bl	0 <__stack_chk_fail>
+
+0000000000000248 <ati_remote2_show_mode_mask>:
+     248:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     24c:	910003fd 	mov	x29, sp
+     250:	a90153f3 	stp	x19, x20, [sp, #16]
+     254:	aa0203f3 	mov	x19, x2
+     258:	aa0003f4 	mov	x20, x0
+     25c:	aa1e03e0 	mov	x0, x30
+     260:	94000000 	bl	0 <_mcount>
+     264:	d1028280 	sub	x0, x20, #0xa0
+     268:	52800001 	mov	w1, #0x0                   	// #0
+     26c:	94000000 	bl	0 <usb_ifnum_to_if>
+     270:	aa0003e2 	mov	x2, x0
+     274:	90000001 	adrp	x1, 0 <ati_remote2_get_channel_mask>
+     278:	aa1303e0 	mov	x0, x19
+     27c:	91000021 	add	x1, x1, #0x0
+     280:	f9405442 	ldr	x2, [x2, #168]
+     284:	b942c042 	ldr	w2, [x2, #704]
+[31m     288:	94000000 	bl	0 <sprintf>[0m
+     28c:	93407c00 	sxtw	x0, w0
+     290:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     298:	d65f03c0 	ret
+     29c:	d503201f 	nop
+
+00000000000002a0 <ati_remote2_show_channel_mask>:
+     2a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     2a4:	910003fd 	mov	x29, sp
+     2a8:	a90153f3 	stp	x19, x20, [sp, #16]
+     2ac:	aa0203f3 	mov	x19, x2
+     2b0:	aa0003f4 	mov	x20, x0
+     2b4:	aa1e03e0 	mov	x0, x30
+     2b8:	94000000 	bl	0 <_mcount>
+     2bc:	d1028280 	sub	x0, x20, #0xa0
+     2c0:	52800001 	mov	w1, #0x0                   	// #0
+     2c4:	94000000 	bl	0 <usb_ifnum_to_if>
+     2c8:	aa0003e2 	mov	x2, x0
+     2cc:	90000001 	adrp	x1, 0 <ati_remote2_get_channel_mask>
+     2d0:	aa1303e0 	mov	x0, x19
+     2d4:	91000021 	add	x1, x1, #0x0
+     2d8:	f9405442 	ldr	x2, [x2, #168]
+     2dc:	b942bc42 	ldr	w2, [x2, #700]
+[31m     2e0:	94000000 	bl	0 <sprintf>[0m
+     2e4:	93407c00 	sxtw	x0, w0
+     2e8:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33mati_remote2.ko[0m
+

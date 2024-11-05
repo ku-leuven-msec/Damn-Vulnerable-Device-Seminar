@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibnss_files-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibnss_files-2.31.so[0m
+
+    8044:	d65f03c0 	ret
+    8048:	aa1703e2 	mov	x2, x23
+    804c:	aa1603e1 	mov	x1, x22
+    8050:	aa1403e0 	mov	x0, x20
+    8054:	97ffe997 	bl	26b0 <__strtok_r@plt>
+    8058:	b4fffa40 	cbz	x0, 7fa0 <_nss_files_getsgnam_r@@GLIBC_PRIVATE+0x130>
+    805c:	aa1503e1 	mov	x1, x21
+    8060:	97ffe9a8 	bl	2700 <strcmp@plt>
+    8064:	35fff9e0 	cbnz	w0, 7fa0 <_nss_files_getsgnam_r@@GLIBC_PRIVATE+0x130>
+    8068:	aa1703e2 	mov	x2, x23
+    806c:	aa1903e1 	mov	x1, x25
+    8070:	d2800000 	mov	x0, #0x0                   	// #0
+    8074:	97ffe98f 	bl	26b0 <__strtok_r@plt>
+    8078:	aa0003fc 	mov	x28, x0
+    807c:	b4fff920 	cbz	x0, 7fa0 <_nss_files_getsgnam_r@@GLIBC_PRIVATE+0x130>
+    8080:	350001d8 	cbnz	w24, 80b8 <_nss_files_getsgnam_r@@GLIBC_PRIVATE+0x248>
+    8084:	aa1303e0 	mov	x0, x19
+    8088:	97ffe966 	bl	2620 <fclose@plt>
+    808c:	aa1c03e1 	mov	x1, x28
+    8090:	aa1a03e0 	mov	x0, x26
+[31m    8094:	97ffe9c7 	bl	27b0 <strcpy@plt>[0m
+    8098:	52800020 	mov	w0, #0x1                   	// #1
+    809c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    8170:	a94153f3 	ldp	x19, x20, [sp, #16]
+    8174:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    8178:	a8c87bfd 	ldp	x29, x30, [sp], #128
+    817c:	d65f03c0 	ret
+    8180:	aa1503e1 	mov	x1, x21
+    8184:	aa1603e0 	mov	x0, x22
+    8188:	97ffe936 	bl	2660 <xdecrypt@plt>
+    818c:	34ffff00 	cbz	w0, 816c <_nss_files_getsecretkey@@GLIBC_PRIVATE+0x3c>
+    8190:	aa1603e0 	mov	x0, x22
+    8194:	f9401ac1 	ldr	x1, [x22, #48]
+    8198:	f8430402 	ldr	x2, [x0], #48
+    819c:	eb01005f 	cmp	x2, x1
+    81a0:	54fffe61 	b.ne	816c <_nss_files_getsecretkey@@GLIBC_PRIVATE+0x3c>  // b.any
+    81a4:	f9400400 	ldr	x0, [x0, #8]
+    81a8:	f94006c1 	ldr	x1, [x22, #8]
+    81ac:	eb00003f 	cmp	x1, x0
+    81b0:	54fffde1 	b.ne	816c <_nss_files_getsecretkey@@GLIBC_PRIVATE+0x3c>  // b.any
+    81b4:	aa1603e1 	mov	x1, x22
+    81b8:	aa1403e0 	mov	x0, x20
+    81bc:	390183ff 	strb	wzr, [sp, #96]
+[31m    81c0:	97ffe97c 	bl	27b0 <strcpy@plt>[0m
+    81c4:	17ffffea 	b	816c <_nss_files_getsecretkey@@GLIBC_PRIVATE+0x3c>
+    81c8:	d503201f 	nop
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mlibnss_files-2.31.so[0m
+

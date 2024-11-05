@@ -1,0 +1,84 @@
+[[0;33m*[0m] Binary protection state of [0;33mhid-wiimote.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m321) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mhid-wiimote.ko[0m
+
+    492c:	17ffffd9 	b	4890 <wiimod_pro_calib_store+0x80>
+    4930:	94000000 	bl	0 <__stack_chk_fail>
+    4934:	d503201f 	nop
+
+0000000000004938 <wiimod_pro_calib_show>:
+    4938:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+    493c:	910003fd 	mov	x29, sp
+    4940:	a90153f3 	stp	x19, x20, [sp, #16]
+    4944:	f90013f5 	str	x21, [sp, #32]
+    4948:	aa0003f4 	mov	x20, x0
+    494c:	aa0203f3 	mov	x19, x2
+    4950:	aa1e03e0 	mov	x0, x30
+    4954:	94000000 	bl	0 <_mcount>
+    4958:	90000015 	adrp	x21, 0 <wiimote_ext_unload>
+    495c:	910002b5 	add	x21, x21, #0x0
+    4960:	f9403e94 	ldr	x20, [x20, #120]
+    4964:	aa1503e1 	mov	x1, x21
+    4968:	aa1303e0 	mov	x0, x19
+    496c:	91410294 	add	x20, x20, #0x40, lsl #12
+    4970:	79c57682 	ldrsh	w2, [x20, #698]
+[31m    4974:	94000000 	bl	0 <sprintf>[0m
+    4978:	79c57a82 	ldrsh	w2, [x20, #700]
+    497c:	91001e60 	add	x0, x19, #0x7
+    4980:	90000001 	adrp	x1, 0 <wiimote_ext_unload>
+    4984:	91000021 	add	x1, x1, #0x0
+[31m    4988:	94000000 	bl	0 <sprintf>[0m
+    498c:	79c57e82 	ldrsh	w2, [x20, #702]
+    4990:	aa1503e1 	mov	x1, x21
+    4994:	91003a60 	add	x0, x19, #0xe
+[31m    4998:	94000000 	bl	0 <sprintf>[0m
+    499c:	79c58282 	ldrsh	w2, [x20, #704]
+    49a0:	91005660 	add	x0, x19, #0x15
+    49a4:	90000001 	adrp	x1, 0 <wiimote_ext_unload>
+    49a8:	91000021 	add	x1, x1, #0x0
+[31m    49ac:	94000000 	bl	0 <sprintf>[0m
+    49b0:	d2800380 	mov	x0, #0x1c                  	// #28
+    49b4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    4ac8:	11002063 	add	w3, w3, #0x8
+    4acc:	910008c6 	add	x6, x6, #0x2
+    4ad0:	12001c63 	and	w3, w3, #0xff
+    4ad4:	7100807f 	cmp	w3, #0x20
+    4ad8:	54fffde1 	b.ne	4a94 <wiimod_bboard_calib_show+0xcc>  // b.any
+    4adc:	914102d6 	add	x22, x22, #0x40, lsl #12
+    4ae0:	9000001b 	adrp	x27, 0 <wiimote_ext_unload>
+    4ae4:	910aa2d6 	add	x22, x22, #0x2a8
+    4ae8:	9100037b 	add	x27, x27, #0x0
+    4aec:	aa1303e0 	mov	x0, x19
+    4af0:	52800019 	mov	w25, #0x0                   	// #0
+    4af4:	52800013 	mov	w19, #0x0                   	// #0
+    4af8:	94000000 	bl	0 <_raw_spin_unlock_irq>
+    4afc:	785fa2c2 	ldurh	w2, [x22, #-6]
+    4b00:	aa1603f8 	mov	x24, x22
+    4b04:	2a1303fa 	mov	w26, w19
+    4b08:	52800017 	mov	w23, #0x0                   	// #0
+    4b0c:	8b33c2a0 	add	x0, x21, w19, sxtw
+    4b10:	110006f7 	add	w23, w23, #0x1
+    4b14:	aa1b03e1 	mov	x1, x27
+[31m    4b18:	94000000 	bl	0 <sprintf>[0m
+    4b1c:	11001673 	add	w19, w19, #0x5
+    4b20:	710012ff 	cmp	w23, #0x4
+    4b24:	54000420 	b.eq	4ba8 <wiimod_bboard_calib_show+0x1e0>  // b.none
+    4b28:	71000b3f 	cmp	w25, #0x2
+    4b2c:	78406702 	ldrh	w2, [x24], #6
+    4b30:	7a430ae0 	ccmp	w23, #0x3, #0x0, eq  // eq = none
+    4b34:	54000361 	b.ne	4ba0 <wiimod_bboard_calib_show+0x1d8>  // b.any
+    4b38:	8b33c2a0 	add	x0, x21, w19, sxtw
+    4b3c:	90000001 	adrp	x1, 0 <wiimote_ext_unload>
+    4b40:	11002b53 	add	w19, w26, #0xa
+    4b44:	91000021 	add	x1, x1, #0x0
+[31m    4b48:	94000000 	bl	0 <sprintf>[0m
+    4b4c:	93407e60 	sxtw	x0, w19
+    4b50:	a94363f7 	ldp	x23, x24, [sp, #48]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m6[0m times [0;33mhid-wiimote.ko[0m
+

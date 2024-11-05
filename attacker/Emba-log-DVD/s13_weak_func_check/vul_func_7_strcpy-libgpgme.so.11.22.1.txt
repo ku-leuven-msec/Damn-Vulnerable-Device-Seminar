@@ -1,0 +1,178 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibgpgme.so.11.22.1[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibgpgme.so.11.22.1[0m
+
+   1a14c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   1a150:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   1a154:	a94363f7 	ldp	x23, x24, [sp, #48]
+   1a158:	f94023f9 	ldr	x25, [sp, #64]
+   1a15c:	a8c67bfd 	ldp	x29, x30, [sp], #96
+   1a160:	d65f03c0 	ret
+   1a164:	f9402be0 	ldr	x0, [sp, #80]
+   1a168:	394002a1 	ldrb	w1, [x21]
+   1a16c:	aa1403f5 	mov	x21, x20
+   1a170:	3900e001 	strb	w1, [x0, #56]
+   1a174:	17ffffc5 	b	1a088 <gpgme_trust_item_get_int_attr@@GPGME_1.0+0x178>
+   1a178:	aa1503e0 	mov	x0, x21
+   1a17c:	97ffb411 	bl	71c0 <strlen@plt>
+   1a180:	f1001c1f 	cmp	x0, #0x7
+   1a184:	54fff461 	b.ne	1a010 <gpgme_trust_item_get_int_attr@@GPGME_1.0+0x100>  // b.any
+   1a188:	f9402be0 	ldr	x0, [sp, #80]
+   1a18c:	aa1503e1 	mov	x1, x21
+   1a190:	52800053 	mov	w19, #0x2                   	// #2
+   1a194:	aa1403f5 	mov	x21, x20
+   1a198:	f9400400 	ldr	x0, [x0, #8]
+[31m   1a19c:	97ffb5f1 	bl	7960 <strcpy@plt>[0m
+   1a1a0:	b5fff055 	cbnz	x21, 19fa8 <gpgme_trust_item_get_int_attr@@GPGME_1.0+0x98>
+   1a1a4:	17ffff9b 	b	1a010 <gpgme_trust_item_get_int_attr@@GPGME_1.0+0x100>
+--
+   24158:	11000c00 	add	w0, w0, #0x3
+   2415c:	93407c00 	sxtw	x0, w0
+   24160:	97ff8cac 	bl	7410 <malloc@plt>
+   24164:	aa0003f9 	mov	x25, x0
+   24168:	b4000d80 	cbz	x0, 24318 <gpgme_set_engine_info@@GPGME_1.1+0x18b8>
+   2416c:	39409260 	ldrb	w0, [x19, #36]
+   24170:	360809c0 	tbz	w0, #1, 242a8 <gpgme_set_engine_info@@GPGME_1.1+0x1848>
+   24174:	aa1903e3 	mov	x3, x25
+   24178:	38001478 	strb	w24, [x3], #1
+   2417c:	b9801a62 	ldrsw	x2, [x19, #24]
+   24180:	aa0303e0 	mov	x0, x3
+   24184:	f9400661 	ldr	x1, [x19, #8]
+   24188:	97ff8bf6 	bl	7160 <memcpy@plt>
+   2418c:	aa0003e3 	mov	x3, x0
+   24190:	b9801a61 	ldrsw	x1, [x19, #24]
+   24194:	528007a2 	mov	w2, #0x3d                  	// #61
+   24198:	8b010000 	add	x0, x0, x1
+   2419c:	91000400 	add	x0, x0, #0x1
+   241a0:	38216862 	strb	w2, [x3, x1]
+   241a4:	f9400a61 	ldr	x1, [x19, #16]
+[31m   241a8:	97ff8dee 	bl	7960 <strcpy@plt>[0m
+   241ac:	aa1703e1 	mov	x1, x23
+   241b0:	aa1503e0 	mov	x0, x21
+--
+   24220:	39409260 	ldrb	w0, [x19, #36]
+   24224:	37080160 	tbnz	w0, #1, 24250 <gpgme_set_engine_info@@GPGME_1.1+0x17f0>
+   24228:	f9400a79 	ldr	x25, [x19, #16]
+   2422c:	aa1603e1 	mov	x1, x22
+   24230:	aa1503e0 	mov	x0, x21
+   24234:	97fffd47 	bl	23750 <gpgme_set_engine_info@@GPGME_1.1+0xcf0>
+   24238:	2a0003f4 	mov	w20, w0
+   2423c:	34000260 	cbz	w0, 24288 <gpgme_set_engine_info@@GPGME_1.1+0x1828>
+   24240:	f9400a60 	ldr	x0, [x19, #16]
+   24244:	eb19001f 	cmp	x0, x25
+   24248:	54fffc41 	b.ne	241d0 <gpgme_set_engine_info@@GPGME_1.1+0x1770>  // b.any
+   2424c:	17ffffe9 	b	241f0 <gpgme_set_engine_info@@GPGME_1.1+0x1790>
+   24250:	b9401e60 	ldr	w0, [x19, #28]
+   24254:	11000800 	add	w0, w0, #0x2
+   24258:	93407c00 	sxtw	x0, w0
+   2425c:	97ff8c6d 	bl	7410 <malloc@plt>
+   24260:	aa0003f9 	mov	x25, x0
+   24264:	b4000740 	cbz	x0, 2434c <gpgme_set_engine_info@@GPGME_1.1+0x18ec>
+   24268:	38001418 	strb	w24, [x0], #1
+   2426c:	f9400a61 	ldr	x1, [x19, #16]
+[31m   24270:	97ff8dbc 	bl	7960 <strcpy@plt>[0m
+   24274:	aa1603e1 	mov	x1, x22
+   24278:	aa1503e0 	mov	x0, x21
+--
+   24280:	2a0003f4 	mov	w20, w0
+   24284:	35fffde0 	cbnz	w0, 24240 <gpgme_set_engine_info@@GPGME_1.1+0x17e0>
+   24288:	aa1903e1 	mov	x1, x25
+   2428c:	aa1503e0 	mov	x0, x21
+   24290:	97fffd30 	bl	23750 <gpgme_set_engine_info@@GPGME_1.1+0xcf0>
+   24294:	2a0003f4 	mov	w20, w0
+   24298:	f9400a61 	ldr	x1, [x19, #16]
+   2429c:	eb19003f 	cmp	x1, x25
+   242a0:	54fff9c0 	b.eq	241d8 <gpgme_set_engine_info@@GPGME_1.1+0x1778>  // b.none
+   242a4:	17ffffcb 	b	241d0 <gpgme_set_engine_info@@GPGME_1.1+0x1770>
+   242a8:	b9801a62 	ldrsw	x2, [x19, #24]
+   242ac:	aa1903e0 	mov	x0, x25
+   242b0:	f9400661 	ldr	x1, [x19, #8]
+   242b4:	97ff8bab 	bl	7160 <memcpy@plt>
+   242b8:	b9801a61 	ldrsw	x1, [x19, #24]
+   242bc:	528007a2 	mov	w2, #0x3d                  	// #61
+   242c0:	8b010320 	add	x0, x25, x1
+   242c4:	91000400 	add	x0, x0, #0x1
+   242c8:	38216b22 	strb	w2, [x25, x1]
+   242cc:	f9400a61 	ldr	x1, [x19, #16]
+[31m   242d0:	97ff8da4 	bl	7960 <strcpy@plt>[0m
+   242d4:	aa1703e1 	mov	x1, x23
+   242d8:	aa1503e0 	mov	x0, x21
+--
+   2b890:	f878dae1 	ldr	x1, [x23, w24, sxtw #3]
+   2b894:	11000718 	add	w24, w24, #0x1
+   2b898:	b40011c1 	cbz	x1, 2bad0 <gpgme_set_engine_info@@GPGME_1.1+0x9070>
+   2b89c:	f9401820 	ldr	x0, [x1, #48]
+   2b8a0:	b4000ee0 	cbz	x0, 2ba7c <gpgme_set_engine_info@@GPGME_1.1+0x901c>
+   2b8a4:	f9401c1b 	ldr	x27, [x0, #56]
+   2b8a8:	b4000ebb 	cbz	x27, 2ba7c <gpgme_set_engine_info@@GPGME_1.1+0x901c>
+   2b8ac:	aa1b03e0 	mov	x0, x27
+   2b8b0:	97ff6e44 	bl	71c0 <strlen@plt>
+   2b8b4:	11002c13 	add	w19, w0, #0xb
+   2b8b8:	6b19027f 	cmp	w19, w25
+   2b8bc:	540000ed 	b.le	2b8d8 <gpgme_set_engine_info@@GPGME_1.1+0x8e78>
+   2b8c0:	93407e61 	sxtw	x1, w19
+   2b8c4:	aa1603e0 	mov	x0, x22
+   2b8c8:	97ff6f46 	bl	75e0 <realloc@plt>
+   2b8cc:	b4001460 	cbz	x0, 2bb58 <gpgme_set_engine_info@@GPGME_1.1+0x90f8>
+   2b8d0:	2a1303f9 	mov	w25, w19
+   2b8d4:	aa0003f6 	mov	x22, x0
+   2b8d8:	aa1b03e1 	mov	x1, x27
+   2b8dc:	91002ac0 	add	x0, x22, #0xa
+[31m   2b8e0:	97ff7020 	bl	7960 <strcpy@plt>[0m
+   2b8e4:	a9510ea2 	ldp	x2, x3, [x21, #272]
+   2b8e8:	aa1603e1 	mov	x1, x22
+--
+   30828:	b8007002 	stur	w2, [x0, #7]
+   3082c:	b40013c1 	cbz	x1, 30aa4 <gpgme_set_engine_info@@GPGME_1.1+0xe044>
+   30830:	52800038 	mov	w24, #0x1                   	// #1
+   30834:	5280067a 	mov	w26, #0x33                  	// #51
+   30838:	52800019 	mov	w25, #0x0                   	// #0
+   3083c:	f9002bfb 	str	x27, [sp, #80]
+   30840:	1400001b 	b	308ac <gpgme_set_engine_info@@GPGME_1.1+0xde4c>
+   30844:	aa1303e0 	mov	x0, x19
+   30848:	97ff5a5e 	bl	71c0 <strlen@plt>
+   3084c:	11002c1b 	add	w27, w0, #0xb
+   30850:	6b1a037f 	cmp	w27, w26
+   30854:	540000ed 	b.le	30870 <gpgme_set_engine_info@@GPGME_1.1+0xde10>
+   30858:	93407f61 	sxtw	x1, w27
+   3085c:	aa1603e0 	mov	x0, x22
+   30860:	97ff5b60 	bl	75e0 <realloc@plt>
+   30864:	b40012e0 	cbz	x0, 30ac0 <gpgme_set_engine_info@@GPGME_1.1+0xe060>
+   30868:	2a1b03fa 	mov	w26, w27
+   3086c:	aa0003f6 	mov	x22, x0
+   30870:	aa1303e1 	mov	x1, x19
+   30874:	91002ac0 	add	x0, x22, #0xa
+[31m   30878:	97ff5c3a 	bl	7960 <strcpy@plt>[0m
+   3087c:	a94e8ea2 	ldp	x2, x3, [x21, #232]
+   30880:	aa1603e1 	mov	x1, x22
+--
+   33464:	aa1403e0 	mov	x0, x20
+   33468:	7100e83f 	cmp	w1, #0x3a
+   3346c:	7a401824 	ccmp	w1, #0x0, #0x4, ne  // ne = any
+   33470:	54000200 	b.eq	334b0 <gpgme_op_query_swdb@@GPGME_1.1+0x380>  // b.none
+   33474:	d503201f 	nop
+   33478:	39000001 	strb	w1, [x0]
+   3347c:	2a0103e2 	mov	w2, w1
+   33480:	aa0003e3 	mov	x3, x0
+   33484:	91000400 	add	x0, x0, #0x1
+   33488:	38401e61 	ldrb	w1, [x19, #1]!
+   3348c:	7100e83f 	cmp	w1, #0x3a
+   33490:	7a401824 	ccmp	w1, #0x0, #0x4, ne  // ne = any
+   33494:	54ffff21 	b.ne	33478 <gpgme_op_query_swdb@@GPGME_1.1+0x348>  // b.any
+   33498:	eb00029f 	cmp	x20, x0
+   3349c:	540000a0 	b.eq	334b0 <gpgme_op_query_swdb@@GPGME_1.1+0x380>  // b.none
+   334a0:	7100bc5f 	cmp	w2, #0x2f
+   334a4:	54000060 	b.eq	334b0 <gpgme_op_query_swdb@@GPGME_1.1+0x380>  // b.none
+   334a8:	39000017 	strb	w23, [x0]
+   334ac:	91000860 	add	x0, x3, #0x2
+   334b0:	aa1503e1 	mov	x1, x21
+[31m   334b4:	97ff512b 	bl	7960 <strcpy@plt>[0m
+   334b8:	aa1403e0 	mov	x0, x20
+   334bc:	52800021 	mov	w1, #0x1                   	// #1
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m7[0m times [0;33mlibgpgme.so.11.22.1[0m
+

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibasound.so.2.0.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibasound.so.2.0.0[0m
+
+   8ba04:	b4001400 	cbz	x0, 8bc84 <_snd_pcm_lfloat_open@@ALSA_0.9+0x2724>
+   8ba08:	92401ef7 	and	x23, x23, #0xff
+   8ba0c:	f90043b5 	str	x21, [x29, #128]
+   8ba10:	1400001f 	b	8ba8c <_snd_pcm_lfloat_open@@ALSA_0.9+0x252c>
+   8ba14:	91004c1b 	add	x27, x0, #0x13
+   8ba18:	aa1b03e0 	mov	x0, x27
+   8ba1c:	97fe8321 	bl	2c6a0 <strlen@plt>
+   8ba20:	8b0002e0 	add	x0, x23, x0
+   8ba24:	8b130000 	add	x0, x0, x19
+   8ba28:	97fe8602 	bl	2d230 <malloc@plt>
+   8ba2c:	aa0003f5 	mov	x21, x0
+   8ba30:	b40011a0 	cbz	x0, 8bc64 <_snd_pcm_lfloat_open@@ALSA_0.9+0x2704>
+   8ba34:	aa1403e1 	mov	x1, x20
+   8ba38:	97fe856e 	bl	2cff0 <stpcpy@plt>
+   8ba3c:	7100bf3f 	cmp	w25, #0x2f
+   8ba40:	54000060 	b.eq	8ba4c <_snd_pcm_lfloat_open@@ALSA_0.9+0x24ec>  // b.none
+   8ba44:	528005e1 	mov	w1, #0x2f                  	// #47
+   8ba48:	79000001 	strh	w1, [x0]
+   8ba4c:	aa1b03e1 	mov	x1, x27
+   8ba50:	aa1503e0 	mov	x0, x21
+[31m   8ba54:	97fe86bb 	bl	2d540 <strcat@plt>[0m
+   8ba58:	aa1a03e3 	mov	x3, x26
+   8ba5c:	aa1c03e2 	mov	x2, x28
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mlibasound.so.2.0.0[0m
+

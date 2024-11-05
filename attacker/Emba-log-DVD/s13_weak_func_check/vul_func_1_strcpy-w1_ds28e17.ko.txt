@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mw1_ds28e17.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m106) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mw1_ds28e17.ko[0m
+
+ c24:	7101901f 	cmp	w0, #0x64
+ c28:	54000400 	b.eq	ca8 <w1_f19_add_slave+0xd8>  // b.none
+ c2c:	52800020 	mov	w0, #0x1                   	// #1
+ c30:	39000260 	strb	w0, [x19]
+ c34:	910002a0 	add	x0, x21, #0x0
+ c38:	90000015 	adrp	x21, 0 <w1_f19_i2c_functionality>
+ c3c:	910002b5 	add	x21, x21, #0x0
+ c40:	90000002 	adrp	x2, 0 <w1_f19_i2c_functionality>
+ c44:	910062a4 	add	x4, x21, #0x18
+ c48:	91000042 	add	x2, x2, #0x0
+ c4c:	39401005 	ldrb	w5, [x0, #4]
+ c50:	52862ee3 	mov	w3, #0x3177                	// #12663
+ c54:	72a005a3 	movk	w3, #0x2d, lsl #16
+ c58:	91002281 	add	x1, x20, #0x8
+ c5c:	910d7e60 	add	x0, x19, #0x35f
+ c60:	39000665 	strb	w5, [x19, #1]
+ c64:	f9000662 	str	x2, [x19, #8]
+ c68:	910102b5 	add	x21, x21, #0x40
+ c6c:	a901d264 	stp	x4, x20, [x19, #24]
+ c70:	b9035e63 	str	w3, [x19, #860]
+[31m c74:	94000000 	bl	0 <strcpy>[0m
+ c78:	91002260 	add	x0, x19, #0x8
+ c7c:	f9005e76 	str	x22, [x19, #184]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mw1_ds28e17.ko[0m
+

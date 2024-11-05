@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-seq-virmidi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m100) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msnd-seq-virmidi.ko[0m
+
+ 46c:	2a0103f7 	mov	w23, w1
+ 470:	aa0003f5 	mov	x21, x0
+ 474:	aa1e03e0 	mov	x0, x30
+ 478:	94000000 	bl	0 <_mcount>
+ 47c:	f9428e81 	ldr	x1, [x20, #1304]
+ 480:	f90027e1 	str	x1, [sp, #72]
+ 484:	d2800001 	mov	x1, #0x0                   	// #0
+ 488:	f90002df 	str	xzr, [x22]
+ 48c:	90000001 	adrp	x1, 0 <snd_virmidi_input_trigger>
+ 490:	52800204 	mov	w4, #0x10                  	// #16
+ 494:	2a1703e2 	mov	w2, w23
+ 498:	aa1503e0 	mov	x0, x21
+ 49c:	91000021 	add	x1, x1, #0x0
+ 4a0:	2a0403e3 	mov	w3, w4
+ 4a4:	910103e5 	add	x5, sp, #0x40
+ 4a8:	94000000 	bl	0 <snd_rawmidi_new>
+ 4ac:	37f805e0 	tbnz	w0, #31, 568 <snd_virmidi_new+0x118>
+ 4b0:	f94023e0 	ldr	x0, [sp, #64]
+ 4b4:	91008001 	add	x1, x0, #0x20
+ 4b8:	91018000 	add	x0, x0, #0x60
+[31m 4bc:	94000000 	bl	0 <strcpy>[0m
+ 4c0:	90000000 	adrp	x0, 0 <kmalloc_caches>
+ 4c4:	d2800d02 	mov	x2, #0x68                  	// #104
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33msnd-seq-virmidi.ko[0m
+

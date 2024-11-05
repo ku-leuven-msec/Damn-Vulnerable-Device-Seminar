@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mms_sensors_i2c.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m117) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mms_sensors_i2c.ko[0m
+
+ 750:	94000000 	bl	0 <_mcount>
+ 754:	f9428e82 	ldr	x2, [x20, #1304]
+ 758:	f9001fe2 	str	x2, [sp, #56]
+ 75c:	d2800002 	mov	x2, #0x0                   	// #0
+ 760:	91002276 	add	x22, x19, #0x8
+ 764:	aa1603e0 	mov	x0, x22
+ 768:	94000000 	bl	0 <mutex_lock>
+ 76c:	9100dfe1 	add	x1, sp, #0x37
+ 770:	f9400260 	ldr	x0, [x19]
+ 774:	97fffe99 	bl	1d8 <ms_sensors_read_config_reg>
+ 778:	2a0003f3 	mov	w19, w0
+ 77c:	aa1603e0 	mov	x0, x22
+ 780:	94000000 	bl	0 <mutex_unlock>
+ 784:	93407e60 	sxtw	x0, w19
+ 788:	35000113 	cbnz	w19, 7a8 <ms_sensors_show_battery_low+0x78>
+ 78c:	3940dfe2 	ldrb	w2, [sp, #55]
+ 790:	aa1503e0 	mov	x0, x21
+ 794:	90000001 	adrp	x1, 0 <ms_sensors_reset>
+ 798:	91000021 	add	x1, x1, #0x0
+ 79c:	d3461842 	ubfx	x2, x2, #6, #1
+[31m 7a0:	94000000 	bl	0 <sprintf>[0m
+ 7a4:	d2800040 	mov	x0, #0x2                   	// #2
+ 7a8:	91146294 	add	x20, x20, #0x518
+--
+ 7f0:	94000000 	bl	0 <_mcount>
+ 7f4:	f9428e82 	ldr	x2, [x20, #1304]
+ 7f8:	f9001fe2 	str	x2, [sp, #56]
+ 7fc:	d2800002 	mov	x2, #0x0                   	// #0
+ 800:	91002276 	add	x22, x19, #0x8
+ 804:	aa1603e0 	mov	x0, x22
+ 808:	94000000 	bl	0 <mutex_lock>
+ 80c:	9100dfe1 	add	x1, sp, #0x37
+ 810:	f9400260 	ldr	x0, [x19]
+ 814:	97fffe71 	bl	1d8 <ms_sensors_read_config_reg>
+ 818:	2a0003f3 	mov	w19, w0
+ 81c:	aa1603e0 	mov	x0, x22
+ 820:	94000000 	bl	0 <mutex_unlock>
+ 824:	93407e60 	sxtw	x0, w19
+ 828:	35000113 	cbnz	w19, 848 <ms_sensors_show_heater+0x78>
+ 82c:	3940dfe2 	ldrb	w2, [sp, #55]
+ 830:	aa1503e0 	mov	x0, x21
+ 834:	90000001 	adrp	x1, 0 <ms_sensors_reset>
+ 838:	91000021 	add	x1, x1, #0x0
+ 83c:	d3420842 	ubfx	x2, x2, #2, #1
+[31m 840:	94000000 	bl	0 <sprintf>[0m
+ 844:	d2800040 	mov	x0, #0x2                   	// #2
+ 848:	91146294 	add	x20, x20, #0x518
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mms_sensors_i2c.ko[0m
+

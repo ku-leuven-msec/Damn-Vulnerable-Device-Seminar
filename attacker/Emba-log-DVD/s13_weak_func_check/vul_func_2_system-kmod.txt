@@ -1,0 +1,59 @@
+[[0;33m*[0m] Binary protection state of [0;33mkmod[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+[32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mkmod[0m
+
+    58a8:	9400186e 	bl	ba60 <ferror@plt+0x8520>
+    58ac:	17ffffda 	b	5814 <ferror@plt+0x22d4>
+    58b0:	9101c3e2 	add	x2, sp, #0x70
+    58b4:	9101a3e1 	add	x1, sp, #0x68
+    58b8:	aa1303e0 	mov	x0, x19
+    58bc:	9400362d 	bl	13170 <ferror@plt+0xfc30>
+    58c0:	2a0003f4 	mov	w20, w0
+    58c4:	37f806a0 	tbnz	w0, #31, 5998 <ferror@plt+0x2458>
+    58c8:	aa1303e0 	mov	x0, x19
+    58cc:	9400372d 	bl	13580 <ferror@plt+0x10040>
+    58d0:	aa0003f5 	mov	x21, x0
+    58d4:	b5fff1a0 	cbnz	x0, 5708 <ferror@plt+0x21c8>
+    58d8:	17ffff88 	b	56f8 <ferror@plt+0x21b8>
+    58dc:	aa1803e1 	mov	x1, x24
+    58e0:	52800022 	mov	w2, #0x1                   	// #1
+    58e4:	900000b7 	adrp	x23, 19000 <ferror@plt+0x15ac0>
+    58e8:	9105a2f7 	add	x23, x23, #0x168
+    58ec:	aa1703e0 	mov	x0, x23
+    58f0:	97fff5a8 	bl	2f90 <setenv@plt>
+    58f4:	aa1303e0 	mov	x0, x19
+[31m    58f8:	97fff61e 	bl	3170 <system@plt>[0m
+    58fc:	2a0003f4 	mov	w20, w0
+    5900:	aa1703e0 	mov	x0, x23
+--
+   13d3c:	f9400000 	ldr	x0, [x0]
+   13d40:	97fffc44 	bl	12e50 <ferror@plt+0xf910>
+   13d44:	2a0003f4 	mov	w20, w0
+   13d48:	37f803c0 	tbnz	w0, #31, 13dc0 <ferror@plt+0x10880>
+   13d4c:	f94067e0 	ldr	x0, [sp, #200]
+   13d50:	97fff9e0 	bl	124d0 <ferror@plt+0xef90>
+   13d54:	f9406bf9 	ldr	x25, [sp, #208]
+   13d58:	b4000519 	cbz	x25, 13df8 <ferror@plt+0x108b8>
+   13d5c:	a9025bf5 	stp	x21, x22, [sp, #32]
+   13d60:	a90363f7 	stp	x23, x24, [sp, #48]
+   13d64:	f90067f9 	str	x25, [sp, #200]
+   13d68:	17fffeeb 	b	13914 <ferror@plt+0x103d4>
+   13d6c:	aa1503e0 	mov	x0, x21
+   13d70:	97fffb88 	bl	12b90 <ferror@plt+0xf650>
+   13d74:	f9405ff3 	ldr	x19, [sp, #184]
+   13d78:	aa0003e1 	mov	x1, x0
+   13d7c:	52800022 	mov	w2, #0x1                   	// #1
+   13d80:	aa1303e0 	mov	x0, x19
+   13d84:	97ffbc83 	bl	2f90 <setenv@plt>
+   13d88:	aa1703e0 	mov	x0, x23
+[31m   13d8c:	97ffbcf9 	bl	3170 <system@plt>[0m
+   13d90:	2a0003f4 	mov	w20, w0
+   13d94:	aa1303e0 	mov	x0, x19
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m2[0m times [0;33mkmod[0m
+

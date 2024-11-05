@@ -1,0 +1,116 @@
+[[0;33m*[0m] Binary protection state of [0;33mpktgen.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m253) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mpktgen.ko[0m
+
+    3ff4:	90000001 	adrp	x1, 0 <pktgen_if_open>
+    3ff8:	91000021 	add	x1, x1, #0x0
+    3ffc:	93407e80 	sxtw	x0, w20
+    4000:	a9400c22 	ldp	x2, x3, [x1]
+    4004:	a9048ec2 	stp	x2, x3, [x22, #72]
+    4008:	b840f021 	ldur	w1, [x1, #15]
+    400c:	b800f321 	stur	w1, [x25, #15]
+    4010:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    4014:	17ffff85 	b	3e28 <pktgen_thread_write+0x178>
+    4018:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    401c:	17ffff83 	b	3e28 <pktgen_thread_write+0x178>
+    4020:	90000000 	adrp	x0, 0 <kmalloc_caches>
+    4024:	d280d802 	mov	x2, #0x6c0                 	// #1728
+    4028:	5281b801 	mov	w1, #0xdc0                 	// #3520
+    402c:	f9400000 	ldr	x0, [x0]
+    4030:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    4034:	aa0003fa 	mov	x26, x0
+    4038:	b40018c0 	cbz	x0, 4350 <pktgen_thread_write+0x6a0>
+    403c:	910203e1 	add	x1, sp, #0x80
+    4040:	9109c340 	add	x0, x26, #0x270
+[31m    4044:	94000000 	bl	0 <strcpy>[0m
+    4048:	52800001 	mov	w1, #0x0                   	// #0
+    404c:	d2a00300 	mov	x0, #0x180000              	// #1572864
+--
+    53f4:	90000001 	adrp	x1, 0 <pktgen_if_open>
+    53f8:	aa1503f4 	mov	x20, x21
+    53fc:	91000021 	add	x1, x1, #0x0
+    5400:	94000000 	bl	0 <sprintf>
+    5404:	a94573fb 	ldp	x27, x28, [sp, #80]
+    5408:	17fffd58 	b	4968 <pktgen_if_write+0x518>
+    540c:	90000001 	adrp	x1, 0 <pktgen_if_open>
+    5410:	aa1603e0 	mov	x0, x22
+    5414:	91000021 	add	x1, x1, #0x0
+    5418:	94000000 	bl	0 <strcmp>
+    541c:	35000200 	cbnz	w0, 545c <pktgen_if_write+0x100c>
+    5420:	52800041 	mov	w1, #0x2                   	// #2
+    5424:	52800020 	mov	w0, #0x1                   	// #1
+    5428:	b9003b01 	str	w1, [x24, #56]
+    542c:	b9008700 	str	w0, [x24, #132]
+    5430:	17ffffef 	b	53ec <pktgen_if_write+0xf9c>
+    5434:	a90d7f1f 	stp	xzr, xzr, [x24, #208]
+    5438:	aa1603e1 	mov	x1, x22
+    543c:	aa1303e0 	mov	x0, x19
+    5440:	a9017e7f 	stp	xzr, xzr, [x19, #16]
+[31m    5444:	94000000 	bl	0 <strcpy>[0m
+    5448:	aa1303e0 	mov	x0, x19
+    544c:	94000000 	bl	0 <in_aton>
+--
+    5b20:	97ffeac8 	bl	640 <_copy_from_user>
+    5b24:	b5ff82a0 	cbnz	x0, 4b78 <pktgen_if_write+0x728>
+    5b28:	9103c313 	add	x19, x24, #0xf0
+    5b2c:	aa1603e0 	mov	x0, x22
+    5b30:	aa1303e1 	mov	x1, x19
+    5b34:	38346adf 	strb	wzr, [x22, x20]
+    5b38:	94000000 	bl	0 <strcmp>
+    5b3c:	35000260 	cbnz	w0, 5b88 <pktgen_if_write+0x1738>
+    5b40:	aa1b03e0 	mov	x0, x27
+    5b44:	aa1303e2 	mov	x2, x19
+    5b48:	90000001 	adrp	x1, 0 <pktgen_if_open>
+    5b4c:	aa1503f4 	mov	x20, x21
+    5b50:	91000021 	add	x1, x1, #0x0
+    5b54:	94000000 	bl	0 <sprintf>
+    5b58:	a94573fb 	ldp	x27, x28, [sp, #80]
+    5b5c:	17fffb83 	b	4968 <pktgen_if_write+0x518>
+    5b60:	a9117f1f 	stp	xzr, xzr, [x24, #272]
+    5b64:	aa1603e1 	mov	x1, x22
+    5b68:	aa1303e0 	mov	x0, x19
+    5b6c:	a9017e7f 	stp	xzr, xzr, [x19, #16]
+[31m    5b70:	94000000 	bl	0 <strcpy>[0m
+    5b74:	aa1303e0 	mov	x0, x19
+    5b78:	94000000 	bl	0 <in_aton>
+    5b7c:	b901b700 	str	w0, [x24, #436]
+    5b80:	b9023700 	str	w0, [x24, #564]
+    5b84:	17ffffd3 	b	5ad0 <pktgen_if_write+0x1680>
+    5b88:	a90f7f1f 	stp	xzr, xzr, [x24, #240]
+    5b8c:	aa1603e1 	mov	x1, x22
+    5b90:	aa1303e0 	mov	x0, x19
+    5b94:	a9017e7f 	stp	xzr, xzr, [x19, #16]
+[31m    5b98:	94000000 	bl	0 <strcpy>[0m
+    5b9c:	aa1303e0 	mov	x0, x19
+    5ba0:	94000000 	bl	0 <in_aton>
+--
+    6064:	91000021 	add	x1, x1, #0x0
+    6068:	94000000 	bl	0 <sprintf>
+    606c:	a94573fb 	ldp	x27, x28, [sp, #80]
+    6070:	17fffa3e 	b	4968 <pktgen_if_write+0x518>
+    6074:	794103e2 	ldrh	w2, [sp, #128]
+    6078:	aa1b03e0 	mov	x0, x27
+    607c:	79055302 	strh	w2, [x24, #680]
+    6080:	90000001 	adrp	x1, 0 <pktgen_if_open>
+    6084:	aa1503f4 	mov	x20, x21
+    6088:	91000021 	add	x1, x1, #0x0
+    608c:	94000000 	bl	0 <sprintf>
+    6090:	a94573fb 	ldp	x27, x28, [sp, #80]
+    6094:	17fffa35 	b	4968 <pktgen_if_write+0x518>
+    6098:	93407c14 	sxtw	x20, w0
+    609c:	a94573fb 	ldp	x27, x28, [sp, #80]
+    60a0:	17fffa32 	b	4968 <pktgen_if_write+0x518>
+    60a4:	a90b7f1f 	stp	xzr, xzr, [x24, #176]
+    60a8:	aa1603e1 	mov	x1, x22
+    60ac:	aa1303e0 	mov	x0, x19
+    60b0:	a9017e7f 	stp	xzr, xzr, [x19, #16]
+[31m    60b4:	94000000 	bl	0 <strcpy>[0m
+    60b8:	aa1303e0 	mov	x0, x19
+    60bc:	94000000 	bl	0 <in_aton>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mpktgen.ko[0m
+

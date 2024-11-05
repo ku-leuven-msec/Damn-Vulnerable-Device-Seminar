@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibxml2.so.2.9.10[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibxml2.so.2.9.10[0m
+
+   62dd8:	f9401683 	ldr	x3, [x20, #40]
+   62ddc:	11000404 	add	w4, w0, #0x1
+   62de0:	f9000664 	str	x4, [x19, #8]
+   62de4:	8b0102c1 	add	x1, x22, x1
+   62de8:	91000442 	add	x2, x2, #0x1
+   62dec:	a9018a81 	stp	x1, x2, [x20, #24]
+   62df0:	eb03003f 	cmp	x1, x3
+   62df4:	b9003684 	str	w4, [x20, #52]
+   62df8:	540002e8 	b.hi	62e54 <xmlMemStrdupLoc@@LIBXML2_2.4.30+0xf4>  // b.pmore
+   62dfc:	913962a0 	add	x0, x21, #0xe58
+   62e00:	9100a274 	add	x20, x19, #0x28
+   62e04:	f9400800 	ldr	x0, [x0, #16]
+   62e08:	9400f25e 	bl	9f780 <xmlMutexUnlock@@LIBXML2_2.4.30>
+   62e0c:	f9400660 	ldr	x0, [x19, #8]
+   62e10:	b94e5aa1 	ldr	w1, [x21, #3672]
+   62e14:	eb00003f 	cmp	x1, x0
+   62e18:	54000300 	b.eq	62e78 <xmlMemStrdupLoc@@LIBXML2_2.4.30+0x118>  // b.none
+   62e1c:	913962b5 	add	x21, x21, #0xe58
+   62e20:	aa1703e1 	mov	x1, x23
+   62e24:	aa1403e0 	mov	x0, x20
+[31m   62e28:	97ff262e 	bl	2c6e0 <strcpy@plt>[0m
+   62e2c:	f94006a0 	ldr	x0, [x21, #8]
+   62e30:	eb14001f 	cmp	x0, x20
+--
+   62e38:	aa1403e0 	mov	x0, x20
+   62e3c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   62e40:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   62e44:	a94363f7 	ldp	x23, x24, [sp, #48]
+   62e48:	f94023f9 	ldr	x25, [sp, #64]
+   62e4c:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   62e50:	d65f03c0 	ret
+   62e54:	913962a0 	add	x0, x21, #0xe58
+   62e58:	f9001681 	str	x1, [x20, #40]
+   62e5c:	9100a274 	add	x20, x19, #0x28
+   62e60:	f9400800 	ldr	x0, [x0, #16]
+   62e64:	9400f247 	bl	9f780 <xmlMutexUnlock@@LIBXML2_2.4.30>
+   62e68:	f9400660 	ldr	x0, [x19, #8]
+   62e6c:	b94e5aa1 	ldr	w1, [x21, #3672]
+   62e70:	eb00003f 	cmp	x1, x0
+   62e74:	54fffd41 	b.ne	62e1c <xmlMemStrdupLoc@@LIBXML2_2.4.30+0xbc>  // b.any
+   62e78:	913962b5 	add	x21, x21, #0xe58
+   62e7c:	97ff23a1 	bl	2bd00 <xmlMallocBreakpoint@plt>
+   62e80:	aa1703e1 	mov	x1, x23
+   62e84:	aa1403e0 	mov	x0, x20
+[31m   62e88:	97ff2616 	bl	2c6e0 <strcpy@plt>[0m
+   62e8c:	f94006a0 	ldr	x0, [x21, #8]
+   62e90:	eb14001f 	cmp	x0, x20
+--
+   7848c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   78490:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   78494:	d65f03c0 	ret
+   78498:	f0000721 	adrp	x1, 15f000 <xmlIsPubidChar_tab@@LIBXML2_2.6.0+0x40d08>
+   7849c:	91000694 	add	x20, x20, #0x1
+   784a0:	f0000460 	adrp	x0, 107000 <xmlStringText@@LIBXML2_2.4.30+0x2b70>
+   784a4:	91162000 	add	x0, x0, #0x588
+   784a8:	f946cc21 	ldr	x1, [x1, #3480]
+   784ac:	f9400036 	ldr	x22, [x1]
+   784b0:	9400a908 	bl	a28d0 <xmlStrlen@@LIBXML2_2.4.30>
+   784b4:	8b20c280 	add	x0, x20, w0, sxtw
+   784b8:	d63f02c0 	blr	x22
+   784bc:	aa0003f4 	mov	x20, x0
+   784c0:	b4fffd40 	cbz	x0, 78468 <htmlCreateFileParserCtxt@@LIBXML2_2.4.30+0x88>
+   784c4:	d28d0c62 	mov	x2, #0x6863                	// #26723
+   784c8:	f2ae4c22 	movk	x2, #0x7261, lsl #16
+   784cc:	f2ccae62 	movk	x2, #0x6573, lsl #32
+   784d0:	f2e7ae82 	movk	x2, #0x3d74, lsl #48
+   784d4:	f8008402 	str	x2, [x0], #8
+   784d8:	aa1503e1 	mov	x1, x21
+[31m   784dc:	97fed081 	bl	2c6e0 <strcpy@plt>[0m
+   784e0:	aa1403e1 	mov	x1, x20
+   784e4:	aa1303e0 	mov	x0, x19
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mlibxml2.so.2.9.10[0m
+

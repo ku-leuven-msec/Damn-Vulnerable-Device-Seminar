@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-timer.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m257) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-timer.ko[0m
+
+    3754:	b40017c0 	cbz	x0, 3a4c <__snd_timer_user_ioctl.isra.0+0x784>
+    3758:	a90363f7 	stp	x23, x24, [sp, #48]
+    375c:	d503201f 	nop
+    3760:	9340de80 	sbfx	x0, x20, #0, #56
+    3764:	d5384117 	mrs	x23, sp_el0
+    3768:	8a140000 	and	x0, x0, x20
+    376c:	f94006e2 	ldr	x2, [x23, #8]
+    3770:	ea22001f 	bics	xzr, x0, x2
+    3774:	9a9f0281 	csel	x1, x20, xzr, eq  // eq = none
+    3778:	d503229f 	csdb
+    377c:	9101a3f3 	add	x19, sp, #0x68
+    3780:	d2800682 	mov	x2, #0x34                  	// #52
+    3784:	aa1303e0 	mov	x0, x19
+    3788:	94000000 	bl	0 <__arch_copy_from_user>
+    378c:	d503201f 	nop
+    3790:	b5003320 	cbnz	x0, 3df4 <__snd_timer_user_ioctl.isra.0+0xb2c>
+    3794:	b94512e2 	ldr	w2, [x23, #1296]
+    3798:	910323e0 	add	x0, sp, #0xc8
+    379c:	90000001 	adrp	x1, 0 <snd_timer_find>
+    37a0:	91000021 	add	x1, x1, #0x0
+[31m    37a4:	94000000 	bl	0 <sprintf>[0m
+    37a8:	b9406be0 	ldr	w0, [sp, #104]
+    37ac:	34000060 	cbz	w0, 37b8 <__snd_timer_user_ioctl.isra.0+0x4f0>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33msnd-timer.ko[0m
+

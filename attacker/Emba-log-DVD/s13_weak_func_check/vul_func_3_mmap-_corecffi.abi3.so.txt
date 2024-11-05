@@ -1,0 +1,49 @@
+[[0;33m*[0m] Binary protection state of [0;33m_corecffi.abi3.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1202) Symbols
+[33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m489) Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33m_corecffi.abi3.so[0m
+
+[31m    612c:	97fffcb1 	bl	53f0 <mmap64@plt>[0m
+    6130:	f900da60 	str	x0, [x19, #432]
+    6134:	d2a10005 	mov	x5, #0x8000000             	// #134217728
+    6138:	b941a264 	ldr	w4, [x19, #416]
+    613c:	52900023 	mov	w3, #0x8001                	// #32769
+    6140:	52800062 	mov	w2, #0x3                   	// #3
+    6144:	b941ce61 	ldr	w1, [x19, #460]
+    6148:	d2800000 	mov	x0, #0x0                   	// #0
+[31m    614c:	97fffca9 	bl	53f0 <mmap64@plt>[0m
+    6150:	f900de60 	str	x0, [x19, #440]
+    6154:	d2a20005 	mov	x5, #0x10000000            	// #268435456
+    6158:	b941a264 	ldr	w4, [x19, #416]
+    615c:	52900023 	mov	w3, #0x8001                	// #32769
+    6160:	52800062 	mov	w2, #0x3                   	// #3
+    6164:	b941d261 	ldr	w1, [x19, #464]
+    6168:	d2800000 	mov	x0, #0x0                   	// #0
+[31m    616c:	97fffca1 	bl	53f0 <mmap64@plt>[0m
+    6170:	f900e260 	str	x0, [x19, #448]
+    6174:	f940da61 	ldr	x1, [x19, #432]
+    6178:	b100043f 	cmn	x1, #0x1
+    617c:	54000660 	b.eq	6248 <iouring_internal_init+0x1f8>  // b.none
+    6180:	f940de61 	ldr	x1, [x19, #440]
+    6184:	b100043f 	cmn	x1, #0x1
+    6188:	54000640 	b.eq	6250 <iouring_internal_init+0x200>  // b.none
+    618c:	b100041f 	cmn	x0, #0x1
+    6190:	54000640 	b.eq	6258 <iouring_internal_init+0x208>  // b.none
+    6194:	b94063e0 	ldr	w0, [sp, #96]
+    6198:	b901d660 	str	w0, [x19, #468]
+    619c:	b94067e0 	ldr	w0, [sp, #100]
+    61a0:	b901da60 	str	w0, [x19, #472]
+    61a4:	b9406be0 	ldr	w0, [sp, #104]
+    61a8:	b901de60 	str	w0, [x19, #476]
+    61ac:	b9406fe0 	ldr	w0, [sp, #108]
+    61b0:	b901e260 	str	w0, [x19, #480]
+    61b4:	b94073e0 	ldr	w0, [sp, #112]
+    61b8:	b901e660 	str	w0, [x19, #484]
+    61bc:	b94077e0 	ldr	w0, [sp, #116]
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m3[0m times [0;33m_corecffi.abi3.so[0m
+

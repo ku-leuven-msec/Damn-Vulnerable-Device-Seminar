@@ -1,0 +1,54 @@
+[[0;33m*[0m] Binary protection state of [0;33musbatm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m130) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m180) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33musbatm.ko[0m
+
+     1c0:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     1c4:	d65f03c0 	ret
+     1c8:	b940a840 	ldr	w0, [x2, #168]
+     1cc:	350006c0 	cbnz	w0, 2a4 <usbatm_atm_proc_read+0x13c>
+     1d0:	39427260 	ldrb	w0, [x19, #156]
+     1d4:	34000580 	cbz	w0, 284 <usbatm_atm_proc_read+0x11c>
+     1d8:	7100081f 	cmp	w0, #0x2
+     1dc:	54000441 	b.ne	264 <usbatm_atm_proc_read+0xfc>  // b.any
+     1e0:	90000001 	adrp	x1, 0 <usbatm_pop_urb>
+     1e4:	91000021 	add	x1, x1, #0x0
+     1e8:	52800100 	mov	w0, #0x8                   	// #8
+     1ec:	f9400022 	ldr	x2, [x1]
+     1f0:	f90002a2 	str	x2, [x21]
+     1f4:	39402021 	ldrb	w1, [x1, #8]
+     1f8:	390022a1 	strb	w1, [x21, #8]
+     1fc:	17ffffef 	b	1b8 <usbatm_atm_proc_read+0x50>
+     200:	9100e042 	add	x2, x2, #0x38
+     204:	aa1503e0 	mov	x0, x21
+     208:	90000001 	adrp	x1, 0 <usbatm_pop_urb>
+     20c:	91000021 	add	x1, x1, #0x0
+[31m     210:	94000000 	bl	0 <sprintf>[0m
+     214:	a94153f3 	ldp	x19, x20, [sp, #16]
+     218:	f94013f5 	ldr	x21, [sp, #32]
+     21c:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     220:	d65f03c0 	ret
+     224:	91016262 	add	x2, x19, #0x58
+     228:	aa1503e0 	mov	x0, x21
+     22c:	90000001 	adrp	x1, 0 <usbatm_pop_urb>
+     230:	91000021 	add	x1, x1, #0x0
+[31m     234:	94000000 	bl	0 <sprintf>[0m
+     238:	17ffffe0 	b	1b8 <usbatm_atm_proc_read+0x50>
+     23c:	b9408a62 	ldr	w2, [x19, #136]
+     240:	aa1503e0 	mov	x0, x21
+     244:	b9408e63 	ldr	w3, [x19, #140]
+     248:	90000001 	adrp	x1, 0 <usbatm_pop_urb>
+     24c:	b9409264 	ldr	w4, [x19, #144]
+     250:	91000021 	add	x1, x1, #0x0
+     254:	b9409665 	ldr	w5, [x19, #148]
+     258:	b9409a66 	ldr	w6, [x19, #152]
+[31m     25c:	94000000 	bl	0 <sprintf>[0m
+     260:	17ffffd6 	b	1b8 <usbatm_atm_proc_read+0x50>
+     264:	90000001 	adrp	x1, 0 <usbatm_pop_urb>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33musbatm.ko[0m
+

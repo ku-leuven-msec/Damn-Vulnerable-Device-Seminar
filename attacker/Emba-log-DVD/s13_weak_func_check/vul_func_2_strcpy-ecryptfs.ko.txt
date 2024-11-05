@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mecryptfs.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m556) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mecryptfs.ko[0m
+
+    2ec0:	128002a4 	mov	w4, #0xffffffea            	// #-22
+    2ec4:	2a0003e3 	mov	w3, w0
+    2ec8:	aa1803e1 	mov	x1, x24
+    2ecc:	90000000 	adrp	x0, 0 <ecryptfs_d_release>
+    2ed0:	91000000 	add	x0, x0, #0x0
+    2ed4:	b9006be4 	str	w4, [sp, #104]
+    2ed8:	94000000 	bl	0 <printk>
+    2edc:	aa1c03e0 	mov	x0, x28
+    2ee0:	90000015 	adrp	x21, 0 <ecryptfs_d_release>
+    2ee4:	94000000 	bl	0 <mutex_unlock>
+    2ee8:	910002b5 	add	x21, x21, #0x0
+    2eec:	b9406be4 	ldr	w4, [sp, #104]
+    2ef0:	14000014 	b	2f40 <ecryptfs_mount+0x678>
+    2ef4:	d2800001 	mov	x1, #0x0                   	// #0
+    2ef8:	f9001e7f 	str	xzr, [x19, #56]
+    2efc:	17fffedb 	b	2a68 <ecryptfs_mount+0x1a0>
+    2f00:	f9401e61 	ldr	x1, [x19, #56]
+    2f04:	17ffffba 	b	2dec <ecryptfs_mount+0x524>
+    2f08:	aa1803e1 	mov	x1, x24
+    2f0c:	9101c280 	add	x0, x20, #0x70
+[31m    2f10:	94000000 	bl	0 <strcpy>[0m
+    2f14:	17ffffb2 	b	2ddc <ecryptfs_mount+0x514>
+    2f18:	f9402262 	ldr	x2, [x19, #64]
+--
+    610c:	a9025bf5 	stp	x21, x22, [sp, #32]
+    6110:	aa0003f6 	mov	x22, x0
+    6114:	90000014 	adrp	x20, 0 <ecryptfs_d_release>
+    6118:	91000294 	add	x20, x20, #0x0
+    611c:	aa1e03e0 	mov	x0, x30
+    6120:	12001c35 	and	w21, w1, #0xff
+    6124:	91004293 	add	x19, x20, #0x10
+    6128:	94000000 	bl	0 <_mcount>
+    612c:	91026294 	add	x20, x20, #0x98
+    6130:	390002df 	strb	wzr, [x22]
+    6134:	14000004 	b	6144 <ecryptfs_cipher_code_to_string+0x44>
+    6138:	91004673 	add	x19, x19, #0x11
+    613c:	eb14027f 	cmp	x19, x20
+    6140:	54000140 	b.eq	6168 <ecryptfs_cipher_code_to_string+0x68>  // b.none
+    6144:	39400261 	ldrb	w1, [x19]
+    6148:	6b15003f 	cmp	w1, w21
+    614c:	54ffff61 	b.ne	6138 <ecryptfs_cipher_code_to_string+0x38>  // b.any
+    6150:	d1004261 	sub	x1, x19, #0x10
+    6154:	aa1603e0 	mov	x0, x22
+    6158:	91004673 	add	x19, x19, #0x11
+[31m    615c:	94000000 	bl	0 <strcpy>[0m
+    6160:	eb14027f 	cmp	x19, x20
+    6164:	54ffff01 	b.ne	6144 <ecryptfs_cipher_code_to_string+0x44>  // b.any
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mecryptfs.ko[0m
+

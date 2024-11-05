@@ -1,0 +1,126 @@
+[[0;33m*[0m] Binary protection state of [0;33madxl34x.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m106) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33madxl34x.ko[0m
+
+     2cc:	d503201f 	nop
+
+00000000000002d0 <adxl34x_position_show>:
+     2d0:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     2d4:	910003fd 	mov	x29, sp
+     2d8:	a90153f3 	stp	x19, x20, [sp, #16]
+     2dc:	f90013f5 	str	x21, [sp, #32]
+     2e0:	aa0003f3 	mov	x19, x0
+     2e4:	aa0203f4 	mov	x20, x2
+     2e8:	aa1e03e0 	mov	x0, x30
+     2ec:	94000000 	bl	0 <_mcount>
+     2f0:	f9403e73 	ldr	x19, [x19, #120]
+     2f4:	91004275 	add	x21, x19, #0x10
+     2f8:	aa1503e0 	mov	x0, x21
+     2fc:	94000000 	bl	0 <mutex_lock>
+     300:	29558e62 	ldp	w2, w3, [x19, #172]
+     304:	90000001 	adrp	x1, 0 <adxl34x_suspend>
+     308:	b940b664 	ldr	w4, [x19, #180]
+     30c:	91000021 	add	x1, x1, #0x0
+     310:	aa1403e0 	mov	x0, x20
+[31m     314:	94000000 	bl	0 <sprintf>[0m
+     318:	2a0003f3 	mov	w19, w0
+     31c:	aa1503e0 	mov	x0, x21
+--
+     328:	a94153f3 	ldp	x19, x20, [sp, #16]
+     32c:	f94013f5 	ldr	x21, [sp, #32]
+     330:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     334:	d65f03c0 	ret
+
+0000000000000338 <adxl34x_autosleep_show>:
+     338:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     33c:	910003fd 	mov	x29, sp
+     340:	a90153f3 	stp	x19, x20, [sp, #16]
+     344:	aa0003f4 	mov	x20, x0
+     348:	aa0203f3 	mov	x19, x2
+     34c:	aa1e03e0 	mov	x0, x30
+     350:	94000000 	bl	0 <_mcount>
+     354:	f9403e82 	ldr	x2, [x20, #120]
+     358:	aa1303e0 	mov	x0, x19
+     35c:	90000001 	adrp	x1, 0 <adxl34x_suspend>
+     360:	91000021 	add	x1, x1, #0x0
+     364:	39410442 	ldrb	w2, [x2, #65]
+     368:	721c045f 	tst	w2, #0x30
+     36c:	1a9f07e2 	cset	w2, ne  // ne = any
+[31m     370:	94000000 	bl	0 <sprintf>[0m
+     374:	d2800040 	mov	x0, #0x2                   	// #2
+     378:	a94153f3 	ldp	x19, x20, [sp, #16]
+     37c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     380:	d65f03c0 	ret
+     384:	d503201f 	nop
+
+0000000000000388 <adxl34x_rate_show>:
+     388:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     38c:	910003fd 	mov	x29, sp
+     390:	a90153f3 	stp	x19, x20, [sp, #16]
+     394:	aa0003f4 	mov	x20, x0
+     398:	aa0203f3 	mov	x19, x2
+     39c:	aa1e03e0 	mov	x0, x30
+     3a0:	94000000 	bl	0 <_mcount>
+     3a4:	f9403e82 	ldr	x2, [x20, #120]
+     3a8:	aa1303e0 	mov	x0, x19
+     3ac:	90000001 	adrp	x1, 0 <adxl34x_suspend>
+     3b0:	91000021 	add	x1, x1, #0x0
+     3b4:	3940f842 	ldrb	w2, [x2, #62]
+     3b8:	12000c42 	and	w2, w2, #0xf
+[31m     3bc:	94000000 	bl	0 <sprintf>[0m
+     3c0:	93407c00 	sxtw	x0, w0
+     3c4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     3d4:	910003fd 	mov	x29, sp
+     3d8:	a90153f3 	stp	x19, x20, [sp, #16]
+     3dc:	f90013f5 	str	x21, [sp, #32]
+     3e0:	aa0003f3 	mov	x19, x0
+     3e4:	aa0203f4 	mov	x20, x2
+     3e8:	aa1e03e0 	mov	x0, x30
+     3ec:	94000000 	bl	0 <_mcount>
+     3f0:	f9403e73 	ldr	x19, [x19, #120]
+     3f4:	91004275 	add	x21, x19, #0x10
+     3f8:	aa1503e0 	mov	x0, x21
+     3fc:	94000000 	bl	0 <mutex_lock>
+     400:	29539e64 	ldp	w4, w7, [x19, #156]
+     404:	90000001 	adrp	x1, 0 <adxl34x_suspend>
+     408:	29549666 	ldp	w6, w5, [x19, #164]
+     40c:	91000021 	add	x1, x1, #0x0
+     410:	29528e62 	ldp	w2, w3, [x19, #148]
+     414:	aa1403e0 	mov	x0, x20
+     418:	0b050884 	add	w4, w4, w5, lsl #2
+     41c:	0b070842 	add	w2, w2, w7, lsl #2
+     420:	0b060863 	add	w3, w3, w6, lsl #2
+[31m     424:	94000000 	bl	0 <sprintf>[0m
+     428:	2a0003f3 	mov	w19, w0
+     42c:	aa1503e0 	mov	x0, x21
+     430:	94000000 	bl	0 <mutex_unlock>
+     434:	93407e60 	sxtw	x0, w19
+     438:	a94153f3 	ldp	x19, x20, [sp, #16]
+     43c:	f94013f5 	ldr	x21, [sp, #32]
+     440:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     444:	d65f03c0 	ret
+
+0000000000000448 <adxl34x_disable_show>:
+     448:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     44c:	910003fd 	mov	x29, sp
+     450:	a90153f3 	stp	x19, x20, [sp, #16]
+     454:	aa0003f4 	mov	x20, x0
+     458:	aa0203f3 	mov	x19, x2
+     45c:	aa1e03e0 	mov	x0, x30
+     460:	94000000 	bl	0 <_mcount>
+     464:	f9403e82 	ldr	x2, [x20, #120]
+     468:	aa1303e0 	mov	x0, x19
+     46c:	90000001 	adrp	x1, 0 <adxl34x_suspend>
+     470:	91000021 	add	x1, x1, #0x0
+     474:	39438042 	ldrb	w2, [x2, #224]
+[31m     478:	94000000 	bl	0 <sprintf>[0m
+     47c:	d2800040 	mov	x0, #0x2                   	// #2
+     480:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m5[0m times [0;33madxl34x.ko[0m
+

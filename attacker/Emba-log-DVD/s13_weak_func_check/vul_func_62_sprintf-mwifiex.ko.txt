@@ -1,0 +1,794 @@
+[[0;33m*[0m] Binary protection state of [0;33mmwifiex.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1075) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mmwifiex.ko[0m
+
+     4f4:	91009803 	add	x3, x0, #0x26
+     4f8:	a9401444 	ldp	x4, x5, [x2]
+     4fc:	a9001404 	stp	x4, x5, [x0]
+     500:	39406026 	ldrb	w6, [x1, #24]
+     504:	a9401424 	ldp	x4, x5, [x1]
+     508:	9100f813 	add	x19, x0, #0x3e
+     50c:	f841e042 	ldur	x2, [x2, #30]
+     510:	f801e002 	stur	x2, [x0, #30]
+     514:	f9400821 	ldr	x1, [x1, #16]
+     518:	a9001464 	stp	x4, x5, [x3]
+     51c:	528007e2 	mov	w2, #0x3f                  	// #63
+     520:	f9000861 	str	x1, [x3, #16]
+     524:	aa1403e0 	mov	x0, x20
+     528:	39006066 	strb	w6, [x3, #24]
+     52c:	910223e1 	add	x1, sp, #0x88
+     530:	94000000 	bl	149a0 <mwifiex_drv_get_driver_version>
+     534:	910223e2 	add	x2, sp, #0x88
+     538:	aa1303e0 	mov	x0, x19
+     53c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     540:	91000021 	add	x1, x1, #0x0
+[31m     544:	94000000 	bl	0 <sprintf>[0m
+     548:	39400281 	ldrb	w1, [x20]
+     54c:	8b20c273 	add	x19, x19, w0, sxtw
+     550:	7100083f 	cmp	w1, #0x2
+     554:	54001c40 	b.eq	8dc <mwifiex_drv_info_dump+0x454>  // b.none
+     558:	b941a282 	ldr	w2, [x20, #416]
+     55c:	aa1303e0 	mov	x0, x19
+     560:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     564:	91000021 	add	x1, x1, #0x0
+[31m     568:	94000000 	bl	0 <sprintf>[0m
+     56c:	8b20c273 	add	x19, x19, w0, sxtw
+     570:	b9419e82 	ldr	w2, [x20, #412]
+     574:	aa1303e0 	mov	x0, x19
+     578:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     57c:	91000021 	add	x1, x1, #0x0
+[31m     580:	94000000 	bl	0 <sprintf>[0m
+     584:	8b20c276 	add	x22, x19, w0, sxtw
+     588:	39400281 	ldrb	w1, [x20]
+--
+     6a0:	b8417063 	ldur	w3, [x3, #23]
+     6a4:	b8017263 	stur	w3, [x19, #23]
+     6a8:	91006a73 	add	x19, x19, #0x1a
+     6ac:	94000000 	bl	358 <_mwifiex_dbg>
+     6b0:	f94c3280 	ldr	x0, [x20, #6240]
+     6b4:	f94037e1 	ldr	x1, [sp, #104]
+     6b8:	cb000273 	sub	x19, x19, x0
+     6bc:	b9186a93 	str	w19, [x20, #6248]
+     6c0:	9114603a 	add	x26, x1, #0x518
+     6c4:	f94067e1 	ldr	x1, [sp, #200]
+     6c8:	f9400340 	ldr	x0, [x26]
+     6cc:	ca000020 	eor	x0, x1, x0
+     6d0:	b5001460 	cbnz	x0, 95c <mwifiex_drv_info_dump+0x4d4>
+     6d4:	a94153f3 	ldp	x19, x20, [sp, #16]
+     6d8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     6dc:	a9446bf9 	ldp	x25, x26, [sp, #64]
+     6e0:	a8cd7bfd 	ldp	x29, x30, [sp], #208
+     6e4:	d65f03c0 	ret
+     6e8:	f9403be1 	ldr	x1, [sp, #112]
+     6ec:	aa1603e0 	mov	x0, x22
+[31m     6f0:	94000000 	bl	0 <sprintf>[0m
+     6f4:	8b20c2d6 	add	x22, x22, w0, sxtw
+     6f8:	b9470a62 	ldr	w2, [x19, #1800]
+     6fc:	aa1603e0 	mov	x0, x22
+     700:	f9403fe1 	ldr	x1, [sp, #120]
+[31m     704:	94000000 	bl	0 <sprintf>[0m
+     708:	8b20c2d6 	add	x22, x22, w0, sxtw
+     70c:	b9470e62 	ldr	w2, [x19, #1804]
+     710:	aa1603e0 	mov	x0, x22
+     714:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     718:	91000021 	add	x1, x1, #0x0
+[31m     71c:	94000000 	bl	0 <sprintf>[0m
+     720:	8b20c2d6 	add	x22, x22, w0, sxtw
+     724:	b9471262 	ldr	w2, [x19, #1808]
+     728:	aa1603e0 	mov	x0, x22
+     72c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     730:	91000021 	add	x1, x1, #0x0
+[31m     734:	94000000 	bl	0 <sprintf>[0m
+     738:	8b20c2d6 	add	x22, x22, w0, sxtw
+     73c:	b9471662 	ldr	w2, [x19, #1812]
+     740:	aa1603e0 	mov	x0, x22
+     744:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     748:	91000021 	add	x1, x1, #0x0
+[31m     74c:	94000000 	bl	0 <sprintf>[0m
+     750:	8b20c2d6 	add	x22, x22, w0, sxtw
+     754:	39405263 	ldrb	w3, [x19, #20]
+     758:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     75c:	90000002 	adrp	x2, 0 <mwifiex_get_stats>
+     760:	91000021 	add	x1, x1, #0x0
+     764:	7100007f 	cmp	w3, #0x0
+     768:	91000042 	add	x2, x2, #0x0
+     76c:	9a810042 	csel	x2, x2, x1, eq  // eq = none
+     770:	aa1603e0 	mov	x0, x22
+     774:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     778:	91000021 	add	x1, x1, #0x0
+[31m     77c:	94000000 	bl	0 <sprintf>[0m
+     780:	8b20c2d6 	add	x22, x22, w0, sxtw
+     784:	f9401261 	ldr	x1, [x19, #32]
+     788:	90000003 	adrp	x3, 0 <mwifiex_get_stats>
+     78c:	91000063 	add	x3, x3, #0x0
+     790:	90000002 	adrp	x2, 0 <mwifiex_get_stats>
+     794:	91000042 	add	x2, x2, #0x0
+     798:	aa1603e0 	mov	x0, x22
+     79c:	f9402424 	ldr	x4, [x1, #72]
+     7a0:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     7a4:	91000021 	add	x1, x1, #0x0
+     7a8:	f27e009f 	tst	x4, #0x4
+     7ac:	9a820062 	csel	x2, x3, x2, eq  // eq = none
+[31m     7b0:	94000000 	bl	0 <sprintf>[0m
+     7b4:	8b20c2db 	add	x27, x22, w0, sxtw
+     7b8:	f9401262 	ldr	x2, [x19, #32]
+     7bc:	b943c840 	ldr	w0, [x2, #968]
+     7c0:	34000320 	cbz	w0, 824 <mwifiex_drv_info_dump+0x39c>
+     7c4:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     7c8:	90000017 	adrp	x23, 0 <mwifiex_get_stats>
+     7cc:	90000016 	adrp	x22, 0 <mwifiex_get_stats>
+     7d0:	9100003a 	add	x26, x1, #0x0
+     7d4:	910002f7 	add	x23, x23, #0x0
+     7d8:	910002d6 	add	x22, x22, #0x0
+     7dc:	5280001c 	mov	w28, #0x0                   	// #0
+     7e0:	52802818 	mov	w24, #0x140                 	// #320
+     7e4:	d503201f 	nop
+     7e8:	f941e043 	ldr	x3, [x2, #960]
+     7ec:	aa1b03e0 	mov	x0, x27
+     7f0:	2a1c03e2 	mov	w2, w28
+     7f4:	aa1a03e1 	mov	x1, x26
+     7f8:	9bb80f83 	umaddl	x3, w28, w24, x3
+     7fc:	1100079c 	add	w28, w28, #0x1
+     800:	f9404863 	ldr	x3, [x3, #144]
+     804:	f240007f 	tst	x3, #0x1
+     808:	9a9712c3 	csel	x3, x22, x23, ne  // ne = any
+[31m     80c:	94000000 	bl	0 <sprintf>[0m
+     810:	8b20c37b 	add	x27, x27, w0, sxtw
+     814:	f9401262 	ldr	x2, [x19, #32]
+     818:	b943c840 	ldr	w0, [x2, #968]
+     81c:	6b1c001f 	cmp	w0, w28
+     820:	54fffe48 	b.hi	7e8 <mwifiex_drv_info_dump+0x360>  // b.pmore
+     824:	b9401a63 	ldr	w3, [x19, #24]
+     828:	aa1b03e0 	mov	x0, x27
+     82c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     830:	91000021 	add	x1, x1, #0x0
+[31m     834:	94000000 	bl	0 <sprintf>[0m
+     838:	8b20c376 	add	x22, x27, w0, sxtw
+     83c:	3940a281 	ldrb	w1, [x20, #40]
+     840:	17ffff64 	b	5d0 <mwifiex_drv_info_dump+0x148>
+     844:	91000400 	add	x0, x0, #0x1
+     848:	6b00003f 	cmp	w1, w0
+     84c:	54ffefac 	b.gt	640 <mwifiex_drv_info_dump+0x1b8>
+     850:	17ffff88 	b	670 <mwifiex_drv_info_dump+0x1e8>
+     854:	7100001f 	cmp	w0, #0x0
+     858:	90000002 	adrp	x2, 0 <mwifiex_get_stats>
+     85c:	90000000 	adrp	x0, 0 <mwifiex_get_stats>
+     860:	91000042 	add	x2, x2, #0x0
+     864:	91000000 	add	x0, x0, #0x0
+     868:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     86c:	9a800042 	csel	x2, x2, x0, eq  // eq = none
+     870:	91000021 	add	x1, x1, #0x0
+     874:	aa1603e0 	mov	x0, x22
+[31m     878:	94000000 	bl	0 <sprintf>[0m
+     87c:	f940a682 	ldr	x2, [x20, #328]
+     880:	91006ed6 	add	x22, x22, #0x1b
+     884:	b4ffeb62 	cbz	x2, 5f0 <mwifiex_drv_info_dump+0x168>
+     888:	aa1603e1 	mov	x1, x22
+     88c:	aa1403e0 	mov	x0, x20
+     890:	d63f0040 	blr	x2
+     894:	8b20c2d6 	add	x22, x22, w0, sxtw
+     898:	17ffff56 	b	5f0 <mwifiex_drv_info_dump+0x168>
+     89c:	f9405293 	ldr	x19, [x20, #160]
+     8a0:	aa1603e0 	mov	x0, x22
+     8a4:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     8a8:	91000021 	add	x1, x1, #0x0
+     8ac:	39417263 	ldrb	w3, [x19, #92]
+     8b0:	b9404e62 	ldr	w2, [x19, #76]
+[31m     8b4:	94000000 	bl	0 <sprintf>[0m
+     8b8:	8b20c2d6 	add	x22, x22, w0, sxtw
+     8bc:	39417663 	ldrb	w3, [x19, #93]
+     8c0:	aa1603e0 	mov	x0, x22
+     8c4:	b9405262 	ldr	w2, [x19, #80]
+     8c8:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     8cc:	91000021 	add	x1, x1, #0x0
+[31m     8d0:	94000000 	bl	0 <sprintf>[0m
+     8d4:	8b20c2d6 	add	x22, x22, w0, sxtw
+     8d8:	17ffff2e 	b	590 <mwifiex_drv_info_dump+0x108>
+     8dc:	f9405295 	ldr	x21, [x20, #160]
+     8e0:	aa1303e0 	mov	x0, x19
+     8e4:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     8e8:	91000021 	add	x1, x1, #0x0
+     8ec:	b94136a2 	ldr	w2, [x21, #308]
+[31m     8f0:	94000000 	bl	0 <sprintf>[0m
+     8f4:	8b20c273 	add	x19, x19, w0, sxtw
+     8f8:	b9416ea2 	ldr	w2, [x21, #364]
+     8fc:	aa1303e0 	mov	x0, x19
+     900:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     904:	91000021 	add	x1, x1, #0x0
+[31m     908:	94000000 	bl	0 <sprintf>[0m
+     90c:	8b20c273 	add	x19, x19, w0, sxtw
+     910:	b942d6a2 	ldr	w2, [x21, #724]
+     914:	aa1303e0 	mov	x0, x19
+     918:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     91c:	91000021 	add	x1, x1, #0x0
+[31m     920:	94000000 	bl	0 <sprintf>[0m
+     924:	8b20c273 	add	x19, x19, w0, sxtw
+     928:	b94062a2 	ldr	w2, [x21, #96]
+     92c:	aa1303e0 	mov	x0, x19
+     930:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     934:	91000021 	add	x1, x1, #0x0
+[31m     938:	94000000 	bl	0 <sprintf>[0m
+     93c:	8b20c273 	add	x19, x19, w0, sxtw
+     940:	b9412ea2 	ldr	w2, [x21, #300]
+     944:	aa1303e0 	mov	x0, x19
+     948:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+     94c:	91000021 	add	x1, x1, #0x0
+[31m     950:	94000000 	bl	0 <sprintf>[0m
+     954:	8b20c273 	add	x19, x19, w0, sxtw
+     958:	17ffff00 	b	558 <mwifiex_drv_info_dump+0xd0>
+--
+    770c:	a90573fb 	stp	x27, x28, [sp, #80]
+    7710:	aa0203f7 	mov	x23, x2
+    7714:	aa0103fc 	mov	x28, x1
+    7718:	a90607e0 	stp	x0, x1, [sp, #96]
+    771c:	aa1e03e0 	mov	x0, x30
+    7720:	94000000 	bl	0 <_mcount>
+    7724:	b4001957 	cbz	x23, 7a4c <mwifiex_debug_info_to_buffer+0x34c>
+    7728:	90000006 	adrp	x6, 0 <mwifiex_get_stats>
+    772c:	90000018 	adrp	x24, 0 <mwifiex_get_stats>
+    7730:	910000db 	add	x27, x6, #0x0
+    7734:	91000318 	add	x24, x24, #0x0
+    7738:	a9025bf5 	stp	x21, x22, [sp, #32]
+    773c:	90000015 	adrp	x21, 0 <mwifiex_get_stats>
+    7740:	910002b5 	add	x21, x21, #0x0
+    7744:	52800016 	mov	w22, #0x0                   	// #0
+    7748:	a90153f3 	stp	x19, x20, [sp, #16]
+    774c:	a9046bf9 	stp	x25, x26, [sp, #64]
+    7750:	aa1803e1 	mov	x1, x24
+    7754:	aa1c03e0 	mov	x0, x28
+    7758:	aa1b03e2 	mov	x2, x27
+[31m    775c:	94000000 	bl	0 <sprintf>[0m
+    7760:	b9402373 	ldr	w19, [x27, #32]
+    7764:	b9403361 	ldr	w1, [x27, #48]
+    7768:	8b20c394 	add	x20, x28, w0, sxtw
+    776c:	7100aedf 	cmp	w22, #0x2b
+    7770:	1ac10a7c 	udiv	w28, w19, w1
+    7774:	aa1c03f3 	mov	x19, x28
+    7778:	54000448 	b.hi	7800 <mwifiex_debug_info_to_buffer+0x100>  // b.pmore
+    777c:	f9401763 	ldr	x3, [x27, #40]
+    7780:	7100003f 	cmp	w1, #0x0
+    7784:	8b0302fa 	add	x26, x23, x3
+    7788:	5400076d 	b.le	7874 <mwifiex_debug_info_to_buffer+0x174>
+    778c:	52800019 	mov	w25, #0x0                   	// #0
+    7790:	1400000d 	b	77c4 <mwifiex_debug_info_to_buffer+0xc4>
+    7794:	71000a7f 	cmp	w19, #0x2
+    7798:	540002c1 	b.ne	77f0 <mwifiex_debug_info_to_buffer+0xf0>  // b.any
+    779c:	79400342 	ldrh	w2, [x26]
+    77a0:	aa1503e1 	mov	x1, x21
+    77a4:	aa1403e0 	mov	x0, x20
+[31m    77a8:	94000000 	bl	0 <sprintf>[0m
+    77ac:	11000739 	add	w25, w25, #0x1
+    77b0:	b9403361 	ldr	w1, [x27, #48]
+--
+    7884:	90000000 	adrp	x0, 0 <mwifiex_get_stats>
+    7888:	91000000 	add	x0, x0, #0x0
+    788c:	a9400c02 	ldp	x2, x3, [x0]
+    7890:	a9000f82 	stp	x2, x3, [x28]
+    7894:	79402000 	ldrh	w0, [x0, #16]
+    7898:	79002380 	strh	w0, [x28, #16]
+    789c:	9100479c 	add	x28, x28, #0x11
+    78a0:	b9514ee0 	ldr	w0, [x23, #4428]
+    78a4:	34fffd60 	cbz	w0, 7850 <mwifiex_debug_info_to_buffer+0x150>
+    78a8:	90000018 	adrp	x24, 0 <mwifiex_get_stats>
+    78ac:	91000318 	add	x24, x24, #0x0
+    78b0:	52800013 	mov	w19, #0x0                   	// #0
+    78b4:	528000d6 	mov	w22, #0x6                   	// #6
+    78b8:	d2822a15 	mov	x21, #0x1150                	// #4432
+    78bc:	52800154 	mov	w20, #0xa                   	// #10
+    78c0:	9b365662 	smaddl	x2, w19, w22, x21
+    78c4:	aa1803e1 	mov	x1, x24
+    78c8:	aa1c03e0 	mov	x0, x28
+    78cc:	11000673 	add	w19, w19, #0x1
+    78d0:	8b0202e2 	add	x2, x23, x2
+[31m    78d4:	94000000 	bl	0 <sprintf>[0m
+    78d8:	7820cb94 	strh	w20, [x28, w0, sxtw]
+    78dc:	8b20c381 	add	x1, x28, w0, sxtw
+--
+    7900:	a9000f82 	stp	x2, x3, [x28]
+    7904:	b840f000 	ldur	w0, [x0, #15]
+    7908:	b800f380 	stur	w0, [x28, #15]
+    790c:	91004b9c 	add	x28, x28, #0x12
+    7910:	b9404ae0 	ldr	w0, [x23, #72]
+    7914:	34fff9a0 	cbz	w0, 7848 <mwifiex_debug_info_to_buffer+0x148>
+    7918:	9000001a 	adrp	x26, 0 <mwifiex_get_stats>
+    791c:	90000019 	adrp	x25, 0 <mwifiex_get_stats>
+    7920:	90000018 	adrp	x24, 0 <mwifiex_get_stats>
+    7924:	90000015 	adrp	x21, 0 <mwifiex_get_stats>
+    7928:	9100035a 	add	x26, x26, #0x0
+    792c:	91000339 	add	x25, x25, #0x0
+    7930:	91000318 	add	x24, x24, #0x0
+    7934:	910002b5 	add	x21, x21, #0x0
+    7938:	910172fb 	add	x27, x23, #0x5c
+    793c:	52800016 	mov	w22, #0x0                   	// #0
+    7940:	785f0362 	ldurh	w2, [x27, #-16]
+    7944:	d1003b63 	sub	x3, x27, #0xe
+    7948:	aa1a03e1 	mov	x1, x26
+    794c:	aa1c03e0 	mov	x0, x28
+[31m    7950:	94000000 	bl	0 <sprintf>[0m
+    7954:	8b20c394 	add	x20, x28, w0, sxtw
+    7958:	b85f8362 	ldur	w2, [x27, #-8]
+    795c:	aa1903e1 	mov	x1, x25
+    7960:	aa1403e0 	mov	x0, x20
+[31m    7964:	94000000 	bl	0 <sprintf>[0m
+    7968:	8b20c294 	add	x20, x20, w0, sxtw
+    796c:	b85fc362 	ldur	w2, [x27, #-4]
+    7970:	aa1803e1 	mov	x1, x24
+    7974:	aa1403e0 	mov	x0, x20
+[31m    7978:	94000000 	bl	0 <sprintf>[0m
+    797c:	8b20c29c 	add	x28, x20, w0, sxtw
+    7980:	b85fc361 	ldur	w1, [x27, #-4]
+    7984:	340001e1 	cbz	w1, 79c0 <mwifiex_debug_info_to_buffer+0x2c0>
+    7988:	d2800013 	mov	x19, #0x0                   	// #0
+    798c:	d503201f 	nop
+    7990:	b8737b62 	ldr	w2, [x27, x19, lsl #2]
+    7994:	aa1c03e0 	mov	x0, x28
+    7998:	aa1503e1 	mov	x1, x21
+    799c:	91000673 	add	x19, x19, #0x1
+    79a0:	7100005f 	cmp	w2, #0x0
+    79a4:	91000b9c 	add	x28, x28, #0x2
+    79a8:	1a9f07e2 	cset	w2, ne  // ne = any
+    79ac:	1100c042 	add	w2, w2, #0x30
+[31m    79b0:	94000000 	bl	0 <sprintf>[0m
+    79b4:	b85fc360 	ldur	w0, [x27, #-4]
+    79b8:	6b13001f 	cmp	w0, w19
+--
+    79cc:	9104437b 	add	x27, x27, #0x110
+    79d0:	b9404ae0 	ldr	w0, [x23, #72]
+    79d4:	6b16001f 	cmp	w0, w22
+    79d8:	54fffb48 	b.hi	7940 <mwifiex_debug_info_to_buffer+0x240>  // b.pmore
+    79dc:	17ffff9b 	b	7848 <mwifiex_debug_info_to_buffer+0x148>
+    79e0:	90000000 	adrp	x0, 0 <mwifiex_get_stats>
+    79e4:	91000000 	add	x0, x0, #0x0
+    79e8:	a9400c02 	ldp	x2, x3, [x0]
+    79ec:	a9000f82 	stp	x2, x3, [x28]
+    79f0:	9100569c 	add	x28, x20, #0x15
+    79f4:	f840d000 	ldur	x0, [x0, #13]
+    79f8:	f800e280 	stur	x0, [x20, #14]
+    79fc:	b94032e0 	ldr	w0, [x23, #48]
+    7a00:	34fff200 	cbz	w0, 7840 <mwifiex_debug_info_to_buffer+0x140>
+    7a04:	79406ae2 	ldrh	w2, [x23, #52]
+    7a08:	90000013 	adrp	x19, 0 <mwifiex_get_stats>
+    7a0c:	91000273 	add	x19, x19, #0x0
+    7a10:	aa1c03e0 	mov	x0, x28
+    7a14:	aa1303e1 	mov	x1, x19
+    7a18:	9100dae3 	add	x3, x23, #0x36
+[31m    7a1c:	94000000 	bl	0 <sprintf>[0m
+    7a20:	8b20c39c 	add	x28, x28, w0, sxtw
+    7a24:	b94032e1 	ldr	w1, [x23, #48]
+    7a28:	7100043f 	cmp	w1, #0x1
+    7a2c:	54fff0a9 	b.ls	7840 <mwifiex_debug_info_to_buffer+0x140>  // b.plast
+    7a30:	79407ee2 	ldrh	w2, [x23, #62]
+    7a34:	aa1c03e0 	mov	x0, x28
+    7a38:	aa1303e1 	mov	x1, x19
+    7a3c:	910102e3 	add	x3, x23, #0x40
+[31m    7a40:	94000000 	bl	0 <sprintf>[0m
+    7a44:	8b20c39c 	add	x28, x28, w0, sxtw
+    7a48:	17ffff7e 	b	7840 <mwifiex_debug_info_to_buffer+0x140>
+--
+   149a4:	910003fd 	mov	x29, sp
+   149a8:	a90153f3 	stp	x19, x20, [sp, #16]
+   149ac:	a9025bf5 	stp	x21, x22, [sp, #32]
+   149b0:	aa0003f4 	mov	x20, x0
+   149b4:	aa0103f5 	mov	x21, x1
+   149b8:	aa1e03e0 	mov	x0, x30
+   149bc:	2a0203f6 	mov	w22, w2
+   149c0:	94000000 	bl	0 <_mcount>
+   149c4:	b9408282 	ldr	w2, [x20, #128]
+   149c8:	d5384113 	mrs	x19, sp_el0
+   149cc:	f9428e60 	ldr	x0, [x19, #1304]
+   149d0:	f9002fe0 	str	x0, [sp, #88]
+   149d4:	d2800000 	mov	x0, #0x0                   	// #0
+   149d8:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   149dc:	12001c44 	and	w4, w2, #0xff
+   149e0:	91000021 	add	x1, x1, #0x0
+   149e4:	53187c45 	lsr	w5, w2, #24
+   149e8:	d3483c43 	ubfx	x3, x2, #8, #8
+   149ec:	9100e3e0 	add	x0, sp, #0x38
+   149f0:	d3505c42 	ubfx	x2, x2, #16, #8
+[31m   149f4:	94000000 	bl	0 <sprintf>[0m
+   149f8:	9100e3e3 	add	x3, sp, #0x38
+   149fc:	93407ec1 	sxtw	x1, w22
+--
+   27590:	52800025 	mov	w5, #0x1                   	// #1
+   27594:	52800003 	mov	w3, #0x0                   	// #0
+   27598:	52801c01 	mov	w1, #0xe0                  	// #224
+   2759c:	94000000 	bl	5390 <mwifiex_send_cmd>
+   275a0:	34000180 	cbz	w0, 275d0 <mwifiex_timeshare_coex_read+0x98>
+   275a4:	93407c00 	sxtw	x0, w0
+   275a8:	91146273 	add	x19, x19, #0x518
+   275ac:	f94027e2 	ldr	x2, [sp, #72]
+   275b0:	f9400261 	ldr	x1, [x19]
+   275b4:	ca010041 	eor	x1, x2, x1
+   275b8:	b5000281 	cbnz	x1, 27608 <mwifiex_timeshare_coex_read+0xd0>
+   275bc:	a94153f3 	ldp	x19, x20, [sp, #16]
+   275c0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   275c4:	f9401bf7 	ldr	x23, [sp, #48]
+   275c8:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   275cc:	d65f03c0 	ret
+   275d0:	394113e2 	ldrb	w2, [sp, #68]
+   275d4:	910117e0 	add	x0, sp, #0x45
+   275d8:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   275dc:	91000021 	add	x1, x1, #0x0
+[31m   275e0:	94000000 	bl	0 <sprintf>[0m
+   275e4:	910117e3 	add	x3, sp, #0x45
+   275e8:	aa1703e2 	mov	x2, x23
+--
+   276e0:	a90363f7 	stp	x23, x24, [sp, #48]
+   276e4:	a9046bf9 	stp	x25, x26, [sp, #64]
+   276e8:	a90573fb 	stp	x27, x28, [sp, #80]
+   276ec:	aa0003f3 	mov	x19, x0
+   276f0:	aa0103f7 	mov	x23, x1
+   276f4:	aa1e03e0 	mov	x0, x30
+   276f8:	aa0203f8 	mov	x24, x2
+   276fc:	aa0303f9 	mov	x25, x3
+   27700:	94000000 	bl	0 <_mcount>
+   27704:	52819800 	mov	w0, #0xcc0                 	// #3264
+   27708:	f940667b 	ldr	x27, [x19, #200]
+   2770c:	94000000 	bl	0 <get_zeroed_page>
+   27710:	aa0003f6 	mov	x22, x0
+   27714:	b4001240 	cbz	x0, 2795c <mwifiex_histogram_read+0x28c>
+   27718:	b40011fb 	cbz	x27, 27954 <mwifiex_histogram_read+0x284>
+   2771c:	f955a375 	ldr	x21, [x27, #11072]
+   27720:	b40011b5 	cbz	x21, 27954 <mwifiex_histogram_read+0x284>
+   27724:	b94d2aa2 	ldr	w2, [x21, #3368]
+   27728:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   2772c:	91000021 	add	x1, x1, #0x0
+[31m   27730:	94000000 	bl	0 <sprintf>[0m
+   27734:	8b20c2c3 	add	x3, x22, w0, sxtw
+   27738:	aa0303e0 	mov	x0, x3
+--
+   27758:	b942b000 	ldr	w0, [x0, #688]
+   2775c:	37680e00 	tbnz	w0, #13, 2791c <mwifiex_histogram_read+0x24c>
+   27760:	91024074 	add	x20, x3, #0x90
+   27764:	52800140 	mov	w0, #0xa                   	// #10
+   27768:	7808f060 	sturh	w0, [x3, #143]
+   2776c:	9000001c 	adrp	x28, 0 <mwifiex_get_stats>
+   27770:	aa1503fa 	mov	x26, x21
+   27774:	9100039c 	add	x28, x28, #0x0
+   27778:	52800013 	mov	w19, #0x0                   	// #0
+   2777c:	14000004 	b	2778c <mwifiex_histogram_read+0xbc>
+   27780:	11000673 	add	w19, w19, #0x1
+   27784:	7100b27f 	cmp	w19, #0x2c
+   27788:	54000180 	b.eq	277b8 <mwifiex_histogram_read+0xe8>  // b.none
+   2778c:	b9400343 	ldr	w3, [x26]
+   27790:	9100135a 	add	x26, x26, #0x4
+   27794:	34ffff63 	cbz	w3, 27780 <mwifiex_histogram_read+0xb0>
+   27798:	2a1303e2 	mov	w2, w19
+   2779c:	aa1403e0 	mov	x0, x20
+   277a0:	aa1c03e1 	mov	x1, x28
+   277a4:	11000673 	add	w19, w19, #0x1
+[31m   277a8:	94000000 	bl	0 <sprintf>[0m
+   277ac:	8b20c294 	add	x20, x20, w0, sxtw
+   277b0:	7100b27f 	cmp	w19, #0x2c
+   277b4:	54fffec1 	b.ne	2778c <mwifiex_histogram_read+0xbc>  // b.any
+   277b8:	f9400360 	ldr	x0, [x27]
+   277bc:	b942b000 	ldr	w0, [x0, #688]
+   277c0:	36680260 	tbz	w0, #13, 2780c <mwifiex_histogram_read+0x13c>
+   277c4:	9000001b 	adrp	x27, 0 <mwifiex_get_stats>
+   277c8:	9102c2ba 	add	x26, x21, #0xb0
+   277cc:	9100037b 	add	x27, x27, #0x0
+   277d0:	14000004 	b	277e0 <mwifiex_histogram_read+0x110>
+   277d4:	11000673 	add	w19, w19, #0x1
+   277d8:	71012a7f 	cmp	w19, #0x4a
+   277dc:	54000180 	b.eq	2780c <mwifiex_histogram_read+0x13c>  // b.none
+   277e0:	b9400343 	ldr	w3, [x26]
+   277e4:	9100135a 	add	x26, x26, #0x4
+   277e8:	34ffff63 	cbz	w3, 277d4 <mwifiex_histogram_read+0x104>
+   277ec:	2a1303e2 	mov	w2, w19
+   277f0:	aa1403e0 	mov	x0, x20
+   277f4:	aa1b03e1 	mov	x1, x27
+   277f8:	11000673 	add	w19, w19, #0x1
+[31m   277fc:	94000000 	bl	0 <sprintf>[0m
+   27800:	8b20c294 	add	x20, x20, w0, sxtw
+   27804:	71012a7f 	cmp	w19, #0x4a
+   27808:	54fffec1 	b.ne	277e0 <mwifiex_histogram_read+0x110>  // b.any
+   2780c:	9000001b 	adrp	x27, 0 <mwifiex_get_stats>
+   27810:	9104a2ba 	add	x26, x21, #0x128
+   27814:	9100037b 	add	x27, x27, #0x0
+   27818:	52800013 	mov	w19, #0x0                   	// #0
+   2781c:	14000004 	b	2782c <mwifiex_histogram_read+0x15c>
+   27820:	11000673 	add	w19, w19, #0x1
+   27824:	7104027f 	cmp	w19, #0x100
+   27828:	54000180 	b.eq	27858 <mwifiex_histogram_read+0x188>  // b.none
+   2782c:	b9400343 	ldr	w3, [x26]
+   27830:	9100135a 	add	x26, x26, #0x4
+   27834:	34ffff63 	cbz	w3, 27820 <mwifiex_histogram_read+0x150>
+   27838:	2a1303e2 	mov	w2, w19
+   2783c:	aa1403e0 	mov	x0, x20
+   27840:	aa1b03e1 	mov	x1, x27
+   27844:	11000673 	add	w19, w19, #0x1
+[31m   27848:	94000000 	bl	0 <sprintf>[0m
+   2784c:	8b20c294 	add	x20, x20, w0, sxtw
+   27850:	7104027f 	cmp	w19, #0x100
+   27854:	54fffec1 	b.ne	2782c <mwifiex_histogram_read+0x15c>  // b.any
+   27858:	9000001c 	adrp	x28, 0 <mwifiex_get_stats>
+   2785c:	9114a2ba 	add	x26, x21, #0x528
+   27860:	9100039c 	add	x28, x28, #0x0
+   27864:	5280101b 	mov	w27, #0x80                  	// #128
+   27868:	14000003 	b	27874 <mwifiex_histogram_read+0x1a4>
+   2786c:	71000673 	subs	w19, w19, #0x1
+   27870:	54000160 	b.eq	2789c <mwifiex_histogram_read+0x1cc>  // b.none
+   27874:	b9400343 	ldr	w3, [x26]
+   27878:	9100135a 	add	x26, x26, #0x4
+   2787c:	34ffff83 	cbz	w3, 2786c <mwifiex_histogram_read+0x19c>
+   27880:	4b130362 	sub	w2, w27, w19
+   27884:	aa1403e0 	mov	x0, x20
+   27888:	aa1c03e1 	mov	x1, x28
+[31m   2788c:	94000000 	bl	0 <sprintf>[0m
+   27890:	71000673 	subs	w19, w19, #0x1
+   27894:	8b20c294 	add	x20, x20, w0, sxtw
+   27898:	54fffee1 	b.ne	27874 <mwifiex_histogram_read+0x1a4>  // b.any
+   2789c:	9000001a 	adrp	x26, 0 <mwifiex_get_stats>
+   278a0:	9124a2b5 	add	x21, x21, #0x928
+   278a4:	9100035a 	add	x26, x26, #0x0
+   278a8:	52800013 	mov	w19, #0x0                   	// #0
+   278ac:	14000004 	b	278bc <mwifiex_histogram_read+0x1ec>
+   278b0:	11000673 	add	w19, w19, #0x1
+   278b4:	7104027f 	cmp	w19, #0x100
+   278b8:	54000180 	b.eq	278e8 <mwifiex_histogram_read+0x218>  // b.none
+   278bc:	b94002a3 	ldr	w3, [x21]
+   278c0:	910012b5 	add	x21, x21, #0x4
+   278c4:	34ffff63 	cbz	w3, 278b0 <mwifiex_histogram_read+0x1e0>
+   278c8:	2a1303e2 	mov	w2, w19
+   278cc:	aa1403e0 	mov	x0, x20
+   278d0:	aa1a03e1 	mov	x1, x26
+   278d4:	11000673 	add	w19, w19, #0x1
+[31m   278d8:	94000000 	bl	0 <sprintf>[0m
+   278dc:	8b20c294 	add	x20, x20, w0, sxtw
+   278e0:	7104027f 	cmp	w19, #0x100
+--
+   281d8:	b9000be8 	str	w8, [sp, #8]
+   281dc:	295a33ed 	ldp	w13, w12, [sp, #208]
+   281e0:	b90013ea 	str	w10, [sp, #16]
+   281e4:	29540fe2 	ldp	w2, w3, [sp, #160]
+   281e8:	b9001be9 	str	w9, [sp, #24]
+   281ec:	295517e4 	ldp	w4, w5, [sp, #168]
+   281f0:	91000021 	add	x1, x1, #0x0
+   281f4:	b940dbeb 	ldr	w11, [sp, #216]
+   281f8:	b940dfea 	ldr	w10, [sp, #220]
+   281fc:	b940e7e8 	ldr	w8, [sp, #228]
+   28200:	b940e3e9 	ldr	w9, [sp, #224]
+   28204:	29561fe6 	ldp	w6, w7, [sp, #176]
+   28208:	b90023ef 	str	w15, [sp, #32]
+   2820c:	b9002bee 	str	w14, [sp, #40]
+   28210:	b90033ed 	str	w13, [sp, #48]
+   28214:	b9003bec 	str	w12, [sp, #56]
+   28218:	b90043eb 	str	w11, [sp, #64]
+   2821c:	b9004bea 	str	w10, [sp, #72]
+   28220:	b90053e9 	str	w9, [sp, #80]
+   28224:	b9005be8 	str	w8, [sp, #88]
+[31m   28228:	94000000 	bl	0 <sprintf>[0m
+   2822c:	aa1803e2 	mov	x2, x24
+   28230:	93407c04 	sxtw	x4, w0
+--
+   28410:	528007e2 	mov	w2, #0x3f                  	// #63
+   28414:	910323e1 	add	x1, sp, #0xc8
+   28418:	f9400260 	ldr	x0, [x19]
+   2841c:	aa1503f6 	mov	x22, x21
+   28420:	94000000 	bl	149a0 <mwifiex_drv_get_driver_version>
+   28424:	52800001 	mov	w1, #0x0                   	// #0
+   28428:	aa1303e0 	mov	x0, x19
+   2842c:	94000000 	bl	14e18 <mwifiex_get_ver_ext>
+   28430:	910323e2 	add	x2, sp, #0xc8
+   28434:	90000003 	adrp	x3, 0 <mwifiex_get_stats>
+   28438:	91000063 	add	x3, x3, #0x0
+   2843c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28440:	91000021 	add	x1, x1, #0x0
+   28444:	a9401464 	ldp	x4, x5, [x3]
+   28448:	a90016a4 	stp	x4, x5, [x21]
+   2844c:	39406060 	ldrb	w0, [x3, #24]
+   28450:	f9400863 	ldr	x3, [x3, #16]
+   28454:	f9000aa3 	str	x3, [x21, #16]
+   28458:	38018ec0 	strb	w0, [x22, #24]!
+   2845c:	aa1603e0 	mov	x0, x22
+[31m   28460:	94000000 	bl	0 <sprintf>[0m
+   28464:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28468:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   2846c:	aa1603e0 	mov	x0, x22
+   28470:	91000021 	add	x1, x1, #0x0
+   28474:	d282fd02 	mov	x2, #0x17e8                	// #6120
+   28478:	8b020262 	add	x2, x19, x2
+[31m   2847c:	94000000 	bl	0 <sprintf>[0m
+   28480:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28484:	aa1403e2 	mov	x2, x20
+   28488:	aa1603e0 	mov	x0, x22
+   2848c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28490:	91000021 	add	x1, x1, #0x0
+[31m   28494:	94000000 	bl	0 <sprintf>[0m
+   28498:	b94073e2 	ldr	w2, [sp, #112]
+   2849c:	8b20c2d6 	add	x22, x22, w0, sxtw
+   284a0:	7100285f 	cmp	w2, #0xa
+   284a4:	54001009 	b.ls	286a4 <mwifiex_info_read+0x354>  // b.plast
+   284a8:	aa1603e0 	mov	x0, x22
+   284ac:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   284b0:	91000021 	add	x1, x1, #0x0
+[31m   284b4:	94000000 	bl	0 <sprintf>[0m
+   284b8:	8b20c2d6 	add	x22, x22, w0, sxtw
+   284bc:	39405261 	ldrb	w1, [x19, #20]
+   284c0:	90000000 	adrp	x0, 0 <mwifiex_get_stats>
+   284c4:	90000002 	adrp	x2, 0 <mwifiex_get_stats>
+   284c8:	91000000 	add	x0, x0, #0x0
+   284cc:	7100003f 	cmp	w1, #0x0
+   284d0:	91000042 	add	x2, x2, #0x0
+   284d4:	9a800042 	csel	x2, x2, x0, eq  // eq = none
+   284d8:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   284dc:	aa1603e0 	mov	x0, x22
+   284e0:	91000021 	add	x1, x1, #0x0
+[31m   284e4:	94000000 	bl	0 <sprintf>[0m
+   284e8:	8b20c2d6 	add	x22, x22, w0, sxtw
+   284ec:	f9418682 	ldr	x2, [x20, #776]
+   284f0:	aa1603e0 	mov	x0, x22
+   284f4:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   284f8:	91000021 	add	x1, x1, #0x0
+[31m   284fc:	94000000 	bl	0 <sprintf>[0m
+   28500:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28504:	39402661 	ldrb	w1, [x19, #9]
+   28508:	36000e01 	tbz	w1, #0, 286c8 <mwifiex_info_read+0x378>
+   2850c:	f9402262 	ldr	x2, [x19, #64]
+   28510:	aa1603e0 	mov	x0, x22
+   28514:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28518:	91000021 	add	x1, x1, #0x0
+[31m   2851c:	94000000 	bl	0 <sprintf>[0m
+   28520:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28524:	f9401e62 	ldr	x2, [x19, #56]
+   28528:	aa1603e0 	mov	x0, x22
+   2852c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28530:	91000021 	add	x1, x1, #0x0
+[31m   28534:	94000000 	bl	0 <sprintf>[0m
+   28538:	8b20c2d6 	add	x22, x22, w0, sxtw
+   2853c:	f9401a62 	ldr	x2, [x19, #48]
+   28540:	aa1603e0 	mov	x0, x22
+   28544:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28548:	91000021 	add	x1, x1, #0x0
+[31m   2854c:	94000000 	bl	0 <sprintf>[0m
+   28550:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28554:	f9401662 	ldr	x2, [x19, #40]
+   28558:	aa1603e0 	mov	x0, x22
+   2855c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28560:	91000021 	add	x1, x1, #0x0
+[31m   28564:	94000000 	bl	0 <sprintf>[0m
+   28568:	8b20c2d6 	add	x22, x22, w0, sxtw
+   2856c:	f9403262 	ldr	x2, [x19, #96]
+   28570:	aa1603e0 	mov	x0, x22
+   28574:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28578:	91000021 	add	x1, x1, #0x0
+[31m   2857c:	94000000 	bl	0 <sprintf>[0m
+   28580:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28584:	f9402e62 	ldr	x2, [x19, #88]
+   28588:	aa1603e0 	mov	x0, x22
+   2858c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28590:	91000021 	add	x1, x1, #0x0
+[31m   28594:	94000000 	bl	0 <sprintf>[0m
+   28598:	8b20c2d6 	add	x22, x22, w0, sxtw
+   2859c:	f9402a62 	ldr	x2, [x19, #80]
+   285a0:	aa1603e0 	mov	x0, x22
+   285a4:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   285a8:	91000021 	add	x1, x1, #0x0
+[31m   285ac:	94000000 	bl	0 <sprintf>[0m
+   285b0:	8b20c2d6 	add	x22, x22, w0, sxtw
+   285b4:	f9402662 	ldr	x2, [x19, #72]
+   285b8:	aa1603e0 	mov	x0, x22
+   285bc:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   285c0:	91000021 	add	x1, x1, #0x0
+[31m   285c4:	94000000 	bl	0 <sprintf>[0m
+   285c8:	8b20c2d6 	add	x22, x22, w0, sxtw
+   285cc:	f9401261 	ldr	x1, [x19, #32]
+   285d0:	90000003 	adrp	x3, 0 <mwifiex_get_stats>
+   285d4:	91000063 	add	x3, x3, #0x0
+   285d8:	90000002 	adrp	x2, 0 <mwifiex_get_stats>
+   285dc:	91000042 	add	x2, x2, #0x0
+   285e0:	aa1603e0 	mov	x0, x22
+   285e4:	f9402424 	ldr	x4, [x1, #72]
+   285e8:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   285ec:	91000021 	add	x1, x1, #0x0
+   285f0:	f27e009f 	tst	x4, #0x4
+   285f4:	9a820062 	csel	x2, x3, x2, eq  // eq = none
+[31m   285f8:	94000000 	bl	0 <sprintf>[0m
+   285fc:	8b20c2da 	add	x26, x22, w0, sxtw
+   28600:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+--
+   28614:	38008f40 	strb	w0, [x26, #8]!
+   28618:	b943ca80 	ldr	w0, [x20, #968]
+   2861c:	340002e0 	cbz	w0, 28678 <mwifiex_info_read+0x328>
+   28620:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28624:	90000017 	adrp	x23, 0 <mwifiex_get_stats>
+   28628:	90000016 	adrp	x22, 0 <mwifiex_get_stats>
+   2862c:	9100003b 	add	x27, x1, #0x0
+   28630:	910002f7 	add	x23, x23, #0x0
+   28634:	910002d6 	add	x22, x22, #0x0
+   28638:	52800013 	mov	w19, #0x0                   	// #0
+   2863c:	52802819 	mov	w25, #0x140                 	// #320
+   28640:	f941e283 	ldr	x3, [x20, #960]
+   28644:	2a1303e2 	mov	w2, w19
+   28648:	aa1a03e0 	mov	x0, x26
+   2864c:	aa1b03e1 	mov	x1, x27
+   28650:	9bb90e63 	umaddl	x3, w19, w25, x3
+   28654:	11000673 	add	w19, w19, #0x1
+   28658:	f9404863 	ldr	x3, [x3, #144]
+   2865c:	f240007f 	tst	x3, #0x1
+   28660:	9a9712c3 	csel	x3, x22, x23, ne  // ne = any
+[31m   28664:	94000000 	bl	0 <sprintf>[0m
+   28668:	8b20c35a 	add	x26, x26, w0, sxtw
+   2866c:	b943ca82 	ldr	w2, [x20, #968]
+   28670:	6b13005f 	cmp	w2, w19
+   28674:	54fffe68 	b.hi	28640 <mwifiex_info_read+0x2f0>  // b.pmore
+   28678:	a94607e0 	ldp	x0, x1, [sp, #96]
+   2867c:	aa1a03e4 	mov	x4, x26
+   28680:	52800145 	mov	w5, #0xa                   	// #10
+   28684:	aa1c03e2 	mov	x2, x28
+   28688:	aa1503e3 	mov	x3, x21
+   2868c:	78001485 	strh	w5, [x4], #1
+   28690:	cb150084 	sub	x4, x4, x21
+   28694:	94000000 	bl	0 <simple_read_from_buffer>
+   28698:	aa0003f6 	mov	x22, x0
+   2869c:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   286a0:	17ffff4c 	b	283d0 <mwifiex_info_read+0x80>
+   286a4:	90000003 	adrp	x3, 0 <mwifiex_get_stats>
+   286a8:	91000063 	add	x3, x3, #0x0
+   286ac:	aa1603e0 	mov	x0, x22
+   286b0:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   286b4:	91000021 	add	x1, x1, #0x0
+   286b8:	f8625862 	ldr	x2, [x3, w2, uxtw #3]
+[31m   286bc:	94000000 	bl	0 <sprintf>[0m
+   286c0:	8b20c2d6 	add	x22, x22, w0, sxtw
+   286c4:	17ffff7e 	b	284bc <mwifiex_info_read+0x16c>
+   286c8:	b942a282 	ldr	w2, [x20, #672]
+   286cc:	aa1603e0 	mov	x0, x22
+   286d0:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   286d4:	91000021 	add	x1, x1, #0x0
+   286d8:	910a4297 	add	x23, x20, #0x290
+[31m   286dc:	94000000 	bl	0 <sprintf>[0m
+   286e0:	394253e2 	ldrb	w2, [sp, #148]
+   286e4:	9101d3e3 	add	x3, sp, #0x74
+   286e8:	8b20c2d6 	add	x22, x22, w0, sxtw
+   286ec:	aa1603e0 	mov	x0, x22
+   286f0:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   286f4:	91000021 	add	x1, x1, #0x0
+[31m   286f8:	94000000 	bl	0 <sprintf>[0m
+   286fc:	910303e2 	add	x2, sp, #0xc0
+   28700:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28704:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28708:	aa1603e0 	mov	x0, x22
+   2870c:	91000021 	add	x1, x1, #0x0
+[31m   28710:	94000000 	bl	0 <sprintf>[0m
+   28714:	b9409be2 	ldr	w2, [sp, #152]
+   28718:	8b20c2d6 	add	x22, x22, w0, sxtw
+   2871c:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28720:	aa1603e0 	mov	x0, x22
+   28724:	91000021 	add	x1, x1, #0x0
+[31m   28728:	94000000 	bl	0 <sprintf>[0m
+   2872c:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28730:	910273e2 	add	x2, sp, #0x9c
+   28734:	aa1603e0 	mov	x0, x22
+   28738:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   2873c:	91000021 	add	x1, x1, #0x0
+[31m   28740:	94000000 	bl	0 <sprintf>[0m
+   28744:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28748:	f9400262 	ldr	x2, [x19]
+   2874c:	aa1603e0 	mov	x0, x22
+   28750:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28754:	91000021 	add	x1, x1, #0x0
+   28758:	79590042 	ldrh	w2, [x2, #3200]
+[31m   2875c:	94000000 	bl	0 <sprintf>[0m
+   28760:	8b20c2d6 	add	x22, x22, w0, sxtw
+   28764:	f9414a99 	ldr	x25, [x20, #656]
+   28768:	eb17033f 	cmp	x25, x23
+   2876c:	54ffed00 	b.eq	2850c <mwifiex_info_read+0x1bc>  // b.none
+   28770:	90000001 	adrp	x1, 0 <mwifiex_get_stats>
+   28774:	9100003b 	add	x27, x1, #0x0
+   28778:	5280001a 	mov	w26, #0x0                   	// #0
+   2877c:	d503201f 	nop
+   28780:	2a1a03e2 	mov	w2, w26
+   28784:	91004323 	add	x3, x25, #0x10
+   28788:	aa1603e0 	mov	x0, x22
+   2878c:	aa1b03e1 	mov	x1, x27
+[31m   28790:	94000000 	bl	0 <sprintf>[0m
+   28794:	1100075a 	add	w26, w26, #0x1
+   28798:	f9400339 	ldr	x25, [x25]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m62[0m times [0;33mmwifiex.ko[0m
+

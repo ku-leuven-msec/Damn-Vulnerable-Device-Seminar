@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mcorecext.cpython-38-aarch64-linux-gnu.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1700) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mcorecext.cpython-38-aarch64-linux-gnu.so[0m
+
+   41f5c:	fd458401 	ldr	d1, [x0, #2824]
+   41f60:	1e611c00 	fcsel	d0, d0, d1, ne  // ne = any
+   41f64:	fd002260 	str	d0, [x19, #64]
+   41f68:	97ff305a 	bl	e0d0 <__errno_location@plt>
+   41f6c:	aa0003f5 	mov	x21, x0
+   41f70:	b9400000 	ldr	w0, [x0]
+   41f74:	7100081f 	cmp	w0, #0x2
+   41f78:	7a4d1804 	ccmp	w0, #0xd, #0x4, ne  // ne = any
+   41f7c:	54000661 	b.ne	42048 <infy_add+0x284>  // b.any
+   41f80:	f9402a76 	ldr	x22, [x19, #80]
+   41f84:	aa1603e0 	mov	x0, x22
+   41f88:	97ff2d16 	bl	d3e0 <strlen@plt>
+   41f8c:	f13ffc1f 	cmp	x0, #0xfff
+   41f90:	54000069 	b.ls	41f9c <infy_add+0x1d8>  // b.plast
+   41f94:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   41f98:	17ffffa8 	b	41e38 <infy_add+0x74>
+   41f9c:	a90363f7 	stp	x23, x24, [sp, #48]
+   41fa0:	a9046bf9 	stp	x25, x26, [sp, #64]
+   41fa4:	aa1603e1 	mov	x1, x22
+   41fa8:	910143e0 	add	x0, sp, #0x50
+[31m   41fac:	97ff2fa9 	bl	de50 <strcpy@plt>[0m
+   41fb0:	52818099 	mov	w25, #0xc04                 	// #3076
+   41fb4:	72a40019 	movk	w25, #0x2000, lsl #16
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mcorecext.cpython-38-aarch64-linux-gnu.so[0m
+

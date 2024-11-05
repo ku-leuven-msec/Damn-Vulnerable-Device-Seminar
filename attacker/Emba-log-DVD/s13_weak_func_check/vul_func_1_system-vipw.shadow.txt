@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mvipw.shadow[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mvipw.shadow[0m
+
+    3ecc:	54ffffa1 	b.ne	3ec0 <ferror@plt+0xbc0>  // b.any
+    3ed0:	aa1803e0 	mov	x0, x24
+    3ed4:	97fffb63 	bl	2c60 <strlen@plt>
+    3ed8:	aa0003f3 	mov	x19, x0
+    3edc:	aa1703e0 	mov	x0, x23
+    3ee0:	97fffb60 	bl	2c60 <strlen@plt>
+    3ee4:	8b000273 	add	x19, x19, x0
+    3ee8:	91000a73 	add	x19, x19, #0x2
+    3eec:	aa1303e0 	mov	x0, x19
+    3ef0:	97fffbc4 	bl	2e00 <malloc@plt>
+    3ef4:	aa1303e1 	mov	x1, x19
+    3ef8:	aa1703e6 	mov	x6, x23
+    3efc:	aa1803e5 	mov	x5, x24
+    3f00:	d0000024 	adrp	x4, 9000 <ferror@plt+0x5d00>
+    3f04:	912be084 	add	x4, x4, #0xaf8
+    3f08:	92800003 	mov	x3, #0xffffffffffffffff    	// #-1
+    3f0c:	52800022 	mov	w2, #0x1                   	// #1
+    3f10:	aa0003f3 	mov	x19, x0
+    3f14:	97fffba7 	bl	2db0 <__snprintf_chk@plt>
+    3f18:	aa1303e0 	mov	x0, x19
+[31m    3f1c:	97fffc05 	bl	2f30 <system@plt>[0m
+    3f20:	3100041f 	cmn	w0, #0x1
+    3f24:	540025e0 	b.eq	43e0 <ferror@plt+0x10e0>  // b.none
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m1[0m times [0;33mvipw.shadow[0m
+

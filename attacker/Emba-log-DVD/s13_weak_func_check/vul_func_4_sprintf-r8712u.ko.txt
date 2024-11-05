@@ -1,0 +1,84 @@
+[[0;33m*[0m] Binary protection state of [0;33mr8712u.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m921) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mr8712u.ko[0m
+
+    c7c8:	aa0003e2 	mov	x2, x0
+    c7cc:	d503201f 	nop
+    c7d0:	17ffffba 	b	c6b8 <r871x_wx_set_priv+0xe8>
+    c7d4:	90000000 	adrp	x0, 0 <r8712_enqueue_cmd.part.0>
+    c7d8:	91000000 	add	x0, x0, #0x0
+    c7dc:	52800021 	mov	w1, #0x1                   	// #1
+    c7e0:	392422c1 	strb	w1, [x22, #2312]
+    c7e4:	79400001 	ldrh	w1, [x0]
+    c7e8:	39400800 	ldrb	w0, [x0, #2]
+    c7ec:	79000261 	strh	w1, [x19]
+    c7f0:	39000a60 	strb	w0, [x19, #2]
+    c7f4:	17ffff99 	b	c658 <r871x_wx_set_priv+0x88>
+    c7f8:	912202c3 	add	x3, x22, #0x880
+    c7fc:	9125b2c2 	add	x2, x22, #0x96c
+    c800:	aa1303e0 	mov	x0, x19
+    c804:	90000001 	adrp	x1, 0 <r8712_enqueue_cmd.part.0>
+    c808:	91000021 	add	x1, x1, #0x0
+    c80c:	396c3c63 	ldrb	w3, [x3, #2831]
+    c810:	53017c63 	lsr	w3, w3, #1
+    c814:	51017c63 	sub	w3, w3, #0x5f
+[31m    c818:	94000000 	bl	0 <sprintf>[0m
+    c81c:	17ffff8f 	b	c658 <r871x_wx_set_priv+0x88>
+    c820:	aa1903e3 	mov	x3, x25
+    c824:	aa1703e1 	mov	x1, x23
+    c828:	aa1603e0 	mov	x0, x22
+    c82c:	910163e2 	add	x2, sp, #0x58
+    c830:	97fff75a 	bl	a598 <r8711_wx_get_rate>
+    c834:	350000e0 	cbnz	w0, c850 <r871x_wx_set_priv+0x280>
+    c838:	b9405bf8 	ldr	w24, [sp, #88]
+    c83c:	529bd060 	mov	w0, #0xde83                	// #56963
+    c840:	72a86360 	movk	w0, #0x431b, lsl #16
+    c844:	9b207f00 	smull	x0, w24, w0
+    c848:	9372fc00 	asr	x0, x0, #50
+    c84c:	4b987c18 	sub	w24, w0, w24, asr #31
+    c850:	2a1803e2 	mov	w2, w24
+    c854:	aa1303e0 	mov	x0, x19
+    c858:	90000001 	adrp	x1, 0 <r8712_enqueue_cmd.part.0>
+    c85c:	91000021 	add	x1, x1, #0x0
+[31m    c860:	94000000 	bl	0 <sprintf>[0m
+    c864:	17ffff7d 	b	c658 <r871x_wx_set_priv+0x88>
+    c868:	2a0003f4 	mov	w20, w0
+    c86c:	17ffff98 	b	c6cc <r871x_wx_set_priv+0xfc>
+    c870:	f94186c2 	ldr	x2, [x22, #776]
+    c874:	aa1303e0 	mov	x0, x19
+    c878:	90000001 	adrp	x1, 0 <r8712_enqueue_cmd.part.0>
+    c87c:	91000021 	add	x1, x1, #0x0
+[31m    c880:	94000000 	bl	0 <sprintf>[0m
+    c884:	17ffff75 	b	c658 <r871x_wx_set_priv+0x88>
+    c888:	90000000 	adrp	x0, 0 <r8712_enqueue_cmd.part.0>
+--
+   169d0:	90000000 	adrp	x0, 0 <r8712_enqueue_cmd.part.0>
+   169d4:	91000000 	add	x0, x0, #0x0
+   169d8:	394006d9 	ldrb	w25, [x22, #1]
+   169dc:	52802001 	mov	w1, #0x100                 	// #256
+   169e0:	9000001a 	adrp	x26, 0 <r8712_enqueue_cmd.part.0>
+   169e4:	910046f3 	add	x19, x23, #0x11
+   169e8:	11000b39 	add	w25, w25, #0x2
+   169ec:	9100035a 	add	x26, x26, #0x0
+   169f0:	6b01033f 	cmp	w25, w1
+   169f4:	52800014 	mov	w20, #0x0                   	// #0
+   169f8:	1a819339 	csel	w25, w25, w1, ls  // ls = plast
+   169fc:	a9400c02 	ldp	x2, x3, [x0]
+   16a00:	a9000ee2 	stp	x2, x3, [x23]
+   16a04:	79402000 	ldrh	w0, [x0, #16]
+   16a08:	790022e0 	strh	w0, [x23, #16]
+   16a0c:	d503201f 	nop
+   16a10:	92401e82 	and	x2, x20, #0xff
+   16a14:	aa1303e0 	mov	x0, x19
+   16a18:	aa1a03e1 	mov	x1, x26
+   16a1c:	38626ac2 	ldrb	w2, [x22, x2]
+[31m   16a20:	94000000 	bl	0 <sprintf>[0m
+   16a24:	11000683 	add	w3, w20, #0x1
+   16a28:	aa1303e2 	mov	x2, x19
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33mr8712u.ko[0m
+

@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mudevd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mudevd[0m
+
+   1e1bc:	b4001083 	cbz	x3, 1e3cc <kmod_set_log_fn@plt+0x1392c>
+   1e1c0:	aa0103f4 	mov	x20, x1
+   1e1c4:	aa0203f5 	mov	x21, x2
+   1e1c8:	b4000e61 	cbz	x1, 1e394 <kmod_set_log_fn@plt+0x138f4>
+   1e1cc:	aa0103e0 	mov	x0, x1
+   1e1d0:	97ffaf38 	bl	9eb0 <strlen@plt>
+   1e1d4:	2a0003f3 	mov	w19, w0
+   1e1d8:	aa1503e0 	mov	x0, x21
+   1e1dc:	97ffaf35 	bl	9eb0 <strlen@plt>
+   1e1e0:	0b000260 	add	w0, w19, w0
+   1e1e4:	aa1403e1 	mov	x1, x20
+   1e1e8:	11000400 	add	w0, w0, #0x1
+   1e1ec:	93407c00 	sxtw	x0, w0
+   1e1f0:	91003c00 	add	x0, x0, #0xf
+   1e1f4:	927cec00 	and	x0, x0, #0xfffffffffffffff0
+   1e1f8:	cb2063ff 	sub	sp, sp, x0
+   1e1fc:	910003f8 	mov	x24, sp
+   1e200:	aa1803e0 	mov	x0, x24
+   1e204:	97ffafbb 	bl	a0f0 <stpcpy@plt>
+   1e208:	aa1503e1 	mov	x1, x21
+[31m   1e20c:	97ffb169 	bl	a7b0 <strcpy@plt>[0m
+   1e210:	aa1803e0 	mov	x0, x24
+   1e214:	97ffaf7b 	bl	a000 <opendir@plt>
+--
+   26890:	b4000714 	cbz	x20, 26970 <kmod_set_log_fn@plt+0x1bed0>
+   26894:	97fff4ef 	bl	23c50 <kmod_set_log_fn@plt+0x191b0>
+   26898:	7100181f 	cmp	w0, #0x6
+   2689c:	540003ec 	b.gt	26918 <kmod_set_log_fn@plt+0x1be78>
+   268a0:	aa1303e0 	mov	x0, x19
+   268a4:	97ff8d83 	bl	9eb0 <strlen@plt>
+   268a8:	11002c02 	add	w2, w0, #0xb
+   268ac:	f00000a3 	adrp	x3, 3d000 <kmod_set_log_fn@plt+0x32560>
+   268b0:	910ec063 	add	x3, x3, #0x3b0
+   268b4:	aa1303e1 	mov	x1, x19
+   268b8:	93407c42 	sxtw	x2, w2
+   268bc:	91003c42 	add	x2, x2, #0xf
+   268c0:	927cec42 	and	x2, x2, #0xfffffffffffffff0
+   268c4:	79401064 	ldrh	w4, [x3, #8]
+   268c8:	cb2263ff 	sub	sp, sp, x2
+   268cc:	910003f3 	mov	x19, sp
+   268d0:	f9400062 	ldr	x2, [x3]
+   268d4:	91002a60 	add	x0, x19, #0xa
+   268d8:	f9000262 	str	x2, [x19]
+   268dc:	79001264 	strh	w4, [x19, #8]
+[31m   268e0:	97ff8fb4 	bl	a7b0 <strcpy@plt>[0m
+   268e4:	aa1403e1 	mov	x1, x20
+   268e8:	aa1303e0 	mov	x0, x19
+--
+   269c0:	f9001fa1 	str	x1, [x29, #56]
+   269c4:	d2800001 	mov	x1, #0x0                   	// #0
+   269c8:	b4000400 	cbz	x0, 26a48 <kmod_set_log_fn@plt+0x1bfa8>
+   269cc:	b4000515 	cbz	x21, 26a6c <kmod_set_log_fn@plt+0x1bfcc>
+   269d0:	aa0003f4 	mov	x20, x0
+   269d4:	97ff8d37 	bl	9eb0 <strlen@plt>
+   269d8:	11002c02 	add	w2, w0, #0xb
+   269dc:	f00000a0 	adrp	x0, 3d000 <kmod_set_log_fn@plt+0x32560>
+   269e0:	910ec000 	add	x0, x0, #0x3b0
+   269e4:	aa1403e1 	mov	x1, x20
+   269e8:	93407c42 	sxtw	x2, w2
+   269ec:	91003c42 	add	x2, x2, #0xf
+   269f0:	927cec42 	and	x2, x2, #0xfffffffffffffff0
+   269f4:	79401003 	ldrh	w3, [x0, #8]
+   269f8:	cb2263ff 	sub	sp, sp, x2
+   269fc:	910003f4 	mov	x20, sp
+   26a00:	f9400002 	ldr	x2, [x0]
+   26a04:	91002a80 	add	x0, x20, #0xa
+   26a08:	f9000282 	str	x2, [x20]
+   26a0c:	79001283 	strh	w3, [x20, #8]
+[31m   26a10:	97ff8f68 	bl	a7b0 <strcpy@plt>[0m
+   26a14:	aa1503e1 	mov	x1, x21
+   26a18:	d2800002 	mov	x2, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mudevd[0m
+

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-dummy.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m205) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-dummy.ko[0m
+
+     f28:	54fffd61 	b.ne	ed4 <snd_dummy_probe+0x2a4>  // b.any
+     f2c:	f90062bb 	str	x27, [x21, #192]
+     f30:	9101439c 	add	x28, x28, #0x50
+     f34:	eb14039f 	cmp	x28, x20
+     f38:	54fffda1 	b.ne	eec <snd_dummy_probe+0x2bc>  // b.any
+     f3c:	d503201f 	nop
+     f40:	90000000 	adrp	x0, 0 <dummy_systimer_update>
+     f44:	91000000 	add	x0, x0, #0x0
+     f48:	f9403fe3 	ldr	x3, [sp, #120]
+     f4c:	79400804 	ldrh	w4, [x0, #4]
+     f50:	b9400005 	ldr	w5, [x0]
+     f54:	91011060 	add	x0, x3, #0x44
+     f58:	b9406fe1 	ldr	w1, [sp, #108]
+     f5c:	b9001465 	str	w5, [x3, #20]
+     f60:	79003064 	strh	w4, [x3, #24]
+     f64:	11000422 	add	w2, w1, #0x1
+     f68:	b9002465 	str	w5, [x3, #36]
+     f6c:	90000001 	adrp	x1, 0 <dummy_systimer_update>
+     f70:	79005064 	strh	w4, [x3, #40]
+     f74:	91000021 	add	x1, x1, #0x0
+[31m     f78:	94000000 	bl	0 <sprintf>[0m
+     f7c:	f9403fe0 	ldr	x0, [sp, #120]
+     f80:	94000000 	bl	0 <snd_card_register>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33msnd-dummy.ko[0m
+

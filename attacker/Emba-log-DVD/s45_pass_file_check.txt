@@ -1,0 +1,35 @@
+[[0;34m+[0m] [0;36m[1mSearch password files[0m
+[1m=================================================================[0m
+[[0;32m+[0m][0;32m Found 10 password related files:[0m
+    /log/firmware/firmware/etc/passwd (-rw-r--r-- root root)
+    [0;32mIdentified the following root accounts:[0m
+        [0;33mroot[0m
+
+    /log/firmware/firmware/etc/passwd- (-rw-r--r-- root root)
+    [0;32mIdentified the following root accounts:[0m
+        [0;33mroot[0m
+
+    /log/firmware/firmware/etc/shadow (-r-------- root root)
+    [0;32mFound passwords or weak configuration:[0m
+        [0;33mroot:$6$WQBiS3eMvOMsmsDy$nebw3AB8weP3mqP/1qqcJsN/Xh.CW5S2hsSHMVSxdH5sqEMdJZzzDfmcoBeZeNNh43JqXSquoRES3D4bgxKBy.:18943:0:99999:7:::[0m
+        [0;33mclient:$6$vOsShJfzJ$nspR/.gahnFFRBL9hrTkWCwr8fCjhkIaEyABvCCpCVL6p1G3dZVEhvmbcOg2Bh1OG.a9ZmKkzwo2V5ZDOin73/:18943:0:99999:7:::[0m
+        [0;33mmanager:$6$dY5hO/6B48/9D.66$QHHDlmdkw.CHtzQg.W/e7s8SnGJaJgwVYwKzLu1vB6ZTeKBb2BXj1xc7wJJUl7nFgUXy6AHf/6z63yOPuXBT7/:18943:0:99999:7:::[0m
+
+    /log/firmware/firmware/etc/shadow- (-r-------- root root)
+    [0;32mFound passwords or weak configuration:[0m
+        [0;33mroot:$6$WQBiS3eMvOMsmsDy$nebw3AB8weP3mqP/1qqcJsN/Xh.CW5S2hsSHMVSxdH5sqEMdJZzzDfmcoBeZeNNh43JqXSquoRES3D4bgxKBy.:18943:0:99999:7:::[0m
+        [0;33mclient:$6$vOsShJfzJ$nspR/.gahnFFRBL9hrTkWCwr8fCjhkIaEyABvCCpCVL6p1G3dZVEhvmbcOg2Bh1OG.a9ZmKkzwo2V5ZDOin73/:18943:0:99999:7:::[0m
+
+    /log/firmware/firmware/usr/bin/gpasswd (-rwxr-xr-x root root)
+    /log/firmware/firmware/usr/bin/passwd.shadow (-rwxr-xr-x root root)
+    /log/firmware/firmware/usr/lib/opkg/alternatives/chpasswd (-rw-r--r-- root root)
+    /log/firmware/firmware/usr/lib/opkg/alternatives/passwd (-rw-r--r-- root root)
+    /log/firmware/firmware/usr/sbin/chgpasswd (-rwxr-xr-x root root)
+    /log/firmware/firmware/usr/sbin/chpasswd.shadow (-rwxr-xr-x root root)
+[[0;32m+[0m][0;32m Sudoers configuration:[0m
+    [0;33m
+    root ALL=(ALL) ALL[0m
+    [0;33mclient ALL=(root) NOPASSWD: /usr/bin/less /home/manager/*[0m
+
+[*] Statistics:1
+[[0;33m*[0m] Sun Nov 14 07:26:29 EST 2021 - S45_pass_file_check finished

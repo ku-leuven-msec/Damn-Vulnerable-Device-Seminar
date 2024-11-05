@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-seq.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m475) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-seq.ko[0m
+
+    1068:	90000000 	adrp	x0, 0 <snd_use_lock_sync_helper>
+    106c:	91000000 	add	x0, x0, #0x0
+    1070:	b946c801 	ldr	w1, [x0, #1736]
+    1074:	b946cc02 	ldr	w2, [x0, #1740]
+    1078:	11000421 	add	w1, w1, #0x1
+    107c:	b906c801 	str	w1, [x0, #1736]
+    1080:	6b02003f 	cmp	w1, w2
+    1084:	5400004d 	b.le	108c <snd_seq_open+0xa4>
+    1088:	b906cc01 	str	w1, [x0, #1740]
+    108c:	52800020 	mov	w0, #0x1                   	// #1
+    1090:	b9000260 	str	w0, [x19]
+    1094:	aa1503e0 	mov	x0, x21
+    1098:	94000000 	bl	0 <mutex_unlock>
+    109c:	b9404a75 	ldr	w21, [x19, #72]
+    10a0:	f9006693 	str	x19, [x20, #200]
+    10a4:	91001660 	add	x0, x19, #0x5
+    10a8:	f9007674 	str	x20, [x19, #232]
+    10ac:	2a1503e2 	mov	w2, w21
+    10b0:	90000001 	adrp	x1, 0 <snd_use_lock_sync_helper>
+    10b4:	91000021 	add	x1, x1, #0x0
+[31m    10b8:	94000000 	bl	0 <sprintf>[0m
+    10bc:	d5384100 	mrs	x0, sp_el0
+    10c0:	f942bc14 	ldr	x20, [x0, #1400]
+--
+0000000000008c40 <snd_seq_timer_open>:
+    8c40:	a9b77bfd 	stp	x29, x30, [sp, #-144]!
+    8c44:	910003fd 	mov	x29, sp
+    8c48:	a90153f3 	stp	x19, x20, [sp, #16]
+    8c4c:	a9025bf5 	stp	x21, x22, [sp, #32]
+    8c50:	aa0003f4 	mov	x20, x0
+    8c54:	d5384115 	mrs	x21, sp_el0
+    8c58:	aa1e03e0 	mov	x0, x30
+    8c5c:	94000000 	bl	0 <_mcount>
+    8c60:	f9428ea1 	ldr	x1, [x21, #1304]
+    8c64:	f90047e1 	str	x1, [sp, #136]
+    8c68:	d2800001 	mov	x1, #0x0                   	// #0
+    8c6c:	f9402e93 	ldr	x19, [x20, #88]
+    8c70:	b40009b3 	cbz	x19, 8da4 <snd_seq_timer_open+0x164>
+    8c74:	f9402a60 	ldr	x0, [x19, #80]
+    8c78:	b50009a0 	cbnz	x0, 8dac <snd_seq_timer_open+0x16c>
+    8c7c:	b9400282 	ldr	w2, [x20]
+    8c80:	9101a3e0 	add	x0, sp, #0x68
+    8c84:	90000001 	adrp	x1, 0 <snd_use_lock_sync_helper>
+    8c88:	91000021 	add	x1, x1, #0x0
+[31m    8c8c:	94000000 	bl	0 <sprintf>[0m
+    8c90:	b9403676 	ldr	w22, [x19, #52]
+    8c94:	35000896 	cbnz	w22, 8da4 <snd_seq_timer_open+0x164>
+--
+    9f30:	f9400000 	ldr	x0, [x0]
+    9f34:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    9f38:	aa0003f4 	mov	x20, x0
+    9f3c:	b4000d20 	cbz	x0, a0e0 <snd_seq_create_port+0x1f0>
+    9f40:	a9046bf9 	stp	x25, x26, [sp, #64]
+    9f44:	12800001 	mov	w1, #0xffffffff            	// #-1
+    9f48:	90000000 	adrp	x0, 0 <snd_use_lock_sync_helper>
+    9f4c:	f9002bfb 	str	x27, [sp, #80]
+    9f50:	91000000 	add	x0, x0, #0x0
+    9f54:	39000681 	strb	w1, [x20, #1]
+    9f58:	9100429b 	add	x27, x20, #0x10
+    9f5c:	b9404ae2 	ldr	w2, [x23, #72]
+    9f60:	90000018 	adrp	x24, 0 <snd_use_lock_sync_helper>
+    9f64:	39000282 	strb	w2, [x20]
+    9f68:	91000318 	add	x24, x24, #0x0
+    9f6c:	f9000680 	str	x0, [x20, #8]
+    9f70:	9101a296 	add	x22, x20, #0x68
+    9f74:	aa1803e1 	mov	x1, x24
+    9f78:	12800002 	mov	w2, #0xffffffff            	// #-1
+    9f7c:	aa1b03e0 	mov	x0, x27
+[31m    9f80:	94000000 	bl	0 <sprintf>[0m
+    9f84:	b900629f 	str	wzr, [x20, #96]
+    9f88:	9000001a 	adrp	x26, 0 <snd_use_lock_sync_helper>
+--
+    a05c:	1a82a673 	csinc	w19, w19, w2, ge  // ge = tcont
+    a060:	aa0303e4 	mov	x4, x3
+    a064:	d1014063 	sub	x3, x3, #0x50
+    a068:	eb04003f 	cmp	x1, x4
+    a06c:	54000080 	b.eq	a07c <snd_seq_create_port+0x18c>  // b.none
+    a070:	39400462 	ldrb	w2, [x3, #1]
+    a074:	6b13005f 	cmp	w2, w19
+    a078:	54fffeed 	b.le	a054 <snd_seq_create_port+0x164>
+    a07c:	f9402c65 	ldr	x5, [x3, #88]
+    a080:	91014286 	add	x6, x20, #0x50
+    a084:	f9002c66 	str	x6, [x3, #88]
+    a088:	aa1803e1 	mov	x1, x24
+    a08c:	a9051684 	stp	x4, x5, [x20, #80]
+    a090:	2a1303e2 	mov	w2, w19
+    a094:	aa1b03e0 	mov	x0, x27
+    a098:	f90000a6 	str	x6, [x5]
+    a09c:	39000693 	strb	w19, [x20, #1]
+    a0a0:	b9407ae3 	ldr	w3, [x23, #120]
+    a0a4:	11000463 	add	w3, w3, #0x1
+    a0a8:	b9007ae3 	str	w3, [x23, #120]
+[31m    a0ac:	94000000 	bl	0 <sprintf>[0m
+    a0b0:	aa1603e0 	mov	x0, x22
+    a0b4:	94000000 	bl	0 <_raw_write_unlock_irq>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33msnd-seq.ko[0m
+

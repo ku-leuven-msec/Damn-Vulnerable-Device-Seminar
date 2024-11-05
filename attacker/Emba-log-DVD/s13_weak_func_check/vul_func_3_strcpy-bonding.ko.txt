@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mbonding.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m768) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mbonding.ko[0m
+
+    17b0:	d65f03c0 	ret
+    17b4:	d503201f 	nop
+
+00000000000017b8 <bond_netdev_notify_work>:
+    17b8:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+    17bc:	910003fd 	mov	x29, sp
+    17c0:	a90153f3 	stp	x19, x20, [sp, #16]
+    17c4:	d5384114 	mrs	x20, sp_el0
+    17c8:	aa0003f3 	mov	x19, x0
+    17cc:	aa1e03e0 	mov	x0, x30
+    17d0:	94000000 	bl	0 <_mcount>
+    17d4:	f9428e81 	ldr	x1, [x20, #1304]
+    17d8:	f9002fe1 	str	x1, [sp, #88]
+    17dc:	d2800001 	mov	x1, #0x0                   	// #0
+    17e0:	94000000 	bl	0 <rtnl_trylock>
+    17e4:	340003e0 	cbz	w0, 1860 <bond_netdev_notify_work+0xa8>
+    17e8:	f90013f5 	str	x21, [sp, #32]
+    17ec:	9100d3e0 	add	x0, sp, #0x34
+    17f0:	f8508275 	ldur	x21, [x19, #-248]
+    17f4:	aa1503e1 	mov	x1, x21
+[31m    17f8:	94000000 	bl	0 <strcpy>[0m
+    17fc:	f8510263 	ldur	x3, [x19, #-240]
+    1800:	aa1503e0 	mov	x0, x21
+--
+    5a58:	910143f7 	add	x23, sp, #0x50
+    5a5c:	aa1703e1 	mov	x1, x23
+    5a60:	52800015 	mov	w21, #0x0                   	// #0
+    5a64:	f9406002 	ldr	x2, [x0, #192]
+    5a68:	f9002be2 	str	x2, [sp, #80]
+    5a6c:	94000000 	bl	0 <netdev_lower_get_next_private>
+    5a70:	aa0003f3 	mov	x19, x0
+    5a74:	b5000100 	cbnz	x0, 5a94 <bond_do_ioctl+0x354>
+    5a78:	1400003c 	b	5b68 <bond_do_ioctl+0x428>
+    5a7c:	f9444280 	ldr	x0, [x20, #2176]
+    5a80:	aa1703e1 	mov	x1, x23
+    5a84:	110006b5 	add	w21, w21, #0x1
+    5a88:	94000000 	bl	0 <netdev_lower_get_next_private>
+    5a8c:	aa0003f3 	mov	x19, x0
+    5a90:	b40006c0 	cbz	x0, 5b68 <bond_do_ioctl+0x428>
+    5a94:	b9406fe0 	ldr	w0, [sp, #108]
+    5a98:	6b15001f 	cmp	w0, w21
+    5a9c:	54ffff01 	b.ne	5a7c <bond_do_ioctl+0x33c>  // b.any
+    5aa0:	f9400261 	ldr	x1, [x19]
+    5aa4:	9101c3e0 	add	x0, sp, #0x70
+[31m    5aa8:	94000000 	bl	0 <strcpy>[0m
+    5aac:	3942aa61 	ldrb	w1, [x19, #170]
+    5ab0:	aa1903e0 	mov	x0, x25
+--
+   117c8:	f9406002 	ldr	x2, [x0, #192]
+   117cc:	f90023e2 	str	x2, [sp, #64]
+   117d0:	94000000 	bl	0 <netdev_lower_get_next_private>
+   117d4:	aa0003f3 	mov	x19, x0
+   117d8:	b50000e0 	cbnz	x0, 117f4 <bond_option_primary_set+0xb4>
+   117dc:	1400002d 	b	11890 <bond_option_primary_set+0x150>
+   117e0:	f9400280 	ldr	x0, [x20]
+   117e4:	910103e1 	add	x1, sp, #0x40
+   117e8:	94000000 	bl	0 <netdev_lower_get_next_private>
+   117ec:	aa0003f3 	mov	x19, x0
+   117f0:	b4000500 	cbz	x0, 11890 <bond_option_primary_set+0x150>
+   117f4:	f9400260 	ldr	x0, [x19]
+   117f8:	aa1503e1 	mov	x1, x21
+   117fc:	d2800202 	mov	x2, #0x10                  	// #16
+   11800:	94000000 	bl	0 <strncmp>
+   11804:	35fffee0 	cbnz	w0, 117e0 <bond_option_primary_set+0xa0>
+   11808:	91006280 	add	x0, x20, #0x18
+   1180c:	c89ffc13 	stlr	x19, [x0]
+   11810:	f9400261 	ldr	x1, [x19]
+   11814:	aa1803e0 	mov	x0, x24
+[31m   11818:	94000000 	bl	0 <strcpy>[0m
+   1181c:	52800020 	mov	w0, #0x1                   	// #1
+   11820:	3900a280 	strb	w0, [x20, #40]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mbonding.ko[0m
+

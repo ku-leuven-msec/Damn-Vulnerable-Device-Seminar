@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibpython3.8.so.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibpython3.8.so.1.0[0m
+
+[31m   cfe7c:	97fe6601 	bl	69680 <mmap64@plt>[0m
+   cfe80:	b100041f 	cmn	x0, #0x1
+   cfe84:	9a9f1000 	csel	x0, x0, xzr, ne  // ne = any
+   cfe88:	a8c17bfd 	ldp	x29, x30, [sp], #16
+   cfe8c:	d65f03c0 	ret
+   cfe90:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   cfe94:	910003fd 	mov	x29, sp
+   cfe98:	a90153f3 	stp	x19, x20, [sp, #16]
+   cfe9c:	2a0003f3 	mov	w19, w0
+   cfea0:	92800300 	mov	x0, #0xffffffffffffffe7    	// #-25
+   cfea4:	f2efffe0 	movk	x0, #0x7fff, lsl #48
+   cfea8:	eb00005f 	cmp	x2, x0
+   cfeac:	54000688 	b.hi	cff7c <Py_ReprEnter@@Base+0x22c>  // b.pmore
+   cfeb0:	f90013f5 	str	x21, [sp, #32]
+   cfeb4:	aa0103f5 	mov	x21, x1
+   cfeb8:	aa0203f4 	mov	x20, x2
+   cfebc:	91006041 	add	x1, x2, #0x18
+   cfec0:	f94006a0 	ldr	x0, [x21, #8]
+   cfec4:	34000493 	cbz	w19, cff54 <Py_ReprEnter@@Base+0x204>
+   cfec8:	f9400ea3 	ldr	x3, [x21, #24]
+   cfecc:	aa0103e2 	mov	x2, x1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibpython3.8.so.1.0[0m
+

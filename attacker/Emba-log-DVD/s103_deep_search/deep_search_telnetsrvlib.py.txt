@@ -1,0 +1,30 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/opt/dvd/services/telnet/telnetsrvlib/telnetsrv/telnetsrvlib.py[0m
+3:"""TELNET server class.
+5:Based on the telnet client in teln.
+7:terface to the telnet client..
+16:ass = Should a password be requested?.
+113:rg/assignments/telnet-options.
+119:SP = chr(43) # Telnet Remote Serial .
+121:HO = chr(45) # Telnet Suppress Local.
+122:LS = chr(46) # Telnet Start TLS.
+197:or to define a telnet command.'''.
+374:class TelnetHandlerBase(Bas.
+375:    "A telnet server based o.
+375: the client in telnetlib".
+422:    PROMPT = "Telnet Server> ".
+426:nnected to the telnet server.".
+431:allback want a password?.
+438:splay prior to telnet login.
+439:    TELNET_ISSUE = None.
+440:n requesting a telnet username.
+442:n requesting a telnet password.
+443:PROMPT_PASS = "Password: ".
+500:tion, starting telnet session.").
+525:onnection to a telnet session".
+555:-------------- Telnet Options Engine.
+590:       "Send a telnet command (IAC)".
+1012:        password = None.
+1017:               password = self.readlin.
+1021:back(username, password).
+1037:       if self.TELNET_ISSUE:.
+1038:writeline(self.TELNET_ISSUE).

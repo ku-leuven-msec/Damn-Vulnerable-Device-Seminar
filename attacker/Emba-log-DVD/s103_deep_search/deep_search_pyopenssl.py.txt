@@ -1,0 +1,112 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py[0m
+9:* `pyOpenSSL`_ (tested with.
+10:.4, from pyopenssl).
+13:However, pyopenssl depends on cry.
+20: install pyopenssl cryptography i.
+23:.contrib.pyopenssl.inject_into_ur.
+31:.contrib.pyopenssl as pyopenssl.
+32:        pyopenssl.inject_into_ur.
+39:t of disabling SSL/TLS.
+44:.. _pyopenssl: https://www.p.
+44:yopenssl.org.
+50:import OpenSSL.SSL.
+52:t.backends.openssl import backend.
+52: as openssl_backend.
+53:t.backends.openssl.x509 import _C.
+74:import ssl.
+79:from ..util.ssl_ import PROTOC.
+86:llib3 to PyOpenSSL compatible par.
+87:_openssl_versions = {.
+88:TOCOL_TLS: OpenSSL.SSL.SSLv23_MET.
+89:LS_CLIENT: OpenSSL.SSL.SSLv23_MET.
+90:    ssl.PROTOCOL_TLSv1.
+90:: OpenSSL.SSL.TLSv1_METHOD,.
+93:if hasattr(ssl, "PROTOCOL_SSL.
+93:nd hasattr(OpenSSL.SSL, "SSLv3_ME.
+94:    _openssl_versions[ssl.P.
+94:ROTOCOL_SSLv3] = OpenSSL.S.
+94:SL.SSLv3_METHOD.
+96:if hasattr(ssl, "PROTOCOL_TLS.
+96:nd hasattr(OpenSSL.SSL, "TLSv1_1_.
+97:    _openssl_versions[ssl.P.
+97:TLSv1_1] = OpenSSL.SSL.TLSv1_1_ME.
+99:if hasattr(ssl, "PROTOCOL_TLS.
+99:nd hasattr(OpenSSL.SSL, "TLSv1_2_.
+100:    _openssl_versions[ssl.P.
+100:TLSv1_2] = OpenSSL.SSL.TLSv1_2_ME.
+103:_stdlib_to_openssl_verify = {.
+104:    ssl.CERT_NONE: Ope.
+104:nSSL.SSL.VERIFY_NONE,.
+105:    ssl.CERT_OPTIONAL:.
+105: OpenSSL.SSL.VERIFY_PEER,.
+106:    ssl.CERT_REQUIRED:.
+106: OpenSSL.SSL.VERIFY_PEER.
+107:    + OpenSSL.SSL.VERIFY_FAIL_IF.
+109:_openssl_to_stdlib_veri.
+109:_stdlib_to_openssl_verify.items().
+111:# OpenSSL will only writ.
+112:SSL_WRITE_BLOCKSIZ.
+115:orig_util_SSLContext = util..
+115:ssl_.SSLContext.
+122:ib3 with PyOpenSSL-backed SSL-sup.
+126:    util.SSLContext = PyOpe.
+126:nSSLContext.
+127:    util.ssl_.SSLContext = PyOpe.
+127:nSSLContext.
+129:    util.ssl_.HAS_SNI = HAS.
+130: util.IS_PYOPENSSL = True.
+131:    util.ssl_.IS_PYOPENSSL .
+137:    util.SSLContext = orig_.
+137:util_SSLContext.
+138:    util.ssl_.SSLContext = orig_.
+138:util_SSLContext.
+140:    util.ssl_.HAS_SNI = ori.
+141: util.IS_PYOPENSSL = False.
+142:    util.ssl_.IS_PYOPENSSL .
+147:ies that PyOpenSSL's package-leve.
+159:    # pyOpenSSL 0.14 and above.
+159:graphy for OpenSSL bindings. The .
+161:    from OpenSSL.crypto import .
+166:       "'pyOpenSSL' module missin.
+216:Given an PyOpenSSL certificate, p.
+223:s before PyOpenSSL got a proper A.
+224:ertificate(openssl_backend, peer_.
+269:for Python OpenSSL's Connection-c.
+295:    except OpenSSL.SSL.SysCallErr.
+300:    except OpenSSL.SSL.ZeroReturn.
+301:tdown() == OpenSSL.SSL.RECEIVED_S.
+305:    except OpenSSL.SSL.WantReadEr.
+312:    except OpenSSL.SSL.Error as e.
+313:         raise ssl.SSLError("read.
+320:    except OpenSSL.SSL.SysCallErr.
+325:    except OpenSSL.SSL.ZeroReturn.
+326:tdown() == OpenSSL.SSL.RECEIVED_S.
+330:    except OpenSSL.SSL.WantReadEr.
+337:    except OpenSSL.SSL.Error as e.
+338:         raise ssl.SSLError("read.
+347:    except OpenSSL.SSL.WantWriteE.
+351:    except OpenSSL.SSL.SysCallErr.
+358:: total_sent + SSL_WRITE_BLOCKSIZ.
+371:    except OpenSSL.SSL.Error:.
+383:    return OpenSSL.crypto.dump_ce.
+383:rtificate(OpenSSL.crypto.FILETYP.
+416:class PyOpenSSLContext(object).
+418: for the PyOpenSSL ``Context`` ob.
+419:dard library ``SSLContext`` objec.
+420:lls into PyOpenSSL..
+424:rotocol = _openssl_versions[proto.
+425:elf._ctx = OpenSSL.SSL.Context(se.
+440:   return _openssl_to_stdlib_veri.
+444:_stdlib_to_openssl_verify[value],.
+463:    except OpenSSL.SSL.Error as e.
+464:         raise ssl.SSLError("unab.
+466: keyfile=None, password=None):.
+468:        if password is not None:.
+469:not isinstance(password, six.binary_ty.
+470:               password = password.enc.
+471: self._ctx.set_passwd_cb(lambda *_: .
+471:password).
+486:     cnx = OpenSSL.SSL.Connection.
+499:    except OpenSSL.SSL.WantReadEr.
+503:    except OpenSSL.SSL.Error as e.
+504:         raise ssl.SSLError("bad .

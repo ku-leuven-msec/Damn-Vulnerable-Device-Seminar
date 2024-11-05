@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mw1_ds28e17.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m106) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mw1_ds28e17.ko[0m
+
+  90:	39400680 	ldrb	w0, [x20, #1]
+  94:	7100281f 	cmp	w0, #0xa
+  98:	54fffe40 	b.eq	60 <stretch_store+0x40>  // b.none
+  9c:	d503201f 	nop
+  a0:	928002a0 	mov	x0, #0xffffffffffffffea    	// #-22
+  a4:	17fffff7 	b	80 <stretch_store+0x60>
+
+00000000000000a8 <stretch_show>:
+  a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  ac:	910003fd 	mov	x29, sp
+  b0:	a90153f3 	stp	x19, x20, [sp, #16]
+  b4:	aa0003f4 	mov	x20, x0
+  b8:	aa0203f3 	mov	x19, x2
+  bc:	aa1e03e0 	mov	x0, x30
+  c0:	94000000 	bl	0 <_mcount>
+  c4:	f85f8282 	ldur	x2, [x20, #-8]
+  c8:	aa1303e0 	mov	x0, x19
+  cc:	90000001 	adrp	x1, 0 <w1_f19_i2c_functionality>
+  d0:	91000021 	add	x1, x1, #0x0
+  d4:	39400442 	ldrb	w2, [x2, #1]
+[31m  d8:	94000000 	bl	0 <sprintf>[0m
+  dc:	93407c00 	sxtw	x0, w0
+  e0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+ 330:	94000000 	bl	0 <mutex_lock>
+ 334:	aa1503e0 	mov	x0, x21
+ 338:	94000000 	bl	0 <w1_reset_select_slave>
+ 33c:	350002e0 	cbnz	w0, 398 <speed_show+0x98>
+ 340:	f85e8260 	ldur	x0, [x19, #-24]
+ 344:	128003c1 	mov	w1, #0xffffffe1            	// #-31
+ 348:	94000000 	bl	0 <w1_write_8>
+ 34c:	f85e8260 	ldur	x0, [x19, #-24]
+ 350:	94000000 	bl	0 <w1_read_8>
+ 354:	12001c15 	and	w21, w0, #0xff
+ 358:	71000abf 	cmp	w21, #0x2
+ 35c:	540001e8 	b.hi	398 <speed_show+0x98>  // b.pmore
+ 360:	390002c0 	strb	w0, [x22]
+ 364:	f85e8260 	ldur	x0, [x19, #-24]
+ 368:	9103a000 	add	x0, x0, #0xe8
+ 36c:	94000000 	bl	0 <mutex_unlock>
+ 370:	2a1503e2 	mov	w2, w21
+ 374:	aa1403e0 	mov	x0, x20
+ 378:	90000001 	adrp	x1, 0 <w1_f19_i2c_functionality>
+ 37c:	91000021 	add	x1, x1, #0x0
+[31m 380:	94000000 	bl	0 <sprintf>[0m
+ 384:	93407c00 	sxtw	x0, w0
+ 388:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mw1_ds28e17.ko[0m
+

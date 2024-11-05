@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibudev.so.1.6.3[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibudev.so.1.6.3[0m
+
+[31m    d148:	97ffdf1e 	bl	4dc0 <mmap@plt>[0m
+    d14c:	f9004e60 	str	x0, [x19, #152]
+    d150:	aa0003f4 	mov	x20, x0
+    d154:	b100041f 	cmn	x0, #0x1
+    d158:	540012e0 	b.eq	d3b4 <udev_hwdb_new@@LIBUDEV_196+0x334>  // b.none
+    d15c:	94001845 	bl	13270 <udev_hwdb_get_properties_list_entry@@LIBUDEV_196+0x5db0>
+    d160:	f9400281 	ldr	x1, [x20]
+    d164:	f94023e2 	ldr	x2, [sp, #64]
+    d168:	eb01005f 	cmp	x2, x1
+    d16c:	54000d01 	b.ne	d30c <udev_hwdb_new@@LIBUDEV_196+0x28c>  // b.any
+    d170:	f9400a81 	ldr	x1, [x20, #16]
+    d174:	f9402662 	ldr	x2, [x19, #72]
+    d178:	eb01005f 	cmp	x2, x1
+    d17c:	54000c81 	b.ne	d30c <udev_hwdb_new@@LIBUDEV_196+0x28c>  // b.any
+    d180:	7100181f 	cmp	w0, #0x6
+    d184:	5400024c 	b.gt	d1cc <udev_hwdb_new@@LIBUDEV_196+0x14c>
+    d188:	f947e6a0 	ldr	x0, [x21, #4040]
+    d18c:	f94027e1 	ldr	x1, [sp, #72]
+    d190:	f9400000 	ldr	x0, [x0]
+    d194:	ca000020 	eor	x0, x1, x0
+    d198:	b50012e0 	cbnz	x0, d3f4 <udev_hwdb_new@@LIBUDEV_196+0x374>
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibudev.so.1.6.3[0m
+

@@ -1,0 +1,226 @@
+[[0;33m*[0m] Binary protection state of [0;33mraid456.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m620) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mraid456.ko[0m
+
+     53c:	aa1703e0 	mov	x0, x23
+     540:	d2800014 	mov	x20, #0x0                   	// #0
+     544:	97ffffa5 	bl	3d8 <free_stripe>
+     548:	17ffffef 	b	504 <alloc_stripe+0xe4>
+     54c:	d503201f 	nop
+
+0000000000000550 <raid5_show_rmw_level>:
+     550:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     554:	910003fd 	mov	x29, sp
+     558:	a90153f3 	stp	x19, x20, [sp, #16]
+     55c:	aa0003f3 	mov	x19, x0
+     560:	aa0103f4 	mov	x20, x1
+     564:	aa1e03e0 	mov	x0, x30
+     568:	94000000 	bl	0 <_mcount>
+     56c:	f9400260 	ldr	x0, [x19]
+     570:	b4000140 	cbz	x0, 598 <raid5_show_rmw_level+0x48>
+     574:	b9403c02 	ldr	w2, [x0, #60]
+     578:	90000001 	adrp	x1, 0 <cmp_stripe>
+     57c:	aa1403e0 	mov	x0, x20
+     580:	91000021 	add	x1, x1, #0x0
+[31m     584:	94000000 	bl	0 <sprintf>[0m
+     588:	93407c00 	sxtw	x0, w0
+     58c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+
+00000000000005a8 <raid5_show_skip_copy>:
+     5a8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     5ac:	910003fd 	mov	x29, sp
+     5b0:	a90153f3 	stp	x19, x20, [sp, #16]
+     5b4:	f90013f5 	str	x21, [sp, #32]
+     5b8:	aa0003f3 	mov	x19, x0
+     5bc:	aa0103f4 	mov	x20, x1
+     5c0:	aa1e03e0 	mov	x0, x30
+     5c4:	910a0275 	add	x21, x19, #0x280
+     5c8:	94000000 	bl	0 <_mcount>
+     5cc:	aa1503e0 	mov	x0, x21
+     5d0:	94000000 	bl	0 <_raw_spin_lock>
+     5d4:	f9400260 	ldr	x0, [x19]
+     5d8:	d2800013 	mov	x19, #0x0                   	// #0
+     5dc:	b40000e0 	cbz	x0, 5f8 <raid5_show_skip_copy+0x50>
+     5e0:	b9410402 	ldr	w2, [x0, #260]
+     5e4:	90000001 	adrp	x1, 0 <cmp_stripe>
+     5e8:	aa1403e0 	mov	x0, x20
+     5ec:	91000021 	add	x1, x1, #0x0
+[31m     5f0:	94000000 	bl	0 <sprintf>[0m
+     5f4:	93407c13 	sxtw	x19, w0
+     5f8:	aa1503e0 	mov	x0, x21
+--
+
+0000000000000618 <raid5_show_group_thread_cnt>:
+     618:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     61c:	910003fd 	mov	x29, sp
+     620:	a90153f3 	stp	x19, x20, [sp, #16]
+     624:	f90013f5 	str	x21, [sp, #32]
+     628:	aa0003f3 	mov	x19, x0
+     62c:	aa0103f4 	mov	x20, x1
+     630:	aa1e03e0 	mov	x0, x30
+     634:	910a0275 	add	x21, x19, #0x280
+     638:	94000000 	bl	0 <_mcount>
+     63c:	aa1503e0 	mov	x0, x21
+     640:	94000000 	bl	0 <_raw_spin_lock>
+     644:	f9400260 	ldr	x0, [x19]
+     648:	d2800013 	mov	x19, #0x0                   	// #0
+     64c:	b40000e0 	cbz	x0, 668 <raid5_show_group_thread_cnt+0x50>
+     650:	b9449c02 	ldr	w2, [x0, #1180]
+     654:	90000001 	adrp	x1, 0 <cmp_stripe>
+     658:	aa1403e0 	mov	x0, x20
+     65c:	91000021 	add	x1, x1, #0x0
+[31m     660:	94000000 	bl	0 <sprintf>[0m
+     664:	93407c13 	sxtw	x19, w0
+     668:	aa1503e0 	mov	x0, x21
+--
+
+0000000000000688 <raid5_show_preread_threshold>:
+     688:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     68c:	910003fd 	mov	x29, sp
+     690:	a90153f3 	stp	x19, x20, [sp, #16]
+     694:	f90013f5 	str	x21, [sp, #32]
+     698:	aa0003f3 	mov	x19, x0
+     69c:	aa0103f4 	mov	x20, x1
+     6a0:	aa1e03e0 	mov	x0, x30
+     6a4:	910a0275 	add	x21, x19, #0x280
+     6a8:	94000000 	bl	0 <_mcount>
+     6ac:	aa1503e0 	mov	x0, x21
+     6b0:	94000000 	bl	0 <_raw_spin_lock>
+     6b4:	f9400260 	ldr	x0, [x19]
+     6b8:	d2800013 	mov	x19, #0x0                   	// #0
+     6bc:	b40000e0 	cbz	x0, 6d8 <raid5_show_preread_threshold+0x50>
+     6c0:	b9410002 	ldr	w2, [x0, #256]
+     6c4:	90000001 	adrp	x1, 0 <cmp_stripe>
+     6c8:	aa1403e0 	mov	x0, x20
+     6cc:	91000021 	add	x1, x1, #0x0
+[31m     6d0:	94000000 	bl	0 <sprintf>[0m
+     6d4:	93407c13 	sxtw	x19, w0
+     6d8:	aa1503e0 	mov	x0, x21
+--
+     6e4:	a94153f3 	ldp	x19, x20, [sp, #16]
+     6e8:	f94013f5 	ldr	x21, [sp, #32]
+     6ec:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     6f0:	d65f03c0 	ret
+     6f4:	d503201f 	nop
+
+00000000000006f8 <stripe_cache_active_show>:
+     6f8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     6fc:	910003fd 	mov	x29, sp
+     700:	a90153f3 	stp	x19, x20, [sp, #16]
+     704:	aa0003f3 	mov	x19, x0
+     708:	aa0103f4 	mov	x20, x1
+     70c:	aa1e03e0 	mov	x0, x30
+     710:	94000000 	bl	0 <_mcount>
+     714:	f9400260 	ldr	x0, [x19]
+     718:	b4000140 	cbz	x0, 740 <stripe_cache_active_show+0x48>
+     71c:	b941b802 	ldr	w2, [x0, #440]
+     720:	90000001 	adrp	x1, 0 <cmp_stripe>
+     724:	aa1403e0 	mov	x0, x20
+     728:	91000021 	add	x1, x1, #0x0
+[31m     72c:	94000000 	bl	0 <sprintf>[0m
+     730:	93407c00 	sxtw	x0, w0
+     734:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+
+0000000000000750 <raid5_show_stripe_cache_size>:
+     750:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     754:	910003fd 	mov	x29, sp
+     758:	a90153f3 	stp	x19, x20, [sp, #16]
+     75c:	f90013f5 	str	x21, [sp, #32]
+     760:	aa0003f3 	mov	x19, x0
+     764:	aa0103f4 	mov	x20, x1
+     768:	aa1e03e0 	mov	x0, x30
+     76c:	910a0275 	add	x21, x19, #0x280
+     770:	94000000 	bl	0 <_mcount>
+     774:	aa1503e0 	mov	x0, x21
+     778:	94000000 	bl	0 <_raw_spin_lock>
+     77c:	f9400260 	ldr	x0, [x19]
+     780:	d2800013 	mov	x19, #0x0                   	// #0
+     784:	b40000e0 	cbz	x0, 7a0 <raid5_show_stripe_cache_size+0x50>
+     788:	b9404c02 	ldr	w2, [x0, #76]
+     78c:	90000001 	adrp	x1, 0 <cmp_stripe>
+     790:	aa1403e0 	mov	x0, x20
+     794:	91000021 	add	x1, x1, #0x0
+[31m     798:	94000000 	bl	0 <sprintf>[0m
+     79c:	93407c13 	sxtw	x19, w0
+     7a0:	aa1503e0 	mov	x0, x21
+--
+    5b6c:	17ffff0e 	b	57a4 <setup_conf+0x324>
+    5b70:	b9404681 	ldr	w1, [x20, #68]
+    5b74:	90000002 	adrp	x2, 0 <cmp_stripe>
+    5b78:	91000042 	add	x2, x2, #0x0
+    5b7c:	90000000 	adrp	x0, 0 <cmp_stripe>
+    5b80:	d2801003 	mov	x3, #0x80                  	// #128
+    5b84:	91000000 	add	x0, x0, #0x0
+    5b88:	531d7021 	lsl	w1, w1, #3
+    5b8c:	f9016e82 	str	x2, [x20, #728]
+    5b90:	f9017280 	str	x0, [x20, #736]
+    5b94:	910b6280 	add	x0, x20, #0x2d8
+    5b98:	f9017683 	str	x3, [x20, #744]
+    5b9c:	b902f281 	str	w1, [x20, #752]
+    5ba0:	b902f69f 	str	wzr, [x20, #756]
+    5ba4:	94000000 	bl	0 <register_shrinker>
+    5ba8:	35000820 	cbnz	w0, 5cac <setup_conf+0x82c>
+    5bac:	b94136c2 	ldr	w2, [x22, #308]
+    5bb0:	9101a3e0 	add	x0, sp, #0x68
+    5bb4:	90000001 	adrp	x1, 0 <cmp_stripe>
+    5bb8:	91000021 	add	x1, x1, #0x0
+[31m    5bbc:	94000000 	bl	0 <sprintf>[0m
+    5bc0:	9101a3e2 	add	x2, sp, #0x68
+    5bc4:	aa1603e1 	mov	x1, x22
+--
+    a5f4:	f9405ea0 	ldr	x0, [x21, #184]
+    a5f8:	3707fea0 	tbnz	w0, #0, a5cc <raid5_start_reshape+0x1cc>
+    a5fc:	aa1503e1 	mov	x1, x21
+    a600:	aa1303e0 	mov	x0, x19
+    a604:	97fffedf 	bl	a180 <raid5_add_disk>
+    a608:	35fffec0 	cbnz	w0, a5e0 <raid5_start_reshape+0x1e0>
+    a60c:	b9406280 	ldr	w0, [x20, #96]
+    a610:	b940dea1 	ldr	w1, [x21, #220]
+    a614:	6b00003f 	cmp	w1, w0
+    a618:	5400116a 	b.ge	a844 <raid5_start_reshape+0x444>  // b.tcont
+    a61c:	f90076bf 	str	xzr, [x21, #232]
+    a620:	f9405ea0 	ldr	x0, [x21, #184]
+    a624:	3757fde0 	tbnz	w0, #10, a5e0 <raid5_start_reshape+0x1e0>
+    a628:	f9405ea0 	ldr	x0, [x21, #184]
+    a62c:	3767fda0 	tbnz	w0, #12, a5e0 <raid5_start_reshape+0x1e0>
+    a630:	f9404260 	ldr	x0, [x19, #128]
+    a634:	b4fffd60 	cbz	x0, a5e0 <raid5_start_reshape+0x1e0>
+    a638:	b940dea2 	ldr	w2, [x21, #220]
+    a63c:	aa1a03e1 	mov	x1, x26
+    a640:	910193e0 	add	x0, sp, #0x64
+[31m    a644:	94000000 	bl	0 <sprintf>[0m
+    a648:	910193e2 	add	x2, sp, #0x64
+    a64c:	9101e2a1 	add	x1, x21, #0x78
+--
+   17c4c:	aa0103f4 	mov	x20, x1
+   17c50:	aa1e03e0 	mov	x0, x30
+   17c54:	910a0275 	add	x21, x19, #0x280
+   17c58:	94000000 	bl	0 <_mcount>
+   17c5c:	aa1503e0 	mov	x0, x21
+   17c60:	94000000 	bl	0 <_raw_spin_lock>
+   17c64:	f9400260 	ldr	x0, [x19]
+   17c68:	52800002 	mov	w2, #0x0                   	// #0
+   17c6c:	b4000120 	cbz	x0, 17c90 <ppl_write_hint_show+0x58>
+   17c70:	f9401401 	ldr	x1, [x0, #40]
+   17c74:	52800002 	mov	w2, #0x0                   	// #0
+   17c78:	f9401421 	ldr	x1, [x1, #40]
+   17c7c:	721a003f 	tst	w1, #0x40
+   17c80:	54000080 	b.eq	17c90 <ppl_write_hint_show+0x58>  // b.none
+   17c84:	f9425400 	ldr	x0, [x0, #1192]
+   17c88:	b4000040 	cbz	x0, 17c90 <ppl_write_hint_show+0x58>
+   17c8c:	7944a802 	ldrh	w2, [x0, #596]
+   17c90:	90000001 	adrp	x1, 0 <cmp_stripe>
+   17c94:	91000021 	add	x1, x1, #0x0
+   17c98:	aa1403e0 	mov	x0, x20
+[31m   17c9c:	94000000 	bl	0 <sprintf>[0m
+   17ca0:	2a0003f3 	mov	w19, w0
+   17ca4:	aa1503e0 	mov	x0, x21
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m9[0m times [0;33mraid456.ko[0m
+

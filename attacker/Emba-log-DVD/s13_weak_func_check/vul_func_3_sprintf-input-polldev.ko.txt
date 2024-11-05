@@ -1,0 +1,74 @@
+[[0;33m*[0m] Binary protection state of [0;33minput-polldev.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m109) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33minput-polldev.ko[0m
+
+ 1d0:	f9401a60 	ldr	x0, [x19, #48]
+ 1d4:	b5fffe00 	cbnz	x0, 194 <input_free_polled_device+0x2c>
+ 1d8:	17fffff1 	b	19c <input_free_polled_device+0x34>
+ 1dc:	d4210000 	brk	#0x800
+ 1e0:	f9401a60 	ldr	x0, [x19, #48]
+ 1e4:	17fffffc 	b	1d4 <input_free_polled_device+0x6c>
+
+00000000000001e8 <input_polldev_get_min>:
+ 1e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 1ec:	910003fd 	mov	x29, sp
+ 1f0:	a90153f3 	stp	x19, x20, [sp, #16]
+ 1f4:	aa0003f4 	mov	x20, x0
+ 1f8:	aa0203f3 	mov	x19, x2
+ 1fc:	aa1e03e0 	mov	x0, x30
+ 200:	94000000 	bl	0 <_mcount>
+ 204:	f9403e82 	ldr	x2, [x20, #120]
+ 208:	aa1303e0 	mov	x0, x19
+ 20c:	90000001 	adrp	x1, 0 <devm_input_polldev_match>
+ 210:	91000021 	add	x1, x1, #0x0
+ 214:	b9402842 	ldr	w2, [x2, #40]
+[31m 218:	94000000 	bl	0 <sprintf>[0m
+ 21c:	93407c00 	sxtw	x0, w0
+ 220:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 224:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 228:	d65f03c0 	ret
+ 22c:	d503201f 	nop
+
+0000000000000230 <input_polldev_get_max>:
+ 230:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 234:	910003fd 	mov	x29, sp
+ 238:	a90153f3 	stp	x19, x20, [sp, #16]
+ 23c:	aa0003f4 	mov	x20, x0
+ 240:	aa0203f3 	mov	x19, x2
+ 244:	aa1e03e0 	mov	x0, x30
+ 248:	94000000 	bl	0 <_mcount>
+ 24c:	f9403e82 	ldr	x2, [x20, #120]
+ 250:	aa1303e0 	mov	x0, x19
+ 254:	90000001 	adrp	x1, 0 <devm_input_polldev_match>
+ 258:	91000021 	add	x1, x1, #0x0
+ 25c:	b9402442 	ldr	w2, [x2, #36]
+[31m 260:	94000000 	bl	0 <sprintf>[0m
+ 264:	93407c00 	sxtw	x0, w0
+ 268:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 26c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 270:	d65f03c0 	ret
+ 274:	d503201f 	nop
+
+0000000000000278 <input_polldev_get_poll>:
+ 278:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 27c:	910003fd 	mov	x29, sp
+ 280:	a90153f3 	stp	x19, x20, [sp, #16]
+ 284:	aa0003f4 	mov	x20, x0
+ 288:	aa0203f3 	mov	x19, x2
+ 28c:	aa1e03e0 	mov	x0, x30
+ 290:	94000000 	bl	0 <_mcount>
+ 294:	f9403e82 	ldr	x2, [x20, #120]
+ 298:	aa1303e0 	mov	x0, x19
+ 29c:	90000001 	adrp	x1, 0 <devm_input_polldev_match>
+ 2a0:	91000021 	add	x1, x1, #0x0
+ 2a4:	b9402042 	ldr	w2, [x2, #32]
+[31m 2a8:	94000000 	bl	0 <sprintf>[0m
+ 2ac:	93407c00 	sxtw	x0, w0
+ 2b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33minput-polldev.ko[0m
+

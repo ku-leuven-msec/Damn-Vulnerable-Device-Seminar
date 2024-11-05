@@ -1,0 +1,223 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module xml.dom.xmlbuilder</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:214:0: R1707: Disallow trailing comma tuple (trailing-comma-tuple)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:191:8: C0103: Attribute name "errorHandler" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:13:0: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:64:8: C0103: Attribute name "entityResolver" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:69:8: C0103: Attribute name "errorHandler" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:61:4: C0103: Method name "_get_entityResolver" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:63:4: C0103: Method name "_set_entityResolver" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:63:4: C0103: Argument name "entityResolver" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:66:4: C0103: Method name "_get_errorHandler" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:68:4: C0103: Method name "_set_errorHandler" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:68:4: C0103: Argument name "errorHandler" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:73:26: W0622: Redefining built-in 'filter' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:76:4: C0103: Method name "setFeature" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:78:12: R1706: Consider using ternary (1 if state else 0) (consider-using-ternary)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:85:20: R1704: Redefining argument with the local name 'name' (redefined-argument-from-local)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:90:4: C0103: Method name "supportsFeature" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:93:4: C0103: Method name "canSetFeature" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:163:4: C0103: Method name "getFeature" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:179:12: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:181:4: C0103: Method name "parseURI" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:183:12: W0622: Redefining built-in 'input' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:188:20: W0622: Redefining built-in 'input' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:192:8: C0103: Variable name "fp" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:194:12: C0415: Import outside toplevel (urllib.request) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:195:12: C0103: Variable name "fp" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:198:4: C0103: Method name "parseWithContext" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:198:31: W0622: Redefining built-in 'input' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:198:31: W0613: Unused argument 'input' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:198:38: W0613: Unused argument 'cnode' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:204:8: W0621: Redefining name 'xml' from outer scope (line 5) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:204:8: C0415: Import outside toplevel (xml.dom.expatbuilder) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:203:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:213:0: R0205: Class 'DOMEntityResolver' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:216:4: C0103: Method name "resolveEntity" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:216:4: C0103: Argument name "publicId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:216:4: C0103: Argument name "systemId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:227:8: C0415: Import outside toplevel (posixpath, urllib.parse) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:227:8: C0410: Multiple imports on one line (posixpath, urllib.parse) (multiple-imports)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:246:8: C0415: Import outside toplevel (urllib.request) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:245:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:249:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:249:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:242:12: W0201: Attribute '_opener' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:213:0: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:266:8: C0103: Attribute name "publicId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:267:8: C0103: Attribute name "systemId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:262:8: C0103: Attribute name "byteStream" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:268:8: C0103: Attribute name "baseURI" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:263:8: C0103: Attribute name "characterStream" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:264:8: C0103: Attribute name "stringData" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:257:0: R0205: Class 'DOMInputSource' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:270:4: C0103: Method name "_get_byteStream" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:272:4: C0103: Method name "_set_byteStream" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:272:4: C0103: Argument name "byteStream" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:275:4: C0103: Method name "_get_characterStream" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:277:4: C0103: Method name "_set_characterStream" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:277:4: C0103: Argument name "characterStream" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:280:4: C0103: Method name "_get_stringData" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:282:4: C0103: Method name "_set_stringData" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:290:4: C0103: Method name "_get_publicId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:292:4: C0103: Method name "_set_publicId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:292:4: C0103: Argument name "publicId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:295:4: C0103: Method name "_get_systemId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:297:4: C0103: Method name "_set_systemId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:297:4: C0103: Argument name "systemId" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:300:4: C0103: Method name "_get_baseURI" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:302:4: C0103: Method name "_set_baseURI" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:257:0: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:323:4: C0103: Method name "_get_whatToShow" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:326:4: C0103: Method name "acceptNode" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:326:25: W0613: Unused argument 'element' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:329:4: C0103: Method name "startContainer" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:329:29: W0613: Unused argument 'element' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:340:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:343:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:357:4: C0103: Method name "loadXML" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:360:4: C0103: Method name "saveXML" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:372:4: C0103: Method name "createDOMBuilder" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:372:4: C0103: Argument name "schemaType" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:383:4: C0103: Method name "createDOMWriter" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:387:4: C0103: Method name "createDOMInputSource" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:387:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/xml/dom/xmlbuilder.py:4:0: W0611: Unused import warnings (unused-import)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 6.12/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

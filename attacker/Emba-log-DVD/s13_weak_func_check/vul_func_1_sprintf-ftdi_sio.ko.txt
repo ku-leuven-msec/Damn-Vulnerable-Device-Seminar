@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mftdi_sio.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1008) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mftdi_sio.ko[0m
+
+    19c0:	aa0203f3 	mov	x19, x2
+    19c4:	aa1e03e0 	mov	x0, x30
+    19c8:	94000000 	bl	0 <_mcount>
+    19cc:	f9403e80 	ldr	x0, [x20, #120]
+    19d0:	b9401001 	ldr	w1, [x0, #16]
+    19d4:	36680161 	tbz	w1, #13, 1a00 <latency_timer_show+0x50>
+    19d8:	90000001 	adrp	x1, 0 <get_serial_info>
+    19dc:	91000021 	add	x1, x1, #0x0
+    19e0:	d2800040 	mov	x0, #0x2                   	// #2
+    19e4:	79400022 	ldrh	w2, [x1]
+    19e8:	39400821 	ldrb	w1, [x1, #2]
+    19ec:	79000262 	strh	w2, [x19]
+    19f0:	39000a61 	strb	w1, [x19, #2]
+    19f4:	a94153f3 	ldp	x19, x20, [sp, #16]
+    19f8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    19fc:	d65f03c0 	ret
+    1a00:	b9402c02 	ldr	w2, [x0, #44]
+    1a04:	90000001 	adrp	x1, 0 <get_serial_info>
+    1a08:	aa1303e0 	mov	x0, x19
+    1a0c:	91000021 	add	x1, x1, #0x0
+[31m    1a10:	94000000 	bl	0 <sprintf>[0m
+    1a14:	93407c00 	sxtw	x0, w0
+    1a18:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mftdi_sio.ko[0m
+

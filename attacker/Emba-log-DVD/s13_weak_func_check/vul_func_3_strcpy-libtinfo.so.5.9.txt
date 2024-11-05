@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibtinfo.so.5.9[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibtinfo.so.5.9[0m
+
+    f968:	97fff4ee 	bl	cd20 <malloc@plt>
+    f96c:	f947fa9a 	ldr	x26, [x20, #4080]
+    f970:	aa0003f3 	mov	x19, x0
+    f974:	f9009340 	str	x0, [x26, #288]
+    f978:	b4002480 	cbz	x0, fe08 <_nc_first_db@@Base+0x5e8>
+    f97c:	5280075b 	mov	w27, #0x3a                  	// #58
+    f980:	3900001f 	strb	wzr, [x0]
+    f984:	d503201f 	nop
+    f988:	f94002b6 	ldr	x22, [x21]
+    f98c:	394002c0 	ldrb	w0, [x22]
+    f990:	34000180 	cbz	w0, f9c0 <_nc_first_db@@Base+0x1a0>
+    f994:	aa1303e0 	mov	x0, x19
+    f998:	97fff452 	bl	cae0 <strlen@plt>
+    f99c:	8b000260 	add	x0, x19, x0
+    f9a0:	eb13001f 	cmp	x0, x19
+    f9a4:	54000060 	b.eq	f9b0 <_nc_first_db@@Base+0x190>  // b.none
+    f9a8:	aa0003f3 	mov	x19, x0
+    f9ac:	3800167b 	strb	w27, [x19], #1
+    f9b0:	aa1303e0 	mov	x0, x19
+    f9b4:	aa1603e1 	mov	x1, x22
+[31m    f9b8:	97fff5a6 	bl	d050 <strcpy@plt>[0m
+    f9bc:	f9409353 	ldr	x19, [x26, #288]
+    f9c0:	910022b5 	add	x21, x21, #0x8
+--
+   12ccc:	52800041 	mov	w1, #0x2                   	// #2
+   12cd0:	97ffe854 	bl	ce20 <_nc_find_type_entry@plt>
+   12cd4:	b4000400 	cbz	x0, 12d54 <tgetstr@@Base+0xc4>
+   12cd8:	79c01804 	ldrsh	w4, [x0, #12]
+   12cdc:	37f80304 	tbnz	w4, #31, 12d3c <tgetstr@@Base+0xac>
+   12ce0:	f9401280 	ldr	x0, [x20, #32]
+   12ce4:	f864d813 	ldr	x19, [x0, w4, sxtw #3]
+   12ce8:	d1000660 	sub	x0, x19, #0x1
+   12cec:	b1000c1f 	cmn	x0, #0x3
+   12cf0:	54000288 	b.hi	12d40 <tgetstr@@Base+0xb0>  // b.pmore
+   12cf4:	f947eec0 	ldr	x0, [x22, #4056]
+   12cf8:	f9400000 	ldr	x0, [x0]
+   12cfc:	f9401000 	ldr	x0, [x0, #32]
+   12d00:	f9409c00 	ldr	x0, [x0, #312]
+   12d04:	eb13001f 	cmp	x0, x19
+   12d08:	54000680 	b.eq	12dd8 <tgetstr@@Base+0x148>  // b.none
+   12d0c:	b40001b5 	cbz	x21, 12d40 <tgetstr@@Base+0xb0>
+   12d10:	f94002a0 	ldr	x0, [x21]
+   12d14:	b4000160 	cbz	x0, 12d40 <tgetstr@@Base+0xb0>
+   12d18:	aa1303e1 	mov	x1, x19
+[31m   12d1c:	97ffe8cd 	bl	d050 <strcpy@plt>[0m
+   12d20:	f94002b3 	ldr	x19, [x21]
+   12d24:	aa1303e0 	mov	x0, x19
+--
+   184ac:	54000349 	b.ls	18514 <_nc_remove_string@@Base+0x194>  // b.plast
+   184b0:	aa0003e2 	mov	x2, x0
+   184b4:	aa1403e1 	mov	x1, x20
+   184b8:	aa1303e0 	mov	x0, x19
+   184bc:	97ffd231 	bl	cd80 <strncmp@plt>
+   184c0:	350002a0 	cbnz	w0, 18514 <_nc_remove_string@@Base+0x194>
+   184c4:	eb1502d6 	subs	x22, x22, x21
+   184c8:	54000160 	b.eq	184f4 <_nc_remove_string@@Base+0x174>  // b.none
+   184cc:	8b150295 	add	x21, x20, x21
+   184d0:	d2800001 	mov	x1, #0x0                   	// #0
+   184d4:	d503201f 	nop
+   184d8:	38616aa2 	ldrb	w2, [x21, x1]
+   184dc:	11000400 	add	w0, w0, #0x1
+   184e0:	38216a82 	strb	w2, [x20, x1]
+   184e4:	2a0003e1 	mov	w1, w0
+   184e8:	eb2042df 	cmp	x22, w0, uxtw
+   184ec:	54ffff68 	b.hi	184d8 <_nc_remove_string@@Base+0x158>  // b.pmore
+   184f0:	8b010294 	add	x20, x20, x1
+   184f4:	aa1303e1 	mov	x1, x19
+   184f8:	aa1403e0 	mov	x0, x20
+[31m   184fc:	97ffd2d5 	bl	d050 <strcpy@plt>[0m
+   18500:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   18504:	52800020 	mov	w0, #0x1                   	// #1
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mlibtinfo.so.5.9[0m
+

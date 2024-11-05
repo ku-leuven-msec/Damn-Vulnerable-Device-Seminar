@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mgpgme-tool[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mgpgme-tool[0m
+
+    bdfc:	f94043e1 	ldr	x1, [sp, #128]
+    be00:	f9400021 	ldr	x1, [x1]
+    be04:	78606820 	ldrh	w0, [x1, x0]
+    be08:	376ffb20 	tbnz	w0, #13, bd6c <ferror@plt+0x80dc>
+    be0c:	b9408fe0 	ldr	w0, [sp, #140]
+    be10:	52800041 	mov	w1, #0x2                   	// #2
+    be14:	7101881f 	cmp	w0, #0x62
+    be18:	54fff8ec 	b.gt	bd34 <ferror@plt+0x80a4>
+    be1c:	2a0003e2 	mov	w2, w0
+    be20:	11000400 	add	w0, w0, #0x1
+    be24:	b9008fe0 	str	w0, [sp, #140]
+    be28:	17ffffea 	b	bdd0 <ferror@plt+0x8140>
+    be2c:	f9404fe0 	ldr	x0, [sp, #152]
+    be30:	91004000 	add	x0, x0, #0x10
+    be34:	97ffde1f 	bl	36b0 <malloc@plt>
+    be38:	aa0003e2 	mov	x2, x0
+    be3c:	b4fff2c0 	cbz	x0, bc94 <ferror@plt+0x8004>
+    be40:	91002040 	add	x0, x2, #0x8
+    be44:	aa1303e1 	mov	x1, x19
+    be48:	f9004fe2 	str	x2, [sp, #152]
+[31m    be4c:	97ffdf21 	bl	3ad0 <strcpy@plt>[0m
+    be50:	a9490be0 	ldp	x0, x2, [sp, #144]
+    be54:	f9002ae2 	str	x2, [x23, #80]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mgpgme-tool[0m
+

@@ -1,0 +1,307 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module difflib</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1545:0: C0325: Unnecessary parens after 'while' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1548:0: C0325: Unnecessary parens after 'while' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1603:0: C0325: Unnecessary parens after 'while' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1619:0: C0325: Unnecessary parens after 'while' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1627:0: C0325: Unnecessary parens after 'while' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1:0: C0302: Too many lines in module (2086/1000) (too-many-lines)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:211:8: C0103: Attribute name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:211:17: C0103: Attribute name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:43:0: R0902: Too many instance attributes (10/7) (too-many-instance-attributes)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:215:4: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:215:4: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:227:4: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:253:4: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:308:8: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:319:23: C0201: Consider iterating the dictionary directly instead of calling .keys() (consider-iterating-dictionary)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:327:8: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:336:4: R0914: Too many local variables (19/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:392:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:392:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:446:4: R0914: Too many local variables (20/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:467:8: C0103: Variable name "la" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:467:12: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:479:22: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:494:8: C0103: Variable name "i1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:494:13: C0103: Variable name "j1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:494:18: C0103: Variable name "k1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:496:12: C0103: Variable name "i2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:496:16: C0103: Variable name "j2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:496:20: C0103: Variable name "k2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:502:16: C0103: Variable name "k1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:509:16: C0103: Variable name "i1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:509:20: C0103: Variable name "j1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:509:24: C0103: Variable name "k1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:550:12: C0103: Variable name "ai" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:550:16: C0103: Variable name "bj" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:572:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:602:17: C0103: Variable name "i1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:602:21: C0103: Variable name "i2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:602:25: C0103: Variable name "j1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:602:29: C0103: Variable name "j2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:605:17: C0103: Variable name "i1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:605:21: C0103: Variable name "i2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:605:25: C0103: Variable name "j1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:605:29: C0103: Variable name "j2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:608:8: C0103: Variable name "nn" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:610:17: C0103: Variable name "i1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:610:21: C0103: Variable name "i2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:610:25: C0103: Variable name "j1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:610:29: C0103: Variable name "j2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:617:16: C0103: Variable name "i1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:617:20: C0103: Variable name "j1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:683:8: C0103: Variable name "la" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:683:12: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:251:8: W0201: Attribute 'matching_blocks' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:277:8: W0201: Attribute 'matching_blocks' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:514:8: W0201: Attribute 'matching_blocks' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:251:31: W0201: Attribute 'opcodes' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:277:31: W0201: Attribute 'opcodes' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:549:8: W0201: Attribute 'opcodes' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:278:8: W0201: Attribute 'fullbcount' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:658:12: W0201: Attribute 'fullbcount' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:309:8: W0201: Attribute 'b2j' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:316:8: W0201: Attribute 'bjunk' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:326:8: W0201: Attribute 'bpopular' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:688:0: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:717:7: C0113: Consider changing "not n &gt; 0" to "n &lt;= 0" (unneeded-not)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:722:4: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:724:8: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:737:0: C0103: Argument name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:863:4: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:863:4: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:892:16: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:894:16: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:896:16: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:898:16: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:904:4: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:904:4: C0103: Argument name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:904:4: C0103: Argument name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:904:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:909:4: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:909:4: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:909:4: R0913: Too many arguments (7/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:920:12: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:923:4: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:923:4: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:923:4: R0913: Too many arguments (7/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:923:4: R0914: Too many local variables (29/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:952:12: C0103: Variable name "bj" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:955:16: C0103: Variable name "ai" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:996:16: C0103: Variable name "la" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:996:20: C0103: Variable name "lb" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:923:4: R0912: Too many branches (16/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1017:4: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1017:4: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1017:4: R0913: Too many arguments (7/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1018:8: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1021:16: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1023:16: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1025:12: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1029:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:746:0: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1073:0: C0413: Import "import re" should be placed at the top of the module (wrong-import-position)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1075:0: C0103: Function name "IS_LINE_JUNK" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1091:0: C0103: Function name "IS_CHARACTER_JUNK" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1091:0: C0103: Argument name "ch" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1091:0: C0103: Argument name "ws" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1125:0: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1125:0: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1125:0: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1125:0: R0913: Too many arguments (8/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1125:0: R0914: Too many local variables (22/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1181:17: C0103: Variable name "i1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1181:21: C0103: Variable name "i2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1181:25: C0103: Variable name "j1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1181:29: C0103: Variable name "j2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1210:0: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1210:0: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1210:0: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1210:0: R0913: Too many arguments (8/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1210:0: R0914: Too many local variables (24/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1272:21: C0103: Variable name "i1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1272:25: C0103: Variable name "i2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1281:27: C0103: Variable name "j1" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1281:31: C0103: Variable name "j2" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1286:0: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1286:0: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1303:0: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1303:0: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1303:0: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1303:0: R0913: Too many arguments (9/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1314:4: C0103: Argument name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1333:0: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1333:0: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1404:4: W0621: Redefining name 're' from outer scope (line 1073) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1370:0: R0914: Too many local variables (19/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1404:4: W0404: Reimport 're' (imported line 1073) (reimported)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1404:4: C0415: Import outside toplevel (re) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1412:4: W0102: Dangerous default value [] as argument (dangerous-default-value)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1445:12: W0102: Dangerous default value sub_info (builtins.list) as argument (dangerous-default-value)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1490:12: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1551:12: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1468:4: R0912: Too many branches (17/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1583:23: C0103: Variable name "fromDiff" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1601:19: C0103: Variable name "contextLines" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1370:0: R0915: Too many statements (110/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1640:0: C0103: Constant name "_file_template" doesn't conform to UPPER_CASE naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1660:0: C0103: Constant name "_styles" doesn't conform to UPPER_CASE naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1669:0: C0103: Constant name "_table_template" doesn't conform to UPPER_CASE naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1679:0: C0103: Constant name "_legend" doesn't conform to UPPER_CASE naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1696:0: R0205: Class 'HtmlDiff' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1735:4: R0913: Too many arguments (7/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1801:8: W0622: Redefining built-in 'max' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1809:8: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1821:16: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1899:12: W0622: Redefining built-in 'id' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1899:12: C0103: Variable name "id" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1902:12: C0103: Variable name "id" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1889:31: W0613: Unused argument 'flag' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1923:4: R0913: Too many arguments (6/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1970:4: R0913: Too many arguments (7/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1970:4: R0914: Too many local variables (19/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:2015:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:2018:8: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:1921:8: W0201: Attribute '_prefix' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:2082:4: C0415: Import outside toplevel (doctest, difflib) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:2082:4: C0410: Multiple imports on one line (doctest, difflib) (multiple-imports)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/difflib.py:2082:4: W0406: Module import itself (import-self)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 7.49/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

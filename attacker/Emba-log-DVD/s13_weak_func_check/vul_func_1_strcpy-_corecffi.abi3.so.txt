@@ -1,0 +1,35 @@
+[[0;33m*[0m] Binary protection state of [0;33m_corecffi.abi3.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1202) Symbols
+[33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m489) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33m_corecffi.abi3.so[0m
+
+    ca1c:	fd44c001 	ldr	d1, [x0, #2432]
+    ca20:	1e611c00 	fcsel	d0, d0, d1, ne  // ne = any
+    ca24:	fd002a60 	str	d0, [x19, #80]
+    ca28:	97ffe26a 	bl	53d0 <__errno_location@plt>
+    ca2c:	aa0003f5 	mov	x21, x0
+    ca30:	b9400000 	ldr	w0, [x0]
+    ca34:	7100081f 	cmp	w0, #0x2
+    ca38:	7a4d1804 	ccmp	w0, #0xd, #0x4, ne  // ne = any
+    ca3c:	54000661 	b.ne	cb08 <infy_add+0x284>  // b.any
+    ca40:	f9403276 	ldr	x22, [x19, #96]
+    ca44:	aa1603e0 	mov	x0, x22
+    ca48:	97ffe0b2 	bl	4d10 <strlen@plt>
+    ca4c:	f13ffc1f 	cmp	x0, #0xfff
+    ca50:	54000069 	b.ls	ca5c <infy_add+0x1d8>  // b.plast
+    ca54:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    ca58:	17ffffa8 	b	c8f8 <infy_add+0x74>
+    ca5c:	a90363f7 	stp	x23, x24, [sp, #48]
+    ca60:	a9046bf9 	stp	x25, x26, [sp, #64]
+    ca64:	aa1603e1 	mov	x1, x22
+    ca68:	910143e0 	add	x0, sp, #0x50
+[31m    ca6c:	97ffe205 	bl	5280 <strcpy@plt>[0m
+    ca70:	52818099 	mov	w25, #0xc04                 	// #3076
+    ca74:	72a40019 	movk	w25, #0x2000, lsl #16
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33m_corecffi.abi3.so[0m
+

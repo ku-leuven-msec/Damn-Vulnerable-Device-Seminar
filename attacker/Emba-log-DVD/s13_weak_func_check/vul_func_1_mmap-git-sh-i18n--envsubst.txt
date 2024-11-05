@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mgit-sh-i18n--envsubst[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mgit-sh-i18n--envsubst[0m
+
+[31m   49008:	97ff0496 	bl	a260 <mmap64@plt>[0m
+   4900c:	f100027f 	cmp	x19, #0x0
+   49010:	ba410800 	ccmn	x0, #0x1, #0x0, eq  // eq = none
+   49014:	9a9f1000 	csel	x0, x0, xzr, ne  // ne = any
+   49018:	a94153f3 	ldp	x19, x20, [sp, #16]
+   4901c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   49020:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   49024:	d65f03c0 	ret
+   49028:	b0000780 	adrp	x0, 13a000 <error@@Base+0xceb70>
+   4902c:	d2800001 	mov	x1, #0x0                   	// #0
+   49030:	91398000 	add	x0, x0, #0xe60
+   49034:	29078fe2 	stp	w2, w3, [sp, #60]
+   49038:	b90047e4 	str	w4, [sp, #68]
+   4903c:	f90027e5 	str	x5, [sp, #72]
+   49040:	97ff2134 	bl	11510 <ferror@plt+0x7200>
+   49044:	29478fe2 	ldp	w2, w3, [sp, #60]
+   49048:	aa0003e6 	mov	x6, x0
+   4904c:	b94047e4 	ldr	w4, [sp, #68]
+   49050:	f94027e5 	ldr	x5, [sp, #72]
+   49054:	b5000080 	cbnz	x0, 49064 <ferror@plt+0x3ed54>
+   49058:	92800000 	mov	x0, #0xffffffffffffffff    	// #-1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mgit-sh-i18n--envsubst[0m
+

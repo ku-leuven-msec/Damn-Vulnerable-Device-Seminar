@@ -1,0 +1,130 @@
+[[0;33m*[0m] Binary protection state of [0;33mkillall5[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mkillall5[0m
+
+    2d64:	aa1b03e1 	mov	x1, x27
+    2d68:	aa0003e3 	mov	x3, x0
+    2d6c:	34000142 	cbz	w2, 2d94 <__xstat@plt+0x1324>
+    2d70:	39400402 	ldrb	w2, [x0, #1]
+    2d74:	91000403 	add	x3, x0, #0x1
+    2d78:	3900001f 	strb	wzr, [x0]
+    2d7c:	7100805f 	cmp	w2, #0x20
+    2d80:	540000a1 	b.ne	2d94 <__xstat@plt+0x1324>  // b.any
+    2d84:	d503201f 	nop
+    2d88:	38401c62 	ldrb	w2, [x3, #1]!
+    2d8c:	7100805f 	cmp	w2, #0x20
+    2d90:	54ffffc0 	b.eq	2d88 <__xstat@plt+0x1318>  // b.none
+    2d94:	aa0103e0 	mov	x0, x1
+    2d98:	a9060fe1 	stp	x1, x3, [sp, #96]
+    2d9c:	97fffa41 	bl	16a0 <strlen@plt>
+    2da0:	91000400 	add	x0, x0, #0x1
+    2da4:	97fffe4f 	bl	26e0 <__xstat@plt+0xc70>
+    2da8:	f94033e1 	ldr	x1, [sp, #96]
+    2dac:	f9001740 	str	x0, [x26, #40]
+    2db0:	910463fb 	add	x27, sp, #0x118
+[31m    2db4:	97fffb0b 	bl	19e0 <strcpy@plt>[0m
+    2db8:	a908ffff 	stp	xzr, xzr, [sp, #136]
+    2dbc:	aa1b03e2 	mov	x2, x27
+--
+    2f78:	aa1403e0 	mov	x0, x20
+    2f7c:	97fffa01 	bl	1780 <__snprintf_chk@plt>
+    2f80:	91002301 	add	x1, x24, #0x8
+    2f84:	aa1403e0 	mov	x0, x20
+    2f88:	97fffa0a 	bl	17b0 <fopen@plt>
+    2f8c:	aa0003f8 	mov	x24, x0
+    2f90:	b4fff8a0 	cbz	x0, 2ea4 <__xstat@plt+0x1434>
+    2f94:	aa1503e1 	mov	x1, x21
+    2f98:	52820022 	mov	w2, #0x1001                	// #4097
+    2f9c:	97fffc6d 	bl	2150 <__xstat@plt+0x6e0>
+    2fa0:	d2820402 	mov	x2, #0x1020                	// #4128
+    2fa4:	8b2263e1 	add	x1, sp, x2
+    2fa8:	39444021 	ldrb	w1, [x1, #272]
+    2fac:	34000221 	cbz	w1, 2ff0 <__xstat@plt+0x1580>
+    2fb0:	11000400 	add	w0, w0, #0x1
+    2fb4:	93407c00 	sxtw	x0, w0
+    2fb8:	97fffdca 	bl	26e0 <__xstat@plt+0xc70>
+    2fbc:	f9000740 	str	x0, [x26, #8]
+    2fc0:	aa0003fb 	mov	x27, x0
+    2fc4:	aa1503e1 	mov	x1, x21
+[31m    2fc8:	97fffa86 	bl	19e0 <strcpy@plt>[0m
+    2fcc:	aa1b03e0 	mov	x0, x27
+    2fd0:	528005e1 	mov	w1, #0x2f                  	// #47
+--
+    3178:	12001c00 	and	w0, w0, #0xff
+    317c:	39012740 	strb	w0, [x26, #73]
+    3180:	35fff6c0 	cbnz	w0, 3058 <__xstat@plt+0x15e8>
+    3184:	910263f3 	add	x19, sp, #0x98
+    3188:	aa1403e1 	mov	x1, x20
+    318c:	aa1303e2 	mov	x2, x19
+    3190:	52800000 	mov	w0, #0x0                   	// #0
+    3194:	97fffa37 	bl	1a70 <__xstat@plt>
+    3198:	35000280 	cbnz	w0, 31e8 <__xstat@plt+0x1778>
+    319c:	f9404fe0 	ldr	x0, [sp, #152]
+    31a0:	f9001f40 	str	x0, [x26, #56]
+    31a4:	f94053e0 	ldr	x0, [sp, #160]
+    31a8:	f9001b40 	str	x0, [x26, #48]
+    31ac:	17ffffab 	b	3058 <__xstat@plt+0x15e8>
+    31b0:	11000400 	add	w0, w0, #0x1
+    31b4:	93407c00 	sxtw	x0, w0
+    31b8:	97fffd4a 	bl	26e0 <__xstat@plt+0xc70>
+    31bc:	f9000f40 	str	x0, [x26, #24]
+    31c0:	aa0003fb 	mov	x27, x0
+    31c4:	aa1503e1 	mov	x1, x21
+[31m    31c8:	97fffa06 	bl	19e0 <strcpy@plt>[0m
+    31cc:	aa1b03e0 	mov	x0, x27
+    31d0:	528005e1 	mov	w1, #0x2f                  	// #47
+--
+    3370:	f8408f60 	ldr	x0, [x27, #8]!
+    3374:	b4fffee0 	cbz	x0, 3350 <__xstat@plt+0x18e0>
+    3378:	aa1c03e1 	mov	x1, x28
+    337c:	97fff94d 	bl	18b0 <strcasecmp@plt>
+    3380:	35ffff80 	cbnz	w0, 3370 <__xstat@plt+0x1900>
+    3384:	f9400660 	ldr	x0, [x19, #8]
+    3388:	97fff8c6 	bl	16a0 <strlen@plt>
+    338c:	aa0003e3 	mov	x3, x0
+    3390:	9100a402 	add	x2, x0, #0x29
+    3394:	d2800101 	mov	x1, #0x8                   	// #8
+    3398:	f94033e0 	ldr	x0, [sp, #96]
+    339c:	f90037e3 	str	x3, [sp, #104]
+    33a0:	97fff92c 	bl	1850 <posix_memalign@plt>
+    33a4:	f94037e3 	ldr	x3, [sp, #104]
+    33a8:	37f80840 	tbnz	w0, #31, 34b0 <__xstat@plt+0x1a40>
+    33ac:	f9403ffc 	ldr	x28, [sp, #120]
+    33b0:	f9400661 	ldr	x1, [x19, #8]
+    33b4:	9100a380 	add	x0, x28, #0x28
+    33b8:	a9010f9f 	stp	xzr, x3, [x28, #16]
+    33bc:	f9001380 	str	x0, [x28, #32]
+[31m    33c0:	97fff988 	bl	19e0 <strcpy@plt>[0m
+    33c4:	f947dae0 	ldr	x0, [x23, #4016]
+    33c8:	f9400001 	ldr	x1, [x0]
+--
+    33f4:	97fff927 	bl	1890 <endmntent@plt>
+    33f8:	91002341 	add	x1, x26, #0x8
+    33fc:	9104a320 	add	x0, x25, #0x128
+    3400:	97fff920 	bl	1880 <setmntent@plt>
+    3404:	aa0003fa 	mov	x26, x0
+    3408:	b4000680 	cbz	x0, 34d8 <__xstat@plt+0x1a68>
+    340c:	f947daf7 	ldr	x23, [x23, #4016]
+    3410:	910203f9 	add	x25, sp, #0x80
+    3414:	d503201f 	nop
+    3418:	aa1a03e0 	mov	x0, x26
+    341c:	97fff985 	bl	1a30 <getmntent@plt>
+    3420:	aa0003f6 	mov	x22, x0
+    3424:	b4000740 	cbz	x0, 350c <__xstat@plt+0x1a9c>
+    3428:	f94002f3 	ldr	x19, [x23]
+    342c:	b50001d3 	cbnz	x19, 3464 <__xstat@plt+0x19f4>
+    3430:	17fffffa 	b	3418 <__xstat@plt+0x19a8>
+    3434:	f94043f4 	ldr	x20, [sp, #128]
+    3438:	f94006c1 	ldr	x1, [x22, #8]
+    343c:	91008280 	add	x0, x20, #0x20
+    3440:	a9010295 	stp	x21, x0, [x20, #16]
+[31m    3444:	97fff967 	bl	19e0 <strcpy@plt>[0m
+    3448:	f9400a60 	ldr	x0, [x19, #16]
+    344c:	b4000040 	cbz	x0, 3454 <__xstat@plt+0x19e4>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33mkillall5[0m
+

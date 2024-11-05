@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mbccmd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mbccmd[0m
+
+   1120c:	d503201f 	nop
+   11210:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   11214:	910003fd 	mov	x29, sp
+   11218:	a90153f3 	stp	x19, x20, [sp, #16]
+   1121c:	2a0003f4 	mov	w20, w0
+   11220:	d2800640 	mov	x0, #0x32                  	// #50
+   11224:	9400127b 	bl	15c10 <ioctl@plt+0xf120>
+   11228:	aa0003f3 	mov	x19, x0
+   1122c:	b40001e0 	cbz	x0, 11268 <ioctl@plt+0xa778>
+   11230:	36000254 	tbz	w20, #0, 11278 <ioctl@plt+0xa788>
+   11234:	3900001f 	strb	wzr, [x0]
+   11238:	d0000160 	adrp	x0, 3f000 <ioctl@plt+0x38510>
+   1123c:	91060000 	add	x0, x0, #0x180
+   11240:	2a1403e1 	mov	w1, w20
+   11244:	910ac000 	add	x0, x0, #0x2b0
+   11248:	97fffe0e 	bl	10a80 <ioctl@plt+0x9f90>
+   1124c:	aa0003f4 	mov	x20, x0
+   11250:	b4000220 	cbz	x0, 11294 <ioctl@plt+0xa7a4>
+   11254:	aa0003e1 	mov	x1, x0
+   11258:	aa1303e0 	mov	x0, x19
+[31m   1125c:	97ffd57d 	bl	6850 <strcat@plt>[0m
+   11260:	aa1403e0 	mov	x0, x20
+   11264:	97ffd5db 	bl	69d0 <free@plt>
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mbccmd[0m
+

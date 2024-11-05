@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33msr_mod.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m163) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msr_mod.ko[0m
+
+     a7c:	5a814401 	csneg	w1, w0, w1, mi  // mi = first
+     a80:	d2800026 	mov	x6, #0x1                   	// #1
+     a84:	b90087e0 	str	w0, [sp, #132]
+     a88:	93407c42 	sxtw	x2, w2
+     a8c:	9ac120c1 	lsl	x1, x6, x1
+     a90:	aa1803e0 	mov	x0, x24
+     a94:	9101f39b 	add	x27, x28, #0x7c
+     a98:	f8627b43 	ldr	x3, [x26, x2, lsl #3]
+     a9c:	aa010061 	orr	x1, x3, x1
+     aa0:	f8227b41 	str	x1, [x26, x2, lsl #3]
+     aa4:	9000001a 	adrp	x26, 0 <sr_runtime_suspend>
+     aa8:	9100035a 	add	x26, x26, #0x0
+     aac:	94000000 	bl	0 <_raw_spin_unlock>
+     ab0:	90000005 	adrp	x5, 0 <sr_runtime_suspend>
+     ab4:	910000a5 	add	x5, x5, #0x0
+     ab8:	52800160 	mov	w0, #0xb                   	// #11
+     abc:	29005ea0 	stp	w0, w23, [x21]
+     ac0:	aa0503e1 	mov	x1, x5
+     ac4:	2a1703e2 	mov	w2, w23
+     ac8:	910032a0 	add	x0, x21, #0xc
+[31m     acc:	94000000 	bl	0 <sprintf>[0m
+     ad0:	320087e2 	mov	w2, #0x30003               	// #196611
+     ad4:	91004341 	add	x1, x26, #0x10
+--
+     b14:	381a4260 	sturb	w0, [x19, #-92]
+     b18:	90000000 	adrp	x0, 0 <sr_runtime_suspend>
+     b1c:	91000005 	add	x5, x0, #0x0
+     b20:	aa0503e1 	mov	x1, x5
+     b24:	91008084 	add	x4, x4, #0x20
+     b28:	91020345 	add	x5, x26, #0x80
+     b2c:	52800440 	mov	w0, #0x22                  	// #34
+     b30:	2a000063 	orr	w3, w3, w0
+     b34:	12bffc07 	mov	w7, #0x1fffff              	// #2097151
+     b38:	d2800026 	mov	x6, #0x1                   	// #1
+     b3c:	2a1703e2 	mov	w2, w23
+     b40:	aa1b03e0 	mov	x0, x27
+     b44:	f9000384 	str	x4, [x28]
+     b48:	b9000b87 	str	w7, [x28, #8]
+     b4c:	3900a383 	strb	w3, [x28, #40]
+     b50:	f9001f85 	str	x5, [x28, #56]
+     b54:	f9002f9c 	str	x28, [x28, #88]
+     b58:	b900639f 	str	wzr, [x28, #96]
+     b5c:	b9006b86 	str	w6, [x28, #104]
+     b60:	f9005f95 	str	x21, [x28, #184]
+[31m     b64:	94000000 	bl	0 <sprintf>[0m
+     b68:	52810000 	mov	w0, #0x800                 	// #2048
+     b6c:	b811c260 	stur	w0, [x19, #-228]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33msr_mod.ko[0m
+

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mbluetoothd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mbluetoothd[0m
+
+   68c1c:	9400a559 	bl	92180 <ba2str@@Base>
+   68c20:	aa1503e3 	mov	x3, x21
+   68c24:	90000304 	adrp	x4, c8000 <btd_malloc@@Base+0x1f1b0>
+   68c28:	90000302 	adrp	x2, c8000 <btd_malloc@@Base+0x1f1b0>
+   68c2c:	911ba084 	add	x4, x4, #0x6e8
+   68c30:	911bc042 	add	x2, x2, #0x6f0
+   68c34:	d2820001 	mov	x1, #0x1000                	// #4096
+   68c38:	aa1303e0 	mov	x0, x19
+   68c3c:	97fffb49 	bl	67960 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2a40>
+   68c40:	90000301 	adrp	x1, c8000 <btd_malloc@@Base+0x1f1b0>
+   68c44:	91086021 	add	x1, x1, #0x218
+   68c48:	aa1303e0 	mov	x0, x19
+   68c4c:	97fffb55 	bl	679a0 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2a80>
+   68c50:	b4000300 	cbz	x0, 68cb0 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x3d90>
+   68c54:	aa0003f3 	mov	x19, x0
+   68c58:	97fed25e 	bl	1d5d0 <strlen@plt>
+   68c5c:	7103e01f 	cmp	w0, #0xf8
+   68c60:	5400024c 	b.gt	68ca8 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x3d88>
+   68c64:	aa1303e1 	mov	x1, x19
+   68c68:	aa1603e0 	mov	x0, x22
+[31m   68c6c:	97fed65d 	bl	1e5e0 <strcpy@plt>[0m
+   68c70:	aa1303e0 	mov	x0, x19
+   68c74:	97fed5a7 	bl	1e310 <free@plt>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mbluetoothd[0m
+

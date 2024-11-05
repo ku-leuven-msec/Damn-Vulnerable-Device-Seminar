@@ -1,0 +1,929 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">mwifiex.ko</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="red">No RELRO     </span>   <span class="green">Canary found   </span>   <span class="red">NX disabled</span>   <span class="orange">REL          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="red">1075) Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">mwifiex.ko</span></pre>
+<br />
+<pre>     4f4:	91009803 	add	x3, x0, #0x26</pre>
+<pre>     4f8:	a9401444 	ldp	x4, x5, [x2]</pre>
+<pre>     4fc:	a9001404 	stp	x4, x5, [x0]</pre>
+<pre>     500:	39406026 	ldrb	w6, [x1, #24]</pre>
+<pre>     504:	a9401424 	ldp	x4, x5, [x1]</pre>
+<pre>     508:	9100f813 	add	x19, x0, #0x3e</pre>
+<pre>     50c:	f841e042 	ldur	x2, [x2, #30]</pre>
+<pre>     510:	f801e002 	stur	x2, [x0, #30]</pre>
+<pre>     514:	f9400821 	ldr	x1, [x1, #16]</pre>
+<pre>     518:	a9001464 	stp	x4, x5, [x3]</pre>
+<pre>     51c:	528007e2 	mov	w2, #0x3f                  	// #63</pre>
+<pre>     520:	f9000861 	str	x1, [x3, #16]</pre>
+<pre>     524:	aa1403e0 	mov	x0, x20</pre>
+<pre>     528:	39006066 	strb	w6, [x3, #24]</pre>
+<pre>     52c:	910223e1 	add	x1, sp, #0x88</pre>
+<pre>     530:	94000000 	bl	149a0 &lt</span>wifiex_drv_get_driver_version&gt;</pre>
+<pre>     534:	910223e2 	add	x2, sp, #0x88</pre>
+<pre>     538:	aa1303e0 	mov	x0, x19</pre>
+<pre>     53c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     540:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     544:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     548:	39400281 	ldrb	w1, [x20]</pre>
+<pre>     54c:	8b20c273 	add	x19, x19, w0, sxtw</pre>
+<pre>     550:	7100083f 	cmp	w1, #0x2</pre>
+<pre>     554:	54001c40 	b.eq	8dc &lt</span>wifiex_drv_info_dump+0x454&gt;  // b.none</pre>
+<pre>     558:	b941a282 	ldr	w2, [x20, #416]</pre>
+<pre>     55c:	aa1303e0 	mov	x0, x19</pre>
+<pre>     560:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     564:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     568:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     56c:	8b20c273 	add	x19, x19, w0, sxtw</pre>
+<pre>     570:	b9419e82 	ldr	w2, [x20, #412]</pre>
+<pre>     574:	aa1303e0 	mov	x0, x19</pre>
+<pre>     578:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     57c:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     580:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     584:	8b20c276 	add	x22, x19, w0, sxtw</pre>
+<pre>     588:	39400281 	ldrb	w1, [x20]</pre>
+<pre>--</pre>
+<pre>     6a0:	b8417063 	ldur	w3, [x3, #23]</pre>
+<pre>     6a4:	b8017263 	stur	w3, [x19, #23]</pre>
+<pre>     6a8:	91006a73 	add	x19, x19, #0x1a</pre>
+<pre>     6ac:	94000000 	bl	358 &lt;_mwifiex_dbg&gt;</pre>
+<pre>     6b0:	f94c3280 	ldr	x0, [x20, #6240]</pre>
+<pre>     6b4:	f94037e1 	ldr	x1, [sp, #104]</pre>
+<pre>     6b8:	cb000273 	sub	x19, x19, x0</pre>
+<pre>     6bc:	b9186a93 	str	w19, [x20, #6248]</pre>
+<pre>     6c0:	9114603a 	add	x26, x1, #0x518</pre>
+<pre>     6c4:	f94067e1 	ldr	x1, [sp, #200]</pre>
+<pre>     6c8:	f9400340 	ldr	x0, [x26]</pre>
+<pre>     6cc:	ca000020 	eor	x0, x1, x0</pre>
+<pre>     6d0:	b5001460 	cbnz	x0, 95c &lt</span>wifiex_drv_info_dump+0x4d4&gt;</pre>
+<pre>     6d4:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>     6d8:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>     6dc:	a9446bf9 	ldp	x25, x26, [sp, #64]</pre>
+<pre>     6e0:	a8cd7bfd 	ldp	x29, x30, [sp], #208</pre>
+<pre>     6e4:	d65f03c0 	ret</pre>
+<pre>     6e8:	f9403be1 	ldr	x1, [sp, #112]</pre>
+<pre>     6ec:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">     6f0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     6f4:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     6f8:	b9470a62 	ldr	w2, [x19, #1800]</pre>
+<pre>     6fc:	aa1603e0 	mov	x0, x22</pre>
+<pre>     700:	f9403fe1 	ldr	x1, [sp, #120]</pre>
+<pre><span class="red">     704:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     708:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     70c:	b9470e62 	ldr	w2, [x19, #1804]</pre>
+<pre>     710:	aa1603e0 	mov	x0, x22</pre>
+<pre>     714:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     718:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     71c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     720:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     724:	b9471262 	ldr	w2, [x19, #1808]</pre>
+<pre>     728:	aa1603e0 	mov	x0, x22</pre>
+<pre>     72c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     730:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     734:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     738:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     73c:	b9471662 	ldr	w2, [x19, #1812]</pre>
+<pre>     740:	aa1603e0 	mov	x0, x22</pre>
+<pre>     744:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     748:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     74c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     750:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     754:	39405263 	ldrb	w3, [x19, #20]</pre>
+<pre>     758:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     75c:	90000002 	adrp	x2, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     760:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     764:	7100007f 	cmp	w3, #0x0</pre>
+<pre>     768:	91000042 	add	x2, x2, #0x0</pre>
+<pre>     76c:	9a810042 	csel	x2, x2, x1, eq  // eq = none</pre>
+<pre>     770:	aa1603e0 	mov	x0, x22</pre>
+<pre>     774:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     778:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     77c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     780:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     784:	f9401261 	ldr	x1, [x19, #32]</pre>
+<pre>     788:	90000003 	adrp	x3, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     78c:	91000063 	add	x3, x3, #0x0</pre>
+<pre>     790:	90000002 	adrp	x2, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     794:	91000042 	add	x2, x2, #0x0</pre>
+<pre>     798:	aa1603e0 	mov	x0, x22</pre>
+<pre>     79c:	f9402424 	ldr	x4, [x1, #72]</pre>
+<pre>     7a0:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     7a4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     7a8:	f27e009f 	tst	x4, #0x4</pre>
+<pre>     7ac:	9a820062 	csel	x2, x3, x2, eq  // eq = none</pre>
+<pre><span class="red">     7b0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     7b4:	8b20c2db 	add	x27, x22, w0, sxtw</pre>
+<pre>     7b8:	f9401262 	ldr	x2, [x19, #32]</pre>
+<pre>     7bc:	b943c840 	ldr	w0, [x2, #968]</pre>
+<pre>     7c0:	34000320 	cbz	w0, 824 &lt</span>wifiex_drv_info_dump+0x39c&gt;</pre>
+<pre>     7c4:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     7c8:	90000017 	adrp	x23, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     7cc:	90000016 	adrp	x22, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     7d0:	9100003a 	add	x26, x1, #0x0</pre>
+<pre>     7d4:	910002f7 	add	x23, x23, #0x0</pre>
+<pre>     7d8:	910002d6 	add	x22, x22, #0x0</pre>
+<pre>     7dc:	5280001c 	mov	w28, #0x0                   	// #0</pre>
+<pre>     7e0:	52802818 	mov	w24, #0x140                 	// #320</pre>
+<pre>     7e4:	d503201f 	nop</pre>
+<pre>     7e8:	f941e043 	ldr	x3, [x2, #960]</pre>
+<pre>     7ec:	aa1b03e0 	mov	x0, x27</pre>
+<pre>     7f0:	2a1c03e2 	mov	w2, w28</pre>
+<pre>     7f4:	aa1a03e1 	mov	x1, x26</pre>
+<pre>     7f8:	9bb80f83 	umaddl	x3, w28, w24, x3</pre>
+<pre>     7fc:	1100079c 	add	w28, w28, #0x1</pre>
+<pre>     800:	f9404863 	ldr	x3, [x3, #144]</pre>
+<pre>     804:	f240007f 	tst	x3, #0x1</pre>
+<pre>     808:	9a9712c3 	csel	x3, x22, x23, ne  // ne = any</pre>
+<pre><span class="red">     80c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     810:	8b20c37b 	add	x27, x27, w0, sxtw</pre>
+<pre>     814:	f9401262 	ldr	x2, [x19, #32]</pre>
+<pre>     818:	b943c840 	ldr	w0, [x2, #968]</pre>
+<pre>     81c:	6b1c001f 	cmp	w0, w28</pre>
+<pre>     820:	54fffe48 	b.hi	7e8 &lt</span>wifiex_drv_info_dump+0x360&gt;  // b.pmore</pre>
+<pre>     824:	b9401a63 	ldr	w3, [x19, #24]</pre>
+<pre>     828:	aa1b03e0 	mov	x0, x27</pre>
+<pre>     82c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     830:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     834:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     838:	8b20c376 	add	x22, x27, w0, sxtw</pre>
+<pre>     83c:	3940a281 	ldrb	w1, [x20, #40]</pre>
+<pre>     840:	17ffff64 	b	5d0 &lt</span>wifiex_drv_info_dump+0x148&gt;</pre>
+<pre>     844:	91000400 	add	x0, x0, #0x1</pre>
+<pre>     848:	6b00003f 	cmp	w1, w0</pre>
+<pre>     84c:	54ffefac 	b.gt	640 &lt</span>wifiex_drv_info_dump+0x1b8&gt;</pre>
+<pre>     850:	17ffff88 	b	670 &lt</span>wifiex_drv_info_dump+0x1e8&gt;</pre>
+<pre>     854:	7100001f 	cmp	w0, #0x0</pre>
+<pre>     858:	90000002 	adrp	x2, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     85c:	90000000 	adrp	x0, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     860:	91000042 	add	x2, x2, #0x0</pre>
+<pre>     864:	91000000 	add	x0, x0, #0x0</pre>
+<pre>     868:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     86c:	9a800042 	csel	x2, x2, x0, eq  // eq = none</pre>
+<pre>     870:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     874:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">     878:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     87c:	f940a682 	ldr	x2, [x20, #328]</pre>
+<pre>     880:	91006ed6 	add	x22, x22, #0x1b</pre>
+<pre>     884:	b4ffeb62 	cbz	x2, 5f0 &lt</span>wifiex_drv_info_dump+0x168&gt;</pre>
+<pre>     888:	aa1603e1 	mov	x1, x22</pre>
+<pre>     88c:	aa1403e0 	mov	x0, x20</pre>
+<pre>     890:	d63f0040 	blr	x2</pre>
+<pre>     894:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     898:	17ffff56 	b	5f0 &lt</span>wifiex_drv_info_dump+0x168&gt;</pre>
+<pre>     89c:	f9405293 	ldr	x19, [x20, #160]</pre>
+<pre>     8a0:	aa1603e0 	mov	x0, x22</pre>
+<pre>     8a4:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     8a8:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     8ac:	39417263 	ldrb	w3, [x19, #92]</pre>
+<pre>     8b0:	b9404e62 	ldr	w2, [x19, #76]</pre>
+<pre><span class="red">     8b4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     8b8:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     8bc:	39417663 	ldrb	w3, [x19, #93]</pre>
+<pre>     8c0:	aa1603e0 	mov	x0, x22</pre>
+<pre>     8c4:	b9405262 	ldr	w2, [x19, #80]</pre>
+<pre>     8c8:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     8cc:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     8d0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     8d4:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>     8d8:	17ffff2e 	b	590 &lt</span>wifiex_drv_info_dump+0x108&gt;</pre>
+<pre>     8dc:	f9405295 	ldr	x21, [x20, #160]</pre>
+<pre>     8e0:	aa1303e0 	mov	x0, x19</pre>
+<pre>     8e4:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     8e8:	91000021 	add	x1, x1, #0x0</pre>
+<pre>     8ec:	b94136a2 	ldr	w2, [x21, #308]</pre>
+<pre><span class="red">     8f0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     8f4:	8b20c273 	add	x19, x19, w0, sxtw</pre>
+<pre>     8f8:	b9416ea2 	ldr	w2, [x21, #364]</pre>
+<pre>     8fc:	aa1303e0 	mov	x0, x19</pre>
+<pre>     900:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     904:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     908:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     90c:	8b20c273 	add	x19, x19, w0, sxtw</pre>
+<pre>     910:	b942d6a2 	ldr	w2, [x21, #724]</pre>
+<pre>     914:	aa1303e0 	mov	x0, x19</pre>
+<pre>     918:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     91c:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     920:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     924:	8b20c273 	add	x19, x19, w0, sxtw</pre>
+<pre>     928:	b94062a2 	ldr	w2, [x21, #96]</pre>
+<pre>     92c:	aa1303e0 	mov	x0, x19</pre>
+<pre>     930:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     934:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     938:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     93c:	8b20c273 	add	x19, x19, w0, sxtw</pre>
+<pre>     940:	b9412ea2 	ldr	w2, [x21, #300]</pre>
+<pre>     944:	aa1303e0 	mov	x0, x19</pre>
+<pre>     948:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>     94c:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">     950:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     954:	8b20c273 	add	x19, x19, w0, sxtw</pre>
+<pre>     958:	17ffff00 	b	558 &lt</span>wifiex_drv_info_dump+0xd0&gt;</pre>
+<pre>--</pre>
+<pre>    770c:	a90573fb 	stp	x27, x28, [sp, #80]</pre>
+<pre>    7710:	aa0203f7 	mov	x23, x2</pre>
+<pre>    7714:	aa0103fc 	mov	x28, x1</pre>
+<pre>    7718:	a90607e0 	stp	x0, x1, [sp, #96]</pre>
+<pre>    771c:	aa1e03e0 	mov	x0, x30</pre>
+<pre>    7720:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>    7724:	b4001957 	cbz	x23, 7a4c &lt</span>wifiex_debug_info_to_buffer+0x34c&gt;</pre>
+<pre>    7728:	90000006 	adrp	x6, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    772c:	90000018 	adrp	x24, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    7730:	910000db 	add	x27, x6, #0x0</pre>
+<pre>    7734:	91000318 	add	x24, x24, #0x0</pre>
+<pre>    7738:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>    773c:	90000015 	adrp	x21, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    7740:	910002b5 	add	x21, x21, #0x0</pre>
+<pre>    7744:	52800016 	mov	w22, #0x0                   	// #0</pre>
+<pre>    7748:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>    774c:	a9046bf9 	stp	x25, x26, [sp, #64]</pre>
+<pre>    7750:	aa1803e1 	mov	x1, x24</pre>
+<pre>    7754:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    7758:	aa1b03e2 	mov	x2, x27</pre>
+<pre><span class="red">    775c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    7760:	b9402373 	ldr	w19, [x27, #32]</pre>
+<pre>    7764:	b9403361 	ldr	w1, [x27, #48]</pre>
+<pre>    7768:	8b20c394 	add	x20, x28, w0, sxtw</pre>
+<pre>    776c:	7100aedf 	cmp	w22, #0x2b</pre>
+<pre>    7770:	1ac10a7c 	udiv	w28, w19, w1</pre>
+<pre>    7774:	aa1c03f3 	mov	x19, x28</pre>
+<pre>    7778:	54000448 	b.hi	7800 &lt</span>wifiex_debug_info_to_buffer+0x100&gt;  // b.pmore</pre>
+<pre>    777c:	f9401763 	ldr	x3, [x27, #40]</pre>
+<pre>    7780:	7100003f 	cmp	w1, #0x0</pre>
+<pre>    7784:	8b0302fa 	add	x26, x23, x3</pre>
+<pre>    7788:	5400076d 	b.le	7874 &lt</span>wifiex_debug_info_to_buffer+0x174&gt;</pre>
+<pre>    778c:	52800019 	mov	w25, #0x0                   	// #0</pre>
+<pre>    7790:	1400000d 	b	77c4 &lt</span>wifiex_debug_info_to_buffer+0xc4&gt;</pre>
+<pre>    7794:	71000a7f 	cmp	w19, #0x2</pre>
+<pre>    7798:	540002c1 	b.ne	77f0 &lt</span>wifiex_debug_info_to_buffer+0xf0&gt;  // b.any</pre>
+<pre>    779c:	79400342 	ldrh	w2, [x26]</pre>
+<pre>    77a0:	aa1503e1 	mov	x1, x21</pre>
+<pre>    77a4:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">    77a8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    77ac:	11000739 	add	w25, w25, #0x1</pre>
+<pre>    77b0:	b9403361 	ldr	w1, [x27, #48]</pre>
+<pre>--</pre>
+<pre>    7884:	90000000 	adrp	x0, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    7888:	91000000 	add	x0, x0, #0x0</pre>
+<pre>    788c:	a9400c02 	ldp	x2, x3, [x0]</pre>
+<pre>    7890:	a9000f82 	stp	x2, x3, [x28]</pre>
+<pre>    7894:	79402000 	ldrh	w0, [x0, #16]</pre>
+<pre>    7898:	79002380 	strh	w0, [x28, #16]</pre>
+<pre>    789c:	9100479c 	add	x28, x28, #0x11</pre>
+<pre>    78a0:	b9514ee0 	ldr	w0, [x23, #4428]</pre>
+<pre>    78a4:	34fffd60 	cbz	w0, 7850 &lt</span>wifiex_debug_info_to_buffer+0x150&gt;</pre>
+<pre>    78a8:	90000018 	adrp	x24, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    78ac:	91000318 	add	x24, x24, #0x0</pre>
+<pre>    78b0:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>    78b4:	528000d6 	mov	w22, #0x6                   	// #6</pre>
+<pre>    78b8:	d2822a15 	mov	x21, #0x1150                	// #4432</pre>
+<pre>    78bc:	52800154 	mov	w20, #0xa                   	// #10</pre>
+<pre>    78c0:	9b365662 	smaddl	x2, w19, w22, x21</pre>
+<pre>    78c4:	aa1803e1 	mov	x1, x24</pre>
+<pre>    78c8:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    78cc:	11000673 	add	w19, w19, #0x1</pre>
+<pre>    78d0:	8b0202e2 	add	x2, x23, x2</pre>
+<pre><span class="red">    78d4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    78d8:	7820cb94 	strh	w20, [x28, w0, sxtw]</pre>
+<pre>    78dc:	8b20c381 	add	x1, x28, w0, sxtw</pre>
+<pre>--</pre>
+<pre>    7900:	a9000f82 	stp	x2, x3, [x28]</pre>
+<pre>    7904:	b840f000 	ldur	w0, [x0, #15]</pre>
+<pre>    7908:	b800f380 	stur	w0, [x28, #15]</pre>
+<pre>    790c:	91004b9c 	add	x28, x28, #0x12</pre>
+<pre>    7910:	b9404ae0 	ldr	w0, [x23, #72]</pre>
+<pre>    7914:	34fff9a0 	cbz	w0, 7848 &lt</span>wifiex_debug_info_to_buffer+0x148&gt;</pre>
+<pre>    7918:	9000001a 	adrp	x26, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    791c:	90000019 	adrp	x25, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    7920:	90000018 	adrp	x24, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    7924:	90000015 	adrp	x21, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    7928:	9100035a 	add	x26, x26, #0x0</pre>
+<pre>    792c:	91000339 	add	x25, x25, #0x0</pre>
+<pre>    7930:	91000318 	add	x24, x24, #0x0</pre>
+<pre>    7934:	910002b5 	add	x21, x21, #0x0</pre>
+<pre>    7938:	910172fb 	add	x27, x23, #0x5c</pre>
+<pre>    793c:	52800016 	mov	w22, #0x0                   	// #0</pre>
+<pre>    7940:	785f0362 	ldurh	w2, [x27, #-16]</pre>
+<pre>    7944:	d1003b63 	sub	x3, x27, #0xe</pre>
+<pre>    7948:	aa1a03e1 	mov	x1, x26</pre>
+<pre>    794c:	aa1c03e0 	mov	x0, x28</pre>
+<pre><span class="red">    7950:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    7954:	8b20c394 	add	x20, x28, w0, sxtw</pre>
+<pre>    7958:	b85f8362 	ldur	w2, [x27, #-8]</pre>
+<pre>    795c:	aa1903e1 	mov	x1, x25</pre>
+<pre>    7960:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">    7964:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    7968:	8b20c294 	add	x20, x20, w0, sxtw</pre>
+<pre>    796c:	b85fc362 	ldur	w2, [x27, #-4]</pre>
+<pre>    7970:	aa1803e1 	mov	x1, x24</pre>
+<pre>    7974:	aa1403e0 	mov	x0, x20</pre>
+<pre><span class="red">    7978:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    797c:	8b20c29c 	add	x28, x20, w0, sxtw</pre>
+<pre>    7980:	b85fc361 	ldur	w1, [x27, #-4]</pre>
+<pre>    7984:	340001e1 	cbz	w1, 79c0 &lt</span>wifiex_debug_info_to_buffer+0x2c0&gt;</pre>
+<pre>    7988:	d2800013 	mov	x19, #0x0                   	// #0</pre>
+<pre>    798c:	d503201f 	nop</pre>
+<pre>    7990:	b8737b62 	ldr	w2, [x27, x19, lsl #2]</pre>
+<pre>    7994:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    7998:	aa1503e1 	mov	x1, x21</pre>
+<pre>    799c:	91000673 	add	x19, x19, #0x1</pre>
+<pre>    79a0:	7100005f 	cmp	w2, #0x0</pre>
+<pre>    79a4:	91000b9c 	add	x28, x28, #0x2</pre>
+<pre>    79a8:	1a9f07e2 	cset	w2, ne  // ne = any</pre>
+<pre>    79ac:	1100c042 	add	w2, w2, #0x30</pre>
+<pre><span class="red">    79b0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    79b4:	b85fc360 	ldur	w0, [x27, #-4]</pre>
+<pre>    79b8:	6b13001f 	cmp	w0, w19</pre>
+<pre>--</pre>
+<pre>    79cc:	9104437b 	add	x27, x27, #0x110</pre>
+<pre>    79d0:	b9404ae0 	ldr	w0, [x23, #72]</pre>
+<pre>    79d4:	6b16001f 	cmp	w0, w22</pre>
+<pre>    79d8:	54fffb48 	b.hi	7940 &lt</span>wifiex_debug_info_to_buffer+0x240&gt;  // b.pmore</pre>
+<pre>    79dc:	17ffff9b 	b	7848 &lt</span>wifiex_debug_info_to_buffer+0x148&gt;</pre>
+<pre>    79e0:	90000000 	adrp	x0, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    79e4:	91000000 	add	x0, x0, #0x0</pre>
+<pre>    79e8:	a9400c02 	ldp	x2, x3, [x0]</pre>
+<pre>    79ec:	a9000f82 	stp	x2, x3, [x28]</pre>
+<pre>    79f0:	9100569c 	add	x28, x20, #0x15</pre>
+<pre>    79f4:	f840d000 	ldur	x0, [x0, #13]</pre>
+<pre>    79f8:	f800e280 	stur	x0, [x20, #14]</pre>
+<pre>    79fc:	b94032e0 	ldr	w0, [x23, #48]</pre>
+<pre>    7a00:	34fff200 	cbz	w0, 7840 &lt</span>wifiex_debug_info_to_buffer+0x140&gt;</pre>
+<pre>    7a04:	79406ae2 	ldrh	w2, [x23, #52]</pre>
+<pre>    7a08:	90000013 	adrp	x19, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>    7a0c:	91000273 	add	x19, x19, #0x0</pre>
+<pre>    7a10:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    7a14:	aa1303e1 	mov	x1, x19</pre>
+<pre>    7a18:	9100dae3 	add	x3, x23, #0x36</pre>
+<pre><span class="red">    7a1c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    7a20:	8b20c39c 	add	x28, x28, w0, sxtw</pre>
+<pre>    7a24:	b94032e1 	ldr	w1, [x23, #48]</pre>
+<pre>    7a28:	7100043f 	cmp	w1, #0x1</pre>
+<pre>    7a2c:	54fff0a9 	b.ls	7840 &lt</span>wifiex_debug_info_to_buffer+0x140&gt;  // b.plast</pre>
+<pre>    7a30:	79407ee2 	ldrh	w2, [x23, #62]</pre>
+<pre>    7a34:	aa1c03e0 	mov	x0, x28</pre>
+<pre>    7a38:	aa1303e1 	mov	x1, x19</pre>
+<pre>    7a3c:	910102e3 	add	x3, x23, #0x40</pre>
+<pre><span class="red">    7a40:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    7a44:	8b20c39c 	add	x28, x28, w0, sxtw</pre>
+<pre>    7a48:	17ffff7e 	b	7840 &lt</span>wifiex_debug_info_to_buffer+0x140&gt;</pre>
+<pre>--</pre>
+<pre>   149a4:	910003fd 	mov	x29, sp</pre>
+<pre>   149a8:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>   149ac:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>   149b0:	aa0003f4 	mov	x20, x0</pre>
+<pre>   149b4:	aa0103f5 	mov	x21, x1</pre>
+<pre>   149b8:	aa1e03e0 	mov	x0, x30</pre>
+<pre>   149bc:	2a0203f6 	mov	w22, w2</pre>
+<pre>   149c0:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>   149c4:	b9408282 	ldr	w2, [x20, #128]</pre>
+<pre>   149c8:	d5384113 	mrs	x19, sp_el0</pre>
+<pre>   149cc:	f9428e60 	ldr	x0, [x19, #1304]</pre>
+<pre>   149d0:	f9002fe0 	str	x0, [sp, #88]</pre>
+<pre>   149d4:	d2800000 	mov	x0, #0x0                   	// #0</pre>
+<pre>   149d8:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   149dc:	12001c44 	and	w4, w2, #0xff</pre>
+<pre>   149e0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>   149e4:	53187c45 	lsr	w5, w2, #24</pre>
+<pre>   149e8:	d3483c43 	ubfx	x3, x2, #8, #8</pre>
+<pre>   149ec:	9100e3e0 	add	x0, sp, #0x38</pre>
+<pre>   149f0:	d3505c42 	ubfx	x2, x2, #16, #8</pre>
+<pre><span class="red">   149f4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   149f8:	9100e3e3 	add	x3, sp, #0x38</pre>
+<pre>   149fc:	93407ec1 	sxtw	x1, w22</pre>
+<pre>--</pre>
+<pre>   27590:	52800025 	mov	w5, #0x1                   	// #1</pre>
+<pre>   27594:	52800003 	mov	w3, #0x0                   	// #0</pre>
+<pre>   27598:	52801c01 	mov	w1, #0xe0                  	// #224</pre>
+<pre>   2759c:	94000000 	bl	5390 &lt</span>wifiex_send_cmd&gt;</pre>
+<pre>   275a0:	34000180 	cbz	w0, 275d0 &lt</span>wifiex_timeshare_coex_read+0x98&gt;</pre>
+<pre>   275a4:	93407c00 	sxtw	x0, w0</pre>
+<pre>   275a8:	91146273 	add	x19, x19, #0x518</pre>
+<pre>   275ac:	f94027e2 	ldr	x2, [sp, #72]</pre>
+<pre>   275b0:	f9400261 	ldr	x1, [x19]</pre>
+<pre>   275b4:	ca010041 	eor	x1, x2, x1</pre>
+<pre>   275b8:	b5000281 	cbnz	x1, 27608 &lt</span>wifiex_timeshare_coex_read+0xd0&gt;</pre>
+<pre>   275bc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   275c0:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   275c4:	f9401bf7 	ldr	x23, [sp, #48]</pre>
+<pre>   275c8:	a8c57bfd 	ldp	x29, x30, [sp], #80</pre>
+<pre>   275cc:	d65f03c0 	ret</pre>
+<pre>   275d0:	394113e2 	ldrb	w2, [sp, #68]</pre>
+<pre>   275d4:	910117e0 	add	x0, sp, #0x45</pre>
+<pre>   275d8:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   275dc:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   275e0:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   275e4:	910117e3 	add	x3, sp, #0x45</pre>
+<pre>   275e8:	aa1703e2 	mov	x2, x23</pre>
+<pre>--</pre>
+<pre>   276e0:	a90363f7 	stp	x23, x24, [sp, #48]</pre>
+<pre>   276e4:	a9046bf9 	stp	x25, x26, [sp, #64]</pre>
+<pre>   276e8:	a90573fb 	stp	x27, x28, [sp, #80]</pre>
+<pre>   276ec:	aa0003f3 	mov	x19, x0</pre>
+<pre>   276f0:	aa0103f7 	mov	x23, x1</pre>
+<pre>   276f4:	aa1e03e0 	mov	x0, x30</pre>
+<pre>   276f8:	aa0203f8 	mov	x24, x2</pre>
+<pre>   276fc:	aa0303f9 	mov	x25, x3</pre>
+<pre>   27700:	94000000 	bl	0 &lt;_mcount&gt;</pre>
+<pre>   27704:	52819800 	mov	w0, #0xcc0                 	// #3264</pre>
+<pre>   27708:	f940667b 	ldr	x27, [x19, #200]</pre>
+<pre>   2770c:	94000000 	bl	0 &lt;get_zeroed_page&gt;</pre>
+<pre>   27710:	aa0003f6 	mov	x22, x0</pre>
+<pre>   27714:	b4001240 	cbz	x0, 2795c &lt</span>wifiex_histogram_read+0x28c&gt;</pre>
+<pre>   27718:	b40011fb 	cbz	x27, 27954 &lt</span>wifiex_histogram_read+0x284&gt;</pre>
+<pre>   2771c:	f955a375 	ldr	x21, [x27, #11072]</pre>
+<pre>   27720:	b40011b5 	cbz	x21, 27954 &lt</span>wifiex_histogram_read+0x284&gt;</pre>
+<pre>   27724:	b94d2aa2 	ldr	w2, [x21, #3368]</pre>
+<pre>   27728:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   2772c:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   27730:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   27734:	8b20c2c3 	add	x3, x22, w0, sxtw</pre>
+<pre>   27738:	aa0303e0 	mov	x0, x3</pre>
+<pre>--</pre>
+<pre>   27758:	b942b000 	ldr	w0, [x0, #688]</pre>
+<pre>   2775c:	37680e00 	tbnz	w0, #13, 2791c &lt</span>wifiex_histogram_read+0x24c&gt;</pre>
+<pre>   27760:	91024074 	add	x20, x3, #0x90</pre>
+<pre>   27764:	52800140 	mov	w0, #0xa                   	// #10</pre>
+<pre>   27768:	7808f060 	sturh	w0, [x3, #143]</pre>
+<pre>   2776c:	9000001c 	adrp	x28, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   27770:	aa1503fa 	mov	x26, x21</pre>
+<pre>   27774:	9100039c 	add	x28, x28, #0x0</pre>
+<pre>   27778:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>   2777c:	14000004 	b	2778c &lt</span>wifiex_histogram_read+0xbc&gt;</pre>
+<pre>   27780:	11000673 	add	w19, w19, #0x1</pre>
+<pre>   27784:	7100b27f 	cmp	w19, #0x2c</pre>
+<pre>   27788:	54000180 	b.eq	277b8 &lt</span>wifiex_histogram_read+0xe8&gt;  // b.none</pre>
+<pre>   2778c:	b9400343 	ldr	w3, [x26]</pre>
+<pre>   27790:	9100135a 	add	x26, x26, #0x4</pre>
+<pre>   27794:	34ffff63 	cbz	w3, 27780 &lt</span>wifiex_histogram_read+0xb0&gt;</pre>
+<pre>   27798:	2a1303e2 	mov	w2, w19</pre>
+<pre>   2779c:	aa1403e0 	mov	x0, x20</pre>
+<pre>   277a0:	aa1c03e1 	mov	x1, x28</pre>
+<pre>   277a4:	11000673 	add	w19, w19, #0x1</pre>
+<pre><span class="red">   277a8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   277ac:	8b20c294 	add	x20, x20, w0, sxtw</pre>
+<pre>   277b0:	7100b27f 	cmp	w19, #0x2c</pre>
+<pre>   277b4:	54fffec1 	b.ne	2778c &lt</span>wifiex_histogram_read+0xbc&gt;  // b.any</pre>
+<pre>   277b8:	f9400360 	ldr	x0, [x27]</pre>
+<pre>   277bc:	b942b000 	ldr	w0, [x0, #688]</pre>
+<pre>   277c0:	36680260 	tbz	w0, #13, 2780c &lt</span>wifiex_histogram_read+0x13c&gt;</pre>
+<pre>   277c4:	9000001b 	adrp	x27, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   277c8:	9102c2ba 	add	x26, x21, #0xb0</pre>
+<pre>   277cc:	9100037b 	add	x27, x27, #0x0</pre>
+<pre>   277d0:	14000004 	b	277e0 &lt</span>wifiex_histogram_read+0x110&gt;</pre>
+<pre>   277d4:	11000673 	add	w19, w19, #0x1</pre>
+<pre>   277d8:	71012a7f 	cmp	w19, #0x4a</pre>
+<pre>   277dc:	54000180 	b.eq	2780c &lt</span>wifiex_histogram_read+0x13c&gt;  // b.none</pre>
+<pre>   277e0:	b9400343 	ldr	w3, [x26]</pre>
+<pre>   277e4:	9100135a 	add	x26, x26, #0x4</pre>
+<pre>   277e8:	34ffff63 	cbz	w3, 277d4 &lt</span>wifiex_histogram_read+0x104&gt;</pre>
+<pre>   277ec:	2a1303e2 	mov	w2, w19</pre>
+<pre>   277f0:	aa1403e0 	mov	x0, x20</pre>
+<pre>   277f4:	aa1b03e1 	mov	x1, x27</pre>
+<pre>   277f8:	11000673 	add	w19, w19, #0x1</pre>
+<pre><span class="red">   277fc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   27800:	8b20c294 	add	x20, x20, w0, sxtw</pre>
+<pre>   27804:	71012a7f 	cmp	w19, #0x4a</pre>
+<pre>   27808:	54fffec1 	b.ne	277e0 &lt</span>wifiex_histogram_read+0x110&gt;  // b.any</pre>
+<pre>   2780c:	9000001b 	adrp	x27, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   27810:	9104a2ba 	add	x26, x21, #0x128</pre>
+<pre>   27814:	9100037b 	add	x27, x27, #0x0</pre>
+<pre>   27818:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>   2781c:	14000004 	b	2782c &lt</span>wifiex_histogram_read+0x15c&gt;</pre>
+<pre>   27820:	11000673 	add	w19, w19, #0x1</pre>
+<pre>   27824:	7104027f 	cmp	w19, #0x100</pre>
+<pre>   27828:	54000180 	b.eq	27858 &lt</span>wifiex_histogram_read+0x188&gt;  // b.none</pre>
+<pre>   2782c:	b9400343 	ldr	w3, [x26]</pre>
+<pre>   27830:	9100135a 	add	x26, x26, #0x4</pre>
+<pre>   27834:	34ffff63 	cbz	w3, 27820 &lt</span>wifiex_histogram_read+0x150&gt;</pre>
+<pre>   27838:	2a1303e2 	mov	w2, w19</pre>
+<pre>   2783c:	aa1403e0 	mov	x0, x20</pre>
+<pre>   27840:	aa1b03e1 	mov	x1, x27</pre>
+<pre>   27844:	11000673 	add	w19, w19, #0x1</pre>
+<pre><span class="red">   27848:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   2784c:	8b20c294 	add	x20, x20, w0, sxtw</pre>
+<pre>   27850:	7104027f 	cmp	w19, #0x100</pre>
+<pre>   27854:	54fffec1 	b.ne	2782c &lt</span>wifiex_histogram_read+0x15c&gt;  // b.any</pre>
+<pre>   27858:	9000001c 	adrp	x28, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   2785c:	9114a2ba 	add	x26, x21, #0x528</pre>
+<pre>   27860:	9100039c 	add	x28, x28, #0x0</pre>
+<pre>   27864:	5280101b 	mov	w27, #0x80                  	// #128</pre>
+<pre>   27868:	14000003 	b	27874 &lt</span>wifiex_histogram_read+0x1a4&gt;</pre>
+<pre>   2786c:	71000673 	subs	w19, w19, #0x1</pre>
+<pre>   27870:	54000160 	b.eq	2789c &lt</span>wifiex_histogram_read+0x1cc&gt;  // b.none</pre>
+<pre>   27874:	b9400343 	ldr	w3, [x26]</pre>
+<pre>   27878:	9100135a 	add	x26, x26, #0x4</pre>
+<pre>   2787c:	34ffff83 	cbz	w3, 2786c &lt</span>wifiex_histogram_read+0x19c&gt;</pre>
+<pre>   27880:	4b130362 	sub	w2, w27, w19</pre>
+<pre>   27884:	aa1403e0 	mov	x0, x20</pre>
+<pre>   27888:	aa1c03e1 	mov	x1, x28</pre>
+<pre><span class="red">   2788c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   27890:	71000673 	subs	w19, w19, #0x1</pre>
+<pre>   27894:	8b20c294 	add	x20, x20, w0, sxtw</pre>
+<pre>   27898:	54fffee1 	b.ne	27874 &lt</span>wifiex_histogram_read+0x1a4&gt;  // b.any</pre>
+<pre>   2789c:	9000001a 	adrp	x26, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   278a0:	9124a2b5 	add	x21, x21, #0x928</pre>
+<pre>   278a4:	9100035a 	add	x26, x26, #0x0</pre>
+<pre>   278a8:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>   278ac:	14000004 	b	278bc &lt</span>wifiex_histogram_read+0x1ec&gt;</pre>
+<pre>   278b0:	11000673 	add	w19, w19, #0x1</pre>
+<pre>   278b4:	7104027f 	cmp	w19, #0x100</pre>
+<pre>   278b8:	54000180 	b.eq	278e8 &lt</span>wifiex_histogram_read+0x218&gt;  // b.none</pre>
+<pre>   278bc:	b94002a3 	ldr	w3, [x21]</pre>
+<pre>   278c0:	910012b5 	add	x21, x21, #0x4</pre>
+<pre>   278c4:	34ffff63 	cbz	w3, 278b0 &lt</span>wifiex_histogram_read+0x1e0&gt;</pre>
+<pre>   278c8:	2a1303e2 	mov	w2, w19</pre>
+<pre>   278cc:	aa1403e0 	mov	x0, x20</pre>
+<pre>   278d0:	aa1a03e1 	mov	x1, x26</pre>
+<pre>   278d4:	11000673 	add	w19, w19, #0x1</pre>
+<pre><span class="red">   278d8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   278dc:	8b20c294 	add	x20, x20, w0, sxtw</pre>
+<pre>   278e0:	7104027f 	cmp	w19, #0x100</pre>
+<pre>--</pre>
+<pre>   281d8:	b9000be8 	str	w8, [sp, #8]</pre>
+<pre>   281dc:	295a33ed 	ldp	w13, w12, [sp, #208]</pre>
+<pre>   281e0:	b90013ea 	str	w10, [sp, #16]</pre>
+<pre>   281e4:	29540fe2 	ldp	w2, w3, [sp, #160]</pre>
+<pre>   281e8:	b9001be9 	str	w9, [sp, #24]</pre>
+<pre>   281ec:	295517e4 	ldp	w4, w5, [sp, #168]</pre>
+<pre>   281f0:	91000021 	add	x1, x1, #0x0</pre>
+<pre>   281f4:	b940dbeb 	ldr	w11, [sp, #216]</pre>
+<pre>   281f8:	b940dfea 	ldr	w10, [sp, #220]</pre>
+<pre>   281fc:	b940e7e8 	ldr	w8, [sp, #228]</pre>
+<pre>   28200:	b940e3e9 	ldr	w9, [sp, #224]</pre>
+<pre>   28204:	29561fe6 	ldp	w6, w7, [sp, #176]</pre>
+<pre>   28208:	b90023ef 	str	w15, [sp, #32]</pre>
+<pre>   2820c:	b9002bee 	str	w14, [sp, #40]</pre>
+<pre>   28210:	b90033ed 	str	w13, [sp, #48]</pre>
+<pre>   28214:	b9003bec 	str	w12, [sp, #56]</pre>
+<pre>   28218:	b90043eb 	str	w11, [sp, #64]</pre>
+<pre>   2821c:	b9004bea 	str	w10, [sp, #72]</pre>
+<pre>   28220:	b90053e9 	str	w9, [sp, #80]</pre>
+<pre>   28224:	b9005be8 	str	w8, [sp, #88]</pre>
+<pre><span class="red">   28228:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   2822c:	aa1803e2 	mov	x2, x24</pre>
+<pre>   28230:	93407c04 	sxtw	x4, w0</pre>
+<pre>--</pre>
+<pre>   28410:	528007e2 	mov	w2, #0x3f                  	// #63</pre>
+<pre>   28414:	910323e1 	add	x1, sp, #0xc8</pre>
+<pre>   28418:	f9400260 	ldr	x0, [x19]</pre>
+<pre>   2841c:	aa1503f6 	mov	x22, x21</pre>
+<pre>   28420:	94000000 	bl	149a0 &lt</span>wifiex_drv_get_driver_version&gt;</pre>
+<pre>   28424:	52800001 	mov	w1, #0x0                   	// #0</pre>
+<pre>   28428:	aa1303e0 	mov	x0, x19</pre>
+<pre>   2842c:	94000000 	bl	14e18 &lt</span>wifiex_get_ver_ext&gt;</pre>
+<pre>   28430:	910323e2 	add	x2, sp, #0xc8</pre>
+<pre>   28434:	90000003 	adrp	x3, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28438:	91000063 	add	x3, x3, #0x0</pre>
+<pre>   2843c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28440:	91000021 	add	x1, x1, #0x0</pre>
+<pre>   28444:	a9401464 	ldp	x4, x5, [x3]</pre>
+<pre>   28448:	a90016a4 	stp	x4, x5, [x21]</pre>
+<pre>   2844c:	39406060 	ldrb	w0, [x3, #24]</pre>
+<pre>   28450:	f9400863 	ldr	x3, [x3, #16]</pre>
+<pre>   28454:	f9000aa3 	str	x3, [x21, #16]</pre>
+<pre>   28458:	38018ec0 	strb	w0, [x22, #24]!</pre>
+<pre>   2845c:	aa1603e0 	mov	x0, x22</pre>
+<pre><span class="red">   28460:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28464:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28468:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   2846c:	aa1603e0 	mov	x0, x22</pre>
+<pre>   28470:	91000021 	add	x1, x1, #0x0</pre>
+<pre>   28474:	d282fd02 	mov	x2, #0x17e8                	// #6120</pre>
+<pre>   28478:	8b020262 	add	x2, x19, x2</pre>
+<pre><span class="red">   2847c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28480:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28484:	aa1403e2 	mov	x2, x20</pre>
+<pre>   28488:	aa1603e0 	mov	x0, x22</pre>
+<pre>   2848c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28490:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   28494:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28498:	b94073e2 	ldr	w2, [sp, #112]</pre>
+<pre>   2849c:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   284a0:	7100285f 	cmp	w2, #0xa</pre>
+<pre>   284a4:	54001009 	b.ls	286a4 &lt</span>wifiex_info_read+0x354&gt;  // b.plast</pre>
+<pre>   284a8:	aa1603e0 	mov	x0, x22</pre>
+<pre>   284ac:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   284b0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   284b4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   284b8:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   284bc:	39405261 	ldrb	w1, [x19, #20]</pre>
+<pre>   284c0:	90000000 	adrp	x0, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   284c4:	90000002 	adrp	x2, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   284c8:	91000000 	add	x0, x0, #0x0</pre>
+<pre>   284cc:	7100003f 	cmp	w1, #0x0</pre>
+<pre>   284d0:	91000042 	add	x2, x2, #0x0</pre>
+<pre>   284d4:	9a800042 	csel	x2, x2, x0, eq  // eq = none</pre>
+<pre>   284d8:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   284dc:	aa1603e0 	mov	x0, x22</pre>
+<pre>   284e0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   284e4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   284e8:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   284ec:	f9418682 	ldr	x2, [x20, #776]</pre>
+<pre>   284f0:	aa1603e0 	mov	x0, x22</pre>
+<pre>   284f4:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   284f8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   284fc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28500:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28504:	39402661 	ldrb	w1, [x19, #9]</pre>
+<pre>   28508:	36000e01 	tbz	w1, #0, 286c8 &lt</span>wifiex_info_read+0x378&gt;</pre>
+<pre>   2850c:	f9402262 	ldr	x2, [x19, #64]</pre>
+<pre>   28510:	aa1603e0 	mov	x0, x22</pre>
+<pre>   28514:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28518:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   2851c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28520:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28524:	f9401e62 	ldr	x2, [x19, #56]</pre>
+<pre>   28528:	aa1603e0 	mov	x0, x22</pre>
+<pre>   2852c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28530:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   28534:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28538:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   2853c:	f9401a62 	ldr	x2, [x19, #48]</pre>
+<pre>   28540:	aa1603e0 	mov	x0, x22</pre>
+<pre>   28544:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28548:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   2854c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28550:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28554:	f9401662 	ldr	x2, [x19, #40]</pre>
+<pre>   28558:	aa1603e0 	mov	x0, x22</pre>
+<pre>   2855c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28560:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   28564:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28568:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   2856c:	f9403262 	ldr	x2, [x19, #96]</pre>
+<pre>   28570:	aa1603e0 	mov	x0, x22</pre>
+<pre>   28574:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28578:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   2857c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28580:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28584:	f9402e62 	ldr	x2, [x19, #88]</pre>
+<pre>   28588:	aa1603e0 	mov	x0, x22</pre>
+<pre>   2858c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28590:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   28594:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28598:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   2859c:	f9402a62 	ldr	x2, [x19, #80]</pre>
+<pre>   285a0:	aa1603e0 	mov	x0, x22</pre>
+<pre>   285a4:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   285a8:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   285ac:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   285b0:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   285b4:	f9402662 	ldr	x2, [x19, #72]</pre>
+<pre>   285b8:	aa1603e0 	mov	x0, x22</pre>
+<pre>   285bc:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   285c0:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   285c4:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   285c8:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   285cc:	f9401261 	ldr	x1, [x19, #32]</pre>
+<pre>   285d0:	90000003 	adrp	x3, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   285d4:	91000063 	add	x3, x3, #0x0</pre>
+<pre>   285d8:	90000002 	adrp	x2, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   285dc:	91000042 	add	x2, x2, #0x0</pre>
+<pre>   285e0:	aa1603e0 	mov	x0, x22</pre>
+<pre>   285e4:	f9402424 	ldr	x4, [x1, #72]</pre>
+<pre>   285e8:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   285ec:	91000021 	add	x1, x1, #0x0</pre>
+<pre>   285f0:	f27e009f 	tst	x4, #0x4</pre>
+<pre>   285f4:	9a820062 	csel	x2, x3, x2, eq  // eq = none</pre>
+<pre><span class="red">   285f8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   285fc:	8b20c2da 	add	x26, x22, w0, sxtw</pre>
+<pre>   28600:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>--</pre>
+<pre>   28614:	38008f40 	strb	w0, [x26, #8]!</pre>
+<pre>   28618:	b943ca80 	ldr	w0, [x20, #968]</pre>
+<pre>   2861c:	340002e0 	cbz	w0, 28678 &lt</span>wifiex_info_read+0x328&gt;</pre>
+<pre>   28620:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28624:	90000017 	adrp	x23, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28628:	90000016 	adrp	x22, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   2862c:	9100003b 	add	x27, x1, #0x0</pre>
+<pre>   28630:	910002f7 	add	x23, x23, #0x0</pre>
+<pre>   28634:	910002d6 	add	x22, x22, #0x0</pre>
+<pre>   28638:	52800013 	mov	w19, #0x0                   	// #0</pre>
+<pre>   2863c:	52802819 	mov	w25, #0x140                 	// #320</pre>
+<pre>   28640:	f941e283 	ldr	x3, [x20, #960]</pre>
+<pre>   28644:	2a1303e2 	mov	w2, w19</pre>
+<pre>   28648:	aa1a03e0 	mov	x0, x26</pre>
+<pre>   2864c:	aa1b03e1 	mov	x1, x27</pre>
+<pre>   28650:	9bb90e63 	umaddl	x3, w19, w25, x3</pre>
+<pre>   28654:	11000673 	add	w19, w19, #0x1</pre>
+<pre>   28658:	f9404863 	ldr	x3, [x3, #144]</pre>
+<pre>   2865c:	f240007f 	tst	x3, #0x1</pre>
+<pre>   28660:	9a9712c3 	csel	x3, x22, x23, ne  // ne = any</pre>
+<pre><span class="red">   28664:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28668:	8b20c35a 	add	x26, x26, w0, sxtw</pre>
+<pre>   2866c:	b943ca82 	ldr	w2, [x20, #968]</pre>
+<pre>   28670:	6b13005f 	cmp	w2, w19</pre>
+<pre>   28674:	54fffe68 	b.hi	28640 &lt</span>wifiex_info_read+0x2f0&gt;  // b.pmore</pre>
+<pre>   28678:	a94607e0 	ldp	x0, x1, [sp, #96]</pre>
+<pre>   2867c:	aa1a03e4 	mov	x4, x26</pre>
+<pre>   28680:	52800145 	mov	w5, #0xa                   	// #10</pre>
+<pre>   28684:	aa1c03e2 	mov	x2, x28</pre>
+<pre>   28688:	aa1503e3 	mov	x3, x21</pre>
+<pre>   2868c:	78001485 	strh	w5, [x4], #1</pre>
+<pre>   28690:	cb150084 	sub	x4, x4, x21</pre>
+<pre>   28694:	94000000 	bl	0 &lt;simple_read_from_buffer&gt;</pre>
+<pre>   28698:	aa0003f6 	mov	x22, x0</pre>
+<pre>   2869c:	a9446bf9 	ldp	x25, x26, [sp, #64]</pre>
+<pre>   286a0:	17ffff4c 	b	283d0 &lt</span>wifiex_info_read+0x80&gt;</pre>
+<pre>   286a4:	90000003 	adrp	x3, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   286a8:	91000063 	add	x3, x3, #0x0</pre>
+<pre>   286ac:	aa1603e0 	mov	x0, x22</pre>
+<pre>   286b0:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   286b4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>   286b8:	f8625862 	ldr	x2, [x3, w2, uxtw #3]</pre>
+<pre><span class="red">   286bc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   286c0:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   286c4:	17ffff7e 	b	284bc &lt</span>wifiex_info_read+0x16c&gt;</pre>
+<pre>   286c8:	b942a282 	ldr	w2, [x20, #672]</pre>
+<pre>   286cc:	aa1603e0 	mov	x0, x22</pre>
+<pre>   286d0:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   286d4:	91000021 	add	x1, x1, #0x0</pre>
+<pre>   286d8:	910a4297 	add	x23, x20, #0x290</pre>
+<pre><span class="red">   286dc:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   286e0:	394253e2 	ldrb	w2, [sp, #148]</pre>
+<pre>   286e4:	9101d3e3 	add	x3, sp, #0x74</pre>
+<pre>   286e8:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   286ec:	aa1603e0 	mov	x0, x22</pre>
+<pre>   286f0:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   286f4:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   286f8:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   286fc:	910303e2 	add	x2, sp, #0xc0</pre>
+<pre>   28700:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28704:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28708:	aa1603e0 	mov	x0, x22</pre>
+<pre>   2870c:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   28710:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28714:	b9409be2 	ldr	w2, [sp, #152]</pre>
+<pre>   28718:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   2871c:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28720:	aa1603e0 	mov	x0, x22</pre>
+<pre>   28724:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   28728:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   2872c:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28730:	910273e2 	add	x2, sp, #0x9c</pre>
+<pre>   28734:	aa1603e0 	mov	x0, x22</pre>
+<pre>   28738:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   2873c:	91000021 	add	x1, x1, #0x0</pre>
+<pre><span class="red">   28740:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28744:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28748:	f9400262 	ldr	x2, [x19]</pre>
+<pre>   2874c:	aa1603e0 	mov	x0, x22</pre>
+<pre>   28750:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28754:	91000021 	add	x1, x1, #0x0</pre>
+<pre>   28758:	79590042 	ldrh	w2, [x2, #3200]</pre>
+<pre><span class="red">   2875c:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28760:	8b20c2d6 	add	x22, x22, w0, sxtw</pre>
+<pre>   28764:	f9414a99 	ldr	x25, [x20, #656]</pre>
+<pre>   28768:	eb17033f 	cmp	x25, x23</pre>
+<pre>   2876c:	54ffed00 	b.eq	2850c &lt</span>wifiex_info_read+0x1bc&gt;  // b.none</pre>
+<pre>   28770:	90000001 	adrp	x1, 0 &lt</span>wifiex_get_stats&gt;</pre>
+<pre>   28774:	9100003b 	add	x27, x1, #0x0</pre>
+<pre>   28778:	5280001a 	mov	w26, #0x0                   	// #0</pre>
+<pre>   2877c:	d503201f 	nop</pre>
+<pre>   28780:	2a1a03e2 	mov	w2, w26</pre>
+<pre>   28784:	91004323 	add	x3, x25, #0x10</pre>
+<pre>   28788:	aa1603e0 	mov	x0, x22</pre>
+<pre>   2878c:	aa1b03e1 	mov	x1, x27</pre>
+<pre><span class="red">   28790:	94000000 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>   28794:	1100075a 	add	w26, w26, #0x1</pre>
+<pre>   28798:	f9400339 	ldr	x25, [x25]</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">62</span> times </span><span class="orange">mwifiex.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibc-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibc-2.31.so[0m
+
+   2fd58:	b94057e1 	ldr	w1, [sp, #84]
+   2fd5c:	d2800005 	mov	x5, #0x0                   	// #0
+   2fd60:	12800004 	mov	w4, #0xffffffff            	// #-1
+   2fd64:	f94710c6 	ldr	x6, [x6, #3616]
+   2fd68:	52800443 	mov	w3, #0x22                  	// #34
+   2fd6c:	52800062 	mov	w2, #0x3                   	// #3
+   2fd70:	d2800000 	mov	x0, #0x0                   	// #0
+   2fd74:	f9400cc6 	ldr	x6, [x6, #24]
+   2fd78:	0b060021 	add	w1, w1, w6
+   2fd7c:	4b0603e6 	neg	w6, w6
+   2fd80:	0a060021 	and	w1, w1, w6
+   2fd84:	b90057e1 	str	w1, [sp, #84]
+   2fd88:	93407c21 	sxtw	x1, w1
+   2fd8c:	940270dd 	bl	cc100 <__mmap@@GLIBC_PRIVATE>
+   2fd90:	aa0003f3 	mov	x19, x0
+   2fd94:	b100041f 	cmn	x0, #0x1
+   2fd98:	540001a0 	b.eq	2fdcc <__uselocale@@GLIBC_2.17+0x31c>  // b.none
+   2fd9c:	b94057e2 	ldr	w2, [sp, #84]
+   2fda0:	f9402fe1 	ldr	x1, [sp, #88]
+   2fda4:	b8004402 	str	w2, [x0], #4
+[31m   2fda8:	94013806 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   2fdac:	900009c1 	adrp	x1, 167000 <_IO_file_jumps@@GLIBC_2.17>
+   2fdb0:	9115a021 	add	x1, x1, #0x568
+--
+   31c20:	f9403fa1 	ldr	x1, [x29, #120]
+   31c24:	8b130000 	add	x0, x0, x19
+   31c28:	8b010000 	add	x0, x0, x1
+   31c2c:	97ffc799 	bl	23a90 <malloc@plt>
+   31c30:	aa0003f7 	mov	x23, x0
+   31c34:	f9406fa4 	ldr	x4, [x29, #216]
+   31c38:	b4fff840 	cbz	x0, 31b40 <gettext@@GLIBC_2.17+0x1360>
+   31c3c:	f94043a0 	ldr	x0, [x29, #128]
+   31c40:	aa1303e2 	mov	x2, x19
+   31c44:	aa1503e1 	mov	x1, x21
+   31c48:	91000413 	add	x19, x0, #0x1
+   31c4c:	9100e2e0 	add	x0, x23, #0x38
+   31c50:	94013754 	bl	7f9a0 <__mempcpy@@GLIBC_2.17>
+   31c54:	aa0003f5 	mov	x21, x0
+   31c58:	aa1303e2 	mov	x2, x19
+   31c5c:	aa1403e1 	mov	x1, x20
+   31c60:	8b130013 	add	x19, x0, x19
+   31c64:	94014efb 	bl	85850 <explicit_bzero@@GLIBC_2.25+0x50>
+   31c68:	aa1603e1 	mov	x1, x22
+   31c6c:	aa1303e0 	mov	x0, x19
+[31m   31c70:	94013054 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   31c74:	f90002f5 	str	x21, [x23]
+   31c78:	f0000980 	adrp	x0, 164000 <sys_sigabbrev@@GLIBC_2.17+0x1f0>
+--
+
+000000000007db40 <__libc_thread_freeres@@GLIBC_PRIVATE>:
+   7db40:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+   7db44:	910003fd 	mov	x29, sp
+   7db48:	9401f576 	bl	fb120 <pmap_getport@GLIBC_2.17+0x30>
+   7db4c:	9401bc35 	bl	ecc20 <__res_iclose@@GLIBC_PRIVATE+0xd0>
+   7db50:	94001edc 	bl	856c0 <__xpg_strerror_r@@GLIBC_2.17+0x130>
+   7db54:	a8c17bfd 	ldp	x29, x30, [sp], #16
+   7db58:	17fff302 	b	7a760 <__libc_free@@GLIBC_2.17+0x120>
+   7db5c:	d503201f 	nop
+
+000000000007db60 <strcat@@GLIBC_2.17>:
+   7db60:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   7db64:	910003fd 	mov	x29, sp
+   7db68:	a90153f3 	stp	x19, x20, [sp, #16]
+   7db6c:	aa0003f3 	mov	x19, x0
+   7db70:	aa0103f4 	mov	x20, x1
+   7db74:	940024f3 	bl	86f40 <explicit_bzero@@GLIBC_2.25+0x1740>
+   7db78:	8b000260 	add	x0, x19, x0
+   7db7c:	aa1403e1 	mov	x1, x20
+[31m   7db80:	94000090 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   7db84:	aa1303e0 	mov	x0, x19
+   7db88:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   c3d88:	a9484ff4 	ldp	x20, x19, [sp, #128]
+   c3d8c:	17ffff79 	b	c3b70 <getcwd@@GLIBC_2.17+0x430>
+
+00000000000c3d90 <getwd@@GLIBC_2.17>:
+   c3d90:	d282060c 	mov	x12, #0x1030                	// #4144
+   c3d94:	cb2c63ff 	sub	sp, sp, x12
+   c3d98:	a9007bfd 	stp	x29, x30, [sp]
+   c3d9c:	910003fd 	mov	x29, sp
+   c3da0:	a90153f3 	stp	x19, x20, [sp, #16]
+   c3da4:	b4000280 	cbz	x0, c3df4 <getwd@@GLIBC_2.17+0x64>
+   c3da8:	f90013f5 	str	x21, [sp, #32]
+   c3dac:	9100c3f5 	add	x21, sp, #0x30
+   c3db0:	aa0003f4 	mov	x20, x0
+   c3db4:	d2820001 	mov	x1, #0x1000                	// #4096
+   c3db8:	aa1503e0 	mov	x0, x21
+   c3dbc:	97fffe61 	bl	c3740 <getcwd@@GLIBC_2.17>
+   c3dc0:	aa0003f3 	mov	x19, x0
+   c3dc4:	b4000300 	cbz	x0, c3e24 <getwd@@GLIBC_2.17+0x94>
+   c3dc8:	aa1503e1 	mov	x1, x21
+   c3dcc:	aa1403e0 	mov	x0, x20
+[31m   c3dd0:	97fee7fc 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   c3dd4:	aa0003f3 	mov	x19, x0
+   c3dd8:	f94013f5 	ldr	x21, [sp, #32]
+--
+   d0d10:	528000a1 	mov	w1, #0x5                   	// #5
+   d0d14:	52800054 	mov	w20, #0x2                   	// #2
+   d0d18:	52800002 	mov	w2, #0x0                   	// #0
+   d0d1c:	71001b9f 	cmp	w28, #0x6
+   d0d20:	2a1c03e0 	mov	w0, w28
+   d0d24:	7a491b84 	ccmp	w28, #0x9, #0x4, ne  // ne = any
+   d0d28:	1a811294 	csel	w20, w20, w1, ne  // ne = any
+   d0d2c:	1a9612e1 	csel	w1, w23, w22, ne  // ne = any
+   d0d30:	97ffff98 	bl	d0b90 <__socket@@GLIBC_PRIVATE>
+   d0d34:	3100041f 	cmn	w0, #0x1
+   d0d38:	540003c1 	b.ne	d0db0 <isfdtype@@GLIBC_2.17+0x1e0>  // b.any
+   d0d3c:	91005273 	add	x19, x19, #0x14
+   d0d40:	eb18027f 	cmp	x19, x24
+   d0d44:	540001c0 	b.eq	d0d7c <isfdtype@@GLIBC_2.17+0x1ac>  // b.none
+   d0d48:	310006bf 	cmn	w21, #0x1
+   d0d4c:	54fffe00 	b.eq	d0d0c <isfdtype@@GLIBC_2.17+0x13c>  // b.none
+   d0d50:	39401260 	ldrb	w0, [x19, #4]
+   d0d54:	34fffdc0 	cbz	w0, d0d0c <isfdtype@@GLIBC_2.17+0x13c>
+   d0d58:	91001261 	add	x1, x19, #0x4
+   d0d5c:	aa1b03e0 	mov	x0, x27
+[31m   d0d60:	97feb418 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   d0d64:	aa1a03e0 	mov	x0, x26
+   d0d68:	52800081 	mov	w1, #0x4                   	// #4
+--
+   e2e98:	aa1803e3 	mov	x3, x24
+   e2e9c:	aa1603e1 	mov	x1, x22
+   e2ea0:	aa1703e0 	mov	x0, x23
+   e2ea4:	52800005 	mov	w5, #0x0                   	// #0
+   e2ea8:	d2800002 	mov	x2, #0x0                   	// #0
+   e2eac:	94003059 	bl	ef010 <__nss_next2@@GLIBC_PRIVATE>
+   e2eb0:	34fffe20 	cbz	w0, e2e74 <ether_ntohost@@GLIBC_2.17+0x74>
+   e2eb4:	7100067f 	cmp	w19, #0x1
+   e2eb8:	54000140 	b.eq	e2ee0 <ether_ntohost@@GLIBC_2.17+0xe0>  // b.none
+   e2ebc:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   e2ec0:	12800000 	mov	w0, #0xffffffff            	// #-1
+   e2ec4:	a9407bfd 	ldp	x29, x30, [sp]
+   e2ec8:	a94153f3 	ldp	x19, x20, [sp, #16]
+   e2ecc:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   e2ed0:	a94363f7 	ldp	x23, x24, [sp, #48]
+   e2ed4:	f9402bfb 	ldr	x27, [sp, #80]
+   e2ed8:	911203ff 	add	sp, sp, #0x480
+   e2edc:	d65f03c0 	ret
+   e2ee0:	f9403be1 	ldr	x1, [sp, #112]
+   e2ee4:	aa1b03e0 	mov	x0, x27
+[31m   e2ee8:	97fe6bb6 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   e2eec:	52800000 	mov	w0, #0x0                   	// #0
+   e2ef0:	a9407bfd 	ldp	x29, x30, [sp]
+--
+   ea910:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+   ea914:	aa0003e6 	mov	x6, x0
+   ea918:	910003fd 	mov	x29, sp
+   ea91c:	a90153f3 	stp	x19, x20, [sp, #16]
+   ea920:	2a0203f3 	mov	w19, w2
+   ea924:	aa0103f4 	mov	x20, x1
+   ea928:	f90013f5 	str	x21, [sp, #32]
+   ea92c:	9100c3f5 	add	x21, sp, #0x30
+   ea930:	aa1503e0 	mov	x0, x21
+   ea934:	d00001e1 	adrp	x1, 128000 <_itoa_lower_digits@@GLIBC_PRIVATE+0x49f8>
+   ea938:	913e6021 	add	x1, x1, #0xf98
+   ea93c:	39400cc5 	ldrb	w5, [x6, #3]
+   ea940:	394008c4 	ldrb	w4, [x6, #2]
+   ea944:	394004c3 	ldrb	w3, [x6, #1]
+   ea948:	394000c2 	ldrb	w2, [x6]
+   ea94c:	97fd8545 	bl	4be60 <_IO_sprintf@@GLIBC_2.17>
+   ea950:	eb20c27f 	cmp	x19, w0, sxtw
+   ea954:	54000109 	b.ls	ea974 <inet_addr@@GLIBC_2.17+0x94>  // b.plast
+   ea958:	aa1503e1 	mov	x1, x21
+   ea95c:	aa1403e0 	mov	x0, x20
+[31m   ea960:	97fe4d18 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   ea964:	a94153f3 	ldp	x19, x20, [sp, #16]
+   ea968:	f94013f5 	ldr	x21, [sp, #32]
+--
+   eab4c:	aa1303e0 	mov	x0, x19
+   eab50:	aa1703e1 	mov	x1, x23
+   eab54:	97fd84c3 	bl	4be60 <_IO_sprintf@@GLIBC_2.17>
+   eab58:	8b20c273 	add	x19, x19, w0, sxtw
+   eab5c:	1100077b 	add	w27, w27, #0x1
+   eab60:	910012d6 	add	x22, x22, #0x4
+   eab64:	7100237f 	cmp	w27, #0x8
+   eab68:	54fffdc1 	b.ne	eab20 <inet_ntop@@GLIBC_2.17+0x180>  // b.any
+   eab6c:	3100079f 	cmn	w28, #0x1
+   eab70:	91000660 	add	x0, x19, #0x1
+   eab74:	54000080 	b.eq	eab84 <inet_ntop@@GLIBC_2.17+0x1e4>  // b.none
+   eab78:	0b1a039c 	add	w28, w28, w26
+   eab7c:	7100239f 	cmp	w28, #0x8
+   eab80:	54000580 	b.eq	eac30 <inet_ntop@@GLIBC_2.17+0x290>  // b.none
+   eab84:	3900027f 	strb	wzr, [x19]
+   eab88:	cb180000 	sub	x0, x0, x24
+   eab8c:	6b00029f 	cmp	w20, w0
+   eab90:	54000643 	b.cc	eac58 <inet_ntop@@GLIBC_2.17+0x2b8>  // b.lo, b.ul, b.last
+   eab94:	aa1803e1 	mov	x1, x24
+   eab98:	aa1503e0 	mov	x0, x21
+[31m   eab9c:	97fe4c89 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   eaba0:	a94153f3 	ldp	x19, x20, [sp, #16]
+   eaba4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+--
+   eee10:	f9402fb7 	ldr	x23, [x29, #88]
+   eee14:	aa0003f3 	mov	x19, x0
+   eee18:	aa1703e0 	mov	x0, x23
+   eee1c:	97fe6049 	bl	86f40 <explicit_bzero@@GLIBC_2.25+0x1740>
+   eee20:	8b000273 	add	x19, x19, x0
+   eee24:	f00001c2 	adrp	x2, 129000 <_itoa_lower_digits@@GLIBC_PRIVATE+0x59f8>
+   eee28:	9113c042 	add	x2, x2, #0x4f0
+   eee2c:	91005a73 	add	x19, x19, #0x16
+   eee30:	927cee73 	and	x19, x19, #0xfffffffffffffff0
+   eee34:	aa1503e1 	mov	x1, x21
+   eee38:	cb3363ff 	sub	sp, sp, x19
+   eee3c:	b9400043 	ldr	w3, [x2]
+   eee40:	910017e0 	add	x0, sp, #0x5
+   eee44:	39401042 	ldrb	w2, [x2, #4]
+   eee48:	b90003e3 	str	w3, [sp]
+   eee4c:	390013e2 	strb	w2, [sp, #4]
+   eee50:	97fe432c 	bl	7fb00 <__stpcpy@@GLIBC_2.17>
+   eee54:	52800be2 	mov	w2, #0x5f                  	// #95
+   eee58:	38001402 	strb	w2, [x0], #1
+   eee5c:	aa1703e1 	mov	x1, x23
+[31m   eee60:	97fe3bd8 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   eee64:	f94006c0 	ldr	x0, [x22, #8]
+   eee68:	910003e1 	mov	x1, sp
+--
+   ef9dc:	7a491800 	ccmp	w0, #0x9, #0x0, ne  // ne = any
+   ef9e0:	54000448 	b.hi	efa68 <__nss_disable_nscd@@GLIBC_PRIVATE+0x948>  // b.pmore
+   ef9e4:	38401c60 	ldrb	w0, [x3, #1]!
+   ef9e8:	35ffff60 	cbnz	w0, ef9d4 <__nss_disable_nscd@@GLIBC_PRIVATE+0x8b4>
+   ef9ec:	385ff060 	ldurb	w0, [x3, #-1]
+   ef9f0:	7100b81f 	cmp	w0, #0x2e
+   ef9f4:	540003a0 	b.eq	efa68 <__nss_disable_nscd@@GLIBC_PRIVATE+0x948>  // b.none
+   ef9f8:	71000adf 	cmp	w22, #0x2
+   ef9fc:	540011a0 	b.eq	efc30 <__nss_disable_nscd@@GLIBC_PRIVATE+0xb10>  // b.none
+   efa00:	71002adf 	cmp	w22, #0xa
+   efa04:	540013c1 	b.ne	efc7c <__nss_disable_nscd@@GLIBC_PRIVATE+0xb5c>  // b.any
+   efa08:	aa1903e2 	mov	x2, x25
+   efa0c:	aa1703e1 	mov	x1, x23
+   efa10:	2a1603e0 	mov	w0, w22
+   efa14:	97ffed63 	bl	eafa0 <inet_pton@@GLIBC_2.17>
+   efa18:	7100001f 	cmp	w0, #0x0
+   efa1c:	1a9fd7e0 	cset	w0, gt
+   efa20:	34000440 	cbz	w0, efaa8 <__nss_disable_nscd@@GLIBC_PRIVATE+0x988>
+   efa24:	aa1703e1 	mov	x1, x23
+   efa28:	aa1b03e0 	mov	x0, x27
+[31m   efa2c:	97fe38e5 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   efa30:	f9000280 	str	x0, [x20]
+   efa34:	f900133f 	str	xzr, [x25, #32]
+--
+   efb40:	d37f1f80 	ubfiz	x0, x28, #1, #8
+   efb44:	78606860 	ldrh	w0, [x3, x0]
+   efb48:	12140018 	and	w24, w0, #0x1000
+   efb4c:	7100eb9f 	cmp	w28, #0x3a
+   efb50:	7a441384 	ccmp	w28, w4, #0x4, ne  // ne = any
+   efb54:	7a401b00 	ccmp	w24, #0x0, #0x0, ne  // ne = any
+   efb58:	54fffc60 	b.eq	efae4 <__nss_disable_nscd@@GLIBC_PRIVATE+0x9c4>  // b.none
+   efb5c:	38401c3c 	ldrb	w28, [x1, #1]!
+   efb60:	35ffff1c 	cbnz	w28, efb40 <__nss_disable_nscd@@GLIBC_PRIVATE+0xa20>
+   efb64:	385ff020 	ldurb	w0, [x1, #-1]
+   efb68:	7100b81f 	cmp	w0, #0x2e
+   efb6c:	54fffbc0 	b.eq	efae4 <__nss_disable_nscd@@GLIBC_PRIVATE+0x9c4>  // b.none
+   efb70:	aa1903e2 	mov	x2, x25
+   efb74:	aa1703e1 	mov	x1, x23
+   efb78:	52800140 	mov	w0, #0xa                   	// #10
+   efb7c:	97ffed09 	bl	eafa0 <inet_pton@@GLIBC_2.17>
+   efb80:	7100001f 	cmp	w0, #0x0
+   efb84:	54fff92d 	b.le	efaa8 <__nss_disable_nscd@@GLIBC_PRIVATE+0x988>
+   efb88:	aa1703e1 	mov	x1, x23
+   efb8c:	aa1b03e0 	mov	x0, x27
+[31m   efb90:	97fe388c 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   efb94:	f9000280 	str	x0, [x20]
+   efb98:	f900133f 	str	xzr, [x25, #32]
+--
+   f86b8:	a90363f7 	stp	x23, x24, [sp, #48]
+   f86bc:	aa0203f7 	mov	x23, x2
+   f86c0:	a9046bf9 	stp	x25, x26, [sp, #64]
+   f86c4:	97fe156f 	bl	7dc80 <strcmp@@GLIBC_2.17>
+   f86c8:	35000420 	cbnz	w0, f874c <clnt_create@GLIBC_2.17+0xbc>
+   f86cc:	52800022 	mov	w2, #0x1                   	// #1
+   f86d0:	9101c3a0 	add	x0, x29, #0x70
+   f86d4:	a9077fbf 	stp	xzr, xzr, [x29, #112]
+   f86d8:	aa1303e1 	mov	x1, x19
+   f86dc:	aa0003f3 	mov	x19, x0
+   f86e0:	91000800 	add	x0, x0, #0x2
+   f86e4:	7900e3a2 	strh	w2, [x29, #112]
+   f86e8:	a9087fbf 	stp	xzr, xzr, [x29, #128]
+   f86ec:	a9097fbf 	stp	xzr, xzr, [x29, #144]
+   f86f0:	a90a7fbf 	stp	xzr, xzr, [x29, #160]
+   f86f4:	a90b7fbf 	stp	xzr, xzr, [x29, #176]
+   f86f8:	a90c7fbf 	stp	xzr, xzr, [x29, #192]
+   f86fc:	f9006bbf 	str	xzr, [x29, #208]
+   f8700:	b900dbbf 	str	wzr, [x29, #216]
+   f8704:	7901bbbf 	strh	wzr, [x29, #220]
+[31m   f8708:	97fe15ae 	bl	7ddc0 <strcpy@@GLIBC_2.17>[0m
+   f870c:	12800006 	mov	w6, #0xffffffff            	// #-1
+   f8710:	aa1303e0 	mov	x0, x19
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m12[0m times [0;33mlibc-2.31.so[0m
+

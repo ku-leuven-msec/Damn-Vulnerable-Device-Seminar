@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibext2fs.so.2.4[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibext2fs.so.2.4[0m
+
+   11654:	11000400 	add	w0, w0, #0x1
+   11658:	f900227f 	str	xzr, [x19, #64]
+   1165c:	a9057e7f 	stp	xzr, xzr, [x19, #80]
+   11660:	a908fe7f 	stp	xzr, xzr, [x19, #136]
+   11664:	f900527f 	str	xzr, [x19, #160]
+   11668:	a9117e7f 	stp	xzr, xzr, [x19, #272]
+   1166c:	b9012263 	str	w3, [x19, #288]
+   11670:	b9003020 	str	w0, [x1, #48]
+   11674:	b4000082 	cbz	x2, 11684 <ext2fs_dup_handle@@Base+0xa4>
+   11678:	b9401840 	ldr	w0, [x2, #24]
+   1167c:	11000400 	add	w0, w0, #0x1
+   11680:	b9001840 	str	w0, [x2, #24]
+   11684:	f9400ed4 	ldr	x20, [x22, #24]
+   11688:	aa1403e0 	mov	x0, x20
+   1168c:	97fff705 	bl	f2a0 <strlen@plt>
+   11690:	91000400 	add	x0, x0, #0x1
+   11694:	97fff87f 	bl	f890 <malloc@plt>
+   11698:	b4000ae0 	cbz	x0, 117f4 <ext2fs_dup_handle@@Base+0x214>
+   1169c:	aa1403e1 	mov	x1, x20
+   116a0:	f9000e60 	str	x0, [x19, #24]
+[31m   116a4:	97fffbab 	bl	10550 <strcpy@plt>[0m
+   116a8:	d2808000 	mov	x0, #0x400                 	// #1024
+   116ac:	97fff879 	bl	f890 <malloc@plt>
+--
+   27b68:	b9003a80 	str	w0, [x20, #56]
+   27b6c:	b9405a60 	ldr	w0, [x19, #88]
+   27b70:	f9400a78 	ldr	x24, [x19, #16]
+   27b74:	f9000a98 	str	x24, [x20, #16]
+   27b78:	f9402a61 	ldr	x1, [x19, #80]
+   27b7c:	f9002a81 	str	x1, [x20, #80]
+   27b80:	b9005a80 	str	w0, [x20, #88]
+   27b84:	b40001f7 	cbz	x23, 27bc0 <ext2fs_copy_generic_bmap@@Base+0x100>
+   27b88:	aa1703e0 	mov	x0, x23
+   27b8c:	97ff9dc5 	bl	f2a0 <strlen@plt>
+   27b90:	91002800 	add	x0, x0, #0xa
+   27b94:	97ff9f3f 	bl	f890 <malloc@plt>
+   27b98:	aa0003f6 	mov	x22, x0
+   27b9c:	b4000480 	cbz	x0, 27c2c <ext2fs_copy_generic_bmap@@Base+0x16c>
+   27ba0:	d28dec62 	mov	x2, #0x6f63                	// #28515
+   27ba4:	f2af2e02 	movk	x2, #0x7970, lsl #16
+   27ba8:	f2cde402 	movk	x2, #0x6f20, lsl #32
+   27bac:	f2e40cc2 	movk	x2, #0x2066, lsl #48
+   27bb0:	f8008402 	str	x2, [x0], #8
+   27bb4:	aa1703e1 	mov	x1, x23
+[31m   27bb8:	97ffa266 	bl	10550 <strcpy@plt>[0m
+   27bbc:	f9002296 	str	x22, [x20, #64]
+   27bc0:	f9400f02 	ldr	x2, [x24, #24]
+--
+   34688:	b940c319 	ldr	w25, [x24, #192]
+   3468c:	91014000 	add	x0, x0, #0x50
+   34690:	97ff6c80 	bl	f890 <malloc@plt>
+   34694:	aa0003fb 	mov	x27, x0
+   34698:	b40033a0 	cbz	x0, 34d0c <ext2fs_write_bitmaps@@Base+0x76c>
+   3469c:	35001257 	cbnz	w23, 348e4 <ext2fs_write_bitmaps@@Base+0x344>
+   346a0:	52800015 	mov	w21, #0x0                   	// #0
+   346a4:	b9406fe0 	ldr	w0, [sp, #108]
+   346a8:	34001800 	cbz	w0, 349a8 <ext2fs_write_bitmaps@@Base+0x408>
+   346ac:	f9402b00 	ldr	x0, [x24, #80]
+   346b0:	b4000040 	cbz	x0, 346b8 <ext2fs_write_bitmaps@@Base+0x118>
+   346b4:	97ff6ecf 	bl	101f0 <ext2fs_free_inode_bitmap@plt>
+   346b8:	d0000082 	adrp	x2, 46000 <ext2fs_rb_replace_node@@Base+0x6210>
+   346bc:	911b4042 	add	x2, x2, #0x6d0
+   346c0:	f9400f01 	ldr	x1, [x24, #24]
+   346c4:	91004760 	add	x0, x27, #0x11
+   346c8:	a9401c46 	ldp	x6, x7, [x2]
+   346cc:	a9001f66 	stp	x6, x7, [x27]
+   346d0:	79402042 	ldrh	w2, [x2, #16]
+   346d4:	79002362 	strh	w2, [x27, #16]
+[31m   346d8:	97ff6f9e 	bl	10550 <strcpy@plt>[0m
+   346dc:	91014302 	add	x2, x24, #0x50
+   346e0:	aa1b03e1 	mov	x1, x27
+--
+   348c0:	a94153f3 	ldp	x19, x20, [sp, #16]
+   348c4:	a94363f7 	ldp	x23, x24, [sp, #48]
+   348c8:	a94573fb 	ldp	x27, x28, [sp, #80]
+   348cc:	a8cc7bfd 	ldp	x29, x30, [sp], #192
+   348d0:	d65f03c0 	ret
+   348d4:	d296e79c 	mov	x28, #0xb73c                	// #46908
+   348d8:	f2afe57c 	movk	x28, #0x7f2b, lsl #16
+   348dc:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   348e0:	17fffff2 	b	348a8 <ext2fs_write_bitmaps@@Base+0x308>
+   348e4:	f9402f00 	ldr	x0, [x24, #88]
+   348e8:	b4000040 	cbz	x0, 348f0 <ext2fs_write_bitmaps@@Base+0x350>
+   348ec:	97ff6e9d 	bl	10360 <ext2fs_free_block_bitmap@plt>
+   348f0:	d0000082 	adrp	x2, 46000 <ext2fs_rb_replace_node@@Base+0x6210>
+   348f4:	911ae042 	add	x2, x2, #0x6b8
+   348f8:	f9400f01 	ldr	x1, [x24, #24]
+   348fc:	91004760 	add	x0, x27, #0x11
+   34900:	a9401c46 	ldp	x6, x7, [x2]
+   34904:	a9001f66 	stp	x6, x7, [x27]
+   34908:	79402042 	ldrh	w2, [x2, #16]
+   3490c:	79002362 	strh	w2, [x27, #16]
+[31m   34910:	97ff6f10 	bl	10550 <strcpy@plt>[0m
+   34914:	91016302 	add	x2, x24, #0x58
+   34918:	aa1b03e1 	mov	x1, x27
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m4[0m times [0;33mlibext2fs.so.2.4[0m
+

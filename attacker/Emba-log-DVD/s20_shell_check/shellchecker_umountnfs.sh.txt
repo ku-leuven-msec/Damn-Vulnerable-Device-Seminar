@@ -1,0 +1,19 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/umountnfs.sh line 24:[0m
+[0mwhile read device mountpt fstype options[0m
+[32m      ^--^ SC2162: read without -r will mangle backslashes.[0m
+[33m           ^----^ SC2034: device appears unused. Verify use (or export if used externally).[0m
+[33m                                 ^-----^ SC2034: options appears unused. Verify use (or export if used externally).[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/umountnfs.sh line 28:[0m
+[0m		umount -f $mountpt[0m
+[32m                          ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		umount -f "$mountpt"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- device appears unused. Verify use...
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...
+  https://www.shellcheck.net/wiki/SC2162 -- read without -r will mangle backs...

@@ -1,0 +1,60 @@
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh line 24:[0m
+[0m    while read filename ; do[0m
+[32m          ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh line 28:[0m
+[0m	DIR="`dirname ${filename}`"[0m
+[32m             ^-------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                      ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	DIR="$(dirname "${filename}")"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh line 30:[0m
+[0m	$pkgconfig --print-provides "$filename" 2> /dev/null | while read n r v ; do[0m
+[32m                                                                     ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh line 43:[0m
+[0m    while read filename ; do[0m
+[32m          ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh line 46:[0m
+[0m	i="`expr $i + 1`"[0m
+[32m           ^-----------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m            ^--^ SC2003: expr is antiquated. Consider rewriting this using $((..)), ${} or [[ ]].[0m
+[32m                 ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	i="$(expr "$i" + 1)"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh line 47:[0m
+[0m	[ $i -eq 1 ] && echo "$pkgconfig"[0m
+[32m          ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	[ "$i" -eq 1 ] && echo "$pkgconfig"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh line 48:[0m
+[0m	DIR="`dirname ${filename}`"[0m
+[32m             ^-------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                      ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	DIR="$(dirname "${filename}")"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/pkgconfigdeps.sh line 50:[0m
+[0m	$pkgconfig --print-requires --print-requires-private "$filename" 2> /dev/null | while read n r v ; do[0m
+[32m                                                                                              ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...
+  https://www.shellcheck.net/wiki/SC2162 -- read without -r will mangle backs...
+  https://www.shellcheck.net/wiki/SC2003 -- expr is antiquated. Consider rewr...

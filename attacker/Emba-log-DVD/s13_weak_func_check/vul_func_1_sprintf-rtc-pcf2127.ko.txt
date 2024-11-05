@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mrtc-pcf2127.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m135) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrtc-pcf2127.ko[0m
+
+ 7e8:	b9005fe1 	str	w1, [sp, #92]
+ 7ec:	94000000 	bl	0 <rtc_valid_tm>
+ 7f0:	34000180 	cbz	w0, 820 <timestamp0_show+0x128>
+ 7f4:	93407c00 	sxtw	x0, w0
+ 7f8:	91146273 	add	x19, x19, #0x518
+ 7fc:	f94047e2 	ldr	x2, [sp, #136]
+ 800:	f9400261 	ldr	x1, [x19]
+ 804:	ca010041 	eor	x1, x2, x1
+ 808:	b5000241 	cbnz	x1, 850 <timestamp0_show+0x158>
+ 80c:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 810:	a9425bf5 	ldp	x21, x22, [sp, #32]
+ 814:	f9401bf7 	ldr	x23, [sp, #48]
+ 818:	a8c97bfd 	ldp	x29, x30, [sp], #144
+ 81c:	d65f03c0 	ret
+ 820:	910123e0 	add	x0, sp, #0x48
+ 824:	94000000 	bl	0 <rtc_tm_to_time64>
+ 828:	90000001 	adrp	x1, 0 <pcf2127_i2c_write>
+ 82c:	aa0003e2 	mov	x2, x0
+ 830:	91000021 	add	x1, x1, #0x0
+ 834:	aa1403e0 	mov	x0, x20
+[31m 838:	94000000 	bl	0 <sprintf>[0m
+ 83c:	17ffffee 	b	7f4 <timestamp0_show+0xfc>
+ 840:	910022c0 	add	x0, x22, #0x8
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mrtc-pcf2127.ko[0m
+

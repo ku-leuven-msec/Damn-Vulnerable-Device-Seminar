@@ -1,0 +1,72 @@
+[[0;33m*[0m] Binary protection state of [0;33mfbtft.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m300) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mfbtft.ko[0m
+
+    1128:	b5000660 	cbnz	x0, 11f4 <fbtft_register_framebuffer+0x224>
+    112c:	2a1403e0 	mov	w0, w20
+    1130:	a9417bfd 	ldp	x29, x30, [sp, #16]
+    1134:	a94253f3 	ldp	x19, x20, [sp, #32]
+    1138:	a9435bf5 	ldp	x21, x22, [sp, #48]
+    113c:	f94023f7 	ldr	x23, [sp, #64]
+    1140:	910303ff 	add	sp, sp, #0xc0
+    1144:	d65f03c0 	ret
+    1148:	aa1303e0 	mov	x0, x19
+    114c:	94000000 	bl	2ad8 <fbtft_sysfs_init>
+    1150:	f9403660 	ldr	x0, [x19, #104]
+    1154:	b40005e0 	cbz	x0, 1210 <fbtft_register_framebuffer+0x240>
+    1158:	f9403a62 	ldr	x2, [x19, #112]
+    115c:	910153f3 	add	x19, sp, #0x54
+    1160:	f10ffc5f 	cmp	x2, #0x3ff
+    1164:	540000c9 	b.ls	117c <fbtft_register_framebuffer+0x1ac>  // b.plast
+    1168:	90000001 	adrp	x1, 0 <fbtft_register_backlight>
+    116c:	d34afc42 	lsr	x2, x2, #10
+    1170:	aa1303e0 	mov	x0, x19
+    1174:	91000021 	add	x1, x1, #0x0
+[31m    1178:	94000000 	bl	0 <sprintf>[0m
+    117c:	91021bf4 	add	x20, sp, #0x86
+    1180:	b40001b7 	cbz	x23, 11b4 <fbtft_register_framebuffer+0x1e4>
+    1184:	b942eae5 	ldr	w5, [x23, #744]
+    1188:	52884804 	mov	w4, #0x4240                	// #16960
+    118c:	f94172e1 	ldr	x1, [x23, #736]
+    1190:	72a001e4 	movk	w4, #0xf, lsl #16
+    1194:	394bb2e3 	ldrb	w3, [x23, #748]
+    1198:	91021bf4 	add	x20, sp, #0x86
+    119c:	1ac408a4 	udiv	w4, w5, w4
+    11a0:	aa1403e0 	mov	x0, x20
+    11a4:	79c5d022 	ldrsh	w2, [x1, #744]
+    11a8:	90000001 	adrp	x1, 0 <fbtft_register_backlight>
+    11ac:	91000021 	add	x1, x1, #0x0
+[31m    11b0:	94000000 	bl	0 <sprintf>[0m
+    11b4:	f941d2a0 	ldr	x0, [x21, #928]
+    11b8:	d2807d07 	mov	x7, #0x3e8                 	// #1000
+--
+    13f0:	91000021 	add	x1, x1, #0x0
+    13f4:	f941d800 	ldr	x0, [x0, #944]
+    13f8:	94000000 	bl	0 <_dev_err>
+    13fc:	128002a0 	mov	w0, #0xffffffea            	// #-22
+    1400:	a95e53f3 	ldp	x19, x20, [sp, #480]
+    1404:	140000a0 	b	1684 <fbtft_init_display+0x3a4>
+    1408:	3100045f 	cmn	w2, #0x1
+    140c:	540019c1 	b.ne	1744 <fbtft_init_display+0x464>  // b.any
+    1410:	f9010bf9 	str	x25, [sp, #528]
+    1414:	11000a99 	add	w25, w20, #0x2
+    1418:	f9010ffa 	str	x26, [sp, #536]
+    141c:	11000693 	add	w19, w20, #0x1
+    1420:	390ce3ff 	strb	wzr, [sp, #824]
+    1424:	2a1303f4 	mov	w20, w19
+    1428:	78f9d862 	ldrsh	w2, [x3, w25, sxtw #1]
+    142c:	37f801a2 	tbnz	w2, #31, 1460 <fbtft_init_display+0x180>
+    1430:	9000001a 	adrp	x26, 0 <fbtft_register_backlight>
+    1434:	9100035a 	add	x26, x26, #0x0
+    1438:	aa1a03e1 	mov	x1, x26
+    143c:	910ca3e0 	add	x0, sp, #0x328
+[31m    1440:	94000000 	bl	0 <sprintf>[0m
+    1444:	910ca3e1 	add	x1, sp, #0x328
+    1448:	910ce3e0 	add	x0, sp, #0x338
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mfbtft.ko[0m
+

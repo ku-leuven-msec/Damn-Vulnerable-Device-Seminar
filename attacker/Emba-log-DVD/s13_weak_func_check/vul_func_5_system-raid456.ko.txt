@@ -1,0 +1,130 @@
+[[0;33m*[0m] Binary protection state of [0;33mraid456.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m620) Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mraid456.ko[0m
+
+    ac0c:	b9021660 	str	w0, [x19, #532]
+    ac10:	aa1503e1 	mov	x1, x21
+    ac14:	aa1603e0 	mov	x0, x22
+    ac18:	94000000 	bl	0 <_raw_spin_unlock_irqrestore>
+    ac1c:	d28000ba 	mov	x26, #0x5                   	// #5
+    ac20:	9106e261 	add	x1, x19, #0x1b8
+    ac24:	d2800100 	mov	x0, #0x8                   	// #8
+    ac28:	97ffdb32 	bl	18f0 <arch_atomic64_or>
+    ac2c:	aa1b03e1 	mov	x1, x27
+    ac30:	d2800400 	mov	x0, #0x20                  	// #32
+    ac34:	97ffdb2f 	bl	18f0 <arch_atomic64_or>
+    ac38:	14000008 	b	ac58 <raid5_error+0x118>
+    ac3c:	aa1903e0 	mov	x0, x25
+    ac40:	aa1503e1 	mov	x1, x21
+    ac44:	aa0103e3 	mov	x3, x1
+    ac48:	c8e3ff22 	casal	x3, x2, [x25]
+    ac4c:	aa0303e0 	mov	x0, x3
+    ac50:	eb0002bf 	cmp	x21, x0
+    ac54:	54000100 	b.eq	ac74 <raid5_error+0x134>  // b.none
+    ac58:	f9401a75 	ldr	x21, [x19, #48]
+[31m    ac5c:	97ffd541 	bl	160 <system_uses_lse_atomics>[0m
+    ac60:	72001c1f 	tst	w0, #0xff
+    ac64:	aa1a02a2 	orr	x2, x21, x26
+--
+    d234:	97ffd1fd 	bl	1a28 <arch_atomic64_andnot>
+    d238:	f9402680 	ldr	x0, [x20, #72]
+    d23c:	92400001 	and	x1, x0, #0x1
+    d240:	f90043e1 	str	x1, [sp, #128]
+    d244:	360001e0 	tbz	w0, #0, d280 <handle_stripe+0x98>
+    d248:	aa1603e1 	mov	x1, x22
+    d24c:	d2800040 	mov	x0, #0x2                   	// #2
+    d250:	97ffd1a8 	bl	18f0 <arch_atomic64_or>
+    d254:	f9403be0 	ldr	x0, [sp, #112]
+    d258:	91146017 	add	x23, x0, #0x518
+    d25c:	f9408fe1 	ldr	x1, [sp, #280]
+    d260:	f94002e0 	ldr	x0, [x23]
+    d264:	ca000020 	eor	x0, x1, x0
+    d268:	b500d820 	cbnz	x0, ed6c <handle_stripe+0x1b84>
+    d26c:	a94153f3 	ldp	x19, x20, [sp, #16]
+    d270:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    d274:	a94363f7 	ldp	x23, x24, [sp, #48]
+    d278:	a8d27bfd 	ldp	x29, x30, [sp], #288
+    d27c:	d65f03c0 	ret
+    d280:	a9046bf9 	stp	x25, x26, [sp, #64]
+[31m    d284:	97ffcbb7 	bl	160 <system_uses_lse_atomics>[0m
+    d288:	72001c1f 	tst	w0, #0xff
+    d28c:	54001f00 	b.eq	d66c <handle_stripe+0x484>  // b.none
+--
+    d5fc:	f94116a0 	ldr	x0, [x21, #552]
+    d600:	36c800c0 	tbz	w0, #25, d618 <handle_stripe+0x430>
+    d604:	f9410ea0 	ldr	x0, [x21, #536]
+    d608:	b4000080 	cbz	x0, d618 <handle_stripe+0x430>
+    d60c:	b940dfe0 	ldr	w0, [sp, #220]
+    d610:	11000400 	add	w0, w0, #0x1
+    d614:	b900dfe0 	str	w0, [sp, #220]
+    d618:	510006e0 	sub	w0, w23, #0x1
+    d61c:	34001c37 	cbz	w23, d9a0 <handle_stripe+0x7b8>
+    d620:	2a0003f7 	mov	w23, w0
+    d624:	17ffff53 	b	d370 <handle_stripe+0x188>
+    d628:	9101a299 	add	x25, x20, #0x68
+    d62c:	aa1903e0 	mov	x0, x25
+    d630:	94000000 	bl	0 <_raw_spin_lock>
+    d634:	f9403e95 	ldr	x21, [x20, #120]
+    d638:	b4007215 	cbz	x21, e478 <handle_stripe+0x1290>
+    d63c:	eb15029f 	cmp	x20, x21
+    d640:	540007e0 	b.eq	d73c <handle_stripe+0x554>  // b.none
+    d644:	aa1903e0 	mov	x0, x25
+    d648:	94000000 	bl	0 <_raw_spin_unlock>
+[31m    d64c:	97ffcac5 	bl	160 <system_uses_lse_atomics>[0m
+    d650:	72001c1f 	tst	w0, #0xff
+    d654:	d2800020 	mov	x0, #0x1                   	// #1
+--
+    e018:	1a9f0021 	csel	w1, w1, wzr, eq  // eq = none
+    e01c:	34fff541 	cbz	w1, dec4 <handle_stripe+0xcdc>
+    e020:	9106e061 	add	x1, x3, #0x1b8
+    e024:	d2800400 	mov	x0, #0x20                  	// #32
+    e028:	f90037e3 	str	x3, [sp, #104]
+    e02c:	97ffce31 	bl	18f0 <arch_atomic64_or>
+    e030:	f94037e3 	ldr	x3, [sp, #104]
+    e034:	f940a460 	ldr	x0, [x3, #328]
+    e038:	94000000 	bl	0 <md_wakeup_thread>
+    e03c:	17ffffa2 	b	dec4 <handle_stripe+0xcdc>
+    e040:	52800023 	mov	w3, #0x1                   	// #1
+    e044:	14000d0b 	b	11470 <cleanup_module+0xdd8>
+    e048:	17ffffb6 	b	df20 <handle_stripe+0xd38>
+    e04c:	f9407fe1 	ldr	x1, [sp, #248]
+    e050:	b5000a01 	cbnz	x1, e190 <handle_stripe+0xfa8>
+    e054:	aa1403e0 	mov	x0, x20
+    e058:	aa1a03e1 	mov	x1, x26
+    e05c:	97ffd73d 	bl	3d50 <ops_run_io>
+    e060:	b940f3e0 	ldr	w0, [sp, #240]
+    e064:	35000840 	cbnz	w0, e16c <handle_stripe+0xf84>
+[31m    e068:	97ffc83e 	bl	160 <system_uses_lse_atomics>[0m
+    e06c:	72001c1f 	tst	w0, #0xff
+    e070:	d2800020 	mov	x0, #0x1                   	// #1
+--
+    ebcc:	17ffffbf 	b	eac8 <handle_stripe+0x18e0>
+    ebd0:	35000821 	cbnz	w1, ecd4 <handle_stripe+0x1aec>
+    ebd4:	52802b01 	mov	w1, #0x158                 	// #344
+    ebd8:	52800020 	mov	w0, #0x1                   	// #1
+    ebdc:	b9006280 	str	w0, [x20, #96]
+    ebe0:	d2800020 	mov	x0, #0x1                   	// #1
+    ebe4:	9b215261 	smaddl	x1, w19, w1, x20
+    ebe8:	b900da9f 	str	wzr, [x20, #216]
+    ebec:	9108a021 	add	x1, x1, #0x228
+    ebf0:	97ffcb8e 	bl	1a28 <arch_atomic64_andnot>
+    ebf4:	b940b7e1 	ldr	w1, [sp, #180]
+    ebf8:	b9406280 	ldr	w0, [x20, #96]
+    ebfc:	51000421 	sub	w1, w1, #0x1
+    ec00:	b900b7e1 	str	w1, [sp, #180]
+    ec04:	51000400 	sub	w0, w0, #0x1
+    ec08:	7100081f 	cmp	w0, #0x2
+    ec0c:	540006a9 	b.ls	ece0 <handle_stripe+0x1af8>  // b.plast
+    ec10:	b940c3e0 	ldr	w0, [sp, #192]
+    ec14:	17fffe91 	b	e658 <handle_stripe+0x1470>
+    ec18:	f9401719 	ldr	x25, [x24, #40]
+[31m    ec1c:	97ffc551 	bl	160 <system_uses_lse_atomics>[0m
+    ec20:	72001c1f 	tst	w0, #0xff
+    ec24:	91064321 	add	x1, x25, #0x190
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m5[0m times [0;33mraid456.ko[0m
+

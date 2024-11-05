@@ -1,0 +1,573 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module socket</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0401: Wildcard import _socket (wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:52:0: C0410: Multiple imports on one line (os, sys, io, selectors) (multiple-imports)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:65:15: W0212: Access to a protected member _get_exports_list of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:73:0: W0212: Access to a protected member _convert_ of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:78:0: W0212: Access to a protected member _convert_ of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:83:0: W0212: Access to a protected member _convert_ of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:88:0: W0212: Access to a protected member _convert_ of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:210:36: C0321: More than one statement on a single line (multiple-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:213:0: E0102: class already defined line 50 (function-redefined)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:213:0: C0103: Class name "socket" doesn't conform to PascalCase naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:219:34: W0622: Redefining built-in 'type' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:247:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:259:20: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:265:20: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:268:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:280:8: C0103: Variable name "fd" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:292:8: C0103: Variable name "fd" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:360:12: W0621: Redefining name 'timeout' from outer scope (line 50) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:351:16: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:355:16: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:398:28: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:345:8: R0912: Too many branches (19/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:410:8: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:414:4: R0912: Too many branches (14/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:450:43: W0613: Unused argument 'offset' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:516:50: E0602: Undefined variable 'AddressFamily' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:522:48: E0602: Undefined variable 'SocketKind' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:526:19: E1101: Module 'os' has no 'get_handle_inheritable' member (no-member)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:528:12: E1101: Module 'os' has no 'set_handle_inheritable' member (no-member)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:537:0: C0103: Argument name "fd" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:537:23: W0622: Redefining built-in 'type' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:558:4: E0102: function already defined line 50 (function-redefined)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:558:32: W0622: Redefining built-in 'type' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:571:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:571:11: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:572:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:573:8: C0103: Variable name "b" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:579:4: E0102: function already defined line 50 (function-redefined)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:579:35: W0622: Redefining built-in 'type' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:673:12: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:688:8: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:697:8: W0125: Using a conditional statement with a constant value (using-constant-test)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:704:8: W0125: Using a conditional statement with a constant value (using-constant-test)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:711:8: W0125: Using a conditional statement with a constant value (using-constant-test)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:723:8: R1705: Unnecessary "else" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:736:8: W0125: Using a conditional statement with a constant value (using-constant-test)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:739:8: W0212: Access to a protected member _decref_socketios of a client class (protected-access)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:761:12: R1704: Redefining argument with the local name 'name' (redefined-argument-from-local)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:756:27: W0612: Unused variable 'ipaddrs' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:771:31: W0621: Redefining name 'timeout' from outer scope (line 50) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:788:8: C0103: Variable name "af" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:788:40: C0103: Variable name "sa" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:788:29: W0612: Unused variable 'canonname' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:832:0: R0912: Too many branches (14/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:901:0: E0102: function already defined line 50 (function-redefined)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:901:38: W0622: Redefining built-in 'type' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:901:0: R0913: Too many arguments (6/5) (too-many-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:919:8: C0103: Variable name "af" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:919:40: C0103: Variable name "sa" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:920:48: E0602: Undefined variable 'AddressFamily' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:921:54: E0602: Undefined variable 'SocketKind' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:64:33: E0603: Undefined variable name 'AddressFamily' in __all__ (undefined-all-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:64:50: E0603: Undefined variable name 'SocketKind' in __all__ (undefined-all-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_ALG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_APPLETALK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_ASH from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_ATMPVC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_ATMSVC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_AX25 from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_BLUETOOTH from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_BRIDGE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_CAN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_DECnet from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_ECONET from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_IPX from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_IRDA from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_KEY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_LLC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_NETBEUI from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_NETLINK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_NETROM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_PACKET from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_PPPOX from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_QIPCRTR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_RDS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_ROSE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_ROUTE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_SECURITY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_SNA from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_TIPC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_UNSPEC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_VSOCK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_WANPIPE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AF_X25 from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AI_ADDRCONFIG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AI_ALL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AI_CANONNAME from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AI_NUMERICHOST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AI_NUMERICSERV from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AI_PASSIVE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import AI_V4MAPPED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_OP_DECRYPT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_OP_ENCRYPT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_OP_SIGN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_OP_VERIFY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_SET_AEAD_ASSOCLEN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_SET_AEAD_AUTHSIZE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_SET_IV from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_SET_KEY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_SET_OP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ALG_SET_PUBKEY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import BDADDR_ANY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import BDADDR_LOCAL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import BTPROTO_HCI from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import BTPROTO_L2CAP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import BTPROTO_RFCOMM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import BTPROTO_SCO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_CAN_FD_FRAME from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_ANNOUNCE_RESUME from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_CHANGED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_CHECK_DLC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_DELETE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_FILTER_ID from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_NO_AUTOTIMER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_READ from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_RTR_FRAME from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_SETUP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_STATUS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_RX_TIMEOUT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_SETTIMER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_STARTTIMER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_ANNOUNCE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_COUNTEVT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_CP_CAN_ID from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_DELETE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_EXPIRED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_READ from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_RESET_MULTI_IDX from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_SEND from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_SETUP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_BCM_TX_STATUS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_EFF_FLAG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_EFF_MASK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_ERR_FLAG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_ERR_MASK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_ISOTP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_J1939 from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_RAW from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_RAW_ERR_FILTER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_RAW_FD_FRAMES from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_RAW_FILTER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_RAW_JOIN_FILTERS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_RAW_LOOPBACK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_RAW_RECV_OWN_MSGS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_RTR_FLAG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAN_SFF_MASK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CAPI from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CMSG_LEN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import CMSG_SPACE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_ADDRFAMILY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_AGAIN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_BADFLAGS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_FAIL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_FAMILY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_MEMORY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_NODATA from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_NONAME from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_OVERFLOW from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_SERVICE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_SOCKTYPE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import EAI_SYSTEM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import HCI_DATA_DIR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import HCI_FILTER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import HCI_TIME_STAMP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import INADDR_ALLHOSTS_GROUP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import INADDR_ANY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import INADDR_BROADCAST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import INADDR_LOOPBACK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import INADDR_MAX_LOCAL_GROUP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import INADDR_NONE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import INADDR_UNSPEC_GROUP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IOCTL_VM_SOCKETS_GET_LOCAL_CID from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPORT_RESERVED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPORT_USERRESERVED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_AH from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_DSTOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_EGP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_ESP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_FRAGMENT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_GRE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_HOPOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_ICMP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_ICMPV6 from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_IDP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_IGMP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_IP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_IPIP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_NONE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_PIM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_PUP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_RAW from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_ROUTING from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_RSVP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_SCTP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_TCP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_TP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_UDP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPPROTO_UDPLITE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_CHECKSUM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_DONTFRAG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_DSTOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_HOPLIMIT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_HOPOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_JOIN_GROUP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_LEAVE_GROUP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_MULTICAST_HOPS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_MULTICAST_IF from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_MULTICAST_LOOP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_NEXTHOP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_PATHMTU from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_PKTINFO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RECVDSTOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RECVHOPLIMIT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RECVHOPOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RECVPATHMTU from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RECVPKTINFO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RECVRTHDR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RECVTCLASS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RTHDR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RTHDRDSTOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_RTHDR_TYPE_0 from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_TCLASS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IPV6_UNICAST_HOPS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_ADD_MEMBERSHIP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_DEFAULT_MULTICAST_LOOP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_DEFAULT_MULTICAST_TTL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_DROP_MEMBERSHIP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_HDRINCL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_MAX_MEMBERSHIPS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_MULTICAST_IF from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_MULTICAST_LOOP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_MULTICAST_TTL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_OPTIONS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_RECVOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_RECVRETOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_RETOPTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_TOS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_TRANSPARENT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import IP_TTL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_EE_INFO_NONE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_EE_INFO_TX_ABORT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_FILTER_MAX from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_IDLE_ADDR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_MAX_UNICAST_ADDR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_NLA_BYTES_ACKED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_NLA_PAD from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_NO_ADDR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_NO_NAME from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_NO_PGN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_PGN_ADDRESS_CLAIMED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_PGN_ADDRESS_COMMANDED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_PGN_MAX from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_PGN_PDU1_MAX from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import J1939_PGN_REQUEST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_CMSG_CLOEXEC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_CONFIRM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_CTRUNC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_DONTROUTE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_DONTWAIT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_EOR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_ERRQUEUE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_FASTOPEN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_MORE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_NOSIGNAL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_OOB from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_PEEK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_TRUNC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import MSG_WAITALL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NETLINK_CRYPTO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NETLINK_DNRTMSG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NETLINK_FIREWALL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NETLINK_IP6_FW from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NETLINK_NFLOG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NETLINK_ROUTE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NETLINK_USERSOCK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NETLINK_XFRM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NI_DGRAM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NI_MAXHOST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NI_MAXSERV from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NI_NAMEREQD from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NI_NOFQDN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NI_NUMERICHOST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import NI_NUMERICSERV from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PACKET_BROADCAST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PACKET_FASTROUTE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PACKET_HOST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PACKET_LOOPBACK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PACKET_MULTICAST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PACKET_OTHERHOST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PACKET_OUTGOING from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PF_CAN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PF_PACKET from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import PF_RDS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SCM_CREDENTIALS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SCM_J1939_DEST_ADDR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SCM_J1939_DEST_NAME from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SCM_J1939_ERRQUEUE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SCM_J1939_PRIO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SCM_RIGHTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SHUT_RD from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SHUT_RDWR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SHUT_WR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOCK_CLOEXEC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOCK_DGRAM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOCK_NONBLOCK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOCK_RAW from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOCK_RDM from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOCK_SEQPACKET from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_ALG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_CAN_BASE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_CAN_RAW from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_HCI from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_IP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_RDS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_TCP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_TIPC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOL_UDP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SOMAXCONN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_ACCEPTCONN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_BINDTODEVICE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_BROADCAST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_DEBUG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_DOMAIN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_DONTROUTE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_ERROR from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_J1939_ERRQUEUE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_J1939_FILTER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_J1939_PROMISC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_J1939_SEND_PRIO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_KEEPALIVE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_LINGER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_MARK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_OOBINLINE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_PASSCRED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_PASSSEC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_PEERCRED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_PEERSEC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_PRIORITY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_PROTOCOL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_RCVBUF from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_RCVLOWAT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_RCVTIMEO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_SNDBUF from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_SNDLOWAT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_SNDTIMEO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_TYPE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_VM_SOCKETS_BUFFER_MAX_SIZE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_VM_SOCKETS_BUFFER_MIN_SIZE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SO_VM_SOCKETS_BUFFER_SIZE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import SocketType from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_CONGESTION from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_CORK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_DEFER_ACCEPT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_FASTOPEN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_INFO from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_KEEPCNT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_KEEPIDLE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_KEEPINTVL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_LINGER2 from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_MAXSEG from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_NODELAY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_NOTSENT_LOWAT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_QUICKACK from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_SYNCNT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_USER_TIMEOUT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TCP_WINDOW_CLAMP from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_ADDR_ID from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_ADDR_NAME from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_ADDR_NAMESEQ from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_CFG_SRV from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_CLUSTER_SCOPE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_CONN_TIMEOUT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_CRITICAL_IMPORTANCE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_DEST_DROPPABLE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_HIGH_IMPORTANCE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_IMPORTANCE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_LOW_IMPORTANCE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_MEDIUM_IMPORTANCE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_NODE_SCOPE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_PUBLISHED from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_SRC_DROPPABLE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_SUBSCR_TIMEOUT from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_SUB_CANCEL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_SUB_PORTS from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_SUB_SERVICE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_TOP_SRV from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_WAIT_FOREVER from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_WITHDRAWN from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import TIPC_ZONE_SCOPE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import UDPLITE_RECV_CSCOV from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import UDPLITE_SEND_CSCOV from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import VMADDR_CID_ANY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import VMADDR_CID_HOST from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import VMADDR_PORT_ANY from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import VM_SOCKETS_INVALID_VERSION from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import close from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import gaierror from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import gethostbyname from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import gethostbyname_ex from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import getnameinfo from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import getprotobyname from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import getservbyname from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import getservbyport from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import herror from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import htonl from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import htons from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import if_indextoname from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import if_nameindex from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import if_nametoindex from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import inet_aton from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import inet_ntoa from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import inet_ntop from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import inet_pton from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ntohl from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import ntohs from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import setdefaulttimeout from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:50:0: W0614: Unused import sethostname from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:52:0: C0411: standard import "import os, sys, io, selectors" should be placed before "import _socket" (wrong-import-order)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:52:0: C0411: standard import "import os, sys, io, selectors" should be placed before "import _socket" (wrong-import-order)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:52:0: C0411: standard import "import os, sys, io, selectors" should be placed before "import _socket" (wrong-import-order)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:52:0: C0411: standard import "import os, sys, io, selectors" should be placed before "import _socket" (wrong-import-order)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/socket.py:53:0: C0411: standard import "from enum import IntEnum, IntFlag" should be placed before "import _socket" (wrong-import-order)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 1.01/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

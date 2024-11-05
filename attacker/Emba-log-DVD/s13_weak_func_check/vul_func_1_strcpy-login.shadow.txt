@@ -1,0 +1,35 @@
+[[0;33m*[0m] Binary protection state of [0;33mlogin.shadow[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+[32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlogin.shadow[0m
+
+    9b68:	9400021e 	bl	a3e0 <ferror@plt+0x6c50>
+    9b6c:	aa0003f3 	mov	x19, x0
+    9b70:	d2803202 	mov	x2, #0x190                 	// #400
+    9b74:	52800001 	mov	w1, #0x0                   	// #0
+    9b78:	97ffe5da 	bl	32e0 <memset@plt>
+    9b7c:	528000e0 	mov	w0, #0x7                   	// #7
+    9b80:	79000260 	strh	w0, [x19]
+    9b84:	97ffe5a3 	bl	3210 <getpid@plt>
+    9b88:	b9000660 	str	w0, [x19, #4]
+    9b8c:	aa1403e1 	mov	x1, x20
+    9b90:	91002260 	add	x0, x19, #0x8
+    9b94:	d2800402 	mov	x2, #0x20                  	// #32
+    9b98:	97ffe6ba 	bl	3680 <strncpy@plt>
+    9b9c:	17ffffba 	b	9a84 <ferror@plt+0x62f4>
+    9ba0:	aa0203e0 	mov	x0, x2
+    9ba4:	97ffe513 	bl	2ff0 <strlen@plt>
+    9ba8:	91000400 	add	x0, x0, #0x1
+    9bac:	9400020d 	bl	a3e0 <ferror@plt+0x6c50>
+    9bb0:	aa1303e1 	mov	x1, x19
+    9bb4:	aa0003f8 	mov	x24, x0
+[31m    9bb8:	97ffe682 	bl	35c0 <strcpy@plt>[0m
+    9bbc:	90000021 	adrp	x1, d000 <putsgent@@Base+0x1740>
+    9bc0:	aa1403e0 	mov	x0, x20
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mlogin.shadow[0m
+

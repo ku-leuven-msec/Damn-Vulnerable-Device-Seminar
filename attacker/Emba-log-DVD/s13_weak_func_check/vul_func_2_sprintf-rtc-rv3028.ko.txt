@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mrtc-rv3028.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m102) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrtc-rv3028.ko[0m
+
+     1e4:	f90013f5 	str	x21, [sp, #32]
+     1e8:	aa0003f4 	mov	x20, x0
+     1ec:	aa0203f5 	mov	x21, x2
+     1f0:	aa1e03e0 	mov	x0, x30
+     1f4:	94000000 	bl	0 <_mcount>
+     1f8:	d5384113 	mrs	x19, sp_el0
+     1fc:	52800281 	mov	w1, #0x14                  	// #20
+     200:	f9402280 	ldr	x0, [x20, #64]
+     204:	f9428e62 	ldr	x2, [x19, #1304]
+     208:	f9001fe2 	str	x2, [sp, #56]
+     20c:	d2800002 	mov	x2, #0x0                   	// #0
+     210:	9100d3e2 	add	x2, sp, #0x34
+     214:	f9403c00 	ldr	x0, [x0, #120]
+     218:	f9400000 	ldr	x0, [x0]
+     21c:	94000000 	bl	0 <regmap_read>
+     220:	350000c0 	cbnz	w0, 238 <timestamp0_count_show+0x60>
+     224:	b94037e2 	ldr	w2, [sp, #52]
+     228:	90000001 	adrp	x1, 0 <rv3028_read_offset>
+     22c:	aa1503e0 	mov	x0, x21
+     230:	91000021 	add	x1, x1, #0x0
+[31m     234:	94000000 	bl	0 <sprintf>[0m
+     238:	91146273 	add	x19, x19, #0x518
+     23c:	93407c00 	sxtw	x0, w0
+--
+     484:	2a0003e1 	mov	w1, w0
+     488:	39419be0 	ldrb	w0, [sp, #102]
+     48c:	b9004be1 	str	w1, [sp, #72]
+     490:	94000000 	bl	0 <_bcd2bin>
+     494:	2a0003e1 	mov	w1, w0
+     498:	39419fe0 	ldrb	w0, [sp, #103]
+     49c:	51000421 	sub	w1, w1, #0x1
+     4a0:	b9004fe1 	str	w1, [sp, #76]
+     4a4:	94000000 	bl	0 <_bcd2bin>
+     4a8:	11019001 	add	w1, w0, #0x64
+     4ac:	9100f3e0 	add	x0, sp, #0x3c
+     4b0:	b90053e1 	str	w1, [sp, #80]
+     4b4:	94000000 	bl	0 <rtc_valid_tm>
+     4b8:	35000100 	cbnz	w0, 4d8 <timestamp0_show+0x120>
+     4bc:	9100f3e0 	add	x0, sp, #0x3c
+     4c0:	94000000 	bl	0 <rtc_tm_to_time64>
+     4c4:	90000001 	adrp	x1, 0 <rv3028_read_offset>
+     4c8:	aa0003e2 	mov	x2, x0
+     4cc:	91000021 	add	x1, x1, #0x0
+     4d0:	aa1503e0 	mov	x0, x21
+[31m     4d4:	94000000 	bl	0 <sprintf>[0m
+     4d8:	93407c00 	sxtw	x0, w0
+     4dc:	17ffffcd 	b	410 <timestamp0_show+0x58>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mrtc-rv3028.ko[0m
+

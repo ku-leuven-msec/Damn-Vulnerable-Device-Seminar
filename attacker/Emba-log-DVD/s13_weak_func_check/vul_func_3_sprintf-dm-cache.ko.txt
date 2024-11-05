@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mdm-cache.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m447) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mdm-cache.ko[0m
+
+    28e0:	94000000 	bl	0 <_mcount>
+    28e4:	f9428ec1 	ldr	x1, [x22, #1304]
+    28e8:	f9006fe1 	str	x1, [sp, #216]
+    28ec:	d2800001 	mov	x1, #0x0                   	// #0
+    28f0:	a90a7fff 	stp	xzr, xzr, [sp, #160]
+    28f4:	f9005bff 	str	xzr, [sp, #176]
+    28f8:	f94022b4 	ldr	x20, [x21, #64]
+    28fc:	34000a73 	cbz	w19, 2a48 <cache_status+0x1a0>
+    2900:	7100067f 	cmp	w19, #0x1
+    2904:	540008a1 	b.ne	2a18 <cache_status+0x170>  // b.any
+    2908:	f9401282 	ldr	x2, [x20, #32]
+    290c:	90000013 	adrp	x19, 0 <is_discarded_oblock>
+    2910:	91000273 	add	x19, x19, #0x0
+    2914:	9102e3e0 	add	x0, sp, #0xb8
+    2918:	aa1303e1 	mov	x1, x19
+    291c:	2a1803f5 	mov	w21, w24
+    2920:	f9400042 	ldr	x2, [x2]
+    2924:	b9400042 	ldr	w2, [x2]
+    2928:	12004c43 	and	w3, w2, #0xfffff
+    292c:	53147c42 	lsr	w2, w2, #20
+[31m    2930:	94000000 	bl	0 <sprintf>[0m
+    2934:	f94053e0 	ldr	x0, [sp, #160]
+    2938:	eb38401f 	cmp	x0, w24, uxtw
+    293c:	540010eb 	b.lt	2b58 <cache_status+0x2b0>  // b.tstop
+    2940:	f9401a82 	ldr	x2, [x20, #48]
+    2944:	f90053e0 	str	x0, [sp, #160]
+    2948:	aa1303e1 	mov	x1, x19
+    294c:	9102e3e0 	add	x0, sp, #0xb8
+    2950:	f9400042 	ldr	x2, [x2]
+    2954:	b9400042 	ldr	w2, [x2]
+    2958:	12004c43 	and	w3, w2, #0xfffff
+    295c:	53147c42 	lsr	w2, w2, #20
+[31m    2960:	94000000 	bl	0 <sprintf>[0m
+    2964:	f94053e0 	ldr	x0, [sp, #160]
+    2968:	eb0002bf 	cmp	x21, x0
+    296c:	5400224c 	b.gt	2db4 <cache_status+0x50c>
+    2970:	f9401682 	ldr	x2, [x20, #40]
+    2974:	f90053e0 	str	x0, [sp, #160]
+    2978:	aa1303e1 	mov	x1, x19
+    297c:	9102e3e0 	add	x0, sp, #0xb8
+    2980:	f9400042 	ldr	x2, [x2]
+    2984:	b9400042 	ldr	w2, [x2]
+    2988:	12004c43 	and	w3, w2, #0xfffff
+    298c:	53147c42 	lsr	w2, w2, #20
+[31m    2990:	94000000 	bl	0 <sprintf>[0m
+    2994:	f94053e0 	ldr	x0, [sp, #160]
+    2998:	eb0002bf 	cmp	x21, x0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mdm-cache.ko[0m
+

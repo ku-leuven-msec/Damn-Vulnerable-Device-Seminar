@@ -1,0 +1,59 @@
+[[0;33m*[0m] Binary protection state of [0;33mvchiq.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m210) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m662) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mvchiq.ko[0m
+
+    90f0:	b4001500 	cbz	x0, 9390 <vchiq_use_internal+0x2e8>
+    90f4:	90000016 	adrp	x22, 0 <mark_service_closing_internal>
+    90f8:	910002d6 	add	x22, x22, #0x0
+    90fc:	b94006c0 	ldr	w0, [x22, #4]
+    9100:	7100181f 	cmp	w0, #0x6
+    9104:	540021ac 	b.gt	9538 <vchiq_use_internal+0x490>
+    9108:	71000b3f 	cmp	w25, #0x2
+    910c:	540014a0 	b.eq	93a0 <vchiq_use_internal+0x2f8>  // b.none
+    9110:	b4001835 	cbz	x21, 9414 <vchiq_use_internal+0x36c>
+    9114:	f9002bfb 	str	x27, [sp, #80]
+    9118:	90000001 	adrp	x1, 0 <mark_service_closing_internal>
+    911c:	9101a3e0 	add	x0, sp, #0x68
+    9120:	91000021 	add	x1, x1, #0x0
+    9124:	b9403ea6 	ldr	w6, [x21, #60]
+    9128:	910182b5 	add	x21, x21, #0x60
+    912c:	b85a02a2 	ldur	w2, [x21, #-96]
+    9130:	12001c45 	and	w5, w2, #0xff
+    9134:	d3483c44 	ubfx	x4, x2, #8, #8
+    9138:	d3505c43 	ubfx	x3, x2, #16, #8
+    913c:	53187c42 	lsr	w2, w2, #24
+[31m    9140:	94000000 	bl	0 <sprintf>[0m
+    9144:	9101e27b 	add	x27, x19, #0x78
+    9148:	9000001a 	adrp	x26, 0 <mark_service_closing_internal>
+--
+    95d0:	94000000 	bl	e518 <vchiq_platform_get_arm_state>
+    95d4:	aa0003f3 	mov	x19, x0
+    95d8:	b4000d40 	cbz	x0, 9780 <vchiq_release_internal+0x1e8>
+    95dc:	90000018 	adrp	x24, 0 <mark_service_closing_internal>
+    95e0:	91000318 	add	x24, x24, #0x0
+    95e4:	f90023f9 	str	x25, [sp, #64]
+    95e8:	b9400700 	ldr	w0, [x24, #4]
+    95ec:	7100181f 	cmp	w0, #0x6
+    95f0:	54000f8c 	b.gt	97e0 <vchiq_release_internal+0x248>
+    95f4:	b4000854 	cbz	x20, 96fc <vchiq_release_internal+0x164>
+    95f8:	b9403e86 	ldr	w6, [x20, #60]
+    95fc:	90000001 	adrp	x1, 0 <mark_service_closing_internal>
+    9600:	b9400282 	ldr	w2, [x20]
+    9604:	91000021 	add	x1, x1, #0x0
+    9608:	910163e0 	add	x0, sp, #0x58
+    960c:	91018294 	add	x20, x20, #0x60
+    9610:	12001c45 	and	w5, w2, #0xff
+    9614:	d3483c44 	ubfx	x4, x2, #8, #8
+    9618:	d3505c43 	ubfx	x3, x2, #16, #8
+    961c:	53187c42 	lsr	w2, w2, #24
+[31m    9620:	94000000 	bl	0 <sprintf>[0m
+    9624:	9101e279 	add	x25, x19, #0x78
+    9628:	aa1903e0 	mov	x0, x25
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mvchiq.ko[0m
+

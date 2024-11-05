@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mdbus-launch[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mdbus-launch[0m
+
+    330c:	f8337aa0 	str	x0, [x21, x19, lsl #3]
+    3310:	b40010c0 	cbz	x0, 3528 <mkdir@plt+0x18b8>
+    3314:	aa1b03e2 	mov	x2, x27
+    3318:	aa1c03e1 	mov	x1, x28
+    331c:	97fffa35 	bl	1bf0 <strncpy@plt>
+    3320:	11000662 	add	w2, w19, #0x1
+    3324:	91000673 	add	x19, x19, #0x1
+    3328:	6b13029f 	cmp	w20, w19
+    332c:	54fffe2a 	b.ge	32f0 <mkdir@plt+0x1680>  // b.tcont
+    3330:	b0000003 	adrp	x3, 4000 <mkdir@plt+0x2390>
+    3334:	9107e063 	add	x3, x3, #0x1f8
+    3338:	f822dabf 	str	xzr, [x21, w2, sxtw #3]
+    333c:	aa1a03e1 	mov	x1, x26
+    3340:	91006720 	add	x0, x25, #0x19
+    3344:	a9401464 	ldp	x4, x5, [x3]
+    3348:	a9001724 	stp	x4, x5, [x25]
+    334c:	39406062 	ldrb	w2, [x3, #24]
+    3350:	f9400863 	ldr	x3, [x3, #16]
+    3354:	f9000b23 	str	x3, [x25, #16]
+    3358:	39006322 	strb	w2, [x25, #24]
+[31m    335c:	97fffa11 	bl	1ba0 <strcpy@plt>[0m
+    3360:	aa1903e0 	mov	x0, x25
+    3364:	97fff993 	bl	19b0 <putenv@plt>
+--
+    3bac:	f94047e1 	ldr	x1, [sp, #136]
+    3bb0:	b4000dc0 	cbz	x0, 3d68 <mkdir@plt+0x20f8>
+    3bb4:	aa1c03e2 	mov	x2, x28
+    3bb8:	97fff70a 	bl	17e0 <memcpy@plt>
+    3bbc:	b0000002 	adrp	x2, 4000 <mkdir@plt+0x2390>
+    3bc0:	913ca042 	add	x2, x2, #0xf28
+    3bc4:	8b1c0363 	add	x3, x27, x28
+    3bc8:	91004f80 	add	x0, x28, #0x13
+    3bcc:	aa1903e1 	mov	x1, x25
+    3bd0:	8b000360 	add	x0, x27, x0
+    3bd4:	a9401444 	ldp	x4, x5, [x2]
+    3bd8:	a9001464 	stp	x4, x5, [x3]
+    3bdc:	b9401042 	ldr	w2, [x2, #16]
+    3be0:	b9001062 	str	w2, [x3, #16]
+    3be4:	97fff733 	bl	18b0 <stpcpy@plt>
+    3be8:	aa0003e2 	mov	x2, x0
+    3bec:	528005a3 	mov	w3, #0x2d                  	// #45
+    3bf0:	aa1303e1 	mov	x1, x19
+    3bf4:	91000400 	add	x0, x0, #0x1
+    3bf8:	39000043 	strb	w3, [x2]
+[31m    3bfc:	97fff7e9 	bl	1ba0 <strcpy@plt>[0m
+    3c00:	aa1303e0 	mov	x0, x19
+    3c04:	97fff7c3 	bl	1b10 <free@plt>
+--
+    3e0c:	91007800 	add	x0, x0, #0x1e
+    3e10:	97fff6b8 	bl	18f0 <malloc@plt>
+    3e14:	aa0003f6 	mov	x22, x0
+    3e18:	b4000b40 	cbz	x0, 3f80 <mkdir@plt+0x2310>
+    3e1c:	b0000004 	adrp	x4, 4000 <mkdir@plt+0x2390>
+    3e20:	913f8084 	add	x4, x4, #0xfe0
+    3e24:	aa1903e1 	mov	x1, x25
+    3e28:	91007000 	add	x0, x0, #0x1c
+    3e2c:	f9400882 	ldr	x2, [x4, #16]
+    3e30:	f9000ac2 	str	x2, [x22, #16]
+    3e34:	a9400c82 	ldp	x2, x3, [x4]
+    3e38:	a9000ec2 	stp	x2, x3, [x22]
+    3e3c:	f8415082 	ldur	x2, [x4, #21]
+    3e40:	f80152c2 	stur	x2, [x22, #21]
+    3e44:	97fff69b 	bl	18b0 <stpcpy@plt>
+    3e48:	aa0003e2 	mov	x2, x0
+    3e4c:	52800be3 	mov	w3, #0x5f                  	// #95
+    3e50:	aa1803e1 	mov	x1, x24
+    3e54:	91000400 	add	x0, x0, #0x1
+    3e58:	39000043 	strb	w3, [x2]
+[31m    3e5c:	97fff751 	bl	1ba0 <strcpy@plt>[0m
+    3e60:	aa1603e1 	mov	x1, x22
+    3e64:	aa1303e0 	mov	x0, x19
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mdbus-launch[0m
+

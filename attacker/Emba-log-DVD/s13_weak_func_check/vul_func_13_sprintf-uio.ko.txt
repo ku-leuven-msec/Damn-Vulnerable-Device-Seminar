@@ -1,0 +1,265 @@
+[[0;33m*[0m] Binary protection state of [0;33muio.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m181) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33muio.ko[0m
+
+      e8:	aa1303e0 	mov	x0, x19
+      ec:	94000000 	bl	0 <kfree>
+      f0:	f9400bf3 	ldr	x19, [sp, #16]
+      f4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+      f8:	d65f03c0 	ret
+      fc:	d503201f 	nop
+
+0000000000000100 <event_show>:
+     100:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     104:	910003fd 	mov	x29, sp
+     108:	a90153f3 	stp	x19, x20, [sp, #16]
+     10c:	aa0003f4 	mov	x20, x0
+     110:	aa0203f3 	mov	x19, x2
+     114:	aa1e03e0 	mov	x0, x30
+     118:	94000000 	bl	0 <_mcount>
+     11c:	f9403e82 	ldr	x2, [x20, #120]
+     120:	aa1303e0 	mov	x0, x19
+     124:	90000001 	adrp	x1, 0 <map_type_show>
+     128:	91000021 	add	x1, x1, #0x0
+     12c:	b942e442 	ldr	w2, [x2, #740]
+[31m     130:	94000000 	bl	0 <sprintf>[0m
+     134:	93407c00 	sxtw	x0, w0
+     138:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     160:	aa1e03e0 	mov	x0, x30
+     164:	94000000 	bl	0 <_mcount>
+     168:	90000002 	adrp	x2, 0 <map_type_show>
+     16c:	91000042 	add	x2, x2, #0x0
+     170:	d5384113 	mrs	x19, sp_el0
+     174:	b9401a80 	ldr	w0, [x20, #24]
+     178:	f9428e63 	ldr	x3, [x19, #1304]
+     17c:	f9002fe3 	str	x3, [sp, #88]
+     180:	d2800003 	mov	x3, #0x0                   	// #0
+     184:	a9401444 	ldp	x4, x5, [x2]
+     188:	a90397e4 	stp	x4, x5, [sp, #56]
+     18c:	71000c1f 	cmp	w0, #0x3
+     190:	a9410c42 	ldp	x2, x3, [x2, #16]
+     194:	a9048fe2 	stp	x2, x3, [sp, #72]
+     198:	54000228 	b.hi	1dc <portio_porttype_show+0x94>  // b.pmore
+     19c:	9100e3e1 	add	x1, sp, #0x38
+     1a0:	f860d822 	ldr	x2, [x1, w0, sxtw #3]
+     1a4:	aa1503e0 	mov	x0, x21
+     1a8:	90000001 	adrp	x1, 0 <map_type_show>
+     1ac:	91000021 	add	x1, x1, #0x0
+[31m     1b0:	94000000 	bl	0 <sprintf>[0m
+     1b4:	93407c00 	sxtw	x0, w0
+     1b8:	91146273 	add	x19, x19, #0x518
+--
+     1cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+     1d0:	f94013f5 	ldr	x21, [sp, #32]
+     1d4:	a8c67bfd 	ldp	x29, x30, [sp], #96
+     1d8:	d65f03c0 	ret
+     1dc:	928002a0 	mov	x0, #0xffffffffffffffea    	// #-22
+     1e0:	17fffff6 	b	1b8 <portio_porttype_show+0x70>
+     1e4:	94000000 	bl	0 <__stack_chk_fail>
+
+00000000000001e8 <portio_size_show>:
+     1e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     1ec:	910003fd 	mov	x29, sp
+     1f0:	a90153f3 	stp	x19, x20, [sp, #16]
+     1f4:	aa0003f4 	mov	x20, x0
+     1f8:	aa0103f3 	mov	x19, x1
+     1fc:	aa1e03e0 	mov	x0, x30
+     200:	94000000 	bl	0 <_mcount>
+     204:	f9400a82 	ldr	x2, [x20, #16]
+     208:	aa1303e0 	mov	x0, x19
+     20c:	90000001 	adrp	x1, 0 <map_type_show>
+     210:	91000021 	add	x1, x1, #0x0
+[31m     214:	94000000 	bl	0 <sprintf>[0m
+     218:	93407c00 	sxtw	x0, w0
+     21c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     220:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     224:	d65f03c0 	ret
+
+0000000000000228 <portio_start_show>:
+     228:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     22c:	910003fd 	mov	x29, sp
+     230:	a90153f3 	stp	x19, x20, [sp, #16]
+     234:	aa0003f4 	mov	x20, x0
+     238:	aa0103f3 	mov	x19, x1
+     23c:	aa1e03e0 	mov	x0, x30
+     240:	94000000 	bl	0 <_mcount>
+     244:	f9400682 	ldr	x2, [x20, #8]
+     248:	aa1303e0 	mov	x0, x19
+     24c:	90000001 	adrp	x1, 0 <map_type_show>
+     250:	91000021 	add	x1, x1, #0x0
+[31m     254:	94000000 	bl	0 <sprintf>[0m
+     258:	93407c00 	sxtw	x0, w0
+     25c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     260:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     264:	d65f03c0 	ret
+
+0000000000000268 <portio_name_show>:
+     268:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     26c:	910003fd 	mov	x29, sp
+     270:	a90153f3 	stp	x19, x20, [sp, #16]
+     274:	aa0003f3 	mov	x19, x0
+     278:	aa0103f4 	mov	x20, x1
+     27c:	aa1e03e0 	mov	x0, x30
+     280:	94000000 	bl	0 <_mcount>
+     284:	f9400262 	ldr	x2, [x19]
+     288:	b4000122 	cbz	x2, 2ac <portio_name_show+0x44>
+     28c:	aa1403e0 	mov	x0, x20
+     290:	90000001 	adrp	x1, 0 <map_type_show>
+     294:	91000021 	add	x1, x1, #0x0
+[31m     298:	94000000 	bl	0 <sprintf>[0m
+     29c:	93407c00 	sxtw	x0, w0
+     2a0:	a94153f3 	ldp	x19, x20, [sp, #16]
+     2a4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     2a8:	d65f03c0 	ret
+     2ac:	90000000 	adrp	x0, 0 <map_type_show>
+     2b0:	91000000 	add	x0, x0, #0x0
+     2b4:	f9000260 	str	x0, [x19]
+     2b8:	aa0003e2 	mov	x2, x0
+     2bc:	90000001 	adrp	x1, 0 <map_type_show>
+     2c0:	aa1403e0 	mov	x0, x20
+     2c4:	91000021 	add	x1, x1, #0x0
+[31m     2c8:	94000000 	bl	0 <sprintf>[0m
+     2cc:	93407c00 	sxtw	x0, w0
+     2d0:	a94153f3 	ldp	x19, x20, [sp, #16]
+     2d4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     2d8:	d65f03c0 	ret
+     2dc:	d503201f 	nop
+
+00000000000002e0 <map_offset_show>:
+     2e0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     2e4:	910003fd 	mov	x29, sp
+     2e8:	a90153f3 	stp	x19, x20, [sp, #16]
+     2ec:	aa0003f4 	mov	x20, x0
+     2f0:	aa0103f3 	mov	x19, x1
+     2f4:	aa1e03e0 	mov	x0, x30
+     2f8:	94000000 	bl	0 <_mcount>
+     2fc:	f9400a82 	ldr	x2, [x20, #16]
+     300:	aa1303e0 	mov	x0, x19
+     304:	90000001 	adrp	x1, 0 <map_type_show>
+     308:	91000021 	add	x1, x1, #0x0
+[31m     30c:	94000000 	bl	0 <sprintf>[0m
+     310:	93407c00 	sxtw	x0, w0
+     314:	a94153f3 	ldp	x19, x20, [sp, #16]
+     318:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     31c:	d65f03c0 	ret
+
+0000000000000320 <map_size_show>:
+     320:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     324:	910003fd 	mov	x29, sp
+     328:	a90153f3 	stp	x19, x20, [sp, #16]
+     32c:	aa0103f3 	mov	x19, x1
+     330:	aa0003f4 	mov	x20, x0
+     334:	aa1e03e0 	mov	x0, x30
+     338:	94000000 	bl	0 <_mcount>
+     33c:	91006282 	add	x2, x20, #0x18
+     340:	aa1303e0 	mov	x0, x19
+     344:	90000001 	adrp	x1, 0 <map_type_show>
+     348:	91000021 	add	x1, x1, #0x0
+[31m     34c:	94000000 	bl	0 <sprintf>[0m
+     350:	93407c00 	sxtw	x0, w0
+     354:	a94153f3 	ldp	x19, x20, [sp, #16]
+     358:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     35c:	d65f03c0 	ret
+
+0000000000000360 <map_addr_show>:
+     360:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     364:	910003fd 	mov	x29, sp
+     368:	a90153f3 	stp	x19, x20, [sp, #16]
+     36c:	aa0103f3 	mov	x19, x1
+     370:	aa0003f4 	mov	x20, x0
+     374:	aa1e03e0 	mov	x0, x30
+     378:	94000000 	bl	0 <_mcount>
+     37c:	91002282 	add	x2, x20, #0x8
+     380:	aa1303e0 	mov	x0, x19
+     384:	90000001 	adrp	x1, 0 <map_type_show>
+     388:	91000021 	add	x1, x1, #0x0
+[31m     38c:	94000000 	bl	0 <sprintf>[0m
+     390:	93407c00 	sxtw	x0, w0
+     394:	a94153f3 	ldp	x19, x20, [sp, #16]
+     398:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     39c:	d65f03c0 	ret
+
+00000000000003a0 <map_name_show>:
+     3a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     3a4:	910003fd 	mov	x29, sp
+     3a8:	a90153f3 	stp	x19, x20, [sp, #16]
+     3ac:	aa0003f3 	mov	x19, x0
+     3b0:	aa0103f4 	mov	x20, x1
+     3b4:	aa1e03e0 	mov	x0, x30
+     3b8:	94000000 	bl	0 <_mcount>
+     3bc:	f9400262 	ldr	x2, [x19]
+     3c0:	b4000122 	cbz	x2, 3e4 <map_name_show+0x44>
+     3c4:	aa1403e0 	mov	x0, x20
+     3c8:	90000001 	adrp	x1, 0 <map_type_show>
+     3cc:	91000021 	add	x1, x1, #0x0
+[31m     3d0:	94000000 	bl	0 <sprintf>[0m
+     3d4:	93407c00 	sxtw	x0, w0
+     3d8:	a94153f3 	ldp	x19, x20, [sp, #16]
+     3dc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     3e0:	d65f03c0 	ret
+     3e4:	90000000 	adrp	x0, 0 <map_type_show>
+     3e8:	91000000 	add	x0, x0, #0x0
+     3ec:	f9000260 	str	x0, [x19]
+     3f0:	aa0003e2 	mov	x2, x0
+     3f4:	90000001 	adrp	x1, 0 <map_type_show>
+     3f8:	aa1403e0 	mov	x0, x20
+     3fc:	91000021 	add	x1, x1, #0x0
+[31m     400:	94000000 	bl	0 <sprintf>[0m
+     404:	93407c00 	sxtw	x0, w0
+     408:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+
+0000000000000418 <version_show>:
+     418:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     41c:	910003fd 	mov	x29, sp
+     420:	a90153f3 	stp	x19, x20, [sp, #16]
+     424:	a9025bf5 	stp	x21, x22, [sp, #32]
+     428:	aa0003f3 	mov	x19, x0
+     42c:	aa0203f4 	mov	x20, x2
+     430:	aa1e03e0 	mov	x0, x30
+     434:	94000000 	bl	0 <_mcount>
+     438:	f9403e76 	ldr	x22, [x19, #120]
+     43c:	910c42d5 	add	x21, x22, #0x310
+     440:	aa1503e0 	mov	x0, x21
+     444:	94000000 	bl	0 <mutex_lock>
+     448:	f94186c0 	ldr	x0, [x22, #776]
+     44c:	b40001c0 	cbz	x0, 484 <version_show+0x6c>
+     450:	f9400802 	ldr	x2, [x0, #16]
+     454:	90000001 	adrp	x1, 0 <map_type_show>
+     458:	aa1403e0 	mov	x0, x20
+     45c:	91000021 	add	x1, x1, #0x0
+[31m     460:	94000000 	bl	0 <sprintf>[0m
+     464:	2a0003f3 	mov	w19, w0
+     468:	aa1503e0 	mov	x0, x21
+--
+
+00000000000004a0 <name_show>:
+     4a0:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     4a4:	910003fd 	mov	x29, sp
+     4a8:	a90153f3 	stp	x19, x20, [sp, #16]
+     4ac:	a9025bf5 	stp	x21, x22, [sp, #32]
+     4b0:	aa0003f3 	mov	x19, x0
+     4b4:	aa0203f4 	mov	x20, x2
+     4b8:	aa1e03e0 	mov	x0, x30
+     4bc:	94000000 	bl	0 <_mcount>
+     4c0:	f9403e76 	ldr	x22, [x19, #120]
+     4c4:	910c42d5 	add	x21, x22, #0x310
+     4c8:	aa1503e0 	mov	x0, x21
+     4cc:	94000000 	bl	0 <mutex_lock>
+     4d0:	f94186c0 	ldr	x0, [x22, #776]
+     4d4:	b40001c0 	cbz	x0, 50c <name_show+0x6c>
+     4d8:	f9400402 	ldr	x2, [x0, #8]
+     4dc:	90000001 	adrp	x1, 0 <map_type_show>
+     4e0:	aa1403e0 	mov	x0, x20
+     4e4:	91000021 	add	x1, x1, #0x0
+[31m     4e8:	94000000 	bl	0 <sprintf>[0m
+     4ec:	2a0003f3 	mov	w19, w0
+     4f0:	aa1503e0 	mov	x0, x21
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m13[0m times [0;33muio.ko[0m
+

@@ -1,0 +1,484 @@
+[[0;33m*[0m] Binary protection state of [0;33mgpg-wks-client[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mgpg-wks-client[0m
+
+    8158:	7100001f 	cmp	w0, #0x0
+    815c:	7a400a64 	ccmp	w19, #0x0, #0x4, eq  // eq = none
+    8160:	54fff6c0 	b.eq	8038 <ferror@plt+0x3258>  // b.none
+    8164:	f9401680 	ldr	x0, [x20, #40]
+    8168:	d2800001 	mov	x1, #0x0                   	// #0
+    816c:	f9402683 	ldr	x3, [x20, #72]
+    8170:	f9004fe3 	str	x3, [sp, #152]
+    8174:	94003d87 	bl	17790 <ferror@plt+0x129b0>
+    8178:	aa0003f7 	mov	x23, x0
+    817c:	f9404fe3 	ldr	x3, [sp, #152]
+    8180:	aa0303e0 	mov	x0, x3
+    8184:	97fff013 	bl	41d0 <strlen@plt>
+    8188:	91008000 	add	x0, x0, #0x20
+    818c:	97fff015 	bl	41e0 <gcry_malloc@plt>
+    8190:	aa0003f3 	mov	x19, x0
+    8194:	f9404fe3 	ldr	x3, [sp, #152]
+    8198:	b4000880 	cbz	x0, 82a8 <ferror@plt+0x34c8>
+    819c:	aa0303e1 	mov	x1, x3
+    81a0:	91006000 	add	x0, x0, #0x18
+    81a4:	f9004fe3 	str	x3, [sp, #152]
+[31m    81a8:	97fff23e 	bl	4aa0 <strcpy@plt>[0m
+    81ac:	f9404fe3 	ldr	x3, [sp, #152]
+    81b0:	f9000677 	str	x23, [x19, #8]
+--
+    b960:	91138000 	add	x0, x0, #0x4e0
+    b964:	52803be2 	mov	w2, #0x1df                 	// #479
+    b968:	f90023f9 	str	x25, [sp, #64]
+    b96c:	97ffe4d1 	bl	4cb0 <__assert_fail@plt>
+    b970:	aa1403e0 	mov	x0, x20
+    b974:	b00000e1 	adrp	x1, 28000 <ferror@plt+0x23220>
+    b978:	52800002 	mov	w2, #0x0                   	// #0
+    b97c:	91146021 	add	x1, x1, #0x518
+    b980:	97fffe68 	bl	b320 <ferror@plt+0x6540>
+    b984:	aa0003f6 	mov	x22, x0
+    b988:	b4fffc20 	cbz	x0, b90c <ferror@plt+0x6b2c>
+    b98c:	f9401677 	ldr	x23, [x19, #40]
+    b990:	f94012e1 	ldr	x1, [x23, #32]
+    b994:	b50011c1 	cbnz	x1, bbcc <ferror@plt+0x6dec>
+    b998:	97ffe20e 	bl	41d0 <strlen@plt>
+    b99c:	91000400 	add	x0, x0, #0x1
+    b9a0:	97ffe2c8 	bl	44c0 <malloc@plt>
+    b9a4:	f90012e0 	str	x0, [x23, #32]
+    b9a8:	b4fffb20 	cbz	x0, b90c <ferror@plt+0x6b2c>
+    b9ac:	aa1603e1 	mov	x1, x22
+[31m    b9b0:	97ffe43c 	bl	4aa0 <strcpy@plt>[0m
+    b9b4:	f94012e0 	ldr	x0, [x23, #32]
+    b9b8:	f9001a60 	str	x0, [x19, #48]
+--
+    eafc:	f9000660 	str	x0, [x19, #8]
+    eb00:	17ffffd0 	b	ea40 <ferror@plt+0x9c60>
+    eb04:	a94153f3 	ldp	x19, x20, [sp, #16]
+    eb08:	a94363f7 	ldp	x23, x24, [sp, #48]
+    eb0c:	d2800000 	mov	x0, #0x0                   	// #0
+    eb10:	97ffd644 	bl	4420 <gcry_free@plt>
+    eb14:	aa1503e1 	mov	x1, x21
+    eb18:	528000a2 	mov	w2, #0x5                   	// #5
+    eb1c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    eb20:	d2800000 	mov	x0, #0x0                   	// #0
+    eb24:	a8c57bfd 	ldp	x29, x30, [sp], #80
+    eb28:	17ffd836 	b	4c00 <dcgettext@plt>
+    eb2c:	aa1403e0 	mov	x0, x20
+    eb30:	97ffd5a8 	bl	41d0 <strlen@plt>
+    eb34:	91006000 	add	x0, x0, #0x18
+    eb38:	97ffd5aa 	bl	41e0 <gcry_malloc@plt>
+    eb3c:	aa0003f3 	mov	x19, x0
+    eb40:	b40002a0 	cbz	x0, eb94 <ferror@plt+0x9db4>
+    eb44:	aa1403e1 	mov	x1, x20
+    eb48:	91004000 	add	x0, x0, #0x10
+[31m    eb4c:	97ffd7d5 	bl	4aa0 <strcpy@plt>[0m
+    eb50:	f94246e0 	ldr	x0, [x23, #1160]
+    eb54:	f90246f3 	str	x19, [x23, #1160]
+--
+    f0a4:	aa0003f4 	mov	x20, x0
+    f0a8:	aa1503e0 	mov	x0, x21
+    f0ac:	97ffd449 	bl	41d0 <strlen@plt>
+    f0b0:	b94067e1 	ldr	w1, [sp, #100]
+    f0b4:	8b000294 	add	x20, x20, x0
+    f0b8:	91000a80 	add	x0, x20, #0x2
+    f0bc:	34000c21 	cbz	w1, f240 <ferror@plt+0xa460>
+    f0c0:	97ffd428 	bl	4160 <gcry_xmalloc@plt>
+    f0c4:	aa0003f4 	mov	x20, x0
+    f0c8:	39400262 	ldrb	w2, [x19]
+    f0cc:	7100bc5f 	cmp	w2, #0x2f
+    f0d0:	54000061 	b.ne	f0dc <ferror@plt+0xa2fc>  // b.any
+    f0d4:	39400660 	ldrb	w0, [x19, #1]
+    f0d8:	34000c00 	cbz	w0, f258 <ferror@plt+0xa478>
+    f0dc:	aa1303e1 	mov	x1, x19
+    f0e0:	aa1403e0 	mov	x0, x20
+    f0e4:	97ffd4d3 	bl	4430 <stpcpy@plt>
+    f0e8:	528005e2 	mov	w2, #0x2f                  	// #47
+    f0ec:	38001402 	strb	w2, [x0], #1
+    f0f0:	aa1503e1 	mov	x1, x21
+[31m    f0f4:	97ffd66b 	bl	4aa0 <strcpy@plt>[0m
+    f0f8:	aa1303e0 	mov	x0, x19
+    f0fc:	97ffd4c9 	bl	4420 <gcry_free@plt>
+--
+    f214:	8b000294 	add	x20, x20, x0
+    f218:	17ffff70 	b	efd8 <ferror@plt+0xa1f8>
+    f21c:	aa1703e1 	mov	x1, x23
+    f220:	aa1503e0 	mov	x0, x21
+    f224:	97ffd483 	bl	4430 <stpcpy@plt>
+    f228:	aa0003f4 	mov	x20, x0
+    f22c:	17ffff77 	b	f008 <ferror@plt+0xa228>
+    f230:	97ffd6d0 	bl	4d70 <gcry_strdup@plt>
+    f234:	aa0003f5 	mov	x21, x0
+    f238:	b5fffae0 	cbnz	x0, f194 <ferror@plt+0xa3b4>
+    f23c:	17ffff4a 	b	ef64 <ferror@plt+0xa184>
+    f240:	97ffd3e8 	bl	41e0 <gcry_malloc@plt>
+    f244:	aa0003f4 	mov	x20, x0
+    f248:	b5fff400 	cbnz	x0, f0c8 <ferror@plt+0xa2e8>
+    f24c:	aa1303e0 	mov	x0, x19
+    f250:	97ffd474 	bl	4420 <gcry_free@plt>
+    f254:	14000008 	b	f274 <ferror@plt+0xa494>
+    f258:	aa1403e0 	mov	x0, x20
+    f25c:	aa1503e1 	mov	x1, x21
+    f260:	38001402 	strb	w2, [x0], #1
+[31m    f264:	97ffd60f 	bl	4aa0 <strcpy@plt>[0m
+    f268:	17ffffa4 	b	f0f8 <ferror@plt+0xa318>
+    f26c:	b94067e0 	ldr	w0, [sp, #100]
+--
+   106a4:	aa1303e1 	mov	x1, x19
+   106a8:	91000673 	add	x19, x19, #0x1
+   106ac:	b5ffff60 	cbnz	x0, 10698 <ferror@plt+0xb8b8>
+   106b0:	91000835 	add	x21, x1, #0x2
+   106b4:	f2430abf 	tst	x21, #0xe000000000000000
+   106b8:	d37df2b5 	lsl	x21, x21, #3
+   106bc:	54000ac1 	b.ne	10814 <ferror@plt+0xba34>  // b.any
+   106c0:	aa1703e0 	mov	x0, x23
+   106c4:	97ffcec3 	bl	41d0 <strlen@plt>
+   106c8:	91000400 	add	x0, x0, #0x1
+   106cc:	ab0002a0 	adds	x0, x21, x0
+   106d0:	9a9f37f8 	cset	x24, cs  // cs = hs, nlast
+   106d4:	54000a02 	b.cs	10814 <ferror@plt+0xba34>  // b.hs, b.nlast
+   106d8:	97ffcec2 	bl	41e0 <gcry_malloc@plt>
+   106dc:	aa0003f6 	mov	x22, x0
+   106e0:	b40008e0 	cbz	x0, 107fc <ferror@plt+0xba1c>
+   106e4:	8b150015 	add	x21, x0, x21
+   106e8:	aa1703e1 	mov	x1, x23
+   106ec:	aa1503e0 	mov	x0, x21
+   106f0:	aa1503f3 	mov	x19, x21
+[31m   106f4:	97ffd0eb 	bl	4aa0 <strcpy@plt>[0m
+   106f8:	d10022d7 	sub	x23, x22, #0x8
+   106fc:	aa1403e1 	mov	x1, x20
+--
+   12c04:	b90083f8 	str	w24, [sp, #128]
+   12c08:	f9403fe1 	ldr	x1, [sp, #120]
+   12c0c:	f9400021 	ldr	x1, [x1]
+   12c10:	78606820 	ldrh	w0, [x1, x0]
+   12c14:	376ffb40 	tbnz	w0, #13, 12b7c <ferror@plt+0xdd9c>
+   12c18:	b94087e0 	ldr	w0, [sp, #132]
+   12c1c:	52800058 	mov	w24, #0x2                   	// #2
+   12c20:	7101881f 	cmp	w0, #0x62
+   12c24:	54fff90c 	b.gt	12b44 <ferror@plt+0xdd64>
+   12c28:	2a0003e2 	mov	w2, w0
+   12c2c:	11000400 	add	w0, w0, #0x1
+   12c30:	b90087e0 	str	w0, [sp, #132]
+   12c34:	17ffffea 	b	12bdc <ferror@plt+0xddfc>
+   12c38:	f94047e0 	ldr	x0, [sp, #136]
+   12c3c:	91004000 	add	x0, x0, #0x10
+   12c40:	97ffc568 	bl	41e0 <gcry_malloc@plt>
+   12c44:	aa0003f8 	mov	x24, x0
+   12c48:	b4fff2e0 	cbz	x0, 12aa4 <ferror@plt+0xdcc4>
+   12c4c:	aa1303e1 	mov	x1, x19
+   12c50:	91002300 	add	x0, x24, #0x8
+[31m   12c54:	97ffc793 	bl	4aa0 <strcpy@plt>[0m
+   12c58:	f9402ac0 	ldr	x0, [x22, #80]
+   12c5c:	f9000300 	str	x0, [x24]
+--
+   12fec:	a8c87bfd 	ldp	x29, x30, [sp], #128
+   12ff0:	d65f03c0 	ret
+   12ff4:	f00000a1 	adrp	x1, 29000 <ferror@plt+0x24220>
+   12ff8:	91144021 	add	x1, x1, #0x510
+   12ffc:	d28000c2 	mov	x2, #0x6                   	// #6
+   13000:	aa1403e0 	mov	x0, x20
+   13004:	97ffc54b 	bl	4530 <strncmp@plt>
+   13008:	2a0003f5 	mov	w21, w0
+   1300c:	aa1403e0 	mov	x0, x20
+   13010:	97ffc470 	bl	41d0 <strlen@plt>
+   13014:	91005013 	add	x19, x0, #0x14
+   13018:	350001f5 	cbnz	w21, 13054 <ferror@plt+0xe274>
+   1301c:	39401a80 	ldrb	w0, [x20, #6]
+   13020:	340001a0 	cbz	w0, 13054 <ferror@plt+0xe274>
+   13024:	52800037 	mov	w23, #0x1                   	// #1
+   13028:	aa1303e0 	mov	x0, x19
+   1302c:	97ffc44d 	bl	4160 <gcry_xmalloc@plt>
+   13030:	aa0003f5 	mov	x21, x0
+   13034:	aa1403e1 	mov	x1, x20
+   13038:	91004000 	add	x0, x0, #0x10
+[31m   1303c:	97ffc699 	bl	4aa0 <strcpy@plt>[0m
+   13040:	b2407fe0 	mov	x0, #0xffffffff            	// #4294967295
+   13044:	12800013 	mov	w19, #0xffffffff            	// #-1
+   13048:	f90002a0 	str	x0, [x21]
+   1304c:	29017eb7 	stp	w23, wzr, [x21, #8]
+   13050:	17ffffc8 	b	12f70 <ferror@plt+0xe190>
+   13054:	aa1403e0 	mov	x0, x20
+   13058:	d00000a1 	adrp	x1, 29000 <ferror@plt+0x24220>
+   1305c:	d2800122 	mov	x2, #0x9                   	// #9
+   13060:	91146021 	add	x1, x1, #0x518
+   13064:	52800057 	mov	w23, #0x2                   	// #2
+   13068:	97ffc532 	bl	4530 <strncmp@plt>
+   1306c:	34fffde0 	cbz	w0, 13028 <ferror@plt+0xe248>
+   13070:	aa1303e0 	mov	x0, x19
+   13074:	97ffc43b 	bl	4160 <gcry_xmalloc@plt>
+   13078:	aa0003f5 	mov	x21, x0
+   1307c:	aa1403e1 	mov	x1, x20
+   13080:	91004000 	add	x0, x0, #0x10
+[31m   13084:	97ffc687 	bl	4aa0 <strcpy@plt>[0m
+   13088:	f80042bf 	stur	xzr, [x21, #4]
+   1308c:	b9000ebf 	str	wzr, [x21, #12]
+--
+   139dc:	91004278 	add	x24, x19, #0x10
+   139e0:	d00000a1 	adrp	x1, 29000 <ferror@plt+0x24220>
+   139e4:	aa1803e0 	mov	x0, x24
+   139e8:	91144021 	add	x1, x1, #0x510
+   139ec:	d28000c2 	mov	x2, #0x6                   	// #6
+   139f0:	97ffc2d0 	bl	4530 <strncmp@plt>
+   139f4:	35000560 	cbnz	w0, 13aa0 <ferror@plt+0xecc0>
+   139f8:	39405a60 	ldrb	w0, [x19, #22]
+   139fc:	34000520 	cbz	w0, 13aa0 <ferror@plt+0xecc0>
+   13a00:	91005a75 	add	x21, x19, #0x16
+   13a04:	aa1503e0 	mov	x0, x21
+   13a08:	97ffc1f2 	bl	41d0 <strlen@plt>
+   13a0c:	91000400 	add	x0, x0, #0x1
+   13a10:	97ffc1f4 	bl	41e0 <gcry_malloc@plt>
+   13a14:	aa0003f9 	mov	x25, x0
+   13a18:	b4002440 	cbz	x0, 13ea0 <ferror@plt+0xf0c0>
+   13a1c:	39405a61 	ldrb	w1, [x19, #22]
+   13a20:	71016c3f 	cmp	w1, #0x5b
+   13a24:	540018e0 	b.eq	13d40 <ferror@plt+0xef60>  // b.none
+   13a28:	aa1503e1 	mov	x1, x21
+[31m   13a2c:	97ffc41d 	bl	4aa0 <strcpy@plt>[0m
+   13a30:	aa1903e0 	mov	x0, x25
+   13a34:	52800741 	mov	w1, #0x3a                  	// #58
+--
+   13cf4:	390417ff 	strb	wzr, [sp, #261]
+   13cf8:	aa1903e0 	mov	x0, x25
+   13cfc:	97ffc135 	bl	41d0 <strlen@plt>
+   13d00:	91000815 	add	x21, x0, #0x2
+   13d04:	17ffffd5 	b	13c58 <ferror@plt+0xee78>
+   13d08:	d0000195 	adrp	x21, 45000 <ferror@plt+0x40220>
+   13d0c:	911282a1 	add	x1, x21, #0x4a0
+   13d10:	b9400660 	ldr	w0, [x19, #4]
+   13d14:	b9408021 	ldr	w1, [x1, #128]
+   13d18:	2a010000 	orr	w0, w0, w1
+   13d1c:	34000980 	cbz	w0, 13e4c <ferror@plt+0xf06c>
+   13d20:	b9400260 	ldr	w0, [x19]
+   13d24:	97ffc297 	bl	4780 <close@plt>
+   13d28:	911282a0 	add	x0, x21, #0x4a0
+   13d2c:	12800001 	mov	w1, #0xffffffff            	// #-1
+   13d30:	f9402bfb 	ldr	x27, [sp, #80]
+   13d34:	b9000261 	str	w1, [x19]
+   13d38:	b9408000 	ldr	w0, [x0, #128]
+   13d3c:	17ffffad 	b	13bf0 <ferror@plt+0xee10>
+   13d40:	91005e61 	add	x1, x19, #0x17
+[31m   13d44:	97ffc357 	bl	4aa0 <strcpy@plt>[0m
+   13d48:	aa1903e0 	mov	x0, x25
+   13d4c:	52800ba1 	mov	w1, #0x5d                  	// #93
+--
+   1a75c:	97ffe785 	bl	14570 <ferror@plt+0xf790>
+   1a760:	17ffffb4 	b	1a630 <ferror@plt+0x15850>
+   1a764:	2a1903e2 	mov	w2, w25
+   1a768:	910052c1 	add	x1, x22, #0x14
+   1a76c:	90000080 	adrp	x0, 2a000 <ferror@plt+0x25220>
+   1a770:	9129e000 	add	x0, x0, #0xa78
+   1a774:	97ffe77f 	bl	14570 <ferror@plt+0xf790>
+   1a778:	17ffffa0 	b	1a5f8 <ferror@plt+0x15818>
+   1a77c:	f947f294 	ldr	x20, [x20, #4064]
+   1a780:	b9400280 	ldr	w0, [x20]
+   1a784:	35000260 	cbnz	w0, 1a7d0 <ferror@plt+0x159f0>
+   1a788:	aa1503e0 	mov	x0, x21
+   1a78c:	97ffa691 	bl	41d0 <strlen@plt>
+   1a790:	aa0003e1 	mov	x1, x0
+   1a794:	d2800020 	mov	x0, #0x1                   	// #1
+   1a798:	91004021 	add	x1, x1, #0x10
+   1a79c:	97ffa939 	bl	4c80 <gcry_xcalloc@plt>
+   1a7a0:	aa0003f3 	mov	x19, x0
+   1a7a4:	aa1503e1 	mov	x1, x21
+   1a7a8:	91003000 	add	x0, x0, #0xc
+[31m   1a7ac:	97ffa8bd 	bl	4aa0 <strcpy@plt>[0m
+   1a7b0:	f94362e0 	ldr	x0, [x23, #1728]
+   1a7b4:	f90362f3 	str	x19, [x23, #1728]
+--
+   1b87c:	aa1903e1 	mov	x1, x25
+   1b880:	aa1303e0 	mov	x0, x19
+   1b884:	97fffe43 	bl	1b190 <ferror@plt+0x163b0>
+   1b888:	2a0003f7 	mov	w23, w0
+   1b88c:	310006ff 	cmn	w23, #0x1
+   1b890:	b0000158 	adrp	x24, 44000 <ferror@plt+0x3f220>
+   1b894:	54fffee0 	b.eq	1b870 <ferror@plt+0x16a90>  // b.none
+   1b898:	d2840001 	mov	x1, #0x2000                	// #8192
+   1b89c:	2a1503e0 	mov	w0, w21
+   1b8a0:	97ffff2c 	bl	1b550 <ferror@plt+0x16770>
+   1b8a4:	aa0003f5 	mov	x21, x0
+   1b8a8:	aa1303e0 	mov	x0, x19
+   1b8ac:	97ffa249 	bl	41d0 <strlen@plt>
+   1b8b0:	91006000 	add	x0, x0, #0x18
+   1b8b4:	97ffa22b 	bl	4160 <gcry_xmalloc@plt>
+   1b8b8:	aa0003f4 	mov	x20, x0
+   1b8bc:	aa1303e1 	mov	x1, x19
+   1b8c0:	91005000 	add	x0, x0, #0x14
+   1b8c4:	b9000297 	str	w23, [x20]
+   1b8c8:	b900129f 	str	wzr, [x20, #16]
+[31m   1b8cc:	97ffa475 	bl	4aa0 <strcpy@plt>[0m
+   1b8d0:	aa1303e0 	mov	x0, x19
+   1b8d4:	97ffa43f 	bl	49d0 <gcry_xstrdup@plt>
+--
+   1f348:	a94573fb 	ldp	x27, x28, [sp, #80]
+   1f34c:	91004660 	add	x0, x19, #0x11
+   1f350:	f94037e1 	ldr	x1, [sp, #104]
+   1f354:	8b010000 	add	x0, x0, x1
+   1f358:	97ff93a2 	bl	41e0 <gcry_malloc@plt>
+   1f35c:	aa0003f5 	mov	x21, x0
+   1f360:	b4000a40 	cbz	x0, 1f4a8 <ferror@plt+0x1a6c8>
+   1f364:	91003003 	add	x3, x0, #0xc
+   1f368:	aa1303e2 	mov	x2, x19
+   1f36c:	aa0303e0 	mov	x0, x3
+   1f370:	b9407fe3 	ldr	w3, [sp, #124]
+   1f374:	b9000aa3 	str	w3, [x21, #8]
+   1f378:	aa1403e1 	mov	x1, x20
+   1f37c:	97ff9375 	bl	4150 <memcpy@plt>
+   1f380:	8b1302a2 	add	x2, x21, x19
+   1f384:	91000673 	add	x19, x19, #0x1
+   1f388:	f9403be1 	ldr	x1, [sp, #112]
+   1f38c:	8b130000 	add	x0, x0, x19
+   1f390:	3900305f 	strb	wzr, [x2, #12]
+   1f394:	f90002a0 	str	x0, [x21]
+[31m   1f398:	97ff95c2 	bl	4aa0 <strcpy@plt>[0m
+   1f39c:	f9400b20 	ldr	x0, [x25, #16]
+   1f3a0:	f8787800 	ldr	x0, [x0, x24, lsl #3]
+--
+   23b04:	a94153f3 	ldp	x19, x20, [sp, #16]
+   23b08:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   23b0c:	d65f03c0 	ret
+   23b10:	d65f03c0 	ret
+   23b14:	d503201f 	nop
+   23b18:	d503201f 	nop
+   23b1c:	d503201f 	nop
+   23b20:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   23b24:	910003fd 	mov	x29, sp
+   23b28:	a90153f3 	stp	x19, x20, [sp, #16]
+   23b2c:	aa0103f3 	mov	x19, x1
+   23b30:	aa0003f4 	mov	x20, x0
+   23b34:	aa0103e0 	mov	x0, x1
+   23b38:	97ff81a6 	bl	41d0 <strlen@plt>
+   23b3c:	91004000 	add	x0, x0, #0x10
+   23b40:	97ff8188 	bl	4160 <gcry_xmalloc@plt>
+   23b44:	aa1303e1 	mov	x1, x19
+   23b48:	aa0003f3 	mov	x19, x0
+   23b4c:	91003000 	add	x0, x0, #0xc
+   23b50:	b9000a7f 	str	wzr, [x19, #8]
+[31m   23b54:	97ff83d3 	bl	4aa0 <strcpy@plt>[0m
+   23b58:	f9400281 	ldr	x1, [x20]
+   23b5c:	f9000261 	str	x1, [x19]
+--
+   23b6c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   23b70:	d65f03c0 	ret
+   23b74:	d503201f 	nop
+   23b78:	d503201f 	nop
+   23b7c:	d503201f 	nop
+   23b80:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   23b84:	910003fd 	mov	x29, sp
+   23b88:	a90153f3 	stp	x19, x20, [sp, #16]
+   23b8c:	aa0103f4 	mov	x20, x1
+   23b90:	f90013f5 	str	x21, [sp, #32]
+   23b94:	aa0003f5 	mov	x21, x0
+   23b98:	aa0103e0 	mov	x0, x1
+   23b9c:	97ff818d 	bl	41d0 <strlen@plt>
+   23ba0:	91004000 	add	x0, x0, #0x10
+   23ba4:	97ff818f 	bl	41e0 <gcry_malloc@plt>
+   23ba8:	aa0003f3 	mov	x19, x0
+   23bac:	b4000100 	cbz	x0, 23bcc <ferror@plt+0x1edec>
+   23bb0:	aa1403e1 	mov	x1, x20
+   23bb4:	91003000 	add	x0, x0, #0xc
+   23bb8:	b9000a7f 	str	wzr, [x19, #8]
+[31m   23bbc:	97ff83b9 	bl	4aa0 <strcpy@plt>[0m
+   23bc0:	f94002a0 	ldr	x0, [x21]
+   23bc4:	f9000260 	str	x0, [x19]
+--
+   23c1c:	97ff8201 	bl	4420 <gcry_free@plt>
+   23c20:	aa1303e0 	mov	x0, x19
+   23c24:	f9400bf3 	ldr	x19, [sp, #16]
+   23c28:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   23c2c:	d65f03c0 	ret
+   23c30:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   23c34:	910003fd 	mov	x29, sp
+   23c38:	a90153f3 	stp	x19, x20, [sp, #16]
+   23c3c:	aa0103f4 	mov	x20, x1
+   23c40:	f90013f5 	str	x21, [sp, #32]
+   23c44:	aa0003f5 	mov	x21, x0
+   23c48:	aa0103e0 	mov	x0, x1
+   23c4c:	97ff8161 	bl	41d0 <strlen@plt>
+   23c50:	91004000 	add	x0, x0, #0x10
+   23c54:	97ff8163 	bl	41e0 <gcry_malloc@plt>
+   23c58:	aa0003f3 	mov	x19, x0
+   23c5c:	b40001a0 	cbz	x0, 23c90 <ferror@plt+0x1eeb0>
+   23c60:	aa1403e1 	mov	x1, x20
+   23c64:	91003000 	add	x0, x0, #0xc
+   23c68:	b9000a7f 	str	wzr, [x19, #8]
+[31m   23c6c:	97ff838d 	bl	4aa0 <strcpy@plt>[0m
+   23c70:	f94002a1 	ldr	x1, [x21]
+   23c74:	f900027f 	str	xzr, [x19]
+--
+   23d8c:	f9400020 	ldr	x0, [x1]
+   23d90:	f9002fe0 	str	x0, [sp, #88]
+   23d94:	d2800000 	mov	x0, #0x0                   	// #0
+   23d98:	f90027ff 	str	xzr, [sp, #72]
+   23d9c:	b4000434 	cbz	x20, 23e20 <ferror@plt+0x1f040>
+   23da0:	910143f7 	add	x23, sp, #0x50
+   23da4:	a9025bf5 	stp	x21, x22, [sp, #32]
+   23da8:	910123f6 	add	x22, sp, #0x48
+   23dac:	d503201f 	nop
+   23db0:	91003295 	add	x21, x20, #0xc
+   23db4:	aa1503e0 	mov	x0, x21
+   23db8:	97ff8106 	bl	41d0 <strlen@plt>
+   23dbc:	91004000 	add	x0, x0, #0x10
+   23dc0:	97ff80e8 	bl	4160 <gcry_xmalloc@plt>
+   23dc4:	b9400a82 	ldr	w2, [x20, #8]
+   23dc8:	aa0003f3 	mov	x19, x0
+   23dcc:	aa1503e1 	mov	x1, x21
+   23dd0:	91003000 	add	x0, x0, #0xc
+   23dd4:	f9002bf3 	str	x19, [sp, #80]
+   23dd8:	b9000a62 	str	w2, [x19, #8]
+[31m   23ddc:	97ff8331 	bl	4aa0 <strcpy@plt>[0m
+   23de0:	f900027f 	str	xzr, [x19]
+   23de4:	f90002d3 	str	x19, [x22]
+--
+   23e6c:	d503201f 	nop
+   23e70:	aa0103e0 	mov	x0, x1
+   23e74:	f9400021 	ldr	x1, [x1]
+   23e78:	b5ffffc1 	cbnz	x1, 23e70 <ferror@plt+0x1f090>
+   23e7c:	d65f03c0 	ret
+   23e80:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   23e84:	910003fd 	mov	x29, sp
+   23e88:	a90153f3 	stp	x19, x20, [sp, #16]
+   23e8c:	f9400014 	ldr	x20, [x0]
+   23e90:	f90013f5 	str	x21, [sp, #32]
+   23e94:	d2800015 	mov	x21, #0x0                   	// #0
+   23e98:	b40001d4 	cbz	x20, 23ed0 <ferror@plt+0x1f0f0>
+   23e9c:	91003295 	add	x21, x20, #0xc
+   23ea0:	aa0003f3 	mov	x19, x0
+   23ea4:	aa1503e0 	mov	x0, x21
+   23ea8:	97ff80ca 	bl	41d0 <strlen@plt>
+   23eac:	91000400 	add	x0, x0, #0x1
+   23eb0:	97ff80ac 	bl	4160 <gcry_xmalloc@plt>
+   23eb4:	aa1503e1 	mov	x1, x21
+   23eb8:	aa0003f5 	mov	x21, x0
+[31m   23ebc:	97ff82f9 	bl	4aa0 <strcpy@plt>[0m
+   23ec0:	f9400280 	ldr	x0, [x20]
+   23ec4:	f9000260 	str	x0, [x19]
+--
+   24bd8:	b100041f 	cmn	x0, #0x1
+   24bdc:	54000160 	b.eq	24c08 <ferror@plt+0x1fe28>  // b.none
+   24be0:	f94033e0 	ldr	x0, [sp, #96]
+   24be4:	3900001f 	strb	wzr, [x0]
+   24be8:	aa1a03e0 	mov	x0, x26
+   24bec:	97ff7db1 	bl	42b0 <iconv_close@plt>
+   24bf0:	a94153f3 	ldp	x19, x20, [sp, #16]
+   24bf4:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   24bf8:	17ffffca 	b	24b20 <ferror@plt+0x1fd40>
+   24bfc:	97ff7f75 	bl	49d0 <gcry_xstrdup@plt>
+   24c00:	aa0003f6 	mov	x22, x0
+   24c04:	17ffffc7 	b	24b20 <ferror@plt+0x1fd40>
+   24c08:	911e22e0 	add	x0, x23, #0x788
+   24c0c:	b9401800 	ldr	w0, [x0, #24]
+   24c10:	34000100 	cbz	w0, 24c30 <ferror@plt+0x1fe50>
+   24c14:	911e22f7 	add	x23, x23, #0x788
+   24c18:	52800022 	mov	w2, #0x1                   	// #1
+   24c1c:	aa1303e1 	mov	x1, x19
+   24c20:	aa1603e0 	mov	x0, x22
+   24c24:	b9001ae2 	str	w2, [x23, #24]
+[31m   24c28:	97ff7f9e 	bl	4aa0 <strcpy@plt>[0m
+   24c2c:	17ffffef 	b	24be8 <ferror@plt+0x1fe08>
+   24c30:	90000041 	adrp	x1, 2c000 <ferror@plt+0x27220>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m20[0m times [0;33mgpg-wks-client[0m
+

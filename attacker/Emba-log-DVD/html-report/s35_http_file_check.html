@@ -1,0 +1,377 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./index.html"><img class="inherit" src="./style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./index.html">&laquo; Back to main</a>
+<a class="modul" href="#check_http_files" title="#check_http_files" >Check HTTP files</a>
+<a class="submodul" href="#searchhttpfiles" title="#searchhttpfiles" >Search http files</a>
+<a class="submodul" href="#checkforapacheornginxrelatedfiles" title="#checkforapacheornginxrelatedfiles" >Check for apache or nginx related files</a>
+<a class="submodul" href="#checkforphpini" title="#checkforphpini" >Check for php.ini</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="blue">+</span>] </span><span class="cyan"><span class="bold"><a id="check_http_files">Check HTTP files</a></span></pre>
+<pre><span class="bold"><hr class="double" /></span></pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="searchhttpfiles">Search http files</a></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Found http related files:</span></pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/0 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/0/8 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/0/8/0 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/0/8/0/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/0/8/0/5/1 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/0/8/0/5/1/08051ea2f386891f2df5f7275bacf5ed91c13e678240be99eccf40d7 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/1 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/1/e (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/1/e/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/1/e/6/f (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/1/e/6/f/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/1/e/6/f/2/1e6f2fa1119d47b853219feb91c3867d411e0c8c02476d1e769171e8 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/2/3 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/2/3/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/2/3/a/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/2/3/a/6/e (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/2/3/a/6/e/23a6e033b61090aec349a2a7e2c98b3ffaa496acd9d7f94103e70691 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/0 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/0/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/0/6/f (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/0/6/f/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/0/6/f/2/306f2d0253e64134eea9a22987bf8accf06eb16d7e853f059614ebed (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/1 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/1/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/1/9/1 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/1/9/1/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/1/9/1/9/3191936b1ef9631f7f6c2df2dea4465fc7e3affac49bc59f146eed3d (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/9/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/9/2/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/9/2/4/8 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/3/9/2/4/8/392484fd12cf8131010987c3f32812616cd277205077bfb6c9da1f49 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/4/3 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/4/3/0 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/4/3/0/3 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/4/3/0/3/4430355b8510601b338deb24fe96ee6b19dfc86064518cafa502967f (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/5/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/5/9/7 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/5/9/7/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/5/9/7/6/45976c194ebb9180bf7410d422bcad653ce13bcb64dda0d07d72b09d (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/f (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/f/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/f/5/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/f/5/6/8 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/4/f/5/6/8/4f5680b8c3a9079e8632c9ca877b4cf2117436cf944e94c8f23efdf7 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/b (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/b/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/b/5/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/b/5/4/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/b/5/4/2/5b54269799ccfd070f9168a00f96c9f6c6fdf7c956d4cfd350a6756d (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/c/b (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/c/b/0 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/c/b/0/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/5/c/b/0/5/5cb05227c1a30ef699569674bb2850934d7a427929ec2452f4ef74b1 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/6/b (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/6/b/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/6/b/a/1 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/6/b/a/1/7 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/6/b/a/1/7/6ba174e223e3db37c5b24c57ec9ded8fd3d38733843fe237ba77a6c1 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/7 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/7/1 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/7/1/3 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/7/1/3/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/7/1/3/a/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/7/1/3/a/a/713aad353e535646f41fed27eb597e1f9892772eb19b8f078a4a53a1 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/5/3 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/5/3/8 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/5/3/8/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/5/3/8/5/85385fd8a53d3d88ac67db4bf015be7ba931f024227668d42969ea92 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/a/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/a/c/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/a/c/4/d (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/a/c/4/d/8ac4d14dc45e27d21da49fb515570b6f875b78707de9b08ce1088d1b (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/f (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/f/0 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/f/0/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/f/0/a/d (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/8/f/0/a/d/8f0ad583652318494c12da41e4d30ff6225ec73d448a0754a0a7e898 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4/5/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4/5/2/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4/5/2/4/9452417670b2e75527d793717779fce5d54e5f21adb3344c273876fa (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4/a/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4/a/9/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/4/a/9/5/94a957c7f2ba0d9ba11de92268769e3b55ead4151e3a12149fbcc69f (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/c/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/c/c/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/c/c/6/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/9/c/c/6/9/9cc6939c61442ece13bdcac1a4f63ac9be8b2e7a5a8148e85ca678e2 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/a/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/a/5/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/a/5/9/b (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/a/5/9/b/aa59b6e1675123ae0dfba969212472e980b8328caa3363dc79d1421a (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/c/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/c/6/b (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/c/6/b/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/a/c/6/b/5/ac6b5bf23ead845955961512f36eaa43f1011f97a3de5c738ce83041 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/2/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/2/c/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/2/c/2/8 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/2/c/2/8/b2c28cdcebc548f05e4451e1b46f92a10f1a3cb2586b6dde6fcfbc71 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/7 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/7/7 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/7/7/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/7/7/4/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/7/7/4/6/b7746fa66a5a7a654d620cb19996b205f5b47abebb09b2a302e55228 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/9/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/9/9/b (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/9/9/b/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/b/9/9/b/6/b99b62d6a920150f83b6d0661fa4e1c76ad0c0d596939d280c375b0b (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/8 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/8/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/8/a/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/8/a/6/1 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/8/a/6/1/c8a613d77e28b94d3cd52940ba5d3d3591eccc99438f45458fb3f964 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/9 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/9/f (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/9/f/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/9/f/5/2 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/c/9/f/5/2/c9f52a97489b7d10c3919fb98d6028b8f5aac79c1ddf6cff2f14b3ee (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/e (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/e/8 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/e/8/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/e/8/4/b (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/e/8/4/b/f (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/e/8/4/b/f/e84bf690a3ad40a88fb852f7bb8385944ae457bdffd185ccef438279 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6/4 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6/4/e (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6/4/e/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6/4/e/c/f64ec8497f39b9f0bf41aba61aaaacab66331699f7ccf8987f7ea732 (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6/6 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6/6/a (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6/6/a/5 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/6/6/a/5/f66a5958e4c28802d083637e136b92d413d51d95481f1f55bbda99dd (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/e (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/e/e (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/e/e/c (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/e/e/c/1 (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/home/root/.cache/pip/http/f/e/e/c/1/feec15011b05165f3f72e965e96970e3ca16b2901029cbd3976a943e (-rw------- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/.idea (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/.idea/.gitignore (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/.idea/inspectionProfiles (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/.idea/inspectionProfiles/profiles_settings.xml (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/.idea/misc.xml (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/.idea/modules.xml (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/__pycache__ (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/__pycache__/forms.cpython-38.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/check_daemon.sh (-rwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/forms.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/http.log (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/login.db (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/priv.db (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/requirements.txt (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/server.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/static (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/static/DVD.png (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/static/favicon.ico (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/static/skeleton.css (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/telnet.log (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/templates (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/templates/html_template.html (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/templates/login.html (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/opt/dvd/services/http/templates/profile.html (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__init__.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__ (drwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/__init__.cpython-38.opt-1.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/__init__.cpython-38.opt-2.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/__init__.cpython-38.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/client.cpython-38.opt-1.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/client.cpython-38.opt-2.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/client.cpython-38.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/cookiejar.cpython-38.opt-1.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/cookiejar.cpython-38.opt-2.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/cookiejar.cpython-38.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/cookies.cpython-38.opt-1.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/cookies.cpython-38.opt-2.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/cookies.cpython-38.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/server.cpython-38.opt-1.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/server.cpython-38.opt-2.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/__pycache__/server.cpython-38.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/client.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/cookiejar.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/cookies.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/http/server.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/site-packages/gevent/tests/https_svn_python_org_root.pem (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/__pycache__/http.cpython-38.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/http.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/middleware/__pycache__/http_proxy.cpython-38.pyc (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/lib/python3.8/site-packages/werkzeug/middleware/http_proxy.py (-rw-r--r-- root root)</pre>
+<pre>    /log/firmware/firmware/usr/libexec/git-core/git-http-backend (-rwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/usr/libexec/git-core/git-http-fetch (-rwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/usr/libexec/git-core/git-http-push (-rwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/usr/libexec/git-core/git-remote-http (-rwxr-xr-x root root)</pre>
+<pre>    /log/firmware/firmware/usr/libexec/git-core/git-remote-https (-rwxr-xr-x root root)</pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="checkforapacheornginxrelatedfiles">Check for apache or nginx related files</a></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="red">-</span>] No Apache related files found</pre>
+<pre>[</span><span class="red">-</span>] No nginx related files found</pre>
+<pre>[</span><span class="red">-</span>] No Lighttpd related files found</pre>
+<pre>[</span><span class="red">-</span>] No Cherokee related files found</pre>
+<pre>[</span><span class="red">-</span>] No HTTPd related files found</pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="checkforphpini">Check for php.ini</a></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="red">-</span>] No php.ini found</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<a href="./s45_pass_file_check.html" title="./s45_pass_file_check.html" ><div id="buttonBack" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+<a href="./s25_kernel_check.html" title="./s25_kernel_check.html" ><div id="buttonForward" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div> </a>
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

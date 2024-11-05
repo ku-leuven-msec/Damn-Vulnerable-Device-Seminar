@@ -1,0 +1,130 @@
+[[0;33m*[0m] Binary protection state of [0;33mw1_therm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m169) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mw1_therm.ko[0m
+
+     4bc:	910003fd 	mov	x29, sp
+     4c0:	a90153f3 	stp	x19, x20, [sp, #16]
+     4c4:	f90013f5 	str	x21, [sp, #32]
+     4c8:	aa0003f3 	mov	x19, x0
+     4cc:	aa0203f4 	mov	x20, x2
+     4d0:	aa1e03e0 	mov	x0, x30
+     4d4:	94000000 	bl	0 <_mcount>
+     4d8:	d101a260 	sub	x0, x19, #0x68
+     4dc:	f85f8275 	ldur	x21, [x19, #-8]
+     4e0:	b4000235 	cbz	x21, 524 <resolution_show+0x6c>
+     4e4:	f94012a1 	ldr	x1, [x21, #32]
+     4e8:	b40001e1 	cbz	x1, 524 <resolution_show+0x6c>
+     4ec:	f9401421 	ldr	x1, [x1, #40]
+     4f0:	d63f0020 	blr	x1
+     4f4:	b90016a0 	str	w0, [x21, #20]
+     4f8:	90000001 	adrp	x1, 0 <w1_is_visible>
+     4fc:	aa1403e0 	mov	x0, x20
+     500:	f85f8262 	ldur	x2, [x19, #-8]
+     504:	91000021 	add	x1, x1, #0x0
+     508:	b9401442 	ldr	w2, [x2, #20]
+[31m     50c:	94000000 	bl	0 <sprintf>[0m
+     510:	93407c00 	sxtw	x0, w0
+     514:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     594:	52800015 	mov	w21, #0x0                   	// #0
+     598:	f9403260 	ldr	x0, [x19, #96]
+     59c:	b4000140 	cbz	x0, 5c4 <therm_bulk_read_show+0x7c>
+     5a0:	f9401003 	ldr	x3, [x0, #32]
+     5a4:	b4000363 	cbz	x3, 610 <therm_bulk_read_show+0xc8>
+     5a8:	3940e063 	ldrb	w3, [x3, #56]
+     5ac:	340000c3 	cbz	w3, 5c4 <therm_bulk_read_show+0x7c>
+     5b0:	b9401800 	ldr	w0, [x0, #24]
+     5b4:	3100041f 	cmn	w0, #0x1
+     5b8:	54000240 	b.eq	600 <therm_bulk_read_show+0xb8>  // b.none
+     5bc:	7100041f 	cmp	w0, #0x1
+     5c0:	1a9f16b5 	csinc	w21, w21, wzr, ne  // ne = any
+     5c4:	f9401673 	ldr	x19, [x19, #40]
+     5c8:	eb13029f 	cmp	x20, x19
+     5cc:	d100a273 	sub	x19, x19, #0x28
+     5d0:	54fffe41 	b.ne	598 <therm_bulk_read_show+0x50>  // b.any
+     5d4:	2a1503e2 	mov	w2, w21
+     5d8:	aa1703e0 	mov	x0, x23
+     5dc:	90000001 	adrp	x1, 0 <w1_is_visible>
+     5e0:	91000021 	add	x1, x1, #0x0
+[31m     5e4:	94000000 	bl	0 <sprintf>[0m
+     5e8:	93407c00 	sxtw	x0, w0
+     5ec:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+
+0000000000000c10 <ext_power_show>:
+     c10:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+     c14:	910003fd 	mov	x29, sp
+     c18:	a90153f3 	stp	x19, x20, [sp, #16]
+     c1c:	f90013f5 	str	x21, [sp, #32]
+     c20:	aa0003f3 	mov	x19, x0
+     c24:	aa0203f4 	mov	x20, x2
+     c28:	aa1e03e0 	mov	x0, x30
+     c2c:	94000000 	bl	0 <_mcount>
+     c30:	d101a260 	sub	x0, x19, #0x68
+     c34:	f85f8275 	ldur	x21, [x19, #-8]
+     c38:	b40001d5 	cbz	x21, c70 <ext_power_show+0x60>
+     c3c:	97ffffa9 	bl	ae0 <read_powermode>
+     c40:	b90012a0 	str	w0, [x21, #16]
+     c44:	90000001 	adrp	x1, 0 <w1_is_visible>
+     c48:	aa1403e0 	mov	x0, x20
+     c4c:	f85f8262 	ldur	x2, [x19, #-8]
+     c50:	91000021 	add	x1, x1, #0x0
+     c54:	b9401042 	ldr	w2, [x2, #16]
+[31m     c58:	94000000 	bl	0 <sprintf>[0m
+     c5c:	93407c00 	sxtw	x0, w0
+     c60:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    1a50:	a90153f3 	stp	x19, x20, [sp, #16]
+    1a54:	f90013f5 	str	x21, [sp, #32]
+    1a58:	d5384113 	mrs	x19, sp_el0
+    1a5c:	aa0003f4 	mov	x20, x0
+    1a60:	aa0203f5 	mov	x21, x2
+    1a64:	aa1e03e0 	mov	x0, x30
+    1a68:	94000000 	bl	0 <_mcount>
+    1a6c:	f9428e62 	ldr	x2, [x19, #1304]
+    1a70:	f90027e2 	str	x2, [sp, #72]
+    1a74:	d2800002 	mov	x2, #0x0                   	// #0
+    1a78:	d101a280 	sub	x0, x20, #0x68
+    1a7c:	9100f7e1 	add	x1, sp, #0x3d
+    1a80:	97fffdf4 	bl	1250 <read_scratchpad>
+    1a84:	35000240 	cbnz	w0, 1acc <alarms_show+0x84>
+    1a88:	39c0ffe3 	ldrsb	w3, [sp, #63]
+    1a8c:	39c103e2 	ldrsb	w2, [sp, #64]
+    1a90:	91146273 	add	x19, x19, #0x518
+    1a94:	90000001 	adrp	x1, 0 <w1_is_visible>
+    1a98:	91000021 	add	x1, x1, #0x0
+    1a9c:	aa1503e0 	mov	x0, x21
+[31m    1aa0:	94000000 	bl	0 <sprintf>[0m
+    1aa4:	f94027e2 	ldr	x2, [sp, #72]
+    1aa8:	f9400261 	ldr	x1, [x19]
+--
+    1b44:	b9401821 	ldr	w1, [x1, #24]
+    1b48:	7100003f 	cmp	w1, #0x0
+    1b4c:	540002ab 	b.lt	1ba0 <temperature_show+0xa8>  // b.tstop
+    1b50:	9100f7f6 	add	x22, sp, #0x3d
+    1b54:	aa1603e1 	mov	x1, x22
+    1b58:	540003c0 	b.eq	1bd0 <temperature_show+0xd8>  // b.none
+    1b5c:	97fffdbd 	bl	1250 <read_scratchpad>
+    1b60:	f85f8261 	ldur	x1, [x19, #-8]
+    1b64:	b900183f 	str	wzr, [x1, #24]
+    1b68:	37f801c0 	tbnz	w0, #31, 1ba0 <temperature_show+0xa8>
+    1b6c:	f85f8260 	ldur	x0, [x19, #-8]
+    1b70:	f9401000 	ldr	x0, [x0, #32]
+    1b74:	b4000460 	cbz	x0, 1c00 <temperature_show+0x108>
+    1b78:	f9400801 	ldr	x1, [x0, #16]
+    1b7c:	aa1603e0 	mov	x0, x22
+    1b80:	d63f0020 	blr	x1
+    1b84:	2a0003e2 	mov	w2, w0
+    1b88:	aa1503e0 	mov	x0, x21
+    1b8c:	90000001 	adrp	x1, 0 <w1_is_visible>
+    1b90:	91000021 	add	x1, x1, #0x0
+[31m    1b94:	94000000 	bl	0 <sprintf>[0m
+    1b98:	93407c00 	sxtw	x0, w0
+    1b9c:	14000002 	b	1ba4 <temperature_show+0xac>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m5[0m times [0;33mw1_therm.ko[0m
+

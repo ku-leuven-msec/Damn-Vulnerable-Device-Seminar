@@ -1,0 +1,154 @@
+[[0;33m*[0m] Binary protection state of [0;33mrfkill.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m313) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrfkill.ko[0m
+
+     308:	d101e260 	sub	x0, x19, #0x78
+     30c:	94000000 	bl	0 <kfree>
+     310:	f9400bf3 	ldr	x19, [sp, #16]
+     314:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     318:	d65f03c0 	ret
+     31c:	d503201f 	nop
+
+0000000000000320 <hard_show>:
+     320:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     324:	910003fd 	mov	x29, sp
+     328:	a90153f3 	stp	x19, x20, [sp, #16]
+     32c:	aa0003f4 	mov	x20, x0
+     330:	aa0203f3 	mov	x19, x2
+     334:	aa1e03e0 	mov	x0, x30
+     338:	94000000 	bl	0 <_mcount>
+     33c:	f8590282 	ldur	x2, [x20, #-112]
+     340:	aa1303e0 	mov	x0, x19
+     344:	90000001 	adrp	x1, 0 <rfkill_get_led_trigger_name>
+     348:	91000021 	add	x1, x1, #0x0
+     34c:	12000042 	and	w2, w2, #0x1
+[31m     350:	94000000 	bl	0 <sprintf>[0m
+     354:	d2800040 	mov	x0, #0x2                   	// #2
+     358:	a94153f3 	ldp	x19, x20, [sp, #16]
+     35c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     360:	d65f03c0 	ret
+     364:	d503201f 	nop
+
+0000000000000368 <soft_show>:
+     368:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     36c:	910003fd 	mov	x29, sp
+     370:	a90153f3 	stp	x19, x20, [sp, #16]
+     374:	aa0003f4 	mov	x20, x0
+     378:	aa0203f3 	mov	x19, x2
+     37c:	aa1e03e0 	mov	x0, x30
+     380:	94000000 	bl	0 <_mcount>
+     384:	f8590282 	ldur	x2, [x20, #-112]
+     388:	aa1303e0 	mov	x0, x19
+     38c:	90000001 	adrp	x1, 0 <rfkill_get_led_trigger_name>
+     390:	91000021 	add	x1, x1, #0x0
+     394:	53010442 	ubfx	w2, w2, #1, #1
+[31m     398:	94000000 	bl	0 <sprintf>[0m
+     39c:	d2800040 	mov	x0, #0x2                   	// #2
+     3a0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     3ac:	d503201f 	nop
+
+00000000000003b0 <state_show>:
+     3b0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     3b4:	910003fd 	mov	x29, sp
+     3b8:	a90153f3 	stp	x19, x20, [sp, #16]
+     3bc:	aa0003f4 	mov	x20, x0
+     3c0:	aa0203f3 	mov	x19, x2
+     3c4:	aa1e03e0 	mov	x0, x30
+     3c8:	94000000 	bl	0 <_mcount>
+     3cc:	f8590283 	ldur	x3, [x20, #-112]
+     3d0:	aa1303e0 	mov	x0, x19
+     3d4:	52800042 	mov	w2, #0x2                   	// #2
+     3d8:	90000001 	adrp	x1, 0 <rfkill_get_led_trigger_name>
+     3dc:	91000021 	add	x1, x1, #0x0
+     3e0:	f240007f 	tst	x3, #0x1
+     3e4:	d341fc63 	lsr	x3, x3, #1
+     3e8:	d2400063 	eor	x3, x3, #0x1
+     3ec:	12000063 	and	w3, w3, #0x1
+     3f0:	1a820062 	csel	w2, w3, w2, eq  // eq = none
+[31m     3f4:	94000000 	bl	0 <sprintf>[0m
+     3f8:	d2800040 	mov	x0, #0x2                   	// #2
+     3fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+     400:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     404:	d65f03c0 	ret
+
+0000000000000408 <persistent_show>:
+     408:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     40c:	910003fd 	mov	x29, sp
+     410:	a90153f3 	stp	x19, x20, [sp, #16]
+     414:	aa0003f4 	mov	x20, x0
+     418:	aa0203f3 	mov	x19, x2
+     41c:	aa1e03e0 	mov	x0, x30
+     420:	94000000 	bl	0 <_mcount>
+     424:	3859d282 	ldurb	w2, [x20, #-99]
+     428:	aa1303e0 	mov	x0, x19
+     42c:	90000001 	adrp	x1, 0 <rfkill_get_led_trigger_name>
+     430:	91000021 	add	x1, x1, #0x0
+[31m     434:	94000000 	bl	0 <sprintf>[0m
+     438:	d2800040 	mov	x0, #0x2                   	// #2
+     43c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     440:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     444:	d65f03c0 	ret
+
+0000000000000448 <index_show>:
+     448:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     44c:	910003fd 	mov	x29, sp
+     450:	a90153f3 	stp	x19, x20, [sp, #16]
+     454:	aa0003f4 	mov	x20, x0
+     458:	aa0203f3 	mov	x19, x2
+     45c:	aa1e03e0 	mov	x0, x30
+     460:	94000000 	bl	0 <_mcount>
+     464:	b8598282 	ldur	w2, [x20, #-104]
+     468:	aa1303e0 	mov	x0, x19
+     46c:	90000001 	adrp	x1, 0 <rfkill_get_led_trigger_name>
+     470:	91000021 	add	x1, x1, #0x0
+[31m     474:	94000000 	bl	0 <sprintf>[0m
+     478:	93407c00 	sxtw	x0, w0
+     47c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     480:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     484:	d65f03c0 	ret
+
+0000000000000488 <type_show>:
+     488:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     48c:	910003fd 	mov	x29, sp
+     490:	a90153f3 	stp	x19, x20, [sp, #16]
+     494:	aa0003f4 	mov	x20, x0
+     498:	aa0203f3 	mov	x19, x2
+     49c:	aa1e03e0 	mov	x0, x30
+     4a0:	94000000 	bl	0 <_mcount>
+     4a4:	b858c282 	ldur	w2, [x20, #-116]
+     4a8:	90000003 	adrp	x3, 0 <rfkill_get_led_trigger_name>
+     4ac:	91000063 	add	x3, x3, #0x0
+     4b0:	aa1303e0 	mov	x0, x19
+     4b4:	90000001 	adrp	x1, 0 <rfkill_get_led_trigger_name>
+     4b8:	91000021 	add	x1, x1, #0x0
+     4bc:	f8627862 	ldr	x2, [x3, x2, lsl #3]
+[31m     4c0:	94000000 	bl	0 <sprintf>[0m
+     4c4:	93407c00 	sxtw	x0, w0
+     4c8:	a94153f3 	ldp	x19, x20, [sp, #16]
+     4cc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     4d0:	d65f03c0 	ret
+     4d4:	d503201f 	nop
+
+00000000000004d8 <name_show>:
+     4d8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     4dc:	910003fd 	mov	x29, sp
+     4e0:	a90153f3 	stp	x19, x20, [sp, #16]
+     4e4:	aa0203f3 	mov	x19, x2
+     4e8:	aa0003f4 	mov	x20, x0
+     4ec:	aa1e03e0 	mov	x0, x30
+     4f0:	94000000 	bl	0 <_mcount>
+     4f4:	910e0282 	add	x2, x20, #0x380
+     4f8:	aa1303e0 	mov	x0, x19
+     4fc:	90000001 	adrp	x1, 0 <rfkill_get_led_trigger_name>
+     500:	91000021 	add	x1, x1, #0x0
+[31m     504:	94000000 	bl	0 <sprintf>[0m
+     508:	93407c00 	sxtw	x0, w0
+     50c:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m7[0m times [0;33mrfkill.ko[0m
+

@@ -1,0 +1,226 @@
+[[0;33m*[0m] Binary protection state of [0;33mbtrfs.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m4851) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mbtrfs.ko[0m
+
+    5bd8:	121d7084 	and	w4, w4, #0xfffffff8
+    5bdc:	910203a1 	add	x1, x29, #0x80
+    5be0:	51001098 	sub	w24, w4, #0x4
+    5be4:	2a1803e0 	mov	w0, w24
+    5be8:	94000000 	bl	0 <perf_trace_buf_alloc>
+    5bec:	aa0003f3 	mov	x19, x0
+    5bf0:	b4000380 	cbz	x0, 5c60 <perf_trace_btrfs_space_reservation+0x120>
+    5bf4:	f94043a0 	ldr	x0, [x29, #128]
+    5bf8:	910003e2 	mov	x2, sp
+    5bfc:	d28000a1 	mov	x1, #0x5                   	// #5
+    5c00:	f900741d 	str	x29, [x0, #232]
+    5c04:	a90fe802 	stp	x2, x26, [x0, #248]
+    5c08:	f9008401 	str	x1, [x0, #264]
+    5c0c:	b9001a7b 	str	w27, [x19, #24]
+    5c10:	b40004d7 	cbz	x23, 5ca8 <perf_trace_btrfs_space_reservation+0x168>
+    5c14:	f94436e0 	ldr	x0, [x23, #2152]
+    5c18:	a9400400 	ldp	x0, x1, [x0]
+    5c1c:	a9008660 	stp	x0, x1, [x19, #8]
+    5c20:	aa1403e1 	mov	x1, x20
+    5c24:	9100d260 	add	x0, x19, #0x34
+[31m    5c28:	94000000 	bl	0 <strcpy>[0m
+    5c2c:	b9407fa2 	ldr	w2, [x29, #124]
+    5c30:	aa1c03e6 	mov	x6, x28
+--
+    5d60:	94000000 	bl	0 <perf_trace_buf_alloc>
+    5d64:	aa0003f3 	mov	x19, x0
+    5d68:	b4000380 	cbz	x0, 5dd8 <perf_trace_btrfs_trigger_flush+0x120>
+    5d6c:	f94043a0 	ldr	x0, [x29, #128]
+    5d70:	910003e2 	mov	x2, sp
+    5d74:	d28000a1 	mov	x1, #0x5                   	// #5
+    5d78:	f900741d 	str	x29, [x0, #232]
+    5d7c:	a90fec02 	stp	x2, x27, [x0, #248]
+    5d80:	f9008401 	str	x1, [x0, #264]
+    5d84:	b9002e77 	str	w23, [x19, #44]
+    5d88:	b40004d8 	cbz	x24, 5e20 <perf_trace_btrfs_trigger_flush+0x168>
+    5d8c:	f9443700 	ldr	x0, [x24, #2152]
+    5d90:	a9400400 	ldp	x0, x1, [x0]
+    5d94:	a9008660 	stp	x0, x1, [x19, #8]
+    5d98:	aa1403e1 	mov	x1, x20
+    5d9c:	f94037a2 	ldr	x2, [x29, #104]
+    5da0:	a9018a7a 	stp	x26, x2, [x19, #24]
+    5da4:	b94067a2 	ldr	w2, [x29, #100]
+    5da8:	b9002a62 	str	w2, [x19, #40]
+    5dac:	9100c260 	add	x0, x19, #0x30
+[31m    5db0:	94000000 	bl	0 <strcpy>[0m
+    5db4:	b9407fa2 	ldr	w2, [x29, #124]
+    5db8:	aa1c03e6 	mov	x6, x28
+--
+    5ffc:	b40003e0 	cbz	x0, 6078 <perf_trace_btrfs__workqueue+0x120>
+    6000:	f9403ba1 	ldr	x1, [x29, #112]
+    6004:	910003e3 	mov	x3, sp
+    6008:	d28000a2 	mov	x2, #0x5                   	// #5
+    600c:	aa1703e0 	mov	x0, x23
+    6010:	f900743d 	str	x29, [x1, #232]
+    6014:	a90fe423 	stp	x3, x25, [x1, #248]
+    6018:	f9008422 	str	x2, [x1, #264]
+    601c:	b900239a 	str	w26, [x28, #32]
+    6020:	94000000 	bl	6e808 <btrfs_workqueue_owner>
+    6024:	b40004e0 	cbz	x0, 60c0 <perf_trace_btrfs__workqueue+0x168>
+    6028:	aa1703e0 	mov	x0, x23
+    602c:	94000000 	bl	6e808 <btrfs_workqueue_owner>
+    6030:	f9443400 	ldr	x0, [x0, #2152]
+    6034:	a9400400 	ldp	x0, x1, [x0]
+    6038:	a9008780 	stp	x0, x1, [x28, #8]
+    603c:	79404380 	ldrh	w0, [x28, #32]
+    6040:	f9000f97 	str	x23, [x28, #24]
+    6044:	aa1403e1 	mov	x1, x20
+    6048:	8b000380 	add	x0, x28, x0
+[31m    604c:	94000000 	bl	0 <strcpy>[0m
+    6050:	b9002798 	str	w24, [x28, #36]
+    6054:	b9406fa2 	ldr	w2, [x29, #108]
+--
+    8f34:	b4000494 	cbz	x20, 8fc4 <trace_event_raw_event_btrfs_space_reservation+0xe4>
+    8f38:	aa1403e0 	mov	x0, x20
+    8f3c:	94000000 	bl	0 <strlen>
+    8f40:	11000400 	add	w0, w0, #0x1
+    8f44:	5280069a 	mov	w26, #0x34                  	// #52
+    8f48:	93407c02 	sxtw	x2, w0
+    8f4c:	2a00435a 	orr	w26, w26, w0, lsl #16
+    8f50:	9100e042 	add	x2, x2, #0x38
+    8f54:	aa1303e1 	mov	x1, x19
+    8f58:	910163e0 	add	x0, sp, #0x58
+    8f5c:	94000000 	bl	0 <trace_event_buffer_reserve>
+    8f60:	aa0003f3 	mov	x19, x0
+    8f64:	b40001a0 	cbz	x0, 8f98 <trace_event_raw_event_btrfs_space_reservation+0xb8>
+    8f68:	b900181a 	str	w26, [x0, #24]
+    8f6c:	b4000436 	cbz	x22, 8ff0 <trace_event_raw_event_btrfs_space_reservation+0x110>
+    8f70:	f94436c0 	ldr	x0, [x22, #2152]
+    8f74:	a9400400 	ldp	x0, x1, [x0]
+    8f78:	a9008660 	stp	x0, x1, [x19, #8]
+    8f7c:	aa1403e1 	mov	x1, x20
+    8f80:	9100d260 	add	x0, x19, #0x34
+[31m    8f84:	94000000 	bl	0 <strcpy>[0m
+    8f88:	a9026279 	stp	x25, x24, [x19, #32]
+    8f8c:	910163e0 	add	x0, sp, #0x58
+--
+    906c:	94000000 	bl	0 <strlen>
+    9070:	11000400 	add	w0, w0, #0x1
+    9074:	53103c1a 	lsl	w26, w0, #16
+    9078:	93407c00 	sxtw	x0, w0
+    907c:	321c075a 	orr	w26, w26, #0x30
+    9080:	9100c002 	add	x2, x0, #0x30
+    9084:	aa1903e1 	mov	x1, x25
+    9088:	910163e0 	add	x0, sp, #0x58
+    908c:	94000000 	bl	0 <trace_event_buffer_reserve>
+    9090:	aa0003e6 	mov	x6, x0
+    9094:	b40001a0 	cbz	x0, 90c8 <trace_event_raw_event_btrfs_trigger_flush+0xb8>
+    9098:	b9002c1a 	str	w26, [x0, #44]
+    909c:	b4000435 	cbz	x21, 9120 <trace_event_raw_event_btrfs_trigger_flush+0x110>
+    90a0:	f94436a0 	ldr	x0, [x21, #2152]
+    90a4:	a9400400 	ldp	x0, x1, [x0]
+    90a8:	a90084c0 	stp	x0, x1, [x6, #8]
+    90ac:	aa1303e1 	mov	x1, x19
+    90b0:	a901dcd8 	stp	x24, x23, [x6, #24]
+    90b4:	9100c0c0 	add	x0, x6, #0x30
+    90b8:	b90028d6 	str	w22, [x6, #40]
+[31m    90bc:	94000000 	bl	0 <strcpy>[0m
+    90c0:	910163e0 	add	x0, sp, #0x58
+    90c4:	94000000 	bl	0 <trace_event_buffer_commit>
+--
+    9db8:	93407c02 	sxtw	x2, w0
+    9dbc:	2a0042f7 	orr	w23, w23, w0, lsl #16
+    9dc0:	9100a042 	add	x2, x2, #0x28
+    9dc4:	910123e0 	add	x0, sp, #0x48
+    9dc8:	94000000 	bl	0 <trace_event_buffer_reserve>
+    9dcc:	aa0003f4 	mov	x20, x0
+    9dd0:	b4000240 	cbz	x0, 9e18 <trace_event_raw_event_btrfs__workqueue+0xc0>
+    9dd4:	b9002297 	str	w23, [x20, #32]
+    9dd8:	aa1603e0 	mov	x0, x22
+    9ddc:	94000000 	bl	6e808 <btrfs_workqueue_owner>
+    9de0:	b4000580 	cbz	x0, 9e90 <trace_event_raw_event_btrfs__workqueue+0x138>
+    9de4:	aa1603e0 	mov	x0, x22
+    9de8:	94000000 	bl	6e808 <btrfs_workqueue_owner>
+    9dec:	f9443400 	ldr	x0, [x0, #2152]
+    9df0:	a9400400 	ldp	x0, x1, [x0]
+    9df4:	a9008680 	stp	x0, x1, [x20, #8]
+    9df8:	79404280 	ldrh	w0, [x20, #32]
+    9dfc:	f9000e96 	str	x22, [x20, #24]
+    9e00:	aa1303e1 	mov	x1, x19
+    9e04:	8b000280 	add	x0, x20, x0
+[31m    9e08:	94000000 	bl	0 <strcpy>[0m
+    9e0c:	b9002698 	str	w24, [x20, #36]
+    9e10:	910123e0 	add	x0, sp, #0x48
+--
+   5319c:	120e0339 	and	w25, w25, #0x40000
+   531a0:	f9400280 	ldr	x0, [x20]
+   531a4:	b4000520 	cbz	x0, 53248 <btrfs_initxattrs+0xe8>
+   531a8:	90000016 	adrp	x22, 0 <btrfs_test_super>
+   531ac:	910002d6 	add	x22, x22, #0x0
+   531b0:	14000003 	b	531bc <btrfs_initxattrs+0x5c>
+   531b4:	f8418e80 	ldr	x0, [x20, #24]!
+   531b8:	b4000300 	cbz	x0, 53218 <btrfs_initxattrs+0xb8>
+   531bc:	94000000 	bl	0 <strlen>
+   531c0:	91002800 	add	x0, x0, #0xa
+   531c4:	52819801 	mov	w1, #0xcc0                 	// #3264
+   531c8:	94000000 	bl	0 <__kmalloc>
+   531cc:	aa0003f3 	mov	x19, x0
+   531d0:	b4000400 	cbz	x0, 53250 <btrfs_initxattrs+0xf0>
+   531d4:	f94002c2 	ldr	x2, [x22]
+   531d8:	f9000262 	str	x2, [x19]
+   531dc:	794012c2 	ldrh	w2, [x22, #8]
+   531e0:	91002400 	add	x0, x0, #0x9
+   531e4:	f9400281 	ldr	x1, [x20]
+   531e8:	79001262 	strh	w2, [x19, #8]
+[31m   531ec:	94000000 	bl	0 <strcpy>[0m
+   531f0:	a9409283 	ldp	x3, x4, [x20, #8]
+   531f4:	aa1303e2 	mov	x2, x19
+--
+   71a48:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   71a4c:	a94363f7 	ldp	x23, x24, [sp, #48]
+   71a50:	a8d57bfd 	ldp	x29, x30, [sp], #336
+   71a54:	d65f03c0 	ret
+   71a58:	f9400021 	ldr	x1, [x1]
+   71a5c:	aa1303e2 	mov	x2, x19
+   71a60:	7206003f 	tst	w1, #0x4000000
+   71a64:	54fffac0 	b.eq	719bc <btrfs_ioctl_set_fslabel+0x74>  // b.none
+   71a68:	17ffffd3 	b	719b4 <btrfs_ioctl_set_fslabel+0x6c>
+   71a6c:	aa1803e0 	mov	x0, x24
+   71a70:	52800001 	mov	w1, #0x0                   	// #0
+   71a74:	94000000 	bl	33530 <btrfs_start_transaction>
+   71a78:	aa0003f3 	mov	x19, x0
+   71a7c:	b140041f 	cmn	x0, #0x1, lsl #12
+   71a80:	54000188 	b.hi	71ab0 <btrfs_ioctl_set_fslabel+0x168>  // b.pmore
+   71a84:	910cc2d6 	add	x22, x22, #0x330
+   71a88:	aa1603e0 	mov	x0, x22
+   71a8c:	94000000 	bl	0 <_raw_spin_lock>
+   71a90:	910123e1 	add	x1, sp, #0x48
+   71a94:	9104aee0 	add	x0, x23, #0x12b
+[31m   71a98:	94000000 	bl	0 <strcpy>[0m
+   71a9c:	aa1603e0 	mov	x0, x22
+   71aa0:	94000000 	bl	0 <_raw_spin_unlock>
+--
+   b32b4:	37fffc60 	tbnz	w0, #31, b3240 <__get_cur_name_and_parent+0xc8>
+   b32b8:	52800035 	mov	w21, #0x1                   	// #1
+   b32bc:	a9400342 	ldp	x2, x0, [x26]
+   b32c0:	52819801 	mov	w1, #0xcc0                 	// #3264
+   b32c4:	cb020000 	sub	x0, x0, x2
+   b32c8:	93407c00 	sxtw	x0, w0
+   b32cc:	91014400 	add	x0, x0, #0x51
+   b32d0:	94000000 	bl	0 <__kmalloc>
+   b32d4:	aa0003f4 	mov	x20, x0
+   b32d8:	b4000d20 	cbz	x0, b347c <__get_cur_name_and_parent+0x304>
+   b32dc:	a9400b41 	ldp	x1, x2, [x26]
+   b32e0:	a9025e96 	stp	x22, x23, [x20, #32]
+   b32e4:	91013000 	add	x0, x0, #0x4c
+   b32e8:	f9400304 	ldr	x4, [x24]
+   b32ec:	b9004295 	str	w21, [x20, #64]
+   b32f0:	f9400323 	ldr	x3, [x25]
+   b32f4:	cb010042 	sub	x2, x2, x1
+   b32f8:	a9030e84 	stp	x4, x3, [x20, #48]
+   b32fc:	91066277 	add	x23, x19, #0x198
+   b3300:	b9004a82 	str	w2, [x20, #72]
+[31m   b3304:	94000000 	bl	0 <strcpy>[0m
+   b3308:	f940ba62 	ldr	x2, [x19, #368]
+   b330c:	aa1603e1 	mov	x1, x22
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m9[0m times [0;33mbtrfs.ko[0m
+

@@ -1,0 +1,236 @@
+[[0;33m*[0m] Binary protection state of [0;33mftdi-elan.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m203) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mftdi-elan.ko[0m
+
+     8b8:	79007422 	strh	w2, [x1, #58]
+     8bc:	12003c78 	and	w24, w3, #0xffff
+     8c0:	8b0602d6 	add	x22, x22, x6
+     8c4:	f9002436 	str	x22, [x1, #72]
+     8c8:	34000400 	cbz	w0, 948 <usb_ftdi_elan_edset_output+0x208>
+     8cc:	90000001 	adrp	x1, 0 <ftdi_release_platform_dev>
+     8d0:	9100003a 	add	x26, x1, #0x0
+     8d4:	d503201f 	nop
+     8d8:	5100071b 	sub	w27, w24, #0x1
+     8dc:	710078bf 	cmp	w5, #0x1e
+     8e0:	12003f7b 	and	w27, w27, #0xffff
+     8e4:	5400016c 	b.gt	910 <usb_ftdi_elan_edset_output+0x1d0>
+     8e8:	540001e0 	b.eq	924 <usb_ftdi_elan_edset_output+0x1e4>  // b.none
+     8ec:	384016c2 	ldrb	w2, [x22], #1
+     8f0:	110004a5 	add	w5, w5, #0x1
+     8f4:	aa1c03e0 	mov	x0, x28
+     8f8:	aa1a03e1 	mov	x1, x26
+     8fc:	b90067e5 	str	w5, [sp, #100]
+     900:	91000f9c 	add	x28, x28, #0x3
+     904:	b9007be5 	str	w5, [sp, #120]
+[31m     908:	94000000 	bl	0 <sprintf>[0m
+     90c:	b94067e5 	ldr	w5, [sp, #100]
+     910:	340001d8 	cbz	w24, 948 <usb_ftdi_elan_edset_output+0x208>
+--
+     ba4:	d280001a 	mov	x26, #0x0                   	// #0
+     ba8:	b90067e1 	str	w1, [sp, #100]
+     bac:	3901abff 	strb	wzr, [sp, #106]
+     bb0:	7100775f 	cmp	w26, #0x1d
+     bb4:	5400018d 	b.le	be4 <ftdi_elan_flush_input_fifo+0x184>
+     bb8:	71007b5f 	cmp	w26, #0x1e
+     bbc:	540003c0 	b.eq	c34 <ftdi_elan_flush_input_fifo+0x1d4>  // b.none
+     bc0:	b94067e0 	ldr	w0, [sp, #100]
+     bc4:	9100075a 	add	x26, x26, #0x1
+     bc8:	51000401 	sub	w1, w0, #0x1
+     bcc:	b90067e1 	str	w1, [sp, #100]
+     bd0:	7100001f 	cmp	w0, #0x0
+     bd4:	54fffeec 	b.gt	bb0 <ftdi_elan_flush_input_fifo+0x150>
+     bd8:	f945c660 	ldr	x0, [x19, #2952]
+     bdc:	f947ee62 	ldr	x2, [x19, #4056]
+     be0:	17ffffb8 	b	ac0 <ftdi_elan_flush_input_fifo+0x60>
+     be4:	387a6b82 	ldrb	w2, [x28, x26]
+     be8:	aa1803e1 	mov	x1, x24
+     bec:	aa1b03e0 	mov	x0, x27
+     bf0:	91000f7b 	add	x27, x27, #0x3
+[31m     bf4:	94000000 	bl	0 <sprintf>[0m
+     bf8:	17fffff2 	b	bc0 <ftdi_elan_flush_input_fifo+0x160>
+     bfc:	5280001a 	mov	w26, #0x0                   	// #0
+--
+    11c8:	32020400 	orr	w0, w0, #0xc0000000
+    11cc:	b9005320 	str	w0, [x25, #80]
+    11d0:	f9003338 	str	x24, [x25, #96]
+    11d4:	b9008337 	str	w23, [x25, #128]
+    11d8:	a90a8736 	stp	x22, x1, [x25, #168]
+    11dc:	340004a8 	cbz	w8, 1270 <ftdi_elan_command_engine+0x258>
+    11e0:	3901f3ff 	strb	wzr, [sp, #124]
+    11e4:	710002ff 	cmp	w23, #0x0
+    11e8:	510006fa 	sub	w26, w23, #0x1
+    11ec:	5400042d 	b.le	1270 <ftdi_elan_command_engine+0x258>
+    11f0:	aa1803f5 	mov	x21, x24
+    11f4:	a90573fb 	stp	x27, x28, [sp, #80]
+    11f8:	5100a6e3 	sub	w3, w23, #0x29
+    11fc:	9101f3e0 	add	x0, sp, #0x7c
+    1200:	90000001 	adrp	x1, 0 <ftdi_release_platform_dev>
+    1204:	384016a2 	ldrb	w2, [x21], #1
+    1208:	91000021 	add	x1, x1, #0x0
+    120c:	91000c1b 	add	x27, x0, #0x3
+    1210:	b90067e3 	str	w3, [sp, #100]
+    1214:	5100075c 	sub	w28, w26, #0x1
+[31m    1218:	94000000 	bl	0 <sprintf>[0m
+    121c:	90000000 	adrp	x0, 0 <ftdi_release_platform_dev>
+    1220:	91000001 	add	x1, x0, #0x0
+    1224:	3400025a 	cbz	w26, 126c <ftdi_elan_command_engine+0x254>
+    1228:	1100a35a 	add	w26, w26, #0x28
+    122c:	4b17035a 	sub	w26, w26, w23
+    1230:	7100035f 	cmp	w26, #0x0
+    1234:	7a40db84 	ccmp	w28, #0x0, #0x4, le
+    1238:	540004e1 	b.ne	12d4 <ftdi_elan_command_engine+0x2bc>  // b.any
+    123c:	384016a2 	ldrb	w2, [x21], #1
+    1240:	aa1b03e0 	mov	x0, x27
+    1244:	91000f7b 	add	x27, x27, #0x3
+[31m    1248:	94000000 	bl	0 <sprintf>[0m
+    124c:	b94067e0 	ldr	w0, [sp, #100]
+    1250:	6b00039f 	cmp	w28, w0
+--
+    156c:	52803e85 	mov	w5, #0x1f4                 	// #500
+    1570:	2a062021 	orr	w1, w1, w6, lsl #8
+    1574:	2a070021 	orr	w1, w1, w7
+    1578:	94000000 	bl	0 <usb_bulk_msg>
+    157c:	b940a7fb 	ldr	w27, [sp, #164]
+    1580:	2a0003f7 	mov	w23, w0
+    1584:	3902abff 	strb	wzr, [sp, #170]
+    1588:	7100037f 	cmp	w27, #0x0
+    158c:	51000776 	sub	w22, w27, #0x1
+    1590:	f947ef87 	ldr	x7, [x28, #4056]
+    1594:	540003ed 	b.le	1610 <ftdi_elan_respond_engine+0x148>
+    1598:	aa0703f5 	mov	x21, x7
+    159c:	9102abe0 	add	x0, sp, #0xaa
+    15a0:	90000013 	adrp	x19, 0 <ftdi_release_platform_dev>
+    15a4:	91000273 	add	x19, x19, #0x0
+    15a8:	aa1303e1 	mov	x1, x19
+    15ac:	91000c19 	add	x25, x0, #0x3
+    15b0:	384016a2 	ldrb	w2, [x21], #1
+    15b4:	51007f7a 	sub	w26, w27, #0x1f
+    15b8:	510006d8 	sub	w24, w22, #0x1
+[31m    15bc:	94000000 	bl	0 <sprintf>[0m
+    15c0:	34000216 	cbz	w22, 1600 <ftdi_elan_respond_engine+0x138>
+    15c4:	11007ac3 	add	w3, w22, #0x1e
+    15c8:	4b1b0063 	sub	w3, w3, w27
+    15cc:	7100007f 	cmp	w3, #0x0
+    15d0:	7a40db04 	ccmp	w24, #0x0, #0x4, le
+    15d4:	54000361 	b.ne	1640 <ftdi_elan_respond_engine+0x178>  // b.any
+    15d8:	384016a2 	ldrb	w2, [x21], #1
+    15dc:	aa1903e0 	mov	x0, x25
+    15e0:	aa1303e1 	mov	x1, x19
+    15e4:	91000f39 	add	x25, x25, #0x3
+[31m    15e8:	94000000 	bl	0 <sprintf>[0m
+    15ec:	6b1a031f 	cmp	w24, w26
+    15f0:	54000080 	b.eq	1600 <ftdi_elan_respond_engine+0x138>  // b.none
+--
+    17d8:	f947ef82 	ldr	x2, [x28, #4056]
+    17dc:	f947fb81 	ldr	x1, [x28, #4080]
+    17e0:	17fffff4 	b	17b0 <ftdi_elan_respond_engine+0x2e8>
+    17e4:	91400780 	add	x0, x28, #0x1, lsl #12
+    17e8:	3902abff 	strb	wzr, [sp, #170]
+    17ec:	39401804 	ldrb	w4, [x0, #6]
+    17f0:	39401401 	ldrb	w1, [x0, #5]
+    17f4:	39401017 	ldrb	w23, [x0, #4]
+    17f8:	2a042024 	orr	w4, w1, w4, lsl #8
+    17fc:	12002895 	and	w21, w4, #0x7ff
+    1800:	510006b9 	sub	w25, w21, #0x1
+    1804:	34000355 	cbz	w21, 186c <ftdi_elan_respond_engine+0x3a4>
+    1808:	39402002 	ldrb	w2, [x0, #8]
+    180c:	d2820124 	mov	x4, #0x1009                	// #4105
+    1810:	9102abe0 	add	x0, sp, #0xaa
+    1814:	aa1303e1 	mov	x1, x19
+    1818:	8b040398 	add	x24, x28, x4
+    181c:	91000c16 	add	x22, x0, #0x3
+    1820:	51007eba 	sub	w26, w21, #0x1f
+    1824:	5100073b 	sub	w27, w25, #0x1
+[31m    1828:	94000000 	bl	0 <sprintf>[0m
+    182c:	34000219 	cbz	w25, 186c <ftdi_elan_respond_engine+0x3a4>
+    1830:	11007b23 	add	w3, w25, #0x1e
+    1834:	4b150063 	sub	w3, w3, w21
+    1838:	7100007f 	cmp	w3, #0x0
+    183c:	7a40db64 	ccmp	w27, #0x0, #0x4, le
+    1840:	54000241 	b.ne	1888 <ftdi_elan_respond_engine+0x3c0>  // b.any
+    1844:	38401702 	ldrb	w2, [x24], #1
+    1848:	aa1603e0 	mov	x0, x22
+    184c:	aa1303e1 	mov	x1, x19
+    1850:	91000ed6 	add	x22, x22, #0x3
+[31m    1854:	94000000 	bl	0 <sprintf>[0m
+    1858:	6b1a037f 	cmp	w27, w26
+    185c:	54000080 	b.eq	186c <ftdi_elan_respond_engine+0x3a4>  // b.none
+--
+    2d30:	f9481f60 	ldr	x0, [x27, #4152]
+    2d34:	52800c01 	mov	w1, #0x60                  	// #96
+    2d38:	39400002 	ldrb	w2, [x0]
+    2d3c:	39400400 	ldrb	w0, [x0, #1]
+    2d40:	7100c45f 	cmp	w2, #0x31
+    2d44:	7a410000 	ccmp	w0, w1, #0x0, eq  // eq = none
+    2d48:	54000220 	b.eq	2d8c <ftdi_elan_status_work+0x48c>  // b.none
+    2d4c:	710002bf 	cmp	w21, #0x0
+    2d50:	510006b5 	sub	w21, w21, #0x1
+    2d54:	54fff9ad 	b.le	2c88 <ftdi_elan_status_work+0x388>
+    2d58:	528000a0 	mov	w0, #0x5                   	// #5
+    2d5c:	94000000 	bl	0 <msleep>
+    2d60:	f945c780 	ldr	x0, [x28, #2952]
+    2d64:	17ffffa9 	b	2c08 <ftdi_elan_status_work+0x308>
+    2d68:	387c6882 	ldrb	w2, [x4, x28]
+    2d6c:	aa0303e0 	mov	x0, x3
+    2d70:	91000c63 	add	x3, x3, #0x3
+    2d74:	aa1a03e1 	mov	x1, x26
+    2d78:	a90693e3 	stp	x3, x4, [sp, #104]
+    2d7c:	f9003fe3 	str	x3, [sp, #120]
+[31m    2d80:	94000000 	bl	0 <sprintf>[0m
+    2d84:	a94693e3 	ldp	x3, x4, [sp, #104]
+    2d88:	17ffffda 	b	2cf0 <ftdi_elan_status_work+0x3f0>
+--
+    2ed0:	7100033f 	cmp	w25, #0x0
+    2ed4:	51000727 	sub	w7, w25, #0x1
+    2ed8:	54003ded 	b.le	3694 <ftdi_elan_status_work+0xd94>
+    2edc:	2a0703f9 	mov	w25, w7
+    2ee0:	f9481f62 	ldr	x2, [x27, #4152]
+    2ee4:	17ffff23 	b	2b70 <ftdi_elan_status_work+0x270>
+    2ee8:	2a1903e7 	mov	w7, w25
+    2eec:	17fffff5 	b	2ec0 <ftdi_elan_status_work+0x5c0>
+    2ef0:	7100033f 	cmp	w25, #0x0
+    2ef4:	51000727 	sub	w7, w25, #0x1
+    2ef8:	f945c780 	ldr	x0, [x28, #2952]
+    2efc:	54003ccd 	b.le	3694 <ftdi_elan_status_work+0xd94>
+    2f00:	2a0703f9 	mov	w25, w7
+    2f04:	17ffff1b 	b	2b70 <ftdi_elan_status_work+0x270>
+    2f08:	aa0403e0 	mov	x0, x4
+    2f0c:	91000c84 	add	x4, x4, #0x3
+    2f10:	2a1c03e2 	mov	w2, w28
+    2f14:	aa1803e1 	mov	x1, x24
+    2f18:	a90697e4 	stp	x4, x5, [sp, #104]
+    2f1c:	a90793e3 	stp	x3, x4, [sp, #120]
+[31m    2f20:	94000000 	bl	0 <sprintf>[0m
+    2f24:	a94697e4 	ldp	x4, x5, [sp, #104]
+    2f28:	f9403fe3 	ldr	x3, [sp, #120]
+--
+    3f3c:	3101b81f 	cmn	w0, #0x6e
+    3f40:	540000e0 	b.eq	3f5c <ftdi_elan_read+0x1dc>  // b.none
+    3f44:	350003c0 	cbnz	w0, 3fbc <ftdi_elan_read+0x23c>
+    3f48:	7100027f 	cmp	w19, #0x0
+    3f4c:	51000673 	sub	w19, w19, #0x1
+    3f50:	54fffd8c 	b.gt	3f00 <ftdi_elan_read+0x180>
+    3f54:	93407ec0 	sxtw	x0, w22
+    3f58:	17ffffc8 	b	3e78 <ftdi_elan_read+0xf8>
+    3f5c:	7100029f 	cmp	w20, #0x0
+    3f60:	51000694 	sub	w20, w20, #0x1
+    3f64:	54fffcec 	b.gt	3f00 <ftdi_elan_read+0x180>
+    3f68:	710002df 	cmp	w22, #0x0
+    3f6c:	93407ec0 	sxtw	x0, w22
+    3f70:	92800db6 	mov	x22, #0xffffffffffffff92    	// #-110
+    3f74:	9a96c000 	csel	x0, x0, x22, gt
+    3f78:	17ffffc0 	b	3e78 <ftdi_elan_read+0xf8>
+    3f7c:	38616842 	ldrb	w2, [x2, x1]
+    3f80:	aa1a03e0 	mov	x0, x26
+    3f84:	f94037e1 	ldr	x1, [sp, #104]
+    3f88:	91000f5a 	add	x26, x26, #0x3
+[31m    3f8c:	94000000 	bl	0 <sprintf>[0m
+    3f90:	17ffffa9 	b	3e34 <ftdi_elan_read+0xb4>
+    3f94:	5285c400 	mov	w0, #0x2e20                	// #11808
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m11[0m times [0;33mftdi-elan.ko[0m
+

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-usbmidi-lib.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m210) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msnd-usbmidi-lib.ko[0m
+
+    2e38:	94000000 	bl	0 <__sw_hweight16>
+    2e3c:	2a0003f7 	mov	w23, w0
+    2e40:	79412fe0 	ldrh	w0, [sp, #150]
+    2e44:	94000000 	bl	0 <__sw_hweight16>
+    2e48:	0b000284 	add	w4, w20, w0
+    2e4c:	b940be62 	ldr	w2, [x19, #188]
+    2e50:	0b170343 	add	w3, w26, w23
+    2e54:	f9400660 	ldr	x0, [x19, #8]
+    2e58:	11000446 	add	w6, w2, #0x1
+    2e5c:	910203e5 	add	x5, sp, #0x80
+    2e60:	90000001 	adrp	x1, 0 <snd_usbmidi_output_standard_packet>
+    2e64:	91000021 	add	x1, x1, #0x0
+    2e68:	b900be66 	str	w6, [x19, #188]
+    2e6c:	94000000 	bl	0 <snd_rawmidi_new>
+    2e70:	2a0003f4 	mov	w20, w0
+    2e74:	37f81120 	tbnz	w0, #31, 3098 <__snd_usbmidi_create+0x3c8>
+    2e78:	f9400661 	ldr	x1, [x19, #8]
+    2e7c:	f94043f4 	ldr	x20, [sp, #128]
+    2e80:	91009021 	add	x1, x1, #0x24
+    2e84:	91018280 	add	x0, x20, #0x60
+[31m    2e88:	94000000 	bl	0 <strcpy>[0m
+    2e8c:	90000003 	adrp	x3, 0 <snd_usbmidi_output_standard_packet>
+    2e90:	91000063 	add	x3, x3, #0x0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33msnd-usbmidi-lib.ko[0m
+

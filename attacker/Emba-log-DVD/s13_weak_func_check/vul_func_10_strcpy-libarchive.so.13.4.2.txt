@@ -1,0 +1,250 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibarchive.so.13.4.2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibarchive.so.13.4.2[0m
+
+   141b4:	17fffef7 	b	13d90 <acl_create_entry@plt+0x4e0>
+   141b8:	d503201f 	nop
+   141bc:	d503201f 	nop
+   141c0:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+   141c4:	910003fd 	mov	x29, sp
+   141c8:	a90153f3 	stp	x19, x20, [sp, #16]
+   141cc:	aa0003f3 	mov	x19, x0
+   141d0:	a9025bf5 	stp	x21, x22, [sp, #32]
+   141d4:	2a0303f6 	mov	w22, w3
+   141d8:	2a0603f5 	mov	w21, w6
+   141dc:	a90363f7 	stp	x23, x24, [sp, #48]
+   141e0:	2a0403f8 	mov	w24, w4
+   141e4:	2a0703f7 	mov	w23, w7
+   141e8:	a9046bf9 	stp	x25, x26, [sp, #64]
+   141ec:	2a0203f9 	mov	w25, w2
+   141f0:	f9400014 	ldr	x20, [x0]
+   141f4:	f9002bfb 	str	x27, [sp, #80]
+   141f8:	aa0503fb 	mov	x27, x5
+   141fc:	b4000101 	cbz	x1, 1421c <acl_create_entry@plt+0x96c>
+   14200:	aa1403e0 	mov	x0, x20
+[31m   14204:	97fffcef 	bl	135c0 <strcpy@plt>[0m
+   14208:	f9400274 	ldr	x20, [x19]
+   1420c:	aa1403e0 	mov	x0, x20
+--
+   14240:	54000981 	b.ne	14370 <acl_create_entry@plt+0xac0>  // b.any
+   14244:	90000380 	adrp	x0, 84000 <archive_write_disk_set_acls@@Base+0x2f0>
+   14248:	9101a000 	add	x0, x0, #0x68
+   1424c:	b9400001 	ldr	w1, [x0]
+   14250:	79400800 	ldrh	w0, [x0, #4]
+   14254:	b9000281 	str	w1, [x20]
+   14258:	79000a80 	strh	w0, [x20, #4]
+   1425c:	f9400274 	ldr	x20, [x19]
+   14260:	aa1403e0 	mov	x0, x20
+   14264:	97fffd13 	bl	136b0 <strlen@plt>
+   14268:	8b000281 	add	x1, x20, x0
+   1426c:	91000421 	add	x1, x1, #0x1
+   14270:	f9000261 	str	x1, [x19]
+   14274:	52800742 	mov	w2, #0x3a                  	// #58
+   14278:	38206a82 	strb	w2, [x20, x0]
+   1427c:	7218073a 	ands	w26, w25, #0x300
+   14280:	540019e0 	b.eq	145bc <acl_create_entry@plt+0xd0c>  // b.none
+   14284:	b4001dfb 	cbz	x27, 14640 <acl_create_entry@plt+0xd90>
+   14288:	f9400260 	ldr	x0, [x19]
+   1428c:	aa1b03e1 	mov	x1, x27
+[31m   14290:	97fffccc 	bl	135c0 <strcpy@plt>[0m
+   14294:	f9400274 	ldr	x20, [x19]
+   14298:	aa1403e0 	mov	x0, x20
+--
+   172e8:	aa0003f5 	mov	x21, x0
+   172ec:	aa1603e0 	mov	x0, x22
+   172f0:	a90153f3 	stp	x19, x20, [sp, #16]
+   172f4:	aa0103f4 	mov	x20, x1
+   172f8:	a9047fff 	stp	xzr, xzr, [sp, #64]
+   172fc:	f9002bff 	str	xzr, [sp, #80]
+   17300:	97ffff7c 	bl	170f0 <__archive_check_magic@@Base+0x1b0>
+   17304:	b7f805c0 	tbnz	x0, #63, 173bc <__archive_cmdline_parse@@Base+0xfc>
+   17308:	aa0003f3 	mov	x19, x0
+   1730c:	f94027e0 	ldr	x0, [sp, #72]
+   17310:	b4000560 	cbz	x0, 173bc <__archive_cmdline_parse@@Base+0xfc>
+   17314:	f94023f7 	ldr	x23, [sp, #64]
+   17318:	aa1703e0 	mov	x0, x23
+   1731c:	97fff0e5 	bl	136b0 <strlen@plt>
+   17320:	91000401 	add	x1, x0, #0x1
+   17324:	f94002a0 	ldr	x0, [x21]
+   17328:	97ffeb42 	bl	12030 <realloc@plt>
+   1732c:	b4000680 	cbz	x0, 173fc <__archive_cmdline_parse@@Base+0x13c>
+   17330:	f90002a0 	str	x0, [x21]
+   17334:	aa1703e1 	mov	x1, x23
+[31m   17338:	97fff0a2 	bl	135c0 <strcpy@plt>[0m
+   1733c:	f94023f7 	ldr	x23, [sp, #64]
+   17340:	528005e1 	mov	w1, #0x2f                  	// #47
+--
+   2bde8:	d2800015 	mov	x21, #0x0                   	// #0
+   2bdec:	a90363f7 	stp	x23, x24, [sp, #48]
+   2bdf0:	aa0203f7 	mov	x23, x2
+   2bdf4:	f90023f9 	str	x25, [sp, #64]
+   2bdf8:	b4000061 	cbz	x1, 2be04 <archive_read_open_filenames@@Base+0x34>
+   2bdfc:	aa0103f5 	mov	x21, x1
+   2be00:	f84086b4 	ldr	x20, [x21], #8
+   2be04:	aa1603e0 	mov	x0, x22
+   2be08:	d0000359 	adrp	x25, 95000 <PPMD8_kExpEscape@@Base+0xfce8>
+   2be0c:	12800018 	mov	w24, #0xffffffff            	// #-1
+   2be10:	97ff9c40 	bl	12f10 <archive_clear_error@plt>
+   2be14:	1400001b 	b	2be80 <archive_read_open_filenames@@Base+0xb0>
+   2be18:	97ff9e26 	bl	136b0 <strlen@plt>
+   2be1c:	9100a001 	add	x1, x0, #0x28
+   2be20:	d2800020 	mov	x0, #0x1                   	// #1
+   2be24:	97ff9cc7 	bl	13140 <calloc@plt>
+   2be28:	aa1403e1 	mov	x1, x20
+   2be2c:	aa0003f3 	mov	x19, x0
+   2be30:	91009000 	add	x0, x0, #0x24
+   2be34:	b40006f3 	cbz	x19, 2bf10 <archive_read_open_filenames@@Base+0x140>
+[31m   2be38:	97ff9de2 	bl	135c0 <strcpy@plt>[0m
+   2be3c:	b9000278 	str	w24, [x19]
+   2be40:	a900fe77 	stp	x23, xzr, [x19, #8]
+--
+   2c098:	b5000681 	cbnz	x1, 2c168 <archive_read_open_filename_w@@Base+0x1c8>
+   2c09c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   2c0a0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   2c0a4:	f9401bf7 	ldr	x23, [sp, #48]
+   2c0a8:	a8c67bfd 	ldp	x29, x30, [sp], #96
+   2c0ac:	d65f03c0 	ret
+   2c0b0:	aa1503e0 	mov	x0, x21
+   2c0b4:	910103f7 	add	x23, sp, #0x40
+   2c0b8:	a9047fff 	stp	xzr, xzr, [sp, #64]
+   2c0bc:	f9002bff 	str	xzr, [sp, #80]
+   2c0c0:	97ff9a48 	bl	129e0 <wcslen@plt>
+   2c0c4:	aa1503e1 	mov	x1, x21
+   2c0c8:	aa0003e2 	mov	x2, x0
+   2c0cc:	aa1703e0 	mov	x0, x23
+   2c0d0:	97ff9768 	bl	11e70 <archive_string_append_from_wcs@plt>
+   2c0d4:	35000160 	cbnz	w0, 2c100 <archive_read_open_filename_w@@Base+0x160>
+   2c0d8:	f94023e1 	ldr	x1, [sp, #64]
+   2c0dc:	52800022 	mov	w2, #0x1                   	// #1
+   2c0e0:	b9002282 	str	w2, [x20, #32]
+   2c0e4:	91009280 	add	x0, x20, #0x24
+[31m   2c0e8:	97ff9d36 	bl	135c0 <strcpy@plt>[0m
+   2c0ec:	aa1703e0 	mov	x0, x23
+   2c0f0:	97ff96dc 	bl	11c60 <archive_string_free@plt>
+--
+   6cb8c:	540003a0 	b.eq	6cc00 <archive_write_set_format_filter_by_ext_def@@Base+0xeb0>  // b.none
+   6cb90:	7100b83f 	cmp	w1, #0x2e
+   6cb94:	54fff341 	b.ne	6c9fc <archive_write_set_format_filter_by_ext_def@@Base+0xcac>  // b.any
+   6cb98:	39400e61 	ldrb	w1, [x19, #3]
+   6cb9c:	7100bc3f 	cmp	w1, #0x2f
+   6cba0:	54fff2e1 	b.ne	6c9fc <archive_write_set_format_filter_by_ext_def@@Base+0xcac>  // b.any
+   6cba4:	d100067a 	sub	x26, x19, #0x1
+   6cba8:	eb1a02df 	cmp	x22, x26
+   6cbac:	540000a9 	b.ls	6cbc0 <archive_write_set_format_filter_by_ext_def@@Base+0xe70>  // b.plast
+   6cbb0:	1400005b 	b	6cd1c <archive_write_set_format_filter_by_ext_def@@Base+0xfcc>
+   6cbb4:	d100075a 	sub	x26, x26, #0x1
+   6cbb8:	eb19035f 	cmp	x26, x25
+   6cbbc:	54000080 	b.eq	6cbcc <archive_write_set_format_filter_by_ext_def@@Base+0xe7c>  // b.none
+   6cbc0:	39400340 	ldrb	w0, [x26]
+   6cbc4:	7100bc1f 	cmp	w0, #0x2f
+   6cbc8:	54ffff61 	b.ne	6cbb4 <archive_write_set_format_filter_by_ext_def@@Base+0xe64>  // b.any
+   6cbcc:	eb1a02df 	cmp	x22, x26
+   6cbd0:	54000a62 	b.cs	6cd1c <archive_write_set_format_filter_by_ext_def@@Base+0xfcc>  // b.hs, b.nlast
+   6cbd4:	91000e61 	add	x1, x19, #0x3
+   6cbd8:	aa1a03e0 	mov	x0, x26
+[31m   6cbdc:	97fe9a79 	bl	135c0 <strcpy@plt>[0m
+   6cbe0:	aa1a03f3 	mov	x19, x26
+   6cbe4:	39400340 	ldrb	w0, [x26]
+--
+   6ccd4:	97fe9a77 	bl	136b0 <strlen@plt>
+   6ccd8:	aa0003e2 	mov	x2, x0
+   6ccdc:	aa1903e1 	mov	x1, x25
+   6cce0:	aa1a03e0 	mov	x0, x26
+   6cce4:	97fe96e3 	bl	12870 <archive_strncat@plt>
+   6cce8:	17ffff4e 	b	6ca20 <archive_write_set_format_filter_by_ext_def@@Base+0xcd0>
+   6ccec:	f9001b13 	str	x19, [x24, #48]
+   6ccf0:	aa1903e0 	mov	x0, x25
+   6ccf4:	f900271f 	str	xzr, [x24, #72]
+   6ccf8:	aa1703e1 	mov	x1, x23
+   6ccfc:	97fe93c5 	bl	11c10 <archive_string_concat@plt>
+   6cd00:	f9001b1f 	str	xzr, [x24, #48]
+   6cd04:	f9401700 	ldr	x0, [x24, #40]
+   6cd08:	3900001f 	strb	wzr, [x0]
+   6cd0c:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   6cd10:	17ffff63 	b	6ca9c <archive_write_set_format_filter_by_ext_def@@Base+0xd4c>
+   6cd14:	aa0103f7 	mov	x23, x1
+   6cd18:	17fffef4 	b	6c8e8 <archive_write_set_format_filter_by_ext_def@@Base+0xb98>
+   6cd1c:	91001261 	add	x1, x19, #0x4
+   6cd20:	aa1603e0 	mov	x0, x22
+[31m   6cd24:	97fe9a27 	bl	135c0 <strcpy@plt>[0m
+   6cd28:	aa1603f3 	mov	x19, x22
+   6cd2c:	394002c0 	ldrb	w0, [x22]
+--
+   77708:	54ffea21 	b.ne	7744c <archive_write_set_format_iso9660@@Base+0x221c>  // b.any
+   7770c:	39400f81 	ldrb	w1, [x28, #3]
+   77710:	7100bc3f 	cmp	w1, #0x2f
+   77714:	54ffe9c1 	b.ne	7744c <archive_write_set_format_iso9660@@Base+0x221c>  // b.any
+   77718:	d1000782 	sub	x2, x28, #0x1
+   7771c:	eb02029f 	cmp	x20, x2
+   77720:	540000a9 	b.ls	77734 <archive_write_set_format_iso9660@@Base+0x2504>  // b.plast
+   77724:	14000063 	b	778b0 <archive_write_set_format_iso9660@@Base+0x2680>
+   77728:	d1000442 	sub	x2, x2, #0x1
+   7772c:	eb16005f 	cmp	x2, x22
+   77730:	54000080 	b.eq	77740 <archive_write_set_format_iso9660@@Base+0x2510>  // b.none
+   77734:	39400040 	ldrb	w0, [x2]
+   77738:	7100bc1f 	cmp	w0, #0x2f
+   7773c:	54ffff61 	b.ne	77728 <archive_write_set_format_iso9660@@Base+0x24f8>  // b.any
+   77740:	eb02029f 	cmp	x20, x2
+   77744:	54000b62 	b.cs	778b0 <archive_write_set_format_iso9660@@Base+0x2680>  // b.hs, b.nlast
+   77748:	91000f81 	add	x1, x28, #0x3
+   7774c:	aa0203e0 	mov	x0, x2
+   77750:	aa0203fc 	mov	x28, x2
+   77754:	f90037e2 	str	x2, [sp, #104]
+[31m   77758:	97fe6f9a 	bl	135c0 <strcpy@plt>[0m
+   7775c:	f94037e2 	ldr	x2, [sp, #104]
+   77760:	39400040 	ldrb	w0, [x2]
+--
+   77868:	aa1a03e0 	mov	x0, x26
+   7786c:	97fe68e9 	bl	11c10 <archive_string_concat@plt>
+   77870:	f900227f 	str	xzr, [x19, #64]
+   77874:	f9401e60 	ldr	x0, [x19, #56]
+   77878:	3900001f 	strb	wzr, [x0]
+   7787c:	a94573fb 	ldp	x27, x28, [sp, #80]
+   77880:	17ffff12 	b	774c8 <archive_write_set_format_iso9660@@Base+0x2298>
+   77884:	d2800101 	mov	x1, #0x8                   	// #8
+   77888:	d2800020 	mov	x0, #0x1                   	// #1
+   7788c:	97fe6e2d 	bl	13140 <calloc@plt>
+   77890:	f9001a60 	str	x0, [x19, #48]
+   77894:	b4000320 	cbz	x0, 778f8 <archive_write_set_format_iso9660@@Base+0x26c8>
+   77898:	b900001f 	str	wzr, [x0]
+   7789c:	17ffff70 	b	7765c <archive_write_set_format_iso9660@@Base+0x242c>
+   778a0:	39400680 	ldrb	w0, [x20, #1]
+   778a4:	7100bc1f 	cmp	w0, #0x2f
+   778a8:	54ffde60 	b.eq	77474 <archive_write_set_format_iso9660@@Base+0x2244>  // b.none
+   778ac:	17ffffcb 	b	777d8 <archive_write_set_format_iso9660@@Base+0x25a8>
+   778b0:	91001381 	add	x1, x28, #0x4
+   778b4:	aa1403e0 	mov	x0, x20
+[31m   778b8:	97fe6f42 	bl	135c0 <strcpy@plt>[0m
+   778bc:	aa1403fc 	mov	x28, x20
+   778c0:	39400280 	ldrb	w0, [x20]
+--
+   78440:	9a942274 	csel	x20, x19, x20, cs  // cs = hs, nlast
+   78444:	eb14027f 	cmp	x19, x20
+   78448:	540000a3 	b.cc	7845c <archive_write_set_format_mtree_classic@@Base+0x3bc>  // b.lo, b.ul, b.last
+   7844c:	14000030 	b	7850c <archive_write_set_format_mtree_classic@@Base+0x46c>
+   78450:	d1000694 	sub	x20, x20, #0x1
+   78454:	eb14027f 	cmp	x19, x20
+   78458:	54000580 	b.eq	78508 <archive_write_set_format_mtree_classic@@Base+0x468>  // b.none
+   7845c:	39400280 	ldrb	w0, [x20]
+   78460:	7100bc1f 	cmp	w0, #0x2f
+   78464:	54ffff61 	b.ne	78450 <archive_write_set_format_mtree_classic@@Base+0x3b0>  // b.any
+   78468:	eb1402ff 	cmp	x23, x20
+   7846c:	540005a8 	b.hi	78520 <archive_write_set_format_mtree_classic@@Base+0x480>  // b.pmore
+   78470:	eb18027f 	cmp	x19, x24
+   78474:	aa1503fb 	mov	x27, x21
+   78478:	540005c8 	b.hi	78530 <archive_write_set_format_mtree_classic@@Base+0x490>  // b.pmore
+   7847c:	eb14027f 	cmp	x19, x20
+   78480:	54000383 	b.cc	784f0 <archive_write_set_format_mtree_classic@@Base+0x450>  // b.lo, b.ul, b.last
+   78484:	b400013a 	cbz	x26, 784a8 <archive_write_set_format_mtree_classic@@Base+0x408>
+   78488:	aa1a03e1 	mov	x1, x26
+   7848c:	aa1b03e0 	mov	x0, x27
+[31m   78490:	97fe6c4c 	bl	135c0 <strcpy@plt>[0m
+   78494:	aa1a03e0 	mov	x0, x26
+   78498:	97fe6c86 	bl	136b0 <strlen@plt>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m10[0m times [0;33mlibarchive.so.13.4.2[0m
+

@@ -1,0 +1,83 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/zipfile.py[0m
+326:       '_compresslevel',.
+366:   self._compresslevel = None    .
+567:ZIP supports a password-based form of .
+572:ZipDecrypter(mypwd).
+575: _ZipDecrypter(pwd):.
+596:    for p in pwd:.
+703:ss_type, compresslevel=None):.
+705:      if compresslevel is not Non.
+706:pressobj(compresslevel, zlib.DEFL.
+709:      if compresslevel is not Non.
+710:mpressor(compresslevel).
+712:    # compresslevel is ignored.
+809:mode, zipinfo, pwd=None,.
+812:        self._pwd = pwd.
+848:        if pwd:.
+857:timeError("Bad password for file %r" %.
+861:ecrypter(self._pwd).
+866:ectness of the password..
+1120:  zinfo._compresslevel).
+1196:         compresslevel=None).
+1207:    compresslevel: None (def.
+1219:         compresslevel=None, *, s.
+1233:    self.compresslevel = compress.
+1235:        self.pwd = None.
+1446:    def setpassword(self, pwd):.
+1447:"""Set default password for encrypted .
+1448:        if pwd and not isinst.
+1448:ance(pwd, bytes):.
+1449:ise TypeError("pwd: expected byte.
+1449:got %s" % type(pwd).__name__).
+1450:        if pwd:.
+1451:          self.pwd = pwd.
+1453:          self.pwd = None.
+1473:ad(self, name, pwd=None):.
+1475:pen(name, "r", pwd) as fp:.
+1478:ame, mode="r", pwd=None, *, force.
+1487:        pwd is the passwor.
+1496:        if pwd and not isinst.
+1496:ance(pwd, bytes):.
+1497:ise TypeError("pwd: expected byte.
+1497:got %s" % type(pwd).__name__).
+1498:        if pwd and (mode == ".
+1499:se ValueError("pwd is only suppor.
+1511:  zinfo._compresslevel = self.com.
+1511:presslevel.
+1560: flag & handle password.
+1563:        if not pwd:.
+1564:               pwd = self.pwd.
+1565:        if not pwd:.
+1566: is encrypted, password ".
+1569:               pwd = None.
+1571:, mode, zinfo, pwd, True).
+1619:er, path=None, pwd=None):.
+1630:(member, path, pwd).
+1632: members=None, pwd=None):.
+1647:zipinfo, path, pwd).
+1664:r, targetpath, pwd):.
+1700:f.open(member, pwd=pwd) as source.
+1730:pe=None, compresslevel=None):.
+1753:      if compresslevel is not Non.
+1754:  zinfo._compresslevel = compress.
+1756:  zinfo._compresslevel = self.com.
+1756:presslevel.
+1779:pe=None, compresslevel=None):.
+1791:  zinfo._compresslevel = self.com.
+1791:presslevel.
+1811:      if compresslevel is not Non.
+1812:  zinfo._compresslevel = compress.
+2003:               root, ext = os.path.
+2025:               root, ext = os.path.
+2282:    >>> root = Path(zf).
+2288:    >>> a, b = root.iterdir().
+2325:_name__}({self.root.filename!r}, {.
+2327:__init__(self, root, at=""):.
+2328:        self.root = FastLookup.m.
+2328:ake(root).
+2333:s.partial(self.root.open, self.at).
+2351:turn Path(self.root, at).
+2360:elf.at in self.root._name_set().
+2365:lf._next, self.root.namelist()).
+2369:path.join(self.root.filename, self.
+2376:elf._next(self.root.resolve_dir(ne.

@@ -1,0 +1,110 @@
+[[0;33m*[0m] Binary protection state of [0;33maf_key.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m251) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33maf_key.ko[0m
+
+    1bf4:	39400f01 	ldrb	w1, [x24, #3]
+    1bf8:	7100243f 	cmp	w1, #0x9
+    1bfc:	54001ea0 	b.eq	1fd0 <pfkey_add+0x688>  // b.none
+    1c00:	94000000 	bl	0 <xfrm_ealg_get_byid>
+    1c04:	aa0003f3 	mov	x19, x0
+    1c08:	b40017c0 	cbz	x0, 1f00 <pfkey_add+0x5b8>
+    1c0c:	39404000 	ldrb	w0, [x0, #16]
+    1c10:	36081780 	tbz	w0, #1, 1f00 <pfkey_add+0x5b8>
+    1c14:	f9002bfb 	str	x27, [sp, #80]
+    1c18:	f940229b 	ldr	x27, [x20, #64]
+    1c1c:	b40021db 	cbz	x27, 2054 <pfkey_add+0x70c>
+    1c20:	79400b7a 	ldrh	w26, [x27, #4]
+    1c24:	52819801 	mov	w1, #0xcc0                 	// #3264
+    1c28:	11001f5a 	add	w26, w26, #0x7
+    1c2c:	d343435a 	ubfx	x26, x26, #3, #14
+    1c30:	91011340 	add	x0, x26, #0x44
+    1c34:	94000000 	bl	0 <__kmalloc>
+    1c38:	f900a2e0 	str	x0, [x23, #320]
+    1c3c:	b4001480 	cbz	x0, 1ecc <pfkey_add+0x584>
+    1c40:	f9400261 	ldr	x1, [x19]
+[31m    1c44:	94000000 	bl	0 <strcpy>[0m
+    1c48:	f940a2e0 	ldr	x0, [x23, #320]
+    1c4c:	aa1a03e2 	mov	x2, x26
+--
+    1f00:	928004b3 	mov	x19, #0xffffffffffffffda    	// #-38
+    1f04:	aa1303f4 	mov	x20, x19
+    1f08:	17fffff4 	b	1ed8 <pfkey_add+0x590>
+    1f0c:	f9401e9a 	ldr	x26, [x20, #56]
+    1f10:	94000000 	bl	0 <xfrm_aalg_get_byid>
+    1f14:	aa0003f3 	mov	x19, x0
+    1f18:	b4ffff40 	cbz	x0, 1f00 <pfkey_add+0x5b8>
+    1f1c:	39404000 	ldrb	w0, [x0, #16]
+    1f20:	360fff00 	tbz	w0, #1, 1f00 <pfkey_add+0x5b8>
+    1f24:	b400081a 	cbz	x26, 2024 <pfkey_add+0x6dc>
+    1f28:	f9002bfb 	str	x27, [sp, #80]
+    1f2c:	52819801 	mov	w1, #0xcc0                 	// #3264
+    1f30:	79400b5b 	ldrh	w27, [x26, #4]
+    1f34:	11001f7b 	add	w27, w27, #0x7
+    1f38:	d343437b 	ubfx	x27, x27, #3, #14
+    1f3c:	91012360 	add	x0, x27, #0x48
+    1f40:	94000000 	bl	0 <__kmalloc>
+    1f44:	f9009ee0 	str	x0, [x23, #312]
+    1f48:	b4fffc20 	cbz	x0, 1ecc <pfkey_add+0x584>
+    1f4c:	f9400261 	ldr	x1, [x19]
+[31m    1f50:	94000000 	bl	0 <strcpy>[0m
+    1f54:	f9409ee0 	ldr	x0, [x23, #312]
+    1f58:	aa1b03e2 	mov	x2, x27
+--
+    1fb4:	17fffe89 	b	19d8 <pfkey_add+0x90>
+    1fb8:	b9400c21 	ldr	w1, [x1, #12]
+    1fbc:	b900d6e1 	str	w1, [x23, #212]
+    1fc0:	17ffff3a 	b	1ca8 <pfkey_add+0x360>
+    1fc4:	b9400c41 	ldr	w1, [x2, #12]
+    1fc8:	b90042e1 	str	w1, [x23, #64]
+    1fcc:	17ffff40 	b	1ccc <pfkey_add+0x384>
+    1fd0:	94000000 	bl	0 <xfrm_calg_get_byid>
+    1fd4:	aa0003f3 	mov	x19, x0
+    1fd8:	b4fff940 	cbz	x0, 1f00 <pfkey_add+0x5b8>
+    1fdc:	39404000 	ldrb	w0, [x0, #16]
+    1fe0:	360ff900 	tbz	w0, #1, 1f00 <pfkey_add+0x5b8>
+    1fe4:	90000000 	adrp	x0, 0 <kmalloc_caches>
+    1fe8:	d2800882 	mov	x2, #0x44                  	// #68
+    1fec:	52819801 	mov	w1, #0xcc0                 	// #3264
+    1ff0:	f9400000 	ldr	x0, [x0]
+    1ff4:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    1ff8:	f900a6e0 	str	x0, [x23, #328]
+    1ffc:	b4fff6a0 	cbz	x0, 1ed0 <pfkey_add+0x588>
+    2000:	f9400261 	ldr	x1, [x19]
+[31m    2004:	94000000 	bl	0 <strcpy>[0m
+    2008:	39402ea0 	ldrb	w0, [x21, #11]
+    200c:	390342e0 	strb	w0, [x23, #208]
+    2010:	17ffff1d 	b	1c84 <pfkey_add+0x33c>
+    2014:	52800001 	mov	w1, #0x0                   	// #0
+    2018:	17ffff40 	b	1d18 <pfkey_add+0x3d0>
+    201c:	794102e1 	ldrh	w1, [x23, #128]
+    2020:	17ffff42 	b	1d28 <pfkey_add+0x3e0>
+    2024:	90000000 	adrp	x0, 0 <kmalloc_caches>
+    2028:	d2800902 	mov	x2, #0x48                  	// #72
+    202c:	52819801 	mov	w1, #0xcc0                 	// #3264
+    2030:	f9400000 	ldr	x0, [x0]
+    2034:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    2038:	f9009ee0 	str	x0, [x23, #312]
+    203c:	b4fff4a0 	cbz	x0, 1ed0 <pfkey_add+0x588>
+    2040:	f9400261 	ldr	x1, [x19]
+[31m    2044:	94000000 	bl	0 <strcpy>[0m
+    2048:	f9409ee0 	ldr	x0, [x23, #312]
+    204c:	b900401f 	str	wzr, [x0, #64]
+    2050:	17ffffcc 	b	1f80 <pfkey_add+0x638>
+    2054:	90000000 	adrp	x0, 0 <kmalloc_caches>
+    2058:	d2800882 	mov	x2, #0x44                  	// #68
+    205c:	52819801 	mov	w1, #0xcc0                 	// #3264
+    2060:	f9400000 	ldr	x0, [x0]
+    2064:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    2068:	f900a2e0 	str	x0, [x23, #320]
+    206c:	b4fff300 	cbz	x0, 1ecc <pfkey_add+0x584>
+    2070:	f9400261 	ldr	x1, [x19]
+[31m    2074:	94000000 	bl	0 <strcpy>[0m
+    2078:	f940a2e0 	ldr	x0, [x23, #320]
+    207c:	b900401f 	str	wzr, [x0, #64]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m5[0m times [0;33maf_key.ko[0m
+

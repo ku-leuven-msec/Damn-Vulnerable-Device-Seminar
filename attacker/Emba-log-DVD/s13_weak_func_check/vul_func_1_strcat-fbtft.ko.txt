@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mfbtft.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m300) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mfbtft.ko[0m
+
+    13fc:	128002a0 	mov	w0, #0xffffffea            	// #-22
+    1400:	a95e53f3 	ldp	x19, x20, [sp, #480]
+    1404:	140000a0 	b	1684 <fbtft_init_display+0x3a4>
+    1408:	3100045f 	cmn	w2, #0x1
+    140c:	540019c1 	b.ne	1744 <fbtft_init_display+0x464>  // b.any
+    1410:	f9010bf9 	str	x25, [sp, #528]
+    1414:	11000a99 	add	w25, w20, #0x2
+    1418:	f9010ffa 	str	x26, [sp, #536]
+    141c:	11000693 	add	w19, w20, #0x1
+    1420:	390ce3ff 	strb	wzr, [sp, #824]
+    1424:	2a1303f4 	mov	w20, w19
+    1428:	78f9d862 	ldrsh	w2, [x3, w25, sxtw #1]
+    142c:	37f801a2 	tbnz	w2, #31, 1460 <fbtft_init_display+0x180>
+    1430:	9000001a 	adrp	x26, 0 <fbtft_register_backlight>
+    1434:	9100035a 	add	x26, x26, #0x0
+    1438:	aa1a03e1 	mov	x1, x26
+    143c:	910ca3e0 	add	x0, sp, #0x328
+    1440:	94000000 	bl	0 <sprintf>
+    1444:	910ca3e1 	add	x1, sp, #0x328
+    1448:	910ce3e0 	add	x0, sp, #0x338
+[31m    144c:	94000000 	bl	0 <strcat>[0m
+    1450:	f9416ac3 	ldr	x3, [x22, #720]
+    1454:	11000739 	add	w25, w25, #0x1
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mfbtft.ko[0m
+

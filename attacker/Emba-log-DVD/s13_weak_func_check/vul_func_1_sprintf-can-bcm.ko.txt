@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mcan-bcm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m151) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mcan-bcm.ko[0m
+
+    1610:	71001e9f 	cmp	w20, #0x7
+    1614:	f9401a76 	ldr	x22, [x19, #48]
+    1618:	54000bc9 	b.ls	1790 <bcm_connect+0x1a8>  // b.plast
+    161c:	aa1303e0 	mov	x0, x19
+    1620:	52800001 	mov	w1, #0x0                   	// #0
+    1624:	94000000 	bl	0 <lock_sock_nested>
+    1628:	b942f274 	ldr	w20, [x19, #752]
+    162c:	35000734 	cbnz	w20, 1710 <bcm_connect+0x128>
+    1630:	b94006a1 	ldr	w1, [x21, #4]
+    1634:	350003c1 	cbnz	w1, 16ac <bcm_connect+0xc4>
+    1638:	b902f67f 	str	wzr, [x19, #756]
+    163c:	f948fec0 	ldr	x0, [x22, #4600]
+    1640:	b4000240 	cbz	x0, 1688 <bcm_connect+0xa0>
+    1644:	910d0275 	add	x21, x19, #0x340
+    1648:	aa1303e0 	mov	x0, x19
+    164c:	94000000 	bl	0 <sock_i_ino>
+    1650:	aa0003e2 	mov	x2, x0
+    1654:	90000001 	adrp	x1, 0 <bcm_sock_no_ioctlcmd>
+    1658:	aa1503e0 	mov	x0, x21
+    165c:	91000021 	add	x1, x1, #0x0
+[31m    1660:	94000000 	bl	0 <sprintf>[0m
+    1664:	f948fec2 	ldr	x2, [x22, #4600]
+    1668:	aa1503e0 	mov	x0, x21
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mcan-bcm.ko[0m
+

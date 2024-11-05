@@ -1,0 +1,82 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/requests/auth.py[0m
+28:_str(username, password):.
+48:not isinstance(password, basestring):.
+50:   "Non-string passwords will no longe.
+53:.".format(type(password)),.
+56:        password = str(password.
+62: if isinstance(password, str):.
+63:        password = password.enc.
+66:oin((username, password))).strip().
+82:elf, username, password):.
+84:        self.password = password.
+89:          self.password == getattr(oth.
+89:er, 'password', None).
+96:username, self.password).
+104:username, self.password).
+111:elf, username, password):.
+113:        self.password = password.
+182:e, realm, self.password).
+301:          self.password == getattr(oth.
+301:er, 'password', None).
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_internal/network/auth.py[0m
+18:    ask_password,.
+55:username, cred.password.
+59:debug("Getting password from keyring f.
+60:            password = keyring.get_.
+60:password(url, username).
+61:            if password:.
+62:turn username, password.
+79:        self.passwords: Dict[str, Au.
+93:s username and password.
+117:tloc, url_user_password = split_auth_n.
+122:     username, password = url_user_pas.
+123:s not None and password is not None:.
+125:eturn url_user_password.
+133:index_url_user_password = index_info.
+137:index_url_user_password[0] is not None.
+138:     username, password = index_url_us.
+138:er_password.
+139:s not None and password is not None:.
+141:index_url_user_password.
+150:e don't have a password and keyring is.
+163:turn username, password.
+173:als, username, password). Note.
+175:t username and password..
+180:     username, password = self._get_ne.
+183:sername or the password is missing..
+185:x url, but the password comes from key.
+186:ame is None or password is None) and n.
+186:etloc in self.passwords:.
+187: un, pw = self.passwords[netloc].
+191:     username, password = un, pw.
+193:is not None or password is not None:.
+194:e username and password if they're Non.
+199:            password = password or .
+202:          self.passwords[netloc] = (us.
+202:ername, password).
+206:s not None and password is not None).
+208:me is None and password is None).
+211:url, username, password.
+215:url, username, password = self._get_ur.
+220:s not None and password is not None:.
+222:Auth(username, password)(req).
+230:ef _prompt_for_password(.
+239:        password = ask_password.
+239:("Password: ").
+240:turn username, password, True.
+243:f _should_save_password_to_keyring(sel.
+261:     username, password = self._get_ne.
+267:w username and password.
+269:ername and not password:.
+270:     username, password, save = self._.
+270:prompt_for_password(parsed.netloc).
+272:w username and password to use for fut.
+274:s not None and password is not None:.
+275:          self.passwords[parsed.netloc.
+275:] = (username, password).
+277:pt to save the password to keyring.
+278:f._should_save_password_to_keyring():.
+279:loc, username, password).
+286:w username and password to the request.
+287:sername or "", password or "")(resp.re.
+321:   keyring.set_password(*creds).

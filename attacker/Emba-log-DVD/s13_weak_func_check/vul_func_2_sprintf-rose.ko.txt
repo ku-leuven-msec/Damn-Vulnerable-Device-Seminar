@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mrose.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m365) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrose.ko[0m
+
+    19d8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    19dc:	910003fd 	mov	x29, sp
+    19e0:	a90153f3 	stp	x19, x20, [sp, #16]
+    19e4:	aa0103f3 	mov	x19, x1
+    19e8:	aa0003f4 	mov	x20, x0
+    19ec:	aa1e03e0 	mov	x0, x30
+    19f0:	94000000 	bl	0 <_mcount>
+    19f4:	39400262 	ldrb	w2, [x19]
+    19f8:	39400663 	ldrb	w3, [x19, #1]
+    19fc:	39400a64 	ldrb	w4, [x19, #2]
+    1a00:	39400e65 	ldrb	w5, [x19, #3]
+    1a04:	2a030041 	orr	w1, w2, w3
+    1a08:	39401266 	ldrb	w6, [x19, #4]
+    1a0c:	2a050080 	orr	w0, w4, w5
+    1a10:	2a000021 	orr	w1, w1, w0
+    1a14:	2a0100c1 	orr	w1, w6, w1
+    1a18:	34000121 	cbz	w1, 1a3c <rose2asc+0x64>
+    1a1c:	90000001 	adrp	x1, 0 <rose_info_stop>
+    1a20:	aa1403e0 	mov	x0, x20
+    1a24:	91000021 	add	x1, x1, #0x0
+[31m    1a28:	94000000 	bl	0 <sprintf>[0m
+    1a2c:	aa1403e0 	mov	x0, x20
+    1a30:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+  b8:	9000001b 	adrp	x27, 0 <init_module>
+  bc:	9000001a 	adrp	x26, 2f00 <rose_setup>
+  c0:	9100037b 	add	x27, x27, #0x0
+  c4:	9100035a 	add	x26, x26, #0x0
+  c8:	1400000a 	b	f0 <init_module+0xf0>
+  cc:	f90012bf 	str	xzr, [x21, #32]
+  d0:	90000000 	adrp	x0, 0 <init_module>
+  d4:	12800177 	mov	w23, #0xfffffff4            	// #-12
+  d8:	91000000 	add	x0, x0, #0x0
+  dc:	94000000 	bl	0 <printk>
+  e0:	14000062 	b	268 <init_module+0x268>
+  e4:	f94012a0 	ldr	x0, [x21, #32]
+  e8:	f834d819 	str	x25, [x0, w20, sxtw #3]
+  ec:	11000694 	add	w20, w20, #0x1
+  f0:	b941be60 	ldr	w0, [x19, #444]
+  f4:	6b14001f 	cmp	w0, w20
+  f8:	540003cd 	b.le	170 <init_module+0x170>
+  fc:	2a1403e2 	mov	w2, w20
+ 100:	aa1b03e1 	mov	x1, x27
+ 104:	9101a3e0 	add	x0, sp, #0x68
+[31m 108:	94000000 	bl	0 <sprintf>[0m
+ 10c:	52800025 	mov	w5, #0x1                   	// #1
+ 110:	aa1a03e3 	mov	x3, x26
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mrose.ko[0m
+

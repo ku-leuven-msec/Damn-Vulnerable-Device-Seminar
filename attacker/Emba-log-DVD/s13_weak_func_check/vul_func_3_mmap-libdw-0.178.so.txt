@@ -1,0 +1,75 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibdw-0.178.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibdw-0.178.so[0m
+
+[31m   58330:	97fef86c 	bl	164e0 <mmap@plt>[0m
+   58334:	aa0003f5 	mov	x21, x0
+   58338:	b100041f 	cmn	x0, #0x1
+   5833c:	54000480 	b.eq	583cc <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x61c>  // b.none
+   58340:	d2800016 	mov	x22, #0x0                   	// #0
+   58344:	52800014 	mov	w20, #0x0                   	// #0
+   58348:	14000012 	b	58390 <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x5e0>
+   5834c:	aa1303e2 	mov	x2, x19
+   58350:	aa1503e1 	mov	x1, x21
+   58354:	97ffff9b 	bl	581c0 <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x410>
+   58358:	8b1302d6 	add	x22, x22, x19
+   5835c:	f94047e6 	ldr	x6, [sp, #136]
+   58360:	2a0003f4 	mov	w20, w0
+   58364:	aa1603e5 	mov	x5, x22
+   58368:	2a1703e4 	mov	w4, w23
+   5836c:	cb1300c6 	sub	x6, x6, x19
+   58370:	aa1303e1 	mov	x1, x19
+   58374:	aa1503e0 	mov	x0, x21
+   58378:	52800243 	mov	w3, #0x12                  	// #18
+   5837c:	52800022 	mov	w2, #0x1                   	// #1
+   58380:	f90047e6 	str	x6, [sp, #136]
+[31m   58384:	97fef857 	bl	164e0 <mmap@plt>[0m
+   58388:	eb0002bf 	cmp	x21, x0
+   5838c:	54000181 	b.ne	583bc <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x60c>  // b.any
+   58390:	f94047e2 	ldr	x2, [sp, #136]
+   58394:	2a1403e0 	mov	w0, w20
+   58398:	eb13005f 	cmp	x2, x19
+   5839c:	54fffd8c 	b.gt	5834c <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x59c>
+   583a0:	aa1503e1 	mov	x1, x21
+   583a4:	97ffff87 	bl	581c0 <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x410>
+   583a8:	b9000320 	str	w0, [x25]
+   583ac:	aa1303e1 	mov	x1, x19
+   583b0:	aa1503e0 	mov	x0, x21
+   583b4:	97fef8d7 	bl	16710 <munmap@plt>
+   583b8:	17ffffc8 	b	582d8 <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x528>
+   583bc:	aa1303e1 	mov	x1, x19
+   583c0:	aa1503e0 	mov	x0, x21
+   583c4:	97fef8d3 	bl	16710 <munmap@plt>
+   583c8:	17ffffa4 	b	58258 <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x4a8>
+   583cc:	97fef945 	bl	168e0 <__errno_location@plt>
+   583d0:	aa0003f4 	mov	x20, x0
+   583d4:	b9400000 	ldr	w0, [x0]
+--
+[31m   5843c:	97fef829 	bl	164e0 <mmap@plt>[0m
+   58440:	aa0003f5 	mov	x21, x0
+   58444:	b100041f 	cmn	x0, #0x1
+   58448:	54fffe20 	b.eq	5840c <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x65c>  // b.none
+   5844c:	17ffffbd 	b	58340 <dwfl_module_getsrc_file@@ELFUTILS_0.122+0x590>
+   58450:	97fef7ac 	bl	16300 <__stack_chk_fail@plt>
+   58454:	d503201f 	nop
+   58458:	d503201f 	nop
+   5845c:	d503201f 	nop
+   58460:	a9ad7bfd 	stp	x29, x30, [sp, #-304]!
+   58464:	910003fd 	mov	x29, sp
+   58468:	a9025bf5 	stp	x21, x22, [sp, #32]
+   5846c:	d0000295 	adrp	x21, aa000 <dwfl_thread_state_register_pc@@ELFUTILS_0.158+0x47d60>
+   58470:	aa0303f6 	mov	x22, x3
+   58474:	f9459ea5 	ldr	x5, [x21, #2872]
+   58478:	a9046bf9 	stp	x25, x26, [sp, #64]
+   5847c:	aa0003f9 	mov	x25, x0
+   58480:	f94000a0 	ldr	x0, [x5]
+   58484:	f90097e0 	str	x0, [sp, #296]
+   58488:	d2800000 	mov	x0, #0x0                   	// #0
+   5848c:	a90153f3 	stp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m3[0m times [0;33mlibdw-0.178.so[0m
+

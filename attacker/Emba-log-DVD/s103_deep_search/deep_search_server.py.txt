@@ -1,0 +1,81 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/http/server.py[0m
+948:        import pwd.
+952:      nobody = pwd.getpwnam('nobo.
+954:(x[2] for x in pwd.getpwall()).
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/gevent/server.py[0m
+2:"""TCP/SSL server""".
+33: # sockets and SSL sockets are co.
+62:    **SSL Support**.
+64:onally work in SSL mode when give.
+66:  will trigger SSL mode.) On Pyth.
+67:ts the :class:`ssl.SSLContext`), .
+68:a configured ``SSLContext``. On a.
+70:    :func:`ssl.wrap_socket`..
+72:rapped into an SSL socket before.
+75:    If the *ssl_context* keywo.
+76:ain an :class:`ssl.SSLContext`. T.
+77: to the :meth:`ssl.SSLContext.wra.
+85: When using an SSLContext, it sho.
+86:m :mod:`gevent.ssl`, or the proce.
+88:       SSLContext, the re.
+90:pply to :func:`ssl.wrap_socket`..
+96:    - ssl_version.
+103:pport for the *ssl_context* keywo.
+118:n='default', **ssl_args):.
+121:            if ssl_args:.
+122:               ssl_args.setdefaul.
+123:           if 'ssl_context' in ss.
+124:               ssl_context = ssl_.
+124:args.pop('ssl_context').
+125:.wrap_socket = ssl_context.wrap_s.
+126:          self.ssl_args = ssl_arg.
+128:   from gevent.ssl import wrap_so.
+130:          self.ssl_args = ssl_arg.
+132:          self.ssl_args = None.
+142:    def ssl_enabled(self):.
+143:   return self.ssl_args is not No.
+182:       if self.ssl_args:.
+232:sed in case of ssl sockets.
+233:socket, **self.ssl_args)) as ssl_.
+234:rn self.handle(ssl_socket, addres.
+[[0;32m+[0m][0;32m /log/firmware/firmware/opt/dvd/services/rest/server.py[0m
+4:import ssl.
+36:    #setup SSL configuration.
+37:    context = ssl.SSLContext(ssl.
+42:.verify_mode = ssl.CERT_REQUIRED.
+44:    app.run(ssl_context=contex.
+[[0;32m+[0m][0;32m /log/firmware/firmware/opt/dvd/services/telnet/server.py[0m
+3:from telnetsrvlib.telnetsr.
+3:v.green import TelnetHandler, comman.
+10:TELNET_IP_BINDING = '.
+33:class MyTelnetHandler(TelnetH.
+37:= "DVD gateway TELNET>".
+41:elf, username, password):.
+42:e the username/password.'''.
+45:= "client" and password != "devpass":.
+53:        TelnetHandler.writeer.
+97:0.0.0", 23), MyTelnetHandler.streams.
+[[0;32m+[0m][0;32m /log/firmware/firmware/opt/dvd/services/coap/server.py[0m
+209:    root = resource.Sit.
+211:    root.add_resource([.
+212:ce.WKCResource(root.get_resources_.
+213:    root.add_resource([.
+214:    root.add_resource([.
+215:    root.add_resource([.
+216:    root.add_resource([.
+217:    root.add_resource([.
+218:    root.add_resource([.
+220:    root.add_resource([.
+222:server_context(root)).
+[[0;32m+[0m][0;32m /log/firmware/firmware/opt/dvd/services/http/server.py[0m
+6:import ssl.
+24:lf, id, email, password):.
+27:        self.password = password.
+67:  passw = form.password.data.
+68:ail = '%s' and password = '%s'\" " % (.
+69:ail = '%s' and password = '%s'" % (dat.
+75:email and form.password.data == Us.pas.
+114:    context = ssl.SSLContext(ssl.
+115:    #setup SSL configuration.
+116:cafile="{path}/root.cer".format(pa.
+118:    app.run(ssl_context=contex.

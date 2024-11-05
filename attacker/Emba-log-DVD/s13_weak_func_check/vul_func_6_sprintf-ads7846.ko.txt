@@ -1,0 +1,150 @@
+[[0;33m*[0m] Binary protection state of [0;33mads7846.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m153) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mads7846.ko[0m
+
+     160:	aa1e03e0 	mov	x0, x30
+     164:	94000000 	bl	0 <_mcount>
+     168:	52800000 	mov	w0, #0x0                   	// #0
+     16c:	a8c17bfd 	ldp	x29, x30, [sp], #16
+     170:	d65f03c0 	ret
+     174:	d503201f 	nop
+
+0000000000000178 <ads7846_disable_show>:
+     178:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     17c:	910003fd 	mov	x29, sp
+     180:	a90153f3 	stp	x19, x20, [sp, #16]
+     184:	aa0003f4 	mov	x20, x0
+     188:	aa0203f3 	mov	x19, x2
+     18c:	aa1e03e0 	mov	x0, x30
+     190:	94000000 	bl	0 <_mcount>
+     194:	f9403e82 	ldr	x2, [x20, #120]
+     198:	aa1303e0 	mov	x0, x19
+     19c:	90000001 	adrp	x1, 0 <ads7846_is_visible>
+     1a0:	91000021 	add	x1, x1, #0x0
+     1a4:	396b2442 	ldrb	w2, [x2, #2761]
+[31m     1a8:	94000000 	bl	0 <sprintf>[0m
+     1ac:	d2800040 	mov	x0, #0x2                   	// #2
+     1b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+     1b4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     1b8:	d65f03c0 	ret
+     1bc:	d503201f 	nop
+
+00000000000001c0 <ads7846_pen_down_show>:
+     1c0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     1c4:	910003fd 	mov	x29, sp
+     1c8:	a90153f3 	stp	x19, x20, [sp, #16]
+     1cc:	aa0003f4 	mov	x20, x0
+     1d0:	aa0203f3 	mov	x19, x2
+     1d4:	aa1e03e0 	mov	x0, x30
+     1d8:	94000000 	bl	0 <_mcount>
+     1dc:	f9403e82 	ldr	x2, [x20, #120]
+     1e0:	aa1303e0 	mov	x0, x19
+     1e4:	90000001 	adrp	x1, 0 <ads7846_is_visible>
+     1e8:	91000021 	add	x1, x1, #0x0
+     1ec:	396a0042 	ldrb	w2, [x2, #2688]
+[31m     1f0:	94000000 	bl	0 <sprintf>[0m
+     1f4:	d2800040 	mov	x0, #0x2                   	// #2
+     1f8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     4b4:	aa1e03e0 	mov	x0, x30
+     4b8:	94000000 	bl	0 <_mcount>
+     4bc:	f9403e73 	ldr	x19, [x19, #120]
+     4c0:	52801481 	mov	w1, #0xa4                  	// #164
+     4c4:	f9402660 	ldr	x0, [x19, #72]
+     4c8:	97ffff64 	bl	258 <ads7846_read12_ser>
+     4cc:	2a0003e3 	mov	w3, w0
+     4d0:	93407c00 	sxtw	x0, w0
+     4d4:	37f801c3 	tbnz	w3, #31, 50c <in1_input_show+0x6c>
+     4d8:	7940c664 	ldrh	w4, [x19, #98]
+     4dc:	5283d4c2 	mov	w2, #0x1ea6                	// #7846
+     4e0:	7940c265 	ldrh	w5, [x19, #96]
+     4e4:	aa1403e0 	mov	x0, x20
+     4e8:	90000001 	adrp	x1, 0 <ads7846_is_visible>
+     4ec:	91000021 	add	x1, x1, #0x0
+     4f0:	6b0200bf 	cmp	w5, w2
+     4f4:	1b037c83 	mul	w3, w4, w3
+     4f8:	530c7c63 	lsr	w3, w3, #12
+     4fc:	531e7462 	lsl	w2, w3, #2
+     500:	1a830042 	csel	w2, w2, w3, eq  // eq = none
+[31m     504:	94000000 	bl	0 <sprintf>[0m
+     508:	93407c00 	sxtw	x0, w0
+     50c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     518:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     51c:	910003fd 	mov	x29, sp
+     520:	a90153f3 	stp	x19, x20, [sp, #16]
+     524:	aa0003f3 	mov	x19, x0
+     528:	aa0203f4 	mov	x20, x2
+     52c:	aa1e03e0 	mov	x0, x30
+     530:	94000000 	bl	0 <_mcount>
+     534:	f9403e73 	ldr	x19, [x19, #120]
+     538:	52801c81 	mov	w1, #0xe4                  	// #228
+     53c:	f9402660 	ldr	x0, [x19, #72]
+     540:	97ffff46 	bl	258 <ads7846_read12_ser>
+     544:	2a0003e3 	mov	w3, w0
+     548:	93407c00 	sxtw	x0, w0
+     54c:	37f80123 	tbnz	w3, #31, 570 <in0_input_show+0x58>
+     550:	7940c662 	ldrh	w2, [x19, #98]
+     554:	aa1403e0 	mov	x0, x20
+     558:	90000001 	adrp	x1, 0 <ads7846_is_visible>
+     55c:	91000021 	add	x1, x1, #0x0
+     560:	1b037c42 	mul	w2, w2, w3
+     564:	530c7c42 	lsr	w2, w2, #12
+[31m     568:	94000000 	bl	0 <sprintf>[0m
+     56c:	93407c00 	sxtw	x0, w0
+     570:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     57c:	d503201f 	nop
+
+0000000000000580 <temp1_show>:
+     580:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     584:	910003fd 	mov	x29, sp
+     588:	a90153f3 	stp	x19, x20, [sp, #16]
+     58c:	aa0003f3 	mov	x19, x0
+     590:	aa0203f4 	mov	x20, x2
+     594:	aa1e03e0 	mov	x0, x30
+     598:	94000000 	bl	0 <_mcount>
+     59c:	f9403e60 	ldr	x0, [x19, #120]
+     5a0:	52801e81 	mov	w1, #0xf4                  	// #244
+     5a4:	f9402400 	ldr	x0, [x0, #72]
+     5a8:	97ffff2c 	bl	258 <ads7846_read12_ser>
+     5ac:	2a0003e2 	mov	w2, w0
+     5b0:	93407c00 	sxtw	x0, w0
+     5b4:	37f800c2 	tbnz	w2, #31, 5cc <temp1_show+0x4c>
+     5b8:	aa1403e0 	mov	x0, x20
+     5bc:	90000001 	adrp	x1, 0 <ads7846_is_visible>
+     5c0:	91000021 	add	x1, x1, #0x0
+[31m     5c4:	94000000 	bl	0 <sprintf>[0m
+     5c8:	93407c00 	sxtw	x0, w0
+     5cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     5d4:	d65f03c0 	ret
+
+00000000000005d8 <temp0_show>:
+     5d8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     5dc:	910003fd 	mov	x29, sp
+     5e0:	a90153f3 	stp	x19, x20, [sp, #16]
+     5e4:	aa0003f3 	mov	x19, x0
+     5e8:	aa0203f4 	mov	x20, x2
+     5ec:	aa1e03e0 	mov	x0, x30
+     5f0:	94000000 	bl	0 <_mcount>
+     5f4:	f9403e60 	ldr	x0, [x19, #120]
+     5f8:	52801081 	mov	w1, #0x84                  	// #132
+     5fc:	f9402400 	ldr	x0, [x0, #72]
+     600:	97ffff16 	bl	258 <ads7846_read12_ser>
+     604:	2a0003e2 	mov	w2, w0
+     608:	93407c00 	sxtw	x0, w0
+     60c:	37f800c2 	tbnz	w2, #31, 624 <temp0_show+0x4c>
+     610:	aa1403e0 	mov	x0, x20
+     614:	90000001 	adrp	x1, 0 <ads7846_is_visible>
+     618:	91000021 	add	x1, x1, #0x0
+[31m     61c:	94000000 	bl	0 <sprintf>[0m
+     620:	93407c00 	sxtw	x0, w0
+     624:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m6[0m times [0;33mads7846.ko[0m
+

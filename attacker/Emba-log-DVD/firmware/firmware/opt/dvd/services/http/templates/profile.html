@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<style>
+    .button {
+      border: none;
+      color: dodgerblue;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+}
+    .button:hover{
+        background-color: #0FA0CE;
+        color:white;
+    }
+
+    .header {
+  padding: 60px;
+  text-align: center;
+  background: #0FA0CE;
+  color: white;
+  font-size: 30px;
+}
+    p{
+        font-size: 25px;
+    }
+    t{
+        font-size: 20px;
+    }
+
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>DVD gateway dashboard</h1>
+    <p>Damn Vulnerable Device gateway</p>
+    <t>Authorized users</t>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <td>user_id</td>
+        <td>name</td>
+        <td>last_name</td>
+        <td>email</td>
+        <td>phone_number</td>
+    </thead>
+    {% for row in rows %}
+        <tr>
+            <td>{{row["user_id"]}}</td>
+            <td>{{row["name"]}}</td>
+            <td>{{row["last_name"]}}</td>
+            <td>{{row["email"]}}</td>
+            <td>{{row["phone_number"]}}</td>
+        </tr>
+        {% endfor %}
+</table>
+
+<div class="container">
+      <div>
+            <a href="/logout"><button class="button">Logout</button></a>
+      </div>
+</div>
+</body>
+</html>

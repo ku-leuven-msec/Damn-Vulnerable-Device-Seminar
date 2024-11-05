@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mhso.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m330) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mhso.ko[0m
+
+    15a8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    15ac:	910003fd 	mov	x29, sp
+    15b0:	a90153f3 	stp	x19, x20, [sp, #16]
+    15b4:	aa0003f3 	mov	x19, x0
+    15b8:	aa0203f4 	mov	x20, x2
+    15bc:	aa1e03e0 	mov	x0, x30
+    15c0:	94000000 	bl	0 <_mcount>
+    15c4:	f9403e60 	ldr	x0, [x19, #120]
+    15c8:	b4000280 	cbz	x0, 1618 <hso_sysfs_show_porttype+0x70>
+    15cc:	39402000 	ldrb	w0, [x0, #8]
+    15d0:	51000400 	sub	w0, w0, #0x1
+    15d4:	7100441f 	cmp	w0, #0x11
+    15d8:	540001a8 	b.hi	160c <hso_sysfs_show_porttype+0x64>  // b.pmore
+    15dc:	90000001 	adrp	x1, 0 <set_serial_by_index>
+    15e0:	91000021 	add	x1, x1, #0x0
+    15e4:	9112c021 	add	x1, x1, #0x4b0
+    15e8:	f8605822 	ldr	x2, [x1, w0, uxtw #3]
+    15ec:	aa1403e0 	mov	x0, x20
+    15f0:	90000001 	adrp	x1, 0 <set_serial_by_index>
+    15f4:	91000021 	add	x1, x1, #0x0
+[31m    15f8:	94000000 	bl	0 <sprintf>[0m
+    15fc:	93407c00 	sxtw	x0, w0
+    1600:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    25f4:	910003fd 	mov	x29, sp
+    25f8:	a90153f3 	stp	x19, x20, [sp, #16]
+    25fc:	aa0003f4 	mov	x20, x0
+    2600:	d5384113 	mrs	x19, sp_el0
+    2604:	aa1e03e0 	mov	x0, x30
+    2608:	94000000 	bl	0 <_mcount>
+    260c:	f9428e61 	ldr	x1, [x19, #1304]
+    2610:	f9001fe1 	str	x1, [sp, #56]
+    2614:	d2800001 	mov	x1, #0x0                   	// #0
+    2618:	39402281 	ldrb	w1, [x20, #8]
+    261c:	f9400280 	ldr	x0, [x20]
+    2620:	7100483f 	cmp	w1, #0x12
+    2624:	54000220 	b.eq	2668 <hso_log_port+0x78>  // b.none
+    2628:	39403003 	ldrb	w3, [x0, #12]
+    262c:	90000002 	adrp	x2, 0 <set_serial_by_index>
+    2630:	91000042 	add	x2, x2, #0x0
+    2634:	90000001 	adrp	x1, 0 <set_serial_by_index>
+    2638:	91196042 	add	x2, x2, #0x658
+    263c:	91000021 	add	x1, x1, #0x0
+    2640:	910093e0 	add	x0, sp, #0x24
+[31m    2644:	94000000 	bl	0 <sprintf>[0m
+    2648:	91146273 	add	x19, x19, #0x518
+    264c:	f9401fe1 	ldr	x1, [sp, #56]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mhso.ko[0m
+

@@ -1,0 +1,154 @@
+[[0;33m*[0m] Binary protection state of [0;33mwacom.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m624) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mwacom.ko[0m
+
+    8088:	a94363f7 	ldp	x23, x24, [sp, #48]
+    808c:	17ffffe0 	b	800c <wacom_led_groups_alloc_and_register_one+0x25c>
+
+0000000000008090 <wacom_show_remote4_mode>:
+    8090:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    8094:	910003fd 	mov	x29, sp
+    8098:	a90153f3 	stp	x19, x20, [sp, #16]
+    809c:	aa0003f4 	mov	x20, x0
+    80a0:	aa0203f3 	mov	x19, x2
+    80a4:	aa1e03e0 	mov	x0, x30
+    80a8:	94000000 	bl	0 <_mcount>
+    80ac:	f9400e82 	ldr	x2, [x20, #24]
+    80b0:	aa1303e0 	mov	x0, x19
+    80b4:	90000001 	adrp	x1, 0 <wacom_intuos_get_tool_type>
+    80b8:	91000021 	add	x1, x1, #0x0
+    80bc:	f9403c42 	ldr	x2, [x2, #120]
+    80c0:	f9427042 	ldr	x2, [x2, #1248]
+    80c4:	39420042 	ldrb	w2, [x2, #128]
+    80c8:	7100085f 	cmp	w2, #0x2
+    80cc:	5a9f9042 	csinv	w2, w2, wzr, ls  // ls = plast
+[31m    80d0:	94000000 	bl	0 <sprintf>[0m
+    80d4:	93407c00 	sxtw	x0, w0
+    80d8:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    80e0:	d65f03c0 	ret
+    80e4:	d503201f 	nop
+
+00000000000080e8 <wacom_show_remote3_mode>:
+    80e8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    80ec:	910003fd 	mov	x29, sp
+    80f0:	a90153f3 	stp	x19, x20, [sp, #16]
+    80f4:	aa0003f4 	mov	x20, x0
+    80f8:	aa0203f3 	mov	x19, x2
+    80fc:	aa1e03e0 	mov	x0, x30
+    8100:	94000000 	bl	0 <_mcount>
+    8104:	f9400e82 	ldr	x2, [x20, #24]
+    8108:	aa1303e0 	mov	x0, x19
+    810c:	90000001 	adrp	x1, 0 <wacom_intuos_get_tool_type>
+    8110:	91000021 	add	x1, x1, #0x0
+    8114:	f9403c42 	ldr	x2, [x2, #120]
+    8118:	f9427042 	ldr	x2, [x2, #1248]
+    811c:	39418042 	ldrb	w2, [x2, #96]
+    8120:	7100085f 	cmp	w2, #0x2
+    8124:	5a9f9042 	csinv	w2, w2, wzr, ls  // ls = plast
+[31m    8128:	94000000 	bl	0 <sprintf>[0m
+    812c:	93407c00 	sxtw	x0, w0
+    8130:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    8138:	d65f03c0 	ret
+    813c:	d503201f 	nop
+
+0000000000008140 <wacom_show_remote2_mode>:
+    8140:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    8144:	910003fd 	mov	x29, sp
+    8148:	a90153f3 	stp	x19, x20, [sp, #16]
+    814c:	aa0003f4 	mov	x20, x0
+    8150:	aa0203f3 	mov	x19, x2
+    8154:	aa1e03e0 	mov	x0, x30
+    8158:	94000000 	bl	0 <_mcount>
+    815c:	f9400e82 	ldr	x2, [x20, #24]
+    8160:	aa1303e0 	mov	x0, x19
+    8164:	90000001 	adrp	x1, 0 <wacom_intuos_get_tool_type>
+    8168:	91000021 	add	x1, x1, #0x0
+    816c:	f9403c42 	ldr	x2, [x2, #120]
+    8170:	f9427042 	ldr	x2, [x2, #1248]
+    8174:	39410042 	ldrb	w2, [x2, #64]
+    8178:	7100085f 	cmp	w2, #0x2
+    817c:	5a9f9042 	csinv	w2, w2, wzr, ls  // ls = plast
+[31m    8180:	94000000 	bl	0 <sprintf>[0m
+    8184:	93407c00 	sxtw	x0, w0
+    8188:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    8190:	d65f03c0 	ret
+    8194:	d503201f 	nop
+
+0000000000008198 <wacom_show_remote1_mode>:
+    8198:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    819c:	910003fd 	mov	x29, sp
+    81a0:	a90153f3 	stp	x19, x20, [sp, #16]
+    81a4:	aa0003f4 	mov	x20, x0
+    81a8:	aa0203f3 	mov	x19, x2
+    81ac:	aa1e03e0 	mov	x0, x30
+    81b0:	94000000 	bl	0 <_mcount>
+    81b4:	f9400e82 	ldr	x2, [x20, #24]
+    81b8:	aa1303e0 	mov	x0, x19
+    81bc:	90000001 	adrp	x1, 0 <wacom_intuos_get_tool_type>
+    81c0:	91000021 	add	x1, x1, #0x0
+    81c4:	f9403c42 	ldr	x2, [x2, #120]
+    81c8:	f9427042 	ldr	x2, [x2, #1248]
+    81cc:	39408042 	ldrb	w2, [x2, #32]
+    81d0:	7100085f 	cmp	w2, #0x2
+    81d4:	5a9f9042 	csinv	w2, w2, wzr, ls  // ls = plast
+[31m    81d8:	94000000 	bl	0 <sprintf>[0m
+    81dc:	93407c00 	sxtw	x0, w0
+    81e0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    81e8:	d65f03c0 	ret
+    81ec:	d503201f 	nop
+
+00000000000081f0 <wacom_show_remote0_mode>:
+    81f0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    81f4:	910003fd 	mov	x29, sp
+    81f8:	a90153f3 	stp	x19, x20, [sp, #16]
+    81fc:	aa0003f4 	mov	x20, x0
+    8200:	aa0203f3 	mov	x19, x2
+    8204:	aa1e03e0 	mov	x0, x30
+    8208:	94000000 	bl	0 <_mcount>
+    820c:	f9400e82 	ldr	x2, [x20, #24]
+    8210:	aa1303e0 	mov	x0, x19
+    8214:	90000001 	adrp	x1, 0 <wacom_intuos_get_tool_type>
+    8218:	91000021 	add	x1, x1, #0x0
+    821c:	f9403c42 	ldr	x2, [x2, #120]
+    8220:	f9427042 	ldr	x2, [x2, #1248]
+    8224:	39400042 	ldrb	w2, [x2]
+    8228:	7100085f 	cmp	w2, #0x2
+    822c:	5a9f9042 	csinv	w2, w2, wzr, ls  // ls = plast
+[31m    8230:	94000000 	bl	0 <sprintf>[0m
+    8234:	93407c00 	sxtw	x0, w0
+    8238:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+    9f10:	b8e20023 	ldaddal	w2, w3, [x1]
+    9f14:	0b030042 	add	w2, w2, w3
+    9f18:	14000004 	b	9f28 <__wacom_initialize_battery+0x98>
+    9f1c:	90000000 	adrp	x0, 0 <wacom_intuos_get_tool_type>
+    9f20:	91000000 	add	x0, x0, #0x0
+    9f24:	14000953 	b	c470 <wacom_initialize_leds+0x38>
+    9f28:	90000000 	adrp	x0, 0 <wacom_intuos_get_tool_type>
+    9f2c:	91000000 	add	x0, x0, #0x0
+    9f30:	d28000a3 	mov	x3, #0x5                   	// #5
+    9f34:	91038000 	add	x0, x0, #0xe0
+    9f38:	51000442 	sub	w2, w2, #0x1
+    9f3c:	90000001 	adrp	x1, 0 <wacom_intuos_get_tool_type>
+    9f40:	91000021 	add	x1, x1, #0x0
+    9f44:	a9020e60 	stp	x0, x3, [x19, #32]
+    9f48:	9101c298 	add	x24, x20, #0x70
+    9f4c:	f9001a61 	str	x1, [x19, #48]
+    9f50:	93407c42 	sxtw	x2, w2
+    9f54:	aa1803e0 	mov	x0, x24
+    9f58:	90000001 	adrp	x1, 0 <wacom_intuos_get_tool_type>
+    9f5c:	91000021 	add	x1, x1, #0x0
+[31m    9f60:	94000000 	bl	0 <sprintf>[0m
+    9f64:	f9000698 	str	x24, [x20, #8]
+    9f68:	52800080 	mov	w0, #0x4                   	// #4
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m6[0m times [0;33mwacom.ko[0m
+

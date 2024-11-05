@@ -1,0 +1,260 @@
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 12:[0m
+[0mDIRNAME=`dirname $0`[0m
+[32m        ^----------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                 ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+DIRNAME=$(dirname "$0")
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 13:[0m
+[0mROOT_DIR=`echo $DIRNAME | sed -ne 's:/etc/.*::p'`[0m
+[32m         ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m               ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+ROOT_DIR=$(echo "$DIRNAME" | sed -ne 's:/etc/.*::p')
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 15:[0m
+[0m[ -e ${ROOT_DIR}/etc/default/rcS ] && . ${ROOT_DIR}/etc/default/rcS[0m
+[32m     ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                        ^-------------------------^ SC1091: Not following: ./etc/default/rcS was not specified as input (see shellcheck -x).[0m
+[32m                                        ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+[ -e "${ROOT_DIR}"/etc/default/rcS ] && . "${ROOT_DIR}"/etc/default/rcS
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 29:[0m
+[0m	[ -z "$2" ] && {[0m
+[32m                    ^-- SC2015: Note that A && B || C is not if-then-else. C may run when A is true.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 45:[0m
+[0m	[ -e "$1" ] && {[0m
+[32m                    ^-- SC2015: Note that A && B || C is not if-then-else. C may run when A is true.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 49:[0m
+[0m			eval $EXEC[0m
+[32m                             ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+			eval "$EXEC"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 55:[0m
+[0m			eval $EXEC > /dev/null 2>&1[0m
+[32m                             ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+			eval "$EXEC" > /dev/null 2>&1
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 67:[0m
+[0m	[ -e "$1" ] && {[0m
+[32m                    ^-- SC2015: Note that A && B || C is not if-then-else. C may run when A is true.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 71:[0m
+[0m			eval $EXEC[0m
+[32m                             ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+			eval "$EXEC"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 75:[0m
+[0m			eval $EXEC > /dev/null 2>&1[0m
+[32m                             ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+			eval "$EXEC" > /dev/null 2>&1
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 99:[0m
+[0m		eval $EXEC[0m
+[32m                     ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		eval "$EXEC"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 103:[0m
+[0m		eval $EXEC > /dev/null 2>&1[0m
+[32m                     ^---^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+		eval "$EXEC" > /dev/null 2>&1
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 120:[0m
+[0m	sed 's@\(^:\)*:.*@\1@' ${ROOT_DIR}/etc/passwd | sort | uniq > "${TMP_DEFINED}"[0m
+[32m                               ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	sed 's@\(^:\)*:.*@\1@' "${ROOT_DIR}"/etc/passwd | sort | uniq > "${TMP_DEFINED}"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 121:[0m
+[0m	cat ${CFGFILE} | grep -v "^#" | cut -s -d " " -f 2 > "${TMP_INTERMED}"[0m
+[32m            ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m            ^--------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+
+[1mDid you mean: [0m
+	cat "${CFGFILE}" | grep -v "^#" | cut -s -d " " -f 2 > "${TMP_INTERMED}"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 123:[0m
+[0m	NR_DEFINED_USERS="`cat "${TMP_DEFINED}" | wc -l`"[0m
+[32m                          ^----------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                               ^--------------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+
+[1mDid you mean: [0m
+	NR_DEFINED_USERS="$(cat "${TMP_DEFINED}" | wc -l)"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 124:[0m
+[0m	NR_COMBINED_USERS="`cat "${TMP_COMBINED}" | wc -l`"[0m
+[32m                           ^-----------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                                ^---------------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+
+[1mDid you mean: [0m
+	NR_COMBINED_USERS="$(cat "${TMP_COMBINED}" | wc -l)"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 134:[0m
+[0m	sed 's@\(^:\)*:.*@\1@' ${ROOT_DIR}/etc/group | sort | uniq > "${TMP_DEFINED}"[0m
+[32m                               ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	sed 's@\(^:\)*:.*@\1@' "${ROOT_DIR}"/etc/group | sort | uniq > "${TMP_DEFINED}"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 135:[0m
+[0m	cat ${CFGFILE} | grep -v "^#" | cut -s -d " " -f 3 > "${TMP_INTERMED}"[0m
+[32m            ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m            ^--------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+
+[1mDid you mean: [0m
+	cat "${CFGFILE}" | grep -v "^#" | cut -s -d " " -f 3 > "${TMP_INTERMED}"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 138:[0m
+[0m	NR_DEFINED_GROUPS="`cat "${TMP_DEFINED}" | wc -l`"[0m
+[32m                           ^----------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                                ^--------------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+
+[1mDid you mean: [0m
+	NR_DEFINED_GROUPS="$(cat "${TMP_DEFINED}" | wc -l)"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 139:[0m
+[0m	NR_COMBINED_GROUPS="`cat "${TMP_COMBINED}" | wc -l`"[0m
+[32m                            ^-----------------------------^ SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                                 ^---------------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+
+[1mDid you mean: [0m
+	NR_COMBINED_GROUPS="$(cat "${TMP_COMBINED}" | wc -l)"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 160:[0m
+[0m	[ "${SKIP_REQUIREMENTS}" == "yes" ] || check_requirements "${CFGFILE}" || {[0m
+[33m                                 ^-- SC3014: In POSIX sh, == in place of = is undefined.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 165:[0m
+[0m	cat ${CFGFILE} | sed 's/#.*//' | \[0m
+[32m            ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m            ^--------^ SC2002: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.[0m
+
+[1mDid you mean: [0m
+	cat "${CFGFILE}" | sed 's/#.*//' | \
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 166:[0m
+[0m	while read TTYPE TUSER TGROUP TMODE TNAME TLTARGET; do[0m
+[32m              ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 190:[0m
+[0m			NEWNAME=`ls -l "${TNAME}" | sed -e 's/^.*-> \(.*\)$/\1/'`[0m
+[32m                                ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                                 ^--------------^ SC2012: Use find instead of ls to better handle non-alphanumeric filenames.[0m
+
+[1mDid you mean: [0m
+			NEWNAME=$(ls -l "${TNAME}" | sed -e 's/^.*-> \(.*\)$/\1/')
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 191:[0m
+[0m			echo ${NEWNAME} | grep -v "^/" >/dev/null && {[0m
+[32m                             ^--------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                                                  ^-- SC2015: Note that A && B || C is not if-then-else. C may run when A is true.[0m
+
+[1mDid you mean: [0m
+			echo "${NEWNAME}" | grep -v "^/" >/dev/null && {
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 192:[0m
+[0m				TNAME="`echo ${TNAME} | sed -e 's@\(.*\)/.*@\1@'`/${NEWNAME}"[0m
+[32m                                       ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[32m                                             ^------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+				TNAME="$(echo "${TNAME}" | sed -e 's@\(.*\)/.*@\1@')/${NEWNAME}"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 220:[0m
+[0mwhile read line <&9[0m
+[32m      ^--^ SC2162: read without -r will mangle backslashes.[0m
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 231:[0m
+[0mif test -e ${ROOT_DIR}/etc/volatile.cache -a "$VOLATILE_ENABLE_CACHE" = "yes" -a "x$1" != "xupdate" -a "x$clearcache" = "x0"[0m
+[32m           ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+if test -e "${ROOT_DIR}"/etc/volatile.cache -a "$VOLATILE_ENABLE_CACHE" = "yes" -a "x$1" != "xupdate" -a "x$clearcache" = "x0"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 233:[0m
+[0m	sh ${ROOT_DIR}/etc/volatile.cache[0m
+[32m           ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	sh "${ROOT_DIR}"/etc/volatile.cache
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 235:[0m
+[0m	rm -f ${ROOT_DIR}/etc/volatile.cache ${ROOT_DIR}/etc/volatile.cache.build[0m
+[32m              ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                             ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	rm -f "${ROOT_DIR}"/etc/volatile.cache "${ROOT_DIR}"/etc/volatile.cache.build
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 249:[0m
+[0m	CFGFILES="`ls -1 "${CFGDIR}" | grep -v "^${COREDEF}\$" | sort`"[0m
+[32m                  ^-- SC2006: Use $(...) notation instead of legacy backticked `...`.[0m
+[33m                   ^-- SC2010: Don't use ls | grep. Use a glob or a for loop with a condition to allow non-alphanumeric filenames.[0m
+
+[1mDid you mean: [0m
+	CFGFILES="$(ls -1 "${CFGDIR}" | grep -v "^${COREDEF}\$" | sort)"
+
+
+[1mIn /log/firmware/firmware/etc/init.d/populate-volatile.sh line 267:[0m
+[0m	[ -e ${ROOT_DIR}/etc/volatile.cache.build ] && sync && mv ${ROOT_DIR}/etc/volatile.cache.build ${ROOT_DIR}/etc/volatile.cache[0m
+[32m             ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                                                  ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+[32m                                                                                                       ^---------^ SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	[ -e "${ROOT_DIR}"/etc/volatile.cache.build ] && sync && mv "${ROOT_DIR}"/etc/volatile.cache.build "${ROOT_DIR}"/etc/volatile.cache
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2010 -- Don't use ls | grep. Use a glob o...
+  https://www.shellcheck.net/wiki/SC3014 -- In POSIX sh, == in place of = is ...
+  https://www.shellcheck.net/wiki/SC1091 -- Not following: ./etc/default/rcS ...

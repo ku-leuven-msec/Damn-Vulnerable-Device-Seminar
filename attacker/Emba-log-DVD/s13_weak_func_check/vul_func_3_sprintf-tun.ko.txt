@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mtun.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m373) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mtun.ko[0m
+
+     8ac:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     8b0:	a94363f7 	ldp	x23, x24, [sp, #48]
+     8b4:	a9446bf9 	ldp	x25, x26, [sp, #64]
+     8b8:	a8c57bfd 	ldp	x29, x30, [sp], #80
+     8bc:	d65f03c0 	ret
+
+00000000000008c0 <tun_show_flags>:
+     8c0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     8c4:	910003fd 	mov	x29, sp
+     8c8:	a90153f3 	stp	x19, x20, [sp, #16]
+     8cc:	aa0003f4 	mov	x20, x0
+     8d0:	aa0203f3 	mov	x19, x2
+     8d4:	aa1e03e0 	mov	x0, x30
+     8d8:	94000000 	bl	0 <_mcount>
+     8dc:	b94b8683 	ldr	w3, [x20, #2948]
+     8e0:	aa1303e0 	mov	x0, x19
+     8e4:	528f2662 	mov	w2, #0x7933                	// #31027
+     8e8:	90000001 	adrp	x1, 0 <tun_is_xdp_frame>
+     8ec:	0a020062 	and	w2, w3, w2
+     8f0:	91000021 	add	x1, x1, #0x0
+[31m     8f4:	94000000 	bl	0 <sprintf>[0m
+     8f8:	93407c00 	sxtw	x0, w0
+     8fc:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+0000000000000ee8 <tun_show_group>:
+     ee8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     eec:	910003fd 	mov	x29, sp
+     ef0:	a90153f3 	stp	x19, x20, [sp, #16]
+     ef4:	aa0003f3 	mov	x19, x0
+     ef8:	aa0203f4 	mov	x20, x2
+     efc:	aa1e03e0 	mov	x0, x30
+     f00:	94000000 	bl	0 <_mcount>
+     f04:	b94b8e60 	ldr	w0, [x19, #2956]
+     f08:	3100041f 	cmn	w0, #0x1
+     f0c:	540001e0 	b.eq	f48 <tun_show_group+0x60>  // b.none
+     f10:	d5384100 	mrs	x0, sp_el0
+     f14:	f9435c00 	ldr	x0, [x0, #1720]
+     f18:	b94b8e61 	ldr	w1, [x19, #2956]
+     f1c:	f9404400 	ldr	x0, [x0, #136]
+     f20:	94000000 	bl	0 <from_kgid_munged>
+     f24:	2a0003e2 	mov	w2, w0
+     f28:	90000001 	adrp	x1, 0 <tun_is_xdp_frame>
+     f2c:	aa1403e0 	mov	x0, x20
+     f30:	91000021 	add	x1, x1, #0x0
+[31m     f34:	94000000 	bl	0 <sprintf>[0m
+     f38:	93407c00 	sxtw	x0, w0
+     f3c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+0000000000001228 <tun_show_owner>:
+    1228:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    122c:	910003fd 	mov	x29, sp
+    1230:	a90153f3 	stp	x19, x20, [sp, #16]
+    1234:	aa0003f3 	mov	x19, x0
+    1238:	aa0203f4 	mov	x20, x2
+    123c:	aa1e03e0 	mov	x0, x30
+    1240:	94000000 	bl	0 <_mcount>
+    1244:	b94b8a60 	ldr	w0, [x19, #2952]
+    1248:	3100041f 	cmn	w0, #0x1
+    124c:	540001e0 	b.eq	1288 <tun_show_owner+0x60>  // b.none
+    1250:	d5384100 	mrs	x0, sp_el0
+    1254:	f9435c00 	ldr	x0, [x0, #1720]
+    1258:	b94b8a61 	ldr	w1, [x19, #2952]
+    125c:	f9404400 	ldr	x0, [x0, #136]
+    1260:	94000000 	bl	0 <from_kuid_munged>
+    1264:	2a0003e2 	mov	w2, w0
+    1268:	90000001 	adrp	x1, 0 <tun_is_xdp_frame>
+    126c:	aa1403e0 	mov	x0, x20
+    1270:	91000021 	add	x1, x1, #0x0
+[31m    1274:	94000000 	bl	0 <sprintf>[0m
+    1278:	93407c00 	sxtw	x0, w0
+    127c:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mtun.ko[0m
+

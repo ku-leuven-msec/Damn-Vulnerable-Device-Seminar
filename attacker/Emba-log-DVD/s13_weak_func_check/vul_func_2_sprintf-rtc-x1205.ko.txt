@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mrtc-x1205.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m101) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrtc-x1205.ko[0m
+
+ 148:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+ 14c:	910003fd 	mov	x29, sp
+ 150:	a90153f3 	stp	x19, x20, [sp, #16]
+ 154:	f90013f5 	str	x21, [sp, #32]
+ 158:	d5384113 	mrs	x19, sp_el0
+ 15c:	aa0003f4 	mov	x20, x0
+ 160:	aa0203f5 	mov	x21, x2
+ 164:	aa1e03e0 	mov	x0, x30
+ 168:	94000000 	bl	0 <_mcount>
+ 16c:	f9428e62 	ldr	x2, [x19, #1304]
+ 170:	f9001fe2 	str	x2, [sp, #56]
+ 174:	d2800002 	mov	x2, #0x0                   	// #0
+ 178:	d1008280 	sub	x0, x20, #0x20
+ 17c:	9100d3e1 	add	x1, sp, #0x34
+ 180:	97ffffb4 	bl	50 <x1205_get_dtrim>
+ 184:	350000c0 	cbnz	w0, 19c <x1205_sysfs_show_dtrim+0x54>
+ 188:	b94037e2 	ldr	w2, [sp, #52]
+ 18c:	90000001 	adrp	x1, 0 <x1205_remove>
+ 190:	aa1503e0 	mov	x0, x21
+ 194:	91000021 	add	x1, x1, #0x0
+[31m 198:	94000000 	bl	0 <sprintf>[0m
+ 19c:	91146273 	add	x19, x19, #0x518
+ 1a0:	93407c00 	sxtw	x0, w0
+--
+ 81c:	aa1e03e0 	mov	x0, x30
+ 820:	94000000 	bl	0 <_mcount>
+ 824:	f9428e62 	ldr	x2, [x19, #1304]
+ 828:	f9001fe2 	str	x2, [sp, #56]
+ 82c:	d2800002 	mov	x2, #0x0                   	// #0
+ 830:	d1008280 	sub	x0, x20, #0x20
+ 834:	9100d3e1 	add	x1, sp, #0x34
+ 838:	97ffffb8 	bl	718 <x1205_get_atrim>
+ 83c:	350001a0 	cbnz	w0, 870 <x1205_sysfs_show_atrim+0x70>
+ 840:	b94037e3 	ldr	w3, [sp, #52]
+ 844:	5289ba64 	mov	w4, #0x4dd3                	// #19923
+ 848:	72a20c44 	movk	w4, #0x1062, lsl #16
+ 84c:	52807d05 	mov	w5, #0x3e8                 	// #1000
+ 850:	90000001 	adrp	x1, 0 <x1205_remove>
+ 854:	aa1503e0 	mov	x0, x21
+ 858:	91000021 	add	x1, x1, #0x0
+ 85c:	9b247c62 	smull	x2, w3, w4
+ 860:	9366fc42 	asr	x2, x2, #38
+ 864:	4b837c42 	sub	w2, w2, w3, asr #31
+ 868:	1b058c43 	msub	w3, w2, w5, w3
+[31m 86c:	94000000 	bl	0 <sprintf>[0m
+ 870:	91146273 	add	x19, x19, #0x518
+ 874:	93407c00 	sxtw	x0, w0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mrtc-x1205.ko[0m
+

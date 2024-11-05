@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mpwc.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m351) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mpwc.ko[0m
+
+     16c:	910003e3 	mov	x3, sp
+     170:	d28000a2 	mov	x2, #0x5                   	// #5
+     174:	52800001 	mov	w1, #0x0                   	// #0
+     178:	f900741d 	str	x29, [x0, #232]
+     17c:	a90fe003 	stp	x3, x24, [x0, #248]
+     180:	f9008402 	str	x2, [x0, #264]
+     184:	f9000677 	str	x23, [x19, #8]
+     188:	b900267a 	str	w26, [x19, #36]
+     18c:	f9446680 	ldr	x0, [x20, #2248]
+     190:	f9000a60 	str	x0, [x19, #16]
+     194:	b9405ae0 	ldr	w0, [x23, #88]
+     198:	b9001a60 	str	w0, [x19, #24]
+     19c:	b94086e0 	ldr	w0, [x23, #132]
+     1a0:	b9001e60 	str	w0, [x19, #28]
+     1a4:	f9446680 	ldr	x0, [x20, #2248]
+     1a8:	b4000040 	cbz	x0, 1b0 <perf_trace_pwc_handler_enter+0xf0>
+     1ac:	b943c801 	ldr	w1, [x0, #968]
+     1b0:	b9002261 	str	w1, [x19, #32]
+     1b4:	9100a260 	add	x0, x19, #0x28
+     1b8:	aa1903e1 	mov	x1, x25
+[31m     1bc:	94000000 	bl	0 <strcpy>[0m
+     1c0:	b9406fa2 	ldr	w2, [x29, #108]
+     1c4:	aa1b03e6 	mov	x6, x27
+--
+     2c0:	9101c3a1 	add	x1, x29, #0x70
+     2c4:	51001273 	sub	w19, w19, #0x4
+     2c8:	2a1303e0 	mov	w0, w19
+     2cc:	94000000 	bl	0 <perf_trace_buf_alloc>
+     2d0:	aa0003fc 	mov	x28, x0
+     2d4:	b4000320 	cbz	x0, 338 <perf_trace_pwc_handler_exit+0x108>
+     2d8:	f9403ba2 	ldr	x2, [x29, #112]
+     2dc:	910003e4 	mov	x4, sp
+     2e0:	d28000a3 	mov	x3, #0x5                   	// #5
+     2e4:	aa1a03e1 	mov	x1, x26
+     2e8:	91008000 	add	x0, x0, #0x20
+     2ec:	f900745d 	str	x29, [x2, #232]
+     2f0:	a90fe444 	stp	x4, x25, [x2, #248]
+     2f4:	f9008443 	str	x3, [x2, #264]
+     2f8:	f9000798 	str	x24, [x28, #8]
+     2fc:	b9001f97 	str	w23, [x28, #28]
+     300:	f94466a2 	ldr	x2, [x21, #2248]
+     304:	f9000b82 	str	x2, [x28, #16]
+     308:	b943c842 	ldr	w2, [x2, #968]
+     30c:	b9001b82 	str	w2, [x28, #24]
+[31m     310:	94000000 	bl	0 <strcpy>[0m
+     314:	b9406fa2 	ldr	w2, [x29, #108]
+     318:	aa1b03e6 	mov	x6, x27
+--
+     3ec:	9100a042 	add	x2, x2, #0x28
+     3f0:	aa1503e1 	mov	x1, x21
+     3f4:	910123e0 	add	x0, sp, #0x48
+     3f8:	94000000 	bl	0 <trace_event_buffer_reserve>
+     3fc:	b4000260 	cbz	x0, 448 <trace_event_raw_event_pwc_handler_enter+0xc0>
+     400:	f9000416 	str	x22, [x0, #8]
+     404:	52800002 	mov	w2, #0x0                   	// #0
+     408:	b9002418 	str	w24, [x0, #36]
+     40c:	f9446661 	ldr	x1, [x19, #2248]
+     410:	f9000801 	str	x1, [x0, #16]
+     414:	b9405ac1 	ldr	w1, [x22, #88]
+     418:	b9001801 	str	w1, [x0, #24]
+     41c:	b94086c1 	ldr	w1, [x22, #132]
+     420:	b9001c01 	str	w1, [x0, #28]
+     424:	f9446661 	ldr	x1, [x19, #2248]
+     428:	b4000041 	cbz	x1, 430 <trace_event_raw_event_pwc_handler_enter+0xa8>
+     42c:	b943c822 	ldr	w2, [x1, #968]
+     430:	aa1703e1 	mov	x1, x23
+     434:	b9002002 	str	w2, [x0, #32]
+     438:	9100a000 	add	x0, x0, #0x28
+[31m     43c:	94000000 	bl	0 <strcpy>[0m
+     440:	910123e0 	add	x0, sp, #0x48
+     444:	94000000 	bl	0 <trace_event_buffer_commit>
+--
+    1a5c:	aa1703e0 	mov	x0, x23
+    1a60:	94000000 	bl	0 <strlen>
+    1a64:	11000400 	add	w0, w0, #0x1
+    1a68:	53103c18 	lsl	w24, w0, #16
+    1a6c:	93407c00 	sxtw	x0, w0
+    1a70:	321b0318 	orr	w24, w24, #0x20
+    1a74:	91008002 	add	x2, x0, #0x20
+    1a78:	aa1503e1 	mov	x1, x21
+    1a7c:	910123e0 	add	x0, sp, #0x48
+    1a80:	94000000 	bl	0 <trace_event_buffer_reserve>
+    1a84:	aa0003e3 	mov	x3, x0
+    1a88:	b4000180 	cbz	x0, 1ab8 <trace_event_raw_event_pwc_handler_exit+0xa8>
+    1a8c:	f9000476 	str	x22, [x3, #8]
+    1a90:	aa1703e1 	mov	x1, x23
+    1a94:	b9001c78 	str	w24, [x3, #28]
+    1a98:	91008000 	add	x0, x0, #0x20
+    1a9c:	f9446662 	ldr	x2, [x19, #2248]
+    1aa0:	f9000862 	str	x2, [x3, #16]
+    1aa4:	b943c842 	ldr	w2, [x2, #968]
+    1aa8:	b9001862 	str	w2, [x3, #24]
+[31m    1aac:	94000000 	bl	0 <strcpy>[0m
+    1ab0:	910123e0 	add	x0, sp, #0x48
+    1ab4:	94000000 	bl	0 <trace_event_buffer_commit>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m4[0m times [0;33mpwc.ko[0m
+

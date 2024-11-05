@@ -1,0 +1,61 @@
+[[0;33m*[0m] Binary protection state of [0;33mrndis_wlan.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m279) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrndis_wlan.ko[0m
+
+    16a8:	90000017 	adrp	x23, 0 <rndis_copy_module_params>
+    16ac:	910002f7 	add	x23, x23, #0x0
+    16b0:	90000001 	adrp	x1, 0 <rndis_copy_module_params>
+    16b4:	7100001f 	cmp	w0, #0x0
+    16b8:	91000021 	add	x1, x1, #0x0
+    16bc:	9a9512e2 	csel	x2, x23, x21, ne  // ne = any
+    16c0:	aa1303e0 	mov	x0, x19
+    16c4:	97ffff95 	bl	1518 <rndis_set_config_parameter.constprop.0>
+    16c8:	b949a682 	ldr	w2, [x20, #2468]
+    16cc:	aa1303e0 	mov	x0, x19
+    16d0:	90000001 	adrp	x1, 0 <rndis_copy_module_params>
+    16d4:	91000021 	add	x1, x1, #0x0
+    16d8:	7100005f 	cmp	w2, #0x0
+    16dc:	9a9512e2 	csel	x2, x23, x21, ne  // ne = any
+    16e0:	90000015 	adrp	x21, 0 <rndis_copy_module_params>
+    16e4:	910002b5 	add	x21, x21, #0x0
+    16e8:	97ffff8c 	bl	1518 <rndis_set_config_parameter.constprop.0>
+    16ec:	910103e0 	add	x0, sp, #0x40
+    16f0:	b949aa82 	ldr	w2, [x20, #2472]
+    16f4:	aa1503e1 	mov	x1, x21
+[31m    16f8:	94000000 	bl	0 <sprintf>[0m
+    16fc:	910103e2 	add	x2, sp, #0x40
+    1700:	aa1303e0 	mov	x0, x19
+    1704:	90000001 	adrp	x1, 0 <rndis_copy_module_params>
+    1708:	91000021 	add	x1, x1, #0x0
+    170c:	97ffff83 	bl	1518 <rndis_set_config_parameter.constprop.0>
+    1710:	b949ae82 	ldr	w2, [x20, #2476]
+    1714:	aa1503e1 	mov	x1, x21
+    1718:	910103e0 	add	x0, sp, #0x40
+[31m    171c:	94000000 	bl	0 <sprintf>[0m
+    1720:	910103e2 	add	x2, sp, #0x40
+    1724:	aa1303e0 	mov	x0, x19
+    1728:	90000001 	adrp	x1, 0 <rndis_copy_module_params>
+    172c:	91000021 	add	x1, x1, #0x0
+    1730:	97ffff7a 	bl	1518 <rndis_set_config_parameter.constprop.0>
+    1734:	b949b282 	ldr	w2, [x20, #2480]
+    1738:	aa1503e1 	mov	x1, x21
+    173c:	910103e0 	add	x0, sp, #0x40
+[31m    1740:	94000000 	bl	0 <sprintf>[0m
+    1744:	910103e2 	add	x2, sp, #0x40
+    1748:	aa1303e0 	mov	x0, x19
+    174c:	90000001 	adrp	x1, 0 <rndis_copy_module_params>
+    1750:	91000021 	add	x1, x1, #0x0
+    1754:	97ffff71 	bl	1518 <rndis_set_config_parameter.constprop.0>
+    1758:	b949b682 	ldr	w2, [x20, #2484]
+    175c:	aa1503e1 	mov	x1, x21
+    1760:	910103e0 	add	x0, sp, #0x40
+[31m    1764:	94000000 	bl	0 <sprintf>[0m
+    1768:	910103e2 	add	x2, sp, #0x40
+    176c:	90000001 	adrp	x1, 0 <rndis_copy_module_params>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33mrndis_wlan.ko[0m
+

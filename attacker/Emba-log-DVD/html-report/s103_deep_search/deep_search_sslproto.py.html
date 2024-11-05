@@ -1,0 +1,308 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s103_deep_search.html" title="./../s103_deep_search.html" >&laquo; Back to s103_deep_search</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/asyncio/sslproto.py</span></pre>
+<pre>4:    import ssl.</pre>
+<pre>6:    ssl = None.</pre>
+<pre>17:r('Server side SSL needs a valid .</pre>
+<pre>17:SSLContext').</pre>
+<pre>19: side may pass ssl=True to use a .</pre>
+<pre>20: that case the sslcontext passed .</pre>
+<pre>23:    sslcontext = ssl.c.</pre>
+<pre>25:        sslcontext.check_h.</pre>
+<pre>26:    return sslcontext.</pre>
+<pre>29: States of an _SSLPipe..</pre>
+<pre>36:class _SSLPipe(object):.</pre>
+<pre>37:    """An SSL "Pipe"..</pre>
+<pre>39:    An SSL pipe allows yo.</pre>
+<pre>39:nicate with an SSL/TLS protocol i.</pre>
+<pre>44:    An SSL pipe can be in.</pre>
+<pre>46:s encrypted to SSL record level d.</pre>
+<pre>46:ice versa. The SSL record.</pre>
+<pre>47:t level in the SSL protocol suite.</pre>
+<pre>50:    An SslPipe initially .</pre>
+<pre>50:mode. To start SSL, call.</pre>
+<pre>51:). To shutdown SSL again, call un.</pre>
+<pre>58: specifies the ssl.SSLContext to .</pre>
+<pre>65:        the _ssl module support.</pre>
+<pre>71:lf._incoming = ssl.MemoryBIO().</pre>
+<pre>72:lf._outgoing = ssl.MemoryBIO().</pre>
+<pre>73:        self._sslobj = None.</pre>
+<pre>74:    self._need_ssldata = False.</pre>
+<pre>80:        """The SSL context passed.</pre>
+<pre>84:    def ssl_object(self):.</pre>
+<pre>85:""The internal ssl.SSLObject inst.</pre>
+<pre>89:  return self._sslobj.</pre>
+<pre>92:    def need_ssldata(self):.</pre>
+<pre>95:urn self._need_ssldata.</pre>
+<pre>107:  """Start the SSL handshake..</pre>
+<pre>109:turn a list of ssldata. A ssldata.</pre>
+<pre>117:        self._sslobj = self._con.</pre>
+<pre>123:        ssldata, appdata =.</pre>
+<pre>123: self.feed_ssldata(b'', only_.</pre>
+<pre>125:        return ssldata.</pre>
+<pre>128:  """Start the SSL shutdown seque.</pre>
+<pre>130:turn a list of ssldata. A ssldata.</pre>
+<pre>143:        ssldata, appdata =.</pre>
+<pre>143: self.feed_ssldata(b'').</pre>
+<pre>145:        return ssldata.</pre>
+<pre>150: will raise an SSL_ERROR_EOF exce.</pre>
+<pre>154:        ssldata, appdata =.</pre>
+<pre>154: self.feed_ssldata(b'').</pre>
+<pre>157:    def feed_ssldata(self, data.</pre>
+<pre>158:       """Feed SSL record level d.</pre>
+<pre>161:be used to get ssldata for a hand.</pre>
+<pre>164:     Return a (ssldata, appdata) .</pre>
+<pre>164:tuple. The ssldata element is.</pre>
+<pre>165:ers containing SSL data that need.</pre>
+<pre>165: to the remote SSL..</pre>
+<pre>169: indicating an SSL "close_notify".</pre>
+<pre>180:    self._need_ssldata = False.</pre>
+<pre>184:        ssldata = [].</pre>
+<pre>189:         self._sslobj.do_handshak.</pre>
+<pre>194:       return (ssldata, appdata).</pre>
+<pre>198:read data from SSL until close_no.</pre>
+<pre>200: chunk = self._sslobj.read(self.m.</pre>
+<pre>207:         self._sslobj.unwrap().</pre>
+<pre>208:         self._sslobj = None.</pre>
+<pre>216:       except (ssl.SSLError, ssl..</pre>
+<pre>219:               ssl.SSL_ERROR_WANT.</pre>
+<pre>219:_READ, ssl.SSL_ERROR_WANT_WRI.</pre>
+<pre>220:               ssl.SSL_ERROR_SYSC.</pre>
+<pre>224:    self._need_ssldata = (exc_err.</pre>
+<pre>224:no == ssl.SSL_ERROR_WANT_REA.</pre>
+<pre>229:            ssldata.append(sel.</pre>
+<pre>230:       return (ssldata, appdata).</pre>
+<pre>235:    Return an (ssldata, offset) t.</pre>
+<pre>235:uple. The ssldata element is.</pre>
+<pre>237:        remote SSL instance. The .</pre>
+<pre>242:This is an OpenSSL requirement. A.</pre>
+<pre>243:, because the _ssl module.</pre>
+<pre>245:rypted data in ssldata..</pre>
+<pre>251:               ssldata = [data[of.</pre>
+<pre>253:               ssldata = [].</pre>
+<pre>254:       return (ssldata, len(data).</pre>
+<pre>256:        ssldata = [].</pre>
+<pre>259:    self._need_ssldata = False.</pre>
+<pre>262:ffset += self._sslobj.write(view[.</pre>
+<pre>263:        except ssl.SSLError as ex.</pre>
+<pre>269: = exc.errno = ssl.SSL_ERROR_WANT.</pre>
+<pre>270:_errno not in (ssl.SSL_ERROR_WANT.</pre>
+<pre>271:               ssl.SSL_ERROR_WANT.</pre>
+<pre>272:               ssl.SSL_ERROR_SYSC.</pre>
+<pre>274:    self._need_ssldata = (exc_err.</pre>
+<pre>274:no == ssl.SSL_ERROR_WANT_REA.</pre>
+<pre>278:               ssldata.append(sel.</pre>
+<pre>279: or self._need_ssldata:.</pre>
+<pre>281:       return (ssldata, offset).</pre>
+<pre>284:class _SSLProtocolTranspo.</pre>
+<pre>289:__(self, loop, ssl_protocol):.</pre>
+<pre>291:        # SSLProtocol instan.</pre>
+<pre>292:        self._ssl_protocol = ssl.</pre>
+<pre>297:  return self._ssl_protocol._get_.</pre>
+<pre>300:        self._ssl_protocol._set_.</pre>
+<pre>303:  return self._ssl_protocol._app_.</pre>
+<pre>317:        self._ssl_protocol._star.</pre>
+<pre>325:    tr = self._ssl_protocol._tran.</pre>
+<pre>327: RuntimeError('SSL transport has .</pre>
+<pre>336:        self._ssl_protocol._tran.</pre>
+<pre>344:        self._ssl_protocol._tran.</pre>
+<pre>365:        self._ssl_protocol._tran.</pre>
+<pre>369:  return self._ssl_protocol._tran.</pre>
+<pre>374:  return self._ssl_protocol._tran.</pre>
+<pre>387:        self._ssl_protocol._writ.</pre>
+<pre>400:        self._ssl_protocol._abor.</pre>
+<pre>404:class SSLProtocol(protoc.</pre>
+<pre>405:    """SSL protocol..</pre>
+<pre>407:lementation of SSL on top of a so.</pre>
+<pre>408:fers which are ssl.MemoryBIO obje.</pre>
+<pre>411: app_protocol, sslcontext, waiter.</pre>
+<pre>414:               ssl_handshake_time.</pre>
+<pre>415:        if ssl is None:.</pre>
+<pre>416:eError('stdlib ssl module not ava.</pre>
+<pre>418:        if ssl_handshake_time.</pre>
+<pre>419:            ssl_handshake_time.</pre>
+<pre>419:ut = constants.SSL_HANDSHAKE_TIME.</pre>
+<pre>420:        elif ssl_handshake_time.</pre>
+<pre>422:             f"ssl_handshake_time.</pre>
+<pre>423:        f"got {ssl_handshake_time.</pre>
+<pre>425:        if not sslcontext:.</pre>
+<pre>426:            sslcontext = _crea.</pre>
+<pre>434:        self._sslcontext = sslco.</pre>
+<pre>435:        # SSL-specific extra.</pre>
+<pre>437:._extra = dict(sslcontext=sslcont.</pre>
+<pre>446:p_transport = _SSLProtocolTranspo.</pre>
+<pre>447:        # _SSLPipe instance (.</pre>
+<pre>448:        self._sslpipe = None.</pre>
+<pre>455:        self._ssl_handshake_time.</pre>
+<pre>455:out = ssl_handshake_time.</pre>
+<pre>475:     Start the SSL handshake..</pre>
+<pre>478:        self._sslpipe = _SSLPipe.</pre>
+<pre>478:(self._sslcontext,.</pre>
+<pre>494:urred while in SSL handshake..</pre>
+<pre>505:        self._sslpipe = None.</pre>
+<pre>520:lled when some SSL data is receiv.</pre>
+<pre>524:      if self._sslpipe is None:.</pre>
+<pre>525:sport closing, sslpipe is destroy.</pre>
+<pre>529:            ssldata, appdata =.</pre>
+<pre>529: self._sslpipe.feed_sslda.</pre>
+<pre>533:atal_error(e, 'SSL error in data .</pre>
+<pre>536:  for chunk in ssldata:.</pre>
+<pre>551:led to receive SSL data').</pre>
+<pre>575:ect when using ssl').</pre>
+<pre>603:bug("%r starts SSL handshake", se.</pre>
+<pre>609:        # the SSL handshake.</pre>
+<pre>612:ll_later(self._ssl_handshake_time.</pre>
+<pre>619:             f"SSL handshake is t.</pre>
+<pre>620:      f"{self._ssl_handshake_time.</pre>
+<pre>629:        sslobj = self._ssl.</pre>
+<pre>629:pipe.ssl_object.</pre>
+<pre>634:    peercert = sslobj.getpeercert.</pre>
+<pre>638:sinstance(exc, ssl.CertificateErr.</pre>
+<pre>639:        msg = 'SSL handshake fail.</pre>
+<pre>641:        msg = 'SSL handshake fail.</pre>
+<pre>647:ger.debug("%r: SSL handshake took.</pre>
+<pre>651:        cipher=sslobj.cipher(),.</pre>
+<pre>652:   compression=sslobj.compression.</pre>
+<pre>653:               ssl_object=sslobj,.</pre>
+<pre>668: None or self._sslpipe is None:.</pre>
+<pre>675:               ssldata, offset = .</pre>
+<pre>675:self._sslpipe.feed_appda.</pre>
+<pre>677:               ssldata = self._ss.</pre>
+<pre>681:               ssldata = self._ss.</pre>
+<pre>684:  for chunk in ssldata:.</pre>
+<pre>691:  assert self._sslpipe.need_sslda.</pre>
+<pre>707:Fatal error on SSL transport').</pre>
+<pre>724:        self._sslpipe = None.</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

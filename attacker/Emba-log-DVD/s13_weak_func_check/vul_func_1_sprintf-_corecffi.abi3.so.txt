@@ -1,0 +1,35 @@
+[[0;33m*[0m] Binary protection state of [0;33m_corecffi.abi3.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1202) Symbols
+[33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m489) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33m_corecffi.abi3.so[0m
+
+   1464c:	5a9f02b5 	csinv	w21, w21, wzr, eq  // eq = none
+   14650:	910243f3 	add	x19, sp, #0x90
+   14654:	52800014 	mov	w20, #0x0                   	// #0
+   14658:	b00000ba 	adrp	x26, 29000 <_fini+0x88>
+   1465c:	913e035a 	add	x26, x26, #0xf80
+   14660:	5280075b 	mov	w27, #0x3a                  	// #58
+   14664:	0b15031c 	add	w28, w24, w21
+   14668:	14000013 	b	146b4 <uv_inet_ntop+0x1b8>
+   1466c:	6b14039f 	cmp	w28, w20
+   14670:	5400028d 	b.le	146c0 <uv_inet_ntop+0x1c4>
+   14674:	6b1402bf 	cmp	w21, w20
+   14678:	54000161 	b.ne	146a4 <uv_inet_ntop+0x1a8>  // b.any
+   1467c:	3800167b 	strb	w27, [x19], #1
+   14680:	14000009 	b	146a4 <uv_inet_ntop+0x1a8>
+   14684:	b9408fe0 	ldr	w0, [sp, #140]
+   14688:	7100041f 	cmp	w0, #0x1
+   1468c:	54000381 	b.ne	146fc <uv_inet_ntop+0x200>  // b.any
+   14690:	b94002e2 	ldr	w2, [x23]
+   14694:	aa1a03e1 	mov	x1, x26
+   14698:	aa1303e0 	mov	x0, x19
+[31m   1469c:	97ffe041 	bl	c7a0 <sprintf@plt>[0m
+   146a0:	8b20c273 	add	x19, x19, w0, sxtw
+   146a4:	11000694 	add	w20, w20, #0x1
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33m_corecffi.abi3.so[0m
+

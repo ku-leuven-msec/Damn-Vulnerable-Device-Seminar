@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibpthread-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mlibpthread-2.31.so[0m
+
+   14e4c:	aa0003f3 	mov	x19, x0
+   14e50:	aa0103e0 	mov	x0, x1
+   14e54:	a9025bf5 	stp	x21, x22, [sp, #32]
+   14e58:	aa0103f5 	mov	x21, x1
+   14e5c:	97ffc595 	bl	64b0 <strlen@plt>
+   14e60:	f1003c1f 	cmp	x0, #0xf
+   14e64:	54000568 	b.hi	14f10 <pthread_setname_np@@GLIBC_2.17+0xd0>  // b.pmore
+   14e68:	a90363f7 	stp	x23, x24, [sp, #48]
+   14e6c:	d53bd057 	mrs	x23, tpidr_el0
+   14e70:	aa0003f4 	mov	x20, x0
+   14e74:	d11c02e0 	sub	x0, x23, #0x700
+   14e78:	eb00027f 	cmp	x19, x0
+   14e7c:	54000560 	b.eq	14f28 <pthread_setname_np@@GLIBC_2.17+0xe8>  // b.none
+   14e80:	b940d262 	ldr	w2, [x19, #208]
+   14e84:	910103f3 	add	x19, sp, #0x40
+   14e88:	aa1303e0 	mov	x0, x19
+   14e8c:	d0000001 	adrp	x1, 16000 <__errno_location@@GLIBC_2.17+0x670>
+   14e90:	9110c021 	add	x1, x1, #0x430
+   14e94:	d00000b8 	adrp	x24, 2a000 <__errno_location@@GLIBC_2.17+0x14670>
+   14e98:	f947d718 	ldr	x24, [x24, #4008]
+[31m   14e9c:	97ffc5a9 	bl	6540 <sprintf@plt>[0m
+   14ea0:	aa1303e0 	mov	x0, x19
+   14ea4:	52800041 	mov	w1, #0x2                   	// #2
+--
+0000000000014f90 <pthread_getname_np@@GLIBC_2.17>:
+   14f90:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+   14f94:	f1003c5f 	cmp	x2, #0xf
+   14f98:	910003fd 	mov	x29, sp
+   14f9c:	a90153f3 	stp	x19, x20, [sp, #16]
+   14fa0:	52800453 	mov	w19, #0x22                  	// #34
+   14fa4:	540005e9 	b.ls	15060 <pthread_getname_np@@GLIBC_2.17+0xd0>  // b.plast
+   14fa8:	a90363f7 	stp	x23, x24, [sp, #48]
+   14fac:	d53bd057 	mrs	x23, tpidr_el0
+   14fb0:	aa0203f4 	mov	x20, x2
+   14fb4:	d11c02e2 	sub	x2, x23, #0x700
+   14fb8:	eb02001f 	cmp	x0, x2
+   14fbc:	54000680 	b.eq	1508c <pthread_getname_np@@GLIBC_2.17+0xfc>  // b.none
+   14fc0:	b940d002 	ldr	w2, [x0, #208]
+   14fc4:	910103f3 	add	x19, sp, #0x40
+   14fc8:	aa1303e0 	mov	x0, x19
+   14fcc:	a9025bf5 	stp	x21, x22, [sp, #32]
+   14fd0:	aa0103f5 	mov	x21, x1
+   14fd4:	d0000001 	adrp	x1, 16000 <__errno_location@@GLIBC_2.17+0x670>
+   14fd8:	9110c021 	add	x1, x1, #0x430
+[31m   14fdc:	97ffc559 	bl	6540 <sprintf@plt>[0m
+   14fe0:	d00000b8 	adrp	x24, 2a000 <__errno_location@@GLIBC_2.17+0x14670>
+   14fe4:	f947d718 	ldr	x24, [x24, #4008]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mlibpthread-2.31.so[0m
+

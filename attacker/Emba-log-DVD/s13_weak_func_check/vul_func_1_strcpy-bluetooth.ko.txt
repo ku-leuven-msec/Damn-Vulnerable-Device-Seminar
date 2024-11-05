@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mbluetooth.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1578) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mbluetooth.ko[0m
+
+    6bf0:	f9400400 	ldr	x0, [x0, #8]
+    6bf4:	ea2002df 	bics	xzr, x22, x0
+    6bf8:	9a9f0281 	csel	x1, x20, xzr, eq  // eq = none
+    6bfc:	d503229f 	csdb
+    6c00:	d2800b82 	mov	x2, #0x5c                  	// #92
+    6c04:	910133e0 	add	x0, sp, #0x4c
+    6c08:	94000000 	bl	0 <__arch_copy_from_user>
+    6c0c:	d503201f 	nop
+    6c10:	b5000d40 	cbnz	x0, 6db8 <hci_get_dev_info+0x240>
+    6c14:	79409be0 	ldrh	w0, [sp, #76]
+    6c18:	94000000 	bl	4ed0 <hci_dev_get>
+    6c1c:	aa0003f3 	mov	x19, x0
+    6c20:	b4000d20 	cbz	x0, 6dc4 <hci_get_dev_info+0x24c>
+    6c24:	f9478a62 	ldr	x2, [x19, #3856]
+    6c28:	9100c261 	add	x1, x19, #0x30
+    6c2c:	f9401e77 	ldr	x23, [x19, #56]
+    6c30:	91013be0 	add	x0, sp, #0x4e
+    6c34:	721e005f 	tst	w2, #0x4
+    6c38:	927ffae2 	and	x2, x23, #0xfffffffffffffffe
+    6c3c:	9a971057 	csel	x23, x2, x23, ne  // ne = any
+[31m    6c40:	94000000 	bl	0 <strcpy>[0m
+    6c44:	b9005ff7 	str	w23, [sp, #92]
+    6c48:	39410e60 	ldrb	w0, [x19, #67]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mbluetooth.ko[0m
+

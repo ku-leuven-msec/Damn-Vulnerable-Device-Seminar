@@ -1,0 +1,413 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s103_deep_search.html" title="./../s103_deep_search.html" >&laquo; Back to s103_deep_search</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/ssl.py</span></pre>
+<pre>1:er module for _ssl, providing som.</pre>
+<pre>4:ic support for SSL..</pre>
+<pre>8:  SSLSocket -- subty.</pre>
+<pre>8:ket which does SSL over the socke.</pre>
+<pre>12:  SSLError -- except.</pre>
+<pre>27:SSL_ERROR_ZERO_RET.</pre>
+<pre>28:SSL_ERROR_WANT_REA.</pre>
+<pre>29:SSL_ERROR_WANT_WRI.</pre>
+<pre>30:SSL_ERROR_WANT_X50.</pre>
+<pre>31:SSL_ERROR_SYSCALL.</pre>
+<pre>32:SSL_ERROR_SSL.</pre>
+<pre>33:SSL_ERROR_WANT_CON.</pre>
+<pre>35:SSL_ERROR_EOF.</pre>
+<pre>36:SSL_ERROR_INVALID_.</pre>
+<pre>49:entify various SSL protocol varia.</pre>
+<pre>51:PROTOCOL_SSLv2.</pre>
+<pre>52:PROTOCOL_SSLv3.</pre>
+<pre>53:PROTOCOL_SSLv23.</pre>
+<pre>61:entify various SSL alert message .</pre>
+<pre>98:import _ssl             # .</pre>
+<pre>100:from _ssl import OPENSSL.</pre>
+<pre>100:ON_NUMBER, OPENSSL_VERSION_INFO, .</pre>
+<pre>100:OPENSSL_VERSION.</pre>
+<pre>101:from _ssl import _SSLCon.</pre>
+<pre>101:xt, MemoryBIO, SSLSession.</pre>
+<pre>102:from _ssl import (.</pre>
+<pre>103:    SSLError, SSLZeroReturnError.</pre>
+<pre>103:, SSLWantReadError, .</pre>
+<pre>103:SSLWantWriteError,.</pre>
+<pre>104:    SSLSyscallError, S.</pre>
+<pre>104:SLEOFError, SSLCertVerificatio.</pre>
+<pre>106:from _ssl import txt2obj.</pre>
+<pre>107:from _ssl import RAND_st.</pre>
+<pre>109:    from _ssl import RAND_eg.</pre>
+<pre>111:    # LibreSSL does not provi.</pre>
+<pre>115:from _ssl import (.</pre>
+<pre>116: HAS_ALPN, HAS_SSLv2, HAS_SSLv3, .</pre>
+<pre>119:from _ssl import _DEFAUL.</pre>
+<pre>119:_CIPHERS, _OPENSSL_API_VERSION.</pre>
+<pre>123:    '_SSLMethod', __name.</pre>
+<pre>124:e != 'PROTOCOL_SSLv23',.</pre>
+<pre>125:    source=_ssl).</pre>
+<pre>130:    source=_ssl).</pre>
+<pre>135:    source=_ssl).</pre>
+<pre>138:    'SSLErrorNumber', _.</pre>
+<pre>139:me.startswith('SSL_ERROR_'),.</pre>
+<pre>140:    source=_ssl).</pre>
+<pre>145:    source=_ssl).</pre>
+<pre>150:    source=_ssl).</pre>
+<pre>152:PROTOCOL_SSLv23 = _SSLMetho.</pre>
+<pre>152:d.PROTOCOL_SSLv23 = _SSLMetho.</pre>
+<pre>153:ame, value in _SSLMethod.__member.</pre>
+<pre>155:_SSLv2_IF_EXISTS = .</pre>
+<pre>155:getattr(_SSLMethod, 'PROTOC.</pre>
+<pre>155:OL_SSLv2', None).</pre>
+<pre>159:M_SUPPORTED = _ssl.PROTO_MINIMUM_.</pre>
+<pre>160:    SSLv3 = _ssl.PROTO_SSLv3.</pre>
+<pre>161:    TLSv1 = _ssl.PROTO_TLSv1.</pre>
+<pre>162:    TLSv1_1 = _ssl.PROTO_TLSv1_1.</pre>
+<pre>163:    TLSv1_2 = _ssl.PROTO_TLSv1_2.</pre>
+<pre>164:    TLSv1_3 = _ssl.PROTO_TLSv1_3.</pre>
+<pre>165:M_SUPPORTED = _ssl.PROTO_MAXIMUM_.</pre>
+<pre>253:    from _ssl import enum_ce.</pre>
+<pre>267:AME = hasattr(_ssl, 'HOSTFLAG_NEV.</pre>
+<pre>272:ificateError = SSLCertVerificatio.</pre>
+<pre>365:    # OpenSSL may add a trai.</pre>
+<pre>373:    SSLSocket.getpeerc.</pre>
+<pre>386:              "SSL socket or SSL .</pre>
+<pre>429:ile capath openssl_cafile_env ope.</pre>
+<pre>429:nssl_cafile openssl.</pre>
+<pre>430:    "openssl_capath").</pre>
+<pre>435:    parts = _ssl.get_default_ve.</pre>
+<pre>456:bject from OpenSSL numeric ID.</pre>
+<pre>468:    """SSLContext purpose.</pre>
+<pre>474:class SSLContext(_SSLCon.</pre>
+<pre>475:    """An SSLContext holds v.</pre>
+<pre>475:arious SSL-related config.</pre>
+<pre>476:and possibly a private key.""".</pre>
+<pre>477:ores = ("CA", "ROOT").</pre>
+<pre>479:    sslsocket_class = .</pre>
+<pre>479:None  # SSLSocket is assig.</pre>
+<pre>480:    sslobject_class = .</pre>
+<pre>480:None  # SSLObject is assig.</pre>
+<pre>483:       self = _SSLContext.__new__.</pre>
+<pre>498:        # SSLSocket class ha.</pre>
+<pre>500:   return self.sslsocket_class._c.</pre>
+<pre>514:   return self.sslobject_class._c.</pre>
+<pre>525:         raise SSLError('NPN prot.</pre>
+<pre>538:   def shim_cb(sslobj, servername.</pre>
+<pre>538:, sslctx):.</pre>
+<pre>540:_name_callback(sslobj, servername.</pre>
+<pre>540:, sslctx).</pre>
+<pre>549:         raise SSLError('ALPN pro.</pre>
+<pre>577:   if hasattr(_SSLContext, 'minim.</pre>
+<pre>584: == TLSVersion.SSLv3:.</pre>
+<pre>585:~Options.OP_NO_SSLv3.</pre>
+<pre>586:         super(SSLContext, SSLCon.</pre>
+<pre>594:         super(SSLContext, SSLCon.</pre>
+<pre>602:        super(SSLContext, SSLCon.</pre>
+<pre>604:   if hasattr(_ssl, 'HOSTFLAG_NEV.</pre>
+<pre>607:_host_flags &amp; _ssl.HOSTFLAG_NEVER.</pre>
+<pre>608:return ncs != _ssl.HOSTFLAG_NEVER.</pre>
+<pre>613:ost_flags &amp;= ~_ssl.HOSTFLAG_NEVER.</pre>
+<pre>615:host_flags |= _ssl.HOSTFLAG_NEVER.</pre>
+<pre>637:       :class:`SSLSocket` or :cla.</pre>
+<pre>637:ss:`SSLObject` instanc.</pre>
+<pre>663:         super(SSLContext, SSLCon.</pre>
+<pre>696:        super(SSLContext, SSLCon.</pre>
+<pre>700:       return _SSLMethod(super()..</pre>
+<pre>708:        super(SSLContext, SSLCon.</pre>
+<pre>720:        super(SSLContext, SSLCon.</pre>
+<pre>725:   """Create a SSLContext object .</pre>
+<pre>734:    # SSLContext sets OP.</pre>
+<pre>734:_NO_SSLv2, OP_NO_SSLv3.</pre>
+<pre>737:    context = SSLContext(PROTOCO.</pre>
+<pre>749:        # root CA certificate.</pre>
+<pre>751:    # OpenSSL 1.1.1 keylog f.</pre>
+<pre>753:s.environ.get('SSLKEYLOGFILE').</pre>
+<pre>762:   """Create a SSLContext object .</pre>
+<pre>764:tion to create SSLContext.</pre>
+<pre>772:    # SSLContext sets OP.</pre>
+<pre>772:_NO_SSLv2, OP_NO_SSLv3.</pre>
+<pre>775:    context = SSLContext(protoco.</pre>
+<pre>789:    # load CA root certs.</pre>
+<pre>795:        # root CA certificate.</pre>
+<pre>797:    # OpenSSL 1.1.1 keylog f.</pre>
+<pre>799:s.environ.get('SSLKEYLOGFILE').</pre>
+<pre>812:class SSLObject:.</pre>
+<pre>813:of a low-level SSL object as.</pre>
+<pre>814:emented by OpenSSL. This object c.</pre>
+<pre>814:he state of an SSL connection.</pre>
+<pre>816: which are OpenSSL's IO abstracti.</pre>
+<pre>819:    ``SSLContext.wrap_bi.</pre>
+<pre>820:hronous IO for SSL through memory.</pre>
+<pre>822: compared to ``SSLSocket``, this .</pre>
+<pre>830:re returned by SSLContext.wrap_bi.</pre>
+<pre>837:        sslobj = context._.</pre>
+<pre>842:        self._sslobj = sslobj.</pre>
+<pre>847:        """The SSLContext that is.</pre>
+<pre>848:  return self._sslobj.context.</pre>
+<pre>852:        self._sslobj.context = c.</pre>
+<pre>856:        """The SSLSession for cli.</pre>
+<pre>857:  return self._sslobj.session.</pre>
+<pre>861:        self._sslobj.session = s.</pre>
+<pre>866:  return self._sslobj.session_reu.</pre>
+<pre>871:  return self._sslobj.server_side.</pre>
+<pre>877:  return self._sslobj.server_host.</pre>
+<pre>880:bytes from the SSL object and ret.</pre>
+<pre>886:     v = self._sslobj.read(len, b.</pre>
+<pre>888:     v = self._sslobj.read(len).</pre>
+<pre>892: 'data' to the SSL object and ret.</pre>
+<pre>897:  return self._sslobj.write(data).</pre>
+<pre>901:her end of the SSL channel..</pre>
+<pre>906:  return self._sslobj.getpeercert.</pre>
+<pre>912:        if _ssl.HAS_NPN:.</pre>
+<pre>913:  return self._sslobj.selected_np.</pre>
+<pre>919:        if _ssl.HAS_ALPN:.</pre>
+<pre>920:  return self._sslobj.selected_al.</pre>
+<pre>924:        ssl_version, secre.</pre>
+<pre>925:  return self._sslobj.cipher().</pre>
+<pre>931:  return self._sslobj.shared_ciph.</pre>
+<pre>936:  return self._sslobj.compression.</pre>
+<pre>940:  return self._sslobj.pending().</pre>
+<pre>943:  """Start the SSL/TLS handshake..</pre>
+<pre>944:        self._sslobj.do_handshak.</pre>
+<pre>947:  """Start the SSL shutdown hands.</pre>
+<pre>948:  return self._sslobj.shutdown().</pre>
+<pre>954:  return self._sslobj.get_channel.</pre>
+<pre>958:       current SSL channel. """.</pre>
+<pre>959:  return self._sslobj.version().</pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/gevent/ssl.py</span></pre>
+<pre>962:  return self._sslobj.verify_clie.</pre>
+<pre>2:Sockets Layer (SSL/TLS) module..</pre>
+<pre>965:def _sslcopydoc(func):.</pre>
+<pre>966:docstring from SSLObject to SSLSo.</pre>
+<pre>13:tr(__import__('ssl'), 'SSLContext.</pre>
+<pre>16:bout to import ssl anyway so it's.</pre>
+<pre>967:oc__ = getattr(SSLObject, func.__.</pre>
+<pre>18:gevent import _sslgte279 as _sour.</pre>
+<pre>971:class SSLSocket(socket):.</pre>
+<pre>20:gevent import _ssl2 as _source.</pre>
+<pre>973:S socket in an SSL context when n.</pre>
+<pre>23:as an insecure SSL implementation.</pre>
+<pre>980:            f"SSLContext.wrap_so.</pre>
+<pre>32:gevent import _ssl3 as _source # .</pre>
+<pre>1004:        super(SSLSocket, self)._.</pre>
+<pre>1011:        self._sslobj = None.</pre>
+<pre>1029:  # create the SSL object.</pre>
+<pre>1031:         self._sslobj = self._con.</pre>
+<pre>1047:    &commat;_sslcopydoc.</pre>
+<pre>1054:        self._sslobj.context = c.</pre>
+<pre>1057:    &commat;_sslcopydoc.</pre>
+<pre>1059:      if self._sslobj is not None.</pre>
+<pre>1060:  return self._sslobj.session.</pre>
+<pre>1065:      if self._sslobj is not None.</pre>
+<pre>1066:         self._sslobj.session = s.</pre>
+<pre>1069:    &commat;_sslcopydoc.</pre>
+<pre>1071:      if self._sslobj is not None.</pre>
+<pre>1072:  return self._sslobj.session_reu.</pre>
+<pre>1095:      if self._sslobj is None:.</pre>
+<pre>1096:d or unwrapped SSL socket.").</pre>
+<pre>1099:  return self._sslobj.read(len, b.</pre>
+<pre>1101:  return self._sslobj.read(len).</pre>
+<pre>1102:        except SSLError as x:.</pre>
+<pre>1103:f x.args[0] == SSL_ERROR_EOF and .</pre>
+<pre>1112:the underlying SSL channel.  Retu.</pre>
+<pre>1116:      if self._sslobj is None:.</pre>
+<pre>1117:d or unwrapped SSL socket.").</pre>
+<pre>1118:  return self._sslobj.write(data).</pre>
+<pre>1120:    &commat;_sslcopydoc.</pre>
+<pre>1124:  return self._sslobj.getpeercert.</pre>
+<pre>1126:    &commat;_sslcopydoc.</pre>
+<pre>1129:      if self._sslobj is None or .</pre>
+<pre>1129:not _ssl.HAS_NPN:.</pre>
+<pre>1132:  return self._sslobj.selected_np.</pre>
+<pre>1134:    &commat;_sslcopydoc.</pre>
+<pre>1137:      if self._sslobj is None or .</pre>
+<pre>1137:not _ssl.HAS_ALPN:.</pre>
+<pre>1140:  return self._sslobj.selected_al.</pre>
+<pre>1142:    &commat;_sslcopydoc.</pre>
+<pre>1145:      if self._sslobj is None:.</pre>
+<pre>1148:  return self._sslobj.cipher().</pre>
+<pre>1150:    &commat;_sslcopydoc.</pre>
+<pre>1153:      if self._sslobj is None:.</pre>
+<pre>1156:  return self._sslobj.shared_ciph.</pre>
+<pre>1158:    &commat;_sslcopydoc.</pre>
+<pre>1161:      if self._sslobj is None:.</pre>
+<pre>1164:  return self._sslobj.compression.</pre>
+<pre>1168:      if self._sslobj is not None.</pre>
+<pre>1173:  return self._sslobj.write(data).</pre>
+<pre>1179:      if self._sslobj is not None.</pre>
+<pre>1195:      if self._sslobj is not None.</pre>
+<pre>1213:      if self._sslobj is not None.</pre>
+<pre>1221:      if self._sslobj is not None.</pre>
+<pre>1236:      if self._sslobj is not None.</pre>
+<pre>1247:      if self._sslobj is not None.</pre>
+<pre>1255:      if self._sslobj is not None.</pre>
+<pre>1269:    &commat;_sslcopydoc.</pre>
+<pre>1272:      if self._sslobj is not None.</pre>
+<pre>1273:  return self._sslobj.pending().</pre>
+<pre>1279:        self._sslobj = None.</pre>
+<pre>1282:    &commat;_sslcopydoc.</pre>
+<pre>1284:      if self._sslobj:.</pre>
+<pre>1285:     s = self._sslobj.shutdown().</pre>
+<pre>1286:         self._sslobj = None.</pre>
+<pre>1289:ValueError("No SSL wrapper around.</pre>
+<pre>1291:    &commat;_sslcopydoc.</pre>
+<pre>1293:      if self._sslobj:.</pre>
+<pre>1294:  return self._sslobj.verify_clie.</pre>
+<pre>1296:ValueError("No SSL wrapper around.</pre>
+<pre>1299:        self._sslobj = None.</pre>
+<pre>1302:    &commat;_sslcopydoc.</pre>
+<pre>1309:         self._sslobj.do_handshak.</pre>
+<pre>1318:ected or self._sslobj is not None.</pre>
+<pre>1319:eady-connected SSLSocket!").</pre>
+<pre>1320:        self._sslobj = self.cont.</pre>
+<pre>1336:         self._sslobj = None.</pre>
+<pre>1341:        an SSL channel.""".</pre>
+<pre>1346:        an SSL channel.""".</pre>
+<pre>1352:        SSL channel, and t.</pre>
+<pre>1361:    &commat;_sslcopydoc.</pre>
+<pre>1363:      if self._sslobj is not None.</pre>
+<pre>1364:  return self._sslobj.get_channel.</pre>
+<pre>1372:    &commat;_sslcopydoc.</pre>
+<pre>1374:      if self._sslobj is not None.</pre>
+<pre>1375:  return self._sslobj.version().</pre>
+<pre>1381:SSLContext.sslsocket_class = .</pre>
+<pre>1381:SSLSocket.</pre>
+<pre>1382:SSLContext.sslobject_class = .</pre>
+<pre>1382:SSLObject.</pre>
+<pre>1387:               ssl_version=PROTOC.</pre>
+<pre>1397:    context = SSLContext(ssl_ver.</pre>
+<pre>1469:tificate(addr, ssl_version=PROTOC.</pre>
+<pre>1473:    If 'ssl_version' is sp.</pre>
+<pre>1480:stdlib_context(ssl_version,.</pre>
+<pre>1484:ocket(sock) as sslsock:.</pre>
+<pre>1485:     dercert = sslsock.getpeercer.</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

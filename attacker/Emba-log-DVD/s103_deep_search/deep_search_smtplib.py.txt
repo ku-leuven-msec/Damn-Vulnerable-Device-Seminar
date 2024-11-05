@@ -1,0 +1,31 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/smtplib.py[0m
+63:SMTP_SSL_PORT = 465.
+141:t the username/password.
+182:    import ssl.
+184:    _have_ssl = False.
+186:    _have_ssl = True.
+304:mpler for SMTP_SSL to use the SMT.
+650:      and self.password to be set.""".
+655:          self.password.encode('ascii'.
+659:        self.password to be set.""".
+660:elf.user, self.password).
+664:        self.password to be set.""".
+668:   return self.password.
+670:in(self, user, password, *, initial_re.
+675:            - password:     The passw.
+691:               password combination..
+719:elf.user, self.password = user, passwo.
+759:  if not _have_ssl:.
+760:ntimeError("No SSL support includ.
+772:     context = ssl._create_stdlib.
+996:if _have_ssl:.
+998:    class SMTP_SSL(SMTP):.
+999:nnects over an SSL.
+1001: compiled with SSL support). If h.
+1002:dard SMTP-over-SSL port.
+1005: PEM formatted private key and certificat.
+1006:       for the SSL connection. co.
+1007:        SSLContext, and is.
+1012:lt_port = SMTP_SSL_PORT.
+1031:     context = ssl._create_stdlib.
+1046:_.append("SMTP_SSL").

@@ -1,0 +1,106 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibrpmbuild.so.8.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibrpmbuild.so.8.1.0[0m
+
+    7f38:	b5001fe0 	cbnz	x0, 8334 <rpmFileHasSuffix@plt+0xc44>
+    7f3c:	2a1503e0 	mov	w0, w21
+    7f40:	a94153f3 	ldp	x19, x20, [sp, #16]
+    7f44:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    7f48:	a94363f7 	ldp	x23, x24, [sp, #48]
+    7f4c:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    7f50:	a94573fb 	ldp	x27, x28, [sp, #80]
+    7f54:	a8cb7bfd 	ldp	x29, x30, [sp], #176
+    7f58:	d65f03c0 	ret
+    7f5c:	d2800021 	mov	x1, #0x1                   	// #1
+    7f60:	d2808000 	mov	x0, #0x400                 	// #1024
+    7f64:	97fffd83 	bl	7570 <rcalloc@plt>
+    7f68:	f90037e0 	str	x0, [sp, #104]
+    7f6c:	d2808001 	mov	x1, #0x400                 	// #1024
+    7f70:	97fffc44 	bl	7080 <gethostname@plt>
+    7f74:	f94037e0 	ldr	x0, [sp, #104]
+    7f78:	97fffa82 	bl	6980 <gethostbyname@plt>
+    7f7c:	b4001020 	cbz	x0, 8180 <rpmFileHasSuffix@plt+0xa90>
+    7f80:	f9400001 	ldr	x1, [x0]
+    7f84:	f94037e0 	ldr	x0, [sp, #104]
+[31m    7f88:	97fffb22 	bl	6c10 <strcpy@plt>[0m
+    7f8c:	aa1503e0 	mov	x0, x21
+    7f90:	97fffa84 	bl	69a0 <free@plt>
+--
+    89fc:	54000868 	b.hi	8b08 <rpmSpecBuild@@Base+0x7c8>  // b.pmore
+    8a00:	d2800014 	mov	x20, #0x0                   	// #0
+    8a04:	a90363f7 	stp	x23, x24, [sp, #48]
+    8a08:	52800037 	mov	w23, #0x1                   	// #1
+    8a0c:	f90023f9 	str	x25, [sp, #64]
+    8a10:	1400001b 	b	8a7c <rpmSpecBuild@@Base+0x73c>
+    8a14:	71001abf 	cmp	w21, #0x6
+    8a18:	54000be0 	b.eq	8b94 <rpmSpecBuild@@Base+0x854>  // b.none
+    8a1c:	f9400660 	ldr	x0, [x19, #8]
+    8a20:	97fff748 	bl	6740 <strlen@plt>
+    8a24:	aa0003f5 	mov	x21, x0
+    8a28:	f9400680 	ldr	x0, [x20, #8]
+    8a2c:	97fff745 	bl	6740 <strlen@plt>
+    8a30:	8b0002a0 	add	x0, x21, x0
+    8a34:	91000400 	add	x0, x0, #0x1
+    8a38:	97fff8d6 	bl	6d90 <rmalloc@plt>
+    8a3c:	f9400661 	ldr	x1, [x19, #8]
+    8a40:	aa0003f5 	mov	x21, x0
+    8a44:	97fffae7 	bl	75e0 <stpcpy@plt>
+    8a48:	f9400681 	ldr	x1, [x20, #8]
+[31m    8a4c:	97fff871 	bl	6c10 <strcpy@plt>[0m
+    8a50:	aa1303e0 	mov	x0, x19
+    8a54:	97fffe43 	bl	8360 <rpmSpecBuild@@Base+0x20>
+--
+    f8ec:	b9401663 	ldr	w3, [x19, #20]
+    f8f0:	aa0003f5 	mov	x21, x0
+    f8f4:	6b14007f 	cmp	w3, w20
+    f8f8:	5400052c 	b.gt	f99c <rpmSpecBuild@@Base+0x765c>
+    f8fc:	b9401261 	ldr	w1, [x19, #16]
+    f900:	f9400260 	ldr	x0, [x19]
+    f904:	d503201f 	nop
+    f908:	11100063 	add	w3, w3, #0x400
+    f90c:	11100021 	add	w1, w1, #0x400
+    f910:	29020e61 	stp	w1, w3, [x19, #16]
+    f914:	93407c21 	sxtw	x1, w1
+    f918:	97ffde9e 	bl	7390 <rrealloc@plt>
+    f91c:	29420e61 	ldp	w1, w3, [x19, #16]
+    f920:	4b030022 	sub	w2, w1, w3
+    f924:	6b14007f 	cmp	w3, w20
+    f928:	8b22c002 	add	x2, x0, w2, sxtw
+    f92c:	a9000a60 	stp	x0, x2, [x19]
+    f930:	54fffecd 	b.le	f908 <rpmSpecBuild@@Base+0x75c8>
+    f934:	aa1703e1 	mov	x1, x23
+    f938:	aa0203e0 	mov	x0, x2
+[31m    f93c:	97ffdcb5 	bl	6c10 <strcpy@plt>[0m
+    f940:	f9400661 	ldr	x1, [x19, #8]
+    f944:	93407ea3 	sxtw	x3, w21
+--
+   13858:	54000060 	b.eq	13864 <rpmSpecBuild@@Base+0xb524>  // b.none
+   1385c:	6b00035f 	cmp	w26, w0
+   13860:	54fffbe1 	b.ne	137dc <rpmSpecBuild@@Base+0xb49c>  // b.any
+   13864:	90000061 	adrp	x1, 1f000 <rpmspecQuery@@Base+0x2c20>
+   13868:	f0000040 	adrp	x0, 1e000 <rpmspecQuery@@Base+0x1c20>
+   1386c:	913d8021 	add	x1, x1, #0xf60
+   13870:	17ffff84 	b	13680 <rpmSpecBuild@@Base+0xb340>
+   13874:	90000061 	adrp	x1, 1f000 <rpmspecQuery@@Base+0x2c20>
+   13878:	f0000040 	adrp	x0, 1e000 <rpmspecQuery@@Base+0x1c20>
+   1387c:	913d0021 	add	x1, x1, #0xf40
+   13880:	17ffff80 	b	13680 <rpmSpecBuild@@Base+0xb340>
+   13884:	7100e81f 	cmp	w0, #0x3a
+   13888:	540061a1 	b.ne	144bc <rpmSpecBuild@@Base+0xc17c>  // b.any
+   1388c:	7100043f 	cmp	w1, #0x1
+   13890:	90000062 	adrp	x2, 1f000 <rpmspecQuery@@Base+0x2c20>
+   13894:	9130e042 	add	x2, x2, #0xc38
+   13898:	f0000041 	adrp	x1, 1e000 <rpmspecQuery@@Base+0x1c20>
+   1389c:	9108c021 	add	x1, x1, #0x230
+   138a0:	910363e0 	add	x0, sp, #0xd8
+   138a4:	9a810041 	csel	x1, x2, x1, eq  // eq = none
+[31m   138a8:	97ffccda 	bl	6c10 <strcpy@plt>[0m
+   138ac:	b940035a 	ldr	w26, [x26]
+   138b0:	17ffff01 	b	134b4 <rpmSpecBuild@@Base+0xb174>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m4[0m times [0;33mlibrpmbuild.so.8.1.0[0m
+

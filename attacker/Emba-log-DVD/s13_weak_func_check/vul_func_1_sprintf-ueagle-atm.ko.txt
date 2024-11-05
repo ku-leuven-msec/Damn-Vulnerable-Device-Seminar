@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mueagle-atm.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m288) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mueagle-atm.ko[0m
+
+     b48:	f9403e80 	ldr	x0, [x20, #120]
+     b4c:	b4000400 	cbz	x0, bcc <stat_delin_show+0xbc>
+     b50:	f9400400 	ldr	x0, [x0, #8]
+     b54:	b40003c0 	cbz	x0, bcc <stat_delin_show+0xbc>
+     b58:	b9401401 	ldr	w1, [x0, #20]
+     b5c:	b940bc02 	ldr	w2, [x0, #188]
+     b60:	12000c20 	and	w0, w1, #0xf
+     b64:	7100101f 	cmp	w0, #0x4
+     b68:	540002a0 	b.eq	bbc <stat_delin_show+0xac>  // b.none
+     b6c:	7216045f 	tst	w2, #0xc00
+     b70:	540003e1 	b.ne	bec <stat_delin_show+0xdc>  // b.any
+     b74:	721c045f 	tst	w2, #0x30
+     b78:	90000000 	adrp	x0, 0 <stat_firmid_show>
+     b7c:	90000002 	adrp	x2, 0 <stat_firmid_show>
+     b80:	91000000 	add	x0, x0, #0x0
+     b84:	91000042 	add	x2, x2, #0x0
+     b88:	9a800042 	csel	x2, x2, x0, eq  // eq = none
+     b8c:	90000001 	adrp	x1, 0 <stat_firmid_show>
+     b90:	91000021 	add	x1, x1, #0x0
+     b94:	aa1503e0 	mov	x0, x21
+[31m     b98:	94000000 	bl	0 <sprintf>[0m
+     b9c:	93407c14 	sxtw	x20, w0
+     ba0:	aa1303e0 	mov	x0, x19
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mueagle-atm.ko[0m
+

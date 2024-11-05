@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mieee802154.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m613) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mieee802154.ko[0m
+
+    926c:	51001099 	sub	w25, w4, #0x4
+    9270:	2a1903e0 	mov	w0, w25
+    9274:	94000000 	bl	0 <perf_trace_buf_alloc>
+    9278:	aa0003f3 	mov	x19, x0
+    927c:	b40003a0 	cbz	x0, 92f0 <perf_trace_802154_rdev_add_virtual_intf+0x120>
+    9280:	f94043a1 	ldr	x1, [x29, #128]
+    9284:	910003e3 	mov	x3, sp
+    9288:	d28000a2 	mov	x2, #0x5                   	// #5
+    928c:	91002000 	add	x0, x0, #0x8
+    9290:	f900743d 	str	x29, [x1, #232]
+    9294:	a90fec23 	stp	x3, x27, [x1, #248]
+    9298:	f9008422 	str	x2, [x1, #264]
+    929c:	b9002a77 	str	w23, [x19, #40]
+    92a0:	f940a301 	ldr	x1, [x24, #320]
+    92a4:	b40003e1 	cbz	x1, 9320 <perf_trace_802154_rdev_add_virtual_intf+0x150>
+    92a8:	d2800402 	mov	x2, #0x20                  	// #32
+    92ac:	94000000 	bl	0 <strlcpy>
+    92b0:	79405260 	ldrh	w0, [x19, #40]
+    92b4:	aa1403e1 	mov	x1, x20
+    92b8:	8b000260 	add	x0, x19, x0
+[31m    92bc:	94000000 	bl	0 <strcpy>[0m
+    92c0:	b9407fa2 	ldr	w2, [x29, #124]
+    92c4:	aa1c03e6 	mov	x6, x28
+--
+    93a0:	94000000 	bl	0 <strlen>
+    93a4:	11000400 	add	w0, w0, #0x1
+    93a8:	53103c19 	lsl	w25, w0, #16
+    93ac:	93407c00 	sxtw	x0, w0
+    93b0:	321d0b39 	orr	w25, w25, #0x38
+    93b4:	9100e002 	add	x2, x0, #0x38
+    93b8:	aa1303e1 	mov	x1, x19
+    93bc:	910163e0 	add	x0, sp, #0x58
+    93c0:	94000000 	bl	0 <trace_event_buffer_reserve>
+    93c4:	aa0003f3 	mov	x19, x0
+    93c8:	b40001e0 	cbz	x0, 9404 <trace_event_raw_event_802154_rdev_add_virtual_intf+0xbc>
+    93cc:	b9002a79 	str	w25, [x19, #40]
+    93d0:	91002000 	add	x0, x0, #0x8
+    93d4:	f940a2c1 	ldr	x1, [x22, #320]
+    93d8:	b40002c1 	cbz	x1, 9430 <trace_event_raw_event_802154_rdev_add_virtual_intf+0xe8>
+    93dc:	d2800402 	mov	x2, #0x20                  	// #32
+    93e0:	94000000 	bl	0 <strlcpy>
+    93e4:	79405260 	ldrh	w0, [x19, #40]
+    93e8:	aa1403e1 	mov	x1, x20
+    93ec:	8b000260 	add	x0, x19, x0
+[31m    93f0:	94000000 	bl	0 <strcpy>[0m
+    93f4:	b9002e78 	str	w24, [x19, #44]
+    93f8:	910163e0 	add	x0, sp, #0x58
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mieee802154.ko[0m
+

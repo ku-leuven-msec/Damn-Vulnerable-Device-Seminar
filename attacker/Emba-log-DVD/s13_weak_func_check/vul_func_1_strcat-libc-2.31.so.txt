@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibc-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibc-2.31.so[0m
+
+   a9778:	35fffd00 	cbnz	w0, a9718 <glob_pattern_p@@GLIBC_2.17+0x1fb8>
+   a977c:	17ffff1e 	b	a93f4 <glob_pattern_p@@GLIBC_2.17+0x1c94>
+   a9780:	7100ff3f 	cmp	w25, #0x3f
+   a9784:	54000401 	b.ne	a9804 <glob_pattern_p@@GLIBC_2.17+0x20a4>  // b.any
+   a9788:	b94077a4 	ldr	w4, [x29, #116]
+   a978c:	aa1403e6 	mov	x6, x20
+   a9790:	2a1503e3 	mov	w3, w21
+   a9794:	aa1703e2 	mov	x2, x23
+   a9798:	aa1303e1 	mov	x1, x19
+   a979c:	aa1a03e0 	mov	x0, x26
+   a97a0:	d2800005 	mov	x5, #0x0                   	// #0
+   a97a4:	9400004b 	bl	a98d0 <glob_pattern_p@@GLIBC_2.17+0x2170>
+   a97a8:	2a0003fb 	mov	w27, w0
+   a97ac:	34ffe240 	cbz	w0, a93f4 <glob_pattern_p@@GLIBC_2.17+0x1c94>
+   a97b0:	b94077a0 	ldr	w0, [x29, #116]
+   a97b4:	121d7818 	and	w24, w0, #0xfffffffb
+   a97b8:	f240001f 	tst	x0, #0x1
+   a97bc:	1a981018 	csel	w24, w0, w24, ne  // ne = any
+   a97c0:	aa1a03e1 	mov	x1, x26
+   a97c4:	910026c0 	add	x0, x22, #0x9
+[31m   a97c8:	97ff50e6 	bl	7db60 <strcat@@GLIBC_2.17>[0m
+   a97cc:	aa1403e6 	mov	x6, x20
+   a97d0:	2a1803e4 	mov	w4, w24
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m1[0m times [0;33mlibc-2.31.so[0m
+

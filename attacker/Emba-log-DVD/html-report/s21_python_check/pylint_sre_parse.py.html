@@ -1,0 +1,381 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module sre_parse</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:833:0: C0325: Unnecessary parens after 'not' keyword (superfluous-parens)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:1:0: C0302: Too many lines in module (1064/1000) (too-many-lines)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0401: Wildcard import sre_constants (wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:28:26: E0602: Undefined variable 'MIN_REPEAT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:28:38: E0602: Undefined variable 'MAX_REPEAT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:29:24: E0602: Undefined variable 'ANY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:29:29: E0602: Undefined variable 'RANGE' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:29:36: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:29:40: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:29:49: E0602: Undefined variable 'NOT_LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:29:62: E0602: Undefined variable 'CATEGORY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:32:12: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:33:12: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:34:12: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:35:12: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:36:12: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:37:12: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:38:12: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:39:12: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:43:12: E0602: Undefined variable 'AT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:43:16: E0602: Undefined variable 'AT_BEGINNING_STRING' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:44:12: E0602: Undefined variable 'AT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:44:16: E0602: Undefined variable 'AT_BOUNDARY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:45:12: E0602: Undefined variable 'AT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:45:16: E0602: Undefined variable 'AT_NON_BOUNDARY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:46:12: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:46:18: E0602: Undefined variable 'CATEGORY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:46:28: E0602: Undefined variable 'CATEGORY_DIGIT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:47:12: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:47:18: E0602: Undefined variable 'CATEGORY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:47:28: E0602: Undefined variable 'CATEGORY_NOT_DIGIT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:48:12: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:48:18: E0602: Undefined variable 'CATEGORY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:48:28: E0602: Undefined variable 'CATEGORY_SPACE' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:49:12: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:49:18: E0602: Undefined variable 'CATEGORY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:49:28: E0602: Undefined variable 'CATEGORY_NOT_SPACE' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:50:12: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:50:18: E0602: Undefined variable 'CATEGORY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:50:28: E0602: Undefined variable 'CATEGORY_WORD' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:51:12: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:51:18: E0602: Undefined variable 'CATEGORY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:51:28: E0602: Undefined variable 'CATEGORY_NOT_WORD' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:52:12: E0602: Undefined variable 'AT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:52:16: E0602: Undefined variable 'AT_END_STRING' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:96:4: C0103: Argument name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:945:4: W0201: Attribute 'str' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:954:8: W0201: Attribute 'str' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:119:8: C0103: Variable name "nl" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:121:12: C0103: Variable name "op" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:121:16: C0103: Variable name "av" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:123:21: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:126:16: W0621: Redefining name 'op' from outer scope (line 121) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:126:20: C0103: Variable name "op" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:126:24: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:128:23: E0602: Undefined variable 'BRANCH' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:130:23: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:134:23: E0602: Undefined variable 'GROUPREF_EXISTS' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:142:16: C0103: Variable name "nl" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:143:20: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:148:24: C0103: Variable name "nl" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:153:24: C0103: Variable name "nl" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:118:4: R0912: Too many branches (16/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:178:8: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:178:13: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:179:12: C0103: Variable name "op" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:179:16: C0103: Variable name "av" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:180:21: E0602: Undefined variable 'BRANCH' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:183:16: W0621: Redefining name 'av' from outer scope (line 179) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:183:20: C0103: Variable name "av" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:184:20: C0103: Variable name "l" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:184:23: C0103: Variable name "h" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:187:16: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:188:16: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:189:23: E0602: Undefined variable 'CALL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:191:16: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:192:16: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:193:23: E0602: Undefined variable 'SUBPATTERN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:195:16: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:196:16: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:199:16: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:200:16: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:202:16: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:203:16: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:204:23: E0602: Undefined variable 'GROUPREF' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:206:16: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:207:16: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:208:23: E0602: Undefined variable 'GROUPREF_EXISTS' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:211:20: C0103: Variable name "l" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:211:23: C0103: Variable name "h" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:216:16: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:217:16: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:218:23: E0602: Undefined variable 'SUCCESS' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:174:4: R0912: Too many branches (13/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:258:4: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:261:12: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:270:12: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:301:27: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:304:8: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:305:8: R1705: Unnecessary "elif" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:310:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:316:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:322:12: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:324:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:326:12: C0415: Import outside toplevel (unicodedata) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:332:16: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:334:16: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:336:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:340:12: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:344:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:350:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:295:0: R0911: Too many return statements (8/6) (too-many-return-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:295:0: R0912: Too many branches (17/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:364:8: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:365:8: R1705: Unnecessary "elif" after "return" (no-else-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:370:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:376:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:382:12: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:384:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:386:12: C0415: Import outside toplevel (unicodedata) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:392:16: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:394:16: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:396:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:400:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:409:20: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:414:27: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:422:23: E0602: Undefined variable 'GROUPREF' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:427:19: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:355:0: R0911: Too many return statements (10/6) (too-many-return-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:355:0: R0912: Too many branches (21/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:355:0: R0915: Too many statements (52/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:473:4: W0622: Redefining built-in 'set' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:477:8: C0103: Variable name "op" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:477:12: C0103: Variable name "av" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:478:17: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:480:19: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:480:42: E0602: Undefined variable 'NEGATE' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:487:27: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:490:23: E0602: Undefined variable 'BRANCH' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:441:4: W0612: Unused variable 'start' (unused-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:435:0: R0912: Too many branches (16/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:534:12: W0622: Redefining built-in 'set' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:624:16: W0622: Redefining built-in 'min' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:624:21: W0622: Redefining built-in 'max' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:742:20: W0622: Redefining built-in 'dir' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:493:0: R0914: Too many local variables (47/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:529:30: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:539:16: C0415: Import outside toplevel (warnings) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:551:16: R1723: Unnecessary "elif" after "break" (no-else-break)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:557:24: C0415: Import outside toplevel (warnings) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:567:28: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:575:39: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:578:35: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:584:28: C0415: Import outside toplevel (warnings) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:590:32: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:591:35: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:591:58: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:594:20: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:595:20: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:599:31: E0602: Undefined variable 'RANGE' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:601:35: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:607:47: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:610:38: E0602: Undefined variable 'NOT_LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:615:35: E0602: Undefined variable 'NEGATE' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:618:34: E0602: Undefined variable 'IN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:632:38: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:636:16: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:636:21: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:638:20: C0103: Variable name "lo" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:641:24: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:643:20: C0103: Variable name "hi" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:645:38: E0602: Undefined variable 'LITERAL' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:661:68: E0601: Using variable 'char' before assignment (used-before-assignment)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:667:41: E0602: Undefined variable 'AT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:673:29: E0602: Undefined variable 'SUBPATTERN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:674:45: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:678:34: E0602: Undefined variable 'MIN_REPEAT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:680:34: E0602: Undefined variable 'MAX_REPEAT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:683:30: E0602: Undefined variable 'ANY' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:718:42: E0602: Undefined variable 'GROUPREF' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:754:20: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:762:42: E0602: Undefined variable 'ASSERT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:764:42: E0602: Undefined variable 'ASSERT_NOT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (7/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:800:38: E0602: Undefined variable 'GROUPREF_EXISTS' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:808:28: C0415: Import outside toplevel (warnings) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:504:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:834:12: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:840:30: E0602: Undefined variable 'SUBPATTERN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:843:30: E0602: Undefined variable 'AT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:843:34: E0602: Undefined variable 'AT_BEGINNING' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:846:30: E0602: Undefined variable 'AT' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:846:34: E0602: Undefined variable 'AT_END' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:853:8: C0103: Variable name "op" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:853:12: C0103: Variable name "av" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:854:17: E0602: Undefined variable 'SUBPATTERN' (undefined-variable)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:855:41: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:493:0: R0912: Too many branches (114/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:493:0: R0915: Too many statements (273/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:861:0: R0912: Too many branches (21/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:861:0: R0915: Too many statements (54/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:937:10: W0622: Redefining built-in 'str' (redefined-builtin)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:948:8: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:956:8: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:972:4: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:993:12: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:1003:24: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:987:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:1030:24: C0103: Variable name "c" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:987:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:1042:24: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:969:0: R0912: Too many branches (25/12) (too-many-branches)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:969:0: R0915: Too many statements (72/50) (too-many-statements)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:1055:4: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:1063:8: W0707: Consider explicitly re-raising using the 'from' keyword (raise-missing-from)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import MAGIC from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import OPCODES from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import ATCODES from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import CHCODES from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import OP_IGNORE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import OP_LOCALE_IGNORE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import OP_UNICODE_IGNORE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import AT_MULTILINE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import AT_LOCALE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import AT_UNICODE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import CH_LOCALE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import CH_UNICODE from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import SRE_INFO_PREFIX from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import SRE_INFO_LITERAL from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import SRE_INFO_CHARSET from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import dump from wildcard import (unused-wildcard-import)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/sre_parse.py:15:0: W0614: Unused import f from wildcard import (unused-wildcard-import)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 2.04/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

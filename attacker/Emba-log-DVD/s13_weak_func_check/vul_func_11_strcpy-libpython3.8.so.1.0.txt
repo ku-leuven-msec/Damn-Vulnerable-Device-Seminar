@@ -1,0 +1,254 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibpython3.8.so.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibpython3.8.so.1.0[0m
+
+   72c74:	91004001 	add	x1, x0, #0x10
+   72c78:	97fffee2 	bl	72800 <PyOS_Readline@@Base+0x1f0>
+   72c7c:	f94037e1 	ldr	x1, [sp, #104]
+   72c80:	f94fbf40 	ldr	x0, [x26, #8056]
+   72c84:	b9000020 	str	w0, [x1]
+   72c88:	aa1703e0 	mov	x0, x23
+   72c8c:	97ffda39 	bl	69570 <PyParser_Delete@plt>
+   72c90:	f943c680 	ldr	x0, [x20, #1928]
+   72c94:	b4000280 	cbz	x0, 72ce4 <PyOS_Readline@@Base+0x6d4>
+   72c98:	52802aa0 	mov	w0, #0x155                 	// #341
+   72c9c:	97ffd6b5 	bl	68770 <PyNode_New@plt>
+   72ca0:	aa0003f3 	mov	x19, x0
+   72ca4:	b4fff580 	cbz	x0, 72b54 <PyOS_Readline@@Base+0x544>
+   72ca8:	f943c680 	ldr	x0, [x20, #1928]
+   72cac:	97ffc339 	bl	63990 <strlen@plt>
+   72cb0:	91000400 	add	x0, x0, #0x1
+   72cb4:	97ffca8f 	bl	656f0 <PyObject_Malloc@plt>
+   72cb8:	f9000660 	str	x0, [x19, #8]
+   72cbc:	b4000a40 	cbz	x0, 72e04 <PyOS_Readline@@Base+0x7f4>
+   72cc0:	f943c681 	ldr	x1, [x20, #1928]
+[31m   72cc4:	97ffd60b 	bl	684f0 <strcpy@plt>[0m
+   72cc8:	f943c680 	ldr	x0, [x20, #1928]
+   72ccc:	97ffc551 	bl	64210 <PyMem_Free@plt>
+--
+   7463c:	aa0003f9 	mov	x25, x0
+   74640:	f943d262 	ldr	x2, [x19, #1952]
+   74644:	cb1502d6 	sub	x22, x22, x21
+   74648:	8b160339 	add	x25, x25, x22
+   7464c:	aa1503e0 	mov	x0, x21
+   74650:	91000721 	add	x1, x25, #0x1
+   74654:	cb15035a 	sub	x26, x26, x21
+   74658:	cb150055 	sub	x21, x2, x21
+   7465c:	97ffc535 	bl	65b30 <PyMem_Realloc@plt>
+   74660:	b941ea61 	ldr	w1, [x19, #488]
+   74664:	aa0003e2 	mov	x2, x0
+   74668:	11000421 	add	w1, w1, #0x1
+   7466c:	b901ea61 	str	w1, [x19, #488]
+   74670:	b4002740 	cbz	x0, 74b58 <PyParser_ParseFile@@Base+0x1768>
+   74674:	aa1403e1 	mov	x1, x20
+   74678:	8b160000 	add	x0, x0, x22
+   7467c:	8b150055 	add	x21, x2, x21
+   74680:	a9000262 	stp	x2, x0, [x19]
+   74684:	f903ce60 	str	x0, [x19, #1944]
+   74688:	f903d275 	str	x21, [x19, #1952]
+[31m   7468c:	97ffcf99 	bl	684f0 <strcpy@plt>[0m
+   74690:	aa1403e0 	mov	x0, x20
+   74694:	97ffbedf 	bl	64210 <PyMem_Free@plt>
+--
+   7480c:	35000cc0 	cbnz	w0, 749a4 <PyParser_ParseFile@@Base+0x15b4>
+   74810:	f9400a74 	ldr	x20, [x19, #16]
+   74814:	385ff280 	ldurb	w0, [x20, #-1]
+   74818:	7100281f 	cmp	w0, #0xa
+   7481c:	54fffd20 	b.eq	747c0 <PyParser_ParseFile@@Base+0x13d0>  // b.none
+   74820:	79000297 	strh	w23, [x20]
+   74824:	17ffffe6 	b	747bc <PyParser_ParseFile@@Base+0x13cc>
+   74828:	aa1403e0 	mov	x0, x20
+   7482c:	97fffb49 	bl	73550 <PyParser_ParseFile@@Base+0x160>
+   74830:	aa0003f5 	mov	x21, x0
+   74834:	aa1403e0 	mov	x0, x20
+   74838:	97ffbe76 	bl	64210 <PyMem_Free@plt>
+   7483c:	b40019b5 	cbz	x21, 74b70 <PyParser_ParseFile@@Base+0x1780>
+   74840:	f9400aa0 	ldr	x0, [x21, #16]
+   74844:	910082b6 	add	x22, x21, #0x20
+   74848:	91000400 	add	x0, x0, #0x1
+   7484c:	97ffd435 	bl	69920 <PyMem_Malloc@plt>
+   74850:	aa0003f4 	mov	x20, x0
+   74854:	b40016e0 	cbz	x0, 74b30 <PyParser_ParseFile@@Base+0x1740>
+   74858:	aa1603e1 	mov	x1, x22
+[31m   7485c:	97ffcf25 	bl	684f0 <strcpy@plt>[0m
+   74860:	f94002a0 	ldr	x0, [x21]
+   74864:	d1000400 	sub	x0, x0, #0x1
+--
+   76074:	97fff503 	bl	73480 <PyParser_ParseFile@@Base+0x90>
+   76078:	aa0003f3 	mov	x19, x0
+   7607c:	b40002a0 	cbz	x0, 760d0 <PyTokenizer_FromFile@@Base+0x80>
+   76080:	d2840000 	mov	x0, #0x2000                	// #8192
+   76084:	97ffce27 	bl	69920 <PyMem_Malloc@plt>
+   76088:	f9000260 	str	x0, [x19]
+   7608c:	b40002e0 	cbz	x0, 760e8 <PyTokenizer_FromFile@@Base+0x98>
+   76090:	91400801 	add	x1, x0, #0x2, lsl #12
+   76094:	a9008260 	stp	x0, x0, [x19, #8]
+   76098:	f9000e61 	str	x1, [x19, #24]
+   7609c:	f9001a77 	str	x23, [x19, #48]
+   760a0:	a91dd676 	stp	x22, x21, [x19, #472]
+   760a4:	b4000174 	cbz	x20, 760d0 <PyTokenizer_FromFile@@Base+0x80>
+   760a8:	aa1403e0 	mov	x0, x20
+   760ac:	97ffb639 	bl	63990 <strlen@plt>
+   760b0:	91000400 	add	x0, x0, #0x1
+   760b4:	97ffce1b 	bl	69920 <PyMem_Malloc@plt>
+   760b8:	f903c660 	str	x0, [x19, #1928]
+   760bc:	b4000160 	cbz	x0, 760e8 <PyTokenizer_FromFile@@Base+0x98>
+   760c0:	aa1403e1 	mov	x1, x20
+[31m   760c4:	97ffc90b 	bl	684f0 <strcpy@plt>[0m
+   760c8:	52800040 	mov	w0, #0x2                   	// #2
+   760cc:	b9077a60 	str	w0, [x19, #1912]
+--
+   761d4:	aa1403e1 	mov	x1, x20
+   761d8:	aa1303e0 	mov	x0, x19
+   761dc:	97ffc03d 	bl	662d0 <PyTokenizer_Get@plt>
+   761e0:	b941ea63 	ldr	w3, [x19, #488]
+   761e4:	7100047f 	cmp	w3, #0x1
+   761e8:	5400008c 	b.gt	761f8 <PyTokenizer_FindEncodingFilename@@Base+0xb8>
+   761ec:	b9402a63 	ldr	w3, [x19, #40]
+   761f0:	7100287f 	cmp	w3, #0xa
+   761f4:	54fffee0 	b.eq	761d0 <PyTokenizer_FindEncodingFilename@@Base+0x90>  // b.none
+   761f8:	aa1703e0 	mov	x0, x23
+   761fc:	97ffbc19 	bl	65260 <fclose@plt>
+   76200:	f943c674 	ldr	x20, [x19, #1928]
+   76204:	b4000134 	cbz	x20, 76228 <PyTokenizer_FindEncodingFilename@@Base+0xe8>
+   76208:	aa1403e0 	mov	x0, x20
+   7620c:	97ffb5e1 	bl	63990 <strlen@plt>
+   76210:	91000400 	add	x0, x0, #0x1
+   76214:	97ffcdc3 	bl	69920 <PyMem_Malloc@plt>
+   76218:	aa0003f4 	mov	x20, x0
+   7621c:	b4000060 	cbz	x0, 76228 <PyTokenizer_FindEncodingFilename@@Base+0xe8>
+   76220:	f943c661 	ldr	x1, [x19, #1928]
+[31m   76224:	97ffc8b3 	bl	684f0 <strcpy@plt>[0m
+   76228:	aa1303e0 	mov	x0, x19
+   7622c:	97ffbb85 	bl	65040 <PyTokenizer_Free@plt>
+--
+   c8e6c:	d2800000 	mov	x0, #0x0                   	// #0
+   c8e70:	97fe6e7c 	bl	64860 <PyBytes_FromStringAndSize@plt>
+   c8e74:	aa0003f4 	mov	x20, x0
+   c8e78:	b4000b20 	cbz	x0, c8fdc <PyMemoryView_GetContiguous@@Base+0x1ec>
+   c8e7c:	97fff265 	bl	c5810 <PyODict_DelItem@@Base+0x18a0>
+   c8e80:	aa0003f6 	mov	x22, x0
+   c8e84:	f9400281 	ldr	x1, [x20]
+   c8e88:	d1000420 	sub	x0, x1, #0x1
+   c8e8c:	f9000280 	str	x0, [x20]
+   c8e90:	b4000c00 	cbz	x0, c9010 <PyMemoryView_GetContiguous@@Base+0x220>
+   c8e94:	b4000a56 	cbz	x22, c8fdc <PyMemoryView_GetContiguous@@Base+0x1ec>
+   c8e98:	f94016b8 	ldr	x24, [x21, #40]
+   c8e9c:	b40001b8 	cbz	x24, c8ed0 <PyMemoryView_GetContiguous@@Base+0xe0>
+   c8ea0:	aa1803e0 	mov	x0, x24
+   c8ea4:	97fe6abb 	bl	63990 <strlen@plt>
+   c8ea8:	91000400 	add	x0, x0, #0x1
+   c8eac:	97fe829d 	bl	69920 <PyMem_Malloc@plt>
+   c8eb0:	aa0003f4 	mov	x20, x0
+   c8eb4:	b40008a0 	cbz	x0, c8fc8 <PyMemoryView_GetContiguous@@Base+0x1d8>
+   c8eb8:	aa1803e1 	mov	x1, x24
+[31m   c8ebc:	97fe7d8d 	bl	684f0 <strcpy@plt>[0m
+   c8ec0:	b94012c1 	ldr	w1, [x22, #16]
+   c8ec4:	f90026c0 	str	x0, [x22, #72]
+--
+  136564:	d2800000 	mov	x0, #0x0                   	// #0
+  136568:	97fcb8be 	bl	64860 <PyBytes_FromStringAndSize@plt>
+  13656c:	f9002be0 	str	x0, [sp, #80]
+  136570:	b4000f80 	cbz	x0, 136760 <_Py_asdl_int_seq_new@@Base+0x2df0>
+  136574:	91008014 	add	x20, x0, #0x20
+  136578:	b9401a60 	ldr	w0, [x19, #24]
+  13657c:	7100001f 	cmp	w0, #0x0
+  136580:	540002cd 	b.le	1365d8 <_Py_asdl_int_seq_new@@Base+0x2c68>
+  136584:	d2800018 	mov	x24, #0x0                   	// #0
+  136588:	52800017 	mov	w23, #0x0                   	// #0
+  13658c:	a9046bf9 	stp	x25, x26, [sp, #64]
+  136590:	528005da 	mov	w26, #0x2e                  	// #46
+  136594:	d503201f 	nop
+  136598:	aa1403e0 	mov	x0, x20
+  13659c:	f9401261 	ldr	x1, [x19, #32]
+  1365a0:	11000af7 	add	w23, w23, #0x2
+  1365a4:	8b180021 	add	x1, x1, x24
+  1365a8:	91018318 	add	x24, x24, #0x60
+  1365ac:	f9400439 	ldr	x25, [x1, #8]
+  1365b0:	aa1903e1 	mov	x1, x25
+[31m  1365b4:	97fcc7cf 	bl	684f0 <strcpy@plt>[0m
+  1365b8:	aa1903e0 	mov	x0, x25
+  1365bc:	97fcb4f5 	bl	63990 <strlen@plt>
+--
+  14bf14:	54fffd49 	b.ls	14bebc <PyCodec_NameReplaceErrors@@Base+0x3dc>  // b.plast
+  14bf18:	52800ea0 	mov	w0, #0x75                  	// #117
+  14bf1c:	39000760 	strb	w0, [x27, #1]
+  14bf20:	530c7f00 	lsr	w0, w24, #12
+  14bf24:	d3482f03 	ubfx	x3, x24, #8, #4
+  14bf28:	f9400344 	ldr	x4, [x26]
+  14bf2c:	38604880 	ldrb	w0, [x4, w0, uxtw]
+  14bf30:	39000b60 	strb	w0, [x27, #2]
+  14bf34:	f9400340 	ldr	x0, [x26]
+  14bf38:	38634800 	ldrb	w0, [x0, w3, uxtw]
+  14bf3c:	39000f60 	strb	w0, [x27, #3]
+  14bf40:	17ffffbc 	b	14be30 <PyCodec_NameReplaceErrors@@Base+0x350>
+  14bf44:	f9402660 	ldr	x0, [x19, #72]
+  14bf48:	17ffff90 	b	14bd88 <PyCodec_NameReplaceErrors@@Base+0x2a8>
+  14bf4c:	aa1503e1 	mov	x1, x21
+  14bf50:	528f69c0 	mov	w0, #0x7b4e                	// #31566
+  14bf54:	78001360 	sturh	w0, [x27, #1]
+  14bf58:	91000f78 	add	x24, x27, #0x3
+  14bf5c:	aa1803e0 	mov	x0, x24
+  14bf60:	9100079c 	add	x28, x28, #0x1
+[31m  14bf64:	97fc7163 	bl	684f0 <strcpy@plt>[0m
+  14bf68:	aa1503e0 	mov	x0, x21
+  14bf6c:	97fc5e89 	bl	63990 <strlen@plt>
+--
+  18be3c:	d1000400 	sub	x0, x0, #0x1
+  18be40:	f9000060 	str	x0, [x3]
+  18be44:	b4000ac0 	cbz	x0, 18bf9c <PyThread_GetInfo@@Base+0xdcc>
+  18be48:	f9403fe0 	ldr	x0, [sp, #120]
+  18be4c:	97fb5ed1 	bl	63990 <strlen@plt>
+  18be50:	eb00035f 	cmp	x26, x0
+  18be54:	54fffbe1 	b.ne	18bdd0 <PyThread_GetInfo@@Base+0xc00>  // b.any
+  18be58:	f9403fe2 	ldr	x2, [sp, #120]
+  18be5c:	f100035f 	cmp	x26, #0x0
+  18be60:	8b1a0040 	add	x0, x2, x26
+  18be64:	5400012d 	b.le	18be88 <PyThread_GetInfo@@Base+0xcb8>
+  18be68:	9102bfe1 	add	x1, sp, #0xaf
+  18be6c:	387a6821 	ldrb	w1, [x1, x26]
+  18be70:	7100bc3f 	cmp	w1, #0x2f
+  18be74:	540000a0 	b.eq	18be88 <PyThread_GetInfo@@Base+0xcb8>  // b.none
+  18be78:	91000740 	add	x0, x26, #0x1
+  18be7c:	528005e1 	mov	w1, #0x2f                  	// #47
+  18be80:	8b000040 	add	x0, x2, x0
+  18be84:	383a6841 	strb	w1, [x2, x26]
+  18be88:	f9404fe1 	ldr	x1, [sp, #152]
+[31m  18be8c:	97fb7199 	bl	684f0 <strcpy@plt>[0m
+  18be90:	a94a07e2 	ldp	x2, x1, [sp, #160]
+  18be94:	9114c364 	add	x4, x27, #0x530
+--
+  19e654:	a9425bf5 	ldp	x21, x22, [sp, #32]
+  19e658:	a94363f7 	ldp	x23, x24, [sp, #48]
+  19e65c:	aa1303e0 	mov	x0, x19
+  19e660:	a94153f3 	ldp	x19, x20, [sp, #16]
+  19e664:	a8c77bfd 	ldp	x29, x30, [sp], #112
+  19e668:	d65f03c0 	ret
+  19e66c:	12800c60 	mov	w0, #0xffffff9c            	// #-100
+  19e670:	b9004260 	str	w0, [x19, #64]
+  19e674:	b4000c7b 	cbz	x27, 19e800 <_Py_Gid_Converter@@Base+0x2f00>
+  19e678:	aa1b03e0 	mov	x0, x27
+  19e67c:	97fb14c5 	bl	63990 <strlen@plt>
+  19e680:	aa0003fc 	mov	x28, x0
+  19e684:	91000400 	add	x0, x0, #0x1
+  19e688:	f90037e0 	str	x0, [sp, #104]
+  19e68c:	8b000280 	add	x0, x20, x0
+  19e690:	91000400 	add	x0, x0, #0x1
+  19e694:	97fb2ca3 	bl	69920 <PyMem_Malloc@plt>
+  19e698:	aa0003f8 	mov	x24, x0
+  19e69c:	b4000c60 	cbz	x0, 19e828 <_Py_Gid_Converter@@Base+0x2f28>
+  19e6a0:	aa1b03e1 	mov	x1, x27
+[31m  19e6a4:	97fb2793 	bl	684f0 <strcpy@plt>[0m
+  19e6a8:	aa1803e0 	mov	x0, x24
+  19e6ac:	b50007dc 	cbnz	x28, 19e7a4 <_Py_Gid_Converter@@Base+0x2ea4>
+  19e6b0:	aa1503e1 	mov	x1, x21
+[31m  19e6b4:	97fb278f 	bl	684f0 <strcpy@plt>[0m
+  19e6b8:	f94012e0 	ldr	x0, [x23, #32]
+  19e6bc:	b40000a0 	cbz	x0, 19e6d0 <_Py_Gid_Converter@@Base+0x2dd0>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m11[0m times [0;33mlibpython3.8.so.1.0[0m
+

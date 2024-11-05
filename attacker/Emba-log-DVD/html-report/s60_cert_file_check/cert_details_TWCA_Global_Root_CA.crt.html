@@ -1,0 +1,251 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s60_cert_file_check.html" title="./../s60_cert_file_check.html" >&laquo; Back to s60_cert_file_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>Certificate:</pre>
+<pre>    Data:</pre>
+<pre>        Version: 3 (0x2)</pre>
+<pre>        Serial Number: 3262 (0xcbe)</pre>
+<pre>        Signature Algorithm: sha256WithRSAEncryption</pre>
+<pre>        Issuer: C = TW, O = TAIWAN-CA, OU = Root CA, CN = TWCA Global Root CA</pre>
+<pre>        Validity</pre>
+<pre>            Not Before: Jun 27 06:28:33 2012 GMT</pre>
+<pre>            Not After : Dec 31 15:59:59 2030 GMT</pre>
+<pre>        Subject: C = TW, O = TAIWAN-CA, OU = Root CA, CN = TWCA Global Root CA</pre>
+<pre>        Subject Public Key Info:</pre>
+<pre>            Public Key Algorithm: rsaEncryption</pre>
+<pre>                RSA Public-Key: (4096 bit)</pre>
+<pre>                Modulus:</pre>
+<pre>                    00:b0:05:db:c8:eb:8c:c4:6e:8a:21:ef:8e:4d:9c:</pre>
+<pre>                    71:0a:1f:52:70:ed:6d:82:9c:97:c5:d7:4c:4e:45:</pre>
+<pre>                    49:cb:40:42:b5:12:34:6c:19:c2:74:a4:31:5f:85:</pre>
+<pre>                    02:97:ec:43:33:0a:53:d2:9c:8c:8e:b7:b8:79:db:</pre>
+<pre>                    2b:d5:6a:f2:8e:66:c4:ee:2b:01:07:92:d4:b3:d0:</pre>
+<pre>                    02:df:50:f6:55:af:66:0e:cb:e0:47:60:2f:2b:32:</pre>
+<pre>                    39:35:52:3a:28:83:f8:7b:16:c6:18:b8:62:d6:47:</pre>
+<pre>                    25:91:ce:f0:19:12:4d:ad:63:f5:d3:3f:75:5f:29:</pre>
+<pre>                    f0:a1:30:1c:2a:a0:98:a6:15:bd:ee:fd:19:36:f0:</pre>
+<pre>                    e2:91:43:8f:fa:ca:d6:10:27:49:4c:ef:dd:c1:f1:</pre>
+<pre>                    85:70:9b:ca:ea:a8:5a:43:fc:6d:86:6f:73:e9:37:</pre>
+<pre>                    45:a9:f0:36:c7:cc:88:75:1e:bb:6c:06:ff:9b:6b:</pre>
+<pre>                    3e:17:ec:61:aa:71:7c:c6:1d:a2:f7:49:e9:15:b5:</pre>
+<pre>                    3c:d6:a1:61:f5:11:f7:05:6f:1d:fd:11:be:d0:30:</pre>
+<pre>                    07:c2:29:b0:09:4e:26:dc:e3:a2:a8:91:6a:1f:c2:</pre>
+<pre>                    91:45:88:5c:e5:98:b8:71:a5:15:19:c9:7c:75:11:</pre>
+<pre>                    cc:70:74:4f:2d:9b:1d:91:44:fd:56:28:a0:fe:bb:</pre>
+<pre>                    86:6a:c8:fa:5c:0b:58:dc:c6:4b:76:c8:ab:22:d9:</pre>
+<pre>                    73:0f:a5:f4:5a:02:89:3f:4f:9e:22:82:ee:a2:74:</pre>
+<pre>                    53:2a:3d:53:27:69:1d:6c:8e:32:2c:64:00:26:63:</pre>
+<pre>                    61:36:4e:a3:46:b7:3f:7d:b3:2d:ac:6d:90:a2:95:</pre>
+<pre>                    a2:ce:cf:da:82:e7:07:34:19:96:e9:b8:21:aa:29:</pre>
+<pre>                    7e:a6:38:be:8e:29:4a:21:66:79:1f:b3:c3:b5:09:</pre>
+<pre>                    67:de:d6:d4:07:46:f3:2a:da:e6:22:37:60:cb:81:</pre>
+<pre>                    b6:0f:a0:0f:e9:c8:95:7f:bf:55:91:05:7a:cf:3d:</pre>
+<pre>                    15:c0:6f:de:09:94:01:83:d7:34:1b:cc:40:a5:f0:</pre>
+<pre>                    b8:9b:67:d5:98:91:3b:a7:84:78:95:26:a4:5a:08:</pre>
+<pre>                    f8:2b:74:b4:00:04:3c:df:b8:14:8e:e8:df:a9:8d:</pre>
+<pre>                    6c:67:92:33:1d:c0:b7:d2:ec:92:c8:be:09:bf:2c:</pre>
+<pre>                    29:05:6f:02:6b:9e:ef:bc:bf:2a:bc:5b:c0:50:8f:</pre>
+<pre>                    41:70:71:87:b2:4d:b7:04:a9:84:a3:32:af:ae:ee:</pre>
+<pre>                    6b:17:8b:b2:b1:fe:6c:e1:90:8c:88:a8:97:48:ce:</pre>
+<pre>                    c8:4d:cb:f3:06:cf:5f:6a:0a:42:b1:1e:1e:77:2f:</pre>
+<pre>                    8e:a0:e6:92:0e:06:fc:05:22:d2:26:e1:31:51:7d:</pre>
+<pre>                    32:dc:0f</pre>
+<pre>                Exponent: 65537 (0x10001)</pre>
+<pre>        X509v3 extensions:</pre>
+<pre>            X509v3 Key Usage: critical</pre>
+<pre>                Certificate Sign, CRL Sign</pre>
+<pre>            X509v3 Basic Constraints: critical</pre>
+<pre>                CA:TRUE</pre>
+<pre>    Signature Algorithm: sha256WithRSAEncryption</pre>
+<pre>         5f:34:81:76:ef:96:1d:d5:e5:b5:d9:02:63:84:16:c1:ae:a0:</pre>
+<pre>         70:51:a7:f7:4c:47:35:c8:0b:d7:28:3d:89:71:d9:aa:33:41:</pre>
+<pre>         ea:14:1b:6c:21:00:c0:6c:42:19:7e:9f:69:5b:20:42:df:a2:</pre>
+<pre>         d2:da:c4:7c:97:4b:8d:b0:e8:ac:c8:ee:a5:69:04:99:0a:92:</pre>
+<pre>         a6:ab:27:2e:1a:4d:81:bf:84:d4:70:1e:ad:47:fe:fd:4a:9d:</pre>
+<pre>         33:e0:f2:b9:c4:45:08:21:0a:da:69:69:73:72:0d:be:34:fe:</pre>
+<pre>         94:8b:ad:c3:1e:35:d7:a2:83:ef:e5:38:c7:a5:85:1f:ab:cf:</pre>
+<pre>         34:ec:3f:28:fe:0c:f1:57:86:4e:c9:55:f7:1c:d4:d8:a5:7d:</pre>
+<pre>         06:7a:6f:d5:df:10:df:81:4e:21:65:b1:b6:e1:17:79:95:45:</pre>
+<pre>         06:ce:5f:cc:dc:46:89:63:68:44:8d:93:f4:64:70:a0:3d:9d:</pre>
+<pre>         28:05:c3:39:70:b8:62:7b:20:fd:e4:db:e9:08:a1:b8:9e:3d:</pre>
+<pre>         09:c7:4f:fb:2c:f8:93:76:41:de:52:e0:e1:57:d2:9d:03:bc:</pre>
+<pre>         77:9e:fe:9e:29:5e:f7:c1:51:60:1f:de:da:0b:b2:2d:75:b7:</pre>
+<pre>         43:48:93:e7:f6:79:c6:84:5d:80:59:60:94:fc:78:98:8f:3c:</pre>
+<pre>         93:51:ed:40:90:07:df:64:63:24:cb:4e:71:05:a1:d7:94:1a:</pre>
+<pre>         88:32:f1:22:74:22:ae:a5:a6:d8:12:69:4c:60:a3:02:ee:2b:</pre>
+<pre>         ec:d4:63:92:0b:5e:be:2f:76:6b:a3:b6:26:bc:8f:03:d8:0a:</pre>
+<pre>         f2:4c:64:46:bd:39:62:e5:96:eb:34:63:11:28:cc:95:f1:ad:</pre>
+<pre>         ef:ef:dc:80:58:48:e9:4b:b8:ea:65:ac:e9:fc:80:b5:b5:c8:</pre>
+<pre>         45:f9:ac:c1:9f:d9:b9:ea:62:88:8e:c4:f1:4b:83:12:ad:e6:</pre>
+<pre>         8b:84:d6:9e:c2:eb:83:18:9f:6a:bb:1b:24:60:33:70:cc:ec:</pre>
+<pre>         f7:32:f3:5c:d9:79:7d:ef:9e:a4:fe:c9:23:c3:24:ee:15:92:</pre>
+<pre>         b1:3d:91:4f:26:86:bd:66:73:24:13:ea:a4:ae:63:c1:ad:7d:</pre>
+<pre>         84:03:3c:10:78:86:1b:79:e3:c4:f3:f2:04:95:20:ae:23:82:</pre>
+<pre>         c4:b3:3a:00:62:bf:e6:36:24:e1:57:ba:c7:1e:90:75:d5:5f:</pre>
+<pre>         3f:95:61:2b:c1:3b:cd:e5:b3:68:61:d0:46:26:a9:21:52:69:</pre>
+<pre>         2d:eb:2e:c7:eb:77:ce:a6:3a:b5:03:33:4f:76:d1:e7:5c:54:</pre>
+<pre>         01:5d:cb:78:f4:c9:0c:bf:cf:12:8e:17:2d:23:68:94:e7:ab:</pre>
+<pre>         fe:a9:b2:2b:06:d0:04:cd</pre>
+<pre>-----BEGIN CERTIFICATE-----</pre>
+<pre>MIIFQTCCAymgAwIBAgICDL4wDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCVFcx</pre>
+<pre>EjAQBgNVBAoTCVRBSVdBTi1DQTEQMA4GA1UECxMHUm9vdCBDQTEcMBoGA1UEAxMT</pre>
+<pre>VFdDQSBHbG9iYWwgUm9vdCBDQTAeFw0xMjA2MjcwNjI4MzNaFw0zMDEyMzExNTU5</pre>
+<pre>NTlaMFExCzAJBgNVBAYTAlRXMRIwEAYDVQQKEwlUQUlXQU4tQ0ExEDAOBgNVBAsT</pre>
+<pre>B1Jvb3QgQ0ExHDAaBgNVBAMTE1RXQ0EgR2xvYmFsIFJvb3QgQ0EwggIiMA0GCSqG</pre>
+<pre>SIb3DQEBAQUAA4ICDwAwggIKAoICAQCwBdvI64zEbooh745NnHEKH1Jw7W2CnJfF</pre>
+<pre>10xORUnLQEK1EjRsGcJ0pDFfhQKX7EMzClPSnIyOt7h52yvVavKOZsTuKwEHktSz</pre>
+<pre>0ALfUPZVr2YOy+BHYC8rMjk1Ujoog/h7FsYYuGLWRyWRzvAZEk2tY/XTP3VfKfCh</pre>
+<pre>MBwqoJimFb3u/Rk28OKRQ4/6ytYQJ0lM793B8YVwm8rqqFpD/G2Gb3PpN0Wp8DbH</pre>
+<pre>zIh1HrtsBv+baz4X7GGqcXzGHaL3SekVtTzWoWH1EfcFbx39Eb7QMAfCKbAJTibc</pre>
+<pre>46KokWofwpFFiFzlmLhxpRUZyXx1EcxwdE8tmx2RRP1WKKD+u4ZqyPpcC1jcxkt2</pre>
+<pre>yKsi2XMPpfRaAok/T54igu6idFMqPVMnaR1sjjIsZAAmY2E2TqNGtz99sy2sbZCi</pre>
+<pre>laLOz9qC5wc0GZbpuCGqKX6mOL6OKUohZnkfs8O1CWfe1tQHRvMq2uYiN2DLgbYP</pre>
+<pre>oA/pyJV/v1WRBXrPPRXAb94JlAGD1zQbzECl8LibZ9WYkTunhHiVJqRaCPgrdLQA</pre>
+<pre>BDzfuBSO6N+pjWxnkjMdwLfS7JLIvgm/LCkFbwJrnu+8vyq8W8BQj0FwcYeyTbcE</pre>
+<pre>qYSjMq+u7msXi7Kx/mzhkIyIqJdIzshNy/MGz19qCkKxHh53L46g5pIOBvwFItIm</pre>
+<pre>4TFRfTLcDwIDAQABoyMwITAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB</pre>
+<pre>/zANBgkqhkiG9w0BAQsFAAOCAgEAXzSBdu+WHdXltdkCY4QWwa6gcFGn90xHNcgL</pre>
+<pre>1yg9iXHZqjNB6hQbbCEAwGxCGX6faVsgQt+i0trEfJdLjbDorMjupWkEmQqSpqsn</pre>
+<pre>LhpNgb+E1HAerUf+/UqdM+DyucRFCCEK2mlpc3INvjT+lIutwx4116KD7+U4x6WF</pre>
+<pre>H6vPNOw/KP4M8VeGTslV9xzU2KV9Bnpv1d8Q34FOIWWxtuEXeZVFBs5fzNxGiWNo</pre>
+<pre>RI2T9GRwoD2dKAXDOXC4Ynsg/eTb6QihuJ49CcdP+yz4k3ZB3lLg4VfSnQO8d57+</pre>
+<pre>nile98FRYB/e2guyLXW3Q0iT5/Z5xoRdgFlglPx4mI88k1HtQJAH32RjJMtOcQWh</pre>
+<pre>15QaiDLxInQirqWm2BJpTGCjAu4r7NRjkgtevi92a6O2JryPA9gK8kxkRr05YuWW</pre>
+<pre>6zRjESjMlfGt7+/cgFhI6Uu46mWs6fyAtbXIRfmswZ/ZuepiiI7E8UuDEq3mi4TW</pre>
+<pre>nsLrgxifarsbJGAzcMzs9zLzXNl5fe+epP7JI8Mk7hWSsT2RTyaGvWZzJBPqpK5j</pre>
+<pre>wa19hAM8EHiGG3njxPPyBJUgriOCxLM6AGK/5jYk4Ve6xx6QddVfP5VhK8E7zeWz</pre>
+<pre>aGHQRiapIVJpLesux+t3zqY6tQMzT3bR51xUAV3LePTJDL/PEo4XLSNolOer/qmy</pre>
+<pre>KwbQBM0=</pre>
+<pre>-----END CERTIFICATE-----</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

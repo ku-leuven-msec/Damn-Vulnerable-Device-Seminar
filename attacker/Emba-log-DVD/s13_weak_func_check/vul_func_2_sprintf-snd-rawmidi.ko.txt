@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-rawmidi.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m281) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33msnd-rawmidi.ko[0m
+
+     ef4:	aa1303e0 	mov	x0, x19
+     ef8:	d63f0020 	blr	x1
+     efc:	2a0003f6 	mov	w22, w0
+     f00:	37f80c60 	tbnz	w0, #31, 108c <snd_rawmidi_dev_register+0x2cc>
+     f04:	f9400261 	ldr	x1, [x19]
+     f08:	b900b27f 	str	wzr, [x19, #176]
+     f0c:	90000000 	adrp	x0, 0 <snd_rawmidi_input_event_work>
+     f10:	91000000 	add	x0, x0, #0x0
+     f14:	b9401a62 	ldr	w2, [x19, #24]
+     f18:	b9800023 	ldrsw	x3, [x1]
+     f1c:	b8637800 	ldr	w0, [x0, x3, lsl #2]
+     f20:	6b00005f 	cmp	w2, w0
+     f24:	54000900 	b.eq	1044 <snd_rawmidi_dev_register+0x284>  // b.none
+     f28:	9100c294 	add	x20, x20, #0x30
+     f2c:	b8637a80 	ldr	w0, [x20, x3, lsl #2]
+     f30:	6b02001f 	cmp	w0, w2
+     f34:	54000720 	b.eq	1018 <snd_rawmidi_dev_register+0x258>  // b.none
+     f38:	910123e0 	add	x0, sp, #0x48
+     f3c:	90000001 	adrp	x1, 0 <snd_rawmidi_input_event_work>
+     f40:	91000021 	add	x1, x1, #0x0
+[31m     f44:	94000000 	bl	0 <sprintf>[0m
+     f48:	f9400260 	ldr	x0, [x19]
+     f4c:	910123e1 	add	x1, sp, #0x48
+--
+     fb0:	f9400260 	ldr	x0, [x19]
+     fb4:	91000042 	add	x2, x2, #0x0
+     fb8:	91106264 	add	x4, x19, #0x418
+     fbc:	52800003 	mov	w3, #0x0                   	// #0
+     fc0:	94000000 	bl	0 <snd_seq_device_new>
+     fc4:	37fffe40 	tbnz	w0, #31, f8c <snd_rawmidi_dev_register+0x1cc>
+     fc8:	f9420e62 	ldr	x2, [x19, #1048]
+     fcc:	90000000 	adrp	x0, 0 <snd_rawmidi_input_event_work>
+     fd0:	91000000 	add	x0, x0, #0x0
+     fd4:	90000001 	adrp	x1, 0 <snd_rawmidi_input_event_work>
+     fd8:	91000021 	add	x1, x1, #0x0
+     fdc:	52800016 	mov	w22, #0x0                   	// #0
+     fe0:	f9003c53 	str	x19, [x2, #120]
+     fe4:	f9420e62 	ldr	x2, [x19, #1048]
+     fe8:	f9004040 	str	x0, [x2, #128]
+     fec:	f9400262 	ldr	x2, [x19]
+     ff0:	b9401a63 	ldr	w3, [x19, #24]
+     ff4:	f9420e60 	ldr	x0, [x19, #1048]
+     ff8:	b9400042 	ldr	w2, [x2]
+     ffc:	91006000 	add	x0, x0, #0x18
+[31m    1000:	94000000 	bl	0 <sprintf>[0m
+    1004:	f9400260 	ldr	x0, [x19]
+    1008:	f9420e61 	ldr	x1, [x19, #1048]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33msnd-rawmidi.ko[0m
+

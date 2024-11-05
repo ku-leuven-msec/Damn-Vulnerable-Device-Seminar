@@ -1,0 +1,68 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/dnf/rpm/connection.py[0m
+28:__init__(self, root):.
+29:        self.root = root.
+34:ansaction(self.root).
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/connection.py[0m
+15:t create_proxy_ssl_context.
+17: Compiled with SSL?.
+18:    import ssl.
+20:    BaseSSLError = ssl.SSL.
+21:m-specific: No SSL..
+22:    ssl = None.
+24:    class BaseSSLError(BaseExcep.
+54:from .packages.ssl_match_hostname.
+56:from .util.ssl_ import (.
+61:    resolve_ssl_version,.
+62:    ssl_wrap_socket,.
+137:   In general, SSL certificates d.
+283:the underlying SSL.
+284::`urllib3.util.ssl_wrap_socket`..
+293:    ssl_version = None.
+303:        key_password=None,.
+306:        ssl_context=None,.
+315:      self.key_password = key_password.
+316:        self.ssl_context = ssl_.
+328:        key_password=None,.
+339:     # have an SSLContext object .
+341:       if self.ssl_context is not.
+342:rt_reqs = self.ssl_context.verify.
+349:      self.key_password = key_password.
+387:      "lead to SSL verification e.
+392:ation with the root certs in.
+393:     # trusted_root_certs.
+394:       default_ssl_context = Fals.
+395:       if self.ssl_context is Non.
+396:       default_ssl_context = True.
+397:          self.ssl_context = crea.
+398:               ssl_version=resolv.
+398:e_ssl_version(self.s.
+402:context = self.ssl_context.
+411:   and default_ssl_context.
+416:   self.sock = ssl_wrap_socket(.
+420:           key_password=self.key_passw.
+425:            ssl_context=contex.
+433:       default_ssl_context.
+434:      and self.ssl_version is Non.
+442:        "with 'ssl_version'" % (s.
+451:verify_mode != ssl.CERT_NONE.
+472:verify_mode == ssl.CERT_REQUIRED.
+478:g the provided SSL context..
+481:        ssl_context = prox.
+481:y_config.ssl_context.
+482:        if ssl_context:.
+485:        return ssl_wrap_socket(.
+488:               ssl_context=ssl_co.
+491:        ssl_context = crea.
+491:te_proxy_ssl_context(.
+492:          self.ssl_version,.
+501:      socket = ssl_wrap_socket(.
+507:            ssl_context=ssl_co.
+510:        if ssl_context.verify.
+510:_mode != ssl.CERT_NONE and .
+511:            ssl_context, "chec.
+529:_is_verified = ssl_context.verify.
+529:_mode == ssl.CERT_REQUIRED.
+534:lementation of ssl.match_hostname.
+565:if not ssl:.
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/util/connection.py[0m
+127:a socket needlessly..

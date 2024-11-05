@@ -1,0 +1,26 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/etc/init.d/checkroot.sh[0m
+3:          checkroot.
+8:tion: Check to root file system..
+23:rootmode=rw.
+24:rootopts=rw.
+25:rootcheck=$ENABLE_R.
+47:.rootopts="$opts".
+48:$pass" = "" && rootcheck=no.
+51:...rootmode=ro.
+58:if [ "$rootmode" = "ro" -a.
+58: "$ROOTFS_READ_ONLY" =.
+59:.[ "$rootmode" = "rw" -a.
+59: "$ROOTFS_READ_ONLY" =.
+62:writability of rootfs. Please fix .
+75:# Check the root filesystem..
+77:tboot || test $rootcheck = no.
+79:  test $rootcheck = yes && .
+82: # Ensure that root is quiescent a.
+104:echo "Checking root filesystem...".
+116:k, because the root is read-only..
+119:echo "that the root filesystem is .
+131:!  Cannot fsck root fs because it .
+137:#.If the root filesystem was.
+138:#.remount the rootfs rw but do no.
+142:-n -o remount,$rootmode /.
+143:if test "$rootmode" = rw.

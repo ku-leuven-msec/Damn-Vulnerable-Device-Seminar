@@ -1,0 +1,92 @@
+[[0;33m*[0m] Binary protection state of [0;33mipv6.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m46) Symbols
+[31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m49) Symbols
+[31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m57) Symbols
+[31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m58) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m136) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m2760) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m47) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m58) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m69) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m73) Symbols
+[31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m79) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mipv6.ko[0m
+
+   158d0:	39006263 	strb	w3, [x19, #24]
+   158d4:	39403682 	ldrb	w2, [x20, #13]
+   158d8:	39006662 	strb	w2, [x19, #25]
+   158dc:	39403e82 	ldrb	w2, [x20, #15]
+   158e0:	39006a62 	strb	w2, [x19, #26]
+   158e4:	a9438e82 	ldp	x2, x3, [x20, #56]
+   158e8:	a9000c22 	stp	x2, x3, [x1]
+   158ec:	a9428e82 	ldp	x2, x3, [x20, #40]
+   158f0:	a9000c02 	stp	x2, x3, [x0]
+   158f4:	39403a80 	ldrb	w0, [x20, #14]
+   158f8:	39010260 	strb	w0, [x19, #64]
+   158fc:	7100181f 	cmp	w0, #0x6
+   15900:	7a511804 	ccmp	w0, #0x11, #0x4, ne  // ne = any
+   15904:	540004a0 	b.eq	15998 <perf_trace_fib6_table_lookup+0x1c0>  // b.none
+   15908:	b9003e7f 	str	wzr, [x19, #60]
+   1590c:	91016260 	add	x0, x19, #0x58
+   15910:	f94002a1 	ldr	x1, [x21]
+   15914:	b40005a1 	cbz	x1, 159c8 <perf_trace_fib6_table_lookup+0x1f0>
+   15918:	f9400021 	ldr	x1, [x1]
+   1591c:	b4000561 	cbz	x1, 159c8 <perf_trace_fib6_table_lookup+0x1f0>
+[31m   15920:	94000000 	bl	0 <strcpy>[0m
+   15924:	f94006a1 	ldr	x1, [x21, #8]
+   15928:	f9438ae0 	ldr	x0, [x23, #1808]
+--
+   15ab4:	39006260 	strb	w0, [x19, #24]
+   15ab8:	39403680 	ldrb	w0, [x20, #13]
+   15abc:	39006660 	strb	w0, [x19, #25]
+   15ac0:	39403e80 	ldrb	w0, [x20, #15]
+   15ac4:	39006a60 	strb	w0, [x19, #26]
+   15ac8:	a9438e82 	ldp	x2, x3, [x20, #56]
+   15acc:	a9000c82 	stp	x2, x3, [x4]
+   15ad0:	a9428e82 	ldp	x2, x3, [x20, #40]
+   15ad4:	a9000c22 	stp	x2, x3, [x1]
+   15ad8:	39403a80 	ldrb	w0, [x20, #14]
+   15adc:	39010260 	strb	w0, [x19, #64]
+   15ae0:	7100181f 	cmp	w0, #0x6
+   15ae4:	7a511804 	ccmp	w0, #0x11, #0x4, ne  // ne = any
+   15ae8:	54000340 	b.eq	15b50 <trace_event_raw_event_fib6_table_lookup+0x160>  // b.none
+   15aec:	b9003e7f 	str	wzr, [x19, #60]
+   15af0:	f9400301 	ldr	x1, [x24]
+   15af4:	91016260 	add	x0, x19, #0x58
+   15af8:	b40003e1 	cbz	x1, 15b74 <trace_event_raw_event_fib6_table_lookup+0x184>
+   15afc:	f9400021 	ldr	x1, [x1]
+   15b00:	b40003a1 	cbz	x1, 15b74 <trace_event_raw_event_fib6_table_lookup+0x184>
+[31m   15b04:	94000000 	bl	0 <strcpy>[0m
+   15b08:	f9400701 	ldr	x1, [x24, #8]
+   15b0c:	f9438ac0 	ldr	x0, [x22, #1808]
+--
+   285ec:	d65f03c0 	ret
+   285f0:	aa1903e4 	mov	x4, x25
+   285f4:	aa1803e3 	mov	x3, x24
+   285f8:	aa1603e2 	mov	x2, x22
+   285fc:	2a1503e1 	mov	w1, w21
+   28600:	aa1303e0 	mov	x0, x19
+   28604:	94000000 	bl	0 <neigh_proc_dointvec>
+   28608:	2a0003f4 	mov	w20, w0
+   2860c:	17ffffed 	b	285c0 <ndisc_ifinfo_sysctl_change+0x1a8>
+   28610:	52800014 	mov	w20, #0x0                   	// #0
+   28614:	94000000 	bl	0 <__rcu_read_unlock>
+   28618:	17ffffee 	b	285d0 <ndisc_ifinfo_sysctl_change+0x1b8>
+   2861c:	b9806800 	ldrsw	x0, [x0, #104]
+   28620:	94000000 	bl	0 <neigh_rand_reach_time>
+   28624:	f9408aa1 	ldr	x1, [x21, #272]
+   28628:	b9005020 	str	w0, [x1, #80]
+   2862c:	17ffffb8 	b	2850c <ndisc_ifinfo_sysctl_change+0xf4>
+   28630:	12800014 	mov	w20, #0xffffffff            	// #-1
+   28634:	17ffffe7 	b	285d0 <ndisc_ifinfo_sysctl_change+0x1b8>
+   28638:	aa0703e0 	mov	x0, x7
+[31m   2863c:	94000000 	bl	0 <strcpy>[0m
+   28640:	f9400266 	ldr	x6, [x19]
+   28644:	aa0003e7 	mov	x7, x0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mipv6.ko[0m
+

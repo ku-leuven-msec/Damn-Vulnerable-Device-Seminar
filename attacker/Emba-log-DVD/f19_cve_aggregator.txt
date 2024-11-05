@@ -1,0 +1,830 @@
+[[0;34m+[0m] [0;36m[1mFinal CVE aggregator[0m
+[1m=================================================================[0m
+[[0;33m*[0m] Aggregate vulnerability details
+[[0;33m*[0m] Collect version details of module s25_kernel_check.
+[[0;33m*[0m] Collect version details of module s06_distribution_identification.
+[[0;33m*[0m] Collect version details of module s09_firmware_base_version_check.
+[[0;33m*[0m] Collect version details of module s115_usermode_emulator.
+[[0;33m*[0m] Collect version details of module l15_emulated_checks_init.
+
+[0;34m==>[0m [0;36mSoftware inventory generation.[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Software inventory initial overview:
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31m/sudo-1.8.31/[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/cvtsudoers (-rwxr-xr-x root root)[0;32m (license: [0;33mISC-style[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31m/sudo-1.8.31/[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/sudo (---x--x--x root root)[0;32m (license: [0;33mISC-style[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31m/sudo-1.8.31/[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/sudoreplay (-rwxr-xr-x root root)[0;32m (license: [0;33mISC-style[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31m/sudo-1.8.31/[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/libexec/sudo/libsudo_util.so.0.0.0 (-rwxr-xr-x root root)[0;32m (license: [0;33mISC-style[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31m/sudo-1.8.31/[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/libexec/sudo/sudoers.so (-rw-r--r-- root root)[0;32m (license: [0;33mISC-style[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31m/sudo-1.8.31/[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/sbin/visudo (-rwxr-xr-x root root)[0;32m (license: [0;33mISC-style[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mBash version 5.0.16[0m[0;32m in binary [0;33m/log/firmware/firmware/bin/bash.bash (-rwxr-xr-x root root)[0;32m (license: [0;33mgplv3[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mBusyBox v1.31.1 [0m[0;32m in binary [0;33m/log/firmware/firmware/bin/busybox.nosuid (-rwxr-xr-x root root)[0;32m (license: [0;33mgplv2[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mBusyBox v1.31.1 [0m[0;32m in binary [0;33m/log/firmware/firmware/bin/busybox.suid (-rwxr-xr-x root root)[0;32m (license: [0;33mgplv2[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mEXT2FS Library version 1.45.4[0m[0;32m in binary [0;33m/log/firmware/firmware/lib/libext2fs.so.2.4 (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mEnabled GnuTLS 3.6.12 logging...[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libgnutls.so.30.26.2 (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mGNU C Library (GNU libc) stable release version 2.31.[0m[0;32m in binary [0;33m/log/firmware/firmware/lib/libc-2.31.so (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mGNU sed version 4.0[0m[0;32m in binary [0;33m/log/firmware/firmware/bin/busybox.nosuid (-rwxr-xr-x root root)[0;32m (license: [0;33mgplv3[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mLibgcrypt 1.8.5 [0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libgcrypt.so.20.2.5 (-rwxr-xr-x root root)[0;32m (license: [0;33mlgplv2.1[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mOpenSSH_8.2p1[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/ssh.openssh (-rwxr-xr-x root root)[0;32m (license: [0;33mbsd[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mOpenSSH_8.2p1[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/sbin/sshd (-rwxr-xr-x root root)[0;32m (license: [0;33mbsd[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mOpenSSL 1.0.1 [0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/python3.8/lib-dynload/_ssl.cpython-38-aarch64-linux-gnu.so (-rwxr-xr-x root root)[0;32m (license: [0;33mbsd[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mOpenSSL 1.1.1f [0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/openssl (-rwxr-xr-x root root)[0;32m (license: [0;33mbsd[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mOpenSSL 1.1.1f [0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libcrypto.so.1.1 (-rwxr-xr-x root root)[0;32m (license: [0;33mbsd[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mOpenSSL 1.1.1f [0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libssl.so.1.1 (-rwxr-xr-x root root)[0;32m (license: [0;33mbsd[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mThis is perl 5, version 30, subversion 1 (%-p) built[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libperl.so.5.30.0 (-r-xr-xr-x root root)[0;32m (license: [0;33mgpl[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31malsactl version 1.2.1[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/sbin/alsactl (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mbc 0[0m[0;32m in binary [0;33m/log/firmware/firmware/lib/modules/5.4.72-v8/kernel/fs/xfs/xfs.ko (-rw-r--r-- root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mbc 2.31[0m[0;32m in binary [0;33m/log/firmware/firmware/lib/libc-2.31.so (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mdeflate 1.2.11 Copyright 1995-2017 Jean-loup Gailly and Mark Adler[0m[0;32m in binary [0;33m/log/firmware/firmware/lib/libz.so.1.2.11 (-rwxr-xr-x root root)[0;32m (license: [0;33mzlib[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mexpat_2.2.8[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/python3.8/lib-dynload/pyexpat.cpython-38-aarch64-linux-gnu.so (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mexpat_2.2.9[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libexpat.so.1.6.11 (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mfsck.fat 4.1 (2017-01-24)[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/sbin/fsck.fat (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31minflate 1.2.11 Copyright 1995-2017 Mark Adler[0m[0;32m in binary [0;33m/log/firmware/firmware/lib/libz.so.1.2.11 (-rwxr-xr-x root root)[0;32m (license: [0;33mzlib[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mkmod version 26[0m[0;32m in binary [0;33m/log/firmware/firmware/bin/kmod (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mlibarchive 3.4.2[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libarchive.so.13.4.2 (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mlibcurl/7.69.1[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libcurl.so.4.6.0 (-rwxr-xr-x root root)[0;32m (license: [0;33mmit-style[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mlibpcre.so.1.2.12[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/lib/libpcre.so.1.2.12 (-rwxr-xr-x root root)[0;32m (license: [0;33mbsd[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mlsusb (usbutils) 012[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/lsusb.usbutils (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mmkfs.fat 4.1[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/sbin/mkfs.fat (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mncurses 6.2[0m[0;32m in binary [0;33m/log/firmware/firmware/lib/libtinfo.so.5.9 (-rwxr-xr-x root root)[0;32m (license: [0;33mmit-x11[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mnettle-hash (nettle 3.5.1)[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/nettle-hash (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mrngtest 6.9[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/rngtest (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mudev-3.2.9[0m[0;32m in binary [0;33m/log/firmware/firmware/sbin/udevd (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mudev-3.2.9[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/libexec/udevadm (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mudhcp 1.31.1[0m[0;32m in binary [0;33m/log/firmware/firmware/bin/busybox.nosuid (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mutil-linux 2.35.1[0m[0;32m in binary [0;33m/log/firmware/firmware/sbin/sulogin.util-linux (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mwpa_cli v2.9[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/sbin/wpa_cli (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31mwpa_supplicant v2.9[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/sbin/wpa_supplicant (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (statical check): [0;31myat2m 1.37[0m[0;32m in binary [0;33m/log/firmware/firmware/usr/bin/yat2m (-rwxr-xr-x root root)[0;32m (license: [0;33munknown[0;32m) (static).[0m[0m
+[[0;32m+[0m][0;32m Found Version details (kernel): kernel 5.4.72[0m
+
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version: kernel 5.4.72
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version: kernel 5.4.72
+[[0;33m*[0m] Version: bash 5.0.16 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version: bash 5.0.16 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version: busybox 1.31.1 
+[[0;33m*[0m] Version: e2fsprogs 1.45.4 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version: gnutls 3.6.12 logging... 
+[[0;33m*[0m] Version: gnu:sed 4.0 
+[[0;33m*[0m] Version: busybox 1.31.1 
+[[0;33m*[0m] Version: libgcrypt 1.8.5 
+[[0;33m*[0m] Version: glibc 2.31. 
+[[0;33m*[0m] Version:  sudo 1.8.31/ 
+[[0;33m*[0m] Version: e2fsprogs 1.45.4 
+[[0;33m*[0m] Version: busybox 1.31.1 
+[[0;33m*[0m] Version: gnutls 3.6.12 logging... 
+[[0;33m*[0m] Version: openssl 1.1.1f 
+[[0;33m*[0m] Version: openssh 8.2:p1 
+[[0;33m*[0m] Version: gnu:sed 4.0 
+[[0;33m*[0m] Version: busybox 1.31.1 
+[[0;33m*[0m] Version: libgcrypt 1.8.5 
+[[0;33m*[0m] Version: glibc 2.31. 
+[[0;33m*[0m] Version: alsa 1.2.1 
+[[0;33m*[0m] Version: openssl 1.1.1f 
+[[0;33m*[0m] Version: openssl 1.1.1f 
+[[0;33m*[0m] Version: openssh 8.2:p1 
+[[0;33m*[0m] Version: openssl 1.0.1 
+[[0;33m*[0m] Version: perl 5.30.1 (%-p) built 
+[[0;33m*[0m] Version: openssl 1.1.1f 
+[[0;33m*[0m] Version: openssh 8.2:p1 
+[[0;33m*[0m] Version: bc 0 
+[[0;33m*[0m] Version: openssl 1.0.1 
+[[0;33m*[0m] Version: openssl 1.1.1f 
+[[0;33m*[0m] Version: alsa 1.2.1 
+[[0;33m*[0m] Version: openssh 8.2:p1 
+[[0;33m*[0m] Version: expat 2.2.8 
+[[0;33m*[0m] Version: zlib 1.2.11 copyright 1995-2017 jean-loup gailly and mark adler 
+[[0;33m*[0m] Version: perl 5.30.1 (%-p) built 
+[[0;33m*[0m] Version: openssl 1.1.1f 
+[[0;33m*[0m] Version: pcre 1.2.12 
+[[0;33m*[0m] Version: bc 2.31 
+[[0;33m*[0m] Version: bc 0 
+[[0;33m*[0m] Version: zlib 1.2.11 copyright 1995-2017 mark adler 
+[[0;33m*[0m] Version: fsck.fat 4.1 (2017-01-24) 
+[[0;33m*[0m] Version: zlib 1.2.11 copyright 1995-2017 jean-loup gailly and mark adler 
+[[0;33m*[0m] Version: gnu:ncurses 6.2 
+[[0;33m*[0m] Version: libcurl 7.69.1 
+[[0;33m*[0m] Version: kmod 26 
+[[0;33m*[0m] Version: expat 2.2.8 
+[[0;33m*[0m] Version: pcre 1.2.12 
+[[0;33m*[0m] Version: bc 2.31 
+[[0;33m*[0m] Version: expat 2.2.9 
+[[0;33m*[0m] Version: zlib 1.2.11 copyright 1995-2017 mark adler 
+[[0;33m*[0m] Version: kmod 26 
+[[0;33m*[0m] Version: fsck.fat 4.1 (2017-01-24) 
+[[0;33m*[0m] Version: libcurl 7.69.1 
+[[0;33m*[0m] Version: udev 3.2.9 
+[[0;33m*[0m] Version: mkfs.fat 4.1 
+[[0;33m*[0m] Version: gnu:ncurses 6.2 
+[[0;33m*[0m] Version: rngd 6.9 
+[[0;33m*[0m] Version: nettle-hash (nettle 3.5.1) 
+[[0;33m*[0m] Version: usbutils 012 
+[[0;33m*[0m] Version: expat 2.2.9 
+[[0;33m*[0m] Version: udhcp 1.31.1 
+[[0;33m*[0m] Version: usbutils 012 
+[[0;33m*[0m] Version: wpa_cli 2.9 
+[[0;33m*[0m] Version: rngd 6.9 
+[[0;33m*[0m] Version: nettle-hash (nettle 3.5.1) 
+[[0;33m*[0m] Version: mkfs.fat 4.1 
+[[0;33m*[0m] Version: udev 3.2.9 
+[[0;33m*[0m] Version: libarchive 3.4.2 
+[[0;33m*[0m] Version: udev 3.2.9 
+[[0;33m*[0m] Version: udhcp 1.31.1 
+[[0;33m*[0m] Version: util-linux 2.35.1 
+[[0;33m*[0m] Version: wpa_supplicant 2.9 
+[[0;33m*[0m] Version: yat2m 1.37 
+[[0;33m*[0m] Version: wpa_cli 2.9 
+[[0;33m*[0m] Version: libarchive 3.4.2 
+[[0;33m*[0m] Version: udev 3.2.9 
+[[0;33m*[0m] Version: wpa_supplicant 2.9 
+[[0;33m*[0m] Version: util-linux 2.35.1 
+[[0;33m*[0m] Version: yat2m 1.37 
+
+[0;34m==>[0m [0;36mCollect CVE and exploit details.[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] CVE database lookup with version information: [0;32mkernel:5.4.72[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32malsa:1.2.1[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mbash:5.0.16[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mbc:0[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mbc:2.31[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mbusybox:1.31.1[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32me2fsprogs:1.45.4[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mexpat:2.2.8[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mexpat:2.2.9[0m
+
+[0;33m	e2fsprogs      	:	1.45.4         	:	CVE-2019-5188  	:	4.6     :	No exploit available[0m
+
+
+[0;33m	busybox        	:	1.31.1         	:	CVE-2018-100050	:	6.8     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m1[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mbusybox[0;32m with version [0;33m1.31.1.[0m[0m
+[[0;32m+[0m][0;32m Found [0;33m[1m1[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33me2fsprogs[0;32m with version [0;33m1.45.4.[0m[0m
+
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mfsck.fat:4.1[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mglibc:2.31[0m
+
+[0;31m	bc             	:	2.31           	:	CVE-2021-33574 	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	2.31           	:	CVE-2019-25013 	:	7.1     :	No exploit available[0m
+[0;33m	bc             	:	2.31           	:	CVE-2020-6096  	:	6.8     :	No exploit available[0m
+[0;33m	bc             	:	2.31           	:	CVE-2021-35942 	:	6.4     :	No exploit available[0m
+[0;33m	bc             	:	2.31           	:	CVE-2021-38604 	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	2.31           	:	CVE-2021-3326  	:	5.0     :	No exploit available[0m
+[0;32m	bc             	:	2.31           	:	CVE-2020-1752  	:	3.7     :	No exploit available[0m
+[0;32m	bc             	:	2.31           	:	CVE-2020-29562 	:	2.1     :	No exploit available[0m
+[0;32m	bc             	:	2.31           	:	CVE-2020-27618 	:	2.1     :	No exploit available[0m
+[0;32m	bc             	:	2.31           	:	CVE-2020-10029 	:	2.1     :	No exploit available[0m
+[0;32m	bc             	:	2.31           	:	CVE-2021-27645 	:	1.9     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m11[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mbc[0;32m with version [0;33m2.31.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mgnu:ncurses:6.2[0m
+
+[0;33m	expat          	:	2.2.8          	:	CVE-2013-0340  	:	6.8     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m1[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mexpat[0;32m with version [0;33m2.2.8.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mgnu:sed:4.0[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mgnutls:3.6.12[0m
+
+[0;33m	expat          	:	2.2.9          	:	CVE-2013-0340  	:	6.8     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m1[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mexpat[0;32m with version [0;33m2.2.9.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mkmod:26[0m
+
+[0;33m	gnu            	:	ncurses:6.2    	:	CVE-2021-39537 	:	6.8     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m1[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mgnu[0;32m with version [0;33mncurses:6.2.[0m[0m
+
+
+[0;31m	glibc          	:	2.31           	:	CVE-2021-33574 	:	7.5     :	No exploit available[0m
+[0;31m	glibc          	:	2.31           	:	CVE-2019-25013 	:	7.1     :	No exploit available[0m
+[0;33m	glibc          	:	2.31           	:	CVE-2020-6096  	:	6.8     :	No exploit available[0m
+[0;33m	glibc          	:	2.31           	:	CVE-2021-35942 	:	6.4     :	No exploit available[0m
+[0;33m	glibc          	:	2.31           	:	CVE-2021-38604 	:	5.0     :	No exploit available[0m
+[0;33m	glibc          	:	2.31           	:	CVE-2021-3326  	:	5.0     :	No exploit available[0m
+[0;32m	glibc          	:	2.31           	:	CVE-2020-1752  	:	3.7     :	No exploit available[0m
+[0;32m	glibc          	:	2.31           	:	CVE-2020-29562 	:	2.1     :	No exploit available[0m
+[0;32m	glibc          	:	2.31           	:	CVE-2020-27618 	:	2.1     :	No exploit available[0m
+[0;32m	glibc          	:	2.31           	:	CVE-2020-10029 	:	2.1     :	No exploit available[0m
+[0;32m	glibc          	:	2.31           	:	CVE-2021-27645 	:	1.9     :	No exploit available[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mlibarchive:3.4.2[0m
+[[0;32m+[0m][0;32m Found [0;33m[1m11[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mglibc[0;32m with version [0;33m2.31.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mlibcurl:7.69.1[0m
+
+[0;35m	bc             	:	0              	:	CVE-2011-1930  	:	10.0    :	Exploit (EDB ID: 35785)[0m
+[0;31m	bc             	:	0              	:	CVE-2014-9402  	:	7.8     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2021-33574 	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2021-31873 	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2021-31870 	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2019-9169  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2018-6485  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2018-11236 	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2017-9728  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2017-15804 	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2017-15670 	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2015-8779  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2015-8778  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2015-1472  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2014-9984  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2014-9761  	:	7.5     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2014-5119  	:	7.5     :	Exploit (EDB ID: 34421)[0m
+[0;31m	bc             	:	0              	:	CVE-2014-4043  	:	7.5     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2012-4412  	:	7.5     :	Exploit (EDB ID: 37783)[0m
+[0;31m	bc             	:	0              	:	CVE-2005-3590  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2002-0684  	:	7.5     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-1999-0199  	:	7.5     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2018-100000	:	7.2     :	Exploit (EDB ID: 43775 / MSF: glibc_realpath_priv_esc)[0m
+[0;35m	bc             	:	0              	:	CVE-2017-100036	:	7.2     :	Exploit (EDB ID: 42274)[0m
+[0;31m	bc             	:	0              	:	CVE-2015-5277  	:	7.2     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2010-3856  	:	7.2     :	Exploit (EDB ID: 15304 / MSF: glibc_ld_audit_dso_load_priv_esc)[0m
+[0;31m	bc             	:	0              	:	CVE-2010-0296  	:	7.2     :	No exploit available[0m
+[0;31m	bc             	:	0              	:	CVE-2019-25013 	:	7.1     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2020-12050 	:	6.9     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2010-3847  	:	6.9     :	Exploit (EDB ID: 15274 / MSF: glibc_ld_audit_dso_load_priv_esc glibc_origin_expansion_priv_esc)[0m
+[0;33m	bc             	:	0              	:	CVE-2009-5064  	:	6.9     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2020-6096  	:	6.8     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2015-8983  	:	6.8     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2015-8982  	:	6.8     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2015-1781  	:	6.8     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2014-0475  	:	6.8     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2013-4237  	:	6.8     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2011-2702  	:	6.8     :	Exploit (EDB ID: 20167)[0m
+[0;35m	bc             	:	0              	:	CVE-2009-5029  	:	6.8     :	Exploit (EDB ID: 36404)[0m
+[0;33m	bc             	:	0              	:	CVE-2021-35942 	:	6.4     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2015-8776  	:	6.4     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2015-1473  	:	6.4     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2011-1095  	:	6.2     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2020-1751  	:	5.9     :	Exploit (MSF: apache_flink_jobmanager_traversal)[0m
+[0;33m	bc             	:	0              	:	CVE-2013-7424  	:	5.1     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2013-4788  	:	5.1     :	Exploit (EDB ID: 28657)[0m
+[0;33m	bc             	:	0              	:	CVE-2012-4424  	:	5.1     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2011-1071  	:	5.1     :	Exploit (EDB ID: 17120)[0m
+[0;33m	bc             	:	0              	:	CVE-2021-38604 	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2021-3326  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2019-9192  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2018-20796 	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2018-19591 	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2017-9729  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2016-6323  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2016-5417  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2016-3706  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2016-3075  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2016-1234  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2015-5180  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2014-8121  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2014-6040  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2013-7423  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2013-4458  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2013-1914  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2012-6656  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2011-4609  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2011-1659  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2010-3192  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2009-5155  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2009-4881  	:	5.0     :	No exploit available[0m
+[0;35m	bc             	:	0              	:	CVE-2009-4880  	:	5.0     :	Exploit (EDB ID: 33230)[0m
+[0;33m	bc             	:	0              	:	CVE-2002-1146  	:	5.0     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2019-6488  	:	4.6     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2018-11237 	:	4.6     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2016-10739 	:	4.6     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2017-15671 	:	4.3     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2017-12133 	:	4.3     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2017-12132 	:	4.3     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2016-4429  	:	4.3     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2016-10228 	:	4.3     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2015-8985  	:	4.3     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2015-8984  	:	4.3     :	No exploit available[0m
+[0;33m	bc             	:	0              	:	CVE-2013-4332  	:	4.3     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2020-1752  	:	3.7     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2011-1658  	:	3.7     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2011-1089  	:	3.3     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2013-2207  	:	2.6     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2020-27618 	:	2.1     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2020-10029 	:	2.1     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2015-8777  	:	2.1     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2011-5320  	:	2.1     :	No exploit available[0m
+[0;32m	bc             	:	0              	:	CVE-2006-7254  	:	2.1     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;31m[1m93[0m[0;32m CVEs and [0;31m[1m13[0m[0;32m exploits in [0;33mbc[0;32m with version [0;33m0.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mlibgcrypt:1.8.5[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mmkfs.fat:4.1[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mopenssh:8.2:p1[0m
+
+[0;31m	gnutls         	:	3.6.12         	:	CVE-2021-20232 	:	7.5     :	No exploit available[0m
+[0;31m	gnutls         	:	3.6.12         	:	CVE-2021-20231 	:	7.5     :	No exploit available[0m
+[0;33m	gnutls         	:	3.6.12         	:	CVE-2020-13777 	:	5.8     :	No exploit available[0m
+[0;33m	gnutls         	:	3.6.12         	:	CVE-2020-11501 	:	5.8     :	No exploit available[0m
+[0;33m	gnutls         	:	3.6.12         	:	CVE-2020-24659 	:	5.0     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m5[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mgnutls[0;32m with version [0;33m3.6.12.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mopenssl:1.0.1[0m
+
+[0;33m	libcurl        	:	7.69.1         	:	CVE-2021-22876 	:	5.0     :	No exploit available[0m
+[0;33m	libcurl        	:	7.69.1         	:	CVE-2020-8286  	:	5.0     :	No exploit available[0m
+[0;33m	libcurl        	:	7.69.1         	:	CVE-2020-8285  	:	5.0     :	No exploit available[0m
+[0;33m	libcurl        	:	7.69.1         	:	CVE-2020-8231  	:	5.0     :	No exploit available[0m
+[0;33m	libcurl        	:	7.69.1         	:	CVE-2021-22924 	:	4.3     :	No exploit available[0m
+[0;33m	libcurl        	:	7.69.1         	:	CVE-2021-22890 	:	4.3     :	No exploit available[0m
+
+
+[0;33m	libarchive     	:	3.4.2          	:	CVE-2021-36976 	:	4.3     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m6[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mlibcurl[0;32m with version [0;33m7.69.1.[0m[0m
+[[0;32m+[0m][0;32m Found [0;33m[1m1[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mlibarchive[0;32m with version [0;33m3.4.2.[0m[0m
+
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mpcre:1.2.12[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mopenssl:1.1.1f[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mperl:5.30.1[0m
+
+[0;33m	libgcrypt      	:	1.8.5          	:	CVE-2021-33560 	:	5.0     :	No exploit available[0m
+[0;32m	libgcrypt      	:	1.8.5          	:	CVE-2021-40528 	:	2.6     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m2[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mlibgcrypt[0;32m with version [0;33m1.8.5.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mrngd:6.9[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32msudo:1.8.31/[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mudev:3.2.9[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mudhcp:1.31.1[0m
+
+[0;31m	openssl        	:	1.1.1f         	:	CVE-2021-3711  	:	7.5     :	No exploit available[0m
+[0;33m	openssl        	:	1.1.1f         	:	CVE-2021-3712  	:	5.8     :	No exploit available[0m
+[0;33m	openssl        	:	1.1.1f         	:	CVE-2021-23840 	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.1.1f         	:	CVE-2020-1967  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.1.1f         	:	CVE-2021-3449  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.1.1f         	:	CVE-2021-23841 	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.1.1f         	:	CVE-2020-1971  	:	4.3     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m7[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mopenssl[0;32m with version [0;33m1.1.1f.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32musbutils:012[0m
+
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-25643 	:	7.5     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-43057 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-38300 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-38160 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-37576 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-3612  	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-33909 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-3347  	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-33200 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-29266 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-29154 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-28972 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-28660 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-28375 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2021-20292 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-36387 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-36158 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-35499 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-29661 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-29569 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-29534 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-27777 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-15780 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-15436 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-14386 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-14356 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-14331 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-13974 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-12659 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-12465 	:	7.2     :	No exploit available[0m
+[0;31m	kernel         	:	5.4.72         	:	CVE-2020-12464 	:	7.2     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-42008 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3573  	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-35039 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-29657 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-23133 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-29369 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-29368 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-26541 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-11884 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-10757 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2018-16880 	:	6.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-36385 	:	6.8     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2018-100002	:	6.8     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-32078 	:	6.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3653  	:	6.1     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-31916 	:	6.1     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-28974 	:	6.1     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-28915 	:	6.1     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-25705 	:	5.8     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3506  	:	5.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-36386 	:	5.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-11668 	:	5.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3178  	:	5.5     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-28374 	:	5.5     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-10942 	:	5.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-38207 	:	5.0     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-38202 	:	5.0     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-38201 	:	5.0     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-25645 	:	5.0     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3635  	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-29650 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-29649 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-29648 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-28971 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-28951 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-28038 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-8992  	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-36322 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-28941 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-27673 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-25704 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-25641 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-25639 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-15437 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-12771 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-11609 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-11608 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-10781 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2019-3819  	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2019-20810 	:	4.9     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-33624 	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-29265 	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-29264 	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-29372 	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-27675 	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-14385 	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-12888 	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2019-3887  	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2019-20794 	:	4.7     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-42739 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-42327 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-42252 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-41864 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-38204 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-38166 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3483  	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3444  	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3411  	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-33034 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-33033 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-28952 	:	4.6     :	No exploit available[0m
+[0;35m	kernel         	:	5.4.72         	:	CVE-2021-27365 	:	4.6     :	Exploit (linux-exploit-suggester)[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-26934 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-26930 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-23134 	:	4.6     :	No exploit available[0m
+[0;35m	kernel         	:	5.4.72         	:	CVE-2021-22555 	:	4.6     :	Exploit (linux-exploit-suggester / EDB ID: 50135)[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-20268 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-20194 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-36313 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-14390 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-14381 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-14351 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-12770 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-12657 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-12653 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-11725 	:	4.6     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-40490 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-37159 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-3348  	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-32399 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-35508 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-29370 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-25285 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-25212 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-12826 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-10690 	:	4.4     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-16166 	:	4.3     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-13143 	:	4.3     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-12654 	:	4.3     :	No exploit available[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2020-10711 	:	4.3     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-3501  	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-27364 	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-27363 	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-9383  	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-8649  	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-8648  	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-8647  	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-8428  	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-28097 	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-27171 	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-25211 	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-24394 	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-11565 	:	3.6     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-38199 	:	3.3     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-29374 	:	3.3     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-43389 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-38209 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-38208 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-38206 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-38205 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-38203 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-38200 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-38198 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-3679  	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-3655  	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-3564  	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-35477 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-34693 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-34556 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-31829 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-30178 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-30002 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-29647 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-29646 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-29155 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-28950 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-28688 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-20239 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-36312 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-36311 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-36310 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-29660 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-29373 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-29371 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-27830 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-27194 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-27152 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-26088 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-16120 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-15393 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-14314 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-12768 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-12656 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-12655 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-11494 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-10768 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-10766 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2019-19338 	:	2.1     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-28964 	:	1.9     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-26932 	:	1.9     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2021-26931 	:	1.9     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-27170 	:	1.9     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-25656 	:	1.9     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-25284 	:	1.9     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2020-10767 	:	1.9     :	No exploit available[0m
+[0;32m	kernel         	:	5.4.72         	:	CVE-2019-3016  	:	1.9     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;31m[1m197[0m[0;32m CVEs and [0;31m[1m3[0m[0;32m exploits in [0;33mkernel[0;32m with version [0;33m5.4.72.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mutil-linux:2.35.1[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mwpa_cli:2.9[0m
+
+[0;31m	perl           	:	5.30.1         	:	CVE-2020-10878 	:	7.5     :	No exploit available[0m
+[0;33m	perl           	:	5.30.1         	:	CVE-2020-12723 	:	5.0     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m2[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mperl[0;32m with version [0;33m5.30.1.[0m[0m
+
+[[0;33m*[0m] CVE database lookup with version information: [0;32mwpa_supplicant:2.9[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32myat2m:1.37[0m
+[[0;33m*[0m] CVE database lookup with version information: [0;32mzlib:1.2.11[0m
+
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-2842  	:	10.0    :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-2108  	:	10.0    :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-0799  	:	10.0    :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-0705  	:	10.0    :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-6304  	:	7.8     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-2109  	:	7.8     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-0798  	:	7.8     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-6303  	:	7.5     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-2182  	:	7.5     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2016-2177  	:	7.5     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2015-0292  	:	7.5     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2014-8176  	:	7.5     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2014-3512  	:	7.5     :	No exploit available[0m
+[0;35m	openssl        	:	1.0.1          	:	CVE-2012-2110  	:	7.5     :	Exploit (EDB ID: 18756)[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2014-3567  	:	7.1     :	No exploit available[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2014-3513  	:	7.1     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-1791  	:	6.8     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0209  	:	6.8     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3509  	:	6.8     :	No exploit available[0m
+[0;35m	openssl        	:	1.0.1          	:	CVE-2014-0195  	:	6.8     :	Exploit (MSF: dtls_fragment_overflow)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2012-2333  	:	6.8     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-2176  	:	6.4     :	No exploit available[0m
+[0;35m	openssl        	:	1.0.1          	:	CVE-2015-1793  	:	6.4     :	Exploit (EDB ID: 38640 / MSF: openssl_altchainsforgery_mitm_proxy)[0m
+[0;35m	openssl        	:	1.0.1          	:	CVE-2014-0224  	:	5.8     :	Exploit (MSF: openssl_ccs)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2013-6450  	:	5.8     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2017-3735  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-8610  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-6302  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-2183  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-2181  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-2180  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-2179  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-2106  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-2105  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-0797  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-3195  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-3194  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-1792  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-1790  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0293  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0289  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0288  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0287  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0286  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0206  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0205  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-8275  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3572  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3571  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3570  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3569  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3507  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3506  	:	5.0     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3505  	:	5.0     :	No exploit available[0m
+[0;35m	openssl        	:	1.0.1          	:	CVE-2014-0160  	:	5.0     :	Exploit (EDB ID: 32745 / MSF: openssl_heartbleed openssl_heartbeat_client_memory)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2013-0166  	:	5.0     :	No exploit available[0m
+[0;35m	openssl        	:	1.0.1          	:	CVE-2012-2686  	:	5.0     :	Exploit (MSF: openssl_aesni)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-6306  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-0800  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-0704  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2016-0703  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-4000  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-3216  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-3197  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-3196  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-1789  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-1788  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-0204  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-5139  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3568  	:	4.3     :	No exploit available[0m
+[0;35m	openssl        	:	1.0.1          	:	CVE-2014-3566  	:	4.3     :	Exploit (MSF: ssl_version)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3511  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3510  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3508  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3470  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-0221  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-0198  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2013-6449  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2013-4353  	:	4.3     :	No exploit available[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2010-5298  	:	4.0     :	No exploit available[0m
+[0;35m	openssl        	:	1.0.1          	:	CVE-2016-2107  	:	2.6     :	Exploit (EDB ID: 39768)[0m
+[0;32m	openssl        	:	1.0.1          	:	CVE-2013-0169  	:	2.6     :	No exploit available[0m
+[0;32m	openssl        	:	1.0.1          	:	CVE-2016-7056  	:	2.1     :	No exploit available[0m
+[0;32m	openssl        	:	1.0.1          	:	CVE-2016-2178  	:	2.1     :	No exploit available[0m
+[0;32m	openssl        	:	1.0.1          	:	CVE-2016-0702  	:	1.9     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;31m[1m85[0m[0;32m CVEs and [0;31m[1m8[0m[0;32m exploits in [0;33mopenssl[0;32m with version [0;33m1.0.1.[0m[0m
+
+
+[0;32m	util-linux     	:	2.35.1         	:	CVE-2021-37600 	:	1.2     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m1[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mutil-linux[0;32m with version [0;33m2.35.1.[0m[0m
+
+
+[0;33m	wpa            	:	supplicant:2.9 	:	CVE-2021-27803 	:	5.4     :	No exploit available[0m
+[0;33m	wpa            	:	supplicant:2.9 	:	CVE-2021-30004 	:	5.0     :	No exploit available[0m
+[0;32m	wpa            	:	supplicant:2.9 	:	CVE-2019-16275 	:	3.3     :	No exploit available[0m
+
+[[0;32m+[0m][0;32m Found [0;33m[1m3[0m[0;32m CVEs and [0;33m[1m0[0m[0;32m exploits in [0;33mwpa[0;32m with version [0;33msupplicant:2.9.[0m[0m
+
+
+[[0;33m*[0m] Identified the following version details, vulnerabilities and exploits:
+[[0;33m+[0m][0;33m Found version details: 	e2fsprogs           	:	1.45.4         	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	fsck.fat            	:	4.1            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	bash                	:	5.0.16         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	busybox             	:	1.31.1         	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;35m+[0m][0;35m Found version details: 	bc                  	:	0              	:	CVEs: 93      	:	Exploits: 13      [0m
+[[0;33m+[0m][0;33m Found version details: 	bc                  	:	2.31           	:	CVEs: 11      	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	alsa                	:	1.2.1          	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	libcurl             	:	7.69.1         	:	CVEs: 6       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	expat               	:	2.2.9          	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	kmod                	:	26             	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	glibc               	:	2.31           	:	CVEs: 11      	:	Exploits: 0       [0m
+[[0;35m+[0m][0;35m Found version details: 	openssl             	:	1.0.1          	:	CVEs: 85      	:	Exploits: 8       [0m
+[[0;35m+[0m][0;35m Found version details: 	kernel              	:	5.4.72         	:	CVEs: 197     	:	Exploits: 3       [0m
+[[0;33m+[0m][0;33m Found version details: 	expat               	:	2.2.8          	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	libarchive          	:	3.4.2          	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	mkfs.fat            	:	4.1            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	libgcrypt           	:	1.8.5          	:	CVEs: 2       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	gnutls              	:	3.6.12         	:	CVEs: 5       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	gnu sed             	:	4.0            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	openssl             	:	1.1.1f         	:	CVEs: 7       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	pcre                	:	1.2.12         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	rngd                	:	6.9            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	openssh             	:	8.2-p1         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	util-linux          	:	2.35.1         	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	perl                	:	5.30.1         	:	CVEs: 2       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	usbutils            	:	012            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	udhcp               	:	1.31.1         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	yat2m               	:	1.37           	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	gnu ncurses         	:	6.2            	:	CVEs: 1       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	udev                	:	3.2.9          	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	zlib                	:	1.2.11         	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;32m+[0m][0;32m Found version details: 	wpa cli             	:	2.9            	:	CVEs: 0       	:	Exploits: 0       [0m
+[[0;33m+[0m][0;33m Found version details: 	wpa supplicant      	:	2.9            	:	CVEs: 3       	:	Exploits: 0       [0m
+[0m
+
+[0;34m==>[0m [0;36mMinimal report of exploits and CVE's.[0m
+-----------------------------------------------------------------
+
+[[0;33m*[0m] CVE log file stored in /log/f19_cve_aggregator/CVE_minimal.txt.
+
+[[0;33m*[0m] CVE details for [0;32mgnutls 3.6.12[0m:
+
+CVE-2020-24659, CVE-2020-13777, CVE-2021-20231, CVE-2021-20232, CVE-2020-11501
+
+[[0;33m*[0m] CVE details for [0;32mbc 0[0m:
+
+CVE-2011-1071, CVE-2011-2702, CVE-2013-4788, CVE-1999-0199, CVE-2005-3590, CVE-2002-0684, CVE-2011-1089, CVE-2011-1095, CVE-2002-1146, CVE-2011-1658, CVE-2011-1659, CVE-2009-4880, CVE-2009-4881, CVE-2009-5064, CVE-2009-5029, CVE-2009-5155, CVE-2010-0296, CVE-2010-3192, CVE-2006-7254, CVE-2010-3847, CVE-2013-1914, CVE-2010-3856, CVE-2013-2207, CVE-2011-4609, CVE-2011-5320, CVE-2014-0475, CVE-2017-1000366, CVE-2013-4458, CVE-2013-4237, CVE-2015-1781, CVE-2012-4412, CVE-2012-4424, CVE-2015-1472, CVE-2015-1473, CVE-2013-4332, CVE-2017-12132, CVE-2017-12133, CVE-2013-7423, CVE-2013-7424, CVE-2014-4043, CVE-2015-5180, CVE-2012-6656, CVE-2015-5277, CVE-2014-5119, CVE-2014-6040, CVE-2018-1000001, CVE-2017-15670, CVE-2017-15671, CVE-2016-10228, CVE-2017-15804, CVE-2016-10739, CVE-2014-8121, CVE-2018-11236, CVE-2018-11237, CVE-2016-1234, CVE-2014-9761, CVE-2014-9402, CVE-2015-8776, CVE-2015-8777, CVE-2015-8778, CVE-2015-8779, CVE-2015-8982, CVE-2015-8983, CVE-2015-8984, CVE-2015-8985, CVE-2014-9984, CVE-2016-3075, CVE-2020-10029, CVE-2016-3706, CVE-2016-4429, CVE-2016-5417, CVE-2016-6323, CVE-2018-19591, CVE-2018-20796, CVE-2020-1751, CVE-2020-1752, CVE-2018-6485, CVE-2020-27618, CVE-2021-3326, CVE-2021-33574, CVE-2021-35942, CVE-2020-6096, CVE-2021-38604, CVE-2019-25013, CVE-2019-6488, CVE-2019-9169, CVE-2019-9192, CVE-2011-1930, CVE-2021-31870, CVE-2021-31873, CVE-2020-12050, CVE-2017-9728, CVE-2017-9729
+
+[[0;33m*[0m] CVE details for [0;32mopenssl 1.1.1f[0m:
+
+CVE-2021-23841, CVE-2020-1967, CVE-2021-3449, CVE-2020-1971, CVE-2021-3711, CVE-2021-3712, CVE-2021-23840
+
+[[0;33m*[0m] CVE details for [0;32mutil-linux 2.35.1[0m:
+
+CVE-2021-37600
+
+[[0;33m*[0m] CVE details for [0;32mopenssl 1.0.1[0m:
+
+CVE-2015-4000, CVE-2016-2183, CVE-2014-0160, CVE-2014-0224, CVE-2016-2107, CVE-2016-2182, CVE-2016-6306, CVE-2016-2177, CVE-2015-3196, CVE-2014-3566, CVE-2016-8610, CVE-2016-6303, CVE-2016-6304, CVE-2015-0286, CVE-2015-0204, CVE-2015-0209, CVE-2015-0287, CVE-2015-0288, CVE-2015-0289, CVE-2015-0292, CVE-2015-0293, CVE-2014-0195, CVE-2012-2333, CVE-2012-2110, CVE-2014-0221, CVE-2010-5298, CVE-2015-1788, CVE-2015-1789, CVE-2015-1790, CVE-2015-1791, CVE-2015-1792, CVE-2015-3195, CVE-2014-3567, CVE-2014-3568, CVE-2014-3570, CVE-2014-3571, CVE-2014-3572, CVE-2013-6449, CVE-2014-3470, CVE-2016-0703, CVE-2016-0704, CVE-2014-8176, CVE-2014-8275, CVE-2016-2176, CVE-2016-2106, CVE-2016-2108, CVE-2016-2109, CVE-2016-7056, CVE-2013-0166, CVE-2017-3735, CVE-2013-0169, CVE-2014-3505, CVE-2014-3506, CVE-2014-3507, CVE-2014-3508, CVE-2014-3510, CVE-2014-0198, CVE-2013-6450, CVE-2014-3509, CVE-2014-3511, CVE-2014-3512, CVE-2015-0205, CVE-2015-0206, CVE-2012-2686, CVE-2013-4353, CVE-2015-3194, CVE-2015-3197, CVE-2014-3513, CVE-2016-0702, CVE-2016-0705, CVE-2016-0797, CVE-2016-0798, CVE-2016-0799, CVE-2016-0800, CVE-2014-5139, CVE-2016-2178, CVE-2016-2179, CVE-2016-2180, CVE-2016-2181, CVE-2016-2105, CVE-2016-2842, CVE-2016-6302, CVE-2015-3216, CVE-2014-3569, CVE-2015-1793
+
+[[0;33m*[0m] CVE details for [0;32mglibc 2.31[0m:
+
+CVE-2020-10029, CVE-2020-1752, CVE-2020-27618, CVE-2021-3326, CVE-2021-33574, CVE-2021-35942, CVE-2020-6096, CVE-2021-38604, CVE-2019-25013, CVE-2021-27645, CVE-2020-29562
+
+[[0;33m*[0m] CVE details for [0;32mgnu:ncurses 6.2[0m:
+
+CVE-2021-39537
+
+[[0;33m*[0m] CVE details for [0;32me2fsprogs 1.45.4[0m:
+
+CVE-2019-5188
+
+[[0;33m*[0m] CVE details for [0;32mexpat 2.2.9[0m:
+
+CVE-2013-0340
+
+[[0;33m*[0m] CVE details for [0;32mwpa supplicant 2.9[0m:
+
+CVE-2019-16275, CVE-2021-30004, CVE-2021-27803
+
+[[0;33m*[0m] CVE details for [0;32mbusybox 1.31.1[0m:
+
+CVE-2018-1000500
+
+[[0;33m*[0m] CVE details for [0;32mexpat 2.2.8[0m:
+
+CVE-2013-0340
+
+[[0;33m*[0m] CVE details for [0;32mbc 2.31[0m:
+
+CVE-2020-10029, CVE-2020-1752, CVE-2020-27618, CVE-2021-3326, CVE-2021-33574, CVE-2021-35942, CVE-2020-6096, CVE-2021-38604, CVE-2019-25013, CVE-2021-27645, CVE-2020-29562
+
+[[0;33m*[0m] CVE details for [0;32mlibgcrypt 1.8.5[0m:
+
+CVE-2021-33560, CVE-2021-40528
+
+[[0;33m*[0m] CVE details for [0;32mkernel 5.4.72[0m:
+
+CVE-2020-16166, CVE-2021-38160, CVE-2021-38199, CVE-2021-38201, CVE-2021-38202, CVE-2021-38203, CVE-2021-22555, CVE-2021-29154, CVE-2020-29369, CVE-2021-33909, CVE-2020-25645, CVE-2020-29374, CVE-2020-29569, CVE-2020-10711, CVE-2021-20194, CVE-2020-25639, CVE-2020-27777, CVE-2020-25643, CVE-2018-1000026, CVE-2020-11565, CVE-2020-16120, CVE-2019-20810, CVE-2019-3819, CVE-2020-11884, CVE-2020-11608, CVE-2020-11609, CVE-2018-16880, CVE-2020-24394, CVE-2019-3887, CVE-2020-12826, CVE-2020-25211, CVE-2020-28374, CVE-2021-3347, CVE-2021-34693, CVE-2021-3679, CVE-2020-27830, CVE-2021-40490, CVE-2020-10757, CVE-2020-10781, CVE-2020-14390, CVE-2020-14351, CVE-2020-15393, CVE-2021-23134, CVE-2021-26931, CVE-2021-26932, CVE-2021-26930, CVE-2021-27363, CVE-2021-27364, CVE-2021-27365, CVE-2021-28038, CVE-2020-26088, CVE-2020-25284, CVE-2020-25285, CVE-2020-27171, CVE-2020-28974, CVE-2021-3178, CVE-2021-33624, CVE-2021-35477, CVE-2021-37159, CVE-2021-38198, CVE-2021-38205, CVE-2020-12770, CVE-2020-27675, CVE-2020-12888, CVE-2021-23133, CVE-2021-26934, CVE-2021-28375, CVE-2021-28951, CVE-2021-28952, CVE-2021-28964, CVE-2021-28971, CVE-2021-28972, CVE-2021-29155, CVE-2021-29646, CVE-2021-29647, CVE-2021-29648, CVE-2021-29649, CVE-2021-29650, CVE-2021-30178, CVE-2020-29660, CVE-2020-29661, CVE-2020-27170, CVE-2021-31829, CVE-2020-28941, CVE-2021-20292, CVE-2021-20239, CVE-2021-28950, CVE-2021-28660, CVE-2020-36158, CVE-2021-33200, CVE-2021-34556, CVE-2021-37576, CVE-2021-38166, CVE-2021-33034, CVE-2021-3635, CVE-2021-3564, CVE-2021-3573, CVE-2021-3612, CVE-2021-20268, CVE-2020-10766, CVE-2020-10767, CVE-2020-10942, CVE-2020-10768, CVE-2020-11494, CVE-2020-10690, CVE-2020-11668, CVE-2020-11725, CVE-2020-13143, CVE-2020-12653, CVE-2020-12654, CVE-2020-12655, CVE-2020-12656, CVE-2020-12657, CVE-2020-12659, CVE-2020-12768, CVE-2020-12771, CVE-2020-13974, CVE-2020-14381, CVE-2020-14385, CVE-2020-14386, CVE-2020-14314, CVE-2020-14331, CVE-2020-14356, CVE-2020-12464, CVE-2020-12465, CVE-2020-15436, CVE-2020-15437, CVE-2020-15780, CVE-2020-25212, CVE-2020-25704, CVE-2020-25705, CVE-2021-29264, CVE-2021-29657, CVE-2021-29265, CVE-2021-30002, CVE-2021-29266, CVE-2020-25641, CVE-2020-25656, CVE-2020-26541, CVE-2020-29368, CVE-2020-29370, CVE-2020-29371, CVE-2020-29372, CVE-2020-29373, CVE-2020-28097, CVE-2020-35499, CVE-2020-27152, CVE-2020-35508, CVE-2020-27194, CVE-2020-28915, CVE-2020-36310, CVE-2021-31916, CVE-2020-36311, CVE-2020-36312, CVE-2020-36313, CVE-2020-36322, CVE-2021-32078, CVE-2021-3348, CVE-2020-27673, CVE-2020-36385, CVE-2021-33033, CVE-2020-36386, CVE-2020-36387, CVE-2021-32399, CVE-2021-3411, CVE-2021-3655, CVE-2021-3444, CVE-2021-3483, CVE-2021-3501, CVE-2021-3506, CVE-2021-38200, CVE-2021-38204, CVE-2021-42008, CVE-2021-38206, CVE-2019-19338, CVE-2021-38207, CVE-2021-38208, CVE-2021-38209, CVE-2021-38300, CVE-2021-42252, CVE-2021-42327, CVE-2021-41864, CVE-2021-42739, CVE-2021-43057, CVE-2021-43389, CVE-2020-8992, CVE-2020-9383, CVE-2020-8647, CVE-2020-8648, CVE-2020-8649, CVE-2019-3016, CVE-2021-3653, CVE-2021-28688, CVE-2021-35039, CVE-2019-20794, CVE-2020-8428, CVE-2020-29534
+
+[[0;33m*[0m] CVE details for [0;32mperl 5.30.1[0m:
+
+CVE-2020-10878, CVE-2020-12723
+
+[[0;33m*[0m] CVE details for [0;32mlibcurl 7.69.1[0m:
+
+CVE-2021-22876, CVE-2021-22924, CVE-2020-8285, CVE-2020-8231, CVE-2020-8286, CVE-2021-22890
+
+[[0;33m*[0m] CVE details for [0;32mlibarchive 3.4.2[0m:
+
+CVE-2021-36976
+
+
+[[0;33m*[0m] Minimal exploit summary file stored in /log/f19_cve_aggregator/exploits-overview.txt.
+
+[0;31m	bc             	:	0              	:	CVE-2011-1930  	:	10.0    :	Exploit (EDB ID: 35785)[0m
+[0;31m	openssl        	:	1.0.1          	:	CVE-2012-2110  	:	7.5     :	Exploit (EDB ID: 18756)[0m
+[0;31m	bc             	:	0              	:	CVE-2014-5119  	:	7.5     :	Exploit (EDB ID: 34421)[0m
+[0;31m	bc             	:	0              	:	CVE-2012-4412  	:	7.5     :	Exploit (EDB ID: 37783)[0m
+[0;31m	bc             	:	0              	:	CVE-2018-100000	:	7.2     :	Exploit (EDB ID: 43775 / MSF: glibc_realpath_priv_esc)[0m
+[0;31m	bc             	:	0              	:	CVE-2017-100036	:	7.2     :	Exploit (EDB ID: 42274)[0m
+[0;31m	bc             	:	0              	:	CVE-2010-3856  	:	7.2     :	Exploit (EDB ID: 15304 / MSF: glibc_ld_audit_dso_load_priv_esc)[0m
+[0;33m	bc             	:	0              	:	CVE-2010-3847  	:	6.9     :	Exploit (EDB ID: 15274 / MSF: glibc_ld_audit_dso_load_priv_esc glibc_origin_expansion_priv_esc)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-0195  	:	6.8     :	Exploit (MSF: dtls_fragment_overflow)[0m
+[0;33m	bc             	:	0              	:	CVE-2011-2702  	:	6.8     :	Exploit (EDB ID: 20167)[0m
+[0;33m	bc             	:	0              	:	CVE-2009-5029  	:	6.8     :	Exploit (EDB ID: 36404)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2015-1793  	:	6.4     :	Exploit (EDB ID: 38640 / MSF: openssl_altchainsforgery_mitm_proxy)[0m
+[0;33m	bc             	:	0              	:	CVE-2020-1751  	:	5.9     :	Exploit (MSF: apache_flink_jobmanager_traversal)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-0224  	:	5.8     :	Exploit (MSF: openssl_ccs)[0m
+[0;33m	bc             	:	0              	:	CVE-2013-4788  	:	5.1     :	Exploit (EDB ID: 28657)[0m
+[0;33m	bc             	:	0              	:	CVE-2011-1071  	:	5.1     :	Exploit (EDB ID: 17120)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-0160  	:	5.0     :	Exploit (EDB ID: 32745 / MSF: openssl_heartbleed openssl_heartbeat_client_memory)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2012-2686  	:	5.0     :	Exploit (MSF: openssl_aesni)[0m
+[0;33m	bc             	:	0              	:	CVE-2009-4880  	:	5.0     :	Exploit (EDB ID: 33230)[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-27365 	:	4.6     :	Exploit (linux-exploit-suggester)[0m
+[0;33m	kernel         	:	5.4.72         	:	CVE-2021-22555 	:	4.6     :	Exploit (linux-exploit-suggester / EDB ID: 50135)[0m
+[0;33m	openssl        	:	1.0.1          	:	CVE-2014-3566  	:	4.3     :	Exploit (MSF: ssl_version)[0m
+[0;32m	openssl        	:	1.0.1          	:	CVE-2016-2107  	:	2.6     :	Exploit (EDB ID: 39768)[0m
+[[0;33m*[0m] Sun Nov 14 09:59:03 EST 2021 - F19_cve_aggregator finished

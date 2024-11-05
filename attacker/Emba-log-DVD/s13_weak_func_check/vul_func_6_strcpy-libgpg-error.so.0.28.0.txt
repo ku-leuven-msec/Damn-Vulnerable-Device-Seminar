@@ -1,0 +1,154 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibgpg-error.so.0.28.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibgpg-error.so.0.28.0[0m
+
+    5b20:	97fffa54 	bl	4470 <__errno_location@plt>
+    5b24:	d2800013 	mov	x19, #0x0                   	// #0
+    5b28:	52800181 	mov	w1, #0xc                   	// #12
+    5b2c:	b9000001 	str	w1, [x0]
+    5b30:	aa1303e0 	mov	x0, x19
+    5b34:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5b38:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    5b3c:	d65f03c0 	ret
+    5b40:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    5b44:	910003fd 	mov	x29, sp
+    5b48:	a90153f3 	stp	x19, x20, [sp, #16]
+    5b4c:	aa0003f4 	mov	x20, x0
+    5b50:	97fff8e8 	bl	3ef0 <strlen@plt>
+    5b54:	aa0003e1 	mov	x1, x0
+    5b58:	d2800000 	mov	x0, #0x0                   	// #0
+    5b5c:	91000421 	add	x1, x1, #0x1
+    5b60:	97ffffc4 	bl	5a70 <gpg_err_init@@GPG_ERROR_1.0+0x1570>
+    5b64:	aa0003f3 	mov	x19, x0
+    5b68:	b4000060 	cbz	x0, 5b74 <gpg_err_init@@GPG_ERROR_1.0+0x1674>
+    5b6c:	aa1403e1 	mov	x1, x20
+[31m    5b70:	97fffa08 	bl	4390 <strcpy@plt>[0m
+    5b74:	aa1303e0 	mov	x0, x19
+    5b78:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   10a8c:	aa1503e0 	mov	x0, x21
+   10a90:	97ffcd18 	bl	3ef0 <strlen@plt>
+   10a94:	91005013 	add	x19, x0, #0x14
+   10a98:	350000b4 	cbnz	w20, 10aac <gpgrt_cmp_version@@GPG_ERROR_1.0+0x52c>
+   10a9c:	39401aa0 	ldrb	w0, [x21, #6]
+   10aa0:	34000060 	cbz	w0, 10aac <gpgrt_cmp_version@@GPG_ERROR_1.0+0x52c>
+   10aa4:	52800037 	mov	w23, #0x1                   	// #1
+   10aa8:	14000020 	b	10b28 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x5a8>
+   10aac:	b0000041 	adrp	x1, 19000 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x8a80>
+   10ab0:	aa1503e0 	mov	x0, x21
+   10ab4:	9115c021 	add	x1, x1, #0x570
+   10ab8:	d2800122 	mov	x2, #0x9                   	// #9
+   10abc:	97ffcd8d 	bl	40f0 <strncmp@plt>
+   10ac0:	34000320 	cbz	w0, 10b24 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x5a4>
+   10ac4:	aa1303e0 	mov	x0, x19
+   10ac8:	97ffd3fa 	bl	5ab0 <gpg_err_init@@GPG_ERROR_1.0+0x15b0>
+   10acc:	aa0003f4 	mov	x20, x0
+   10ad0:	b4fff720 	cbz	x0, 109b4 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x434>
+   10ad4:	aa1503e1 	mov	x1, x21
+   10ad8:	91004280 	add	x0, x20, #0x10
+[31m   10adc:	97ffce2d 	bl	4390 <strcpy@plt>[0m
+   10ae0:	f800429f 	stur	xzr, [x20, #4]
+   10ae4:	b9000e9f 	str	wzr, [x20, #12]
+--
+   10af0:	b9400000 	ldr	w0, [x0]
+   10af4:	7100101f 	cmp	w0, #0x4
+   10af8:	54000121 	b.ne	10b1c <gpgrt_cmp_version@@GPG_ERROR_1.0+0x59c>  // b.any
+   10afc:	aa1503e0 	mov	x0, x21
+   10b00:	528036c2 	mov	w2, #0x1b6                 	// #438
+   10b04:	52808821 	mov	w1, #0x441                 	// #1089
+   10b08:	97ffcd72 	bl	40d0 <open@plt>
+   10b0c:	b9000280 	str	w0, [x20]
+   10b10:	2a0003f3 	mov	w19, w0
+   10b14:	3100041f 	cmn	w0, #0x1
+   10b18:	54fffea0 	b.eq	10aec <gpgrt_cmp_version@@GPG_ERROR_1.0+0x56c>  // b.none
+   10b1c:	52800017 	mov	w23, #0x0                   	// #0
+   10b20:	17ffffbd 	b	10a14 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x494>
+   10b24:	52800057 	mov	w23, #0x2                   	// #2
+   10b28:	aa1303e0 	mov	x0, x19
+   10b2c:	97ffd3e1 	bl	5ab0 <gpg_err_init@@GPG_ERROR_1.0+0x15b0>
+   10b30:	aa0003f4 	mov	x20, x0
+   10b34:	b4fff400 	cbz	x0, 109b4 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x434>
+   10b38:	aa1503e1 	mov	x1, x21
+   10b3c:	91004280 	add	x0, x20, #0x10
+[31m   10b40:	97ffce14 	bl	4390 <strcpy@plt>[0m
+   10b44:	12800013 	mov	w19, #0xffffffff            	// #-1
+   10b48:	b2407fe0 	mov	x0, #0xffffffff            	// #4294967295
+--
+   1111c:	b900067f 	str	wzr, [x19, #4]
+   11120:	b9000e60 	str	w0, [x19, #12]
+   11124:	d503201f 	nop
+   11128:	f00000f9 	adrp	x25, 30000 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x1fa80>
+   1112c:	3100071f 	cmn	w24, #0x1
+   11130:	f00000f5 	adrp	x21, 30000 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x1fa80>
+   11134:	b9004338 	str	w24, [x25, #64]
+   11138:	54fff0e0 	b.eq	10f54 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x9d4>  // b.none
+   1113c:	17ffff76 	b	10f14 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x994>
+   11140:	91005a75 	add	x21, x19, #0x16
+   11144:	aa1503e0 	mov	x0, x21
+   11148:	97ffcb6a 	bl	3ef0 <strlen@plt>
+   1114c:	91000400 	add	x0, x0, #0x1
+   11150:	97ffd258 	bl	5ab0 <gpg_err_init@@GPG_ERROR_1.0+0x15b0>
+   11154:	aa0003f9 	mov	x25, x0
+   11158:	b40012a0 	cbz	x0, 113ac <gpgrt_cmp_version@@GPG_ERROR_1.0+0xe2c>
+   1115c:	39405a61 	ldrb	w1, [x19, #22]
+   11160:	71016c3f 	cmp	w1, #0x5b
+   11164:	540005c0 	b.eq	1121c <gpgrt_cmp_version@@GPG_ERROR_1.0+0xc9c>  // b.none
+   11168:	aa1503e1 	mov	x1, x21
+[31m   1116c:	97ffcc89 	bl	4390 <strcpy@plt>[0m
+   11170:	aa1903e0 	mov	x0, x25
+   11174:	52800741 	mov	w1, #0x3a                  	// #58
+--
+   111d0:	5ac00421 	rev16	w1, w1
+   111d4:	52800042 	mov	w2, #0x2                   	// #2
+   111d8:	3900001f 	strb	wzr, [x0]
+   111dc:	aa1903e0 	mov	x0, x25
+   111e0:	a905ffff 	stp	xzr, xzr, [sp, #88]
+   111e4:	910163f5 	add	x21, sp, #0x58
+   111e8:	7900b3e2 	strh	w2, [sp, #88]
+   111ec:	7900b7e1 	strh	w1, [sp, #90]
+   111f0:	97ffcc8c 	bl	4420 <inet_addr@plt>
+   111f4:	b9005fe0 	str	w0, [sp, #92]
+   111f8:	3100041f 	cmn	w0, #0x1
+   111fc:	54001400 	b.eq	1147c <gpgrt_cmp_version@@GPG_ERROR_1.0+0xefc>  // b.none
+   11200:	aa1903e0 	mov	x0, x25
+   11204:	97ffd2df 	bl	5d80 <gpg_err_init@@GPG_ERROR_1.0+0x1880>
+   11208:	90000059 	adrp	x25, 19000 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x8a80>
+   1120c:	913c6339 	add	x25, x25, #0xf18
+   11210:	d280021a 	mov	x26, #0x10                  	// #16
+   11214:	52800040 	mov	w0, #0x2                   	// #2
+   11218:	17ffffb2 	b	110e0 <gpgrt_cmp_version@@GPG_ERROR_1.0+0xb60>
+   1121c:	91005e61 	add	x1, x19, #0x17
+[31m   11220:	97ffcc5c 	bl	4390 <strcpy@plt>[0m
+   11224:	aa1903e0 	mov	x0, x25
+   11228:	52800ba1 	mov	w1, #0x5d                  	// #93
+--
+   15708:	52800158 	mov	w24, #0xa                   	// #10
+   1570c:	b9008bf9 	str	w25, [sp, #136]
+   15710:	f9400381 	ldr	x1, [x28]
+   15714:	78606820 	ldrh	w0, [x1, x0]
+   15718:	376ffb60 	tbnz	w0, #13, 15684 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x5104>
+   1571c:	b94083e0 	ldr	w0, [sp, #128]
+   15720:	52800059 	mov	w25, #0x2                   	// #2
+   15724:	7101881f 	cmp	w0, #0x62
+   15728:	54fff92c 	b.gt	1564c <gpgrt_cmp_version@@GPG_ERROR_1.0+0x50cc>
+   1572c:	2a0003e2 	mov	w2, w0
+   15730:	11000400 	add	w0, w0, #0x1
+   15734:	b90083e0 	str	w0, [sp, #128]
+   15738:	17ffffeb 	b	156e4 <gpgrt_cmp_version@@GPG_ERROR_1.0+0x5164>
+   1573c:	f9404be0 	ldr	x0, [sp, #144]
+   15740:	91004000 	add	x0, x0, #0x10
+   15744:	97ffc0db 	bl	5ab0 <gpg_err_init@@GPG_ERROR_1.0+0x15b0>
+   15748:	aa0003f9 	mov	x25, x0
+   1574c:	b4ffdf00 	cbz	x0, 1532c <gpgrt_cmp_version@@GPG_ERROR_1.0+0x4dac>
+   15750:	aa1303e1 	mov	x1, x19
+   15754:	91002320 	add	x0, x25, #0x8
+[31m   15758:	97ffbb0e 	bl	4390 <strcpy@plt>[0m
+   1575c:	f9401a80 	ldr	x0, [x20, #48]
+   15760:	f9401401 	ldr	x1, [x0, #40]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m6[0m times [0;33mlibgpg-error.so.0.28.0[0m
+

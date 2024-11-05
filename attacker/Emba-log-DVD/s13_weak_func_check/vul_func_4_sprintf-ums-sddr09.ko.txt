@@ -1,0 +1,98 @@
+[[0;33m*[0m] Binary protection state of [0;33mums-sddr09.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m109) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mums-sddr09.ko[0m
+
+     330:	aa1303e0 	mov	x0, x19
+     334:	aa1403e2 	mov	x2, x20
+     338:	52800803 	mov	w3, #0x40                  	// #64
+     33c:	d2800004 	mov	x4, #0x0                   	// #0
+     340:	94000000 	bl	0 <usb_stor_bulk_transfer_buf>
+     344:	2a0003f3 	mov	w19, w0
+     348:	39400283 	ldrb	w3, [x20]
+     34c:	39400682 	ldrb	w2, [x20, #1]
+     350:	39400a81 	ldrb	w1, [x20, #2]
+     354:	39400e80 	ldrb	w0, [x20, #3]
+     358:	390113e3 	strb	w3, [sp, #68]
+     35c:	390117e2 	strb	w2, [sp, #69]
+     360:	39011be1 	strb	w1, [sp, #70]
+     364:	39011fe0 	strb	w0, [sp, #71]
+     368:	35fffc53 	cbnz	w19, 2f0 <sddr09_get_cardinfo+0x60>
+     36c:	910113e2 	add	x2, sp, #0x44
+     370:	90000001 	adrp	x1, 0 <nand_compute_ecc>
+     374:	91000021 	add	x1, x1, #0x0
+     378:	910123f4 	add	x20, sp, #0x48
+     37c:	aa1403e0 	mov	x0, x20
+[31m     380:	94000000 	bl	0 <sprintf>[0m
+     384:	aa1403e0 	mov	x0, x20
+     388:	94000000 	bl	0 <strlen>
+     38c:	394113e1 	ldrb	w1, [sp, #68]
+     390:	8b000280 	add	x0, x20, x0
+     394:	7102603f 	cmp	w1, #0x98
+     398:	54000aa0 	b.eq	4ec <sddr09_get_cardinfo+0x25c>  // b.none
+     39c:	540009a8 	b.hi	4d0 <sddr09_get_cardinfo+0x240>  // b.pmore
+     3a0:	7100043f 	cmp	w1, #0x1
+     3a4:	54000aa0 	b.eq	4f8 <sddr09_get_cardinfo+0x268>  // b.none
+     3a8:	71023c3f 	cmp	w1, #0x8f
+     3ac:	54000ac1 	b.ne	504 <sddr09_get_cardinfo+0x274>  // b.any
+     3b0:	90000002 	adrp	x2, 0 <nand_compute_ecc>
+     3b4:	91000042 	add	x2, x2, #0x0
+     3b8:	90000001 	adrp	x1, 0 <nand_compute_ecc>
+     3bc:	91000021 	add	x1, x1, #0x0
+[31m     3c0:	94000000 	bl	0 <sprintf>[0m
+     3c4:	394117e2 	ldrb	w2, [sp, #69]
+     3c8:	90000003 	adrp	x3, 0 <nand_compute_ecc>
+--
+     3e0:	71004e7f 	cmp	w19, #0x13
+     3e4:	54000960 	b.eq	510 <sddr09_get_cardinfo+0x280>  // b.none
+     3e8:	b9400001 	ldr	w1, [x0]
+     3ec:	6b02003f 	cmp	w1, w2
+     3f0:	54ffff41 	b.ne	3d8 <sddr09_get_cardinfo+0x148>  // b.any
+     3f4:	91070077 	add	x23, x3, #0x1c0
+     3f8:	aa1403e0 	mov	x0, x20
+     3fc:	94000000 	bl	0 <strlen>
+     400:	52800198 	mov	w24, #0xc                   	// #12
+     404:	93407e63 	sxtw	x3, w19
+     408:	d2800182 	mov	x2, #0xc                   	// #12
+     40c:	52800024 	mov	w4, #0x1                   	// #1
+     410:	90000001 	adrp	x1, 0 <nand_compute_ecc>
+     414:	9b385e78 	smaddl	x24, w19, w24, x23
+     418:	8b000280 	add	x0, x20, x0
+     41c:	9b025c63 	madd	x3, x3, x2, x23
+     420:	91000021 	add	x1, x1, #0x0
+     424:	b9400462 	ldr	w2, [x3, #4]
+     428:	51005042 	sub	w2, w2, #0x14
+     42c:	1ac22082 	lsl	w2, w4, w2
+[31m     430:	94000000 	bl	0 <sprintf>[0m
+     434:	39411be0 	ldrb	w0, [sp, #70]
+     438:	7102941f 	cmp	w0, #0xa5
+--
+     9e4:	f9407a60 	ldr	x0, [x19, #240]
+     9e8:	11000421 	add	w1, w1, #0x1
+     9ec:	12003c21 	and	w1, w1, #0xffff
+     9f0:	7901ca61 	strh	w1, [x19, #228]
+     9f4:	71002c3f 	cmp	w1, #0xb
+     9f8:	54ffff09 	b.ls	9d8 <sddr09_transport+0x108>  // b.plast
+     9fc:	52800401 	mov	w1, #0x20                  	// #32
+     a00:	90000017 	adrp	x23, 0 <nand_compute_ecc>
+     a04:	910002f7 	add	x23, x23, #0x0
+     a08:	39000401 	strb	w1, [x0, #1]
+     a0c:	d2800016 	mov	x22, #0x0                   	// #0
+     a10:	390002bf 	strb	wzr, [x21]
+     a14:	d503201f 	nop
+     a18:	aa1503e0 	mov	x0, x21
+     a1c:	94000000 	bl	0 <strlen>
+     a20:	f9407a62 	ldr	x2, [x19, #240]
+     a24:	aa1703e1 	mov	x1, x23
+     a28:	8b0002a0 	add	x0, x21, x0
+     a2c:	38766842 	ldrb	w2, [x2, x22]
+     a30:	910006d6 	add	x22, x22, #0x1
+[31m     a34:	94000000 	bl	0 <sprintf>[0m
+     a38:	f10032df 	cmp	x22, #0xc
+     a3c:	54fffee1 	b.ne	a18 <sddr09_transport+0x148>  // b.any
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33mums-sddr09.ko[0m
+

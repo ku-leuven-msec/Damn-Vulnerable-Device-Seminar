@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mbusybox.nosuid[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mbusybox.nosuid[0m
+
+   30440:	aa1503e2 	mov	x2, x21
+   30444:	2a1303e1 	mov	w1, w19
+   30448:	910c2320 	add	x0, x25, #0x308
+   3044c:	97ff71a0 	bl	cacc <ioctl@plt+0x251c>
+   30450:	aa0003f4 	mov	x20, x0
+   30454:	7100527f 	cmp	w19, #0x14
+   30458:	540000e9 	b.ls	30474 <ioctl@plt+0x25ec4>  // b.plast
+   3045c:	2a1303e0 	mov	w0, w19
+   30460:	d2800002 	mov	x2, #0x0                   	// #0
+   30464:	d1005000 	sub	x0, x0, #0x14
+   30468:	52800281 	mov	w1, #0x14                  	// #20
+   3046c:	8b000280 	add	x0, x20, x0
+   30470:	97ff7666 	bl	de08 <ioctl@plt+0x3858>
+   30474:	2a1303fa 	mov	w26, w19
+   30478:	aa1403e2 	mov	x2, x20
+   3047c:	aa1703e1 	mov	x1, x23
+   30480:	52800020 	mov	w0, #0x1                   	// #1
+   30484:	97ff652f 	bl	9940 <__printf_chk@plt>
+   30488:	97ff7173 	bl	ca54 <ioctl@plt+0x24a4>
+   3048c:	aa1503e0 	mov	x0, x21
+[31m   30490:	97ff65a8 	bl	9b30 <system@plt>[0m
+   30494:	1e604100 	fmov	d0, d8
+   30498:	940133ac 	bl	7d348 <ioctl@plt+0x72d98>
+--
+   6c3f4:	f9400000 	ldr	x0, [x0]
+   6c3f8:	97fe7736 	bl	a0d0 <fflush@plt>
+   6c3fc:	17ffffbd 	b	6c2f0 <ioctl@plt+0x61d40>
+   6c400:	b4000138 	cbz	x24, 6c424 <ioctl@plt+0x61e74>
+   6c404:	39400300 	ldrb	w0, [x24]
+   6c408:	340000e0 	cbz	w0, 6c424 <ioctl@plt+0x61e74>
+   6c40c:	f85a0280 	ldur	x0, [x20, #-96]
+   6c410:	aa1803e1 	mov	x1, x24
+   6c414:	97fffa94 	bl	6ae64 <ioctl@plt+0x608b4>
+   6c418:	f9400000 	ldr	x0, [x0]
+   6c41c:	97fe772d 	bl	a0d0 <fflush@plt>
+   6c420:	17ffffb4 	b	6c2f0 <ioctl@plt+0x61d40>
+   6c424:	97fe818c 	bl	ca54 <ioctl@plt+0x24a4>
+   6c428:	17ffffb2 	b	6c2f0 <ioctl@plt+0x61d40>
+   6c42c:	97fe818a 	bl	ca54 <ioctl@plt+0x24a4>
+   6c430:	2f00e408 	movi	d8, #0x0
+   6c434:	b4fff5f8 	cbz	x24, 6c2f0 <ioctl@plt+0x61d40>
+   6c438:	39400300 	ldrb	w0, [x24]
+   6c43c:	34fff5a0 	cbz	w0, 6c2f0 <ioctl@plt+0x61d40>
+   6c440:	aa1803e0 	mov	x0, x24
+[31m   6c444:	97fe75bb 	bl	9b30 <system@plt>[0m
+   6c448:	13087c00 	asr	w0, w0, #8
+   6c44c:	1e620008 	scvtf	d8, w0
+--
+   75854:	f9400260 	ldr	x0, [x19]
+   75858:	5400070d 	b.le	75938 <ioctl@plt+0x6b388>
+   7585c:	51000718 	sub	w24, w24, #0x1
+   75860:	97fffa5d 	bl	741d4 <ioctl@plt+0x69c24>
+   75864:	7100071f 	cmp	w24, #0x1
+   75868:	54000680 	b.eq	75938 <ioctl@plt+0x6b388>  // b.none
+   7586c:	51000718 	sub	w24, w24, #0x1
+   75870:	97fffa59 	bl	741d4 <ioctl@plt+0x69c24>
+   75874:	7100071f 	cmp	w24, #0x1
+   75878:	54ffff21 	b.ne	7585c <ioctl@plt+0x6b2ac>  // b.any
+   7587c:	1400002f 	b	75938 <ioctl@plt+0x6b388>
+   75880:	3941e3f9 	ldrb	w25, [sp, #120]
+   75884:	7100873f 	cmp	w25, #0x21
+   75888:	540001e1 	b.ne	758c4 <ioctl@plt+0x6b314>  // b.any
+   7588c:	97fffd1f 	bl	74d08 <ioctl@plt+0x6a758>
+   75890:	910ea274 	add	x20, x19, #0x3a8
+   75894:	97fe5c70 	bl	ca54 <ioctl@plt+0x24a4>
+   75898:	aa1403e0 	mov	x0, x20
+   7589c:	97fe5abe 	bl	c394 <ioctl@plt+0x1de4>
+   758a0:	910006a0 	add	x0, x21, #0x1
+[31m   758a4:	97fe50a3 	bl	9b30 <system@plt>[0m
+   758a8:	2a0003e2 	mov	w2, w0
+   758ac:	34000ac0 	cbz	w0, 75a04 <ioctl@plt+0x6b454>
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m3[0m times [0;33mbusybox.nosuid[0m
+

@@ -1,0 +1,298 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibnsl.so.2.0.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibnsl.so.2.0.0[0m
+
+    7a60:	d2808002 	mov	x2, #0x400                 	// #1024
+    7a64:	f9400a61 	ldr	x1, [x19, #16]
+    7a68:	f9401021 	ldr	x1, [x1, #32]
+    7a6c:	97fff4e5 	bl	4e00 <strncpy@plt>
+    7a70:	f9400a61 	ldr	x1, [x19, #16]
+    7a74:	aa1803e0 	mov	x0, x24
+    7a78:	97fff3ca 	bl	49a0 <nis_modify@plt>
+    7a7c:	aa0003f5 	mov	x21, x0
+    7a80:	aa1303e0 	mov	x0, x19
+    7a84:	b94002b7 	ldr	w23, [x21]
+    7a88:	97fff512 	bl	4ed0 <nis_freeresult@plt>
+    7a8c:	aa1503e0 	mov	x0, x21
+    7a90:	97fff510 	bl	4ed0 <nis_freeresult@plt>
+    7a94:	17ffffc8 	b	79b4 <nis_addmember@@LIBNSL_1.0+0x104>
+    7a98:	52800517 	mov	w23, #0x28                  	// #40
+    7a9c:	17ffffc7 	b	79b8 <nis_addmember@@LIBNSL_1.0+0x108>
+    7aa0:	528005c1 	mov	w1, #0x2e                  	// #46
+    7aa4:	39002e61 	strb	w1, [x19, #11]
+    7aa8:	aa0003e1 	mov	x1, x0
+    7aac:	91003260 	add	x0, x19, #0xc
+[31m    7ab0:	97fff488 	bl	4cd0 <strcpy@plt>[0m
+    7ab4:	aa1803e0 	mov	x0, x24
+    7ab8:	52800821 	mov	w1, #0x41                  	// #65
+--
+    7bbc:	f90037a0 	str	x0, [x29, #104]
+    7bc0:	910003f6 	mov	x22, sp
+    7bc4:	f87c7b77 	ldr	x23, [x27, x28, lsl #3]
+    7bc8:	f94006f8 	ldr	x24, [x23, #8]
+    7bcc:	aa1803e0 	mov	x0, x24
+    7bd0:	97fff274 	bl	45a0 <strlen@plt>
+    7bd4:	aa0003f3 	mov	x19, x0
+    7bd8:	f94012e0 	ldr	x0, [x23, #32]
+    7bdc:	97fff271 	bl	45a0 <strlen@plt>
+    7be0:	8b000273 	add	x19, x19, x0
+    7be4:	91004a73 	add	x19, x19, #0x12
+    7be8:	aa1803e1 	mov	x1, x24
+    7bec:	927cee73 	and	x19, x19, #0xfffffffffffffff0
+    7bf0:	cb3363ff 	sub	sp, sp, x19
+    7bf4:	910003e0 	mov	x0, sp
+    7bf8:	97fff2ee 	bl	47b0 <stpcpy@plt>
+    7bfc:	528005c1 	mov	w1, #0x2e                  	// #46
+    7c00:	38001401 	strb	w1, [x0], #1
+    7c04:	f87c7b61 	ldr	x1, [x27, x28, lsl #3]
+    7c08:	f9401021 	ldr	x1, [x1, #32]
+[31m    7c0c:	97fff431 	bl	4cd0 <strcpy@plt>[0m
+    7c10:	f94242a2 	ldr	x2, [x21, #1152]
+    7c14:	910003e0 	mov	x0, sp
+--
+    853c:	97fff069 	bl	46e0 <nis_free_directory@plt>
+    8540:	9100035f 	mov	sp, x26
+    8544:	17ffffc3 	b	8450 <nis_addmember@@LIBNSL_1.0+0xba0>
+    8548:	aa1403f3 	mov	x19, x20
+    854c:	b90002ff 	str	wzr, [x23]
+    8550:	17ffffc0 	b	8450 <nis_addmember@@LIBNSL_1.0+0xba0>
+    8554:	aa1403e0 	mov	x0, x20
+    8558:	97fff062 	bl	46e0 <nis_free_directory@plt>
+    855c:	52800500 	mov	w0, #0x28                  	// #40
+    8560:	d2800013 	mov	x19, #0x0                   	// #0
+    8564:	b90002e0 	str	w0, [x23]
+    8568:	17ffffba 	b	8450 <nis_addmember@@LIBNSL_1.0+0xba0>
+    856c:	aa1903e0 	mov	x0, x25
+    8570:	97fff00c 	bl	45a0 <strlen@plt>
+    8574:	aa0003e2 	mov	x2, x0
+    8578:	528005c3 	mov	w3, #0x2e                  	// #46
+    857c:	8b000320 	add	x0, x25, x0
+    8580:	aa1303e1 	mov	x1, x19
+    8584:	91000400 	add	x0, x0, #0x1
+    8588:	38226b23 	strb	w3, [x25, x2]
+[31m    858c:	97fff1d1 	bl	4cd0 <strcpy@plt>[0m
+    8590:	aa1903e1 	mov	x1, x25
+    8594:	aa1403e0 	mov	x0, x20
+--
+    9fc8:	f0000023 	adrp	x3, 10000 <nis_verifygroup@@LIBNSL_1.0+0x250>
+    9fcc:	91304063 	add	x3, x3, #0xc10
+    9fd0:	910003e1 	mov	x1, sp
+    9fd4:	aa1503e2 	mov	x2, x21
+    9fd8:	aa1303e0 	mov	x0, x19
+    9fdc:	f9400064 	ldr	x4, [x3]
+    9fe0:	f90002e4 	str	x4, [x23]
+    9fe4:	b9400863 	ldr	w3, [x3, #8]
+    9fe8:	b9000ae3 	str	w3, [x23, #8]
+    9fec:	97ffe9c5 	bl	4700 <nis_domain_of_r@plt>
+    9ff0:	aa0003e1 	mov	x1, x0
+    9ff4:	b4000860 	cbz	x0, a100 <nis_creategroup@@LIBNSL_1.0+0x200>
+    9ff8:	39400000 	ldrb	w0, [x0]
+    9ffc:	52800235 	mov	w21, #0x11                  	// #17
+    a000:	35000060 	cbnz	w0, a00c <nis_creategroup@@LIBNSL_1.0+0x10c>
+    a004:	9100031f 	mov	sp, x24
+    a008:	17ffffcf 	b	9f44 <nis_creategroup@@LIBNSL_1.0+0x44>
+    a00c:	528005c0 	mov	w0, #0x2e                  	// #46
+    a010:	39002ee0 	strb	w0, [x23, #11]
+    a014:	910032e0 	add	x0, x23, #0xc
+[31m    a018:	97ffeb2e 	bl	4cd0 <strcpy@plt>[0m
+    a01c:	d2800e01 	mov	x1, #0x70                  	// #112
+    a020:	d2800020 	mov	x0, #0x1                   	// #1
+--
+    ab70:	f90002c4 	str	x4, [x22]
+    ab74:	b9400863 	ldr	w3, [x3, #8]
+    ab78:	b9000ac3 	str	w3, [x22, #8]
+    ab7c:	97ffe6e1 	bl	4700 <nis_domain_of_r@plt>
+    ab80:	b4000060 	cbz	x0, ab8c <nis_destroygroup@@LIBNSL_1.0+0xec>
+    ab84:	39400001 	ldrb	w1, [x0]
+    ab88:	35000141 	cbnz	w1, abb0 <nis_destroygroup@@LIBNSL_1.0+0x110>
+    ab8c:	d2800001 	mov	x1, #0x0                   	// #0
+    ab90:	aa1803e0 	mov	x0, x24
+    ab94:	97ffe84b 	bl	4cc0 <nis_remove@plt>
+    ab98:	b9400015 	ldr	w21, [x0]
+    ab9c:	97ffe8cd 	bl	4ed0 <nis_freeresult@plt>
+    aba0:	910002ff 	mov	sp, x23
+    aba4:	17ffffce 	b	aadc <nis_destroygroup@@LIBNSL_1.0+0x3c>
+    aba8:	52800515 	mov	w21, #0x28                  	// #40
+    abac:	17ffffcc 	b	aadc <nis_destroygroup@@LIBNSL_1.0+0x3c>
+    abb0:	528005c1 	mov	w1, #0x2e                  	// #46
+    abb4:	39002ec1 	strb	w1, [x22, #11]
+    abb8:	aa0003e1 	mov	x1, x0
+    abbc:	910032c0 	add	x0, x22, #0xc
+[31m    abc0:	97ffe844 	bl	4cd0 <strcpy@plt>[0m
+    abc4:	17fffff2 	b	ab8c <nis_destroygroup@@LIBNSL_1.0+0xec>
+    abc8:	97ffe792 	bl	4a10 <__stack_chk_fail@plt>
+--
+    b9e0:	aa1403e0 	mov	x0, x20
+    b9e4:	52800015 	mov	w21, #0x0                   	// #0
+    b9e8:	97ffe53a 	bl	4ed0 <nis_freeresult@plt>
+    b9ec:	f947b2d6 	ldr	x22, [x22, #3936]
+    b9f0:	f9402fa1 	ldr	x1, [x29, #88]
+    b9f4:	f94002c0 	ldr	x0, [x22]
+    b9f8:	ca000020 	eor	x0, x1, x0
+    b9fc:	b50013a0 	cbnz	x0, bc70 <nis_freeservlist@@LIBNSL_1.0+0x3e0>
+    ba00:	910003bf 	mov	sp, x29
+    ba04:	2a1503e0 	mov	w0, w21
+    ba08:	a94153f3 	ldp	x19, x20, [sp, #16]
+    ba0c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    ba10:	a94363f7 	ldp	x23, x24, [sp, #48]
+    ba14:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    ba18:	a8c67bfd 	ldp	x29, x30, [sp], #96
+    ba1c:	d65f03c0 	ret
+    ba20:	528005c1 	mov	w1, #0x2e                  	// #46
+    ba24:	39002ea1 	strb	w1, [x21, #11]
+    ba28:	aa0003e1 	mov	x1, x0
+    ba2c:	910032a0 	add	x0, x21, #0xc
+[31m    ba30:	97ffe4a8 	bl	4cd0 <strcpy@plt>[0m
+    ba34:	17ffffdd 	b	b9a8 <nis_freeservlist@@LIBNSL_1.0+0x118>
+    ba38:	b94042a0 	ldr	w0, [x21, #64]
+--
+    bdd4:	385ff000 	ldurb	w0, [x0, #-1]
+    bdd8:	7100b81f 	cmp	w0, #0x2e
+    bddc:	54fffe40 	b.eq	bda4 <nis_local_group@@LIBNSL_1.0+0x54>  // b.none
+    bde0:	cb1602b6 	sub	x22, x21, x22
+    bde4:	f9001bf7 	str	x23, [sp, #48]
+    bde8:	910006d6 	add	x22, x22, #0x1
+    bdec:	97ffe3ed 	bl	4da0 <nis_local_directory@plt>
+    bdf0:	aa0003f7 	mov	x23, x0
+    bdf4:	97ffe1eb 	bl	45a0 <strlen@plt>
+    bdf8:	8b0002d6 	add	x22, x22, x0
+    bdfc:	f10ffedf 	cmp	x22, #0x3ff
+    be00:	540000a9 	b.ls	be14 <nis_local_group@@LIBNSL_1.0+0xc4>  // b.plast
+    be04:	3910229f 	strb	wzr, [x20, #1032]
+    be08:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    be0c:	f9401bf7 	ldr	x23, [sp, #48]
+    be10:	17ffffd7 	b	bd6c <nis_local_group@@LIBNSL_1.0+0x1c>
+    be14:	aa1503e0 	mov	x0, x21
+    be18:	528005c2 	mov	w2, #0x2e                  	// #46
+    be1c:	aa1703e1 	mov	x1, x23
+    be20:	38001402 	strb	w2, [x0], #1
+[31m    be24:	97ffe3ab 	bl	4cd0 <strcpy@plt>[0m
+    be28:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    be2c:	f9401bf7 	ldr	x23, [sp, #48]
+--
+    d8e4:	aa1803e0 	mov	x0, x24
+    d8e8:	97ffdbb2 	bl	47b0 <stpcpy@plt>
+    d8ec:	f0000003 	adrp	x3, 10000 <nis_verifygroup@@LIBNSL_1.0+0x250>
+    d8f0:	91304063 	add	x3, x3, #0xc10
+    d8f4:	aa0003f7 	mov	x23, x0
+    d8f8:	aa1503e2 	mov	x2, x21
+    d8fc:	aa1403e0 	mov	x0, x20
+    d900:	910003e1 	mov	x1, sp
+    d904:	f9400064 	ldr	x4, [x3]
+    d908:	f90002e4 	str	x4, [x23]
+    d90c:	b9400863 	ldr	w3, [x3, #8]
+    d910:	b9000ae3 	str	w3, [x23, #8]
+    d914:	97ffdb7b 	bl	4700 <nis_domain_of_r@plt>
+    d918:	b4000100 	cbz	x0, d938 <nis_print_group_entry@@LIBNSL_1.0+0x108>
+    d91c:	39400001 	ldrb	w1, [x0]
+    d920:	340000c1 	cbz	w1, d938 <nis_print_group_entry@@LIBNSL_1.0+0x108>
+    d924:	528005c1 	mov	w1, #0x2e                  	// #46
+    d928:	39002ee1 	strb	w1, [x23, #11]
+    d92c:	aa0003e1 	mov	x1, x0
+    d930:	910032e0 	add	x0, x23, #0xc
+[31m    d934:	97ffdce7 	bl	4cd0 <strcpy@plt>[0m
+    d938:	aa1803e0 	mov	x0, x24
+    d93c:	52800821 	mov	w1, #0x41                  	// #65
+--
+    e088:	97ffdb92 	bl	4ed0 <nis_freeresult@plt>
+    e08c:	910002ff 	mov	sp, x23
+    e090:	f947b294 	ldr	x20, [x20, #3936]
+    e094:	f94037a1 	ldr	x1, [x29, #104]
+    e098:	f9400280 	ldr	x0, [x20]
+    e09c:	ca000020 	eor	x0, x1, x0
+    e0a0:	b5000820 	cbnz	x0, e1a4 <nis_removemember@@LIBNSL_1.0+0x224>
+    e0a4:	910003bf 	mov	sp, x29
+    e0a8:	2a1503e0 	mov	w0, w21
+    e0ac:	a94153f3 	ldp	x19, x20, [sp, #16]
+    e0b0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    e0b4:	a94363f7 	ldp	x23, x24, [sp, #48]
+    e0b8:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    e0bc:	a94573fb 	ldp	x27, x28, [sp, #80]
+    e0c0:	a8c77bfd 	ldp	x29, x30, [sp], #112
+    e0c4:	d65f03c0 	ret
+    e0c8:	528005c1 	mov	w1, #0x2e                  	// #46
+    e0cc:	7800b2a1 	sturh	w1, [x21, #11]
+    e0d0:	aa0003e1 	mov	x1, x0
+    e0d4:	910032a0 	add	x0, x21, #0xc
+[31m    e0d8:	97ffdafe 	bl	4cd0 <strcpy@plt>[0m
+    e0dc:	aa1803e0 	mov	x0, x24
+    e0e0:	52800821 	mov	w1, #0x41                  	// #65
+--
+    e844:	f90002c0 	str	x0, [x22]
+    e848:	b40010a0 	cbz	x0, ea5c <nis_getnames@@LIBNSL_1.0+0x4ac>
+    e84c:	aa1703e1 	mov	x1, x23
+    e850:	97ffd7d8 	bl	47b0 <stpcpy@plt>
+    e854:	528005c1 	mov	w1, #0x2e                  	// #46
+    e858:	79000001 	strh	w1, [x0]
+    e85c:	52800033 	mov	w19, #0x1                   	// #1
+    e860:	f0000000 	adrp	x0, 11000 <xdr_cback_data@@LIBNSL_1.0+0x840>
+    e864:	9130a000 	add	x0, x0, #0xc28
+    e868:	97ffd972 	bl	4e30 <getenv@plt>
+    e86c:	aa0003f4 	mov	x20, x0
+    e870:	b5fff200 	cbnz	x0, e6b0 <nis_getnames@@LIBNSL_1.0+0x100>
+    e874:	d10043ff 	sub	sp, sp, #0x10
+    e878:	52800482 	mov	w2, #0x24                  	// #36
+    e87c:	910003e1 	mov	x1, sp
+    e880:	aa0103e0 	mov	x0, x1
+    e884:	79000022 	strh	w2, [x1]
+    e888:	17ffff93 	b	e6d4 <nis_getnames@@LIBNSL_1.0+0x124>
+    e88c:	91000400 	add	x0, x0, #0x1
+    e890:	aa1a03e1 	mov	x1, x26
+[31m    e894:	97ffd90f 	bl	4cd0 <strcpy@plt>[0m
+    e898:	11000673 	add	w19, w19, #0x1
+    e89c:	39400340 	ldrb	w0, [x26]
+--
+    e954:	11000673 	add	w19, w19, #0x1
+    e958:	97ffd7ba 	bl	4840 <strtok_r@plt>
+    e95c:	aa0003fb 	mov	x27, x0
+    e960:	b5ffed80 	cbnz	x0, e710 <nis_getnames@@LIBNSL_1.0+0x160>
+    e964:	17ffff9e 	b	e7dc <nis_getnames@@LIBNSL_1.0+0x22c>
+    e968:	8b190000 	add	x0, x0, x25
+    e96c:	97ffd7c5 	bl	4880 <malloc@plt>
+    e970:	aa0003f5 	mov	x21, x0
+    e974:	b4000860 	cbz	x0, ea80 <nis_getnames@@LIBNSL_1.0+0x4d0>
+    e978:	aa1703e1 	mov	x1, x23
+    e97c:	97ffd78d 	bl	47b0 <stpcpy@plt>
+    e980:	38001418 	strb	w24, [x0], #1
+    e984:	aa1b03e1 	mov	x1, x27
+    e988:	aa1a03e2 	mov	x2, x26
+    e98c:	97ffd875 	bl	4b60 <mempcpy@plt>
+    e990:	385fe001 	ldurb	w1, [x0, #-2]
+    e994:	7100b83f 	cmp	w1, #0x2e
+    e998:	540001c0 	b.eq	e9d0 <nis_getnames@@LIBNSL_1.0+0x420>  // b.none
+    e99c:	381ff018 	sturb	w24, [x0, #-1]
+    e9a0:	f94043a1 	ldr	x1, [x29, #128]
+[31m    e9a4:	97ffd8cb 	bl	4cd0 <strcpy@plt>[0m
+    e9a8:	6b14027f 	cmp	w19, w20
+    e9ac:	54fffccb 	b.lt	e944 <nis_getnames@@LIBNSL_1.0+0x394>  // b.tstop
+--
+    fe80:	f90002c4 	str	x4, [x22]
+    fe84:	b9400863 	ldr	w3, [x3, #8]
+    fe88:	b9000ac3 	str	w3, [x22, #8]
+    fe8c:	97ffd21d 	bl	4700 <nis_domain_of_r@plt>
+    fe90:	b4000060 	cbz	x0, fe9c <nis_verifygroup@@LIBNSL_1.0+0xec>
+    fe94:	39400001 	ldrb	w1, [x0]
+    fe98:	35000141 	cbnz	w1, fec0 <nis_verifygroup@@LIBNSL_1.0+0x110>
+    fe9c:	52800001 	mov	w1, #0x0                   	// #0
+    fea0:	aa1803e0 	mov	x0, x24
+    fea4:	97ffd3cb 	bl	4dd0 <nis_lookup@plt>
+    fea8:	b9400015 	ldr	w21, [x0]
+    feac:	97ffd409 	bl	4ed0 <nis_freeresult@plt>
+    feb0:	910002ff 	mov	sp, x23
+    feb4:	17ffffce 	b	fdec <nis_verifygroup@@LIBNSL_1.0+0x3c>
+    feb8:	52800515 	mov	w21, #0x28                  	// #40
+    febc:	17ffffcc 	b	fdec <nis_verifygroup@@LIBNSL_1.0+0x3c>
+    fec0:	528005c1 	mov	w1, #0x2e                  	// #46
+    fec4:	39002ec1 	strb	w1, [x22, #11]
+    fec8:	aa0003e1 	mov	x1, x0
+    fecc:	910032c0 	add	x0, x22, #0xc
+[31m    fed0:	97ffd380 	bl	4cd0 <strcpy@plt>[0m
+    fed4:	17fffff2 	b	fe9c <nis_verifygroup@@LIBNSL_1.0+0xec>
+    fed8:	97ffd2ce 	bl	4a10 <__stack_chk_fail@plt>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m12[0m times [0;33mlibnsl.so.2.0.0[0m
+

@@ -1,0 +1,102 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/contrib/securetransport.py[0m
+6:he default OpenSSL.
+62:import ssl.
+70:from ..util.ssl_ import PROTOC.
+93:orig_util_SSLContext = util..
+93:ssl_.SSLContext.
+98:irectly in the SSLConnectionRef, .
+114:B. This is OpenSSL's limit, but w.
+116:SSL_WRITE_BLOCKSIZ.
+118:valent of util.ssl_.DEFAULT_CIPHE.
+154:: for PROTOCOL_SSLv23 we turn it .
+162:if hasattr(ssl, "PROTOCOL_SSL.
+163:col_to_min_max[ssl.PROTOCOL_SSLv2.
+164:SecurityConst.kSSLProtocol2,.
+165:SecurityConst.kSSLProtocol2,.
+167:if hasattr(ssl, "PROTOCOL_SSL.
+168:col_to_min_max[ssl.PROTOCOL_SSLv3.
+169:SecurityConst.kSSLProtocol3,.
+170:SecurityConst.kSSLProtocol3,.
+172:if hasattr(ssl, "PROTOCOL_TLS.
+173:col_to_min_max[ssl.PROTOCOL_TLSv1.
+177:if hasattr(ssl, "PROTOCOL_TLS.
+178:col_to_min_max[ssl.PROTOCOL_TLSv1.
+182:if hasattr(ssl, "PROTOCOL_TLS.
+183:col_to_min_max[ssl.PROTOCOL_TLSv1.
+191:ansport-backed SSL-support..
+193:    util.SSLContext = Secur.
+194:    util.ssl_.SSLContext = Secur.
+196:    util.ssl_.HAS_SNI = HAS.
+198:    util.ssl_.IS_SECURETRAN.
+205:    util.SSLContext = orig_.
+205:util_SSLContext.
+206:    util.ssl_.SSLContext = orig_.
+206:util_SSLContext.
+208:    util.ssl_.HAS_SNI = ori.
+210:    util.ssl_.IS_SECURETRAN.
+222:curityConst.errSSLInternal.
+245:curityConst.errSSLClosedGraceful.
+253:curityConst.errSSLClosedAbort.
+259:curityConst.errSSLWouldBlock.
+265:curityConst.errSSLInternal.
+277:curityConst.errSSLInternal.
+304:curityConst.errSSLClosedAbort.
+310:curityConst.errSSLWouldBlock.
+316:curityConst.errSSLInternal.
+322:ter = Security.SSLReadFunc(_read_.
+323:ter = Security.SSLWriteFunc(_writ.
+328:r Python's OpenSSL wrapped socket.
+376:        util.ssl_.DEFAULT_CIPHE.
+378:        OpenSSL cipher strings.
+380:rs = (Security.SSLCipherSuite * l.
+381:ult = Security.SSLSetEnabledCiphe.
+394:ult = Security.SSLSetALPNProtocol.
+404:     Raises an SSLError if the co.
+432:        raise ssl.SSLError("cert.
+451:ult = Security.SSLCopyPeerTrust(s.
+454:         raise ssl.SSLError("Fail.
+492:ext = Security.SSLCreateContext(.
+493:SecurityConst.kSSLClientSide, Sec.
+493:urityConst.kSSLStreamType.
+495:ult = Security.SSLSetIOFuncs(.
+509:ult = Security.SSLSetConnection(s.
+517:ult = Security.SSLSetPeerDomainNa.
+529:ult = Security.SSLSetProtocolVers.
+532:ult = Security.SSLSetProtocolVers.
+540:ult = Security.SSLSetSessionOptio.
+541:SecurityConst.kSSLSessionOptionBr.
+551:ult = Security.SSLSetCertificate(.
+556:ult = Security.SSLHandshake(self..
+558:curityConst.errSSLWouldBlock:.
+560:curityConst.errSSLServerAuthCompl.
+595:ult = Security.SSLRead(.
+600:, those are errSSLWouldBlock,.
+601:        # errSSLClosedGraceful,.
+601: and errSSLClosedNoNotify..
+602:curityConst.errSSLWouldBlock:.
+604: we can get errSSLWouldBlock in s.
+611:curityConst.errSSLClosedGraceful,.
+612:curityConst.errSSLClosedNoNotify,.
+636:ult = Security.SSLWrite(.
+640:curityConst.errSSLWouldBlock and .
+652:: total_sent + SSL_WRITE_BLOCKSIZ.
+657:      Security.SSLClose(self.cont.
+683:     # 1. Call SSLCopyPeerTrust t.
+706:ult = Security.SSLCopyPeerTrust(s.
+737:col = Security.SSLProtocol().
+738:ult = Security.SSLGetNegotiatedPr.
+743:         raise ssl.SSLError("Secu.
+750:SecurityConst.kSSLProtocol3:.
+751:       return "SSLv3".
+752:SecurityConst.kSSLProtocol2:.
+753:       return "SSLv2".
+755:         raise ssl.SSLError("Unkn.
+789:dard library ``SSLContext`` objec.
+824:ate all of the SSL options that.
+836:        return ssl.CERT_REQUIRED .
+836:f._verify else ssl.CERT_NONE.
+840:ue if value == ssl.CERT_REQUIRED .
+859:iphers != util.ssl_.DEFAULT_CIPHE.
+874: keyfile=None, password=None):.
+877:t_passphrase = password.
+885:ttr(Security, "SSLSetALPNProtocol.

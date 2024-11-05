@@ -1,0 +1,82 @@
+[[0;33m*[0m] Binary protection state of [0;33mtun.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m373) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mtun.ko[0m
+
+    32fc:	f90013f5 	str	x21, [sp, #32]
+    3300:	aa0103f3 	mov	x19, x1
+    3304:	d5384114 	mrs	x20, sp_el0
+    3308:	aa0003f5 	mov	x21, x0
+    330c:	aa1e03e0 	mov	x0, x30
+    3310:	94000000 	bl	0 <_mcount>
+    3314:	f9428e81 	ldr	x1, [x20, #1304]
+    3318:	f9002fe1 	str	x1, [sp, #88]
+    331c:	d2800001 	mov	x1, #0x0                   	// #0
+    3320:	f9406673 	ldr	x19, [x19, #200]
+    3324:	a9037fff 	stp	xzr, xzr, [sp, #48]
+    3328:	a9047fff 	stp	xzr, xzr, [sp, #64]
+    332c:	f9002bff 	str	xzr, [sp, #80]
+    3330:	94000000 	bl	0 <rtnl_lock>
+    3334:	aa1303e0 	mov	x0, x19
+    3338:	97fffc24 	bl	23c8 <tun_get>
+    333c:	aa0003f3 	mov	x19, x0
+    3340:	b40005a0 	cbz	x0, 33f4 <tun_chr_show_fdinfo+0x104>
+    3344:	f9440a61 	ldr	x1, [x19, #2064]
+    3348:	9100c3e0 	add	x0, sp, #0x30
+[31m    334c:	94000000 	bl	0 <strcpy>[0m
+    3350:	b9480660 	ldr	w0, [x19, #2052]
+    3354:	528f2661 	mov	w1, #0x7933                	// #31027
+--
+    60b0:	d503201f 	nop
+    60b4:	34ffe5e0 	cbz	w0, 5d70 <__tun_chr_ioctl+0x1d0>
+    60b8:	928001b3 	mov	x19, #0xfffffffffffffff2    	// #-14
+    60bc:	17ffff5e 	b	5e34 <__tun_chr_ioctl+0x294>
+    60c0:	528a9aa2 	mov	w2, #0x54d5                	// #21717
+    60c4:	72a80202 	movk	w2, #0x4010, lsl #16
+    60c8:	6b02027f 	cmp	w19, w2
+    60cc:	54005d80 	b.eq	6c7c <__tun_chr_ioctl+0x10dc>  // b.none
+    60d0:	540006c9 	b.ls	61a8 <__tun_chr_ioctl+0x608>  // b.plast
+    60d4:	528a9ac2 	mov	w2, #0x54d6                	// #21718
+    60d8:	72a80202 	movk	w2, #0x4010, lsl #16
+    60dc:	6b02027f 	cmp	w19, w2
+    60e0:	54007300 	b.eq	6f40 <__tun_chr_ioctl+0x13a0>  // b.none
+    60e4:	528a9a42 	mov	w2, #0x54d2                	// #21714
+    60e8:	72b00082 	movk	w2, #0x8004, lsl #16
+    60ec:	6b02027f 	cmp	w19, w2
+    60f0:	54fff881 	b.ne	6000 <__tun_chr_ioctl+0x460>  // b.any
+    60f4:	910243fb 	add	x27, sp, #0x90
+    60f8:	aa0003e1 	mov	x1, x0
+    60fc:	aa1b03e0 	mov	x0, x27
+[31m    6100:	94000000 	bl	0 <strcpy>[0m
+    6104:	f9418f06 	ldr	x6, [x24, #792]
+    6108:	528f2661 	mov	w1, #0x7933                	// #31027
+--
+    6550:	94000000 	bl	0 <netdev_state_change>
+    6554:	f9440b40 	ldr	x0, [x26, #2064]
+    6558:	94000000 	bl	0 <netif_carrier_on>
+    655c:	f9440b56 	ldr	x22, [x26, #2064]
+    6560:	f94026c0 	ldr	x0, [x22, #72]
+    6564:	360001a0 	tbz	w0, #0, 6598 <__tun_chr_ioctl+0x9f8>
+    6568:	b943cac0 	ldr	w0, [x22, #968]
+    656c:	34000160 	cbz	w0, 6598 <__tun_chr_ioctl+0x9f8>
+    6570:	52800013 	mov	w19, #0x0                   	// #0
+    6574:	52802817 	mov	w23, #0x140                 	// #320
+    6578:	f941e2c0 	ldr	x0, [x22, #960]
+    657c:	9bb70260 	umaddl	x0, w19, w23, x0
+    6580:	11000673 	add	w19, w19, #0x1
+    6584:	94000000 	bl	0 <netif_tx_wake_queue>
+    6588:	b943cac0 	ldr	w0, [x22, #968]
+    658c:	6b00027f 	cmp	w19, w0
+    6590:	54ffff43 	b.cc	6578 <__tun_chr_ioctl+0x9d8>  // b.lo, b.ul, b.last
+    6594:	f9440b56 	ldr	x22, [x26, #2064]
+    6598:	aa1603e1 	mov	x1, x22
+    659c:	aa1b03e0 	mov	x0, x27
+[31m    65a0:	94000000 	bl	0 <strcpy>[0m
+    65a4:	d5384100 	mrs	x0, sp_el0
+    65a8:	b9402c02 	ldr	w2, [x0, #44]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m3[0m times [0;33mtun.ko[0m
+

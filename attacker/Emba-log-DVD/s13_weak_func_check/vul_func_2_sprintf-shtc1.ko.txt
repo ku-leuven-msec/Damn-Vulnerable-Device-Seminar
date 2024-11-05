@@ -1,0 +1,56 @@
+[[0;33m*[0m] Binary protection state of [0;33mshtc1.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m79) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mshtc1.ko[0m
+
+ 424:	94000000 	bl	0 <mutex_unlock>
+ 428:	17ffffce 	b	360 <shtc1_update_client+0x108>
+ 42c:	d503201f 	nop
+
+0000000000000430 <humidity1_input_show>:
+ 430:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 434:	910003fd 	mov	x29, sp
+ 438:	a90153f3 	stp	x19, x20, [sp, #16]
+ 43c:	aa0003f3 	mov	x19, x0
+ 440:	aa0203f4 	mov	x20, x2
+ 444:	aa1e03e0 	mov	x0, x30
+ 448:	94000000 	bl	0 <_mcount>
+ 44c:	aa1303e0 	mov	x0, x19
+ 450:	97ffff82 	bl	258 <shtc1_update_client>
+ 454:	b140041f 	cmn	x0, #0x1, lsl #12
+ 458:	540000e8 	b.hi	474 <humidity1_input_show+0x44>  // b.pmore
+ 45c:	b9405002 	ldr	w2, [x0, #80]
+ 460:	90000001 	adrp	x1, 0 <shtc1_probe>
+ 464:	aa1403e0 	mov	x0, x20
+ 468:	91000021 	add	x1, x1, #0x0
+[31m 46c:	94000000 	bl	0 <sprintf>[0m
+ 470:	93407c00 	sxtw	x0, w0
+ 474:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 478:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 47c:	d65f03c0 	ret
+
+0000000000000480 <temp1_input_show>:
+ 480:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 484:	910003fd 	mov	x29, sp
+ 488:	a90153f3 	stp	x19, x20, [sp, #16]
+ 48c:	aa0003f3 	mov	x19, x0
+ 490:	aa0203f4 	mov	x20, x2
+ 494:	aa1e03e0 	mov	x0, x30
+ 498:	94000000 	bl	0 <_mcount>
+ 49c:	aa1303e0 	mov	x0, x19
+ 4a0:	97ffff6e 	bl	258 <shtc1_update_client>
+ 4a4:	b140041f 	cmn	x0, #0x1, lsl #12
+ 4a8:	540000e8 	b.hi	4c4 <temp1_input_show+0x44>  // b.pmore
+ 4ac:	b9404c02 	ldr	w2, [x0, #76]
+ 4b0:	90000001 	adrp	x1, 0 <shtc1_probe>
+ 4b4:	aa1403e0 	mov	x0, x20
+ 4b8:	91000021 	add	x1, x1, #0x0
+[31m 4bc:	94000000 	bl	0 <sprintf>[0m
+ 4c0:	93407c00 	sxtw	x0, w0
+ 4c4:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mshtc1.ko[0m
+

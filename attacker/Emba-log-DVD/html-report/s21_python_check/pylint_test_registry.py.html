@@ -1,0 +1,914 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s21_python_check.html" title="./../s21_python_check.html" >&laquo; Back to s21_python_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>************* Module interface.tests.test_registry</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:933:0: W0311: Bad indentation. Found 11 spaces, expected 12 (bad-indentation)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2308:0: W0311: Bad indentation. Found 16 spaces, expected 12 (bad-indentation)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2311:0: W0311: Bad indentation. Found 16 spaces, expected 12 (bad-indentation)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1:0: C0302: Too many lines in module (3057/1000) (too-many-lines)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:25:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:25:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:28:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:28:4: W1113: Keyword argument before variable positional arguments list in the definition of _makeOne function (keyword-arg-before-vararg)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:31:4: C0103: Method name "_wrapEvents" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:32:8: C0415: Import outside toplevel (zope.interface.registry) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:31:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:40:8: C0415: Import outside toplevel (zope.interface.adapter.AdapterRegistry) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:78:4: C0103: Method name "test_registerUtility_with_component_name" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:79:8: C0415: Import outside toplevel (zope.interface.declarations.named, zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:82:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:87:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:87:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:89:8: C0102: Black listed name "foo" (blacklisted-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:98:4: C0103: Method name "test_registerUtility_both_factory_and_component" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:106:4: C0103: Method name "test_registerUtility_w_component" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:107:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:108:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:109:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:111:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:126:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:138:4: C0103: Method name "test_registerUtility_w_factory" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:138:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:139:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:140:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:141:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:143:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:156:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:168:4: C0103: Method name "test_registerUtility_no_provided_available" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:169:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:169:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:179:4: C0103: Method name "test_registerUtility_wo_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:179:4: R0914: Too many local variables (17/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:180:8: C0415: Import outside toplevel (zope.interface.declarations.directlyProvides) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:181:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:182:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:183:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:185:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:187:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:187:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:199:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:211:4: C0103: Method name "test_registerUtility_duplicates_existing_reg" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:212:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:214:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:227:4: C0103: Method name "test_registerUtility_w_different_info" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:228:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:230:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:248:4: C0103: Method name "test_registerUtility_w_different_names_same_component" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:249:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:251:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:272:4: C0103: Method name "test_registerUtility_replaces_existing_reg" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:272:4: R0914: Too many local variables (17/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:273:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:274:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:275:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:276:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:278:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:290:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:301:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:313:4: C0103: Method name "test_registerUtility_w_existing_subscr" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:314:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:316:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:330:4: C0103: Method name "test_registerUtility_wo_event" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:331:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:333:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:345:4: C0103: Method name "test_registerUtility_changes_object_identity_after" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:352:16: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:354:20: W0201: Attribute '_utility_registrations' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:361:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:361:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:367:4: C0103: Method name "test_registerUtility_changes_object_identity_before" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:377:16: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:375:20: W0201: Attribute '_utility_registrations' defined outside __init__ (attribute-defined-outside-init)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:384:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:384:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:391:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:391:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:398:4: C0103: Method name "test_unregisterUtility_neither_factory_nor_component_nor_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:403:4: C0103: Method name "test_unregisterUtility_both_factory_and_component" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:411:4: C0103: Method name "test_unregisterUtility_w_component_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:412:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:414:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:426:4: C0103: Method name "test_unregisterUtility_w_component" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:427:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:428:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:429:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:431:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:446:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:457:4: C0103: Method name "test_unregisterUtility_w_factory" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:457:4: R0914: Too many local variables (17/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:458:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:459:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:460:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:462:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:477:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:488:4: C0103: Method name "test_unregisterUtility_wo_explicit_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:488:4: R0914: Too many local variables (18/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:489:8: C0415: Import outside toplevel (zope.interface.declarations.directlyProvides) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:490:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:491:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:492:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:494:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:496:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:496:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:510:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:522:4: C0103: Method name "test_unregisterUtility_wo_component_or_factory" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:522:4: R0914: Too many local variables (18/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:523:8: C0415: Import outside toplevel (zope.interface.declarations.directlyProvides) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:524:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:525:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:526:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:528:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:530:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:530:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:545:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:557:4: C0103: Method name "test_unregisterUtility_w_existing_subscr" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:558:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:560:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:575:4: C0103: Method name "test_unregisterUtility_w_existing_subscr_non_hashable" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:576:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:578:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:593:4: C0103: Method name "test_unregisterUtility_w_existing_subscr_non_hashable_fresh_cache" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:596:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:597:8: C0415: Import outside toplevel (zope.interface.registry._UtilityRegistrations) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:599:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:615:4: C0103: Method name "test_unregisterUtility_w_existing_subscr_non_hashable_reinitted" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:618:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:620:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:642:4: C0103: Method name "test_unregisterUtility_w_existing_subscr_other_component" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:643:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:645:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:662:4: C0103: Method name "test_unregisterUtility_w_existing_subscr_other_component_mixed_hash" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:663:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:665:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:684:4: C0103: Method name "test_registeredUtilities_empty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:688:4: C0103: Method name "test_registeredUtilities_notempty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:689:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:691:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:692:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:719:4: C0103: Method name "test_queryUtility_miss_no_default" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:720:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:721:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:727:4: C0103: Method name "test_queryUtility_miss_w_default" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:728:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:729:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:736:4: C0103: Method name "test_queryUtility_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:737:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:738:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:746:4: C0103: Method name "test_getUtility_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:747:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:748:8: C0415: Import outside toplevel (zope.interface.interfaces.ComponentLookupError) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:749:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:755:4: C0103: Method name "test_getUtility_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:756:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:757:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:765:4: C0103: Method name "test_getUtilitiesFor_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:766:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:767:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:773:4: C0103: Method name "test_getUtilitiesFor_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:774:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:776:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:788:4: C0103: Method name "test_getAllUtilitiesRegisteredFor_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:789:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:790:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:796:4: C0103: Method name "test_getAllUtilitiesRegisteredFor_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:797:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:799:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:811:4: C0103: Method name "test_registerAdapter_with_component_name" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:812:8: C0415: Import outside toplevel (zope.interface.declarations.named, zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:815:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:821:8: R0205: Class 'Foo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:821:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:832:4: C0103: Method name "test_registerAdapter_w_explicit_provided_and_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:832:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:833:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:834:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:835:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:837:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:855:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:867:4: C0103: Method name "test_registerAdapter_no_provided_available" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:868:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:870:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:877:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:877:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:884:4: C0103: Method name "test_registerAdapter_wo_explicit_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:884:4: R0914: Too many local variables (18/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:885:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:886:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:887:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:888:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:890:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:899:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:899:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:911:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:923:4: C0103: Method name "test_registerAdapter_no_required_available" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:924:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:926:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:932:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:932:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:939:4: C0103: Method name "test_registerAdapter_w_invalid_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:940:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:942:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:948:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:948:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:954:4: C0103: Method name "test_registerAdapter_w_required_containing_None" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:956:8: W0621: Redefining name 'Interface' from outer scope (line 18) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:954:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:955:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:956:8: W0404: Reimport 'Interface' (imported line 18) (reimported)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:956:8: C0415: Import outside toplevel (zope.interface.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:957:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:958:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:960:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:965:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:965:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:977:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:989:4: C0103: Method name "test_registerAdapter_w_required_containing_class" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:989:4: R0914: Too many local variables (20/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:990:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:991:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:992:8: C0415: Import outside toplevel (zope.interface.declarations.implementedBy) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:993:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:994:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:996:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1002:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1002:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1006:8: R0205: Class '_Context' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1006:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1019:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1031:4: C0103: Method name "test_registerAdapter_w_required_containing_junk" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1032:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1034:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1040:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1040:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1046:4: C0103: Method name "test_registerAdapter_wo_explicit_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1046:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1047:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1048:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1049:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1051:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1057:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1057:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1070:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1082:4: C0103: Method name "test_registerAdapter_wo_event" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1083:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1085:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1101:4: C0103: Method name "test_unregisterAdapter_neither_factory_nor_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1106:4: C0103: Method name "test_unregisterAdapter_neither_factory_nor_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1107:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1108:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1115:4: C0103: Method name "test_unregisterAdapter_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1116:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1117:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1121:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1121:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1130:4: C0103: Method name "test_unregisterAdapter_hit_w_explicit_provided_and_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1131:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1132:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1133:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1134:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1138:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1138:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1150:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1162:4: C0103: Method name "test_unregisterAdapter_wo_explicit_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1162:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1163:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1164:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1165:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1166:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1167:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1172:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1172:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1182:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1194:4: C0103: Method name "test_unregisterAdapter_wo_explicit_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1195:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1196:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1197:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1198:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1202:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1202:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1212:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1224:4: C0103: Method name "test_registeredAdapters_empty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1228:4: C0103: Method name "test_registeredAdapters_notempty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1229:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1231:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1232:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1239:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1239:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1262:4: C0103: Method name "test_queryAdapter_miss_no_default" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1263:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1264:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1271:4: C0103: Method name "test_queryAdapter_miss_w_default" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1272:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1273:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1282:4: C0103: Method name "test_queryAdapter_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1283:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1284:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1285:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1289:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1289:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1293:8: R0205: Class '_Context' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1293:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1302:4: C0103: Method name "test_getAdapter_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1303:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1304:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1305:8: C0415: Import outside toplevel (zope.interface.interfaces.ComponentLookupError) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1306:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1311:8: R0205: Class '_Context' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1311:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1318:4: C0103: Method name "test_getAdapter_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1319:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1320:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1321:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1325:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1325:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1329:8: R0205: Class '_Context' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1329:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1338:4: C0103: Method name "test_getAdapter_hit_super" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1339:8: W0621: Redefining name 'Interface' from outer scope (line 18) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1339:8: W0404: Reimport 'Interface' (imported line 18) (reimported)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1339:8: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1340:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1342:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1342:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1345:8: R0901: Too many ancestors (9/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1348:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1348:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1352:8: R0205: Class 'Base' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1352:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1356:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1359:8: R0205: Class 'AdapterBase' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1359:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1363:8: R0205: Class 'AdapterDerived' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1363:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1382:4: C0103: Method name "test_getAdapter_hit_super_when_parent_implements_interface_diamond" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1383:8: W0621: Redefining name 'Interface' from outer scope (line 18) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1382:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1383:8: W0404: Reimport 'Interface' (imported line 18) (reimported)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1383:8: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1384:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1386:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1386:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1389:8: R0901: Too many ancestors (9/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1392:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1392:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1395:8: R0205: Class 'Base' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1395:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1398:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1402:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1406:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1409:8: R0205: Class 'AdapterBase' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1409:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1413:8: R0205: Class 'AdapterDerived' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1413:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1432:4: C0103: Method name "test_queryMultiAdapter_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1433:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1434:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1435:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1441:8: R0205: Class '_Context1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1441:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1444:8: R0205: Class '_Context2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1444:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1452:4: C0103: Method name "test_queryMultiAdapter_miss_w_default" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1453:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1454:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1455:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1461:8: R0205: Class '_Context1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1461:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1464:8: R0205: Class '_Context2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1464:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1474:4: C0103: Method name "test_queryMultiAdapter_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1475:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1476:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1477:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1483:8: R0205: Class '_Context1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1483:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1486:8: R0205: Class '_Context2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1486:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1490:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1490:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1499:4: C0103: Method name "test_getMultiAdapter_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1500:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1501:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1502:8: C0415: Import outside toplevel (zope.interface.interfaces.ComponentLookupError) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1503:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1509:8: R0205: Class '_Context1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1509:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1512:8: R0205: Class '_Context2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1512:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1520:4: C0103: Method name "test_getMultiAdapter_hit" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1521:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1522:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1523:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1529:8: R0205: Class '_Context1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1529:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1532:8: R0205: Class '_Context2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1532:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1536:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1536:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1549:0: W0613: Unused argument 'args' (unused-argument)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1555:4: C0103: Method name "test_getMultiAdapter_hit_super" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1556:8: W0621: Redefining name 'Interface' from outer scope (line 18) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1556:8: W0404: Reimport 'Interface' (imported line 18) (reimported)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1556:8: C0415: Import outside toplevel (zope.interface.Interface) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1557:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1559:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1559:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1562:8: R0901: Too many ancestors (9/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1565:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1565:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1569:8: R0205: Class 'Base' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1569:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1573:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1576:8: R0205: Class 'AdapterBase' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1576:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1581:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1602:4: C0103: Method name "test_getAdapters_empty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1603:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1604:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1605:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1611:8: R0205: Class '_Context1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1611:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1614:8: R0205: Class '_Context2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1614:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1622:4: C0103: Method name "test_getAdapters_factory_returns_None" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1623:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1624:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1625:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1631:8: R0205: Class '_Context1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1631:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1634:8: R0205: Class '_Context2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1634:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1640:8: R1711: Useless return at end of function or method (useless-return)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1648:4: C0103: Method name "test_getAdapters_non_empty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1648:4: R0914: Too many local variables (17/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1649:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1650:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1652:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1658:8: R0205: Class '_Context1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1658:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1661:8: R0205: Class '_Context2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1661:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1665:8: R0205: Class '_Factory1' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1665:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1668:8: R0205: Class '_Factory2' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1668:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1683:4: C0103: Method name "test_registerSubscriptionAdapter_w_nonblank_name" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1684:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1686:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1699:4: C0103: Method name "test_registerSubscriptionAdapter_w_explicit_provided_and_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1699:4: R0914: Too many local variables (17/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1700:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1701:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1702:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1704:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1723:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1735:4: C0103: Method name "test_registerSubscriptionAdapter_wo_explicit_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1735:4: R0914: Too many local variables (18/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1736:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1737:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1738:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1739:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1741:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1749:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1749:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1762:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1774:4: C0103: Method name "test_registerSubscriptionAdapter_wo_explicit_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1774:4: R0914: Too many local variables (17/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1775:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1776:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1777:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1779:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1785:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1785:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1799:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1811:4: C0103: Method name "test_registerSubscriptionAdapter_wo_event" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1812:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1814:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1831:4: C0103: Method name "test_registeredSubscriptionAdapters_empty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1835:4: C0103: Method name "test_registeredSubscriptionAdapters_notempty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1836:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1838:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1839:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1845:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1845:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1868:4: C0103: Method name "test_unregisterSubscriptionAdapter_w_nonblank_name" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1869:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1871:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1880:4: C0103: Method name "test_unregisterSubscriptionAdapter_neither_factory_nor_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1885:4: C0103: Method name "test_unregisterSubscriptionAdapter_neither_factory_nor_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1886:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1887:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1894:4: C0103: Method name "test_unregisterSubscriptionAdapter_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1895:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1896:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1900:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1900:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1910:4: C0103: Method name "test_unregisterSubscriptionAdapter_hit_wo_factory" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1911:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1912:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1913:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1914:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1918:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1918:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1930:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1942:4: C0103: Method name "test_unregisterSubscriptionAdapter_hit_w_factory" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1943:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1944:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1945:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1946:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1950:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1950:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1962:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1974:4: C0103: Method name "test_unregisterSubscriptionAdapter_wo_explicit_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1974:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1975:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1976:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1977:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1978:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1979:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1984:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1984:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:1994:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2006:4: C0103: Method name "test_unregisterSubscriptionAdapter_wo_explicit_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2007:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2008:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2009:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2010:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2014:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2014:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2024:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2037:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2038:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2039:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2045:8: R0205: Class 'Bar' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2045:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2047:8: C0102: Black listed name "bar" (blacklisted-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2051:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2052:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2053:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2057:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2057:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2061:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2067:8: R0205: Class 'Bar' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2067:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2069:8: C0102: Black listed name "bar" (blacklisted-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2071:8: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2078:4: C0103: Method name "test_registerHandler_w_nonblank_name" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2079:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2081:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2092:4: C0103: Method name "test_registerHandler_w_explicit_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2092:4: R0914: Too many local variables (16/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2093:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2094:8: C0415: Import outside toplevel (zope.interface.interfaces.Registered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2095:8: C0415: Import outside toplevel (zope.interface.registry.HandlerRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2097:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2115:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2126:4: C0103: Method name "test_registerHandler_wo_explicit_required_no_event" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2127:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2129:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2134:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2136:12: W0107: Unnecessary pass statement (unnecessary-pass)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2134:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2149:4: C0103: Method name "test_registeredHandlers_empty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2153:4: C0103: Method name "test_registeredHandlers_non_empty" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2154:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2155:8: C0415: Import outside toplevel (zope.interface.registry.HandlerRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2156:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2166:8: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2181:4: C0103: Method name "test_unregisterHandler_w_nonblank_name" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2182:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2184:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2192:4: C0103: Method name "test_unregisterHandler_neither_factory_nor_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2196:4: C0103: Method name "test_unregisterHandler_miss" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2197:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2198:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2205:4: C0103: Method name "test_unregisterHandler_hit_w_factory_and_explicit_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2206:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2207:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2208:8: C0415: Import outside toplevel (zope.interface.registry.HandlerRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2209:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2222:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2232:4: C0103: Method name "test_unregisterHandler_hit_w_only_explicit_provided" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2233:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2234:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2235:8: C0415: Import outside toplevel (zope.interface.registry.HandlerRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2236:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2249:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2259:4: C0103: Method name "test_unregisterHandler_wo_explicit_required" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2260:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2261:8: C0415: Import outside toplevel (zope.interface.interfaces.Unregistered) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2262:8: C0415: Import outside toplevel (zope.interface.registry.HandlerRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2263:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2266:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2266:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2276:14: C0103: Variable name "kw" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2288:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2289:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2290:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2295:8: R0205: Class 'Bar' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2295:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2297:8: C0102: Black listed name "bar" (blacklisted-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2301:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2302:8: C0415: Import outside toplevel (zope.interface.declarations.implementer) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2303:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2316:8: R0205: Class 'Bar' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2316:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2318:8: C0102: Black listed name "bar" (blacklisted-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2325:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2325:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2354:4: C0103: Method name "test_rebuildUtilityRegistryFromLocalCache" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2354:4: R0914: Too many local variables (18/15) (too-many-locals)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2355:8: E0239: Inheriting 'Interface', which is not a class. (inherit-non-class)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2355:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2358:8: R0205: Class 'UtilityImplementingFoo' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2358:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2382:8: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2391:8: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:23:0: R0904: Too many public methods (110/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2446:8: W0621: Redefining name 'Components' from outer scope (line 21) (redefined-outer-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2456:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2457:8: C0415: Import outside toplevel (zope.interface.registry.UtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2456:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2460:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2461:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2463:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2467:8: R0205: Class '_Registry' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2467:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2479:4: C0103: Method name "test_class_conforms_to_IUtilityRegistration" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2480:8: C0415: Import outside toplevel (zope.interface.verify.verifyClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2481:8: C0415: Import outside toplevel (zope.interface.interfaces.IUtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2484:4: C0103: Method name "test_instance_conforms_to_IUtilityRegistration" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2485:8: C0415: Import outside toplevel (zope.interface.verify.verifyObject) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2486:8: C0415: Import outside toplevel (zope.interface.interfaces.IUtilityRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2487:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2491:8: R0205: Class '_Component' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2491:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2494:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2500:8: R0205: Class '_Component' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2500:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2504:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2511:8: R0205: Class '_Component' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2511:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2515:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2523:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2528:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2529:24: R0124: Redundant comparison - ur == ur (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2533:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2540:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2546:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2547:25: R0124: Redundant comparison - ur != ur (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2551:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2558:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2564:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2565:25: R0124: Redundant comparison - ur &lt; ur (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2569:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2576:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2583:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2584:24: R0124: Redundant comparison - ur &lt;= ur (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2588:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2595:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2602:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2603:25: R0124: Redundant comparison - ur &gt; ur (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2608:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2615:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2621:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2622:24: R0124: Redundant comparison - ur &gt;= ur (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2627:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2634:8: C0103: Variable name "ur" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2454:0: R0904: Too many public methods (24/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2642:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2643:8: C0415: Import outside toplevel (zope.interface.registry.AdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2642:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2646:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2647:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2649:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2653:8: R0205: Class '_Registry' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2653:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2665:4: C0103: Method name "test_class_conforms_to_IAdapterRegistration" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2666:8: C0415: Import outside toplevel (zope.interface.verify.verifyClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2667:8: C0415: Import outside toplevel (zope.interface.interfaces.IAdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2670:4: C0103: Method name "test_instance_conforms_to_IAdapterRegistration" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2671:8: C0415: Import outside toplevel (zope.interface.verify.verifyObject) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2672:8: C0415: Import outside toplevel (zope.interface.interfaces.IAdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2673:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2677:8: R0205: Class '_Component' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2677:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2680:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2686:8: R0205: Class '_Component' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2686:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2690:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2697:8: R0205: Class '_Component' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2697:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2701:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2709:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2714:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2715:24: R0124: Redundant comparison - ar == ar (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2719:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2726:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2732:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2733:25: R0124: Redundant comparison - ar != ar (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2737:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2744:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2749:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2750:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2754:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2760:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2761:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2766:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2773:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2774:25: R0124: Redundant comparison - ar &lt; ar (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2778:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2785:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2792:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2793:24: R0124: Redundant comparison - ar &lt;= ar (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2797:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2804:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2811:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2812:25: R0124: Redundant comparison - ar &gt; ar (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2817:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2824:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2830:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2831:24: R0124: Redundant comparison - ar &gt;= ar (comparison-with-itself)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2836:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2843:8: C0103: Variable name "ar" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2640:0: R0904: Too many public methods (26/20) (too-many-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2851:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2852:8: C0415: Import outside toplevel (zope.interface.registry.SubscriptionRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2851:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2855:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2856:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2858:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2862:8: R0205: Class '_Registry' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2862:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2874:4: C0103: Method name "test_class_conforms_to_ISubscriptionAdapterRegistration" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2875:8: C0415: Import outside toplevel (zope.interface.verify.verifyClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2876:8: C0415: Import outside toplevel (zope.interface.interfaces.ISubscriptionAdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2879:4: C0103: Method name "test_instance_conforms_to_ISubscriptionAdapterRegistration" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2880:8: C0415: Import outside toplevel (zope.interface.verify.verifyObject) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2881:8: C0415: Import outside toplevel (zope.interface.interfaces.ISubscriptionAdapterRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2888:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2889:8: C0415: Import outside toplevel (zope.interface.registry.HandlerRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2888:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2892:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2893:8: C0415: Import outside toplevel (zope.interface.declarations.InterfaceClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2895:8: R0901: Too many ancestors (8/7) (too-many-ancestors)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2898:8: R0205: Class '_Registry' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2898:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2910:4: C0103: Method name "test_class_conforms_to_IHandlerRegistration" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2911:8: C0415: Import outside toplevel (zope.interface.verify.verifyClass) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2912:8: C0415: Import outside toplevel (zope.interface.interfaces.IHandlerRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2915:4: C0103: Method name "test_instance_conforms_to_IHandlerRegistration" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2916:8: C0415: Import outside toplevel (zope.interface.verify.verifyObject) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2917:8: C0415: Import outside toplevel (zope.interface.interfaces.IHandlerRegistration) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2918:8: C0103: Variable name "hr" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2924:8: C0103: Variable name "hr" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2930:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2930:8: R0903: Too few public methods (0/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2932:8: C0103: Variable name "hr" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2938:8: R0205: Class '_Factory' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2938:8: R0903: Too few public methods (1/2) (too-few-public-methods)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2941:8: C0103: Variable name "hr" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2984:4: C0103: Method name "_makeOne" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2984:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2991:8: C0415: Import outside toplevel (pickle) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:2999:8: C0415: Import outside toplevel (pickle) (import-outside-toplevel)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:3027:4: C0103: Method name "_getTargetClass" doesn't conform to snake_case naming style (invalid-name)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:3027:4: R0201: Method could be a function (no-self-use)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:3044:0: R0205: Class '_Monkey' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)</pre>
+<pre>/log/firmware/firmware/usr/lib/python3.8/site-packages/zope/interface/tests/test_registry.py:3048:26: R1717: Consider using a dictionary comprehension (consider-using-dict-comprehension)</pre>
+<br />
+<pre>-----------------------------------</pre>
+<pre>Your code has been rated at 6.68/10</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mubifs.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m898) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mubifs.ko[0m
+
+    b9ac:	f9406322 	ldr	x2, [x25, #192]
+    b9b0:	b140045f 	cmn	x2, #0x1, lsl #12
+    b9b4:	54fffbc9 	b.ls	b92c <ubifs_mount+0xc34>  // b.plast
+    b9b8:	51000753 	sub	w19, w26, #0x1
+    b9bc:	52801919 	mov	w25, #0xc8                  	// #200
+    b9c0:	3500007a 	cbnz	w26, b9cc <ubifs_mount+0xcd4>
+    b9c4:	14000008 	b	b9e4 <ubifs_mount+0xcec>
+    b9c8:	f9404f00 	ldr	x0, [x24, #152]
+    b9cc:	9b390260 	smaddl	x0, w19, w25, x0
+    b9d0:	51000673 	sub	w19, w19, #0x1
+    b9d4:	f9406000 	ldr	x0, [x0, #192]
+    b9d8:	94000000 	bl	0 <kfree>
+    b9dc:	3100067f 	cmn	w19, #0x1
+    b9e0:	54ffff41 	b.ne	b9c8 <ubifs_mount+0xcd0>  // b.any
+    b9e4:	b9482b02 	ldr	w2, [x24, #2088]
+    b9e8:	91238313 	add	x19, x24, #0x8e0
+    b9ec:	b9482f03 	ldr	w3, [x24, #2092]
+    b9f0:	aa1303e0 	mov	x0, x19
+    b9f4:	90000001 	adrp	x1, 0 <shrink_tnc_trees>
+    b9f8:	91000021 	add	x1, x1, #0x0
+[31m    b9fc:	94000000 	bl	0 <sprintf>[0m
+    ba00:	395ae300 	ldrb	w0, [x24, #1720]
+    ba04:	370801c0 	tbnz	w0, #1, ba3c <ubifs_mount+0xd44>
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m1[0m times [0;33mubifs.ko[0m
+

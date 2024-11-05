@@ -1,0 +1,409 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">librpm.so.8.1.0</span></pre>
+<br />
+<pre>  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         </pre>
+<pre>  <span class="green">Full RELRO   </span>   <span class="green">Canary found   </span>   <span class="green">NX enabled </span>   <span class="orange">DSO          </span>   <span class="green">No RPATH </span>  <span class="green">No RUNPATH </span>  <span class="green">No Symbols</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> tear down of </span><span class="orange">librpm.so.8.1.0</span></pre>
+<br />
+<pre>   29b48:	d503201f 	nop</pre>
+<pre>   29b4c:	d503201f 	nop</pre>
+<pre>   29b50:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!</pre>
+<pre>   29b54:	910003fd 	mov	x29, sp</pre>
+<pre>   29b58:	a90153f3 	stp	x19, x20, [sp, #16]</pre>
+<pre>   29b5c:	aa0403f4 	mov	x20, x4</pre>
+<pre>   29b60:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>   29b64:	aa0103f6 	mov	x22, x1</pre>
+<pre>   29b68:	aa0003f5 	mov	x21, x0</pre>
+<pre>   29b6c:	aa0403e0 	mov	x0, x4</pre>
+<pre>   29b70:	a90363f7 	stp	x23, x24, [sp, #48]</pre>
+<pre>   29b74:	aa0203f7 	mov	x23, x2</pre>
+<pre>   29b78:	2a0303f8 	mov	w24, w3</pre>
+<pre>   29b7c:	97ffa4d1 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   29b80:	91000800 	add	x0, x0, #0x2</pre>
+<pre>   29b84:	97ffa807 	bl	13ba0 &lt;rmalloc&commat;plt&gt;</pre>
+<pre>   29b88:	52800422 	mov	w2, #0x21                  	// #33</pre>
+<pre>   29b8c:	aa0003f3 	mov	x19, x0</pre>
+<pre>   29b90:	38001402 	strb	w2, [x0], #1</pre>
+<pre>   29b94:	aa1403e1 	mov	x1, x20</pre>
+<pre><span class="red">   29b98:	97ffa6ea 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   29b9c:	aa1303e4 	mov	x4, x19</pre>
+<pre>   29ba0:	2a1803e3 	mov	w3, w24</pre>
+<pre>--</pre>
+<pre>   29ce4:	f9403fe0 	ldr	x0, [sp, #120]</pre>
+<pre>   29ce8:	aa1903e2 	mov	x2, x25</pre>
+<pre>   29cec:	f9404be1 	ldr	x1, [sp, #144]</pre>
+<pre>   29cf0:	aa1603e3 	mov	x3, x22</pre>
+<pre>   29cf4:	97ffe873 	bl	23ec0 &lt;rpmdbCtrl&commat;&commat;Base+0x14a0&gt;</pre>
+<pre>   29cf8:	34fffda0 	cbz	w0, 29cac &lt;rpmcpioFree&commat;&commat;Base+0x370c&gt;</pre>
+<pre>   29cfc:	f9404fe0 	ldr	x0, [sp, #152]</pre>
+<pre>   29d00:	f8776800 	ldr	x0, [x0, x23]</pre>
+<pre>   29d04:	97ffa46f 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   29d08:	aa0003f4 	mov	x20, x0</pre>
+<pre>   29d0c:	aa1603e0 	mov	x0, x22</pre>
+<pre>   29d10:	97ffa46c 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   29d14:	8b000280 	add	x0, x20, x0</pre>
+<pre>   29d18:	91000400 	add	x0, x0, #0x1</pre>
+<pre>   29d1c:	97ffa7a1 	bl	13ba0 &lt;rmalloc&commat;plt&gt;</pre>
+<pre>   29d20:	f9404fe1 	ldr	x1, [sp, #152]</pre>
+<pre>   29d24:	aa0003f4 	mov	x20, x0</pre>
+<pre>   29d28:	f8776821 	ldr	x1, [x1, x23]</pre>
+<pre>   29d2c:	97ffac15 	bl	14d80 &lt;stpcpy&commat;plt&gt;</pre>
+<pre>   29d30:	aa1603e1 	mov	x1, x22</pre>
+<pre><span class="red">   29d34:	97ffa683 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   29d38:	b9406fe0 	ldr	w0, [sp, #108]</pre>
+<pre>   29d3c:	aa1403e4 	mov	x4, x20</pre>
+<pre>--</pre>
+<pre>   315c4:	97ff876b 	bl	13370 &lt;free&commat;plt&gt;</pre>
+<pre>   315c8:	aa1603e0 	mov	x0, x22</pre>
+<pre>   315cc:	97ff8769 	bl	13370 &lt;free&commat;plt&gt;</pre>
+<pre>   315d0:	f9406fa0 	ldr	x0, [x29, #216]</pre>
+<pre>   315d4:	97ff8767 	bl	13370 &lt;free&commat;plt&gt;</pre>
+<pre>   315d8:	f9407fa0 	ldr	x0, [x29, #248]</pre>
+<pre>   315dc:	97ff8765 	bl	13370 &lt;free&commat;plt&gt;</pre>
+<pre>   315e0:	34ffcadc 	cbz	w28, 30f38 &lt;rpmPackageFilesInstall&commat;&commat;Base+0x328&gt;</pre>
+<pre>   315e4:	17fffe9b 	b	31050 &lt;rpmPackageFilesInstall&commat;&commat;Base+0x440&gt;</pre>
+<pre>   315e8:	a94bcfb4 	ldp	x20, x19, [x29, #184]</pre>
+<pre>   315ec:	aa1b03f5 	mov	x21, x27</pre>
+<pre>   315f0:	f9404bbb 	ldr	x27, [x29, #144]</pre>
+<pre>   315f4:	f94077a1 	ldr	x1, [x29, #232]</pre>
+<pre>   315f8:	b940aba0 	ldr	w0, [x29, #168]</pre>
+<pre>   315fc:	eb20c03f 	cmp	x1, w0, sxtw</pre>
+<pre>   31600:	54000108 	b.hi	31620 &lt;rpmPackageFilesInstall&commat;&commat;Base+0xa10&gt;  // b.pmore</pre>
+<pre>   31604:	b4fff516 	cbz	x22, 314a4 &lt;rpmPackageFilesInstall&commat;&commat;Base+0x894&gt;</pre>
+<pre>   31608:	aa1503e1 	mov	x1, x21</pre>
+<pre>   3160c:	aa1603e0 	mov	x0, x22</pre>
+<pre>   31610:	b900d3bb 	str	w27, [x29, #208]</pre>
+<pre><span class="red">   31614:	97ff884b 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   31618:	9100029f 	mov	sp, x20</pre>
+<pre>   3161c:	17ffffa3 	b	314a8 &lt;rpmPackageFilesInstall&commat;&commat;Base+0x898&gt;</pre>
+<pre>--</pre>
+<pre>   47110:	340012dc 	cbz	w28, 47368 &lt;rpmProblemCompare&commat;&commat;Base+0x1888&gt;</pre>
+<pre>   47114:	b9400b60 	ldr	w0, [x27, #8]</pre>
+<pre>   47118:	7100ac1f 	cmp	w0, #0x2b</pre>
+<pre>   4711c:	540016a0 	b.eq	473f0 &lt;rpmProblemCompare&commat;&commat;Base+0x1910&gt;  // b.none</pre>
+<pre>   47120:	b9400f62 	ldr	w2, [x27, #12]</pre>
+<pre>   47124:	35000c62 	cbnz	w2, 472b0 &lt;rpmProblemCompare&commat;&commat;Base+0x17d0&gt;</pre>
+<pre>   47128:	b9401362 	ldr	w2, [x27, #16]</pre>
+<pre>   4712c:	34000a02 	cbz	w2, 4726c &lt;rpmProblemCompare&commat;&commat;Base+0x178c&gt;</pre>
+<pre>   47130:	d2800019 	mov	x25, #0x0                   	// #0</pre>
+<pre>   47134:	d00001fc 	adrp	x28, 85000 &lt;rpmVerifyPoptTable&commat;&commat;Base+0xa8&gt;</pre>
+<pre>   47138:	aa1a03e0 	mov	x0, x26</pre>
+<pre>   4713c:	97ff2f61 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   47140:	91000800 	add	x0, x0, #0x2</pre>
+<pre>   47144:	97ff3297 	bl	13ba0 &lt;rmalloc&commat;plt&gt;</pre>
+<pre>   47148:	b9401761 	ldr	w1, [x27, #20]</pre>
+<pre>   4714c:	aa0003f8 	mov	x24, x0</pre>
+<pre>   47150:	34000061 	cbz	w1, 4715c &lt;rpmProblemCompare&commat;&commat;Base+0x167c&gt;</pre>
+<pre>   47154:	52800be1 	mov	w1, #0x5f                  	// #95</pre>
+<pre>   47158:	38001401 	strb	w1, [x0], #1</pre>
+<pre>   4715c:	f9400361 	ldr	x1, [x27]</pre>
+<pre><span class="red">   47160:	97ff3178 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   47164:	aa1803e1 	mov	x1, x24</pre>
+<pre>   47168:	aa1603e3 	mov	x3, x22</pre>
+<pre>--</pre>
+<pre>   52d78:	aa1503e0 	mov	x0, x21</pre>
+<pre>   52d7c:	97ff0749 	bl	14aa0 &lt;rpmtdGetString&commat;plt&gt;</pre>
+<pre>   52d80:	2a1303e3 	mov	w3, w19</pre>
+<pre>   52d84:	aa0003e2 	mov	x2, x0</pre>
+<pre>   52d88:	2a1903e1 	mov	w1, w25</pre>
+<pre>   52d8c:	aa1803e0 	mov	x0, x24</pre>
+<pre>   52d90:	97fffcf0 	bl	52150 &lt;rpmcliVerify&commat;&commat;Base+0x1560&gt;</pre>
+<pre>   52d94:	aa0003f3 	mov	x19, x0</pre>
+<pre>   52d98:	aa1403e0 	mov	x0, x20</pre>
+<pre>   52d9c:	97ff0049 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   52da0:	91004400 	add	x0, x0, #0x11</pre>
+<pre>   52da4:	97ff037f 	bl	13ba0 &lt;rmalloc&commat;plt&gt;</pre>
+<pre>   52da8:	f9000660 	str	x0, [x19, #8]</pre>
+<pre>   52dac:	91004002 	add	x2, x0, #0x10</pre>
+<pre>   52db0:	f9000002 	str	x2, [x0]</pre>
+<pre>   52db4:	aa1403e1 	mov	x1, x20</pre>
+<pre>   52db8:	f9400660 	ldr	x0, [x19, #8]</pre>
+<pre>   52dbc:	f900041f 	str	xzr, [x0, #8]</pre>
+<pre>   52dc0:	f9400660 	ldr	x0, [x19, #8]</pre>
+<pre>   52dc4:	f9400000 	ldr	x0, [x0]</pre>
+<pre><span class="red">   52dc8:	97ff025e 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   52dcc:	14000002 	b	52dd4 &lt;rpmcliVerify&commat;&commat;Base+0x21e4&gt;</pre>
+<pre>   52dd0:	d2800013 	mov	x19, #0x0                   	// #0</pre>
+<pre>--</pre>
+<pre>   54384:	97ff004b 	bl	144b0 &lt;strcmp&commat;plt&gt;</pre>
+<pre>   54388:	34000420 	cbz	w0, 5440c &lt;rpmugUid&commat;&commat;Base+0xac&gt;</pre>
+<pre>   5438c:	a90363f7 	stp	x23, x24, [sp, #48]</pre>
+<pre>   54390:	f0000194 	adrp	x20, 87000 &lt;_rpmds_nopromote&commat;&commat;Base+0x1628&gt;</pre>
+<pre>   54394:	9109c298 	add	x24, x20, #0x270</pre>
+<pre>   54398:	aa1303e0 	mov	x0, x19</pre>
+<pre>   5439c:	97fefac9 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   543a0:	aa0003f6 	mov	x22, x0</pre>
+<pre>   543a4:	f9400717 	ldr	x23, [x24, #8]</pre>
+<pre>   543a8:	b4000097 	cbz	x23, 543b8 &lt;rpmugUid&commat;&commat;Base+0x58&gt;</pre>
+<pre>   543ac:	f9413a80 	ldr	x0, [x20, #624]</pre>
+<pre>   543b0:	eb0002df 	cmp	x22, x0</pre>
+<pre>   543b4:	54000500 	b.eq	54454 &lt;rpmugUid&commat;&commat;Base+0xf4&gt;  // b.none</pre>
+<pre>   543b8:	9109c298 	add	x24, x20, #0x270</pre>
+<pre>   543bc:	910006c0 	add	x0, x22, #0x1</pre>
+<pre>   543c0:	f9400f01 	ldr	x1, [x24, #24]</pre>
+<pre>   543c4:	eb01001f 	cmp	x0, x1</pre>
+<pre>   543c8:	540002c8 	b.hi	54420 &lt;rpmugUid&commat;&commat;Base+0xc0&gt;  // b.pmore</pre>
+<pre>   543cc:	aa1303e1 	mov	x1, x19</pre>
+<pre>   543d0:	aa1703e0 	mov	x0, x23</pre>
+<pre><span class="red">   543d4:	97fefcdb 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   543d8:	aa1303e0 	mov	x0, x19</pre>
+<pre>   543dc:	97fef9d1 	bl	12b20 &lt;getpwnam&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   543f0:	b90002a1 	str	w1, [x21]</pre>
+<pre>   543f4:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>   543f8:	a94363f7 	ldp	x23, x24, [sp, #48]</pre>
+<pre>   543fc:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   54400:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   54404:	a8c47bfd 	ldp	x29, x30, [sp], #64</pre>
+<pre>   54408:	d65f03c0 	ret</pre>
+<pre>   5440c:	b90002bf 	str	wzr, [x21]</pre>
+<pre>   54410:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   54414:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   54418:	a8c47bfd 	ldp	x29, x30, [sp], #64</pre>
+<pre>   5441c:	d65f03c0 	ret</pre>
+<pre>   54420:	91002ac1 	add	x1, x22, #0xa</pre>
+<pre>   54424:	aa1703e0 	mov	x0, x23</pre>
+<pre>   54428:	f9000f01 	str	x1, [x24, #24]</pre>
+<pre>   5442c:	97ff0129 	bl	148d0 &lt;rrealloc&commat;plt&gt;</pre>
+<pre>   54430:	aa1303e1 	mov	x1, x19</pre>
+<pre>   54434:	aa0003f7 	mov	x23, x0</pre>
+<pre>   54438:	f9000700 	str	x0, [x24, #8]</pre>
+<pre>   5443c:	aa1703e0 	mov	x0, x23</pre>
+<pre><span class="red">   54440:	97fefcc0 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   54444:	aa1303e0 	mov	x0, x19</pre>
+<pre>   54448:	97fef9b6 	bl	12b20 &lt;getpwnam&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   544c4:	34000440 	cbz	w0, 5454c &lt;rpmugGid&commat;&commat;Base+0xac&gt;</pre>
+<pre>   544c8:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>   544cc:	aa1303e0 	mov	x0, x19</pre>
+<pre>   544d0:	a90363f7 	stp	x23, x24, [sp, #48]</pre>
+<pre>   544d4:	f0000196 	adrp	x22, 87000 &lt;_rpmds_nopromote&commat;&commat;Base+0x1628&gt;</pre>
+<pre>   544d8:	9109c2d8 	add	x24, x22, #0x270</pre>
+<pre>   544dc:	97fefa79 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   544e0:	aa0003f5 	mov	x21, x0</pre>
+<pre>   544e4:	f9401717 	ldr	x23, [x24, #40]</pre>
+<pre>   544e8:	b4000097 	cbz	x23, 544f8 &lt;rpmugGid&commat;&commat;Base+0x58&gt;</pre>
+<pre>   544ec:	f9401300 	ldr	x0, [x24, #32]</pre>
+<pre>   544f0:	eb0002bf 	cmp	x21, x0</pre>
+<pre>   544f4:	540004e0 	b.eq	54590 &lt;rpmugGid&commat;&commat;Base+0xf0&gt;  // b.none</pre>
+<pre>   544f8:	9109c2d8 	add	x24, x22, #0x270</pre>
+<pre>   544fc:	910006a0 	add	x0, x21, #0x1</pre>
+<pre>   54500:	f9401f01 	ldr	x1, [x24, #56]</pre>
+<pre>   54504:	eb01001f 	cmp	x0, x1</pre>
+<pre>   54508:	540002a8 	b.hi	5455c &lt;rpmugGid&commat;&commat;Base+0xbc&gt;  // b.pmore</pre>
+<pre>   5450c:	aa1303e1 	mov	x1, x19</pre>
+<pre>   54510:	aa1703e0 	mov	x0, x23</pre>
+<pre><span class="red">   54514:	97fefc8b 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   54518:	aa1303e0 	mov	x0, x19</pre>
+<pre>   5451c:	97fefa09 	bl	12d40 &lt;getgrnam&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   5452c:	b90032c1 	str	w1, [x22, #48]</pre>
+<pre>   54530:	b9000281 	str	w1, [x20]</pre>
+<pre>   54534:	52800000 	mov	w0, #0x0                   	// #0</pre>
+<pre>   54538:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>   5453c:	a94363f7 	ldp	x23, x24, [sp, #48]</pre>
+<pre>   54540:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   54544:	a8c47bfd 	ldp	x29, x30, [sp], #64</pre>
+<pre>   54548:	d65f03c0 	ret</pre>
+<pre>   5454c:	b900029f 	str	wzr, [x20]</pre>
+<pre>   54550:	a94153f3 	ldp	x19, x20, [sp, #16]</pre>
+<pre>   54554:	a8c47bfd 	ldp	x29, x30, [sp], #64</pre>
+<pre>   54558:	d65f03c0 	ret</pre>
+<pre>   5455c:	91002aa1 	add	x1, x21, #0xa</pre>
+<pre>   54560:	aa1703e0 	mov	x0, x23</pre>
+<pre>   54564:	f9001f01 	str	x1, [x24, #56]</pre>
+<pre>   54568:	97ff00da 	bl	148d0 &lt;rrealloc&commat;plt&gt;</pre>
+<pre>   5456c:	aa1303e1 	mov	x1, x19</pre>
+<pre>   54570:	aa0003f7 	mov	x23, x0</pre>
+<pre>   54574:	f9001700 	str	x0, [x24, #40]</pre>
+<pre>   54578:	aa1703e0 	mov	x0, x23</pre>
+<pre><span class="red">   5457c:	97fefc71 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   54580:	aa1303e0 	mov	x0, x19</pre>
+<pre>   54584:	97fef9ef 	bl	12d40 &lt;getgrnam&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>   545fc:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>   54600:	d0000195 	adrp	x21, 86000 &lt;_rpmds_nopromote&commat;&commat;Base+0x628&gt;</pre>
+<pre>   54604:	b9409aa1 	ldr	w1, [x21, #152]</pre>
+<pre>   54608:	6b00003f 	cmp	w1, w0</pre>
+<pre>   5460c:	540002e0 	b.eq	54668 &lt;rpmugUname&commat;&commat;Base+0x88&gt;  // b.none</pre>
+<pre>   54610:	97fefe6c 	bl	13fc0 &lt;getpwuid&commat;plt&gt;</pre>
+<pre>   54614:	aa0003f4 	mov	x20, x0</pre>
+<pre>   54618:	b40005a0 	cbz	x0, 546cc &lt;rpmugUname&commat;&commat;Base+0xec&gt;</pre>
+<pre>   5461c:	f9400016 	ldr	x22, [x0]</pre>
+<pre>   54620:	b9009ab3 	str	w19, [x21, #152]</pre>
+<pre>   54624:	f0000193 	adrp	x19, 87000 &lt;_rpmds_nopromote&commat;&commat;Base+0x1628&gt;</pre>
+<pre>   54628:	9109c273 	add	x19, x19, #0x270</pre>
+<pre>   5462c:	aa1603e0 	mov	x0, x22</pre>
+<pre>   54630:	97fefa24 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   54634:	91000403 	add	x3, x0, #0x1</pre>
+<pre>   54638:	a9440662 	ldp	x2, x1, [x19, #64]</pre>
+<pre>   5463c:	eb01007f 	cmp	x3, x1</pre>
+<pre>   54640:	540002e8 	b.hi	5469c &lt;rpmugUname&commat;&commat;Base+0xbc&gt;  // b.pmore</pre>
+<pre>   54644:	aa1603e1 	mov	x1, x22</pre>
+<pre>   54648:	aa0203e0 	mov	x0, x2</pre>
+<pre><span class="red">   5464c:	97fefc3d 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   54650:	aa0003e2 	mov	x2, x0</pre>
+<pre>   54654:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<pre>--</pre>
+<pre>   54700:	91026294 	add	x20, x20, #0x98</pre>
+<pre>   54704:	b9400681 	ldr	w1, [x20, #4]</pre>
+<pre>   54708:	6b00003f 	cmp	w1, w0</pre>
+<pre>   5470c:	54000300 	b.eq	5476c &lt;rpmugGname&commat;&commat;Base+0x8c&gt;  // b.none</pre>
+<pre>   54710:	a9025bf5 	stp	x21, x22, [sp, #32]</pre>
+<pre>   54714:	97feff37 	bl	143f0 &lt;getgrgid&commat;plt&gt;</pre>
+<pre>   54718:	aa0003f5 	mov	x21, x0</pre>
+<pre>   5471c:	b4000580 	cbz	x0, 547cc &lt;rpmugGname&commat;&commat;Base+0xec&gt;</pre>
+<pre>   54720:	f9400016 	ldr	x22, [x0]</pre>
+<pre>   54724:	b9000693 	str	w19, [x20, #4]</pre>
+<pre>   54728:	f0000193 	adrp	x19, 87000 &lt;_rpmds_nopromote&commat;&commat;Base+0x1628&gt;</pre>
+<pre>   5472c:	9109c273 	add	x19, x19, #0x270</pre>
+<pre>   54730:	aa1603e0 	mov	x0, x22</pre>
+<pre>   54734:	97fef9e3 	bl	12ec0 &lt;strlen&commat;plt&gt;</pre>
+<pre>   54738:	91000403 	add	x3, x0, #0x1</pre>
+<pre>   5473c:	a9450662 	ldp	x2, x1, [x19, #80]</pre>
+<pre>   54740:	eb01007f 	cmp	x3, x1</pre>
+<pre>   54744:	540002c8 	b.hi	5479c &lt;rpmugGname&commat;&commat;Base+0xbc&gt;  // b.pmore</pre>
+<pre>   54748:	aa1603e1 	mov	x1, x22</pre>
+<pre>   5474c:	aa0203e0 	mov	x0, x2</pre>
+<pre><span class="red">   54750:	97fefbfc 	bl	13740 &lt;strcpy&commat;plt&gt</span></span></pre>
+<pre>   54754:	aa0003e2 	mov	x2, x0</pre>
+<pre>   54758:	a9425bf5 	ldp	x21, x22, [sp, #32]</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcpy</span> used </span><span class="orange">11</span> times </span><span class="orange">librpm.so.8.1.0</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

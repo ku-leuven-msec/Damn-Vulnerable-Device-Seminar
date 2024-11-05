@@ -1,0 +1,68 @@
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 9:[0m
+[0m[ -n "$pkg" -a -e "$pkg" ] ||[0m
+[33m            ^-- SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 13:[0m
+[0m	local o="$1"; shift[0m
+[33m        ^-----^ SC3043: In POSIX sh, 'local' is undefined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 14:[0m
+[0m	dd if="$pkg" skip="$o" iflag=skip_bytes status=none $*[0m
+[33m                                                            ^-- SC2048: Use "$@" (with quotes) to prevent whitespace problems.[0m
+[32m                                                            ^-- SC2086: Double quote to prevent globbing and word splitting.[0m
+
+[1mDid you mean: [0m
+	dd if="$pkg" skip="$o" iflag=skip_bytes status=none "$*"
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 20:[0m
+[0m	local i b b0 b1 b2 b3 b4 b5 b6 b7[0m
+[33m        ^-- SC3043: In POSIX sh, 'local' is undefined.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 24:[0m
+[0m		b="$(_dd $(($offset + $i)) bs=1 count=1)"[0m
+[32m                            ^-----^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                                      ^-- SC2004: $/${} is unnecessary on arithmetic variables.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 29:[0m
+[0m		i=$(($i + 1))[0m
+[32m                     ^-- SC2004: $/${} is unnecessary on arithmetic variables.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 32:[0m
+[0m	rsize=$((8 + ((($b0 << 24) + ($b1 << 16) + ($b2 << 8) + $b3) << 4) + ($b4 << 24) + ($b5 << 16) + ($b6 << 8) + $b7))[0m
+[32m                        ^-^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                                      ^-^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                                                    ^-^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                                                                ^-^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                                                                              ^-^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                                                                                            ^-^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                                                                                                          ^-^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                                                                                                                      ^-^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 33:[0m
+[0m	offset=$(($offset + $rsize))[0m
+[32m                  ^-----^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                            ^----^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 44:[0m
+[0mcalcsize $(($offset + (8 - ($sigsize % 8)) % 8))[0m
+[32m            ^-----^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+[32m                            ^------^ SC2004: $/${} is unnecessary on arithmetic variables.[0m
+
+
+[1mIn /log/firmware/firmware/usr/lib/rpm/rpm2cpio.sh line 45:[0m
+[0mhdrsize=$rsize[0m
+[33m^-----^ SC2034: hdrsize appears unused. Verify use (or export if used externally).[0m
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- hdrsize appears unused. Verify us...
+  https://www.shellcheck.net/wiki/SC2048 -- Use "$@" (with quotes) to prevent...
+  https://www.shellcheck.net/wiki/SC2166 -- Prefer [ p ] && [ q ] as [ p -a q...

@@ -1,0 +1,85 @@
+[[0;33m*[0m] Binary protection state of [0;33mdm-thin-pool.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m427) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mdm-thin-pool.ko[0m
+
+    184c:	eb05009f 	cmp	x4, x5
+    1850:	9a859084 	csel	x4, x4, x5, ls  // ls = plast
+    1854:	d345fc84 	lsr	x4, x4, #5
+    1858:	eb03009f 	cmp	x4, x3
+    185c:	9a839083 	csel	x3, x4, x3, ls  // ls = plast
+    1860:	94000000 	bl	0 <scnprintf>
+    1864:	17ffffa1 	b	16e8 <pool_status+0xf8>
+    1868:	35fff282 	cbnz	w2, 16b8 <pool_status+0xc8>
+    186c:	17ffff89 	b	1690 <pool_status+0xa0>
+    1870:	d3420861 	ubfx	x1, x3, #2, #1
+    1874:	17ffff87 	b	1690 <pool_status+0xa0>
+    1878:	f9400f22 	ldr	x2, [x25, #24]
+    187c:	90000014 	adrp	x20, 0 <process_prepared>
+    1880:	91000294 	add	x20, x20, #0x0
+    1884:	910223e0 	add	x0, sp, #0x88
+    1888:	aa1403e1 	mov	x1, x20
+    188c:	f9400042 	ldr	x2, [x2]
+    1890:	b9400042 	ldr	w2, [x2]
+    1894:	12004c43 	and	w3, w2, #0xfffff
+    1898:	53147c42 	lsr	w2, w2, #20
+[31m    189c:	94000000 	bl	0 <sprintf>[0m
+    18a0:	f9400b22 	ldr	x2, [x25, #16]
+    18a4:	aa1403e1 	mov	x1, x20
+    18a8:	9102a3e0 	add	x0, sp, #0xa8
+    18ac:	f9400042 	ldr	x2, [x2]
+    18b0:	b9400042 	ldr	w2, [x2]
+    18b4:	12004c43 	and	w3, w2, #0xfffff
+    18b8:	53147c42 	lsr	w2, w2, #20
+[31m    18bc:	94000000 	bl	0 <sprintf>[0m
+    18c0:	b9404305 	ldr	w5, [x24, #64]
+    18c4:	9102a3e4 	add	x4, sp, #0xa8
+--
+    20dc:	91000042 	add	x2, x2, #0x0
+    20e0:	94000000 	bl	0 <scnprintf>
+    20e4:	17fffff0 	b	20a4 <thin_status+0x64>
+    20e8:	34fffdf4 	cbz	w20, 20a4 <thin_status+0x64>
+    20ec:	2a1403e1 	mov	w1, w20
+    20f0:	aa1703e0 	mov	x0, x23
+    20f4:	90000002 	adrp	x2, 0 <process_prepared>
+    20f8:	91000042 	add	x2, x2, #0x0
+    20fc:	94000000 	bl	0 <scnprintf>
+    2100:	17ffffe9 	b	20a4 <thin_status+0x64>
+    2104:	34fffd14 	cbz	w20, 20a4 <thin_status+0x64>
+    2108:	f9400ac2 	ldr	x2, [x22, #16]
+    210c:	90000018 	adrp	x24, 0 <process_prepared>
+    2110:	91000318 	add	x24, x24, #0x0
+    2114:	910163e0 	add	x0, sp, #0x58
+    2118:	aa1803e1 	mov	x1, x24
+    211c:	f9400042 	ldr	x2, [x2]
+    2120:	b9400042 	ldr	w2, [x2]
+    2124:	12004c43 	and	w3, w2, #0xfffff
+    2128:	53147c42 	lsr	w2, w2, #20
+[31m    212c:	94000000 	bl	0 <sprintf>[0m
+    2130:	f94016c4 	ldr	x4, [x22, #40]
+    2134:	aa1403e1 	mov	x1, x20
+    2138:	910163e3 	add	x3, sp, #0x58
+    213c:	aa1703e0 	mov	x0, x23
+    2140:	90000002 	adrp	x2, 0 <process_prepared>
+    2144:	91000042 	add	x2, x2, #0x0
+    2148:	94000000 	bl	0 <scnprintf>
+    214c:	93407c15 	sxtw	x21, w0
+    2150:	f9400ec1 	ldr	x1, [x22, #24]
+    2154:	f100003f 	cmp	x1, #0x0
+    2158:	fa551284 	ccmp	x20, x21, #0x4, ne  // ne = any
+    215c:	54fffa4d 	b.le	20a4 <thin_status+0x64>
+    2160:	f9400022 	ldr	x2, [x1]
+    2164:	910163e0 	add	x0, sp, #0x58
+    2168:	aa1803e1 	mov	x1, x24
+    216c:	b9400042 	ldr	w2, [x2]
+    2170:	12004c43 	and	w3, w2, #0xfffff
+    2174:	53147c42 	lsr	w2, w2, #20
+[31m    2178:	94000000 	bl	0 <sprintf>[0m
+    217c:	cb150281 	sub	x1, x20, x21
+    2180:	910163e3 	add	x3, sp, #0x58
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m4[0m times [0;33mdm-thin-pool.ko[0m
+

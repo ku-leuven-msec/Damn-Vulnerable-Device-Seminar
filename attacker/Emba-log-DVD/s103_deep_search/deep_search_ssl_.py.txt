@@ -1,0 +1,129 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/pip/_vendor/urllib3/util/ssl_.py[0m
+14:    SSLError,.
+19:SSLContext = None.
+20:SSLTransport = Non.
+22:IS_PYOPENSSL = False.
+45:y:  # Test for SSL features.
+46:    import ssl.
+47:    from ssl import CERT_RE.
+52:    from ssl import HAS_SNI.
+57:    from .ssltransport impor.
+57:t SSLTransport.
+63:    from ssl import PROTOCO.
+65:    PROTOCOL_SSLv23 = PROTOCOL_.
+68:        from ssl import PROTOCO.
+68:L_SSLv23 as PROTOCOL.
+70:      PROTOCOL_SSLv23 = PROTOCOL_.
+72:      PROTOCOL_SSLv23 = PROTOCOL_.
+75:    from ssl import PROTOCO.
+81:    from ssl import OP_NO_C.
+81:RESSION, OP_NO_SSLv2, OP_NO_SSLv3.
+83:    OP_NO_SSLv2, OP_NO_SSLv3.
+88:    from ssl import OP_NO_T.
+97: - https://www.ssllabs.com/projec.
+98:ur-web-servers-ssl-ciphers/.
+130:    from ssl import SSLCont.
+130:ext  # Modern SSL?.
+133:    class SSLContext(object).
+136:es from a real SSLContext.
+138:.verify_mode = ssl.CERT_NONE.
+153:         raise SSLError("CA direc.
+156:         raise SSLError("CA data .
+163:       "A true SSLContext object .
+164:om configuring SSL appropriately .
+165:      "certain SSL connections to.
+165: fail. You can upgrade to a newer ".
+168:             "#ssl-warnings",.
+176:              "ssl_version": self.
+196:        raise SSLError("Fingerpr.
+204:        raise SSLError(.
+214:ethod from the ssl module..
+215:ults to :data:`ssl.CERT_REQUIRED`.
+217:    :mod:`ssl` module or its.
+226: res = getattr(ssl, candidate, No.
+228: res = getattr(ssl, "CERT_" + can.
+234:def resolve_ssl_version(candid.
+242: res = getattr(ssl, candidate, No.
+244: res = getattr(ssl, "PROTOCOL_" +.
+251:    ssl_version=None, .
+253:e meaning as ``ssl_wrap_socket``..
+256:    ``ssl.create_default.
+258:    - Disables SSLv2, SSLv3, and .
+261:wish to enable SSLv3, you can do:.
+263:b3.util import ssl_.
+264:     context = ssl_.create_urllib.
+265:xt.options &= ~ssl_.OP_NO_SSLv3.
+268:    for ``SSLv3`` in the las.
+270:    :param ssl_version:.
+272:      PROTOCOL_SSLv23 which will .
+273:llation of OpenSSL support..
+276:        ``ssl.CERT_REQUIRED`.
+278:  Specific OpenSSL options. These.
+278: default to ``ssl.OP_NO_SSLv2``,.
+279:        ``ssl.OP_NO_SSLv3``,.
+279: ``ssl.OP_NO_COMPRESS.
+279:ION``, and ``ssl.OP_NO_TICKET``.
+283:   Constructed SSLContext object .
+284:    :rtype: SSLContext.
+287:    if not ssl_version or ssl.
+288:        ssl_version = PROT.
+290:    context = SSLContext(ssl_ver.
+294:we may have no ssl module on impo.
+295:   cert_reqs = ssl.CERT_REQUIRED .
+299:        # SSLv2 is easily br.
+300:tions |= OP_NO_SSLv2.
+301:        # SSLv3 has several .
+302:tions |= OP_NO_SSLv3.
+303:ttacks for OpenSSL 1.0+.
+316:s None for OpenSSL <= 1.1.0 or do.
+320: (cert_reqs == ssl.CERT_REQUIRED .
+334:to safe-guards SSLContext has to .
+334:prevent an SSLContext with.
+337:reshly created SSLContext..
+338:f cert_reqs == ssl.CERT_REQUIRED:.
+346:    # 'SSLKEYLOGFILE', if.
+348:        sslkeylogfile = os.
+348:.environ.get("SSLKEYLOGFILE").
+349:        if sslkeylogfile:.
+350:log_filename = sslkeylogfile.
+355:def ssl_wrap_socket(.
+362:    ssl_version=None,.
+364:    ssl_context=None,.
+366:    key_password=None,.
+371:rver_hostname, ssl_context, and c.
+372:n using :func:`ssl.wrap_socket`..
+376:    :param ssl_context:.
+377:e-made :class:`SSLContext` object.
+383:pported by OpenSSL's -CApath flag.
+384:        SSLContext.load_ve.
+385:    :param key_password:.
+386:      Optional password if the keyfile.
+389:a parameter to SSLContext.load_ve.
+391:        Use SSLTransport to wr.
+393:    context = ssl_context.
+398:rllib3_context(ssl_version, cert_.
+404:         raise SSLError(e).
+406:    elif ssl_context is Non.
+411:rypted and OpenSSL asking for the.
+413:eyfile and key_password is None and _i.
+414:        raise SSLError("Client p.
+414: is encrypted, password is required").
+417:        if key_password is None:.
+420:, keyfile, key_password).
+441:lures. You can upgrade to ".
+444:            "#ssl-warnings",.
+449:        ssl_sock = _ssl_wr.
+453:        ssl_sock = _ssl_wr.
+454:    return ssl_sock.
+481:def _ssl_wrap_socket_im.
+481:pl(sock, ssl_context, tls_i.
+483:        if not SSLTransport:.
+484: Import error, ssl is not availab.
+486:pport for the 'ssl' module".
+489:        SSLTransport._vali.
+489:date_ssl_context_for_tl.
+489:s_in_tls(ssl_context).
+490:        return SSLTransport(sock,.
+490: ssl_context, serve.
+493:        return ssl_context.wrap_s.
+495:        return ssl_context.wrap_s.

@@ -1,0 +1,74 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibext2fs.so.2.4[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcat[0m tear down of [0;33mlibext2fs.so.2.4[0m
+
+   28f00:	34000955 	cbz	w21, 29028 <ext2fs_get_num_dirs@@Base+0x3d8>
+   28f04:	aa1703e0 	mov	x0, x23
+   28f08:	97ff98e6 	bl	f2a0 <strlen@plt>
+   28f0c:	f94037f5 	ldr	x21, [sp, #104]
+   28f10:	aa0003f3 	mov	x19, x0
+   28f14:	b4000915 	cbz	x21, 29034 <ext2fs_get_num_dirs@@Base+0x3e4>
+   28f18:	91000a73 	add	x19, x19, #0x2
+   28f1c:	aa1503e0 	mov	x0, x21
+   28f20:	97ff98e0 	bl	f2a0 <strlen@plt>
+   28f24:	8b000260 	add	x0, x19, x0
+   28f28:	97ff9a5a 	bl	f890 <malloc@plt>
+   28f2c:	aa0003f3 	mov	x19, x0
+   28f30:	b4000640 	cbz	x0, 28ff8 <ext2fs_get_num_dirs@@Base+0x3a8>
+   28f34:	3900001f 	strb	wzr, [x0]
+   28f38:	394006e0 	ldrb	w0, [x23, #1]
+   28f3c:	35000a80 	cbnz	w0, 2908c <ext2fs_get_num_dirs@@Base+0x43c>
+   28f40:	528005e0 	mov	w0, #0x2f                  	// #47
+   28f44:	79000260 	strh	w0, [x19]
+   28f48:	aa1503e1 	mov	x1, x21
+   28f4c:	aa1303e0 	mov	x0, x19
+[31m   28f50:	97ff9acc 	bl	fa80 <strcat@plt>[0m
+   28f54:	f9000313 	str	x19, [x24]
+   28f58:	f9402fe0 	ldr	x0, [sp, #88]
+--
+   2b4f8:	54000069 	b.ls	2b504 <ext2fs_initialize@@Base+0xa24>  // b.plast
+   2b4fc:	b9024f01 	str	w1, [x24, #588]
+   2b500:	b9025300 	str	w0, [x24, #592]
+   2b504:	f9400e60 	ldr	x0, [x19, #24]
+   2b508:	910203f4 	add	x20, sp, #0x80
+   2b50c:	97ff8f65 	bl	f2a0 <strlen@plt>
+   2b510:	91014000 	add	x0, x0, #0x50
+   2b514:	aa1403e1 	mov	x1, x20
+   2b518:	97ff9376 	bl	102f0 <ext2fs_get_mem@plt>
+   2b51c:	aa0003f5 	mov	x21, x0
+   2b520:	b5000e20 	cbnz	x0, 2b6e4 <ext2fs_initialize@@Base+0xc04>
+   2b524:	f00000c0 	adrp	x0, 46000 <ext2fs_rb_replace_node@@Base+0x6210>
+   2b528:	911ae000 	add	x0, x0, #0x6b8
+   2b52c:	f94043e1 	ldr	x1, [sp, #128]
+   2b530:	a9400c02 	ldp	x2, x3, [x0]
+   2b534:	79402000 	ldrh	w0, [x0, #16]
+   2b538:	a9000c22 	stp	x2, x3, [x1]
+   2b53c:	79002020 	strh	w0, [x1, #16]
+   2b540:	f94043e0 	ldr	x0, [sp, #128]
+   2b544:	f9400e61 	ldr	x1, [x19, #24]
+[31m   2b548:	97ff914e 	bl	fa80 <strcat@plt>[0m
+   2b54c:	f94043e1 	ldr	x1, [sp, #128]
+   2b550:	91016262 	add	x2, x19, #0x58
+   2b554:	aa1303e0 	mov	x0, x19
+   2b558:	97ff8fc6 	bl	f470 <ext2fs_allocate_subcluster_bitmap@plt>
+   2b55c:	aa0003f5 	mov	x21, x0
+   2b560:	b5000c20 	cbnz	x0, 2b6e4 <ext2fs_initialize@@Base+0xc04>
+   2b564:	f00000c0 	adrp	x0, 46000 <ext2fs_rb_replace_node@@Base+0x6210>
+   2b568:	911b4000 	add	x0, x0, #0x6d0
+   2b56c:	f94043e1 	ldr	x1, [sp, #128]
+   2b570:	a9400c02 	ldp	x2, x3, [x0]
+   2b574:	79402000 	ldrh	w0, [x0, #16]
+   2b578:	a9000c22 	stp	x2, x3, [x1]
+   2b57c:	79002020 	strh	w0, [x1, #16]
+   2b580:	f94043e0 	ldr	x0, [sp, #128]
+   2b584:	f9400e61 	ldr	x1, [x19, #24]
+[31m   2b588:	97ff913e 	bl	fa80 <strcat@plt>[0m
+   2b58c:	f94043e1 	ldr	x1, [sp, #128]
+   2b590:	91014262 	add	x2, x19, #0x50
+
+[[0;33m*[0m] Function [0;33mstrcat[0m used [0;33m3[0m times [0;33mlibext2fs.so.2.4[0m
+

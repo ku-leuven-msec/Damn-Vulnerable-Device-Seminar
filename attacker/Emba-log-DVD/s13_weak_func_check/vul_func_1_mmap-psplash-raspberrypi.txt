@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mpsplash-raspberrypi[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mpsplash-raspberrypi[0m
+
+[31m    1f14:	97fffc5b 	bl	1080 <mmap@plt>[0m
+    1f18:	f9008260 	str	x0, [x19, #256]
+    1f1c:	aa0003f7 	mov	x23, x0
+    1f20:	b100041f 	cmn	x0, #0x1
+    1f24:	54001460 	b.eq	21b0 <ioctl@plt+0x1080>  // b.none
+    1f28:	97fffc2e 	bl	fe0 <getpagesize@plt>
+    1f2c:	93407c00 	sxtw	x0, w0
+    1f30:	f9402fe2 	ldr	x2, [sp, #88]
+    1f34:	b9410a63 	ldr	w3, [x19, #264]
+    1f38:	9ac00841 	udiv	x1, x2, x0
+    1f3c:	9b008821 	msub	x1, x1, x0, x2
+    1f40:	8b21c2e0 	add	x0, x23, w1, sxtw
+    1f44:	f9007e60 	str	x0, [x19, #248]
+    1f48:	350009c3 	cbnz	w3, 2080 <ioctl@plt+0xf50>
+    1f4c:	a9110260 	stp	x0, x0, [x19, #272]
+    1f50:	71016abf 	cmp	w21, #0x5a
+    1f54:	b9012275 	str	w21, [x19, #288]
+    1f58:	54000740 	b.eq	2040 <ioctl@plt+0xf10>  // b.none
+    1f5c:	71043abf 	cmp	w21, #0x10e
+    1f60:	54000700 	b.eq	2040 <ioctl@plt+0xf10>  // b.none
+    1f64:	f9401bf7 	ldr	x23, [sp, #48]
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mpsplash-raspberrypi[0m
+

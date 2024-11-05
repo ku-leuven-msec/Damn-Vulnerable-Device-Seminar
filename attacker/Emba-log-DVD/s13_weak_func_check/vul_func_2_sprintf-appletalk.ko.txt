@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mappletalk.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m297) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mappletalk.ko[0m
+
+     a44:	90000016 	adrp	x22, 0 <aarp_seq_next>
+     a48:	910002d6 	add	x22, x22, #0x0
+     a4c:	cb150065 	sub	x5, x3, x21
+     a50:	9106e2d9 	add	x25, x22, #0x1b8
+     a54:	90000017 	adrp	x23, 0 <aarp_seq_next>
+     a58:	910002f7 	add	x23, x23, #0x0
+     a5c:	d343fca2 	lsr	x2, x5, #3
+     a60:	aa1703e1 	mov	x1, x23
+     a64:	aa1903e0 	mov	x0, x25
+     a68:	9bda7c43 	umulh	x3, x2, x26
+     a6c:	d344fc62 	lsr	x2, x3, #4
+     a70:	d37be844 	lsl	x4, x2, #5
+     a74:	cb020084 	sub	x4, x4, x2
+     a78:	8b040843 	add	x3, x2, x4, lsl #2
+     a7c:	cb030ca3 	sub	x3, x5, x3, lsl #3
+     a80:	8b030464 	add	x4, x3, x3, lsl #1
+     a84:	8b040c63 	add	x3, x3, x4, lsl #3
+     a88:	d341f463 	ubfx	x3, x3, #1, #61
+     a8c:	9bda7c63 	umulh	x3, x3, x26
+     a90:	d344fc63 	lsr	x3, x3, #4
+[31m     a94:	94000000 	bl	0 <sprintf>[0m
+     a98:	aa1403e0 	mov	x0, x20
+     a9c:	aa1903e2 	mov	x2, x25
+--
+     b24:	d65f03c0 	ret
+     b28:	90000002 	adrp	x2, 0 <aarp_seq_next>
+     b2c:	91000042 	add	x2, x2, #0x0
+     b30:	17fffff3 	b	afc <aarp_seq_show+0x154>
+     b34:	f9400262 	ldr	x2, [x19]
+     b38:	aa1703e1 	mov	x1, x23
+     b3c:	aa1903e0 	mov	x0, x25
+     b40:	cb0202b5 	sub	x21, x21, x2
+     b44:	d343fea3 	lsr	x3, x21, #3
+     b48:	9bda7c63 	umulh	x3, x3, x26
+     b4c:	d344fc62 	lsr	x2, x3, #4
+     b50:	d37be843 	lsl	x3, x2, #5
+     b54:	cb020063 	sub	x3, x3, x2
+     b58:	8b030843 	add	x3, x2, x3, lsl #2
+     b5c:	cb030eb5 	sub	x21, x21, x3, lsl #3
+     b60:	8b1506a3 	add	x3, x21, x21, lsl #1
+     b64:	8b030eb5 	add	x21, x21, x3, lsl #3
+     b68:	d341f6a3 	ubfx	x3, x21, #1, #61
+     b6c:	9bda7c63 	umulh	x3, x3, x26
+     b70:	d344fc63 	lsr	x3, x3, #4
+[31m     b74:	94000000 	bl	0 <sprintf>[0m
+     b78:	79408e63 	ldrh	w3, [x19, #70]
+     b7c:	aa1903e2 	mov	x2, x25
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mappletalk.ko[0m
+

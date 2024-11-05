@@ -1,0 +1,784 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibnsl-2.31.so[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [31mNo canary found[m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mprintf[0m tear down of [0;33mlibnsl-2.31.so[0m
+
+    76f8:	94000cb2 	bl	a9c0 <nis_list@GLIBC_2.17>
+    76fc:	aa0003f4 	mov	x20, x0
+    7700:	b4000480 	cbz	x0, 7790 <nis_local_host@GLIBC_2.17+0x1f0>
+    7704:	b9400001 	ldr	w1, [x0]
+    7708:	35000421 	cbnz	w1, 778c <nis_local_host@GLIBC_2.17+0x1ec>
+    770c:	b9400800 	ldr	w0, [x0, #8]
+    7710:	7100041f 	cmp	w0, #0x1
+    7714:	540001e9 	b.ls	7750 <nis_local_host@GLIBC_2.17+0x1b0>  // b.plast
+    7718:	b00000e0 	adrp	x0, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    771c:	90000041 	adrp	x1, f000 <__nis_default_access@GLIBC_2.17+0x650>
+    7720:	913be021 	add	x1, x1, #0xef8
+    7724:	528000a2 	mov	w2, #0x5                   	// #5
+    7728:	f947e800 	ldr	x0, [x0, #4048]
+    772c:	f90013f5 	str	x21, [sp, #32]
+    7730:	97fff4d0 	bl	4a70 <__dcgettext@plt>
+    7734:	aa0003f5 	mov	x21, x0
+    7738:	97ffff42 	bl	7440 <nis_local_directory@GLIBC_2.17>
+    773c:	aa0003e2 	mov	x2, x0
+    7740:	2a1303e1 	mov	w1, w19
+    7744:	aa1503e0 	mov	x0, x21
+[31m    7748:	97fff4d6 	bl	4aa0 <printf@plt>[0m
+    774c:	f94013f5 	ldr	x21, [sp, #32]
+    7750:	d00000f3 	adrp	x19, 25000 <nis_clone_result@GLIBC_2.17+0x156f0>
+--
+    7d98:	d503201f 	nop
+    7d9c:	d503201f 	nop
+
+0000000000007da0 <nis_print_directory@GLIBC_2.17>:
+    7da0:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+    7da4:	528000a2 	mov	w2, #0x5                   	// #5
+    7da8:	b0000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7dac:	910003fd 	mov	x29, sp
+    7db0:	a90363f7 	stp	x23, x24, [sp, #48]
+    7db4:	b00000f8 	adrp	x24, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    7db8:	91006021 	add	x1, x1, #0x18
+    7dbc:	a90153f3 	stp	x19, x20, [sp, #16]
+    7dc0:	f947eb13 	ldr	x19, [x24, #4048]
+    7dc4:	a9046bf9 	stp	x25, x26, [sp, #64]
+    7dc8:	aa0003f9 	mov	x25, x0
+    7dcc:	aa1303e0 	mov	x0, x19
+    7dd0:	a9025bf5 	stp	x21, x22, [sp, #32]
+    7dd4:	97fff327 	bl	4a70 <__dcgettext@plt>
+    7dd8:	f9400321 	ldr	x1, [x25]
+    7ddc:	b00000f6 	adrp	x22, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+[31m    7de0:	97fff330 	bl	4aa0 <printf@plt>[0m
+    7de4:	aa1303e0 	mov	x0, x19
+    7de8:	528000a2 	mov	w2, #0x5                   	// #5
+    7dec:	b0000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7df0:	9100a021 	add	x1, x1, #0x28
+    7df4:	97fff31f 	bl	4a70 <__dcgettext@plt>
+    7df8:	aa0003e2 	mov	x2, x0
+    7dfc:	b9400b20 	ldr	w0, [x25, #8]
+    7e00:	97ffff4c 	bl	7b30 <nis_write_obj@GLIBC_2.17+0x10>
+    7e04:	aa0003e1 	mov	x1, x0
+    7e08:	aa0203e0 	mov	x0, x2
+[31m    7e0c:	97fff325 	bl	4aa0 <printf@plt>[0m
+    7e10:	b9401320 	ldr	w0, [x25, #16]
+    7e14:	f9400f33 	ldr	x19, [x25, #24]
+--
+    7e1c:	b000005a 	adrp	x26, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7e20:	9104a35a 	add	x26, x26, #0x128
+    7e24:	52800017 	mov	w23, #0x0                   	// #0
+    7e28:	b00000f6 	adrp	x22, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    7e2c:	a90573fb 	stp	x27, x28, [sp, #80]
+    7e30:	1400002d 	b	7ee4 <nis_print_directory@GLIBC_2.17+0x144>
+    7e34:	b0000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7e38:	528000a2 	mov	w2, #0x5                   	// #5
+    7e3c:	9100e021 	add	x1, x1, #0x38
+    7e40:	97fff30c 	bl	4a70 <__dcgettext@plt>
+    7e44:	f947f2c1 	ldr	x1, [x22, #4064]
+    7e48:	f9400021 	ldr	x1, [x1]
+    7e4c:	97fff1ad 	bl	4500 <fputs@plt>
+    7e50:	f947eb15 	ldr	x21, [x24, #4048]
+    7e54:	b0000040 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7e58:	91018001 	add	x1, x0, #0x60
+    7e5c:	528000a2 	mov	w2, #0x5                   	// #5
+    7e60:	aa1503e0 	mov	x0, x21
+    7e64:	97fff303 	bl	4a70 <__dcgettext@plt>
+    7e68:	f9400261 	ldr	x1, [x19]
+[31m    7e6c:	97fff30d 	bl	4aa0 <printf@plt>[0m
+    7e70:	528000a2 	mov	w2, #0x5                   	// #5
+    7e74:	aa1503e0 	mov	x0, x21
+    7e78:	b0000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7e7c:	9101e021 	add	x1, x1, #0x78
+    7e80:	97fff2fc 	bl	4a70 <__dcgettext@plt>
+    7e84:	f947f2d4 	ldr	x20, [x22, #4064]
+    7e88:	f9400281 	ldr	x1, [x20]
+    7e8c:	97fff19d 	bl	4500 <fputs@plt>
+    7e90:	b9401a60 	ldr	w0, [x19, #24]
+    7e94:	7100081f 	cmp	w0, #0x2
+    7e98:	54000b40 	b.eq	8000 <nis_print_directory@GLIBC_2.17+0x260>  // b.none
+    7e9c:	54000388 	b.hi	7f0c <nis_print_directory@GLIBC_2.17+0x16c>  // b.pmore
+    7ea0:	34000d00 	cbz	w0, 8040 <nis_print_directory@GLIBC_2.17+0x2a0>
+    7ea4:	b0000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7ea8:	aa1503e0 	mov	x0, x21
+    7eac:	91024021 	add	x1, x1, #0x90
+    7eb0:	528000a2 	mov	w2, #0x5                   	// #5
+    7eb4:	97fff2ef 	bl	4a70 <__dcgettext@plt>
+    7eb8:	b9402261 	ldr	w1, [x19, #32]
+    7ebc:	51000421 	sub	w1, w1, #0x1
+    7ec0:	531e7421 	lsl	w1, w1, #2
+[31m    7ec4:	97fff2f7 	bl	4aa0 <printf@plt>[0m
+    7ec8:	b9400a60 	ldr	w0, [x19, #8]
+    7ecc:	35000360 	cbnz	w0, 7f38 <nis_print_directory@GLIBC_2.17+0x198>
+--
+    7f04:	97fff17f 	bl	4500 <fputs@plt>
+    7f08:	17ffffd2 	b	7e50 <nis_print_directory@GLIBC_2.17+0xb0>
+    7f0c:	71000c1f 	cmp	w0, #0x3
+    7f10:	54000821 	b.ne	8014 <nis_print_directory@GLIBC_2.17+0x274>  // b.any
+    7f14:	528000a2 	mov	w2, #0x5                   	// #5
+    7f18:	aa1503e0 	mov	x0, x21
+    7f1c:	b0000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7f20:	91030021 	add	x1, x1, #0xc0
+    7f24:	97fff2d3 	bl	4a70 <__dcgettext@plt>
+    7f28:	f9400281 	ldr	x1, [x20]
+    7f2c:	97fff175 	bl	4500 <fputs@plt>
+    7f30:	b9400a60 	ldr	w0, [x19, #8]
+    7f34:	34fffce0 	cbz	w0, 7ed0 <nis_print_directory@GLIBC_2.17+0x130>
+    7f38:	f947eb00 	ldr	x0, [x24, #4048]
+    7f3c:	528000a2 	mov	w2, #0x5                   	// #5
+    7f40:	b0000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7f44:	9103c021 	add	x1, x1, #0xf0
+    7f48:	f9400a74 	ldr	x20, [x19, #16]
+    7f4c:	97fff2c9 	bl	4a70 <__dcgettext@plt>
+    7f50:	b9400a61 	ldr	w1, [x19, #8]
+[31m    7f54:	97fff2d3 	bl	4aa0 <printf@plt>[0m
+    7f58:	b9400a60 	ldr	w0, [x19, #8]
+    7f5c:	34fffba0 	cbz	w0, 7ed0 <nis_print_directory@GLIBC_2.17+0x130>
+    7f60:	b000005b 	adrp	x27, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7f64:	9104437b 	add	x27, x27, #0x110
+    7f68:	b000005c 	adrp	x28, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7f6c:	9104839c 	add	x28, x28, #0x120
+    7f70:	52800015 	mov	w21, #0x0                   	// #0
+    7f74:	14000018 	b	7fd4 <nis_print_directory@GLIBC_2.17+0x234>
+    7f78:	aa1a03e0 	mov	x0, x26
+[31m    7f7c:	97fff2c9 	bl	4aa0 <printf@plt>[0m
+    7f80:	f9400681 	ldr	x1, [x20, #8]
+    7f84:	b4000061 	cbz	x1, 7f90 <nis_print_directory@GLIBC_2.17+0x1f0>
+    7f88:	39400020 	ldrb	w0, [x1]
+    7f8c:	350006e0 	cbnz	w0, 8068 <nis_print_directory@GLIBC_2.17+0x2c8>
+    7f90:	aa1a03e0 	mov	x0, x26
+[31m    7f94:	97fff2c3 	bl	4aa0 <printf@plt>[0m
+    7f98:	f9400280 	ldr	x0, [x20]
+    7f9c:	b4000060 	cbz	x0, 7fa8 <nis_print_directory@GLIBC_2.17+0x208>
+    7fa0:	39400001 	ldrb	w1, [x0]
+    7fa4:	350005e1 	cbnz	w1, 8060 <nis_print_directory@GLIBC_2.17+0x2c0>
+    7fa8:	f947f2c3 	ldr	x3, [x22, #4064]
+    7fac:	b0000040 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    7fb0:	d2800042 	mov	x2, #0x2                   	// #2
+    7fb4:	9104c000 	add	x0, x0, #0x130
+    7fb8:	d2800021 	mov	x1, #0x1                   	// #1
+    7fbc:	f9400063 	ldr	x3, [x3]
+    7fc0:	97fff278 	bl	49a0 <fwrite@plt>
+    7fc4:	b9400a60 	ldr	w0, [x19, #8]
+    7fc8:	91006294 	add	x20, x20, #0x18
+    7fcc:	6b0002bf 	cmp	w21, w0
+    7fd0:	54fff802 	b.cs	7ed0 <nis_print_directory@GLIBC_2.17+0x130>  // b.hs, b.nlast
+    7fd4:	110006b5 	add	w21, w21, #0x1
+    7fd8:	aa1b03e0 	mov	x0, x27
+    7fdc:	2a1503e1 	mov	w1, w21
+[31m    7fe0:	97fff2b0 	bl	4aa0 <printf@plt>[0m
+    7fe4:	f9400a81 	ldr	x1, [x20, #16]
+    7fe8:	b4fffc81 	cbz	x1, 7f78 <nis_print_directory@GLIBC_2.17+0x1d8>
+    7fec:	39400020 	ldrb	w0, [x1]
+    7ff0:	34fffc40 	cbz	w0, 7f78 <nis_print_directory@GLIBC_2.17+0x1d8>
+    7ff4:	aa1c03e0 	mov	x0, x28
+[31m    7ff8:	97fff2aa 	bl	4aa0 <printf@plt>[0m
+    7ffc:	17ffffe1 	b	7f80 <nis_print_directory@GLIBC_2.17+0x1e0>
+    8000:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8004:	aa1503e0 	mov	x0, x21
+    8008:	9102c021 	add	x1, x1, #0xb0
+    800c:	528000a2 	mov	w2, #0x5                   	// #5
+    8010:	17ffffa9 	b	7eb4 <nis_print_directory@GLIBC_2.17+0x114>
+    8014:	aa1503e0 	mov	x0, x21
+    8018:	528000a2 	mov	w2, #0x5                   	// #5
+    801c:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8020:	91034021 	add	x1, x1, #0xd0
+    8024:	97fff293 	bl	4a70 <__dcgettext@plt>
+    8028:	b9402262 	ldr	w2, [x19, #32]
+    802c:	b9401a61 	ldr	w1, [x19, #24]
+    8030:	51000442 	sub	w2, w2, #0x1
+    8034:	531e7442 	lsl	w2, w2, #2
+[31m    8038:	97fff29a 	bl	4aa0 <printf@plt>[0m
+    803c:	17ffffa3 	b	7ec8 <nis_print_directory@GLIBC_2.17+0x128>
+    8040:	aa1503e0 	mov	x0, x21
+    8044:	528000a2 	mov	w2, #0x5                   	// #5
+    8048:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    804c:	91022021 	add	x1, x1, #0x88
+    8050:	97fff288 	bl	4a70 <__dcgettext@plt>
+    8054:	f9400281 	ldr	x1, [x20]
+    8058:	97fff12a 	bl	4500 <fputs@plt>
+    805c:	17ffff9b 	b	7ec8 <nis_print_directory@GLIBC_2.17+0x128>
+    8060:	97fff1fc 	bl	4850 <puts@plt>
+    8064:	17ffffd8 	b	7fc4 <nis_print_directory@GLIBC_2.17+0x224>
+    8068:	aa1c03e0 	mov	x0, x28
+[31m    806c:	97fff28d 	bl	4aa0 <printf@plt>[0m
+    8070:	17ffffca 	b	7f98 <nis_print_directory@GLIBC_2.17+0x1f8>
+    8074:	a94573fb 	ldp	x27, x28, [sp, #80]
+--
+    808c:	97fff279 	bl	4a70 <__dcgettext@plt>
+    8090:	f947f2d6 	ldr	x22, [x22, #4064]
+    8094:	f94002c1 	ldr	x1, [x22]
+    8098:	97fff11a 	bl	4500 <fputs@plt>
+    809c:	b9402324 	ldr	w4, [x25, #32]
+    80a0:	529678a1 	mov	w1, #0xb3c5                	// #46021
+    80a4:	72b23441 	movk	w1, #0x91a2, lsl #16
+    80a8:	5281c206 	mov	w6, #0xe10                 	// #3600
+    80ac:	52911122 	mov	w2, #0x8889                	// #34953
+    80b0:	72b11102 	movk	w2, #0x8888, lsl #16
+    80b4:	52800785 	mov	w5, #0x3c                  	// #60
+    80b8:	90000040 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    80bc:	91052000 	add	x0, x0, #0x148
+    80c0:	9ba17c81 	umull	x1, w4, w1
+    80c4:	d36bfc23 	lsr	x3, x1, #43
+    80c8:	aa0303e1 	mov	x1, x3
+    80cc:	1b069063 	msub	w3, w3, w6, w4
+    80d0:	9ba27c62 	umull	x2, w3, w2
+    80d4:	d365fc42 	lsr	x2, x2, #37
+    80d8:	1b058c43 	msub	w3, w2, w5, w3
+[31m    80dc:	97fff271 	bl	4aa0 <printf@plt>[0m
+    80e0:	528000a2 	mov	w2, #0x5                   	// #5
+    80e4:	aa1803e0 	mov	x0, x24
+--
+    8100:	34000460 	cbz	w0, 818c <nis_print_directory@GLIBC_2.17+0x3ec>
+    8104:	f9401b33 	ldr	x19, [x25, #48]
+    8108:	90000057 	adrp	x23, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    810c:	90000055 	adrp	x21, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8110:	9105e2f7 	add	x23, x23, #0x178
+    8114:	910642b5 	add	x21, x21, #0x190
+    8118:	52800014 	mov	w20, #0x0                   	// #0
+    811c:	d503201f 	nop
+    8120:	b9400260 	ldr	w0, [x19]
+    8124:	11000694 	add	w20, w20, #0x1
+    8128:	97fffefa 	bl	7d10 <nis_print_rights@GLIBC_2.17>
+    812c:	aa1703e1 	mov	x1, x23
+    8130:	528000a2 	mov	w2, #0x5                   	// #5
+    8134:	aa1803e0 	mov	x0, x24
+    8138:	97fff24e 	bl	4a70 <__dcgettext@plt>
+    813c:	aa0003e2 	mov	x2, x0
+    8140:	b9400660 	ldr	w0, [x19, #4]
+    8144:	97fffe7b 	bl	7b30 <nis_write_obj@GLIBC_2.17+0x10>
+    8148:	aa0003e1 	mov	x1, x0
+    814c:	aa0203e0 	mov	x0, x2
+[31m    8150:	97fff254 	bl	4aa0 <printf@plt>[0m
+    8154:	528000a2 	mov	w2, #0x5                   	// #5
+    8158:	aa1503e1 	mov	x1, x21
+--
+    81e8:	97fff0c6 	bl	4500 <fputs@plt>
+    81ec:	b9400281 	ldr	w1, [x20]
+    81f0:	35000341 	cbnz	w1, 8258 <nis_print_group@GLIBC_2.17+0xa8>
+    81f4:	f947eaa0 	ldr	x0, [x21, #4048]
+    81f8:	528000a2 	mov	w2, #0x5                   	// #5
+    81fc:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8200:	91070021 	add	x1, x1, #0x1c0
+    8204:	97fff21b 	bl	4a70 <__dcgettext@plt>
+    8208:	f947f273 	ldr	x19, [x19, #4064]
+    820c:	f9400261 	ldr	x1, [x19]
+    8210:	97fff0bc 	bl	4500 <fputs@plt>
+    8214:	b9400a80 	ldr	w0, [x20, #8]
+    8218:	34000180 	cbz	w0, 8248 <nis_print_group@GLIBC_2.17+0x98>
+    821c:	90000055 	adrp	x21, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8220:	910762b5 	add	x21, x21, #0x1d8
+    8224:	52800013 	mov	w19, #0x0                   	// #0
+    8228:	f9400a81 	ldr	x1, [x20, #16]
+    822c:	aa1503e0 	mov	x0, x21
+    8230:	f8735821 	ldr	x1, [x1, w19, uxtw #3]
+    8234:	11000673 	add	w19, w19, #0x1
+[31m    8238:	97fff21a 	bl	4aa0 <printf@plt>[0m
+    823c:	b9400a80 	ldr	w0, [x20, #8]
+    8240:	6b13001f 	cmp	w0, w19
+    8244:	54ffff28 	b.hi	8228 <nis_print_group@GLIBC_2.17+0x78>  // b.pmore
+    8248:	a94153f3 	ldp	x19, x20, [sp, #16]
+    824c:	f94013f5 	ldr	x21, [sp, #32]
+    8250:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    8254:	d65f03c0 	ret
+    8258:	90000040 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    825c:	9106e000 	add	x0, x0, #0x1b8
+[31m    8260:	97fff210 	bl	4aa0 <printf@plt>[0m
+    8264:	17ffffe4 	b	81f4 <nis_print_group@GLIBC_2.17+0x44>
+    8268:	d503201f 	nop
+    826c:	d503201f 	nop
+
+0000000000008270 <nis_print_table@GLIBC_2.17>:
+    8270:	a9b97bfd 	stp	x29, x30, [sp, #-112]!
+    8274:	528000a2 	mov	w2, #0x5                   	// #5
+    8278:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    827c:	910003fd 	mov	x29, sp
+    8280:	a9046bf9 	stp	x25, x26, [sp, #64]
+    8284:	900000f9 	adrp	x25, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    8288:	91078021 	add	x1, x1, #0x1e0
+    828c:	a90153f3 	stp	x19, x20, [sp, #16]
+    8290:	f947eb33 	ldr	x19, [x25, #4048]
+    8294:	a9025bf5 	stp	x21, x22, [sp, #32]
+    8298:	aa0003f5 	mov	x21, x0
+    829c:	aa1303e0 	mov	x0, x19
+    82a0:	a90363f7 	stp	x23, x24, [sp, #48]
+    82a4:	97fff1f3 	bl	4a70 <__dcgettext@plt>
+    82a8:	f94002a1 	ldr	x1, [x21]
+    82ac:	900000f8 	adrp	x24, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+[31m    82b0:	97fff1fc 	bl	4aa0 <printf@plt>[0m
+    82b4:	528000a2 	mov	w2, #0x5                   	// #5
+    82b8:	aa1303e0 	mov	x0, x19
+    82bc:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    82c0:	91080021 	add	x1, x1, #0x200
+    82c4:	97fff1eb 	bl	4a70 <__dcgettext@plt>
+    82c8:	b9400aa1 	ldr	w1, [x21, #8]
+[31m    82cc:	97fff1f5 	bl	4aa0 <printf@plt>[0m
+    82d0:	528000a2 	mov	w2, #0x5                   	// #5
+    82d4:	aa1303e0 	mov	x0, x19
+    82d8:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    82dc:	91088021 	add	x1, x1, #0x220
+    82e0:	97fff1e4 	bl	4a70 <__dcgettext@plt>
+    82e4:	394032a1 	ldrb	w1, [x21, #12]
+[31m    82e8:	97fff1ee 	bl	4aa0 <printf@plt>[0m
+    82ec:	528000a2 	mov	w2, #0x5                   	// #5
+    82f0:	aa1303e0 	mov	x0, x19
+    82f4:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    82f8:	91090021 	add	x1, x1, #0x240
+    82fc:	97fff1dd 	bl	4a70 <__dcgettext@plt>
+    8300:	f94012a1 	ldr	x1, [x21, #32]
+[31m    8304:	97fff1e7 	bl	4aa0 <printf@plt>[0m
+    8308:	528000a2 	mov	w2, #0x5                   	// #5
+    830c:	aa1303e0 	mov	x0, x19
+--
+    832c:	340008e0 	cbz	w0, 8448 <nis_print_table@GLIBC_2.17+0x1d8>
+    8330:	9000005a 	adrp	x26, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8334:	9109e35a 	add	x26, x26, #0x278
+    8338:	90000040 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    833c:	910d2000 	add	x0, x0, #0x348
+    8340:	52800013 	mov	w19, #0x0                   	// #0
+    8344:	a90573fb 	stp	x27, x28, [sp, #80]
+    8348:	9000005c 	adrp	x28, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    834c:	9000005b 	adrp	x27, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8350:	f90037e0 	str	x0, [sp, #104]
+    8354:	d503201f 	nop
+    8358:	f947eb34 	ldr	x20, [x25, #4048]
+    835c:	aa1a03e1 	mov	x1, x26
+    8360:	528000a2 	mov	w2, #0x5                   	// #5
+    8364:	d37c7e77 	ubfiz	x23, x19, #4, #32
+    8368:	aa1403e0 	mov	x0, x20
+    836c:	97fff1c1 	bl	4a70 <__dcgettext@plt>
+    8370:	f9400ea2 	ldr	x2, [x21, #24]
+    8374:	2a1303e1 	mov	w1, w19
+    8378:	f8776842 	ldr	x2, [x2, x23]
+[31m    837c:	97fff1c9 	bl	4aa0 <printf@plt>[0m
+    8380:	528000a2 	mov	w2, #0x5                   	// #5
+    8384:	aa1403e0 	mov	x0, x20
+--
+    85a8:	f9400e61 	ldr	x1, [x19, #24]
+    85ac:	a94153f3 	ldp	x19, x20, [sp, #16]
+    85b0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+[31m    85b4:	17fff13b 	b	4aa0 <printf@plt>[0m
+    85b8:	d503201f 	nop
+    85bc:	d503201f 	nop
+
+00000000000085c0 <nis_print_entry@GLIBC_2.17>:
+    85c0:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+    85c4:	528000a2 	mov	w2, #0x5                   	// #5
+    85c8:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    85cc:	910003fd 	mov	x29, sp
+    85d0:	a9025bf5 	stp	x21, x22, [sp, #32]
+    85d4:	900000f6 	adrp	x22, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    85d8:	910e0021 	add	x1, x1, #0x380
+    85dc:	a9046bf9 	stp	x25, x26, [sp, #64]
+    85e0:	aa0003fa 	mov	x26, x0
+    85e4:	f947eac0 	ldr	x0, [x22, #4048]
+    85e8:	97fff122 	bl	4a70 <__dcgettext@plt>
+    85ec:	f9400341 	ldr	x1, [x26]
+[31m    85f0:	97fff12c 	bl	4aa0 <printf@plt>[0m
+    85f4:	b9400b40 	ldr	w0, [x26, #8]
+    85f8:	34000700 	cbz	w0, 86d8 <nis_print_entry@GLIBC_2.17+0x118>
+--
+    8638:	910f4000 	add	x0, x0, #0x3d0
+    863c:	d2800021 	mov	x1, #0x1                   	// #1
+    8640:	35000544 	cbnz	w4, 86e8 <nis_print_entry@GLIBC_2.17+0x128>
+    8644:	f9400323 	ldr	x3, [x25]
+    8648:	97fff0d6 	bl	49a0 <fwrite@plt>
+    864c:	b9400b40 	ldr	w0, [x26, #8]
+    8650:	11000694 	add	w20, w20, #0x1
+    8654:	6b14001f 	cmp	w0, w20
+    8658:	540003a9 	b.ls	86cc <nis_print_entry@GLIBC_2.17+0x10c>  // b.plast
+    865c:	f947eadb 	ldr	x27, [x22, #4048]
+    8660:	aa1503e1 	mov	x1, x21
+    8664:	528000a2 	mov	w2, #0x5                   	// #5
+    8668:	52800313 	mov	w19, #0x18                  	// #24
+    866c:	aa1b03e0 	mov	x0, x27
+    8670:	97fff100 	bl	4a70 <__dcgettext@plt>
+    8674:	f9400b42 	ldr	x2, [x26, #16]
+    8678:	9bb37e93 	umull	x19, w20, w19
+    867c:	2a1403e1 	mov	w1, w20
+    8680:	8b130042 	add	x2, x2, x19
+    8684:	b9400842 	ldr	w2, [x2, #8]
+[31m    8688:	97fff106 	bl	4aa0 <printf@plt>[0m
+    868c:	f9400b40 	ldr	x0, [x26, #16]
+    8690:	8b130003 	add	x3, x0, x19
+--
+    86a4:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    86a8:	910ec021 	add	x1, x1, #0x3b0
+    86ac:	97fff0f1 	bl	4a70 <__dcgettext@plt>
+    86b0:	11000694 	add	w20, w20, #0x1
+    86b4:	f947f2e1 	ldr	x1, [x23, #4064]
+    86b8:	f9400021 	ldr	x1, [x1]
+    86bc:	97ffef91 	bl	4500 <fputs@plt>
+    86c0:	b9400b40 	ldr	w0, [x26, #8]
+    86c4:	6b14001f 	cmp	w0, w20
+    86c8:	54fffca8 	b.hi	865c <nis_print_entry@GLIBC_2.17+0x9c>  // b.pmore
+    86cc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    86d0:	a94363f7 	ldp	x23, x24, [sp, #48]
+    86d4:	f9402bfb 	ldr	x27, [sp, #80]
+    86d8:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    86dc:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    86e0:	a8c67bfd 	ldp	x29, x30, [sp], #96
+    86e4:	d65f03c0 	ret
+    86e8:	f9400862 	ldr	x2, [x3, #16]
+    86ec:	2a0403e1 	mov	w1, w4
+    86f0:	aa1803e0 	mov	x0, x24
+[31m    86f4:	97fff0eb 	bl	4aa0 <printf@plt>[0m
+    86f8:	17ffffd5 	b	864c <nis_print_entry@GLIBC_2.17+0x8c>
+    86fc:	aa1b03e0 	mov	x0, x27
+--
+    8718:	97ffef7a 	bl	4500 <fputs@plt>
+    871c:	17ffffcc 	b	864c <nis_print_entry@GLIBC_2.17+0x8c>
+
+0000000000008720 <nis_print_object@GLIBC_2.17>:
+    8720:	a9bb7bfd 	stp	x29, x30, [sp, #-80]!
+    8724:	528000a2 	mov	w2, #0x5                   	// #5
+    8728:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    872c:	910003fd 	mov	x29, sp
+    8730:	a90153f3 	stp	x19, x20, [sp, #16]
+    8734:	900000f4 	adrp	x20, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    8738:	aa0003f3 	mov	x19, x0
+    873c:	f947ea94 	ldr	x20, [x20, #4048]
+    8740:	910fa021 	add	x1, x1, #0x3e8
+    8744:	a9025bf5 	stp	x21, x22, [sp, #32]
+    8748:	900000f5 	adrp	x21, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    874c:	aa1403e0 	mov	x0, x20
+    8750:	f9001bf7 	str	x23, [sp, #48]
+    8754:	97fff0c7 	bl	4a70 <__dcgettext@plt>
+    8758:	f9400661 	ldr	x1, [x19, #8]
+    875c:	910123f6 	add	x22, sp, #0x48
+[31m    8760:	97fff0d0 	bl	4aa0 <printf@plt>[0m
+    8764:	528000a2 	mov	w2, #0x5                   	// #5
+    8768:	aa1403e0 	mov	x0, x20
+    876c:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8770:	91100021 	add	x1, x1, #0x400
+    8774:	97fff0bf 	bl	4a70 <__dcgettext@plt>
+    8778:	f9401261 	ldr	x1, [x19, #32]
+[31m    877c:	97fff0c9 	bl	4aa0 <printf@plt>[0m
+    8780:	528000a2 	mov	w2, #0x5                   	// #5
+    8784:	aa1403e0 	mov	x0, x20
+    8788:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    878c:	91106021 	add	x1, x1, #0x418
+    8790:	97fff0b8 	bl	4a70 <__dcgettext@plt>
+    8794:	f9400a61 	ldr	x1, [x19, #16]
+[31m    8798:	97fff0c2 	bl	4aa0 <printf@plt>[0m
+    879c:	528000a2 	mov	w2, #0x5                   	// #5
+    87a0:	aa1403e0 	mov	x0, x20
+    87a4:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    87a8:	9110c021 	add	x1, x1, #0x430
+    87ac:	97fff0b1 	bl	4a70 <__dcgettext@plt>
+    87b0:	f9400e61 	ldr	x1, [x19, #24]
+[31m    87b4:	97fff0bb 	bl	4aa0 <printf@plt>[0m
+    87b8:	528000a2 	mov	w2, #0x5                   	// #5
+    87bc:	aa1403e0 	mov	x0, x20
+    87c0:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    87c4:	91112021 	add	x1, x1, #0x448
+    87c8:	97fff0aa 	bl	4a70 <__dcgettext@plt>
+    87cc:	f947f2b5 	ldr	x21, [x21, #4064]
+    87d0:	f94002a1 	ldr	x1, [x21]
+    87d4:	97ffef4b 	bl	4500 <fputs@plt>
+    87d8:	b9402a60 	ldr	w0, [x19, #40]
+    87dc:	97fffd4d 	bl	7d10 <nis_print_rights@GLIBC_2.17>
+    87e0:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    87e4:	91118021 	add	x1, x1, #0x460
+    87e8:	528000a2 	mov	w2, #0x5                   	// #5
+    87ec:	aa1403e0 	mov	x0, x20
+    87f0:	97fff0a0 	bl	4a70 <__dcgettext@plt>
+[31m    87f4:	97fff0ab 	bl	4aa0 <printf@plt>[0m
+    87f8:	b9402e64 	ldr	w4, [x19, #44]
+    87fc:	529678a1 	mov	w1, #0xb3c5                	// #46021
+    8800:	72b23441 	movk	w1, #0x91a2, lsl #16
+    8804:	5281c206 	mov	w6, #0xe10                 	// #3600
+    8808:	52911122 	mov	w2, #0x8889                	// #34953
+    880c:	72b11102 	movk	w2, #0x8888, lsl #16
+    8810:	52800785 	mov	w5, #0x3c                  	// #60
+    8814:	90000040 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8818:	91052000 	add	x0, x0, #0x148
+    881c:	9ba17c81 	umull	x1, w4, w1
+    8820:	d36bfc23 	lsr	x3, x1, #43
+    8824:	aa0303e1 	mov	x1, x3
+    8828:	1b069063 	msub	w3, w3, w6, w4
+    882c:	9ba27c62 	umull	x2, w3, w2
+    8830:	d365fc42 	lsr	x2, x2, #37
+    8834:	1b058c43 	msub	w3, w2, w5, w3
+[31m    8838:	97fff09a 	bl	4aa0 <printf@plt>[0m
+    883c:	b9400263 	ldr	w3, [x19]
+    8840:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8844:	9111e021 	add	x1, x1, #0x478
+    8848:	528000a2 	mov	w2, #0x5                   	// #5
+    884c:	aa1403e0 	mov	x0, x20
+    8850:	f90027e3 	str	x3, [sp, #72]
+    8854:	97fff087 	bl	4a70 <__dcgettext@plt>
+    8858:	aa0003f7 	mov	x23, x0
+    885c:	aa1603e0 	mov	x0, x22
+    8860:	97ffef68 	bl	4600 <ctime@plt>
+    8864:	aa0003e1 	mov	x1, x0
+    8868:	aa1703e0 	mov	x0, x23
+[31m    886c:	97fff08d 	bl	4aa0 <printf@plt>[0m
+    8870:	b9400663 	ldr	w3, [x19, #4]
+    8874:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8878:	91124021 	add	x1, x1, #0x490
+    887c:	528000a2 	mov	w2, #0x5                   	// #5
+    8880:	aa1403e0 	mov	x0, x20
+    8884:	f90027e3 	str	x3, [sp, #72]
+    8888:	97fff07a 	bl	4a70 <__dcgettext@plt>
+    888c:	aa0003f7 	mov	x23, x0
+    8890:	aa1603e0 	mov	x0, x22
+    8894:	97ffef5b 	bl	4600 <ctime@plt>
+    8898:	aa0003e1 	mov	x1, x0
+    889c:	aa1703e0 	mov	x0, x23
+[31m    88a0:	97fff080 	bl	4aa0 <printf@plt>[0m
+    88a4:	528000a2 	mov	w2, #0x5                   	// #5
+    88a8:	aa1403e0 	mov	x0, x20
+--
+    88dc:	54000540 	b.eq	8984 <nis_print_object@GLIBC_2.17+0x264>  // b.none
+    88e0:	7100101f 	cmp	w0, #0x4
+    88e4:	54000301 	b.ne	8944 <nis_print_object@GLIBC_2.17+0x224>  // b.any
+    88e8:	9100e260 	add	x0, x19, #0x38
+    88ec:	97fffe61 	bl	8270 <nis_print_table@GLIBC_2.17>
+    88f0:	a94153f3 	ldp	x19, x20, [sp, #16]
+    88f4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    88f8:	f9401bf7 	ldr	x23, [sp, #48]
+    88fc:	a8c57bfd 	ldp	x29, x30, [sp], #80
+    8900:	d65f03c0 	ret
+    8904:	7100181f 	cmp	w0, #0x6
+    8908:	540004c0 	b.eq	89a0 <nis_print_object@GLIBC_2.17+0x280>  // b.none
+    890c:	71001c1f 	cmp	w0, #0x7
+    8910:	54ffff01 	b.ne	88f0 <nis_print_object@GLIBC_2.17+0x1d0>  // b.any
+    8914:	528000a2 	mov	w2, #0x5                   	// #5
+    8918:	aa1403e0 	mov	x0, x20
+    891c:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8920:	91130021 	add	x1, x1, #0x4c0
+    8924:	97fff053 	bl	4a70 <__dcgettext@plt>
+    8928:	b9403a61 	ldr	w1, [x19, #56]
+[31m    892c:	97fff05d 	bl	4aa0 <printf@plt>[0m
+    8930:	a94153f3 	ldp	x19, x20, [sp, #16]
+    8934:	a9425bf5 	ldp	x21, x22, [sp, #32]
+--
+    89bc:	d503201f 	nop
+
+00000000000089c0 <nis_print_result@GLIBC_2.17>:
+    89c0:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+    89c4:	528000a2 	mov	w2, #0x5                   	// #5
+    89c8:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    89cc:	910003fd 	mov	x29, sp
+    89d0:	a9025bf5 	stp	x21, x22, [sp, #32]
+    89d4:	900000f5 	adrp	x21, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    89d8:	91136021 	add	x1, x1, #0x4d8
+    89dc:	f947eab5 	ldr	x21, [x21, #4048]
+    89e0:	a90153f3 	stp	x19, x20, [sp, #16]
+    89e4:	aa0003f4 	mov	x20, x0
+    89e8:	aa1503e0 	mov	x0, x21
+    89ec:	97fff021 	bl	4a70 <__dcgettext@plt>
+    89f0:	aa0003f3 	mov	x19, x0
+    89f4:	b9400280 	ldr	w0, [x20]
+    89f8:	94000032 	bl	8ac0 <nis_sperrno@GLIBC_2.17>
+    89fc:	aa0003e1 	mov	x1, x0
+    8a00:	aa1303e0 	mov	x0, x19
+[31m    8a04:	97fff027 	bl	4aa0 <printf@plt>[0m
+    8a08:	528000a2 	mov	w2, #0x5                   	// #5
+    8a0c:	aa1503e0 	mov	x0, x21
+    8a10:	90000041 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8a14:	9113c021 	add	x1, x1, #0x4f0
+    8a18:	97fff016 	bl	4a70 <__dcgettext@plt>
+    8a1c:	b9400a81 	ldr	w1, [x20, #8]
+[31m    8a20:	97fff020 	bl	4aa0 <printf@plt>[0m
+    8a24:	b9400a80 	ldr	w0, [x20, #8]
+    8a28:	34000280 	cbz	w0, 8a78 <nis_print_result@GLIBC_2.17+0xb8>
+    8a2c:	90000056 	adrp	x22, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    8a30:	911422d6 	add	x22, x22, #0x508
+    8a34:	52800013 	mov	w19, #0x0                   	// #0
+    8a38:	f9001bf7 	str	x23, [sp, #48]
+    8a3c:	52800e17 	mov	w23, #0x70                  	// #112
+    8a40:	528000a2 	mov	w2, #0x5                   	// #5
+    8a44:	aa1603e1 	mov	x1, x22
+    8a48:	aa1503e0 	mov	x0, x21
+    8a4c:	97fff009 	bl	4a70 <__dcgettext@plt>
+    8a50:	2a1303e1 	mov	w1, w19
+[31m    8a54:	97fff013 	bl	4aa0 <printf@plt>[0m
+    8a58:	f9400a80 	ldr	x0, [x20, #16]
+    8a5c:	9bb70260 	umaddl	x0, w19, w23, x0
+--
+    d82c:	912e2021 	add	x1, x1, #0xb88
+    d830:	97ffdc90 	bl	4a70 <__dcgettext@plt>
+    d834:	f9400a61 	ldr	x1, [x19, #16]
+    d838:	aa0003e3 	mov	x3, x0
+    d83c:	f90047a3 	str	x3, [x29, #136]
+    d840:	f9400427 	ldr	x7, [x1, #8]
+    d844:	f9401024 	ldr	x4, [x1, #32]
+    d848:	a90a13a7 	stp	x7, x4, [x29, #160]
+    d84c:	aa0403e0 	mov	x0, x4
+    d850:	97ffdb24 	bl	44e0 <strlen@plt>
+    d854:	91002802 	add	x2, x0, #0xa
+    d858:	f94057a4 	ldr	x4, [x29, #168]
+    d85c:	910003e1 	mov	x1, sp
+    d860:	aa0403e0 	mov	x0, x4
+    d864:	9400010b 	bl	dc90 <nis_domain_of_r@GLIBC_2.17>
+    d868:	aa0003e2 	mov	x2, x0
+    d86c:	f94047a3 	ldr	x3, [x29, #136]
+    d870:	f94053a7 	ldr	x7, [x29, #160]
+    d874:	aa0303e0 	mov	x0, x3
+    d878:	aa0703e1 	mov	x1, x7
+[31m    d87c:	97ffdc89 	bl	4aa0 <printf@plt>[0m
+    d880:	f94043a6 	ldr	x6, [x29, #128]
+    d884:	910000df 	mov	sp, x6
+    d888:	b4001c18 	cbz	x24, dc08 <nis_print_group_entry@GLIBC_2.17+0x618>
+    d88c:	f00000a0 	adrp	x0, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    d890:	528000a2 	mov	w2, #0x5                   	// #5
+    d894:	f0000001 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    d898:	912ea021 	add	x1, x1, #0xba8
+    d89c:	f90057a0 	str	x0, [x29, #168]
+    d8a0:	aa1903e0 	mov	x0, x25
+    d8a4:	97ffdc73 	bl	4a70 <__dcgettext@plt>
+    d8a8:	52800019 	mov	w25, #0x0                   	// #0
+    d8ac:	f00000a1 	adrp	x1, 24000 <nis_clone_result@GLIBC_2.17+0x146f0>
+    d8b0:	f947f021 	ldr	x1, [x1, #4064]
+    d8b4:	f9400021 	ldr	x1, [x1]
+    d8b8:	97ffdb12 	bl	4500 <fputs@plt>
+    d8bc:	f0000000 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    d8c0:	91076000 	add	x0, x0, #0x1d8
+    d8c4:	f90053a0 	str	x0, [x29, #160]
+    d8c8:	f94053a0 	ldr	x0, [x29, #160]
+    d8cc:	11000739 	add	w25, w25, #0x1
+    d8d0:	aa1c03e1 	mov	x1, x28
+[31m    d8d4:	97ffdc73 	bl	4aa0 <printf@plt>[0m
+    d8d8:	eb39431f 	cmp	x24, w25, uxtw
+    d8dc:	54ffff68 	b.hi	d8c8 <nis_print_group_entry@GLIBC_2.17+0x2d8>  // b.pmore
+    d8e0:	f9405ba0 	ldr	x0, [x29, #176]
+    d8e4:	f947e800 	ldr	x0, [x0, #4048]
+    d8e8:	b4001316 	cbz	x22, db48 <nis_print_group_entry@GLIBC_2.17+0x558>
+    d8ec:	f9404ba3 	ldr	x3, [x29, #144]
+    d8f0:	528000a2 	mov	w2, #0x5                   	// #5
+    d8f4:	f0000001 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    d8f8:	912f8021 	add	x1, x1, #0xbe0
+    d8fc:	9100087c 	add	x28, x3, #0x2
+    d900:	52800018 	mov	w24, #0x0                   	// #0
+    d904:	97ffdc5b 	bl	4a70 <__dcgettext@plt>
+    d908:	f94057a1 	ldr	x1, [x29, #168]
+    d90c:	f947f021 	ldr	x1, [x1, #4064]
+    d910:	f9400021 	ldr	x1, [x1]
+    d914:	97ffdafb 	bl	4500 <fputs@plt>
+    d918:	f0000000 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    d91c:	91076019 	add	x25, x0, #0x1d8
+    d920:	11000718 	add	w24, w24, #0x1
+    d924:	aa1c03e1 	mov	x1, x28
+    d928:	aa1903e0 	mov	x0, x25
+[31m    d92c:	97ffdc5d 	bl	4aa0 <printf@plt>[0m
+    d930:	eb3842df 	cmp	x22, w24, uxtw
+    d934:	54ffff68 	b.hi	d920 <nis_print_group_entry@GLIBC_2.17+0x330>  // b.pmore
+    d938:	f9405ba0 	ldr	x0, [x29, #176]
+    d93c:	f947e800 	ldr	x0, [x0, #4048]
+    d940:	b4000f37 	cbz	x23, db24 <nis_print_group_entry@GLIBC_2.17+0x534>
+    d944:	f9404fa3 	ldr	x3, [x29, #152]
+    d948:	528000a2 	mov	w2, #0x5                   	// #5
+    d94c:	f0000001 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    d950:	91306021 	add	x1, x1, #0xc18
+    d954:	9100047c 	add	x28, x3, #0x1
+    d958:	52800018 	mov	w24, #0x0                   	// #0
+    d95c:	97ffdc45 	bl	4a70 <__dcgettext@plt>
+    d960:	f94057a1 	ldr	x1, [x29, #168]
+    d964:	f947f021 	ldr	x1, [x1, #4064]
+    d968:	f9400021 	ldr	x1, [x1]
+    d96c:	97ffdae5 	bl	4500 <fputs@plt>
+    d970:	f0000000 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    d974:	91076016 	add	x22, x0, #0x1d8
+    d978:	11000718 	add	w24, w24, #0x1
+    d97c:	aa1c03e1 	mov	x1, x28
+    d980:	aa1603e0 	mov	x0, x22
+[31m    d984:	97ffdc47 	bl	4aa0 <printf@plt>[0m
+    d988:	eb3842ff 	cmp	x23, w24, uxtw
+    d98c:	54ffff68 	b.hi	d978 <nis_print_group_entry@GLIBC_2.17+0x388>  // b.pmore
+    d990:	f9405ba0 	ldr	x0, [x29, #176]
+    d994:	f947e800 	ldr	x0, [x0, #4048]
+    d998:	b4000b5b 	cbz	x27, db00 <nis_print_group_entry@GLIBC_2.17+0x510>
+    d99c:	f94037a3 	ldr	x3, [x29, #104]
+    d9a0:	528000a2 	mov	w2, #0x5                   	// #5
+    d9a4:	f0000001 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    d9a8:	91314021 	add	x1, x1, #0xc50
+    d9ac:	91000477 	add	x23, x3, #0x1
+    d9b0:	52800018 	mov	w24, #0x0                   	// #0
+    d9b4:	97ffdc2f 	bl	4a70 <__dcgettext@plt>
+    d9b8:	f94057a1 	ldr	x1, [x29, #168]
+    d9bc:	f947f021 	ldr	x1, [x1, #4064]
+    d9c0:	f9400021 	ldr	x1, [x1]
+    d9c4:	97ffdacf 	bl	4500 <fputs@plt>
+    d9c8:	f0000000 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    d9cc:	91076016 	add	x22, x0, #0x1d8
+    d9d0:	11000718 	add	w24, w24, #0x1
+    d9d4:	aa1703e1 	mov	x1, x23
+    d9d8:	aa1603e0 	mov	x0, x22
+[31m    d9dc:	97ffdc31 	bl	4aa0 <printf@plt>[0m
+    d9e0:	eb38437f 	cmp	x27, w24, uxtw
+    d9e4:	54ffff68 	b.hi	d9d0 <nis_print_group_entry@GLIBC_2.17+0x3e0>  // b.pmore
+    d9e8:	f9405fa0 	ldr	x0, [x29, #184]
+    d9ec:	b4000740 	cbz	x0, dad4 <nis_print_group_entry@GLIBC_2.17+0x4e4>
+    d9f0:	f9405ba0 	ldr	x0, [x29, #176]
+    d9f4:	528000a2 	mov	w2, #0x5                   	// #5
+    d9f8:	f9403ba3 	ldr	x3, [x29, #112]
+    d9fc:	f0000001 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    da00:	f947e800 	ldr	x0, [x0, #4048]
+    da04:	91324021 	add	x1, x1, #0xc90
+    da08:	91000c77 	add	x23, x3, #0x3
+    da0c:	52800018 	mov	w24, #0x0                   	// #0
+    da10:	97ffdc18 	bl	4a70 <__dcgettext@plt>
+    da14:	f94057a1 	ldr	x1, [x29, #168]
+    da18:	f947f021 	ldr	x1, [x1, #4064]
+    da1c:	f9400021 	ldr	x1, [x1]
+    da20:	97ffdab8 	bl	4500 <fputs@plt>
+    da24:	f0000000 	adrp	x0, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    da28:	91076016 	add	x22, x0, #0x1d8
+    da2c:	d503201f 	nop
+    da30:	aa1703e1 	mov	x1, x23
+    da34:	aa1603e0 	mov	x0, x22
+[31m    da38:	97ffdc1a 	bl	4aa0 <printf@plt>[0m
+    da3c:	11000718 	add	w24, w24, #0x1
+    da40:	f9405fa0 	ldr	x0, [x29, #184]
+    da44:	eb38401f 	cmp	x0, w24, uxtw
+    da48:	54ffff48 	b.hi	da30 <nis_print_group_entry@GLIBC_2.17+0x440>  // b.pmore
+    da4c:	f9405ba0 	ldr	x0, [x29, #176]
+    da50:	f947e800 	ldr	x0, [x0, #4048]
+    da54:	b40002fa 	cbz	x26, dab0 <nis_print_group_entry@GLIBC_2.17+0x4c0>
+    da58:	f9403fa3 	ldr	x3, [x29, #120]
+    da5c:	f0000001 	adrp	x1, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    da60:	528000a2 	mov	w2, #0x5                   	// #5
+    da64:	91334021 	add	x1, x1, #0xcd0
+    da68:	91000877 	add	x23, x3, #0x2
+    da6c:	f0000016 	adrp	x22, 10000 <nis_clone_result@GLIBC_2.17+0x6f0>
+    da70:	9133c2d6 	add	x22, x22, #0xcf0
+    da74:	97ffdbff 	bl	4a70 <__dcgettext@plt>
+    da78:	f94057a1 	ldr	x1, [x29, #168]
+    da7c:	f947f021 	ldr	x1, [x1, #4064]
+    da80:	f9400021 	ldr	x1, [x1]
+    da84:	97ffda9f 	bl	4500 <fputs@plt>
+    da88:	11000694 	add	w20, w20, #0x1
+    da8c:	aa1703e1 	mov	x1, x23
+    da90:	aa1603e0 	mov	x0, x22
+[31m    da94:	97ffdc03 	bl	4aa0 <printf@plt>[0m
+    da98:	eb34435f 	cmp	x26, w20, uxtw
+    da9c:	54ffff68 	b.hi	da88 <nis_print_group_entry@GLIBC_2.17+0x498>  // b.pmore
+--
+    dbac:	f9400a61 	ldr	x1, [x19, #16]
+    dbb0:	aa0003f8 	mov	x24, x0
+    dbb4:	f9005fbf 	str	xzr, [x29, #184]
+    dbb8:	d2800017 	mov	x23, #0x0                   	// #0
+    dbbc:	d280001a 	mov	x26, #0x0                   	// #0
+    dbc0:	d2800016 	mov	x22, #0x0                   	// #0
+    dbc4:	f9400424 	ldr	x4, [x1, #8]
+    dbc8:	f90057a4 	str	x4, [x29, #168]
+    dbcc:	f940103c 	ldr	x28, [x1, #32]
+    dbd0:	aa1c03e0 	mov	x0, x28
+    dbd4:	97ffda43 	bl	44e0 <strlen@plt>
+    dbd8:	aa0003e2 	mov	x2, x0
+    dbdc:	910003e1 	mov	x1, sp
+    dbe0:	91002842 	add	x2, x2, #0xa
+    dbe4:	aa1c03e0 	mov	x0, x28
+    dbe8:	9400002a 	bl	dc90 <nis_domain_of_r@GLIBC_2.17>
+    dbec:	aa0003e2 	mov	x2, x0
+    dbf0:	f94057a4 	ldr	x4, [x29, #168]
+    dbf4:	aa1803e0 	mov	x0, x24
+    dbf8:	aa0403e1 	mov	x1, x4
+[31m    dbfc:	97ffdba9 	bl	4aa0 <printf@plt>[0m
+    dc00:	f94053a3 	ldr	x3, [x29, #160]
+    dc04:	9100007f 	mov	sp, x3
+
+[[0;33m*[0m] Function [0;33mprintf[0m used [0;33m44[0m times [0;33mlibnsl-2.31.so[0m
+

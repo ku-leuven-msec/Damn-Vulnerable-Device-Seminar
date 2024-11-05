@@ -1,0 +1,293 @@
+<!-- 
+emba - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2021 Siemens AG
+Copyright 2020-2021 Siemens Energy AG
+
+emba comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+emba is licensed under GPLv3
+
+Author(s): Michael Messner, Pascal Eckmann, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div class="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" src="./../style/emba.svg" alt="emba logo"></a>
+  </div>
+  <div id="nav">
+      <a class="back" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s103_deep_search.html" title="./../s103_deep_search.html" >&laquo; Back to s103_deep_search</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="green">+</span>]</span><span class="green"> /log/firmware/firmware/usr/lib/python3.8/site-packages/gevent/_sslgte279.py</span></pre>
+<pre>1:er module for _ssl. Written by Bi.</pre>
+<pre>3:"""SSL wrapper for so.</pre>
+<pre>5:refer to :mod:`ssl` module manual.</pre>
+<pre>7:ts cooperative SSL socket wrapper.</pre>
+<pre>16:import ssl as __ssl__.</pre>
+<pre>18:_ssl = __ssl__._ssl # pylin.</pre>
+<pre>31:    'SSLContext',.</pre>
+<pre>32:    'SSLSocket',.</pre>
+<pre>42: from Python's ssl.py, except tho.</pre>
+<pre>44:copy_globals(__ssl__, globals(),.</pre>
+<pre>45:             # SSLSocket *must* s.</pre>
+<pre>60:if hasattr(__ssl__, '_fileobjec.</pre>
+<pre>61: not hasattr(__ssl__._fileobject,.</pre>
+<pre>63:ject(getattr(__ssl__, '_fileobjec.</pre>
+<pre>74:orig_SSLContext = __ssl.</pre>
+<pre>74:__.SSLContext # pylin.</pre>
+<pre>76:class SSLContext(orig_SS.</pre>
+<pre>84:        return SSLSocket(sock=soc.</pre>
+<pre>93:   """Create a SSLContext object .</pre>
+<pre>102:    context = SSLContext(PROTOCO.</pre>
+<pre>102:L_SSLv23).</pre>
+<pre>104:    # SSLv2 considered h.</pre>
+<pre>105:tions |= OP_NO_SSLv2 # pylint:dis.</pre>
+<pre>107:    # SSLv3 has problema.</pre>
+<pre>109:tions |= OP_NO_SSLv3 # pylint:dis.</pre>
+<pre>111:E attacks (OpenSSL 1.0+).</pre>
+<pre>112:ns |= getattr(_ssl, "OP_NO_COMPRE.</pre>
+<pre>121:ns |= getattr(_ssl, "OP_CIPHER_SE.</pre>
+<pre>124:ns |= getattr(_ssl, "OP_SINGLE_DH.</pre>
+<pre>125:ns |= getattr(_ssl, "OP_SINGLE_EC.</pre>
+<pre>135:        # root CA certificate.</pre>
+<pre>139:tocol=PROTOCOL_SSLv23, cert_reqs=.</pre>
+<pre>143:   """Create a SSLContext object .</pre>
+<pre>145:tion to create SSLContext.</pre>
+<pre>153:    context = SSLContext(protoco.</pre>
+<pre>154:    # SSLv2 considered h.</pre>
+<pre>155:tions |= OP_NO_SSLv2 # pylint:dis.</pre>
+<pre>156:    # SSLv3 has problema.</pre>
+<pre>158:tions |= OP_NO_SSLv3 # pylint:dis.</pre>
+<pre>169:    # load CA root certs.</pre>
+<pre>175:        # root CA certificate.</pre>
+<pre>187:class SSLSocket(socket):.</pre>
+<pre>189:    gevent `ssl.SSLSocket &lt;htt.</pre>
+<pre>189:.org/2/library/ssl.html#ssl-socke.</pre>
+<pre>195:               ssl_version=PROTOC.</pre>
+<pre>195:OL_SSLv23, ca_certs=N.</pre>
+<pre>213:elf._context = SSLContext(ssl_ver.</pre>
+<pre>226:          self.ssl_version = ssl_.</pre>
+<pre>239:vers fails the SSL test.</pre>
+<pre>245:ods defined in SSLSocket..</pre>
+<pre>274:        self._sslobj = None.</pre>
+<pre>277:  # create the SSL object.</pre>
+<pre>279:         self._sslobj = self._con.</pre>
+<pre>280:rver_hostname, ssl_sock=self).</pre>
+<pre>300:        self._sslobj.context = c.</pre>
+<pre>324:  if not self._sslobj:.</pre>
+<pre>325:d or unwrapped SSL socket.").</pre>
+<pre>333:  return self._sslobj.read(len, b.</pre>
+<pre>334:  return self._sslobj.read(len or.</pre>
+<pre>335:        except SSLWantReadError:.</pre>
+<pre>338:, timeout_exc=_SSLErrorReadTimeou.</pre>
+<pre>339:        except SSLWantWriteError:.</pre>
+<pre>342:# note: using _SSLErrorReadTimeou.</pre>
+<pre>342:t rather than _SSLErrorWriteTimeo.</pre>
+<pre>343:, timeout_exc=_SSLErrorReadTimeou.</pre>
+<pre>344:        except SSLError as ex:.</pre>
+<pre>345: ex.args[0] == SSL_ERROR_EOF and .</pre>
+<pre>352:the underlying SSL channel.  Retu.</pre>
+<pre>357:  if not self._sslobj:.</pre>
+<pre>358:d or unwrapped SSL socket.").</pre>
+<pre>361:  return self._sslobj.write(data).</pre>
+<pre>362:        except SSLError as ex:.</pre>
+<pre>363: ex.args[0] == SSL_ERROR_WANT_REA.</pre>
+<pre>366:, timeout_exc=_SSLErrorWriteTimeo.</pre>
+<pre>367: ex.args[0] == SSL_ERROR_WANT_WRI.</pre>
+<pre>370:, timeout_exc=_SSLErrorWriteTimeo.</pre>
+<pre>376:her end of the SSL channel..</pre>
+<pre>382:  return self._sslobj.peer_certif.</pre>
+<pre>386:  if not self._sslobj or not _ssl.</pre>
+<pre>388:  return self._sslobj.selected_np.</pre>
+<pre>390:   if hasattr(_ssl, 'HAS_ALPN'):.</pre>
+<pre>394:  if not self._sslobj or not _ssl.</pre>
+<pre>396:  return self._sslobj.selected_al.</pre>
+<pre>400:  if not self._sslobj:.</pre>
+<pre>402:  return self._sslobj.cipher().</pre>
+<pre>406:  if not self._sslobj:.</pre>
+<pre>408:  return self._sslobj.compression.</pre>
+<pre>423:  if not self._sslobj:.</pre>
+<pre>428:  return self._sslobj.write(data).</pre>
+<pre>429:        except SSLWantReadError:.</pre>
+<pre>433:        except SSLWantWriteError:.</pre>
+<pre>440:      if self._sslobj:.</pre>
+<pre>462:ython 3 raises SSLWantWriteError..</pre>
+<pre>463:         raise SSLWantWriteError(.</pre>
+<pre>464:ut back to the sslerror.</pre>
+<pre>465:         raise SSLError(*ex.args).</pre>
+<pre>469:      if self._sslobj:.</pre>
+<pre>487:      if self._sslobj:.</pre>
+<pre>497:      if self._sslobj:.</pre>
+<pre>504:      if self._sslobj:.</pre>
+<pre>519:      if self._sslobj:.</pre>
+<pre>520:  return self._sslobj.pending().</pre>
+<pre>525:        self._sslobj = None.</pre>
+<pre>530:         self._sslobj = None.</pre>
+<pre>546:    def _sslobj_shutdown(se.</pre>
+<pre>549:  return self._sslobj.shutdown().</pre>
+<pre>550:        except SSLError as ex:.</pre>
+<pre>551: ex.args[0] == SSL_ERROR_EOF and .</pre>
+<pre>553: ex.args[0] == SSL_ERROR_WANT_REA.</pre>
+<pre>557:, timeout_exc=_SSLErrorReadTimeou.</pre>
+<pre>558: ex.args[0] == SSL_ERROR_WANT_WRI.</pre>
+<pre>562:, timeout_exc=_SSLErrorWriteTimeo.</pre>
+<pre>567:  if not self._sslobj:.</pre>
+<pre>568:ValueError("No SSL wrapper around.</pre>
+<pre>572:     s = self._sslobj_shutdown().</pre>
+<pre>577:        self._sslobj = None.</pre>
+<pre>578:      # match _ssl2; critical to .</pre>
+<pre>579:       # XXX: _ssl3 returns an SS.</pre>
+<pre>584:        self._sslobj = None.</pre>
+<pre>588:"Perform a TLS/SSL handshake.""".</pre>
+<pre>592:         self._sslobj.do_handshak.</pre>
+<pre>594:        except SSLWantReadError:.</pre>
+<pre>597:, timeout_exc=_SSLErrorHandshakeT.</pre>
+<pre>598:        except SSLWantWriteError:.</pre>
+<pre>601:, timeout_exc=_SSLErrorHandshakeT.</pre>
+<pre>615:eady-connected SSLSocket!").</pre>
+<pre>616:        self._sslobj = self._con.</pre>
+<pre>616:rver_hostname, ssl_sock=self).</pre>
+<pre>629:         self._sslobj = None.</pre>
+<pre>634:        an SSL channel.""".</pre>
+<pre>639:        an SSL channel.""".</pre>
+<pre>645:        SSL channel, and t.</pre>
+<pre>658:works with the SSL connection.  J.</pre>
+<pre>677:      if self._sslobj is None:.</pre>
+<pre>679:  return self._sslobj.tls_unique_.</pre>
+<pre>684:       current SSL channel, or No.</pre>
+<pre>686:      if self._sslobj is None:.</pre>
+<pre>688:  return self._sslobj.version().</pre>
+<pre>690:or not hasattr(SSLSocket, 'timeou.</pre>
+<pre>694:# socket (when ssl is used with P.</pre>
+<pre>698:    SSLSocket.timeout .</pre>
+<pre>703:_SSLErrorReadTimeou.</pre>
+<pre>703:t = SSLError('The read.</pre>
+<pre>704:_SSLErrorWriteTimeo.</pre>
+<pre>704:ut = SSLError('The writ.</pre>
+<pre>705:_SSLErrorHandshakeT.</pre>
+<pre>705:imeout = SSLError('The hand.</pre>
+<pre>709:               ssl_version=PROTOC.</pre>
+<pre>709:OL_SSLv23, ca_certs=N.</pre>
+<pre>714:    return SSLSocket(sock=soc.</pre>
+<pre>716:               ssl_version=ssl_ve.</pre>
+<pre>721:tificate(addr, ssl_version=PROTOC.</pre>
+<pre>721:OL_SSLv23, ca_certs=N.</pre>
+<pre>725:    If 'ssl_version' is sp.</pre>
+<pre>732:stdlib_context(ssl_version,.</pre>
+<pre>736:cket(sock)) as sslsock:.</pre>
+<pre>737:     dercert = sslsock.getpeercer.</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

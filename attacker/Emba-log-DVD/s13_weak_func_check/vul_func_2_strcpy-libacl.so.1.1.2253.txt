@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibacl.so.1.1.2253[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibacl.so.1.1.2253[0m
+
+    4ac8:	d280001c 	mov	x28, #0x0                   	// #0
+    4acc:	d2800000 	mov	x0, #0x0                   	// #0
+    4ad0:	17fffe68 	b	4470 <acl_to_any_text@@ACL_1.0+0x6f0>
+    4ad4:	8b1302c0 	add	x0, x22, x19
+    4ad8:	3942f3e2 	ldrb	w2, [sp, #188]
+    4adc:	aa1b03f9 	mov	x25, x27
+    4ae0:	91000674 	add	x20, x19, #0x1
+    4ae4:	39002002 	strb	w2, [x0, #8]
+    4ae8:	a9490be3 	ldp	x3, x2, [sp, #144]
+    4aec:	f9400842 	ldr	x2, [x2, #16]
+    4af0:	f9004fe2 	str	x2, [sp, #152]
+    4af4:	eb02007f 	cmp	x3, x2
+    4af8:	54ffc2e1 	b.ne	4354 <acl_to_any_text@@ACL_1.0+0x5d4>  // b.any
+    4afc:	aa0103fc 	mov	x28, x1
+    4b00:	f100027f 	cmp	x19, #0x0
+    4b04:	f94067e1 	ldr	x1, [sp, #200]
+    4b08:	fa401824 	ccmp	x1, #0x0, #0x4, ne  // ne = any
+    4b0c:	540004c0 	b.eq	4ba4 <acl_to_any_text@@ACL_1.0+0xe24>  // b.none
+    4b10:	8b1302e0 	add	x0, x23, x19
+    4b14:	aa1c03f3 	mov	x19, x28
+[31m    4b18:	97fff426 	bl	1bb0 <strcpy@plt>[0m
+    4b1c:	a94573fb 	ldp	x27, x28, [sp, #80]
+    4b20:	f94063e0 	ldr	x0, [sp, #192]
+--
+    5e30:	eb03011f 	cmp	x8, x3
+    5e34:	54ffff01 	b.ne	5e14 <perm_copy_file@@ACL_1.1+0xc34>  // b.any
+    5e38:	97ffef1a 	bl	1aa0 <closedir@plt>
+    5e3c:	34ffeae0 	cbz	w0, 5b98 <perm_copy_file@@ACL_1.1+0x9b8>
+    5e40:	b9406fe0 	ldr	w0, [sp, #108]
+    5e44:	aa1803e3 	mov	x3, x24
+    5e48:	d2800001 	mov	x1, #0x0                   	// #0
+    5e4c:	32160002 	orr	w2, w0, #0x400
+    5e50:	aa1403e0 	mov	x0, x20
+    5e54:	d63f02e0 	blr	x23
+    5e58:	0b000339 	add	w25, w25, w0
+    5e5c:	17ffff4f 	b	5b98 <perm_copy_file@@ACL_1.1+0x9b8>
+    5e60:	39400ac0 	ldrb	w0, [x22, #2]
+    5e64:	35fff900 	cbnz	w0, 5d84 <perm_copy_file@@ACL_1.1+0xba4>
+    5e68:	17ffffda 	b	5dd0 <perm_copy_file@@ACL_1.1+0xbf0>
+    5e6c:	528005e0 	mov	w0, #0x2f                  	// #47
+    5e70:	383c6a80 	strb	w0, [x20, x28]
+    5e74:	8b1c0280 	add	x0, x20, x28
+    5e78:	aa1603e1 	mov	x1, x22
+    5e7c:	91000400 	add	x0, x0, #0x1
+[31m    5e80:	97ffef4c 	bl	1bb0 <strcpy@plt>[0m
+    5e84:	b94063e4 	ldr	w4, [sp, #96]
+    5e88:	aa1803e3 	mov	x3, x24
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mlibacl.so.1.1.2253[0m
+

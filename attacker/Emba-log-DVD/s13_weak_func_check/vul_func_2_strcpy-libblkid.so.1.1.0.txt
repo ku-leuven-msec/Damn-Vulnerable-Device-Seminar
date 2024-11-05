@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibblkid.so.1.1.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibblkid.so.1.1.0[0m
+
+   2ae9c:	9105e063 	add	x3, x3, #0x178
+   2aea0:	d2810002 	mov	x2, #0x800                 	// #2048
+   2aea4:	52800021 	mov	w1, #0x1                   	// #1
+   2aea8:	910123f3 	add	x19, sp, #0x48
+   2aeac:	aa1303e0 	mov	x0, x19
+   2aeb0:	97ff7844 	bl	8fc0 <__sprintf_chk@plt>
+   2aeb4:	aa1303e0 	mov	x0, x19
+   2aeb8:	97ff7836 	bl	8f90 <strlen@plt>
+   2aebc:	f9437ec2 	ldr	x2, [x22, #1784]
+   2aec0:	d1000841 	sub	x1, x2, #0x2
+   2aec4:	eb00003f 	cmp	x1, x0
+   2aec8:	54000042 	b.cs	2aed0 <blkid_topology_get_physical_sector_size@@BLKID_2.17+0x65c0>  // b.hs, b.nlast
+   2aecc:	38216a7f 	strb	wzr, [x19, x1]
+   2aed0:	911be2d6 	add	x22, x22, #0x6f8
+   2aed4:	52800001 	mov	w1, #0x0                   	// #0
+   2aed8:	f94006d5 	ldr	x21, [x22, #8]
+   2aedc:	f94002a0 	ldr	x0, [x21]
+   2aee0:	97ff7964 	bl	9470 <memset@plt>
+   2aee4:	f94002a0 	ldr	x0, [x21]
+   2aee8:	aa1303e1 	mov	x1, x19
+[31m   2aeec:	97ff7ac9 	bl	9a10 <strcpy@plt>[0m
+   2aef0:	f9401bf7 	ldr	x23, [sp, #48]
+   2aef4:	f90006bf 	str	xzr, [x21, #8]
+--
+   2de28:	aa0003f3 	mov	x19, x0
+   2de2c:	f100027f 	cmp	x19, #0x0
+   2de30:	f0000080 	adrp	x0, 40000 <blkid_topology_get_physical_sector_size@@BLKID_2.17+0x1b6f0>
+   2de34:	9114a000 	add	x0, x0, #0x528
+   2de38:	9a930013 	csel	x19, x0, x19, eq  // eq = none
+   2de3c:	aa1303e0 	mov	x0, x19
+   2de40:	97ff6ddc 	bl	95b0 <strdup@plt>
+   2de44:	a9025bf5 	stp	x21, x22, [sp, #32]
+   2de48:	b4000400 	cbz	x0, 2dec8 <blkid_topology_get_physical_sector_size@@BLKID_2.17+0x95b8>
+   2de4c:	97ff6dc1 	bl	9550 <__xpg_basename@plt>
+   2de50:	aa0003f6 	mov	x22, x0
+   2de54:	97ff6c4f 	bl	8f90 <strlen@plt>
+   2de58:	91000815 	add	x21, x0, #0x2
+   2de5c:	aa1503e0 	mov	x0, x21
+   2de60:	97ff6d38 	bl	9340 <malloc@plt>
+   2de64:	aa0003f4 	mov	x20, x0
+   2de68:	b4000380 	cbz	x0, 2ded8 <blkid_topology_get_physical_sector_size@@BLKID_2.17+0x95c8>
+   2de6c:	528005a2 	mov	w2, #0x2d                  	// #45
+   2de70:	38001402 	strb	w2, [x0], #1
+   2de74:	aa1603e1 	mov	x1, x22
+[31m   2de78:	97ff6ee6 	bl	9a10 <strcpy@plt>[0m
+   2de7c:	aa1403e1 	mov	x1, x20
+   2de80:	d2800002 	mov	x2, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mlibblkid.so.1.1.0[0m
+

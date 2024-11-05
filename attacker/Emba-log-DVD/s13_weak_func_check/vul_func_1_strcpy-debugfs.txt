@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mdebugfs[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mdebugfs[0m
+
+   13f70:	97ffdcdc 	bl	b2e0 <__errno_location@plt>
+   13f74:	aa0003e1 	mov	x1, x0
+   13f78:	aa1303e3 	mov	x3, x19
+   13f7c:	d00000a2 	adrp	x2, 29000 <ext2fs_open_file@plt+0x1dbf0>
+   13f80:	900000a0 	adrp	x0, 27000 <ext2fs_open_file@plt+0x1bbf0>
+   13f84:	91200042 	add	x2, x2, #0x800
+   13f88:	b9800021 	ldrsw	x1, [x1]
+   13f8c:	9113c000 	add	x0, x0, #0x4f0
+   13f90:	97ffda8c 	bl	a9c0 <com_err@plt>
+   13f94:	17ffffdb 	b	13f00 <ext2fs_open_file@plt+0x8af0>
+   13f98:	b94006c0 	ldr	w0, [x22, #4]
+   13f9c:	11000400 	add	w0, w0, #0x1
+   13fa0:	97ffda54 	bl	a8f0 <malloc@plt>
+   13fa4:	aa0003f8 	mov	x24, x0
+   13fa8:	b4001460 	cbz	x0, 14234 <ext2fs_open_file@plt+0x8e24>
+   13fac:	aa1603e0 	mov	x0, x22
+   13fb0:	97ffd954 	bl	a500 <ext2fs_is_fast_symlink@plt>
+   13fb4:	340001e0 	cbz	w0, 13ff0 <ext2fs_open_file@plt+0x8be0>
+   13fb8:	9100a2c1 	add	x1, x22, #0x28
+   13fbc:	aa1803e0 	mov	x0, x24
+[31m   13fc0:	97ffdc2c 	bl	b070 <strcpy@plt>[0m
+   13fc4:	aa1303e1 	mov	x1, x19
+   13fc8:	aa1803e0 	mov	x0, x24
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33mdebugfs[0m
+

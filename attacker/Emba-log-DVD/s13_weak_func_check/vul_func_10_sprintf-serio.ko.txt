@@ -1,0 +1,216 @@
+[[0;33m*[0m] Binary protection state of [0;33mserio.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [31mNo canary found[m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m205) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mserio.ko[0m
+
+     ba4:	97ffff41 	bl	8a8 <serio_queue_event>
+     ba8:	52800000 	mov	w0, #0x0                   	// #0
+     bac:	a94153f3 	ldp	x19, x20, [sp, #16]
+     bb0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+     bb4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+     bb8:	d65f03c0 	ret
+     bbc:	d503201f 	nop
+
+0000000000000bc0 <firmware_id_show>:
+     bc0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     bc4:	910003fd 	mov	x29, sp
+     bc8:	a90153f3 	stp	x19, x20, [sp, #16]
+     bcc:	aa0203f3 	mov	x19, x2
+     bd0:	aa0003f4 	mov	x20, x0
+     bd4:	aa1e03e0 	mov	x0, x30
+     bd8:	94000000 	bl	0 <_mcount>
+     bdc:	d1044282 	sub	x2, x20, #0x110
+     be0:	aa1303e0 	mov	x0, x19
+     be4:	90000001 	adrp	x1, 0 <serio_match_port>
+     be8:	91000021 	add	x1, x1, #0x0
+[31m     bec:	94000000 	bl	0 <sprintf>[0m
+     bf0:	93407c00 	sxtw	x0, w0
+     bf4:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     bfc:	d65f03c0 	ret
+
+0000000000000c00 <serio_show_bind_mode>:
+     c00:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     c04:	910003fd 	mov	x29, sp
+     c08:	a90153f3 	stp	x19, x20, [sp, #16]
+     c0c:	aa0003f4 	mov	x20, x0
+     c10:	aa0203f3 	mov	x19, x2
+     c14:	aa1e03e0 	mov	x0, x30
+     c18:	94000000 	bl	0 <_mcount>
+     c1c:	38570280 	ldurb	w0, [x20, #-144]
+     c20:	90000003 	adrp	x3, 0 <serio_match_port>
+     c24:	91000063 	add	x3, x3, #0x0
+     c28:	90000001 	adrp	x1, 0 <serio_match_port>
+     c2c:	7100001f 	cmp	w0, #0x0
+     c30:	91000021 	add	x1, x1, #0x0
+     c34:	9a811062 	csel	x2, x3, x1, ne  // ne = any
+     c38:	aa1303e0 	mov	x0, x19
+     c3c:	90000001 	adrp	x1, 0 <serio_match_port>
+     c40:	91000021 	add	x1, x1, #0x0
+[31m     c44:	94000000 	bl	0 <sprintf>[0m
+     c48:	93407c00 	sxtw	x0, w0
+     c4c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     c50:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     c54:	d65f03c0 	ret
+
+0000000000000c58 <serio_show_description>:
+     c58:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     c5c:	910003fd 	mov	x29, sp
+     c60:	a90153f3 	stp	x19, x20, [sp, #16]
+     c64:	aa0203f3 	mov	x19, x2
+     c68:	aa0003f4 	mov	x20, x0
+     c6c:	aa1e03e0 	mov	x0, x30
+     c70:	94000000 	bl	0 <_mcount>
+     c74:	d1054282 	sub	x2, x20, #0x150
+     c78:	aa1303e0 	mov	x0, x19
+     c7c:	90000001 	adrp	x1, 0 <serio_match_port>
+     c80:	91000021 	add	x1, x1, #0x0
+[31m     c84:	94000000 	bl	0 <sprintf>[0m
+     c88:	93407c00 	sxtw	x0, w0
+     c8c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     c90:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     c94:	d65f03c0 	ret
+
+0000000000000c98 <modalias_show>:
+     c98:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     c9c:	910003fd 	mov	x29, sp
+     ca0:	a90153f3 	stp	x19, x20, [sp, #16]
+     ca4:	aa0003f3 	mov	x19, x0
+     ca8:	aa0203f4 	mov	x20, x2
+     cac:	aa1e03e0 	mov	x0, x30
+     cb0:	94000000 	bl	0 <_mcount>
+     cb4:	38572265 	ldurb	w5, [x19, #-142]
+     cb8:	aa1403e0 	mov	x0, x20
+     cbc:	38573264 	ldurb	w4, [x19, #-141]
+     cc0:	90000001 	adrp	x1, 0 <serio_match_port>
+     cc4:	38574263 	ldurb	w3, [x19, #-140]
+     cc8:	91000021 	add	x1, x1, #0x0
+     ccc:	38571262 	ldurb	w2, [x19, #-143]
+[31m     cd0:	94000000 	bl	0 <sprintf>[0m
+     cd4:	d28002e0 	mov	x0, #0x17                  	// #23
+     cd8:	a94153f3 	ldp	x19, x20, [sp, #16]
+     cdc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     ce0:	d65f03c0 	ret
+     ce4:	d503201f 	nop
+
+0000000000000ce8 <extra_show>:
+     ce8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     cec:	910003fd 	mov	x29, sp
+     cf0:	a90153f3 	stp	x19, x20, [sp, #16]
+     cf4:	aa0003f4 	mov	x20, x0
+     cf8:	aa0203f3 	mov	x19, x2
+     cfc:	aa1e03e0 	mov	x0, x30
+     d00:	94000000 	bl	0 <_mcount>
+     d04:	38572282 	ldurb	w2, [x20, #-142]
+     d08:	aa1303e0 	mov	x0, x19
+     d0c:	90000001 	adrp	x1, 0 <serio_match_port>
+     d10:	91000021 	add	x1, x1, #0x0
+[31m     d14:	94000000 	bl	0 <sprintf>[0m
+     d18:	d2800060 	mov	x0, #0x3                   	// #3
+     d1c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     d20:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     d24:	d65f03c0 	ret
+
+0000000000000d28 <id_show>:
+     d28:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     d2c:	910003fd 	mov	x29, sp
+     d30:	a90153f3 	stp	x19, x20, [sp, #16]
+     d34:	aa0003f4 	mov	x20, x0
+     d38:	aa0203f3 	mov	x19, x2
+     d3c:	aa1e03e0 	mov	x0, x30
+     d40:	94000000 	bl	0 <_mcount>
+     d44:	38573282 	ldurb	w2, [x20, #-141]
+     d48:	aa1303e0 	mov	x0, x19
+     d4c:	90000001 	adrp	x1, 0 <serio_match_port>
+     d50:	91000021 	add	x1, x1, #0x0
+[31m     d54:	94000000 	bl	0 <sprintf>[0m
+     d58:	d2800060 	mov	x0, #0x3                   	// #3
+     d5c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     d60:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     d64:	d65f03c0 	ret
+
+0000000000000d68 <proto_show>:
+     d68:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     d6c:	910003fd 	mov	x29, sp
+     d70:	a90153f3 	stp	x19, x20, [sp, #16]
+     d74:	aa0003f4 	mov	x20, x0
+     d78:	aa0203f3 	mov	x19, x2
+     d7c:	aa1e03e0 	mov	x0, x30
+     d80:	94000000 	bl	0 <_mcount>
+     d84:	38574282 	ldurb	w2, [x20, #-140]
+     d88:	aa1303e0 	mov	x0, x19
+     d8c:	90000001 	adrp	x1, 0 <serio_match_port>
+     d90:	91000021 	add	x1, x1, #0x0
+[31m     d94:	94000000 	bl	0 <sprintf>[0m
+     d98:	d2800060 	mov	x0, #0x3                   	// #3
+     d9c:	a94153f3 	ldp	x19, x20, [sp, #16]
+     da0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     da4:	d65f03c0 	ret
+
+0000000000000da8 <type_show>:
+     da8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     dac:	910003fd 	mov	x29, sp
+     db0:	a90153f3 	stp	x19, x20, [sp, #16]
+     db4:	aa0003f4 	mov	x20, x0
+     db8:	aa0203f3 	mov	x19, x2
+     dbc:	aa1e03e0 	mov	x0, x30
+     dc0:	94000000 	bl	0 <_mcount>
+     dc4:	38571282 	ldurb	w2, [x20, #-143]
+     dc8:	aa1303e0 	mov	x0, x19
+     dcc:	90000001 	adrp	x1, 0 <serio_match_port>
+     dd0:	91000021 	add	x1, x1, #0x0
+[31m     dd4:	94000000 	bl	0 <sprintf>[0m
+     dd8:	d2800060 	mov	x0, #0x3                   	// #3
+     ddc:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+     de4:	d65f03c0 	ret
+
+0000000000000de8 <bind_mode_show>:
+     de8:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     dec:	910003fd 	mov	x29, sp
+     df0:	a90153f3 	stp	x19, x20, [sp, #16]
+     df4:	aa0003f4 	mov	x20, x0
+     df8:	aa0103f3 	mov	x19, x1
+     dfc:	aa1e03e0 	mov	x0, x30
+     e00:	94000000 	bl	0 <_mcount>
+     e04:	385c0280 	ldurb	w0, [x20, #-64]
+     e08:	90000003 	adrp	x3, 0 <serio_match_port>
+     e0c:	91000063 	add	x3, x3, #0x0
+     e10:	90000002 	adrp	x2, 0 <serio_match_port>
+     e14:	7100001f 	cmp	w0, #0x0
+     e18:	91000042 	add	x2, x2, #0x0
+     e1c:	aa1303e0 	mov	x0, x19
+     e20:	9a831042 	csel	x2, x2, x3, ne  // ne = any
+     e24:	90000001 	adrp	x1, 0 <serio_match_port>
+     e28:	91000021 	add	x1, x1, #0x0
+[31m     e2c:	94000000 	bl	0 <sprintf>[0m
+     e30:	93407c00 	sxtw	x0, w0
+     e34:	a94153f3 	ldp	x19, x20, [sp, #16]
+     e38:	a8c27bfd 	ldp	x29, x30, [sp], #32
+     e3c:	d65f03c0 	ret
+
+0000000000000e40 <description_show>:
+     e40:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+     e44:	910003fd 	mov	x29, sp
+     e48:	a90153f3 	stp	x19, x20, [sp, #16]
+     e4c:	aa0003f4 	mov	x20, x0
+     e50:	aa0103f3 	mov	x19, x1
+     e54:	aa1e03e0 	mov	x0, x30
+     e58:	94000000 	bl	0 <_mcount>
+     e5c:	f85b0283 	ldur	x3, [x20, #-80]
+     e60:	90000002 	adrp	x2, 0 <serio_match_port>
+     e64:	91000042 	add	x2, x2, #0x0
+     e68:	aa1303e0 	mov	x0, x19
+     e6c:	f100007f 	cmp	x3, #0x0
+     e70:	90000001 	adrp	x1, 0 <serio_match_port>
+     e74:	9a830042 	csel	x2, x2, x3, eq  // eq = none
+     e78:	91000021 	add	x1, x1, #0x0
+[31m     e7c:	94000000 	bl	0 <sprintf>[0m
+     e80:	93407c00 	sxtw	x0, w0
+     e84:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m10[0m times [0;33mserio.ko[0m
+

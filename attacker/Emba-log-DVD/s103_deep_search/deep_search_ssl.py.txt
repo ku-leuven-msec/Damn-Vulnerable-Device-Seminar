@@ -1,0 +1,278 @@
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/ssl.py[0m
+1:er module for _ssl, providing som.
+4:ic support for SSL..
+8:  SSLSocket -- subty.
+8:ket which does SSL over the socke.
+12:  SSLError -- except.
+27:SSL_ERROR_ZERO_RET.
+28:SSL_ERROR_WANT_REA.
+29:SSL_ERROR_WANT_WRI.
+30:SSL_ERROR_WANT_X50.
+31:SSL_ERROR_SYSCALL.
+32:SSL_ERROR_SSL.
+33:SSL_ERROR_WANT_CON.
+35:SSL_ERROR_EOF.
+36:SSL_ERROR_INVALID_.
+49:entify various SSL protocol varia.
+51:PROTOCOL_SSLv2.
+52:PROTOCOL_SSLv3.
+53:PROTOCOL_SSLv23.
+61:entify various SSL alert message .
+98:import _ssl             # .
+100:from _ssl import OPENSSL.
+100:ON_NUMBER, OPENSSL_VERSION_INFO, .
+100:OPENSSL_VERSION.
+101:from _ssl import _SSLCon.
+101:xt, MemoryBIO, SSLSession.
+102:from _ssl import (.
+103:    SSLError, SSLZeroReturnError.
+103:, SSLWantReadError, .
+103:SSLWantWriteError,.
+104:    SSLSyscallError, S.
+104:SLEOFError, SSLCertVerificatio.
+106:from _ssl import txt2obj.
+107:from _ssl import RAND_st.
+109:    from _ssl import RAND_eg.
+111:    # LibreSSL does not provi.
+115:from _ssl import (.
+116: HAS_ALPN, HAS_SSLv2, HAS_SSLv3, .
+119:from _ssl import _DEFAUL.
+119:_CIPHERS, _OPENSSL_API_VERSION.
+123:    '_SSLMethod', __name.
+124:e != 'PROTOCOL_SSLv23',.
+125:    source=_ssl).
+130:    source=_ssl).
+135:    source=_ssl).
+138:    'SSLErrorNumber', _.
+139:me.startswith('SSL_ERROR_'),.
+140:    source=_ssl).
+145:    source=_ssl).
+150:    source=_ssl).
+152:PROTOCOL_SSLv23 = _SSLMetho.
+152:d.PROTOCOL_SSLv23 = _SSLMetho.
+153:ame, value in _SSLMethod.__member.
+155:_SSLv2_IF_EXISTS = .
+155:getattr(_SSLMethod, 'PROTOC.
+155:OL_SSLv2', None).
+159:M_SUPPORTED = _ssl.PROTO_MINIMUM_.
+160:    SSLv3 = _ssl.PROTO_SSLv3.
+161:    TLSv1 = _ssl.PROTO_TLSv1.
+162:    TLSv1_1 = _ssl.PROTO_TLSv1_1.
+163:    TLSv1_2 = _ssl.PROTO_TLSv1_2.
+164:    TLSv1_3 = _ssl.PROTO_TLSv1_3.
+165:M_SUPPORTED = _ssl.PROTO_MAXIMUM_.
+253:    from _ssl import enum_ce.
+267:AME = hasattr(_ssl, 'HOSTFLAG_NEV.
+272:ificateError = SSLCertVerificatio.
+365:    # OpenSSL may add a trai.
+373:    SSLSocket.getpeerc.
+386:              "SSL socket or SSL .
+429:ile capath openssl_cafile_env ope.
+429:nssl_cafile openssl.
+430:    "openssl_capath").
+435:    parts = _ssl.get_default_ve.
+456:bject from OpenSSL numeric ID.
+468:    """SSLContext purpose.
+474:class SSLContext(_SSLCon.
+475:    """An SSLContext holds v.
+475:arious SSL-related config.
+476:and possibly a private key.""".
+477:ores = ("CA", "ROOT").
+479:    sslsocket_class = .
+479:None  # SSLSocket is assig.
+480:    sslobject_class = .
+480:None  # SSLObject is assig.
+483:       self = _SSLContext.__new__.
+498:        # SSLSocket class ha.
+500:   return self.sslsocket_class._c.
+514:   return self.sslobject_class._c.
+525:         raise SSLError('NPN prot.
+538:   def shim_cb(sslobj, servername.
+538:, sslctx):.
+540:_name_callback(sslobj, servername.
+540:, sslctx).
+549:         raise SSLError('ALPN pro.
+577:   if hasattr(_SSLContext, 'minim.
+584: == TLSVersion.SSLv3:.
+585:~Options.OP_NO_SSLv3.
+586:         super(SSLContext, SSLCon.
+594:         super(SSLContext, SSLCon.
+602:        super(SSLContext, SSLCon.
+604:   if hasattr(_ssl, 'HOSTFLAG_NEV.
+607:_host_flags & _ssl.HOSTFLAG_NEVER.
+608:return ncs != _ssl.HOSTFLAG_NEVER.
+613:ost_flags &= ~_ssl.HOSTFLAG_NEVER.
+615:host_flags |= _ssl.HOSTFLAG_NEVER.
+637:       :class:`SSLSocket` or :cla.
+637:ss:`SSLObject` instanc.
+663:         super(SSLContext, SSLCon.
+696:        super(SSLContext, SSLCon.
+700:       return _SSLMethod(super()..
+708:        super(SSLContext, SSLCon.
+720:        super(SSLContext, SSLCon.
+725:   """Create a SSLContext object .
+734:    # SSLContext sets OP.
+734:_NO_SSLv2, OP_NO_SSLv3.
+737:    context = SSLContext(PROTOCO.
+749:        # root CA certificate.
+751:    # OpenSSL 1.1.1 keylog f.
+753:s.environ.get('SSLKEYLOGFILE').
+762:   """Create a SSLContext object .
+764:tion to create SSLContext.
+772:    # SSLContext sets OP.
+772:_NO_SSLv2, OP_NO_SSLv3.
+775:    context = SSLContext(protoco.
+789:    # load CA root certs.
+795:        # root CA certificate.
+797:    # OpenSSL 1.1.1 keylog f.
+799:s.environ.get('SSLKEYLOGFILE').
+812:class SSLObject:.
+813:of a low-level SSL object as.
+814:emented by OpenSSL. This object c.
+814:he state of an SSL connection.
+816: which are OpenSSL's IO abstracti.
+819:    ``SSLContext.wrap_bi.
+820:hronous IO for SSL through memory.
+822: compared to ``SSLSocket``, this .
+830:re returned by SSLContext.wrap_bi.
+837:        sslobj = context._.
+842:        self._sslobj = sslobj.
+847:        """The SSLContext that is.
+848:  return self._sslobj.context.
+852:        self._sslobj.context = c.
+856:        """The SSLSession for cli.
+857:  return self._sslobj.session.
+861:        self._sslobj.session = s.
+866:  return self._sslobj.session_reu.
+871:  return self._sslobj.server_side.
+877:  return self._sslobj.server_host.
+880:bytes from the SSL object and ret.
+886:     v = self._sslobj.read(len, b.
+888:     v = self._sslobj.read(len).
+892: 'data' to the SSL object and ret.
+897:  return self._sslobj.write(data).
+901:her end of the SSL channel..
+906:  return self._sslobj.getpeercert.
+912:        if _ssl.HAS_NPN:.
+913:  return self._sslobj.selected_np.
+919:        if _ssl.HAS_ALPN:.
+920:  return self._sslobj.selected_al.
+924:        ssl_version, secre.
+925:  return self._sslobj.cipher().
+931:  return self._sslobj.shared_ciph.
+936:  return self._sslobj.compression.
+940:  return self._sslobj.pending().
+943:  """Start the SSL/TLS handshake..
+944:        self._sslobj.do_handshak.
+947:  """Start the SSL shutdown hands.
+948:  return self._sslobj.shutdown().
+954:  return self._sslobj.get_channel.
+958:       current SSL channel. """.
+959:  return self._sslobj.version().
+[[0;32m+[0m][0;32m /log/firmware/firmware/usr/lib/python3.8/site-packages/gevent/ssl.py[0m
+962:  return self._sslobj.verify_clie.
+2:Sockets Layer (SSL/TLS) module..
+965:def _sslcopydoc(func):.
+966:docstring from SSLObject to SSLSo.
+13:tr(__import__('ssl'), 'SSLContext.
+16:bout to import ssl anyway so it's.
+967:oc__ = getattr(SSLObject, func.__.
+18:gevent import _sslgte279 as _sour.
+971:class SSLSocket(socket):.
+20:gevent import _ssl2 as _source.
+973:S socket in an SSL context when n.
+23:as an insecure SSL implementation.
+980:            f"SSLContext.wrap_so.
+32:gevent import _ssl3 as _source # .
+1004:        super(SSLSocket, self)._.
+1011:        self._sslobj = None.
+1029:  # create the SSL object.
+1031:         self._sslobj = self._con.
+1047:    @_sslcopydoc.
+1054:        self._sslobj.context = c.
+1057:    @_sslcopydoc.
+1059:      if self._sslobj is not None.
+1060:  return self._sslobj.session.
+1065:      if self._sslobj is not None.
+1066:         self._sslobj.session = s.
+1069:    @_sslcopydoc.
+1071:      if self._sslobj is not None.
+1072:  return self._sslobj.session_reu.
+1095:      if self._sslobj is None:.
+1096:d or unwrapped SSL socket.").
+1099:  return self._sslobj.read(len, b.
+1101:  return self._sslobj.read(len).
+1102:        except SSLError as x:.
+1103:f x.args[0] == SSL_ERROR_EOF and .
+1112:the underlying SSL channel.  Retu.
+1116:      if self._sslobj is None:.
+1117:d or unwrapped SSL socket.").
+1118:  return self._sslobj.write(data).
+1120:    @_sslcopydoc.
+1124:  return self._sslobj.getpeercert.
+1126:    @_sslcopydoc.
+1129:      if self._sslobj is None or .
+1129:not _ssl.HAS_NPN:.
+1132:  return self._sslobj.selected_np.
+1134:    @_sslcopydoc.
+1137:      if self._sslobj is None or .
+1137:not _ssl.HAS_ALPN:.
+1140:  return self._sslobj.selected_al.
+1142:    @_sslcopydoc.
+1145:      if self._sslobj is None:.
+1148:  return self._sslobj.cipher().
+1150:    @_sslcopydoc.
+1153:      if self._sslobj is None:.
+1156:  return self._sslobj.shared_ciph.
+1158:    @_sslcopydoc.
+1161:      if self._sslobj is None:.
+1164:  return self._sslobj.compression.
+1168:      if self._sslobj is not None.
+1173:  return self._sslobj.write(data).
+1179:      if self._sslobj is not None.
+1195:      if self._sslobj is not None.
+1213:      if self._sslobj is not None.
+1221:      if self._sslobj is not None.
+1236:      if self._sslobj is not None.
+1247:      if self._sslobj is not None.
+1255:      if self._sslobj is not None.
+1269:    @_sslcopydoc.
+1272:      if self._sslobj is not None.
+1273:  return self._sslobj.pending().
+1279:        self._sslobj = None.
+1282:    @_sslcopydoc.
+1284:      if self._sslobj:.
+1285:     s = self._sslobj.shutdown().
+1286:         self._sslobj = None.
+1289:ValueError("No SSL wrapper around.
+1291:    @_sslcopydoc.
+1293:      if self._sslobj:.
+1294:  return self._sslobj.verify_clie.
+1296:ValueError("No SSL wrapper around.
+1299:        self._sslobj = None.
+1302:    @_sslcopydoc.
+1309:         self._sslobj.do_handshak.
+1318:ected or self._sslobj is not None.
+1319:eady-connected SSLSocket!").
+1320:        self._sslobj = self.cont.
+1336:         self._sslobj = None.
+1341:        an SSL channel.""".
+1346:        an SSL channel.""".
+1352:        SSL channel, and t.
+1361:    @_sslcopydoc.
+1363:      if self._sslobj is not None.
+1364:  return self._sslobj.get_channel.
+1372:    @_sslcopydoc.
+1374:      if self._sslobj is not None.
+1375:  return self._sslobj.version().
+1381:SSLContext.sslsocket_class = .
+1381:SSLSocket.
+1382:SSLContext.sslobject_class = .
+1382:SSLObject.
+1387:               ssl_version=PROTOC.
+1397:    context = SSLContext(ssl_ver.
+1469:tificate(addr, ssl_version=PROTOC.
+1473:    If 'ssl_version' is sp.
+1480:stdlib_context(ssl_version,.
+1484:ocket(sock) as sslsock:.
+1485:     dercert = sslsock.getpeercer.

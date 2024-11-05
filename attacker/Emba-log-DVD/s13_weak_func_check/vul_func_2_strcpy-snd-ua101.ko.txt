@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-ua101.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m187) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msnd-ua101.ko[0m
+
+     cd4:	53110c21 	ubfiz	w1, w1, #15, #4
+     cd8:	2a022021 	orr	w1, w1, w2, lsl #8
+     cdc:	b902cb01 	str	w1, [x24, #712]
+     ce0:	79400800 	ldrh	w0, [x0, #4]
+     ce4:	12002800 	and	w0, w0, #0x7ff
+     ce8:	b902d700 	str	w0, [x24, #724]
+     cec:	79400b20 	ldrh	w0, [x25, #4]
+     cf0:	7101101f 	cmp	w0, #0x44
+     cf4:	54001000 	b.eq	ef4 <ua101_probe+0x58c>  // b.none
+     cf8:	90000000 	adrp	x0, 0 <usb_error_string>
+     cfc:	91000000 	add	x0, x0, #0x0
+     d00:	aa0003f6 	mov	x22, x0
+     d04:	f94043e2 	ldr	x2, [sp, #128]
+     d08:	aa1603e1 	mov	x1, x22
+     d0c:	b9400004 	ldr	w4, [x0]
+     d10:	9104c319 	add	x25, x24, #0x130
+     d14:	b8403003 	ldur	w3, [x0, #3]
+     d18:	91009040 	add	x0, x2, #0x24
+     d1c:	b9001444 	str	w4, [x2, #20]
+     d20:	b8017043 	stur	w3, [x2, #23]
+[31m     d24:	94000000 	bl	0 <strcpy>[0m
+     d28:	910223e0 	add	x0, sp, #0x88
+     d2c:	f9400303 	ldr	x3, [x24]
+--
+     df0:	aa1803e0 	mov	x0, x24
+     df4:	90000002 	adrp	x2, 0 <usb_error_string>
+     df8:	91000042 	add	x2, x2, #0x0
+     dfc:	97fffdd5 	bl	550 <alloc_stream_urbs>
+     e00:	2a0003e4 	mov	w4, w0
+     e04:	37f80960 	tbnz	w0, #31, f30 <ua101_probe+0x5c8>
+     e08:	f94043e0 	ldr	x0, [sp, #128]
+     e0c:	52800024 	mov	w4, #0x1                   	// #1
+     e10:	9100c305 	add	x5, x24, #0x30
+     e14:	2a0403e3 	mov	w3, w4
+     e18:	aa1603e1 	mov	x1, x22
+     e1c:	52800002 	mov	w2, #0x0                   	// #0
+     e20:	94000000 	bl	0 <snd_pcm_new>
+     e24:	2a0003e4 	mov	w4, w0
+     e28:	37f80840 	tbnz	w0, #31, f30 <ua101_probe+0x5c8>
+     e2c:	f9401b00 	ldr	x0, [x24, #48]
+     e30:	aa1603e1 	mov	x1, x22
+     e34:	f903b018 	str	x24, [x0, #1888]
+     e38:	f9401b00 	ldr	x0, [x24, #48]
+     e3c:	91019000 	add	x0, x0, #0x64
+[31m     e40:	94000000 	bl	0 <strcpy>[0m
+     e44:	f9401b00 	ldr	x0, [x24, #48]
+     e48:	52800001 	mov	w1, #0x0                   	// #0
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33msnd-ua101.ko[0m
+

@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mgit-http-push[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mgit-http-push[0m
+
+[31m   7bf28:	97fe3a7a 	bl	a910 <mmap64@plt>[0m
+   7bf2c:	f100027f 	cmp	x19, #0x0
+   7bf30:	ba410800 	ccmn	x0, #0x1, #0x0, eq  // eq = none
+   7bf34:	9a9f1000 	csel	x0, x0, xzr, ne  // ne = any
+   7bf38:	a94153f3 	ldp	x19, x20, [sp, #16]
+   7bf3c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   7bf40:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   7bf44:	d65f03c0 	ret
+   7bf48:	d0000680 	adrp	x0, 14d000 <error@@Base+0xa3df0>
+   7bf4c:	d2800001 	mov	x1, #0x0                   	// #0
+   7bf50:	91028000 	add	x0, x0, #0xa0
+   7bf54:	29078fe2 	stp	w2, w3, [sp, #60]
+   7bf58:	b90047e4 	str	w4, [sp, #68]
+   7bf5c:	f90027e5 	str	x5, [sp, #72]
+   7bf60:	97fea218 	bl	247c0 <memset@plt+0x19730>
+   7bf64:	29478fe2 	ldp	w2, w3, [sp, #60]
+   7bf68:	aa0003e6 	mov	x6, x0
+   7bf6c:	b94047e4 	ldr	w4, [sp, #68]
+   7bf70:	f94027e5 	ldr	x5, [sp, #72]
+   7bf74:	b5000080 	cbnz	x0, 7bf84 <memset@plt+0x70ef4>
+   7bf78:	92800000 	mov	x0, #0xffffffffffffffff    	// #-1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mgit-http-push[0m
+

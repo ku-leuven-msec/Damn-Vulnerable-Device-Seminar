@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mrtc-rv3029c2.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m121) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mrtc-rv3029c2.ko[0m
+
+     948:	d5384113 	mrs	x19, sp_el0
+     94c:	52800401 	mov	w1, #0x20                  	// #32
+     950:	f9403e80 	ldr	x0, [x20, #120]
+     954:	f9428e62 	ldr	x2, [x19, #1304]
+     958:	f9001fe2 	str	x2, [sp, #56]
+     95c:	d2800002 	mov	x2, #0x0                   	// #0
+     960:	9100dfe2 	add	x2, sp, #0x37
+     964:	d2800023 	mov	x3, #0x1                   	// #1
+     968:	f9400800 	ldr	x0, [x0, #16]
+     96c:	94000000 	bl	0 <regmap_bulk_read>
+     970:	2a0003e1 	mov	w1, w0
+     974:	93407c00 	sxtw	x0, w0
+     978:	37f80141 	tbnz	w1, #31, 9a0 <rv3029_hwmon_show_temp+0x78>
+     97c:	3940dfe4 	ldrb	w4, [sp, #55]
+     980:	129d4be3 	mov	w3, #0xffff15a0            	// #-60000
+     984:	52807d02 	mov	w2, #0x3e8                 	// #1000
+     988:	aa1503e0 	mov	x0, x21
+     98c:	90000001 	adrp	x1, 0 <rv3029_alarm_irq_enable>
+     990:	91000021 	add	x1, x1, #0x0
+     994:	1b020c82 	madd	w2, w4, w2, w3
+[31m     998:	94000000 	bl	0 <sprintf>[0m
+     99c:	93407c00 	sxtw	x0, w0
+     9a0:	91146273 	add	x19, x19, #0x518
+--
+    1198:	a90153f3 	stp	x19, x20, [sp, #16]
+    119c:	f90013f5 	str	x21, [sp, #32]
+    11a0:	d5384113 	mrs	x19, sp_el0
+    11a4:	aa0003f4 	mov	x20, x0
+    11a8:	aa0203f5 	mov	x21, x2
+    11ac:	aa1e03e0 	mov	x0, x30
+    11b0:	94000000 	bl	0 <_mcount>
+    11b4:	f9428e62 	ldr	x2, [x19, #1304]
+    11b8:	f9001fe2 	str	x2, [sp, #56]
+    11bc:	d2800002 	mov	x2, #0x0                   	// #0
+    11c0:	aa1403e0 	mov	x0, x20
+    11c4:	9100dfe1 	add	x1, sp, #0x37
+    11c8:	97fffe78 	bl	ba8 <rv3029_eeprom_read.constprop.0>
+    11cc:	37f80100 	tbnz	w0, #31, 11ec <rv3029_hwmon_show_update_interval+0x5c>
+    11d0:	3940dfe0 	ldrb	w0, [sp, #55]
+    11d4:	52800002 	mov	w2, #0x0                   	// #0
+    11d8:	370801e0 	tbnz	w0, #1, 1214 <rv3029_hwmon_show_update_interval+0x84>
+    11dc:	90000001 	adrp	x1, 0 <rv3029_alarm_irq_enable>
+    11e0:	aa1503e0 	mov	x0, x21
+    11e4:	91000021 	add	x1, x1, #0x0
+[31m    11e8:	94000000 	bl	0 <sprintf>[0m
+    11ec:	91146273 	add	x19, x19, #0x518
+    11f0:	93407c00 	sxtw	x0, w0
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m2[0m times [0;33mrtc-rv3029c2.ko[0m
+

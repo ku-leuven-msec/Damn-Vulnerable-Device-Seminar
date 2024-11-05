@@ -1,0 +1,74 @@
+[[0;33m*[0m] Binary protection state of [0;33mledtrig-transient.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m76) Symbols
+
+
+[[0;33m*[0m] Function [0;33msprintf[0m tear down of [0;33mledtrig-transient.ko[0m
+
+ 12c:	d65f03c0 	ret
+ 130:	94000000 	bl	0 <__stack_chk_fail>
+ 134:	d503201f 	nop
+
+0000000000000138 <transient_state_show>:
+ 138:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 13c:	910003fd 	mov	x29, sp
+ 140:	a90153f3 	stp	x19, x20, [sp, #16]
+ 144:	aa0003f4 	mov	x20, x0
+ 148:	aa0203f3 	mov	x19, x2
+ 14c:	aa1e03e0 	mov	x0, x30
+ 150:	94000000 	bl	0 <_mcount>
+ 154:	f9403e82 	ldr	x2, [x20, #120]
+ 158:	aa1303e0 	mov	x0, x19
+ 15c:	90000001 	adrp	x1, 0 <transient_state_store>
+ 160:	91000021 	add	x1, x1, #0x0
+ 164:	f9409442 	ldr	x2, [x2, #296]
+ 168:	b9400442 	ldr	w2, [x2, #4]
+ 16c:	7103fc5f 	cmp	w2, #0xff
+ 170:	1a9f17e2 	cset	w2, eq  // eq = none
+[31m 174:	94000000 	bl	0 <sprintf>[0m
+ 178:	d2800040 	mov	x0, #0x2                   	// #2
+ 17c:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 180:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 184:	d65f03c0 	ret
+
+0000000000000188 <transient_duration_show>:
+ 188:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 18c:	910003fd 	mov	x29, sp
+ 190:	a90153f3 	stp	x19, x20, [sp, #16]
+ 194:	aa0003f4 	mov	x20, x0
+ 198:	aa0203f3 	mov	x19, x2
+ 19c:	aa1e03e0 	mov	x0, x30
+ 1a0:	94000000 	bl	0 <_mcount>
+ 1a4:	f9403e82 	ldr	x2, [x20, #120]
+ 1a8:	aa1303e0 	mov	x0, x19
+ 1ac:	90000001 	adrp	x1, 0 <transient_state_store>
+ 1b0:	91000021 	add	x1, x1, #0x0
+ 1b4:	f9409442 	ldr	x2, [x2, #296]
+ 1b8:	f9400842 	ldr	x2, [x2, #16]
+[31m 1bc:	94000000 	bl	0 <sprintf>[0m
+ 1c0:	93407c00 	sxtw	x0, w0
+ 1c4:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 1c8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 1cc:	d65f03c0 	ret
+
+00000000000001d0 <transient_activate_show>:
+ 1d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 1d4:	910003fd 	mov	x29, sp
+ 1d8:	a90153f3 	stp	x19, x20, [sp, #16]
+ 1dc:	aa0003f4 	mov	x20, x0
+ 1e0:	aa0203f3 	mov	x19, x2
+ 1e4:	aa1e03e0 	mov	x0, x30
+ 1e8:	94000000 	bl	0 <_mcount>
+ 1ec:	f9403e82 	ldr	x2, [x20, #120]
+ 1f0:	aa1303e0 	mov	x0, x19
+ 1f4:	90000001 	adrp	x1, 0 <transient_state_store>
+ 1f8:	91000021 	add	x1, x1, #0x0
+ 1fc:	f9409442 	ldr	x2, [x2, #296]
+ 200:	b9400042 	ldr	w2, [x2]
+[31m 204:	94000000 	bl	0 <sprintf>[0m
+ 208:	93407c00 	sxtw	x0, w0
+ 20c:	a94153f3 	ldp	x19, x20, [sp, #16]
+
+[[0;33m*[0m] Function [0;33msprintf[0m used [0;33m3[0m times [0;33mledtrig-transient.ko[0m
+

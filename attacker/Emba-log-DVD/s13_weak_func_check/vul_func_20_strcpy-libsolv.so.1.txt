@@ -1,0 +1,374 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibsolv.so.1[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibsolv.so.1[0m
+
+    d46c:	97fff931 	bl	b930 <solv_extend_realloc@plt>
+    d470:	f9000a80 	str	x0, [x20, #16]
+    d474:	b40000f8 	cbz	x24, d490 <stringpool_init@@SOLV_1.0+0x90>
+    d478:	aa1803e1 	mov	x1, x24
+    d47c:	d280ffe3 	mov	x3, #0x7ff                 	// #2047
+    d480:	d2800082 	mov	x2, #0x4                   	// #4
+    d484:	d2800000 	mov	x0, #0x0                   	// #0
+    d488:	97fff92a 	bl	b930 <solv_extend_realloc@plt>
+    d48c:	aa0003f3 	mov	x19, x0
+    d490:	f94002c1 	ldr	x1, [x22]
+    d494:	f9000293 	str	x19, [x20]
+    d498:	b9001a9f 	str	wzr, [x20, #24]
+    d49c:	b4000401 	cbz	x1, d51c <stringpool_init@@SOLV_1.0+0x11c>
+    d4a0:	aa1603f8 	mov	x24, x22
+    d4a4:	52800000 	mov	w0, #0x0                   	// #0
+    d4a8:	52800015 	mov	w21, #0x0                   	// #0
+    d4ac:	d2800017 	mov	x23, #0x0                   	// #0
+    d4b0:	f9400a82 	ldr	x2, [x20, #16]
+    d4b4:	110006b5 	add	w21, w21, #0x1
+    d4b8:	8b204040 	add	x0, x2, w0, uxtw
+[31m    d4bc:	97fff925 	bl	b950 <strcpy@plt>[0m
+    d4c0:	f9400281 	ldr	x1, [x20]
+    d4c4:	f9400300 	ldr	x0, [x24]
+--
+   1e7e8:	52800701 	mov	w1, #0x38                  	// #56
+   1e7ec:	aa0003e3 	mov	x3, x0
+   1e7f0:	aa1a03e0 	mov	x0, x26
+   1e7f4:	f90033e3 	str	x3, [sp, #96]
+   1e7f8:	9b215481 	smaddl	x1, w4, w1, x21
+   1e7fc:	97ffb149 	bl	ad20 <pool_solvable2str@plt>
+   1e800:	aa0003e4 	mov	x4, x0
+   1e804:	f94033e3 	ldr	x3, [sp, #96]
+   1e808:	aa1a03e0 	mov	x0, x26
+   1e80c:	f9403fe2 	ldr	x2, [sp, #120]
+   1e810:	52808001 	mov	w1, #0x400                 	// #1024
+   1e814:	97ffb17b 	bl	ae00 <pool_debug@plt>
+   1e818:	b940c3e2 	ldr	w2, [sp, #192]
+   1e81c:	17ffff69 	b	1e5c0 <transaction_print@@SOLV_1.0+0x170>
+   1e820:	394363e3 	ldrb	w3, [sp, #216]
+   1e824:	910363e1 	add	x1, sp, #0xd8
+   1e828:	8b37c020 	add	x0, x1, w23, sxtw
+   1e82c:	35000bc3 	cbnz	w3, 1e9a4 <transaction_print@@SOLV_1.0+0x554>
+   1e830:	2a0203f7 	mov	w23, w2
+   1e834:	aa1503e1 	mov	x1, x21
+[31m   1e838:	97ffb446 	bl	b950 <strcpy@plt>[0m
+   1e83c:	b940c3e2 	ldr	w2, [sp, #192]
+   1e840:	17ffff60 	b	1e5c0 <transaction_print@@SOLV_1.0+0x170>
+--
+   2db94:	0b000273 	add	w19, w19, w0
+   2db98:	11000661 	add	w1, w19, #0x1
+   2db9c:	aa1a03e0 	mov	x0, x26
+   2dba0:	97ff7654 	bl	b4f0 <pool_alloctmpspace@plt>
+   2dba4:	aa0003f3 	mov	x19, x0
+   2dba8:	aa0003fa 	mov	x26, x0
+   2dbac:	35000395 	cbnz	w21, 2dc1c <pool_tmpjoin@@SOLV_1.0+0xec>
+   2dbb0:	35000159 	cbnz	w25, 2dbd8 <pool_tmpjoin@@SOLV_1.0+0xa8>
+   2dbb4:	350001d4 	cbnz	w20, 2dbec <pool_tmpjoin@@SOLV_1.0+0xbc>
+   2dbb8:	3900035f 	strb	wzr, [x26]
+   2dbbc:	aa1303e0 	mov	x0, x19
+   2dbc0:	a94153f3 	ldp	x19, x20, [sp, #16]
+   2dbc4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   2dbc8:	a94363f7 	ldp	x23, x24, [sp, #48]
+   2dbcc:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   2dbd0:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   2dbd4:	d65f03c0 	ret
+   2dbd8:	aa1a03e0 	mov	x0, x26
+   2dbdc:	aa1703e1 	mov	x1, x23
+   2dbe0:	8b39c35a 	add	x26, x26, w25, sxtw
+[31m   2dbe4:	97ff775b 	bl	b950 <strcpy@plt>[0m
+   2dbe8:	34fffe94 	cbz	w20, 2dbb8 <pool_tmpjoin@@SOLV_1.0+0x88>
+   2dbec:	aa1a03e0 	mov	x0, x26
+   2dbf0:	8b34c35a 	add	x26, x26, w20, sxtw
+   2dbf4:	aa1603e1 	mov	x1, x22
+[31m   2dbf8:	97ff7756 	bl	b950 <strcpy@plt>[0m
+   2dbfc:	aa1303e0 	mov	x0, x19
+   2dc00:	3900035f 	strb	wzr, [x26]
+   2dc04:	a94153f3 	ldp	x19, x20, [sp, #16]
+   2dc08:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   2dc0c:	a94363f7 	ldp	x23, x24, [sp, #48]
+   2dc10:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   2dc14:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   2dc18:	d65f03c0 	ret
+   2dc1c:	8b35c01a 	add	x26, x0, w21, sxtw
+   2dc20:	aa1803e1 	mov	x1, x24
+[31m   2dc24:	97ff774b 	bl	b950 <strcpy@plt>[0m
+   2dc28:	34fffc79 	cbz	w25, 2dbb4 <pool_tmpjoin@@SOLV_1.0+0x84>
+   2dc2c:	17ffffeb 	b	2dbd8 <pool_tmpjoin@@SOLV_1.0+0xa8>
+--
+   2dcf8:	540008c0 	b.eq	2de10 <pool_tmpappend@@SOLV_1.0+0x1d0>  // b.none
+   2dcfc:	528001a2 	mov	w2, #0xd                   	// #13
+   2dd00:	51000442 	sub	w2, w2, #0x1
+   2dd04:	6b02003f 	cmp	w1, w2
+   2dd08:	540000e0 	b.eq	2dd24 <pool_tmpappend@@SOLV_1.0+0xe4>  // b.none
+   2dd0c:	93407c5b 	sxtw	x27, w2
+   2dd10:	9100d360 	add	x0, x27, #0x34
+   2dd14:	f8607aa0 	ldr	x0, [x21, x0, lsl #3]
+   2dd18:	eb00027f 	cmp	x19, x0
+   2dd1c:	54fffd01 	b.ne	2dcbc <pool_tmpappend@@SOLV_1.0+0x7c>  // b.any
+   2dd20:	14000022 	b	2dda8 <pool_tmpappend@@SOLV_1.0+0x168>
+   2dd24:	2a1c03e1 	mov	w1, w28
+   2dd28:	aa1503e0 	mov	x0, x21
+   2dd2c:	97ff75f1 	bl	b4f0 <pool_alloctmpspace@plt>
+   2dd30:	aa0003f4 	mov	x20, x0
+   2dd34:	aa0003fb 	mov	x27, x0
+   2dd38:	340000d7 	cbz	w23, 2dd50 <pool_tmpappend@@SOLV_1.0+0x110>
+   2dd3c:	eb00027f 	cmp	x19, x0
+   2dd40:	54000060 	b.eq	2dd4c <pool_tmpappend@@SOLV_1.0+0x10c>  // b.none
+   2dd44:	aa1303e1 	mov	x1, x19
+[31m   2dd48:	97ff7702 	bl	b950 <strcpy@plt>[0m
+   2dd4c:	8b37c29b 	add	x27, x20, w23, sxtw
+   2dd50:	3500017a 	cbnz	w26, 2dd7c <pool_tmpappend@@SOLV_1.0+0x13c>
+   2dd54:	350001f6 	cbnz	w22, 2dd90 <pool_tmpappend@@SOLV_1.0+0x150>
+   2dd58:	3900037f 	strb	wzr, [x27]
+   2dd5c:	aa1403e0 	mov	x0, x20
+   2dd60:	a94153f3 	ldp	x19, x20, [sp, #16]
+   2dd64:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   2dd68:	a94363f7 	ldp	x23, x24, [sp, #48]
+   2dd6c:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   2dd70:	a94573fb 	ldp	x27, x28, [sp, #80]
+   2dd74:	a8c77bfd 	ldp	x29, x30, [sp], #112
+   2dd78:	d65f03c0 	ret
+   2dd7c:	aa1b03e0 	mov	x0, x27
+   2dd80:	aa1803e1 	mov	x1, x24
+   2dd84:	8b3ac37b 	add	x27, x27, w26, sxtw
+[31m   2dd88:	97ff76f2 	bl	b950 <strcpy@plt>[0m
+   2dd8c:	34fffe76 	cbz	w22, 2dd58 <pool_tmpappend@@SOLV_1.0+0x118>
+   2dd90:	aa1b03e0 	mov	x0, x27
+   2dd94:	aa1903e1 	mov	x1, x25
+   2dd98:	8b36c37b 	add	x27, x27, w22, sxtw
+[31m   2dd9c:	97ff76ed 	bl	b950 <strcpy@plt>[0m
+   2dda0:	17ffffee 	b	2dd58 <pool_tmpappend@@SOLV_1.0+0x118>
+   2dda4:	d28001fb 	mov	x27, #0xf                   	// #15
+--
+   3fdec:	0b000273 	add	w19, w19, w0
+   3fdf0:	11000673 	add	w19, w19, #0x1
+   3fdf4:	93407e60 	sxtw	x0, w19
+   3fdf8:	97ff2ca2 	bl	b080 <solv_malloc@plt>
+   3fdfc:	aa0003f3 	mov	x19, x0
+   3fe00:	aa0003fa 	mov	x26, x0
+   3fe04:	35000395 	cbnz	w21, 3fe74 <solv_dupjoin@@SOLV_1.0+0xe4>
+   3fe08:	35000159 	cbnz	w25, 3fe30 <solv_dupjoin@@SOLV_1.0+0xa0>
+   3fe0c:	350001d4 	cbnz	w20, 3fe44 <solv_dupjoin@@SOLV_1.0+0xb4>
+   3fe10:	3900035f 	strb	wzr, [x26]
+   3fe14:	aa1303e0 	mov	x0, x19
+   3fe18:	a94153f3 	ldp	x19, x20, [sp, #16]
+   3fe1c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   3fe20:	a94363f7 	ldp	x23, x24, [sp, #48]
+   3fe24:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   3fe28:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   3fe2c:	d65f03c0 	ret
+   3fe30:	aa1a03e0 	mov	x0, x26
+   3fe34:	aa1703e1 	mov	x1, x23
+   3fe38:	8b39c35a 	add	x26, x26, w25, sxtw
+[31m   3fe3c:	97ff2ec5 	bl	b950 <strcpy@plt>[0m
+   3fe40:	34fffe94 	cbz	w20, 3fe10 <solv_dupjoin@@SOLV_1.0+0x80>
+   3fe44:	aa1a03e0 	mov	x0, x26
+   3fe48:	8b34c35a 	add	x26, x26, w20, sxtw
+   3fe4c:	aa1603e1 	mov	x1, x22
+[31m   3fe50:	97ff2ec0 	bl	b950 <strcpy@plt>[0m
+   3fe54:	aa1303e0 	mov	x0, x19
+   3fe58:	3900035f 	strb	wzr, [x26]
+   3fe5c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   3fe60:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   3fe64:	a94363f7 	ldp	x23, x24, [sp, #48]
+   3fe68:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   3fe6c:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   3fe70:	d65f03c0 	ret
+   3fe74:	8b35c01a 	add	x26, x0, w21, sxtw
+   3fe78:	aa1803e1 	mov	x1, x24
+[31m   3fe7c:	97ff2eb5 	bl	b950 <strcpy@plt>[0m
+   3fe80:	34fffc79 	cbz	w25, 3fe0c <solv_dupjoin@@SOLV_1.0+0x7c>
+   3fe84:	17ffffeb 	b	3fe30 <solv_dupjoin@@SOLV_1.0+0xa0>
+--
+   41d00:	d2801f43 	mov	x3, #0xfa                  	// #250
+   41d04:	b8403108 	ldur	w8, [x8, #3]
+   41d08:	910004e2 	add	x2, x7, #0x1
+   41d0c:	b9000080 	str	w0, [x4]
+   41d10:	aa1403e1 	mov	x1, x20
+   41d14:	f94043e0 	ldr	x0, [sp, #128]
+   41d18:	b8003088 	stur	w8, [x4, #3]
+   41d1c:	f90047e7 	str	x7, [sp, #136]
+   41d20:	97ff2484 	bl	af30 <__memcpy_chk@plt>
+   41d24:	f94047e7 	ldr	x7, [sp, #136]
+   41d28:	cb1b0282 	sub	x2, x20, x27
+   41d2c:	f9403bf4 	ldr	x20, [sp, #112]
+   41d30:	91001ce0 	add	x0, x7, #0x7
+   41d34:	aa1b03e1 	mov	x1, x27
+   41d38:	8b000280 	add	x0, x20, x0
+   41d3c:	97ff2365 	bl	aad0 <memcpy@plt>
+   41d40:	cb1b0340 	sub	x0, x26, x27
+   41d44:	aa1a03e1 	mov	x1, x26
+   41d48:	91001c00 	add	x0, x0, #0x7
+   41d4c:	8b000280 	add	x0, x20, x0
+[31m   41d50:	97ff2700 	bl	b950 <strcpy@plt>[0m
+   41d54:	aa1403e1 	mov	x1, x20
+   41d58:	aa1c03e0 	mov	x0, x28
+--
+   41eb4:	7100003f 	cmp	w1, #0x0
+   41eb8:	54fffead 	b.le	41e8c <solv_replacebadutf8@@SOLV_1.0+0x1c7c>
+   41ebc:	5280009b 	mov	w27, #0x4                   	// #4
+   41ec0:	17ffff57 	b	41c1c <solv_replacebadutf8@@SOLV_1.0+0x1a0c>
+   41ec4:	39400400 	ldrb	w0, [x0, #1]
+   41ec8:	7101b81f 	cmp	w0, #0x6e
+   41ecc:	54fffbe1 	b.ne	41e48 <solv_replacebadutf8@@SOLV_1.0+0x1c38>  // b.any
+   41ed0:	5280005b 	mov	w27, #0x2                   	// #2
+   41ed4:	b8404f54 	ldr	w20, [x26, #4]!
+   41ed8:	35fff994 	cbnz	w20, 41e08 <solv_replacebadutf8@@SOLV_1.0+0x1bf8>
+   41edc:	17ffff50 	b	41c1c <solv_replacebadutf8@@SOLV_1.0+0x1a0c>
+   41ee0:	cb14035b 	sub	x27, x26, x20
+   41ee4:	aa1403e1 	mov	x1, x20
+   41ee8:	f9403bf4 	ldr	x20, [sp, #112]
+   41eec:	aa1b03e2 	mov	x2, x27
+   41ef0:	d2802003 	mov	x3, #0x100                 	// #256
+   41ef4:	aa1403e0 	mov	x0, x20
+   41ef8:	97ff240e 	bl	af30 <__memcpy_chk@plt>
+   41efc:	91001b41 	add	x1, x26, #0x6
+   41f00:	8b1b0280 	add	x0, x20, x27
+[31m   41f04:	97ff2693 	bl	b950 <strcpy@plt>[0m
+   41f08:	aa1403e1 	mov	x1, x20
+   41f0c:	aa1c03e0 	mov	x0, x28
+--
+   44ba8:	2a1703f9 	mov	w25, w23
+   44bac:	b9415e81 	ldr	w1, [x20, #348]
+   44bb0:	2a0003f3 	mov	w19, w0
+   44bb4:	34000141 	cbz	w1, 44bdc <pool_solvable2str@@SOLV_1.0+0xac>
+   44bb8:	aa1603e0 	mov	x0, x22
+   44bbc:	528005a1 	mov	w1, #0x2d                  	// #45
+   44bc0:	97ff1a08 	bl	b3e0 <strrchr@plt>
+   44bc4:	b40000c0 	cbz	x0, 44bdc <pool_solvable2str@@SOLV_1.0+0xac>
+   44bc8:	52800741 	mov	w1, #0x3a                  	// #58
+   44bcc:	97ff1b15 	bl	b820 <strchr@plt>
+   44bd0:	f100001f 	cmp	x0, #0x0
+   44bd4:	cb160000 	sub	x0, x0, x22
+   44bd8:	1a800273 	csel	w19, w19, w0, eq  // eq = none
+   44bdc:	0b170261 	add	w1, w19, w23
+   44be0:	aa1403e0 	mov	x0, x20
+   44be4:	0b1b0021 	add	w1, w1, w27
+   44be8:	11000c21 	add	w1, w1, #0x3
+   44bec:	97ff1a41 	bl	b4f0 <pool_alloctmpspace@plt>
+   44bf0:	aa1c03e1 	mov	x1, x28
+   44bf4:	aa0003fc 	mov	x28, x0
+[31m   44bf8:	97ff1b56 	bl	b950 <strcpy@plt>[0m
+   44bfc:	35000533 	cbnz	w19, 44ca0 <pool_solvable2str@@SOLV_1.0+0x170>
+   44c00:	b9407e81 	ldr	w1, [x20, #124]
+   44c04:	340001bb 	cbz	w27, 44c38 <pool_solvable2str@@SOLV_1.0+0x108>
+   44c08:	0b130320 	add	w0, w25, w19
+   44c0c:	71000c3f 	cmp	w1, #0x3
+   44c10:	1a9f07e1 	cset	w1, ne  // ne = any
+   44c14:	93407e73 	sxtw	x19, w19
+   44c18:	1100b421 	add	w1, w1, #0x2d
+   44c1c:	91000673 	add	x19, x19, #0x1
+   44c20:	3820cb81 	strb	w1, [x28, w0, sxtw]
+   44c24:	8b39c273 	add	x19, x19, w25, sxtw
+   44c28:	aa1a03e1 	mov	x1, x26
+   44c2c:	8b130380 	add	x0, x28, x19
+[31m   44c30:	97ff1b48 	bl	b950 <strcpy@plt>[0m
+   44c34:	b9407e81 	ldr	w1, [x20, #124]
+   44c38:	7100103f 	cmp	w1, #0x4
+--
+   45848:	b4fffb63 	cbz	x3, 457b4 <solvable_lookup_location@@SOLV_1.0+0x184>
+   4584c:	a9025bf5 	stp	x21, x22, [sp, #32]
+   45850:	f9400c78 	ldr	x24, [x3, #24]
+   45854:	17ffff87 	b	45670 <solvable_lookup_location@@SOLV_1.0+0x40>
+   45858:	aa1903e6 	mov	x6, x25
+   4585c:	aa1603e5 	mov	x5, x22
+   45860:	aa1703e4 	mov	x4, x23
+   45864:	92800002 	mov	x2, #0xffffffffffffffff    	// #-1
+   45868:	52800021 	mov	w1, #0x1                   	// #1
+   4586c:	f0000183 	adrp	x3, 78000 <pool_add_userinstalled_jobs@@SOLV_1.0+0x39f0>
+   45870:	913d4063 	add	x3, x3, #0xf50
+   45874:	97ff14cf 	bl	abb0 <__sprintf_chk@plt>
+   45878:	aa1303e0 	mov	x0, x19
+   4587c:	a94153f3 	ldp	x19, x20, [sp, #16]
+   45880:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   45884:	a94363f7 	ldp	x23, x24, [sp, #48]
+   45888:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   4588c:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   45890:	d65f03c0 	ret
+   45894:	aa1603e1 	mov	x1, x22
+[31m   45898:	97ff182e 	bl	b950 <strcpy@plt>[0m
+   4589c:	aa1303e0 	mov	x0, x19
+   458a0:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   67bc4:	2a1803e2 	mov	w2, w24
+   67bc8:	aa1c03e0 	mov	x0, x28
+   67bcc:	f9003be3 	str	x3, [sp, #112]
+   67bd0:	97fe8f64 	bl	b960 <pool_match_nevr_rel@plt>
+   67bd4:	f9403be3 	ldr	x3, [sp, #112]
+   67bd8:	17ffff33 	b	678a4 <selection_make@@SOLV_1.0+0x534>
+   67bdc:	93407eb8 	sxtw	x24, w21
+   67be0:	aa1b03e0 	mov	x0, x27
+   67be4:	97fe8be7 	bl	ab80 <strlen@plt>
+   67be8:	91000b01 	add	x1, x24, #0x2
+   67bec:	8b000020 	add	x0, x1, x0
+   67bf0:	97fe8d24 	bl	b080 <solv_malloc@plt>
+   67bf4:	110006a2 	add	w2, w21, #0x1
+   67bf8:	aa1603e1 	mov	x1, x22
+   67bfc:	aa0003f5 	mov	x21, x0
+   67c00:	93407c42 	sxtw	x2, w2
+   67c04:	97fe8ffb 	bl	bbf0 <strncpy@plt>
+   67c08:	91000700 	add	x0, x24, #0x1
+   67c0c:	aa1b03e1 	mov	x1, x27
+   67c10:	8b0002a0 	add	x0, x21, x0
+[31m   67c14:	97fe8f4f 	bl	b950 <strcpy@plt>[0m
+   67c18:	aa1503e1 	mov	x1, x21
+   67c1c:	aa1c03e0 	mov	x0, x28
+--
+   74e24:	72001f44 	ands	w4, w26, #0xff
+   74e28:	54000e60 	b.eq	74ff4 <pool_add_userinstalled_jobs@@SOLV_1.0+0x9e4>  // b.none
+   74e2c:	2a0203e7 	mov	w7, w2
+   74e30:	52800004 	mov	w4, #0x0                   	// #0
+   74e34:	f9406a82 	ldr	x2, [x20, #208]
+   74e38:	937e7f01 	sbfiz	x1, x24, #2, #32
+   74e3c:	f94037e0 	ldr	x0, [sp, #104]
+   74e40:	8b010041 	add	x1, x2, x1
+   74e44:	b838d85a 	str	w26, [x2, w24, sxtw #2]
+   74e48:	71000f9f 	cmp	w28, #0x3
+   74e4c:	11000b18 	add	w24, w24, #0x2
+   74e50:	8b1b0000 	add	x0, x0, x27
+   74e54:	b900043c 	str	w28, [x1, #4]
+   74e58:	540009c0 	b.eq	74f90 <pool_add_userinstalled_jobs@@SOLV_1.0+0x980>  // b.none
+   74e5c:	7100179f 	cmp	w28, #0x5
+   74e60:	54000860 	b.eq	74f6c <pool_add_userinstalled_jobs@@SOLV_1.0+0x95c>  // b.none
+   74e64:	71000b9f 	cmp	w28, #0x2
+   74e68:	54000820 	b.eq	74f6c <pool_add_userinstalled_jobs@@SOLV_1.0+0x95c>  // b.none
+   74e6c:	0b07035a 	add	w26, w26, w7
+   74e70:	aa1303e1 	mov	x1, x19
+[31m   74e74:	97fe5ab7 	bl	b950 <strcpy@plt>[0m
+   74e78:	93407f5b 	sxtw	x27, w26
+   74e7c:	aa1b03e1 	mov	x1, x27
+--
+   74f24:	97fe5977 	bl	b500 <solv_realloc@plt>
+   74f28:	aa0003e1 	mov	x1, x0
+   74f2c:	f9406a82 	ldr	x2, [x20, #208]
+   74f30:	f9403be0 	ldr	x0, [sp, #112]
+   74f34:	b838685f 	str	wzr, [x2, x24]
+   74f38:	f9006e81 	str	x1, [x20, #216]
+   74f3c:	97fe5abd 	bl	ba30 <queue_free@plt>
+   74f40:	a94363f7 	ldp	x23, x24, [sp, #48]
+   74f44:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   74f48:	a94573fb 	ldp	x27, x28, [sp, #80]
+   74f4c:	f9406a93 	ldr	x19, [x20, #208]
+   74f50:	17fffef2 	b	74b18 <pool_add_userinstalled_jobs@@SOLV_1.0+0x508>
+   74f54:	aa1a03e1 	mov	x1, x26
+   74f58:	aa1703e0 	mov	x0, x23
+   74f5c:	97fe598d 	bl	b590 <strcmp@plt>
+   74f60:	350003c0 	cbnz	w0, 74fd8 <pool_add_userinstalled_jobs@@SOLV_1.0+0x9c8>
+   74f64:	321f0318 	orr	w24, w24, #0x2
+   74f68:	17ffff6a 	b	74d10 <pool_add_userinstalled_jobs@@SOLV_1.0+0x700>
+   74f6c:	0b04035a 	add	w26, w26, w4
+   74f70:	aa1303e1 	mov	x1, x19
+[31m   74f74:	97fe5a77 	bl	b950 <strcpy@plt>[0m
+   74f78:	f94037e0 	ldr	x0, [sp, #104]
+   74f7c:	93407f5b 	sxtw	x27, w26
+   74f80:	aa1b03e1 	mov	x1, x27
+   74f84:	8b1b0000 	add	x0, x0, x27
+   74f88:	381ff01f 	sturb	wzr, [x0, #-1]
+   74f8c:	17ffff89 	b	74db0 <pool_add_userinstalled_jobs@@SOLV_1.0+0x7a0>
+   74f90:	91000661 	add	x1, x19, #0x1
+   74f94:	b9007be4 	str	w4, [sp, #120]
+[31m   74f98:	97fe5a6e 	bl	b950 <strcpy@plt>[0m
+   74f9c:	b9407be4 	ldr	w4, [sp, #120]
+   74fa0:	f94037e1 	ldr	x1, [sp, #104]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m20[0m times [0;33mlibsolv.so.1[0m
+

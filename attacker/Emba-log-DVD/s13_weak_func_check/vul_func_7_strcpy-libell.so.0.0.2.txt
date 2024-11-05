@@ -1,0 +1,178 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibell.so.0.0.2[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mlibell.so.0.0.2[0m
+
+   22d50:	f94037e3 	ldr	x3, [sp, #104]
+   22d54:	540004a0 	b.eq	22de8 <l_dbus_message_set_arguments_valist@@ELL_0.10+0x1778>  // b.none
+   22d58:	91000f75 	add	x21, x27, #0x3
+   22d5c:	927e76b5 	and	x21, x21, #0xfffffffc
+   22d60:	910016bc 	add	x28, x21, #0x5
+   22d64:	8b00039c 	add	x28, x28, x0
+   22d68:	eb03039f 	cmp	x28, x3
+   22d6c:	54000d88 	b.hi	22f1c <l_dbus_message_set_arguments_valist@@ELL_0.10+0x18ac>  // b.pmore
+   22d70:	eb15037f 	cmp	x27, x21
+   22d74:	540000c0 	b.eq	22d8c <l_dbus_message_set_arguments_valist@@ELL_0.10+0x171c>  // b.none
+   22d78:	8b1b0340 	add	x0, x26, x27
+   22d7c:	cb1b02a2 	sub	x2, x21, x27
+   22d80:	52800001 	mov	w1, #0x0                   	// #0
+   22d84:	97ffa907 	bl	d1a0 <memset@plt>
+   22d88:	f940067a 	ldr	x26, [x19, #8]
+   22d8c:	f9000e7c 	str	x28, [x19, #24]
+   22d90:	b8356b58 	str	w24, [x26, x21]
+   22d94:	910012a0 	add	x0, x21, #0x4
+   22d98:	8b000340 	add	x0, x26, x0
+   22d9c:	aa1603e1 	mov	x1, x22
+[31m   22da0:	97ffab30 	bl	da60 <strcpy@plt>[0m
+   22da4:	b9400ae1 	ldr	w1, [x23, #8]
+   22da8:	52800020 	mov	w0, #0x1                   	// #1
+--
+   22dcc:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   22dd0:	17ffffb5 	b	22ca4 <l_dbus_message_set_arguments_valist@@ELL_0.10+0x1634>
+   22dd4:	f9400260 	ldr	x0, [x19]
+   22dd8:	2a1503e1 	mov	w1, w21
+   22ddc:	a90573fb 	stp	x27, x28, [sp, #80]
+   22de0:	97ffa818 	bl	ce40 <l_string_append_c@plt>
+   22de4:	17ffffcb 	b	22d10 <l_dbus_message_set_arguments_valist@@ELL_0.10+0x16a0>
+   22de8:	92407f75 	and	x21, x27, #0xffffffff
+   22dec:	91000abc 	add	x28, x21, #0x2
+   22df0:	8b00039c 	add	x28, x28, x0
+   22df4:	eb03039f 	cmp	x28, x3
+   22df8:	540006a8 	b.hi	22ecc <l_dbus_message_set_arguments_valist@@ELL_0.10+0x185c>  // b.pmore
+   22dfc:	eb15037f 	cmp	x27, x21
+   22e00:	540004e1 	b.ne	22e9c <l_dbus_message_set_arguments_valist@@ELL_0.10+0x182c>  // b.any
+   22e04:	f9000e7c 	str	x28, [x19, #24]
+   22e08:	aa1603e1 	mov	x1, x22
+   22e0c:	38356b58 	strb	w24, [x26, x21]
+   22e10:	910006b5 	add	x21, x21, #0x1
+   22e14:	f9400660 	ldr	x0, [x19, #8]
+   22e18:	8b150000 	add	x0, x0, x21
+[31m   22e1c:	97ffab11 	bl	da60 <strcpy@plt>[0m
+   22e20:	17ffffe1 	b	22da4 <l_dbus_message_set_arguments_valist@@ELL_0.10+0x1734>
+   22e24:	a9446bf9 	ldp	x25, x26, [sp, #64]
+--
+   23108:	7101d81f 	cmp	w0, #0x76
+   2310c:	54fffe41 	b.ne	230d4 <l_dbus_message_set_arguments_valist@@ELL_0.10+0x1a64>  // b.any
+   23110:	aa1503e0 	mov	x0, x21
+   23114:	97ffa67f 	bl	cb10 <strlen@plt>
+   23118:	aa0003f7 	mov	x23, x0
+   2311c:	a9410a80 	ldp	x0, x2, [x20, #16]
+   23120:	92407c53 	and	x19, x2, #0xffffffff
+   23124:	91000a76 	add	x22, x19, #0x2
+   23128:	8b1702d6 	add	x22, x22, x23
+   2312c:	eb0002df 	cmp	x22, x0
+   23130:	f9400680 	ldr	x0, [x20, #8]
+   23134:	54000468 	b.hi	231c0 <l_dbus_message_set_arguments_valist@@ELL_0.10+0x1b50>  // b.pmore
+   23138:	eb02027f 	cmp	x19, x2
+   2313c:	540002a1 	b.ne	23190 <l_dbus_message_set_arguments_valist@@ELL_0.10+0x1b20>  // b.any
+   23140:	f9000e96 	str	x22, [x20, #24]
+   23144:	aa1503e1 	mov	x1, x21
+   23148:	38336817 	strb	w23, [x0, x19]
+   2314c:	91000660 	add	x0, x19, #0x1
+   23150:	f9400682 	ldr	x2, [x20, #8]
+   23154:	8b000040 	add	x0, x2, x0
+[31m   23158:	97ffaa42 	bl	da60 <strcpy@plt>[0m
+   2315c:	aa1303e2 	mov	x2, x19
+   23160:	aa1503e1 	mov	x1, x21
+--
+   25b50:	97ff9bf0 	bl	cb10 <strlen@plt>
+   25b54:	aa0003fa 	mov	x26, x0
+   25b58:	aa1403e0 	mov	x0, x20
+   25b5c:	97ff9bed 	bl	cb10 <strlen@plt>
+   25b60:	0b000340 	add	w0, w26, w0
+   25b64:	11000800 	add	w0, w0, #0x2
+   25b68:	91006000 	add	x0, x0, #0x18
+   25b6c:	97ff9c61 	bl	ccf0 <l_malloc@plt>
+   25b70:	aa0003fa 	mov	x26, x0
+   25b74:	aa1503e0 	mov	x0, x21
+   25b78:	b9001359 	str	w25, [x26, #16]
+   25b7c:	97ff9be5 	bl	cb10 <strlen@plt>
+   25b80:	aa0003e2 	mov	x2, x0
+   25b84:	a9005b57 	stp	x23, x22, [x26]
+   25b88:	aa1503e1 	mov	x1, x21
+   25b8c:	91005740 	add	x0, x26, #0x15
+   25b90:	39005342 	strb	w2, [x26, #20]
+   25b94:	97ff9cc3 	bl	cea0 <stpcpy@plt>
+   25b98:	91000400 	add	x0, x0, #0x1
+   25b9c:	aa1403e1 	mov	x1, x20
+[31m   25ba0:	97ff9fb0 	bl	da60 <strcpy@plt>[0m
+   25ba4:	f9400b00 	ldr	x0, [x24, #16]
+   25ba8:	aa1a03e1 	mov	x1, x26
+--
+   25bc4:	a8c57bfd 	ldp	x29, x30, [sp], #80
+   25bc8:	d65f03c0 	ret
+   25bcc:	d503201f 	nop
+   25bd0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   25bd4:	910003fd 	mov	x29, sp
+   25bd8:	a90153f3 	stp	x19, x20, [sp, #16]
+   25bdc:	aa0003f4 	mov	x20, x0
+   25be0:	97ff9bcc 	bl	cb10 <strlen@plt>
+   25be4:	9100a400 	add	x0, x0, #0x29
+   25be8:	97ff9c42 	bl	ccf0 <l_malloc@plt>
+   25bec:	aa0003f3 	mov	x19, x0
+   25bf0:	97ff9be8 	bl	cb90 <l_queue_new@plt>
+   25bf4:	f9000260 	str	x0, [x19]
+   25bf8:	97ff9be6 	bl	cb90 <l_queue_new@plt>
+   25bfc:	f9000660 	str	x0, [x19, #8]
+   25c00:	97ff9be4 	bl	cb90 <l_queue_new@plt>
+   25c04:	aa0003e2 	mov	x2, x0
+   25c08:	aa1403e1 	mov	x1, x20
+   25c0c:	9100a260 	add	x0, x19, #0x28
+   25c10:	f9000a62 	str	x2, [x19, #16]
+[31m   25c14:	97ff9f93 	bl	da60 <strcpy@plt>[0m
+   25c18:	aa1303e0 	mov	x0, x19
+   25c1c:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+   2c850:	913a62f7 	add	x23, x23, #0xe98
+   2c854:	b00000d8 	adrp	x24, 45000 <l_path_touch@@ELL_0.10+0x930>
+   2c858:	913b6318 	add	x24, x24, #0xed8
+   2c85c:	f80523e1 	stur	x1, [sp, #82]
+   2c860:	39002b22 	strb	w2, [x25, #10]
+   2c864:	a901ff3f 	stp	xzr, xzr, [x25, #24]
+   2c868:	a902ff3f 	stp	xzr, xzr, [x25, #40]
+   2c86c:	a903ff3f 	stp	xzr, xzr, [x25, #56]
+   2c870:	a904ff3f 	stp	xzr, xzr, [x25, #72]
+   2c874:	7900a3e3 	strh	w3, [sp, #80]
+   2c878:	710012bf 	cmp	w21, #0x4
+   2c87c:	54000d40 	b.eq	2ca24 <l_hwdb_foreach@@ELL_0.10+0x884>  // b.none
+   2c880:	54000588 	b.hi	2c930 <l_hwdb_foreach@@ELL_0.10+0x790>  // b.pmore
+   2c884:	71000abf 	cmp	w21, #0x2
+   2c888:	54000c40 	b.eq	2ca10 <l_hwdb_foreach@@ELL_0.10+0x870>  // b.none
+   2c88c:	b00000c1 	adrp	x1, 45000 <l_path_touch@@ELL_0.10+0x930>
+   2c890:	913aa021 	add	x1, x1, #0xea8
+   2c894:	71000ebf 	cmp	w21, #0x3
+   2c898:	540002a1 	b.ne	2c8ec <l_hwdb_foreach@@ELL_0.10+0x74c>  // b.any
+   2c89c:	aa1a03e0 	mov	x0, x26
+[31m   2c8a0:	97ff8470 	bl	da60 <strcpy@plt>[0m
+   2c8a4:	aa1903e1 	mov	x1, x25
+   2c8a8:	52800b02 	mov	w2, #0x58                  	// #88
+--
+   44574:	aa1503e2 	mov	x2, x21
+   44578:	aa1603e1 	mov	x1, x22
+   4457c:	97ffff9d 	bl	443f0 <l_gpio_reader_get@@ELL_0.10+0xc0>
+   44580:	f9402bf4 	ldr	x20, [sp, #80]
+   44584:	aa0003f3 	mov	x19, x0
+   44588:	3940029a 	ldrb	w26, [x20]
+   4458c:	7100bf5f 	cmp	w26, #0x2f
+   44590:	54000261 	b.ne	445dc <l_path_find@@ELL_0.10+0xbc>  // b.any
+   44594:	aa1403e0 	mov	x0, x20
+   44598:	97ff215e 	bl	cb10 <strlen@plt>
+   4459c:	aa0003e1 	mov	x1, x0
+   445a0:	8b000280 	add	x0, x20, x0
+   445a4:	385ff002 	ldurb	w2, [x0, #-1]
+   445a8:	7100bc5f 	cmp	w2, #0x2f
+   445ac:	540000a0 	b.eq	445c0 <l_path_find@@ELL_0.10+0xa0>  // b.none
+   445b0:	38216a9a 	strb	w26, [x20, x1]
+   445b4:	91000421 	add	x1, x1, #0x1
+   445b8:	f9402be0 	ldr	x0, [sp, #80]
+   445bc:	8b010000 	add	x0, x0, x1
+   445c0:	aa1703e1 	mov	x1, x23
+[31m   445c4:	97ff2527 	bl	da60 <strcpy@plt>[0m
+   445c8:	f9402be0 	ldr	x0, [sp, #80]
+   445cc:	2a1803e1 	mov	w1, w24
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m7[0m times [0;33mlibell.so.0.0.2[0m
+

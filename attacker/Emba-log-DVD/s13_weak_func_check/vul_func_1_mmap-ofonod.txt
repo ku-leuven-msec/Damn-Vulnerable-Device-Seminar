@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mofonod[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mofonod[0m
+
+[31m   e6760:	97fd3d1c 	bl	35bd0 <mmap@plt>[0m
+   e6764:	aa0003f9 	mov	x25, x0
+   e6768:	b100041f 	cmn	x0, #0x1
+   e676c:	540006a0 	b.eq	e6840 <g_markup_error_quark@plt+0xaf6d0>  // b.none
+   e6770:	aa1803e2 	mov	x2, x24
+   e6774:	aa1703e0 	mov	x0, x23
+   e6778:	d2800003 	mov	x3, #0x0                   	// #0
+   e677c:	52800041 	mov	w1, #0x2                   	// #2
+   e6780:	97fd3b40 	bl	35480 <g_markup_parse_context_new@plt>
+   e6784:	aa0003f5 	mov	x21, x0
+   e6788:	f94047e2 	ldr	x2, [sp, #136]
+   e678c:	aa1603e3 	mov	x3, x22
+   e6790:	aa1903e1 	mov	x1, x25
+   e6794:	97fd3d1b 	bl	35c00 <g_markup_parse_context_parse@plt>
+   e6798:	2a0003f7 	mov	w23, w0
+   e679c:	7100041f 	cmp	w0, #0x1
+   e67a0:	54000aa0 	b.eq	e68f4 <g_markup_error_quark@plt+0xaf784>  // b.none
+   e67a4:	f94047e1 	ldr	x1, [sp, #136]
+   e67a8:	aa1903e0 	mov	x0, x25
+   e67ac:	97fd3c59 	bl	35910 <munmap@plt>
+   e67b0:	2a1303e0 	mov	w0, w19
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mofonod[0m
+

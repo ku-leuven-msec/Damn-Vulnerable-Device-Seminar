@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33mhdparm.hdparm[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mhdparm.hdparm[0m
+
+   1060c:	d503201f 	nop
+   10610:	a9bb7bfd 	stp	x29, x30, [sp, #-80]!
+   10614:	910003fd 	mov	x29, sp
+   10618:	a90153f3 	stp	x19, x20, [sp, #16]
+   1061c:	aa0003f3 	mov	x19, x0
+   10620:	a9025bf5 	stp	x21, x22, [sp, #32]
+   10624:	2a0503f5 	mov	w21, w5
+   10628:	aa0403f6 	mov	x22, x4
+   1062c:	a90363f7 	stp	x23, x24, [sp, #48]
+   10630:	aa0103f7 	mov	x23, x1
+   10634:	aa0203f8 	mov	x24, x2
+   10638:	f90023f9 	str	x25, [sp, #64]
+   1063c:	aa0303f9 	mov	x25, x3
+   10640:	97ffcb6c 	bl	33f0 <strlen@plt>
+   10644:	aa0003f4 	mov	x20, x0
+   10648:	528005e2 	mov	w2, #0x2f                  	// #47
+   1064c:	8b000260 	add	x0, x19, x0
+   10650:	aa1703e1 	mov	x1, x23
+   10654:	91000400 	add	x0, x0, #0x1
+   10658:	38346a62 	strb	w2, [x19, x20]
+[31m   1065c:	97ffcc5d 	bl	37d0 <strcpy@plt>[0m
+   10660:	aa1303e0 	mov	x0, x19
+   10664:	b0000041 	adrp	x1, 19000 <ioctl@plt+0x15750>
+--
+   10c14:	f9402fe1 	ldr	x1, [sp, #88]
+   10c18:	f9400000 	ldr	x0, [x0]
+   10c1c:	ca000020 	eor	x0, x1, x0
+   10c20:	b5000b00 	cbnz	x0, 10d80 <ioctl@plt+0xd4d0>
+   10c24:	2a1303e0 	mov	w0, w19
+   10c28:	a94153f3 	ldp	x19, x20, [sp, #16]
+   10c2c:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   10c30:	a94363f7 	ldp	x23, x24, [sp, #48]
+   10c34:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   10c38:	a8c67bfd 	ldp	x29, x30, [sp], #96
+   10c3c:	d65f03c0 	ret
+   10c40:	f9402bf6 	ldr	x22, [sp, #80]
+   10c44:	aa1603e0 	mov	x0, x22
+   10c48:	97ffc9ea 	bl	33f0 <strlen@plt>
+   10c4c:	aa0003fa 	mov	x26, x0
+   10c50:	528005e2 	mov	w2, #0x2f                  	// #47
+   10c54:	8b0002c0 	add	x0, x22, x0
+   10c58:	aa1803e1 	mov	x1, x24
+   10c5c:	91000400 	add	x0, x0, #0x1
+   10c60:	383a6ac2 	strb	w2, [x22, x26]
+[31m   10c64:	97ffcadb 	bl	37d0 <strcpy@plt>[0m
+   10c68:	aa1603e0 	mov	x0, x22
+   10c6c:	f0000041 	adrp	x1, 1b000 <ioctl@plt+0x17750>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mhdparm.hdparm[0m
+

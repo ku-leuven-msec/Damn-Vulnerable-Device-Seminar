@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibkmod.so.2.3.4[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33msystem[0m tear down of [0;33mlibkmod.so.2.3.4[0m
+
+    99fc:	f9400000 	ldr	x0, [x0]
+    9a00:	97ffe500 	bl	2e00 <kmod_module_apply_filter@plt>
+    9a04:	2a0003f4 	mov	w20, w0
+    9a08:	37f803c0 	tbnz	w0, #31, 9a80 <kmod_module_probe_insert_module@@LIBKMOD_5+0x560>
+    9a0c:	f94067e0 	ldr	x0, [sp, #200]
+    9a10:	97ffe4bc 	bl	2d00 <kmod_module_unref_list@plt>
+    9a14:	f9406bf9 	ldr	x25, [sp, #208]
+    9a18:	b4000519 	cbz	x25, 9ab8 <kmod_module_probe_insert_module@@LIBKMOD_5+0x598>
+    9a1c:	a9025bf5 	stp	x21, x22, [sp, #32]
+    9a20:	a90363f7 	stp	x23, x24, [sp, #48]
+    9a24:	f90067f9 	str	x25, [sp, #200]
+    9a28:	17fffeeb 	b	95d4 <kmod_module_probe_insert_module@@LIBKMOD_5+0xb4>
+    9a2c:	aa1503e0 	mov	x0, x21
+    9a30:	97ffe550 	bl	2f70 <kmod_module_get_name@plt>
+    9a34:	f9405ff3 	ldr	x19, [sp, #184]
+    9a38:	aa0003e1 	mov	x1, x0
+    9a3c:	52800022 	mov	w2, #0x1                   	// #1
+    9a40:	aa1303e0 	mov	x0, x19
+    9a44:	97ffe4b3 	bl	2d10 <setenv@plt>
+    9a48:	aa1703e0 	mov	x0, x23
+[31m    9a4c:	97ffe515 	bl	2ea0 <system@plt>[0m
+    9a50:	2a0003f4 	mov	w20, w0
+    9a54:	aa1303e0 	mov	x0, x19
+
+[[0;33m*[0m] Function [0;33msystem[0m used [0;33m1[0m times [0;33mlibkmod.so.2.3.4[0m
+

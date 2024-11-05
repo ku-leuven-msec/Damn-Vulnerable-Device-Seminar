@@ -1,0 +1,34 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-usb-audio.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1598) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msnd-usb-audio.ko[0m
+
+    5cc8:	b9000282 	str	w2, [x20]
+    5ccc:	79000a81 	strh	w1, [x20, #4]
+    5cd0:	17ffffc8 	b	5bf0 <get_term_name+0x78>
+    5cd4:	52800000 	mov	w0, #0x0                   	// #0
+    5cd8:	a94153f3 	ldp	x19, x20, [sp, #16]
+    5cdc:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    5ce0:	f9401bf7 	ldr	x23, [sp, #48]
+    5ce4:	a8c47bfd 	ldp	x29, x30, [sp], #64
+    5ce8:	d65f03c0 	ret
+    5cec:	90000000 	adrp	x0, 0 <usb_audio_suspend>
+    5cf0:	91000013 	add	x19, x0, #0x0
+    5cf4:	b9400000 	ldr	w0, [x0]
+    5cf8:	35000080 	cbnz	w0, 5d08 <get_term_name+0x190>
+    5cfc:	17ffffbd 	b	5bf0 <get_term_name+0x78>
+    5d00:	b8410e60 	ldr	w0, [x19, #16]!
+    5d04:	34fff760 	cbz	w0, 5bf0 <get_term_name+0x78>
+    5d08:	6b00003f 	cmp	w1, w0
+    5d0c:	54ffffa1 	b.ne	5d00 <get_term_name+0x188>  // b.any
+    5d10:	f9400661 	ldr	x1, [x19, #8]
+    5d14:	aa1403e0 	mov	x0, x20
+[31m    5d18:	94000000 	bl	0 <strcpy>[0m
+    5d1c:	f9400660 	ldr	x0, [x19, #8]
+    5d20:	94000000 	bl	0 <strlen>
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m1[0m times [0;33msnd-usb-audio.ko[0m
+

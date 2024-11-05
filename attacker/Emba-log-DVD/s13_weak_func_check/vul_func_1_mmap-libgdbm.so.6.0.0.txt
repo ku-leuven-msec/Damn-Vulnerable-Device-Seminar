@@ -1,0 +1,32 @@
+[[0;33m*[0m] Binary protection state of [0;33mlibgdbm.so.6.0.0[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [33mDSO          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mlibgdbm.so.6.0.0[0m
+
+[31m    9de4:	97ffe5b3 	bl	34b0 <mmap@plt>[0m
+    9de8:	aa0003e2 	mov	x2, x0
+    9dec:	b100041f 	cmn	x0, #0x1
+    9df0:	540000e0 	b.eq	9e0c <_gdbm_internal_remap@@Base+0xac>  // b.none
+    9df4:	f9004660 	str	x0, [x19, #136]
+    9df8:	2a1603e0 	mov	w0, w22
+    9dfc:	a94153f3 	ldp	x19, x20, [sp, #16]
+    9e00:	a9425bf5 	ldp	x21, x22, [sp, #32]
+    9e04:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    9e08:	d65f03c0 	ret
+    9e0c:	f900467f 	str	xzr, [x19, #136]
+    9e10:	2a0203f6 	mov	w22, w2
+    9e14:	2a1403e1 	mov	w1, w20
+    9e18:	aa1303e0 	mov	x0, x19
+    9e1c:	52800002 	mov	w2, #0x0                   	// #0
+    9e20:	97ffe4fc 	bl	3210 <gdbm_set_errno@plt>
+    9e24:	17fffff5 	b	9df8 <_gdbm_internal_remap@@Base+0x98>
+    9e28:	d503201f 	nop
+    9e2c:	d503201f 	nop
+
+0000000000009e30 <_gdbm_mapped_remap@@Base>:
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m1[0m times [0;33mlibgdbm.so.6.0.0[0m
+

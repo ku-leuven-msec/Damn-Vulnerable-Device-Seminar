@@ -1,0 +1,424 @@
+[[0;33m*[0m] Binary protection state of [0;33msnd-soc-core.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m1531) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33msnd-soc-core.ko[0m
+
+     19c:	121d7273 	and	w19, w19, #0xfffffff8
+     1a0:	9101c3a1 	add	x1, x29, #0x70
+     1a4:	51001273 	sub	w19, w19, #0x4
+     1a8:	2a1303e0 	mov	w0, w19
+     1ac:	94000000 	bl	0 <perf_trace_buf_alloc>
+     1b0:	aa0003fb 	mov	x27, x0
+     1b4:	b4000320 	cbz	x0, 218 <perf_trace_snd_soc_card+0x108>
+     1b8:	f9403ba2 	ldr	x2, [x29, #112]
+     1bc:	910003e0 	mov	x0, sp
+     1c0:	d28000a3 	mov	x3, #0x5                   	// #5
+     1c4:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+     1c8:	91000021 	add	x1, x1, #0x0
+     1cc:	f900745d 	str	x29, [x2, #232]
+     1d0:	a90fe440 	stp	x0, x25, [x2, #248]
+     1d4:	91004360 	add	x0, x27, #0x10
+     1d8:	f9008443 	str	x3, [x2, #264]
+     1dc:	b9000b77 	str	w23, [x27, #8]
+     1e0:	f94002c2 	ldr	x2, [x22]
+     1e4:	f100005f 	cmp	x2, #0x0
+     1e8:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m     1ec:	94000000 	bl	0 <strcpy>[0m
+     1f0:	b9000f78 	str	w24, [x27, #12]
+     1f4:	b9406fa2 	ldr	w2, [x29, #108]
+--
+     2e4:	121d7273 	and	w19, w19, #0xfffffff8
+     2e8:	910183a1 	add	x1, x29, #0x60
+     2ec:	51001273 	sub	w19, w19, #0x4
+     2f0:	2a1303e0 	mov	w0, w19
+     2f4:	94000000 	bl	0 <perf_trace_buf_alloc>
+     2f8:	aa0003fa 	mov	x26, x0
+     2fc:	b4000300 	cbz	x0, 35c <perf_trace_snd_soc_dapm_basic+0xfc>
+     300:	f94033a2 	ldr	x2, [x29, #96]
+     304:	910003e0 	mov	x0, sp
+     308:	d28000a3 	mov	x3, #0x5                   	// #5
+     30c:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+     310:	91000021 	add	x1, x1, #0x0
+     314:	f900745d 	str	x29, [x2, #232]
+     318:	a90fe040 	stp	x0, x24, [x2, #248]
+     31c:	91003340 	add	x0, x26, #0xc
+     320:	f9008443 	str	x3, [x2, #264]
+     324:	b9000b57 	str	w23, [x26, #8]
+     328:	f94002c2 	ldr	x2, [x22]
+     32c:	f100005f 	cmp	x2, #0x0
+     330:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m     334:	94000000 	bl	0 <strcpy>[0m
+     338:	b9405fa2 	ldr	w2, [x29, #92]
+     33c:	aa1903e6 	mov	x6, x25
+--
+     42c:	121d7273 	and	w19, w19, #0xfffffff8
+     430:	9101c3a1 	add	x1, x29, #0x70
+     434:	51001273 	sub	w19, w19, #0x4
+     438:	2a1303e0 	mov	w0, w19
+     43c:	94000000 	bl	0 <perf_trace_buf_alloc>
+     440:	aa0003fb 	mov	x27, x0
+     444:	b4000320 	cbz	x0, 4a8 <perf_trace_snd_soc_dapm_widget+0x108>
+     448:	f9403ba2 	ldr	x2, [x29, #112]
+     44c:	910003e0 	mov	x0, sp
+     450:	d28000a3 	mov	x3, #0x5                   	// #5
+     454:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+     458:	91000021 	add	x1, x1, #0x0
+     45c:	f900745d 	str	x29, [x2, #232]
+     460:	a90fe440 	stp	x0, x25, [x2, #248]
+     464:	91004360 	add	x0, x27, #0x10
+     468:	f9008443 	str	x3, [x2, #264]
+     46c:	b9000b77 	str	w23, [x27, #8]
+     470:	f94006c2 	ldr	x2, [x22, #8]
+     474:	f100005f 	cmp	x2, #0x0
+     478:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m     47c:	94000000 	bl	0 <strcpy>[0m
+     480:	b9000f78 	str	w24, [x27, #12]
+     484:	b9406fa2 	ldr	w2, [x29, #108]
+--
+     574:	121d7273 	and	w19, w19, #0xfffffff8
+     578:	910183a1 	add	x1, x29, #0x60
+     57c:	51001273 	sub	w19, w19, #0x4
+     580:	2a1303e0 	mov	w0, w19
+     584:	94000000 	bl	0 <perf_trace_buf_alloc>
+     588:	aa0003f4 	mov	x20, x0
+     58c:	b40003c0 	cbz	x0, 604 <perf_trace_snd_soc_dapm_walk_done+0x114>
+     590:	f94033a2 	ldr	x2, [x29, #96]
+     594:	910003e0 	mov	x0, sp
+     598:	d28000a3 	mov	x3, #0x5                   	// #5
+     59c:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+     5a0:	91000021 	add	x1, x1, #0x0
+     5a4:	f900745d 	str	x29, [x2, #232]
+     5a8:	a90fe040 	stp	x0, x24, [x2, #248]
+     5ac:	91006280 	add	x0, x20, #0x18
+     5b0:	f9008443 	str	x3, [x2, #264]
+     5b4:	b9000a97 	str	w23, [x20, #8]
+     5b8:	f9400342 	ldr	x2, [x26]
+     5bc:	f100005f 	cmp	x2, #0x0
+     5c0:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m     5c4:	94000000 	bl	0 <strcpy>[0m
+     5c8:	b942eb40 	ldr	w0, [x26, #744]
+     5cc:	aa1903e6 	mov	x6, x25
+--
+     798:	f8606b40 	ldr	x0, [x26, x0]
+     79c:	b40003a0 	cbz	x0, 810 <perf_trace_snd_soc_jack_irq+0xe8>
+     7a0:	11006273 	add	w19, w19, #0x18
+     7a4:	910173a2 	add	x2, x29, #0x5c
+     7a8:	121d7273 	and	w19, w19, #0xfffffff8
+     7ac:	910183a1 	add	x1, x29, #0x60
+     7b0:	51001273 	sub	w19, w19, #0x4
+     7b4:	2a1303e0 	mov	w0, w19
+     7b8:	94000000 	bl	0 <perf_trace_buf_alloc>
+     7bc:	aa0003fa 	mov	x26, x0
+     7c0:	b4000280 	cbz	x0, 810 <perf_trace_snd_soc_jack_irq+0xe8>
+     7c4:	f94033a2 	ldr	x2, [x29, #96]
+     7c8:	910003e4 	mov	x4, sp
+     7cc:	d28000a3 	mov	x3, #0x5                   	// #5
+     7d0:	aa1403e1 	mov	x1, x20
+     7d4:	91003000 	add	x0, x0, #0xc
+     7d8:	f900745d 	str	x29, [x2, #232]
+     7dc:	a90fe044 	stp	x4, x24, [x2, #248]
+     7e0:	f9008443 	str	x3, [x2, #264]
+     7e4:	b9000b57 	str	w23, [x26, #8]
+[31m     7e8:	94000000 	bl	0 <strcpy>[0m
+     7ec:	b9405fa2 	ldr	w2, [x29, #92]
+     7f0:	aa1903e6 	mov	x6, x25
+--
+     8ec:	9101c3a1 	add	x1, x29, #0x70
+     8f0:	51001273 	sub	w19, w19, #0x4
+     8f4:	2a1303e0 	mov	w0, w19
+     8f8:	94000000 	bl	0 <perf_trace_buf_alloc>
+     8fc:	aa0003fc 	mov	x28, x0
+     900:	b4000340 	cbz	x0, 968 <perf_trace_snd_soc_jack_report+0x110>
+     904:	f9403ba2 	ldr	x2, [x29, #112]
+     908:	910003e0 	mov	x0, sp
+     90c:	d28000a3 	mov	x3, #0x5                   	// #5
+     910:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+     914:	91000021 	add	x1, x1, #0x0
+     918:	f900745d 	str	x29, [x2, #232]
+     91c:	a90fe440 	stp	x0, x25, [x2, #248]
+     920:	91005380 	add	x0, x28, #0x14
+     924:	f9008443 	str	x3, [x2, #264]
+     928:	b9000b9a 	str	w26, [x28, #8]
+     92c:	f94012c2 	ldr	x2, [x22, #32]
+     930:	f9400c42 	ldr	x2, [x2, #24]
+     934:	f100005f 	cmp	x2, #0x0
+     938:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m     93c:	94000000 	bl	0 <strcpy>[0m
+     940:	2901df98 	stp	w24, w23, [x28, #12]
+     944:	b9406fa2 	ldr	w2, [x29, #108]
+--
+     a40:	9101c3a1 	add	x1, x29, #0x70
+     a44:	51001273 	sub	w19, w19, #0x4
+     a48:	2a1303e0 	mov	w0, w19
+     a4c:	94000000 	bl	0 <perf_trace_buf_alloc>
+     a50:	aa0003fb 	mov	x27, x0
+     a54:	b4000340 	cbz	x0, abc <perf_trace_snd_soc_jack_notify+0x10c>
+     a58:	f9403ba2 	ldr	x2, [x29, #112]
+     a5c:	910003e0 	mov	x0, sp
+     a60:	d28000a3 	mov	x3, #0x5                   	// #5
+     a64:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+     a68:	91000021 	add	x1, x1, #0x0
+     a6c:	f900745d 	str	x29, [x2, #232]
+     a70:	a90fe440 	stp	x0, x25, [x2, #248]
+     a74:	91004360 	add	x0, x27, #0x10
+     a78:	f9008443 	str	x3, [x2, #264]
+     a7c:	b9000b77 	str	w23, [x27, #8]
+     a80:	f94012c2 	ldr	x2, [x22, #32]
+     a84:	f9400c42 	ldr	x2, [x2, #24]
+     a88:	f100005f 	cmp	x2, #0x0
+     a8c:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m     a90:	94000000 	bl	0 <strcpy>[0m
+     a94:	b9000f78 	str	w24, [x27, #12]
+     a98:	b9406fa2 	ldr	w2, [x29, #108]
+--
+    344c:	11000400 	add	w0, w0, #0x1
+    3450:	53103c01 	lsl	w1, w0, #16
+    3454:	0b0002c0 	add	w0, w22, w0
+    3458:	110082d6 	add	w22, w22, #0x20
+    345c:	2a0102d6 	orr	w22, w22, w1
+    3460:	aa1303e1 	mov	x1, x19
+    3464:	93407c02 	sxtw	x2, w0
+    3468:	9101a3e0 	add	x0, sp, #0x68
+    346c:	91008042 	add	x2, x2, #0x20
+    3470:	94000000 	bl	0 <trace_event_buffer_reserve>
+    3474:	aa0003f3 	mov	x19, x0
+    3478:	b40008e0 	cbz	x0, 3594 <trace_event_raw_event_snd_soc_dapm_path+0x1e4>
+    347c:	2901627b 	stp	w27, w24, [x19, #8]
+    3480:	9000001b 	adrp	x27, 0 <soc_dev_attr_is_visible>
+    3484:	b9001276 	str	w22, [x19, #16]
+    3488:	9100037b 	add	x27, x27, #0x0
+    348c:	91008000 	add	x0, x0, #0x20
+    3490:	f94006e1 	ldr	x1, [x23, #8]
+    3494:	f100003f 	cmp	x1, #0x0
+    3498:	9a810361 	csel	x1, x27, x1, eq  // eq = none
+[31m    349c:	94000000 	bl	0 <strcpy>[0m
+    34a0:	f94002a2 	ldr	x2, [x21]
+    34a4:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    34a8:	91000021 	add	x1, x1, #0x0
+    34ac:	8b382260 	add	x0, x19, w24, uxth
+    34b0:	f100005f 	cmp	x2, #0x0
+    34b4:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m    34b8:	94000000 	bl	0 <strcpy>[0m
+    34bc:	f9400741 	ldr	x1, [x26, #8]
+    34c0:	79402260 	ldrh	w0, [x19, #16]
+    34c4:	f9400421 	ldr	x1, [x1, #8]
+    34c8:	8b000260 	add	x0, x19, x0
+    34cc:	f100003f 	cmp	x1, #0x0
+    34d0:	9a810361 	csel	x1, x27, x1, eq  // eq = none
+[31m    34d4:	94000000 	bl	0 <strcpy>[0m
+    34d8:	9101a3e0 	add	x0, sp, #0x68
+    34dc:	394062a1 	ldrb	w1, [x21, #24]
+--
+    612c:	910003e2 	mov	x2, sp
+    6130:	d28000a1 	mov	x1, #0x5                   	// #5
+    6134:	b9406fa3 	ldr	w3, [x29, #108]
+    6138:	11008294 	add	w20, w20, #0x20
+    613c:	f9007c02 	str	x2, [x0, #248]
+    6140:	2a1c029c 	orr	w28, w20, w28
+    6144:	f9008401 	str	x1, [x0, #264]
+    6148:	294e07a2 	ldp	w2, w1, [x29, #112]
+    614c:	f900741d 	str	x29, [x0, #232]
+    6150:	2a030054 	orr	w20, w2, w3
+    6154:	90000002 	adrp	x2, 0 <soc_dev_attr_is_visible>
+    6158:	f94033a3 	ldr	x3, [x29, #96]
+    615c:	f9008003 	str	x3, [x0, #256]
+    6160:	29015261 	stp	w1, w20, [x19, #8]
+    6164:	91000042 	add	x2, x2, #0x0
+    6168:	b900127c 	str	w28, [x19, #16]
+    616c:	91008260 	add	x0, x19, #0x20
+    6170:	f9400721 	ldr	x1, [x25, #8]
+    6174:	f100003f 	cmp	x1, #0x0
+    6178:	9a810041 	csel	x1, x2, x1, eq  // eq = none
+[31m    617c:	94000000 	bl	0 <strcpy>[0m
+    6180:	f94002a3 	ldr	x3, [x21]
+    6184:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    6188:	91000021 	add	x1, x1, #0x0
+    618c:	8b342260 	add	x0, x19, w20, uxth
+    6190:	f100007f 	cmp	x3, #0x0
+    6194:	9a830021 	csel	x1, x1, x3, eq  // eq = none
+[31m    6198:	94000000 	bl	0 <strcpy>[0m
+    619c:	f9400741 	ldr	x1, [x26, #8]
+    61a0:	90000002 	adrp	x2, 0 <soc_dev_attr_is_visible>
+    61a4:	91000042 	add	x2, x2, #0x0
+    61a8:	79402260 	ldrh	w0, [x19, #16]
+    61ac:	f9400421 	ldr	x1, [x1, #8]
+    61b0:	8b000260 	add	x0, x19, x0
+    61b4:	f100003f 	cmp	x1, #0x0
+    61b8:	9a810041 	csel	x1, x2, x1, eq  // eq = none
+[31m    61bc:	94000000 	bl	0 <strcpy>[0m
+    61c0:	394062a0 	ldrb	w0, [x21, #24]
+    61c4:	aa1603e3 	mov	x3, x22
+--
+    6368:	d2800003 	mov	x3, #0x0                   	// #0
+    636c:	37400096 	tbnz	w22, #8, 637c <trace_event_raw_event_snd_soc_jack_irq+0x3c>
+    6370:	37380516 	tbnz	w22, #7, 6410 <trace_event_raw_event_snd_soc_jack_irq+0xd0>
+    6374:	37300296 	tbnz	w22, #6, 63c4 <trace_event_raw_event_snd_soc_jack_irq+0x84>
+    6378:	37480556 	tbnz	w22, #9, 6420 <trace_event_raw_event_snd_soc_jack_irq+0xe0>
+    637c:	b4000373 	cbz	x19, 63e8 <trace_event_raw_event_snd_soc_jack_irq+0xa8>
+    6380:	aa1303e0 	mov	x0, x19
+    6384:	94000000 	bl	0 <strlen>
+    6388:	11000400 	add	w0, w0, #0x1
+    638c:	aa1503e1 	mov	x1, x21
+    6390:	53103c16 	lsl	w22, w0, #16
+    6394:	93407c00 	sxtw	x0, w0
+    6398:	91003002 	add	x2, x0, #0xc
+    639c:	321e06d6 	orr	w22, w22, #0xc
+    63a0:	9100e3e0 	add	x0, sp, #0x38
+    63a4:	94000000 	bl	0 <trace_event_buffer_reserve>
+    63a8:	b40000e0 	cbz	x0, 63c4 <trace_event_raw_event_snd_soc_jack_irq+0x84>
+    63ac:	aa1303e1 	mov	x1, x19
+    63b0:	b9000816 	str	w22, [x0, #8]
+    63b4:	91003000 	add	x0, x0, #0xc
+[31m    63b8:	94000000 	bl	0 <strcpy>[0m
+    63bc:	9100e3e0 	add	x0, sp, #0x38
+    63c0:	94000000 	bl	0 <trace_event_buffer_commit>
+--
+    6470:	37480536 	tbnz	w22, #9, 6514 <trace_event_raw_event_snd_soc_dapm_basic+0xdc>
+    6474:	f94002a0 	ldr	x0, [x21]
+    6478:	b40003c0 	cbz	x0, 64f0 <trace_event_raw_event_snd_soc_dapm_basic+0xb8>
+    647c:	94000000 	bl	0 <strlen>
+    6480:	11000400 	add	w0, w0, #0x1
+    6484:	53103c16 	lsl	w22, w0, #16
+    6488:	93407c00 	sxtw	x0, w0
+    648c:	321e06d6 	orr	w22, w22, #0xc
+    6490:	91003002 	add	x2, x0, #0xc
+    6494:	aa1403e1 	mov	x1, x20
+    6498:	9100e3e0 	add	x0, sp, #0x38
+    649c:	94000000 	bl	0 <trace_event_buffer_reserve>
+    64a0:	b4000160 	cbz	x0, 64cc <trace_event_raw_event_snd_soc_dapm_basic+0x94>
+    64a4:	b9000816 	str	w22, [x0, #8]
+    64a8:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    64ac:	91000021 	add	x1, x1, #0x0
+    64b0:	91003000 	add	x0, x0, #0xc
+    64b4:	f94002a2 	ldr	x2, [x21]
+    64b8:	f100005f 	cmp	x2, #0x0
+    64bc:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m    64c0:	94000000 	bl	0 <strcpy>[0m
+    64c4:	9100e3e0 	add	x0, sp, #0x38
+    64c8:	94000000 	bl	0 <trace_event_buffer_commit>
+--
+    6574:	f94006a0 	ldr	x0, [x21, #8]
+    6578:	b4000420 	cbz	x0, 65fc <trace_event_raw_event_snd_soc_dapm_widget+0xcc>
+    657c:	94000000 	bl	0 <strlen>
+    6580:	11000400 	add	w0, w0, #0x1
+    6584:	53103c17 	lsl	w23, w0, #16
+    6588:	93407c00 	sxtw	x0, w0
+    658c:	321c02f7 	orr	w23, w23, #0x10
+    6590:	91004002 	add	x2, x0, #0x10
+    6594:	aa1403e1 	mov	x1, x20
+    6598:	910123e0 	add	x0, sp, #0x48
+    659c:	94000000 	bl	0 <trace_event_buffer_reserve>
+    65a0:	aa0003f4 	mov	x20, x0
+    65a4:	b4000180 	cbz	x0, 65d4 <trace_event_raw_event_snd_soc_dapm_widget+0xa4>
+    65a8:	b9000a97 	str	w23, [x20, #8]
+    65ac:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    65b0:	91000021 	add	x1, x1, #0x0
+    65b4:	91004000 	add	x0, x0, #0x10
+    65b8:	f94006a2 	ldr	x2, [x21, #8]
+    65bc:	f100005f 	cmp	x2, #0x0
+    65c0:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m    65c4:	94000000 	bl	0 <strcpy>[0m
+    65c8:	b9000e96 	str	w22, [x20, #12]
+    65cc:	910123e0 	add	x0, sp, #0x48
+--
+    667c:	f94002a0 	ldr	x0, [x21]
+    6680:	b4000420 	cbz	x0, 6704 <trace_event_raw_event_snd_soc_card+0xcc>
+    6684:	94000000 	bl	0 <strlen>
+    6688:	11000400 	add	w0, w0, #0x1
+    668c:	53103c17 	lsl	w23, w0, #16
+    6690:	93407c00 	sxtw	x0, w0
+    6694:	321c02f7 	orr	w23, w23, #0x10
+    6698:	91004002 	add	x2, x0, #0x10
+    669c:	aa1403e1 	mov	x1, x20
+    66a0:	910123e0 	add	x0, sp, #0x48
+    66a4:	94000000 	bl	0 <trace_event_buffer_reserve>
+    66a8:	aa0003f4 	mov	x20, x0
+    66ac:	b4000180 	cbz	x0, 66dc <trace_event_raw_event_snd_soc_card+0xa4>
+    66b0:	b9000a97 	str	w23, [x20, #8]
+    66b4:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    66b8:	91000021 	add	x1, x1, #0x0
+    66bc:	91004000 	add	x0, x0, #0x10
+    66c0:	f94002a2 	ldr	x2, [x21]
+    66c4:	f100005f 	cmp	x2, #0x0
+    66c8:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m    66cc:	94000000 	bl	0 <strcpy>[0m
+    66d0:	b9000e96 	str	w22, [x20, #12]
+    66d4:	910123e0 	add	x0, sp, #0x48
+--
+    678c:	b4000440 	cbz	x0, 6814 <trace_event_raw_event_snd_soc_jack_notify+0xd4>
+    6790:	94000000 	bl	0 <strlen>
+    6794:	11000400 	add	w0, w0, #0x1
+    6798:	53103c17 	lsl	w23, w0, #16
+    679c:	93407c00 	sxtw	x0, w0
+    67a0:	321c02f7 	orr	w23, w23, #0x10
+    67a4:	91004002 	add	x2, x0, #0x10
+    67a8:	aa1403e1 	mov	x1, x20
+    67ac:	910123e0 	add	x0, sp, #0x48
+    67b0:	94000000 	bl	0 <trace_event_buffer_reserve>
+    67b4:	aa0003f4 	mov	x20, x0
+    67b8:	b40001a0 	cbz	x0, 67ec <trace_event_raw_event_snd_soc_jack_notify+0xac>
+    67bc:	b9000a97 	str	w23, [x20, #8]
+    67c0:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    67c4:	91000021 	add	x1, x1, #0x0
+    67c8:	91004000 	add	x0, x0, #0x10
+    67cc:	f94012a2 	ldr	x2, [x21, #32]
+    67d0:	f9400c42 	ldr	x2, [x2, #24]
+    67d4:	f100005f 	cmp	x2, #0x0
+    67d8:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m    67dc:	94000000 	bl	0 <strcpy>[0m
+    67e0:	b9000e96 	str	w22, [x20, #12]
+    67e4:	910123e0 	add	x0, sp, #0x48
+--
+    68a0:	b4000440 	cbz	x0, 6928 <trace_event_raw_event_snd_soc_jack_report+0xd8>
+    68a4:	94000000 	bl	0 <strlen>
+    68a8:	11000400 	add	w0, w0, #0x1
+    68ac:	52800296 	mov	w22, #0x14                  	// #20
+    68b0:	93407c02 	sxtw	x2, w0
+    68b4:	2a0042d6 	orr	w22, w22, w0, lsl #16
+    68b8:	91005042 	add	x2, x2, #0x14
+    68bc:	aa1403e1 	mov	x1, x20
+    68c0:	910123e0 	add	x0, sp, #0x48
+    68c4:	94000000 	bl	0 <trace_event_buffer_reserve>
+    68c8:	aa0003f4 	mov	x20, x0
+    68cc:	b40001a0 	cbz	x0, 6900 <trace_event_raw_event_snd_soc_jack_report+0xb0>
+    68d0:	b9000a96 	str	w22, [x20, #8]
+    68d4:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    68d8:	91000021 	add	x1, x1, #0x0
+    68dc:	91005000 	add	x0, x0, #0x14
+    68e0:	f94012a2 	ldr	x2, [x21, #32]
+    68e4:	f9400c42 	ldr	x2, [x2, #24]
+    68e8:	f100005f 	cmp	x2, #0x0
+    68ec:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m    68f0:	94000000 	bl	0 <strcpy>[0m
+    68f4:	2901de98 	stp	w24, w23, [x20, #12]
+    68f8:	910123e0 	add	x0, sp, #0x48
+--
+    69a4:	f9400260 	ldr	x0, [x19]
+    69a8:	b40004a0 	cbz	x0, 6a3c <trace_event_raw_event_snd_soc_dapm_walk_done+0xd4>
+    69ac:	94000000 	bl	0 <strlen>
+    69b0:	11000400 	add	w0, w0, #0x1
+    69b4:	53103c16 	lsl	w22, w0, #16
+    69b8:	93407c00 	sxtw	x0, w0
+    69bc:	321d06d6 	orr	w22, w22, #0x18
+    69c0:	91006002 	add	x2, x0, #0x18
+    69c4:	aa1403e1 	mov	x1, x20
+    69c8:	9100e3e0 	add	x0, sp, #0x38
+    69cc:	94000000 	bl	0 <trace_event_buffer_reserve>
+    69d0:	aa0003f4 	mov	x20, x0
+    69d4:	b4000220 	cbz	x0, 6a18 <trace_event_raw_event_snd_soc_dapm_walk_done+0xb0>
+    69d8:	b9000a96 	str	w22, [x20, #8]
+    69dc:	90000001 	adrp	x1, 0 <soc_dev_attr_is_visible>
+    69e0:	91000021 	add	x1, x1, #0x0
+    69e4:	91006000 	add	x0, x0, #0x18
+    69e8:	f9400262 	ldr	x2, [x19]
+    69ec:	f100005f 	cmp	x2, #0x0
+    69f0:	9a820021 	csel	x1, x1, x2, eq  // eq = none
+[31m    69f4:	94000000 	bl	0 <strcpy>[0m
+    69f8:	b942ea60 	ldr	w0, [x19, #744]
+    69fc:	b9000e80 	str	w0, [x20, #12]
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m20[0m times [0;33msnd-soc-core.ko[0m
+

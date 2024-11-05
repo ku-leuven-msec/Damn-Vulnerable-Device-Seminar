@@ -1,0 +1,58 @@
+[[0;33m*[0m] Binary protection state of [0;33musermod[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33musermod[0m
+
+    7604:	b4000780 	cbz	x0, 76f4 <ferror@plt+0x2a34>
+    7608:	b0000061 	adrp	x1, 14000 <putsgent@@Base+0x42d0>
+    760c:	9113a021 	add	x1, x1, #0x4e8
+    7610:	528000c0 	mov	w0, #0x6                   	// #6
+    7614:	97fff5a7 	bl	4cb0 <setlocale@plt>
+    7618:	aa1503e3 	mov	x3, x21
+    761c:	52800021 	mov	w1, #0x1                   	// #1
+    7620:	528000c0 	mov	w0, #0x6                   	// #6
+    7624:	b0000062 	adrp	x2, 14000 <putsgent@@Base+0x42d0>
+    7628:	9113c042 	add	x2, x2, #0x4f0
+    762c:	97fff51d 	bl	4aa0 <__syslog_chk@plt>
+    7630:	aa1603e1 	mov	x1, x22
+    7634:	528000c0 	mov	w0, #0x6                   	// #6
+    7638:	97fff59e 	bl	4cb0 <setlocale@plt>
+    763c:	aa1603e0 	mov	x0, x22
+    7640:	97fff4e0 	bl	49c0 <free@plt>
+    7644:	aa1403e0 	mov	x0, x20
+    7648:	52800422 	mov	w2, #0x21                  	// #33
+    764c:	aa1703e1 	mov	x1, x23
+    7650:	38001402 	strb	w2, [x0], #1
+[31m    7654:	97fff523 	bl	4ae0 <strcpy@plt>[0m
+    7658:	17ffffda 	b	75c0 <ferror@plt+0x2900>
+    765c:	394042a0 	ldrb	w0, [x21, #16]
+--
+   10f5c:	9126e2a1 	add	x1, x21, #0x9b8
+   10f60:	91000403 	add	x3, x0, #0x1
+   10f64:	a9420833 	ldp	x19, x2, [x1, #32]
+   10f68:	eb02007f 	cmp	x3, x2
+   10f6c:	540001a9 	b.ls	10fa0 <putsgent@@Base+0x1270>  // b.plast
+   10f70:	b40000b3 	cbz	x19, 10f84 <putsgent@@Base+0x1254>
+   10f74:	aa1303e0 	mov	x0, x19
+   10f78:	97ffce92 	bl	49c0 <free@plt>
+   10f7c:	aa1403e0 	mov	x0, x20
+   10f80:	97ffcd14 	bl	43d0 <strlen@plt>
+   10f84:	9126e2b6 	add	x22, x21, #0x9b8
+   10f88:	910fa000 	add	x0, x0, #0x3e8
+   10f8c:	f90016c0 	str	x0, [x22, #40]
+   10f90:	97ffcda0 	bl	4610 <malloc@plt>
+   10f94:	f90012c0 	str	x0, [x22, #32]
+   10f98:	aa0003f3 	mov	x19, x0
+   10f9c:	b4000c40 	cbz	x0, 11124 <putsgent@@Base+0x13f4>
+   10fa0:	aa1403e1 	mov	x1, x20
+   10fa4:	aa1303e0 	mov	x0, x19
+   10fa8:	a90363f7 	stp	x23, x24, [sp, #48]
+[31m   10fac:	97ffcecd 	bl	4ae0 <strcpy@plt>[0m
+   10fb0:	aa1303e0 	mov	x0, x19
+   10fb4:	52800141 	mov	w1, #0xa                   	// #10
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33musermod[0m
+

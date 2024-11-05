@@ -1,0 +1,51 @@
+[[0;33m*[0m] Binary protection state of [0;33mnetrom.ko[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [31mNo RELRO     [m   [32mCanary found   [m   [31mNX disabled[m   [33mREL          [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [31m360) Symbols
+
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m tear down of [0;33mnetrom.ko[0m
+
+    4444:	a9446bf9 	ldp	x25, x26, [sp, #64]
+    4448:	a94573fb 	ldp	x27, x28, [sp, #80]
+    444c:	a8c77bfd 	ldp	x29, x30, [sp], #112
+    4450:	d65f03c0 	ret
+    4454:	aa1c03e1 	mov	x1, x28
+    4458:	aa1703e0 	mov	x0, x23
+    445c:	94000000 	bl	0 <ax25cmp>
+    4460:	35000080 	cbnz	w0, 4470 <nr_add_node+0x1e0>
+    4464:	3940c660 	ldrb	w0, [x19, #49]
+    4468:	35000040 	cbnz	w0, 4470 <nr_add_node+0x1e0>
+    446c:	3900c275 	strb	w21, [x19, #48]
+    4470:	b4000174 	cbz	x20, 449c <nr_add_node+0x20c>
+    4474:	91014297 	add	x23, x20, #0x50
+    4478:	91015298 	add	x24, x20, #0x54
+    447c:	aa1703e0 	mov	x0, x23
+    4480:	94000000 	bl	0 <refcount_inc_checked>
+    4484:	aa1803e0 	mov	x0, x24
+    4488:	94000000 	bl	0 <_raw_spin_lock_bh>
+    448c:	aa1a03e1 	mov	x1, x26
+    4490:	91005e80 	add	x0, x20, #0x17
+[31m    4494:	94000000 	bl	0 <strcpy>[0m
+    4498:	17ffffae 	b	4350 <nr_add_node+0xc0>
+    449c:	90000000 	adrp	x0, 0 <kmalloc_caches>
+    44a0:	d2800b02 	mov	x2, #0x58                  	// #88
+    44a4:	52814401 	mov	w1, #0xa20                 	// #2592
+    44a8:	f9400000 	ldr	x0, [x0]
+    44ac:	94000000 	bl	0 <kmem_cache_alloc_trace>
+    44b0:	aa0003f4 	mov	x20, x0
+    44b4:	b4002e60 	cbz	x0, 4a80 <nr_add_node+0x7f0>
+    44b8:	b94002e0 	ldr	w0, [x23]
+    44bc:	aa1a03e1 	mov	x1, x26
+    44c0:	b84032e2 	ldur	w2, [x23, #3]
+    44c4:	90000018 	adrp	x24, 0 <nr_info_stop>
+    44c8:	b9001280 	str	w0, [x20, #16]
+    44cc:	91005e80 	add	x0, x20, #0x17
+    44d0:	b8013282 	stur	w2, [x20, #19]
+    44d4:	91000318 	add	x24, x24, #0x0
+[31m    44d8:	94000000 	bl	0 <strcpy>[0m
+    44dc:	39008295 	strb	w21, [x20, #32]
+    44e0:	52802002 	mov	w2, #0x100                 	// #256
+
+[[0;33m*[0m] Function [0;33mstrcpy[0m used [0;33m2[0m times [0;33mnetrom.ko[0m
+

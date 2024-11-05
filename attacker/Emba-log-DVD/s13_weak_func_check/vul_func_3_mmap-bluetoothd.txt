@@ -1,0 +1,76 @@
+[[0;33m*[0m] Binary protection state of [0;33mbluetoothd[0m
+
+  RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         
+  [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled  [m   [32mNo RPATH [m  [32mNo RUNPATH [m  [32mNo Symbols
+
+
+[[0;33m*[0m] Function [0;33mmmap[0m tear down of [0;33mbluetoothd[0m
+
+[31m   674e8:	97fedb62 	bl	1e270 <mmap@plt>[0m
+   674ec:	aa0003f8 	mov	x24, x0
+   674f0:	d1000400 	sub	x0, x0, #0x1
+   674f4:	b1000c1f 	cmn	x0, #0x3
+   674f8:	540012e8 	b.hi	67754 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2834>  // b.pmore
+   674fc:	aa1503e0 	mov	x0, x21
+   67500:	97fed834 	bl	1d5d0 <strlen@plt>
+   67504:	93407c1a 	sxtw	x26, w0
+   67508:	91000740 	add	x0, x26, #0x1
+   6750c:	f90037e0 	str	x0, [sp, #104]
+   67510:	eb00033f 	cmp	x25, x0
+   67514:	540014e9 	b.ls	677b0 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2890>  // b.plast
+   67518:	a90573fb 	stp	x27, x28, [sp, #80]
+   6751c:	aa1903fc 	mov	x28, x25
+   67520:	aa1803fb 	mov	x27, x24
+   67524:	14000014 	b	67574 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2654>
+   67528:	385ff360 	ldurb	w0, [x27, #-1]
+   6752c:	7100341f 	cmp	w0, #0xd
+   67530:	7a4a1804 	ccmp	w0, #0xa, #0x4, ne  // ne = any
+   67534:	540000a1 	b.ne	67548 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2628>  // b.any
+   67538:	387a6b60 	ldrb	w0, [x27, x26]
+--
+[31m   67a30:	97feda10 	bl	1e270 <mmap@plt>[0m
+   67a34:	aa0003f9 	mov	x25, x0
+   67a38:	d1000400 	sub	x0, x0, #0x1
+   67a3c:	b1000c1f 	cmn	x0, #0x3
+   67a40:	54000349 	b.ls	67aa8 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2b88>  // b.plast
+   67a44:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   67a48:	a94573fb 	ldp	x27, x28, [sp, #80]
+   67a4c:	b9400315 	ldr	w21, [x24]
+   67a50:	52800101 	mov	w1, #0x8                   	// #8
+   67a54:	2a1403e0 	mov	w0, w20
+   67a58:	97fed8b6 	bl	1dd30 <flock@plt>
+   67a5c:	2a1403e0 	mov	w0, w20
+   67a60:	97fed95c 	bl	1dfd0 <close@plt>
+   67a64:	b9000315 	str	w21, [x24]
+   67a68:	f947baf7 	ldr	x23, [x23, #3952]
+   67a6c:	f9407fe1 	ldr	x1, [sp, #248]
+   67a70:	f94002e0 	ldr	x0, [x23]
+   67a74:	ca000020 	eor	x0, x1, x0
+   67a78:	b5000c40 	cbnz	x0, 67c00 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2ce0>
+   67a7c:	aa1303e0 	mov	x0, x19
+   67a80:	a94153f3 	ldp	x19, x20, [sp, #16]
+--
+[31m   67ca0:	97fed974 	bl	1e270 <mmap@plt>[0m
+   67ca4:	aa0003fa 	mov	x26, x0
+   67ca8:	d1000400 	sub	x0, x0, #0x1
+   67cac:	b1000c1f 	cmn	x0, #0x3
+   67cb0:	54000e48 	b.hi	67e78 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2f58>  // b.pmore
+   67cb4:	f10002bf 	cmp	x21, #0x0
+   67cb8:	54000ccd 	b.le	67e50 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2f30>
+   67cbc:	aa1503e0 	mov	x0, x21
+   67cc0:	a90573fb 	stp	x27, x28, [sp, #80]
+   67cc4:	aa1a03fc 	mov	x28, x26
+   67cc8:	b000031b 	adrp	x27, c8000 <btd_malloc@@Base+0x1f1b0>
+   67ccc:	d503201f 	nop
+   67cd0:	d1000400 	sub	x0, x0, #0x1
+   67cd4:	ab000381 	adds	x1, x28, x0
+   67cd8:	54000122 	b.cs	67cfc <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2ddc>  // b.hs, b.nlast
+   67cdc:	aa1c03f9 	mov	x25, x28
+   67ce0:	39400320 	ldrb	w0, [x25]
+   67ce4:	340000c0 	cbz	w0, 67cfc <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2ddc>
+   67ce8:	7100801f 	cmp	w0, #0x20
+   67cec:	540004a0 	b.eq	67d80 <btd_gatt_database_restore_svc_chng_ccc@@Base+0x2e60>  // b.none
+   67cf0:	91000739 	add	x25, x25, #0x1
+
+[[0;33m*[0m] Function [0;33mmmap[0m used [0;33m3[0m times [0;33mbluetoothd[0m
+
