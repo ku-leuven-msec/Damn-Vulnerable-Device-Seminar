@@ -40,13 +40,13 @@ full_device_setup(){
   log "Moving files to correct location"
   mv $TOOL_PATH/attacker/* /home/kali/Desktop/
   log "Changing Ettercap config"
-  mv "/home/kali/Desktop/etter.conf" "/etc/ettercap/etter.conf"
+  sudo mv "/home/kali/Desktop/etter.conf" "/etc/ettercap/etter.conf"
 
 
 
   log "Cleanup"
-  rm -rf "$TOOL_PATH"
-  rm /home/kali/Desktop/setup_attacker.sh
+  rm -rf "$TMP_PATH"
+
   log "Installation READY"
 }
 
